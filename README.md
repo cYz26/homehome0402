@@ -16,7 +16,19 @@ npm run build
 npm run preview -- --port 4173
 ```
 
-打开 `http://127.0.0.1:4173/homehome402/`。开发与预览服务仅绑定本机。当前工作只完成本地实现及验证，尚未提交、推送或发布。
+打开 `http://127.0.0.1:4173/homehome402/`。开发与预览服务仅绑定本机。远程版本以 Git 提交为准，检查及部署结果以 GitHub Actions 为准。
+
+## 持续开发与文档入口
+
+| 层次 | 入口与用途 |
+| --- | --- |
+| 开发约定 | [AGENTS.md](AGENTS.md)：任务开始时的阅读入口、核心约束及完成要求 |
+| 当前实施 | [实施记录](docs/IMPLEMENTATION.md)：已确认范围、决策、完成情况和待验项 |
+| 当前设计 | [查看器设计](docs/viewer-design.md)：模块职责、交互和画质；[尺寸依据](docs/dimension-status.md)：建筑事实与估算口径 |
+| 验证与交付 | [QA](docs/QA.md)、[发布清单](public/release.json)：验证边界与资源版本 |
+| 原始参考 | [架构方案原文](docs/references/house-web-presentation-architecture.md)：保留设计意图，供讨论和追溯 |
+
+原方案已按原文归档，其建议不自动等于当前需求。后续开发从当前实施与设计文档出发；新增决策同步写入对应文档，验证证据绑定实际版本。维护方式及与原方案的差异见[实施记录](docs/IMPLEMENTATION.md#持续开发与文档维护)。
 
 ## 操作
 
