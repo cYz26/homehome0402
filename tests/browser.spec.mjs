@@ -219,7 +219,8 @@ test("mobile touch: immediate two-axis look, stationary hold, two-finger height 
   );
   await page.locator("canvas").scrollIntoViewIfNeeded();
   await touch("touchStart", [[1, x, y]]);
-  await page.waitForTimeout(650);
+  await page.waitForTimeout(1100);
+  expect(await page.evaluate(() => window.getSelection().toString())).toBe("");
   await touch("touchEnd", []);
   const walked = await view(page);
   expect(walked.state.camera.position).not.toEqual(

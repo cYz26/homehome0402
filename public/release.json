@@ -362,7 +362,7 @@
     "scripts/export-apartment.py": "77e66ce0464364f18f0771fe915ae35e04c80f11fd2625018d106f72e3cd4571",
     "scripts/generate-data.mjs": "7e00a3ea60e905db7dc2a92bf89a1a877d12c4ddcdf9ea5a95cde4be70c76191",
     "scripts/optimize-web.mjs": "b9187a738222cac0d6983bf1204f4934324c73d4dfc34318ed2632111e8f40c4",
-    "scripts/prepare-release.mjs": "0f01522030e9c479c55bc5607805fcdecfd2f0184a7db520a898763b9e8d9d3d",
+    "scripts/prepare-release.mjs": "0e8a69b8e8d4832652c430af251de8fbc7fcc57a75f3cc5ee3c6ba558eb8dc27",
     "scripts/stage-site.mjs": "d50ec3fb8ae5c354b62ed59f167f859beca2b5da3ccfa85228e5b9b6fa21242c",
     "index.html": "bd70881b74ff6d2ac1967b46d1a5645bd566bef8b04c4434799270edfc436f54",
     "vite.config.js": "4c3ee9864b7efe6273f6fb135693faf284154979d800eaf8f7a53562ad68cea9",
@@ -375,14 +375,15 @@
     "src/section-ao.js": "7471b2d29b257cadd58a2464160f3133e842ab5e0eeaf99bc24813c8e4b75dbc",
     "src/sections.js": "378e2e5f29d3386023728a280c11e57b4bd03734ab6540e97e0c7e85fc8b0df0",
     "src/spatial.js": "feb4642c1c3b23b1ddcdcfe040a4b200b21ce76e39f72dae60f35f896ddae058",
-    "src/style.css": "5ed87f3f6e27ee685ecf4faa8e57190b907a968b485427da30a30992fe0e67a7",
+    "src/style.css": "91f4d3fec6dacc75ebb5fb0f65ddd56c09d1b5654e07f46a8819f797dfc6178c",
     "src/view-state.js": "37216a878f2bd00ed0e1f4eb66692bd93b18753d43e7aeb4ec55274b5b701cd6",
     "src/viewer.js": "b301f0555ddb71dec7bb0fe4679af95873a90384aac9c6a0ac36ada2d61f81d8",
-    "src/walk-input.js": "274657cef5610ff8040bb29da416e8cc78391c0fd94931a4bb275dcf86b209e6"
+    "src/walk-input.js": "ee8d951cf113450164de39d7eb16dce662c816b6960b594fbe4cc3533392edc5"
   },
   "budgets": {
     "firstScreenBytes": 1048576,
     "interactive3DBytes": 16777216
   },
-  "visualPolicy": "Preserve source texture resolution; native display pixel ratio by default. Smooth mode is opt-in. Resource budgets follow visual quality."
+  "visualPolicy": "Preserve source texture resolution; native display pixel ratio by default. Smooth mode is opt-in. Resource budgets follow visual quality.",
+  "applicationRevision": "2026-09-15-walk-long-press"
 }

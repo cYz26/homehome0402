@@ -9,6 +9,7 @@ await fs.mkdir(`${out}/images`, { recursive: true });
 const assets = [],
   images = [];
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
+const applicationRevision = "2026-09-15-walk-long-press";
 const validation = JSON.parse(await fs.readFile("model/validation.json"));
 const checks = JSON.parse(await fs.readFile("model/checks.json"));
 const provenance = JSON.parse(
@@ -289,6 +290,7 @@ const manifest = {
   schemaVersion: 1,
   version,
   presentationRevision: "2026-09-15-section-quality",
+  applicationRevision,
   units: "m",
   project: spec.project,
   model: `${prefix}/apartment-web.glb`,

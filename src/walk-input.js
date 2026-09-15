@@ -84,6 +84,15 @@ export class WalkInput {
     const options = { signal: this.abort.signal };
     const on = (element, event, fn, extra = {}) =>
       element.addEventListener(event, fn, { ...options, ...extra });
+    // Pointer cancellation and touch-action do not suppress every mobile
+    // selection/callout gesture. Own native touch defaults while looking/walking;
+    // pointer events remain the single source of movement and selection input.
+    const preventNativeGesture = (event) => {
+      if (callbacks.active() && event.cancelable) event.preventDefault();
+    };
+    on(canvas, "touchstart", preventNativeGesture, { passive: false });
+    on(canvas, "touchmove", preventNativeGesture, { passive: false });
+    on(canvas, "selectstart", preventNativeGesture);
     on(canvas, "pointerdown", (e) => {
       if (!callbacks.active() || e.button !== 0) return;
       e.preventDefault();

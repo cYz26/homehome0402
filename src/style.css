@@ -401,6 +401,9 @@ select {
   min-height: 470px;
   overflow: hidden;
   background: #edeee7;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 .stage canvas {
   display: block;
