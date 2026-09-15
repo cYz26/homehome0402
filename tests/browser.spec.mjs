@@ -1,8 +1,18 @@
 import { test, expect } from "@playwright/test";
 import sharp from "sharp";
+// Downloading, decoding and the first full-quality render are one loading
+// phase. A request event only marks its start; ordinary UI assertions stay 20s.
+async function modelReady(page) {
+  await test.step("model ready: download, decode and first render", async () => {
+    await expect(page.locator("#model-placeholder")).toBeHidden({
+      timeout: 120000,
+    });
+    await expect(page.locator("canvas")).toHaveCount(1);
+  }, { timeout: 120000 });
+}
 async function ready(page) {
   await page.locator("[data-explore]").click();
-  await expect(page.locator("#model-placeholder")).toBeHidden();
+  await modelReady(page);
   await expect(page.locator("canvas")).toBeVisible();
 }
 async function view(page) {
@@ -98,7 +108,7 @@ for (const [label, width, height] of [
     expect(saved.state.section).toEqual({ axis: "x", value: 4.25 });
     await page.goto(saved.href);
     await page.reload();
-    await expect(page.locator("#model-placeholder")).toBeHidden();
+    await modelReady(page);
     await expect(page.locator("#viewer-shell")).toHaveAttribute(
       "data-entity",
       "door_master",
@@ -259,15 +269,13 @@ test("model failure, retry, cancellation and re-entry keep a single canvas", asy
   await expect(page.locator("#loading-text")).toContainText("暂时无法载入");
   await page.unroute("**/apartment-web.glb");
   await page.locator("#load-model").click();
-  await expect(page.locator("#model-placeholder")).toBeHidden();
-  await expect(page.locator("canvas")).toHaveCount(1);
+  await modelReady(page);
   await page.locator(".help summary").click();
   await page.locator("#reload-model").click();
   await page.locator("#cancel-model").click();
   await expect(page.locator("#loading-text")).toContainText("取消");
   await page.locator("#load-model").click();
-  await expect(page.locator("#model-placeholder")).toBeHidden();
-  await expect(page.locator("canvas")).toHaveCount(1);
+  await modelReady(page);
 });
 
 test("standard rendering, north-up plan, current reference and on-demand HD retain the selected view", async ({
@@ -309,11 +317,17 @@ test("standard rendering, north-up plan, current reference and on-demand HD reta
   await nonblank(page, testInfo, "web-bathroom-standard");
   const before = await view(page);
   await page.locator(".help summary").click();
+  // Regression: a successful model load can exceed the ordinary 20s UI
+  // assertion budget. Keep the real HD asset and all full-quality checks.
+  await page.route("**/apartment-hd.glb", async (route) => {
+    const response = await route.fetch();
+    await new Promise((resolve) => setTimeout(resolve, 25000));
+    await route.fulfill({ response });
+  });
   const hd = page.waitForRequest("**/apartment-hd.glb");
   await page.locator("#load-hd").click({ noWaitAfter: true });
   await hd;
-  await expect(page.locator("#model-placeholder")).toBeHidden();
-  await expect(page.locator("canvas")).toHaveCount(1);
+  await modelReady(page);
   await rendered(page, "HD double basin");
   const after = await view(page);
   expect(after.state.mode).toBe(before.state.mode);

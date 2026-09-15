@@ -90,3 +90,45 @@
 Linux 对照仅覆盖原失败的标准 / 高清流程，不冒充整个 GitHub Actions 或真机验收。本次启动的容器和镜像已移除，Colima 恢复停止状态；原始对照日志和 trace 留在本机忽略目录 `.asset-work/tmp/ci-linux/`。
 
 最终 macOS 回归执行 `CI=true npm run test:browser`：**8 / 8 通过，176.1 秒**，无跳过、重试或 flaky；证据收集器生成 33 张图，并绑定当前测试、构建及发布哈希。Linux 通过的候选与最终测试文件逐字节一致。线上 Actions / Pages 结果仍需远程复验。
+
+## CI 模型加载等待与 Action 运行时修正 · 2026-09-15
+
+已通过公开 Actions 页面核实：[最新运行 #5](https://github.com/cYz26/homehome402/actions/runs/34970284680) 对应 `2e93db7`，验证失败且部署未执行。用户日志显示 7 / 8 通过，高清请求发出后等待 `#model-placeholder` 隐藏，在 20 秒处失败。请求开始不代表模型完成下载、解析及首次高质量绘制；原有 120 秒绘制步骤尚未开始，无法保护该等待。
+
+### 受控对照与修正
+
+- 用真实网页和高清 GLB，仅将成功的高清响应延迟 25 秒。最小流程按原断言在 20 秒处报同一错误；只改变加载断言预算后，流程 35.5 秒通过。
+- 将相同延迟纳入原标准 / 高清完整用例：修改等待前 **51.0 秒失败**，修改后 **72.3 秒通过**；修改后的高清加载阶段实际 **39.4 秒**，包含 25 秒注入延迟。机位保留、单画布、非空图像、标准画质及当前参考图断言全部执行。
+- 上述对照环境为 macOS arm64、Node.js 24.15.0、Playwright 1.63.0、缓存的 Chromium 147.0.7727.15。普通无延迟原用例在本机 50.0 秒通过。受控对照证明等待预算缺口，不把人工网络延迟当作远程 GPU 耗时测量；未取得远程 trace，无法细分远程下载、解析和绘制各自耗时。
+- 统一 `modelReady` 步骤为模型下载、解析和首帧分配 120 秒；首次加载、分享恢复、重试和高清切换复用该步骤，并检查只存在一个画布。普通断言仍为 20 秒，操作仍为 30 秒；CI 单用例 300 秒、套件 20 分钟及零自动重试保持原配置。原有失败、取消、重试和 WebGL 上下文检查继续执行。
+
+### Actions 运行时
+
+检查官方 `action.yml` 后更新如下；这是 Action 自身的运行时，项目 `npm` 构建继续使用 Node.js 22。
+
+| Action | 更新 | 运行时依据 |
+| --- | --- | --- |
+| checkout | v4 → v5 | [node24](https://github.com/actions/checkout/blob/v5/action.yml) |
+| setup-node | v4 → v6 | [node24](https://github.com/actions/setup-node/blob/v6/action.yml) |
+| upload-artifact | v4 → v6 | [v6 正式声明 node24；v5 仍默认 node20](https://github.com/actions/upload-artifact/releases/tag/v6.0.0) |
+| configure-pages | v5 → v6 | [node24](https://github.com/actions/configure-pages/blob/v6/action.yml) |
+| upload-pages-artifact | v3 → v5 | [组合 Action，嵌套 upload-artifact v7.0.0](https://github.com/actions/upload-pages-artifact/blob/v5/action.yml)，已核对该固定 SHA 声明 node24；v4 仍嵌套旧版上传 Action |
+| deploy-pages | v4 → v5 | [node24](https://github.com/actions/deploy-pages/blob/v5/action.yml) |
+
+工作流 YAML 解析及所有直接 / 嵌套 Action 运行时检查通过。此次本地构建、22 / 22 行为测试、19 / 19 模型检查和 13 / 13 发布检查通过；模型、应用构建和发布清单未改变。修改后的远程 Actions / Pages 尚未运行，真机状态沿用既有待验项。
+
+### 最终浏览器复验
+
+`CI=true npm run test:browser -- --config /tmp/home402-hd-ci/full.config.mjs`：**8 / 8 通过，241.8 秒，无跳过、自动重试或 flaky**。环境为 macOS arm64、Node.js 24.15.0、Playwright 1.63.0 和 **Chromium 153.0.8010.12**；本会话未提供 Browser 插件，采用项目 Playwright。覆盖 1280 × 900 桌面、820 × 1180 平板、390 × 844 手机、触摸模拟及 2× 像素比的剖切流程。
+
+临时配置沿用仓库预算与单 worker，将输出放到仓库外，并指定相同版本的浏览器二进制。原 4174 端口由另一个项目占用，保留该服务；剖切开发服务及其测试副本仅改用 4274。主浏览器测试副本与仓库源文件逐字节一致，剖切测试副本仅此端口差异；预览仍为 `http://127.0.0.1:4173/homehome402/`。这属于本机验证，不代表 GitHub 托管 Linux runner 已通过。
+
+| 检查 | 本次结果 |
+| --- | --- |
+| 页面与响应式 | 三个视口的首页内容、延迟加载、实际画布与无横向溢出检查通过；已查看手机首页截图 |
+| 控制台与异常 | 正常页面流程无应用控制台错误；配置 / 模型 503、取消、重试与单画布检查通过 |
+| 高清切换 | 含 25 秒注入延迟的完整用例 82.1 秒通过；高清加载阶段 41.5 秒，模式及相机位置保留，截图非空 |
+| 渲染与剖切 | 标准 / 高清、三个缩放倍率、Z / X / Y 剖切和旧 AO 正对照通过；已查看高清主卫的纹理、木作、镜面及平整墙体截面 |
+| 证据 | 本次导出 33 张截图、完整报告及源码 / 构建 / 发布清单 SHA-256，保存在本次 Codex 本地证据目录；保留原入库视觉证据 |
+
+本次只修改 `.github/workflows/pages.yml`、`tests/browser.spec.mjs` 与当前实施 / QA 记录。以上为提交前检查结果；用户随后调用 `dev-deliver` 授权提交推送。远程 Actions 与 Pages 状态以本次交付提交对应的运行记录为准。
