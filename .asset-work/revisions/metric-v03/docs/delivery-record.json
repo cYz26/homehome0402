@@ -1,0 +1,242 @@
+{
+  "version": "metric-v03",
+  "user_approved_reference": "references/generated/house-cutaway-v05.png",
+  "current_revision_feedback": "references/revisions/metric-v03/",
+  "user_approved_metric_model": false,
+  "prior_record": ".asset-work/revisions/metric-v02/docs/delivery-record.json",
+  "changes": [
+    "Common vanity mixer on wall side",
+    "Hall cabinet rebuilt from photo with asymmetric lit shelves",
+    "North sliding leaves parallel east-west in parked position",
+    "U-shaped kitchen with west refrigerator, north recessed sink, east three-burner hob, oven and inclined hood",
+    "Living floor glazing, lower bedroom sills and all window guards removed",
+    "Grey marble, taupe veneer, ivory cabinets, warmer interior illumination and four detail viewpoints"
+  ],
+  "model_checks": "15/15",
+  "roundtrip": {
+    "source_sha256": "c1d50b07d74a36e95654e1e23e038cd962acc3daa89adca50ab80ffe047f1160",
+    "glb_sha256": "a1055e9cbc90a3d90ba922287ba03a3287a3de31a52182465b9f8cdd8867d78f",
+    "source_objects": 612,
+    "reimport_objects": 612,
+    "max_bound_error_m": 9.5367431640625e-07,
+    "source_triangles": 37304,
+    "reimport_triangles": 37304,
+    "source_degenerate_triangles": 0,
+    "reimport_degenerate_triangles": 0,
+    "roundtrip_errors": [],
+    "roundtrip_pass": true,
+    "acceptance": "Technical roundtrip only; original drawing dimensions partly estimated, user visual review pending."
+  },
+  "prior_residential_wall_reference_lines_and_opening_plan_positions": "verified unchanged",
+  "prior_blend_and_glb_digests": "verified unchanged",
+  "browser": "Codex IAB through CUA",
+  "viewports": [
+    [
+      1670,
+      905
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "production_url": "http://127.0.0.1:4173/",
+  "observed_console_errors": 0,
+  "observed_console_warnings": 0,
+  "reference_photos_loaded": 4,
+  "browser_evidence": [
+    {
+      "path": "/tmp/homehome-metric-v03-XRXgNL/hall-cabinet.png",
+      "sha256": "ef928fb3c5bd582addd241dcad43016e01c6b9234698f1589216223ed41c57f7",
+      "bytes": 123056
+    },
+    {
+      "path": "/tmp/homehome-metric-v03-XRXgNL/kitchen-fridge-sink.png",
+      "sha256": "fc16a746bfe6237d1dcc7c29a61cebf1cc84bb82958cd446b192d27a09da9252",
+      "bytes": 92531
+    },
+    {
+      "path": "/tmp/homehome-metric-v03-XRXgNL/kitchen-hob.png",
+      "sha256": "c49b9508dd3007bb4d40a7233c09c670e631c36263cd94e4be1f4c30ace7df82",
+      "bytes": 102500
+    },
+    {
+      "path": "/tmp/homehome-metric-v03-XRXgNL/living-window.png",
+      "sha256": "07b52bd96cf6d396318f71c7f486b2eebfb340a473301baf33fd70c46d57c98f",
+      "bytes": 90243
+    },
+    {
+      "path": "/tmp/homehome-metric-v03-XRXgNL/mobile-kitchen.png",
+      "sha256": "b28b5a7552dcac15e238d9fe8ac341eba20519684519d939b451940adb53a5eb",
+      "bytes": 38517
+    },
+    {
+      "path": "/tmp/homehome-metric-v03-XRXgNL/north-sliding-doors.png",
+      "sha256": "dfa3e0897db0199d308808a8f22b127fb9fc67dd4246d6b9739ed3c58b64d4b8",
+      "bytes": 118096
+    },
+    {
+      "path": "/tmp/homehome-metric-v03-XRXgNL/whole-house.png",
+      "sha256": "8d06e0b6df72e6a9306e941f8421995ba4e5b9ce2b1167ddb308c7ddbfaee34d",
+      "bytes": 86566
+    }
+  ],
+  "files": [
+    {
+      "path": "art_src/apartment-v03.blend",
+      "sha256": "c1d50b07d74a36e95654e1e23e038cd962acc3daa89adca50ab80ffe047f1160",
+      "bytes": 12392953
+    },
+    {
+      "path": "public/models/apartment-v03.glb",
+      "sha256": "a1055e9cbc90a3d90ba922287ba03a3287a3de31a52182465b9f8cdd8867d78f",
+      "bytes": 14252156
+    },
+    {
+      "path": "art_src/apartment-v03-cutaway.png",
+      "sha256": "feb8b57b17d69953e902b540366ed495475d57be7383ac93bbaa2ab655d398dd",
+      "bytes": 2407189
+    },
+    {
+      "path": "model/apartment.json",
+      "sha256": "d158055249296ad90dd5dce776f2369fd38c2b384f2838eac41ee6b269660cb7",
+      "bytes": 6442
+    },
+    {
+      "path": "scripts/build-apartment.py",
+      "sha256": "8e194328b7e3b9ebe705301573595f64173e82b78ca75b3c0bdf789ab8691fc5",
+      "bytes": 34946
+    },
+    {
+      "path": "scripts/validate-apartment.py",
+      "sha256": "e8f608d19a953054a7aa028214c9cbe36a46c224a197a49c9ac74bb2341c1345",
+      "bytes": 2951
+    },
+    {
+      "path": "scripts/check-model.mjs",
+      "sha256": "4884d143cf128530b4fa11dd6605243b00127221b9fe347d61c854feefaef2bf",
+      "bytes": 5794
+    },
+    {
+      "path": "src/viewer.js",
+      "sha256": "4fdb04475b94358533aaacf50cc609833f26e095c47cf117b067426b7aa3d41d",
+      "bytes": 13638
+    },
+    {
+      "path": "src/main.js",
+      "sha256": "df45028d25fc9674e652b4e69778058110e8afa3d4347bc6cd6aaf900f09638c",
+      "bytes": 6445
+    },
+    {
+      "path": "src/style.css",
+      "sha256": "5d1afa306f0a2eefc61fec460e25bf2d51bbc2f9338c4b4deb8303a9b4b3091d",
+      "bytes": 8517
+    },
+    {
+      "path": "index.html",
+      "sha256": "a494e9105d409bba0c321ccb8e341d43a194dc7b91d3aeb6a738ce630087b423",
+      "bytes": 4716
+    },
+    {
+      "path": "model/checks.json",
+      "sha256": "731cf6f4112df38ef77c6e1eb718776ae04e44de7837f3004ded7f982b931a35",
+      "bytes": 1698
+    },
+    {
+      "path": "model/validation.json",
+      "sha256": "6ed33fb91fddb8833ae25a444f1317d8fb94a91256b15bf00af50bfe27576446",
+      "bytes": 223282
+    },
+    {
+      "path": "model/measurements.json",
+      "sha256": "8c97ded388294c09dc0ad5bb71746c923600a5488c06352a8bf81125507d6dc8",
+      "bytes": 10908
+    },
+    {
+      "path": "README.md",
+      "sha256": "b3e78ca0834a4e8b71ed92a172921bd6124c8b7a941ef86e91b58ea9d0c17735",
+      "bytes": 3810
+    },
+    {
+      "path": "PLAN.md",
+      "sha256": "39ebc28fc8062c22b41be522cac4d77ffecaadb2057e70a1689e68bf54d4089c",
+      "bytes": 13115
+    },
+    {
+      "path": "docs/QA.md",
+      "sha256": "f7d1b3dbfb5773a181937e1957acb5e15776e3d4bd38b5f3736819c0e2b8c109",
+      "bytes": 4263
+    },
+    {
+      "path": "docs/dimension-status.md",
+      "sha256": "6ee70f1c1939f2e4f154199126da9b4a63718a3fdf2c56af13aeb74b8a5eb35f",
+      "bytes": 4332
+    },
+    {
+      "path": "references/generated/materials-v03-provenance.json",
+      "sha256": "ce983cbfa2a9e004fe03d16c43dd7a226cfc9aaaab3535deecdb9bf5f481d0fe",
+      "bytes": 3823
+    },
+    {
+      "path": "references/revisions/metric-v03/markup.png",
+      "sha256": "94a29c98edb8d428b079345665805774b48aec54e928d742fa9a558d144e20e5",
+      "bytes": 4162548
+    },
+    {
+      "path": "references/revisions/metric-v03/kitchen-hob.jpg",
+      "sha256": "1446945ccec2cbf6adee07787436f46cc3a2ea4c171109e5c1d5e994f6246537",
+      "bytes": 88960
+    },
+    {
+      "path": "references/revisions/metric-v03/sliding-doors.png",
+      "sha256": "ff55faa222bcd207d55745e79d49802ffc33a777b2bd603063967d98ff1796a0",
+      "bytes": 3866486
+    },
+    {
+      "path": "references/revisions/metric-v03/hall-cabinet.png",
+      "sha256": "677cb77d45944a52c657a1eccc4d29e743e1bc40b05ce3cc5071d48b5ae638e8",
+      "bytes": 4348876
+    },
+    {
+      "path": "references/revisions/metric-v03/kitchen-fridge.jpg",
+      "sha256": "c8f6c09ebea62b24ee6767ea5bc6e967a45683bd56ebc211cacaeb7ad339417b",
+      "bytes": 102796
+    },
+    {
+      "path": "references/generated/material-veneer-v03.png",
+      "sha256": "3c68af28a6cef9e7a8e0c3a5b1daecd915258df4ee899610296c05d3c896a24e",
+      "bytes": 1951797
+    },
+    {
+      "path": "references/generated/material-counter-v03.png",
+      "sha256": "d3a404accfe06a4c5e488f78186181476d346b772e68b9990bcf618e91db50e5",
+      "bytes": 1867589
+    },
+    {
+      "path": "references/generated/material-stone-v03-prompt.txt",
+      "sha256": "d80b5e523ecd7cd84b7eb101a923a9f5919be9ec5919ac2a7d4475ec4d8212ef",
+      "bytes": 962
+    },
+    {
+      "path": "references/generated/material-veneer-v03-prompt.txt",
+      "sha256": "92cabe798e06b21a813f4245a2fb6e6560aa9fd88a02b09e717e669a5390f6df",
+      "bytes": 657
+    },
+    {
+      "path": "references/generated/material-stone-v03.png",
+      "sha256": "66f081d91ee79f46a7437f3ab90452be44fdf18d8cfa4e2298ef59593266a24e",
+      "bytes": 3037025
+    },
+    {
+      "path": "references/generated/material-counter-v03-prompt.txt",
+      "sha256": "00e8839b4a29453e20747e648fe51808c343488ea968e30b2473f102c9392e51",
+      "bytes": 718
+    }
+  ],
+  "limitations": [
+    "Window heights and fitout dimensions remain photo estimates",
+    "User visual review pending",
+    "Parked sliding doors are static; interior camera turns in place",
+    "Responsive viewport checked; physical device performance not tested"
+  ]
+}

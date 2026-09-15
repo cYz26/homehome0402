@@ -1,0 +1,76 @@
+[
+  {
+    "path": "model/apartment.json",
+    "sha256": "3057fdcc150be8d9ff370f86479aa3f379ebb6d5282745b9586df5849ec832fe"
+  },
+  {
+    "path": "model/measurements.json",
+    "sha256": "6cb7e70056c01aaef1671c58e749893d5a9996206a8255a5259ec2ada9123fa2"
+  },
+  {
+    "path": "model/validation.json",
+    "sha256": "dd56934f998ef85acc187197d3c1af37c452ed3b99fcd4d2fa59b84b3cad5b21"
+  },
+  {
+    "path": "model/checks.json",
+    "sha256": "e3d4f5c20652f0e117a570c7c1848a1b331168f61dbd9f59482d6047d22814a2"
+  },
+  {
+    "path": "scripts/build-apartment.py",
+    "sha256": "182613ab3a26338c75f6ea75c42a6165df1f394add5345054b96e1a6f49f1ca2"
+  },
+  {
+    "path": "scripts/validate-apartment.py",
+    "sha256": "126a78726f31616199daef5fc862d6ec1de7f6b8d53fc70b2d1a84cec9976385"
+  },
+  {
+    "path": "scripts/check-model.mjs",
+    "sha256": "230f933696c9c9983304a48724a9fca5370b43ceedabd1bd4f801d7b743b3b36"
+  },
+  {
+    "path": "src/viewer.js",
+    "sha256": "c6d8e70501b7b6d679ea937bd1550500aab329ad20fa63d12bd2facbf5420b3e"
+  },
+  {
+    "path": "src/main.js",
+    "sha256": "506a04cc199b16ca5204d01531774c9c6167f52e6f9761dda7245752a1815307"
+  },
+  {
+    "path": "src/style.css",
+    "sha256": "5d1afa306f0a2eefc61fec460e25bf2d51bbc2f9338c4b4deb8303a9b4b3091d"
+  },
+  {
+    "path": "index.html",
+    "sha256": "d10c8eb282797e6371cdc708227c7daebf8559ddb16a1054ffbaaf4884ba5767"
+  },
+  {
+    "path": "README.md",
+    "sha256": "6a1f7a758312c16fc0885545bc4b8c825a9f5712fdd97248148669c73662a084"
+  },
+  {
+    "path": "PLAN.md",
+    "sha256": "b33229a824868500edd1da2ea1cd2e1f96f9877486585c51f4ef0b20367093ab"
+  },
+  {
+    "path": "docs/QA.md",
+    "sha256": "7f03e5f6ba9eed096e56f0f7c7f94dd4500cd5f72739b27430cb5f8aeaac30d1"
+  },
+  {
+    "path": "docs/dimension-status.md",
+    "sha256": "a99d7b1d095427ec159158e8930570c8f171d5192b0fefa453e55881cc902780"
+  },
+  {
+    "path": "docs/delivery-record.json",
+    "sha256": "bf93e9a58ea66d5d54b56d91c27b274e859aeaa2b163e09ea343cd176da216ad"
+  },
+  {
+    "path": "art_src/apartment-v04.blend",
+    "sha256": "34f34173b43f04501cfded373db8c894ab2026286769aa6515c88f568121b398",
+    "retained_in_place": true
+  },
+  {
+    "path": "public/models/apartment-v04.glb",
+    "sha256": "0b9bdc3928ecd9fea0975981c786bbc57d6215c0f729b9cc5e4a057a3663394c",
+    "retained_in_place": true
+  }
+]

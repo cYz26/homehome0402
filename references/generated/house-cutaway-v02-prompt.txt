@@ -1,0 +1,14 @@
+Use case: precise-object-edit / architectural geometry correction.
+Input image 1 is the generated empty apartment cutaway to EDIT.
+Input image 2 is the original floor plan and dimension authority.
+Input image 3 is the real living-room finish and broad south window reference.
+
+Make ONE targeted revision to image 1: correct the relative widths of the THREE SOUTHERN rooms to match the bottom dimension chain in image 2. At the FRONT / BOTTOM facade, from west (left) to east (right), the total width divides into:
+- master bedroom: 3.5 meters, exactly one third of the 10.5m total;
+- living room: 4.0 meters, 38.1 percent of total, the WIDEST southern room;
+- southeast bedroom: 3.0 meters, 28.6 percent, the narrowest.
+In the current image the living room has become a narrow hallway and the master bedroom is too wide. Move the master/living partition LEFT and the living/southeast partition slightly RIGHT, continuing these dividers naturally back into the existing adjoining plan. Keep the southwest master and southeast bedroom empty and distinct. Give the living room a noticeably broad square-ish south end, wider than either bedroom, continuous with the open central dining area. Preserve the two west-middle bathrooms and their doors, three north rooms, kitchen, entrance and external east elevator shaft.
+Correct the LIVING ROOM SOUTH GLAZING with this width change: nearly full-width black-framed tall glazing as shown in photo 3, no raised bedroom-style window bench spanning the living room. A visualization cutaway may remove foreground wall/glass above the cut but leave the correct broad footprint and frame cues. Keep the low stone platforms in the two bedrooms.
+
+Preserve everything else that already works in image 1: north-up orientation, full-home bird's-eye camera, empty-room status, realistic warm ivory/taupe finishes, fine black wall-panel lines, southwest HERRINGBONE oak floor, southeast straight oak planks, living greige stone floor, kitchen fixed cabinets, north-center dark sliding panel, calm soft daylight, plain off-white background and clean plinth. No furniture, no plants, no people, no text, no measurements printed on the image. Preserve the overall 10.5m x12.9m dimension framework and irregular building footprint with the northeast and northwest setbacks.
+This is a careful architectural proportion repair, not a style redesign. Generate one polished complete portrait image.

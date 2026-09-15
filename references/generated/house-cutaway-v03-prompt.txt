@@ -1,0 +1,22 @@
+Use case: precise-object-edit.
+Edit the clean apartment cutaway in input image 1 according to the user's red markup in input image 2. Image 2 is ONLY a location/instruction guide; do not include its red rectangles, red Chinese writing, arrow, screenshot border, or UI in the output. Produce one clean full-resolution portrait architectural render matching image 1's camera, scale, composition, overall room footprint, lighting and neutral palette.
+
+Make exactly these FOUR localized corrections. The original structural walls remain.
+
+1. REMOVE THREE SUPERFLUOUS WALL-ATTACHED BOARDS IN THE NORTH ROW.
+The three narrow vertical red rectangles across the top of image 2 identify extra long raised boards/fins applied beside existing walls. They run north-south:
+(a) along the inside WEST wall of the top-left bedroom;
+(b) along the shared wall BETWEEN top-left bedroom and top-center X room;
+(c) along the shared wall BETWEEN top-center X room and top-right kitchen.
+Delete the extra parallel thin board/panel layer and its protruding ridges at each of these THREE marked locations. Each location must finish as a SINGLE normal structural wall with a smooth flat warm-ivory face, not a double wall, not a freestanding second panel. Keep the dark structural wall cut-top and keep the rooms separated. Do not remove the actual walls, windows, or the legitimate tall kitchen cabinetry on the kitchen side of the third wall. The dark sliding doors across the south/front of the X room remain.
+
+2. REMOVE ALL THE MARKED MASTER-BEDROOM CABINETRY.
+The large bottom-left red rectangle in image 2 covers built-in cupboards in the southwest/master bedroom. Completely remove ALL cabinetry inside that rectangle: the tall long cupboard/paneled storage run along the west wall, the L-shaped projecting/slatted-top wardrobe peninsula near the bedroom's northwest corner, and the small cupboard portions directly south of the master bathroom inside the bedroom. Leave the MASTER BEDROOM OPEN AND EMPTY, with no cabinet carcasses, false dividers, leftover plinths or shelves in those former locations. Restore continuous herringbone oak floor under their footprints and a normal flat pale wall along the original west structural boundary. Keep the genuine surrounding walls, the doorway to the bathroom, the entry door from the central hall, and the low stone platform under the master bedroom's south window. Do not remove the separate master bathroom's vanity or the public-area cabinet on the other side of the bedroom wall.
+
+3. THE ARROW-INDICATED SMALL COMMON-BATHROOM COMPARTMENT IS A SHOWER.
+Locate the small rectangular compartment on the west middle side, directly BELOW the upper toilet area, directly LEFT of the external washbasin, and immediately ABOVE the larger master bathroom. It is the red arrow tip in image 2. Make THIS compartment visibly a walk-in shower: add a recognizable chrome shower riser with overhead shower head and mixer on its west wall, a subtle floor drain on its stone-tiled floor, and a simple clear glass shower screen/door within the existing footprint. Keep the toilet immediately north and the washbasin immediately east unchanged. This is the upper/common shower, not the separate lower/master shower which already exists. No bathtub, no added toilet, no new wall footprint.
+
+4. REMOVE THE APPLIED WALL CLADDING IN THE SOUTHEAST BEDROOM.
+The red text in the bottom-right bedroom says to remove the wall wrapping/cladding. At its long RIGHT/EAST interior wall, remove the wood/beige applied decorative panel packaging, black decorative panel seams/bands, and the vertical glowing LED trim attached to that same cladding. Finish that wall as a PLAIN SMOOTH WARM-WHITE PAINTED WALL with subtle normal baseboard only. Preserve the actual structural wall. Keep the room's straight oak plank floor, doorway, south window and low stone sill/platform. Keep the unmarked wardrobe at the room's NORTH end beneath the elevator recess. Do not change unrelated finishes elsewhere.
+
+Invariants: preserve all other geometry and objects, the roof-removed high bird's-eye framing, north at top, realistic subtle shadows, greige public-area stone flooring, master herringbone floor, southeast straight-plank floor, kitchen, both bathrooms, entrance, external elevator box, existing windows, no movable furniture, no plants, no people, no text, no arrows, no red markings. The requested object removals must be visually unmistakable, and surrounding surfaces reconstructed cleanly.

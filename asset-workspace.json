@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "workspace_id": "homehome-apartment",
+  "read_roots": [
+    "/Users/cy/Dev/homehome"
+  ],
+  "forbidden_roots": [
+    "/Users/cy/Dev/games"
+  ],
+  "blender_binary": "/Applications/Blender.app/Contents/MacOS/Blender"
+}

@@ -1,0 +1,72 @@
+{
+  "version": "metric-v01",
+  "user_approved_reference": "references/generated/house-cutaway-v05.png",
+  "user_approved_metric_model": false,
+  "model_checks": "10/10",
+  "browser": "Codex IAB through CUA",
+  "viewports": [
+    [
+      1505,
+      1045
+    ],
+    [
+      1280,
+      720
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "production_url": "http://127.0.0.1:4173/",
+  "observed_console_errors": 0,
+  "room_viewpoints_checked": 9,
+  "max_export_bound_error_m": 9.5367431640625e-07,
+  "files": [
+    {
+      "path": "art_src/apartment-v01.blend",
+      "sha256": "7ef186d8a6a0635d8490270ddc4546d01081a73ce9d18500f7776543b7447142",
+      "bytes": 5503655
+    },
+    {
+      "path": "public/models/apartment-v01.glb",
+      "sha256": "9f11f142890615655148a4577f7197ccf1803705481a32b405d5d17cb728129e",
+      "bytes": 6914840
+    },
+    {
+      "path": "model/apartment.json",
+      "sha256": "74fe6d80b1921ff209ce4c313adfb30b6a1ff8b5720a0f59ecc8732e3359f0c6",
+      "bytes": 2971
+    },
+    {
+      "path": "scripts/build-apartment.py",
+      "sha256": "abc9c1df27668a226536afacd7e68314aacfc4a1daca403088dab9c1d1555924",
+      "bytes": 25695
+    },
+    {
+      "path": "scripts/validate-apartment.py",
+      "sha256": "b5758c792056b51183ef18abb924844e8c98577e6360d62b8dd0ea8535fd3cc5",
+      "bytes": 2902
+    },
+    {
+      "path": "model/checks.json",
+      "sha256": "467c7df8de513b583cc198430ef5f591ca3e06f49dbb734b6af1637dc2f9effb",
+      "bytes": 1078
+    },
+    {
+      "path": "docs/evidence/browser-desktop.png",
+      "sha256": "c735972719a545ba5ae6fac0d8fda619f137bdcf62817e07a69e11564241e071",
+      "bytes": 96591
+    },
+    {
+      "path": "docs/evidence/browser-top.png",
+      "sha256": "01bd717f8c0d1f47858a246d2d688de37c1db85767b0d6c5b1ebeac7335af582",
+      "bytes": 90023
+    },
+    {
+      "path": "docs/evidence/browser-mobile.png",
+      "sha256": "1c8056cb6309d9deffd2ab5aabde7318564eb661c7b66d1fb477d5a88beb081d",
+      "bytes": 25727
+    }
+  ]
+}

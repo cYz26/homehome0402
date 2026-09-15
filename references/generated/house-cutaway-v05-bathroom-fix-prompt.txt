@@ -1,0 +1,13 @@
+Edit this image with ONE very specific architectural correction only. Everything else must remain visually unchanged.
+
+ADD THE MISSING SLIDING PRIVACY DOOR AT THE EAST / RIGHT SIDE OF THE UPPER TOILET AREA.
+
+Identify the UPPER of the two toilets, located just beneath the TOP-LEFT BEDROOM. The toilet sits to the left of the public hall. A shower compartment is directly SOUTH / BELOW this toilet, and the external washbasin is southeast of it. Currently the TOILET AREA is entirely open on its RIGHT side to the public hall. This open side is where the new BATHROOM ENTRANCE door belongs.
+
+The sliding door must run NORTH–SOUTH on the RIGHT/EAST EDGE OF THE TOILET COMPARTMENT, parallel to the long side walls of the apartment. Its NORTH jamb meets the underside of the top-left bedroom's SOUTH wall, just WEST/LEFT of that bedroom's hinged-door opening. Its SOUTH jamb meets the existing short wall at the NORTHEAST corner of the common shower. Thus the door encloses the upper toilet privacy zone from the public hall, while the external washbasin stays outside. Do NOT put this new panel across the front or inside of the shower, do NOT put it on the toilet's west wall, and do NOT alter the bedroom door.
+
+Make the missing door visually unambiguous: a full-height single opaque pale-taupe sliding door panel with a restrained slim dark metal frame, vertical recessed handle, and a simple sliding track at the head, shown mostly closed across that east entry. It must be visibly a door mounted to the bathroom's real jambs. This is an approximately 0.8–0.9m entrance, not a giant room partition. The top/roof removal may reveal the track and jamb cap, but the leaf remains a real tall privacy door at the bathroom entry. Keep the upper toilet visible from the high overhead angle on the inside/left of this panel.
+
+Remove only any erroneously added second/sliding glass layer at the north/front face of the shower from the previous draft, preserving the simple original shower glass enclosure, showerhead and shower footprint. The new opaque privacy door belongs BESIDE the toilet, not beside the showerhead.
+
+Keep ALL of the following unchanged: exact full-image bird's-eye view and crop; northwest bedroom's correctly attached inward-opening wooden door; north-center X-room opening with its sliding leaves parked at the right; empty east utility recess; empty entry-storage room beside the elevator; plain white wall faces on BOTH sides of the central living room, with no LED strips or cladding; empty master bedroom; two bathrooms and external basin; all floor materials; thin wall caps; exterior windows; kitchen; background. No labels, annotations, red marks, furniture or new cabinets.

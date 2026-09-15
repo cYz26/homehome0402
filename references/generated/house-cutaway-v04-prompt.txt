@@ -1,0 +1,23 @@
+Use case: precise-object-edit.
+Input 1 is the clean current v03 bird's-eye apartment render to EDIT. Input 2 is the user's annotated screenshot of the same scene and is ONLY an edit-location guide. Return ONE clean architectural cutaway render without any red writing, arrows, screenshot borders, text or labels.
+
+Apply these FOUR local fixes PLUS a globally more slender wall-edge treatment. Keep the same north-up high camera, footprint, room adjacency, flooring, fitted kitchen and bathroom fixtures, windows, pale neutral palette, and clean off-white background. The south-west master bedroom must remain completely free of cabinets; the southeast bedroom east wall must remain plain painted warm white.
+
+A. FULLY RETRACT THE NORTH-CENTER SLIDING DOORS.
+At the broad entrance of the top-middle X room, where the red text says 推拉门收起来, slide all dark glazed door leaves completely open and park them as a compact stack at the RIGHT jamb beside the kitchen return. Leave the overwhelming majority of the entrance width unobstructed so the wood floor in the X room visibly joins the stone-floored public area at a clear threshold. There must be no large dark panel spanning the opening. Keep only a narrow parked stack and a slender track. Do not create a new wall or cabinet to hide them.
+
+B. RECONNECT THE NORTHWEST BEDROOM'S HINGED DOOR TO ITS WALL.
+The upper red arrow indicates the small hinged wooden door between the top-left bedroom and central circulation, immediately left of the X-room entrance. It currently looks detached from a wall. Rebuild a short solid wall return/jamb that meets the existing north-south structural wall, and mount the door hinges cleanly on that jamb. Keep the door open into its existing swing. Its hinge edge must be visibly attached, without a free-floating upright, gap or disconnected piece. Keep a clear door opening, do not block passage or remove the actual door.
+
+C. THE ENTRY STORAGE COMPARTMENT IS EMPTY.
+The middle-right arrow says 这里面是空 and points INSIDE the little separate storage compartment immediately LEFT/WEST of the external elevator shaft and immediately NORTH of the southeast bedroom entry.
+Remove all cabinetry, paneled boxes, diagonal cross-marked cabinet surfaces and shelf-like blocks INSIDE this compartment. Show an unmistakable EMPTY small room/recess with its floor visibly below the surrounding walls, plain finished interior walls and the same stone floor as the entrance/public circulation. Its access from the entrance at its north side remains open. Preserve the external elevator box and its top, the structural outline of this storage compartment, and the unmarked wardrobe on the southeast BEDROOM side SOUTH of the elevator. Do not fill this little storage room with a flat top or cabinet fronts.
+
+D. REMOVE THE STRAY PIECE AT THE MASTER BEDROOM ENTRANCE.
+The lower-left arrow points to a small protruding horizontal rail/shelf/box-like trim immediately ABOVE AND BEHIND the open master-bedroom entry door, at the southeast corner of the larger west-side bathroom.
+Remove that redundant object completely, including its projecting shelf-like lip and stacked strips. Restore a clean simple flush wall/jamb transition. Keep the real open bedroom door, its hinge attachment, the actual bathroom boundary, and the walking opening. Do not mistake the real door leaf or the whole structural wall for the small pointed-at piece.
+
+E. ALL APPLIED WALL EDGES SHOULD BE THINNER.
+Across the whole apartment, reduce the visible width/thickness of the bulky dark charcoal decorative wall-top cappings, wall-face wrapping borders and door-surround trim to about HALF their current visual width. Make them restrained slender crisp edging, with plain warm-ivory wall plaster visible where a wide decorative cap was removed. All corners must meet neatly. This is an applied trim/capping refinement, not demolition: preserve actual wall centerlines, the structural wall thickness and all room boundaries. No oversized charcoal bands, thick boxed wraps, double-wall fins or giant door-frame borders. Keep existing black window frame proportions.
+
+The local fixes must be easily readable from this same view: wide OPEN X-room portal, attached northwest bedroom door, EMPTY entry storage compartment, clean master doorway without the extra projecting piece, and slimmer decorative edges throughout. Preserve the two separate west-side showers and toilets, master herringbone floor, southeast straight-plank floor, and everything already accepted. Do not add loose furniture, plants, lights, labels or new room divisions. Do not present this picture as a measured CAD plan.

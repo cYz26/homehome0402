@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "name": "North and south dimension chains close at 10.50 m",
+      "pass": true
+    },
+    {
+      "name": "West dimension chain closes at 12.90 m",
+      "pass": true
+    },
+    {
+      "name": "Specified main ceiling height is 2.80 m",
+      "pass": true
+    },
+    {
+      "name": "Actual GLB southern wall references match 3.50 / 4.00 / 3.00",
+      "pass": true
+    },
+    {
+      "name": "Actual GLB north partitions match 2.80 / 2.80 / 2.60",
+      "pass": true
+    },
+    {
+      "name": "NW door hinge and real opening endpoint coincide",
+      "pass": true
+    },
+    {
+      "name": "Both storage niches and master contain no generated cabinet assets",
+      "pass": true
+    },
+    {
+      "name": "Common bathroom privacy door is independent of shower glass",
+      "pass": true
+    },
+    {
+      "name": "Actual Blender source and independently reimported GLB match",
+      "pass": true
+    },
+    {
+      "name": "Current export and spec match measured artifact digests",
+      "pass": true
+    }
+  ],
+  "passed": 10,
+  "total": 10
+}

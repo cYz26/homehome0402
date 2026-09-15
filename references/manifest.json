@@ -1,0 +1,36 @@
+{
+  "source": "User supplied five images",
+  "copied_without_modification": true,
+  "files": [
+    {
+      "role": "plan",
+      "file": "references/01-floor-plan.png",
+      "source_file": "/var/folders/r7/rbqfphgx07vb5pmfrsv8mf680000gn/T/codex-clipboard-678e432a-16e9-4bcd-b5fa-186812105628.png",
+      "sha256": "d34c2a2641938c7541570063eac16a3d481f84bae4cd4826b2124fadd6186af3"
+    },
+    {
+      "role": "entry_living",
+      "file": "references/02-entry-living.jpg",
+      "source_file": "/var/folders/r7/rbqfphgx07vb5pmfrsv8mf680000gn/T/codex-clipboard-7c46369a-fa15-4c8f-956c-bdbb5bcde2e6.jpg",
+      "sha256": "89c3f5c732ba5272178265c2a458f1aa15db020b14e947062a4c4dd5b3313afc"
+    },
+    {
+      "role": "north_room_kitchen",
+      "file": "references/03-north-room-kitchen.jpg",
+      "source_file": "/var/folders/r7/rbqfphgx07vb5pmfrsv8mf680000gn/T/codex-clipboard-c71e4932-fc23-4ac7-a543-c011a7be47b2.jpg",
+      "sha256": "b88a3b23df30e6272619efd8f4871ecadac030007cdf4269476f2d1d2167a752"
+    },
+    {
+      "role": "southeast_bedroom",
+      "file": "references/04-southeast-bedroom.jpg",
+      "source_file": "/var/folders/r7/rbqfphgx07vb5pmfrsv8mf680000gn/T/codex-clipboard-234926c9-a5ad-4bea-9841-b3e599e94243.jpg",
+      "sha256": "961bdf6cae2e9e2280ede70ce680c7425333ef0278b7996321aec62c9925039e"
+    },
+    {
+      "role": "southwest_master",
+      "file": "references/05-southwest-master.jpg",
+      "source_file": "/var/folders/r7/rbqfphgx07vb5pmfrsv8mf680000gn/T/codex-clipboard-4e5f63ab-1daf-4fac-b5a8-38c80708529c.jpg",
+      "sha256": "96a8f22be7fd9913a5c3dad53f74c95eae4590eefc0c363f47185bc4d39fdac5"
+    }
+  ]
+}

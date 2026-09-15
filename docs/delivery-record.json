@@ -1,0 +1,270 @@
+{
+  "version": "metric-v04",
+  "user_approved_reference": "references/generated/house-cutaway-v05.png",
+  "current_revision_feedback": "references/revisions/metric-v04/",
+  "user_approved_metric_model": false,
+  "prior_record": ".asset-work/revisions/metric-v03/docs/delivery-record.json",
+  "changes": [
+    "Dark thin common bathroom door",
+    "North leaf frames about 22 mm and parked stack about 96 mm",
+    "Dark continuous north opening header, side surrounds and thin thresholds",
+    "Master continuous 1.80 m trough with two wall-mounted mixer sets and floating vanity",
+    "Thin master bathroom sliding door parked to right of original opening",
+    "Taupe hall cabinet and adjacent short wall panels, grey-olive stone and fine crystal accents",
+    "Two master bathroom detail viewpoints and four reference photos"
+  ],
+  "model_checks": "19/19",
+  "roundtrip": {
+    "source_sha256": "34f34173b43f04501cfded373db8c894ab2026286769aa6515c88f568121b398",
+    "glb_sha256": "0b9bdc3928ecd9fea0975981c786bbc57d6215c0f729b9cc5e4a057a3663394c",
+    "source_objects": 689,
+    "reimport_objects": 689,
+    "max_bound_error_m": 9.5367431640625e-07,
+    "source_triangles": 41988,
+    "reimport_triangles": 41988,
+    "source_degenerate_triangles": 0,
+    "reimport_degenerate_triangles": 0,
+    "roundtrip_errors": [],
+    "roundtrip_pass": true,
+    "acceptance": "Technical roundtrip only; original drawing dimensions partly estimated, user visual review pending.",
+    "trough_downward_ray_samples": [
+      {
+        "x": 1.4,
+        "hit": true,
+        "object": "Master_double_stone_trough",
+        "height": 0.7450000047683716
+      },
+      {
+        "x": 1.9,
+        "hit": true,
+        "object": "Master_double_stone_trough",
+        "height": 0.7450000047683716
+      },
+      {
+        "x": 2.4,
+        "hit": true,
+        "object": "Master_double_stone_trough",
+        "height": 0.7450000047683716
+      }
+    ]
+  },
+  "prior_residential_wall_records_including_openings": {
+    "verified_unchanged": true,
+    "count": 25
+  },
+  "prior_archived_and_retained_files": {
+    "verified_unchanged": true,
+    "count": 18
+  },
+  "browser": "Codex IAB through CUA",
+  "viewports": [
+    [
+      1670,
+      905
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "production_url": "http://127.0.0.1:4173/",
+  "observed_console_errors": 0,
+  "observed_console_warnings": 0,
+  "reference_photos_loaded": 4,
+  "browser_only_reflection": {
+    "source_proxy": "Master_double_mirror",
+    "geometry": "one plane derived from GLB mirror world bounds",
+    "target_size": [
+      1024,
+      1024
+    ],
+    "fallback": "Metallic mirror surface retained in source and GLB",
+    "cutaway": "hidden with upper layer"
+  },
+  "browser_evidence": [
+    {
+      "path": "/tmp/homehome-metric-v04-MUUneL/common-bath-door.png",
+      "sha256": "aacade8f7bd35a7ec0c69323ab77de5d65e1f595f590f40c23a47ded7131f5b2",
+      "bytes": 116487
+    },
+    {
+      "path": "/tmp/homehome-metric-v04-MUUneL/hall-cabinet.png",
+      "sha256": "63700cdcfe7614204254884cfe24ff88cc29b19432018c5b8da9e5e23f7f91a3",
+      "bytes": 128207
+    },
+    {
+      "path": "/tmp/homehome-metric-v04-MUUneL/master-double-basin.png",
+      "sha256": "4c4aad9c4523d125205ee8700c76493b89ad57c59ea6103494db5e99628b9118",
+      "bytes": 104202
+    },
+    {
+      "path": "/tmp/homehome-metric-v04-MUUneL/master-sliding-door.png",
+      "sha256": "53097a827c8c1e291c3c5b183a69a9de2129b913fbfc7e6ae0e47fa329d48d17",
+      "bytes": 111575
+    },
+    {
+      "path": "/tmp/homehome-metric-v04-MUUneL/mobile-master-basin.png",
+      "sha256": "dbda8782745d908b0969247fb85a7815db43d6e1182aa8a5a0d1021da7009016",
+      "bytes": 38782
+    },
+    {
+      "path": "/tmp/homehome-metric-v04-MUUneL/north-sliding-doors.png",
+      "sha256": "3e8b7d5925abee1c5f0824fd37be231ab0803288fb897152f5c7a74148edd016",
+      "bytes": 122551
+    },
+    {
+      "path": "/tmp/homehome-metric-v04-MUUneL/whole-house.png",
+      "sha256": "c56bcac6f56e63b88c241cf31b276fb1c51214ee223b48b063b7a050b6c6d7d1",
+      "bytes": 87454
+    }
+  ],
+  "files": [
+    {
+      "path": "art_src/apartment-v04.blend",
+      "sha256": "34f34173b43f04501cfded373db8c894ab2026286769aa6515c88f568121b398",
+      "bytes": 17586597
+    },
+    {
+      "path": "public/models/apartment-v04.glb",
+      "sha256": "0b9bdc3928ecd9fea0975981c786bbc57d6215c0f729b9cc5e4a057a3663394c",
+      "bytes": 19708464
+    },
+    {
+      "path": "art_src/apartment-v04-cutaway.png",
+      "sha256": "47cdbb3218759d6471be95ede844170eea1470f07a8ae509401c6598cd918974",
+      "bytes": 2416516
+    },
+    {
+      "path": "model/apartment.json",
+      "sha256": "3057fdcc150be8d9ff370f86479aa3f379ebb6d5282745b9586df5849ec832fe",
+      "bytes": 7136
+    },
+    {
+      "path": "scripts/build-apartment.py",
+      "sha256": "182613ab3a26338c75f6ea75c42a6165df1f394add5345054b96e1a6f49f1ca2",
+      "bytes": 41591
+    },
+    {
+      "path": "scripts/validate-apartment.py",
+      "sha256": "126a78726f31616199daef5fc862d6ec1de7f6b8d53fc70b2d1a84cec9976385",
+      "bytes": 3432
+    },
+    {
+      "path": "scripts/check-model.mjs",
+      "sha256": "230f933696c9c9983304a48724a9fca5370b43ceedabd1bd4f801d7b743b3b36",
+      "bytes": 7803
+    },
+    {
+      "path": "src/viewer.js",
+      "sha256": "c6d8e70501b7b6d679ea937bd1550500aab329ad20fa63d12bd2facbf5420b3e",
+      "bytes": 14797
+    },
+    {
+      "path": "src/main.js",
+      "sha256": "506a04cc199b16ca5204d01531774c9c6167f52e6f9761dda7245752a1815307",
+      "bytes": 6804
+    },
+    {
+      "path": "src/style.css",
+      "sha256": "5d1afa306f0a2eefc61fec460e25bf2d51bbc2f9338c4b4deb8303a9b4b3091d",
+      "bytes": 8517
+    },
+    {
+      "path": "index.html",
+      "sha256": "d10c8eb282797e6371cdc708227c7daebf8559ddb16a1054ffbaaf4884ba5767",
+      "bytes": 4820
+    },
+    {
+      "path": "model/checks.json",
+      "sha256": "e3d4f5c20652f0e117a570c7c1848a1b331168f61dbd9f59482d6047d22814a2",
+      "bytes": 2182
+    },
+    {
+      "path": "model/validation.json",
+      "sha256": "dd56934f998ef85acc187197d3c1af37c452ed3b99fcd4d2fa59b84b3cad5b21",
+      "bytes": 294382
+    },
+    {
+      "path": "model/measurements.json",
+      "sha256": "6cb7e70056c01aaef1671c58e749893d5a9996206a8255a5259ec2ada9123fa2",
+      "bytes": 11426
+    },
+    {
+      "path": "README.md",
+      "sha256": "6a1f7a758312c16fc0885545bc4b8c825a9f5712fdd97248148669c73662a084",
+      "bytes": 4240
+    },
+    {
+      "path": "PLAN.md",
+      "sha256": "b33229a824868500edd1da2ea1cd2e1f96f9877486585c51f4ef0b20367093ab",
+      "bytes": 14219
+    },
+    {
+      "path": "docs/QA.md",
+      "sha256": "7f03e5f6ba9eed096e56f0f7c7f94dd4500cd5f72739b27430cb5f8aeaac30d1",
+      "bytes": 4352
+    },
+    {
+      "path": "docs/dimension-status.md",
+      "sha256": "a99d7b1d095427ec159158e8930570c8f171d5192b0fefa453e55881cc902780",
+      "bytes": 5171
+    },
+    {
+      "path": "references/generated/materials-v04-provenance.json",
+      "sha256": "1c268dd5a224d246287113d070dbf5b5b8ab74e6f862efd3bf28c21e3a6b02d6",
+      "bytes": 2507
+    },
+    {
+      "path": "references/revisions/metric-v04/hall-materials.png",
+      "sha256": "181e4de91830dac8d82d73557655b77bcc5f8d8deeb81cbe460a042401261712",
+      "bytes": 1919986
+    },
+    {
+      "path": "references/revisions/metric-v04/markup.png",
+      "sha256": "d58123bc9839637abf7d4273999d86ea5233476ac2e56f24b204818c004d7d27",
+      "bytes": 2244903
+    },
+    {
+      "path": "references/revisions/metric-v04/master-double-basin.png",
+      "sha256": "281b85bba769889747e9c0a3a8a7367dfee4b6a6f5ce641b61841dd41e6dc3e1",
+      "bytes": 1927635
+    },
+    {
+      "path": "references/revisions/metric-v04/master-sliding-door.png",
+      "sha256": "87eb8a050cea43750388b87ca3b6a2d251ddea4897592e7064ded90b1883b7f8",
+      "bytes": 2368281
+    },
+    {
+      "path": "references/revisions/metric-v04/north-frame.png",
+      "sha256": "1ef46849d30ca4651e3b8b314a7bcbc5ec490508e6bbd37bed4224484bbc7b6f",
+      "bytes": 4195413
+    },
+    {
+      "path": "references/generated/material-crystal-v04-prompt.txt",
+      "sha256": "b63312d24d410f4447ccce0eba31432a58ebc0ec73d31ffb71f15f25343402b7",
+      "bytes": 743
+    },
+    {
+      "path": "references/generated/material-crystal-v04.png",
+      "sha256": "52597b1a3fc9edc83ecc0e594ea345c33dc9457d176deb8f628f3ef0c9c033df",
+      "bytes": 3324701
+    },
+    {
+      "path": "references/generated/material-hallwood-v04-prompt.txt",
+      "sha256": "aeed2a088a87f2a4decf3c8257f1a977dfbfce0f919d57bf12004a7a92bdcf06",
+      "bytes": 728
+    },
+    {
+      "path": "references/generated/material-hallwood-v04.png",
+      "sha256": "a591e40c93d459201a7829dda9a73baed14af3dfdd608c4eed25e983e2b9cf15",
+      "bytes": 1852483
+    }
+  ],
+  "limitations": [
+    "Fitout dimensions and material matching are photo estimates",
+    "User visual review pending",
+    "Sliding doors static open; interior viewpoints turn in place",
+    "Desktop responsive viewport checked; physical device performance not tested",
+    "Browser mirror reflection differs from source renderer metallic fallback"
+  ]
+}

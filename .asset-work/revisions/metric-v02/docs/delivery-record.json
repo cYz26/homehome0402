@@ -1,0 +1,116 @@
+{
+  "version": "metric-v02",
+  "user_approved_reference": "references/generated/house-cutaway-v05.png",
+  "current_revision_feedback": "references/revisions/metric-v02-markup.png",
+  "user_approved_metric_model": false,
+  "prior_record": ".asset-work/revisions/metric-v01/docs/delivery-record.json",
+  "changes": [
+    "Remove external elevator shell, slab and cover; retain residential boundary walls",
+    "Remove SE north wardrobe and cabinet reveals; retain existing floor and walls"
+  ],
+  "removed_objects": [
+    "Elevator_core_cover",
+    "Elevator_slab",
+    "SE_north_wardrobe_lower",
+    "SE_north_wardrobe_upper",
+    "SE_wardrobe_reveal_lower",
+    "SE_wardrobe_reveal_lower.001",
+    "SE_wardrobe_reveal_lower.002",
+    "SE_wardrobe_reveal_upper",
+    "SE_wardrobe_reveal_upper.001",
+    "SE_wardrobe_reveal_upper.002",
+    "skirting_elevator_east_0",
+    "skirting_elevator_north_0",
+    "skirting_elevator_south_0",
+    "wall_elevator_east_0_0_lower",
+    "wall_elevator_east_0_0_upper",
+    "wall_elevator_north_0_0_lower",
+    "wall_elevator_north_0_0_upper",
+    "wall_elevator_south_0_0_lower",
+    "wall_elevator_south_0_0_upper"
+  ],
+  "remaining_objects_unchanged": 505,
+  "model_checks": "10/10",
+  "browser": "Codex IAB through CUA",
+  "viewports": [
+    [
+      1670,
+      905
+    ],
+    [
+      878,
+      905
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "production_url": "http://127.0.0.1:4173/",
+  "observed_console_errors": 0,
+  "observed_console_warnings": 0,
+  "interaction_loop": "Whole house -> top view -> southeast bedroom -> interior -> turn toward previous wardrobe -> reset",
+  "browser_evidence": [
+    "/tmp/homehome-metric-v02-wGNDGK/whole-house.png",
+    "/tmp/homehome-metric-v02-wGNDGK/southeast-interior.png",
+    "/tmp/homehome-metric-v02-wGNDGK/mobile.png"
+  ],
+  "max_export_bound_error_m": 9.5367431640625e-07,
+  "files": [
+    {
+      "path": "art_src/apartment-v02.blend",
+      "sha256": "10815f6fec1218d126237dccb4f65492c5d93af0235905925ea96171f112c871",
+      "bytes": 5494947
+    },
+    {
+      "path": "public/models/apartment-v02.glb",
+      "sha256": "6895a0911338c66f96a73e9594dfdced46d320506e135f5fda8f17f7d9818655",
+      "bytes": 6864472
+    },
+    {
+      "path": "art_src/apartment-v02-cutaway.png",
+      "sha256": "098693b55acca7dc1e106388d5f43cb9d121db199a43b8636cbfb6f5e2fa3a92",
+      "bytes": 2344651
+    },
+    {
+      "path": "model/apartment.json",
+      "sha256": "0ce3b4e9760cb0a7c3cd62584eab1dde069d4bafbdd28da8a4af0c207ac351a0",
+      "bytes": 3019
+    },
+    {
+      "path": "scripts/build-apartment.py",
+      "sha256": "08b03f853bc83c3975ee1fbe84848f8a5b2e6db814b0435cf606935a9f349622",
+      "bytes": 25333
+    },
+    {
+      "path": "scripts/validate-apartment.py",
+      "sha256": "e8f608d19a953054a7aa028214c9cbe36a46c224a197a49c9ac74bb2341c1345",
+      "bytes": 2951
+    },
+    {
+      "path": "scripts/check-model.mjs",
+      "sha256": "06c137f6551ecb76f3bdb37c0340bd4083382bf05c1c8ad01098b5fc05d877a5",
+      "bytes": 3707
+    },
+    {
+      "path": "src/viewer.js",
+      "sha256": "3c66fb47b88815fd441c71848b861c8265d28da59dab6a6e4ab1090b8d6da3a1",
+      "bytes": 12071
+    },
+    {
+      "path": "model/checks.json",
+      "sha256": "467c7df8de513b583cc198430ef5f591ca3e06f49dbb734b6af1637dc2f9effb",
+      "bytes": 1078
+    },
+    {
+      "path": "model/validation.json",
+      "sha256": "34c82d6bc2db74ea83105814ef0faf8a38e871e0245e84bdf484dda40a8bd6af",
+      "bytes": 183232
+    },
+    {
+      "path": "references/revisions/metric-v02-markup.png",
+      "sha256": "41a0b8683eb0eff067395d537456082723fa46adf8de439c280efd2c9bacb034",
+      "bytes": 1854761
+    }
+  ]
+}

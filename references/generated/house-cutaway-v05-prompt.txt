@@ -1,0 +1,25 @@
+Use case: precise-object-edit.
+Edit INPUT IMAGE 1, the clean v04 architectural apartment cutaway. INPUT IMAGE 2 is the user's red-marked screenshot, to locate four corrections. Remove ALL red annotations and screenshot/UI borders in the finished image. Deliver one complete portrait render with exactly the same camera, north-up orientation, composition, apartment footprint, restrained thin wall edging, materials and lighting outside the requested edit areas.
+
+FOUR REQUIRED CORRECTIONS:
+
+1) ADD A SLIDING ENTRANCE DOOR TO THE UPPER / COMMON BATHROOM.
+The Chinese note 卫生间有个推拉门 is beside the upper toilet at the left middle of the plan. This common bathroom has a toilet at its north end, a shower immediately south of it, and an external basin farther east. Add its missing privacy sliding door on the common bathroom's EAST entrance boundary facing the central public area, between the bathroom's existing north wall return and the shower/external-basin partition.
+Use a simple single sliding door with a slender frame, a clear recognizable sliding track and lightly frosted privacy glass. Show it partly closed so its door function and access are visible, while the toilet and shower remain readable in this cutaway. Keep the original bathroom footprint and existing toilet, shower, exterior basin and circulation path. This is a BATHROOM ENTRY sliding door, not an extra shower screen, and not the already retracted door of the north-center X room. Do not enclose the basin into the bathroom or block the bedroom doorway.
+
+2) REPAIR THE ACTUAL NORTHWEST BEDROOM DOOR GEOMETRY.
+The upper small red arrow points to the hinged wooden door at the bottom-right / southeast corner of the TOP-LEFT BEDROOM. In the current image the door edge, frame and wall join still look disconnected. Correct the entire little jamb/hinge connection as a proper architectural assembly: one continuous door jamb firmly attached to the real wall return, one correctly hinged wooden door leaf with its hinge edge touching this jamb, no detached extra upright, no gap between jamb and structural wall, no floating door.
+Mount the door on the RIGHT/EAST jamb of the bedroom opening and show it opening INWARD toward the north into the northwest bedroom, about 70 degrees, as a physically plausible interior bedroom door. Keep the same opening position and room boundaries. The hinged leaf must visibly belong to the bedroom wall, not stand loose in the public corridor. This must be an unmistakable repair, not a cosmetic repaint of the disconnected assembly.
+
+3) EMPTY THE EAST UTILITY / APPLIANCE RECESS BESIDE THE KITCHEN.
+The right-hand arrow labeled 这里面是空的 points to the white appliance inside the SMALL RECESSED NICHE directly BELOW/SOUTH OF THE KITCHEN, directly ABOVE/NORTH OF THE MAIN ENTRY DOOR, along the eastern perimeter.
+Remove that entire white washing-machine/appliance object and any cabinet filling INSIDE this marked niche. Show it as an obviously EMPTY recess with visible stone floor at floor level and plain finished walls; no white appliance top, no sink, no box, no shelf or roof over it.
+Keep the enclosing structural niche boundaries and adjacent unmarked pipe/shaft element. The larger entry-storage room farther SOUTH next to the elevator was already cleared in v04: it must remain empty too. Do not confuse these TWO DISTINCT empty spaces. Preserve the fitted kitchen cabinets and the external elevator.
+
+4) REMOVE CLADDING FROM BOTH LIVING-ROOM SIDE WALLS.
+The two bottom arrows indicate the two long wall faces INSIDE THE SOUTH-CENTER LIVING ROOM: its LEFT/WEST face bordering the master bedroom, and its RIGHT/EAST face bordering the southeast bedroom.
+Remove all applied beige/wood/stone wall-wrapping panels, projecting cladding, panel-frame borders, decorative black horizontal or diagonal bands, and the continuous warm LED strips on BOTH of those living-room-facing walls, along their entire marked north-south length.
+Replace BOTH faces with clean flat plain warm-white painted walls and only a very subtle narrow baseboard. Preserve the genuine structural partitions, their already slender top edges, bedroom-side finishes and door openings. NO glowing gold strips or cladding remnants down either side of the living room. Do not remove the actual walls or enlarge the room. Keep the unrelated public-zone fixed niche/sideboard north of these walls unchanged.
+
+PRESERVE PREVIOUS EDITS:
+North-center X-room sliding panels remain FULLY retracted in a narrow stack at the right jamb and its opening remains wide open. Master bedroom remains completely free of wardrobes/cabinets. Southeast bedroom's outer/east wall stays plain painted white. The two distinct west-side bathrooms, their showers and toilets stay intact. External elevator and the unmarked southeast-bedroom wardrobe remain. Wall-top capping stays slender. Preserve master herringbone oak, southeast straight oak, greige stone public flooring, windows and south low bedroom sills. No loose furniture, people, plants, labels, red marks or new room partitions. Make only the four requested corrections, with coherent structural joins and clean surfaces.

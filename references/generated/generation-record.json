@@ -1,0 +1,123 @@
+{
+  "mode": "built-in image_gen",
+  "purpose": "Empty apartment finish and atmosphere reference for user review",
+  "review_candidate": "house-cutaway-v05.png",
+  "user_acceptance": "approved v05: 这一版OK了，继续推进",
+  "actual_3d_model": false,
+  "geometry_authority": "../01-floor-plan.png",
+  "known_limitation": "Southern room width ratios are still not dimensionally exact; do not use generated pixels for model dimensions.",
+  "files": [
+    {
+      "file": "house-cutaway-v01.png",
+      "sha256": "5b76711283f394825453a8fb6bfb04da44f654e9e32a2d46e667b687ae820ae1"
+    },
+    {
+      "file": "house-cutaway-v02.png",
+      "sha256": "84255195b0a7d24ee05cfb860aed03de599a83ca89e281e081710443636985ed"
+    },
+    {
+      "file": "house-cutaway-v01-prompt.txt",
+      "sha256": "da3191e8894c4ffa2731ad6a45ff325f4290d3a2375fade1efdb41264c8cd73e"
+    },
+    {
+      "file": "house-cutaway-v02-prompt.txt",
+      "sha256": "24497cd1c2a219705a096651257f2e44e957bc0ffea89f74361d08525967c18d"
+    },
+    {
+      "file": "house-cutaway-v03.png",
+      "sha256": "61f776dc607ae60133489ae2ca101a90268cc9aeab2b787fe626243f830d75e6"
+    },
+    {
+      "file": "house-cutaway-v03-prompt.txt",
+      "sha256": "63db2019e3aa3376a55e8550f1671bdd6ea463434008576ebc7135737e90e1bf"
+    },
+    {
+      "file": "house-cutaway-v02-user-markup.png",
+      "sha256": "84658edf8759e2cc34d53a2a360fff049fce58277a602084c312c0be60b4e663"
+    },
+    {
+      "file": "house-cutaway-v04.png",
+      "sha256": "36e723f0b1aa6533b1fbae4695854663ade551ee60a90f0bb7c3fef0cce98a42"
+    },
+    {
+      "file": "house-cutaway-v04-prompt.txt",
+      "sha256": "fe7cf8b1802ca7e946712d4f46468a78da8ddea445f0a9f8249dabf7a33901ec"
+    },
+    {
+      "file": "house-cutaway-v03-user-markup.png",
+      "sha256": "ec1c243fb5267fb1cf659f4c635456d74a70daeab73c2b97a04d43892a4343ea"
+    },
+    {
+      "file": "house-cutaway-v05.png",
+      "sha256": "0409b27755131d6ce8794286c464d744bee784484eb9f59f2c734d2deccf39d3"
+    },
+    {
+      "file": "house-cutaway-v05-draft.png",
+      "sha256": "bcfba835d5808cdf5a561dd3fa31f7e37921e4ef9c2431d900d28515afb8cb2f"
+    },
+    {
+      "file": "house-cutaway-v05-prompt.txt",
+      "sha256": "70e5df4c471ef37f06495254cdceb8ccd73ec6c610030a8e6e6f815a35944228"
+    },
+    {
+      "file": "house-cutaway-v05-bathroom-fix-prompt.txt",
+      "sha256": "7effb6b62735aac353a4930401bf8a1a3e894f65bad90acc25490d8a592fe5a9"
+    },
+    {
+      "file": "house-cutaway-v04-user-markup.png",
+      "sha256": "11b328a2a6d8ab57fffa8d3bbb734cb77a8d9ddf24bac7b9848d785bb8398956"
+    }
+  ],
+  "original_reference_manifest": "../manifest.json",
+  "v02_source_output": "/Users/cy/.codex/generated_images/01a0a0a4-dc65-7c51-90e4-b22268e0a324/exec-8ed2dab8-10cf-4bc5-bee3-9cc652052009.png",
+  "previous_review_candidate": "house-cutaway-v04.png",
+  "v03_source_output": "/Users/cy/.codex/generated_images/01a0a0a4-dc65-7c51-90e4-b22268e0a324/exec-2a384c91-6ab7-41a0-8747-689f04a75c65.png",
+  "v03_inputs": [
+    "house-cutaway-v02.png",
+    "house-cutaway-v02-user-markup.png"
+  ],
+  "user_requested_corrections": [
+    "Remove three redundant wall-attached boards in north row; retain actual walls",
+    "Remove marked master-bedroom cabinetry",
+    "Show marked common-bathroom compartment as a shower",
+    "Remove applied cladding from southeast bedroom east wall"
+  ],
+  "candidate_history": [
+    {
+      "candidate": "house-cutaway-v03.png",
+      "status": "received further user corrections"
+    },
+    {
+      "candidate": "house-cutaway-v04.png",
+      "status": "received further user markup"
+    }
+  ],
+  "v04_source_output": "/Users/cy/.codex/generated_images/01a0a0a4-dc65-7c51-90e4-b22268e0a324/exec-02661cc0-ebde-4a30-88d2-a7fd5e6594d3.png",
+  "v04_inputs": [
+    "house-cutaway-v03.png",
+    "house-cutaway-v03-user-markup.png"
+  ],
+  "v04_user_requested_corrections": [
+    "Retract north-center sliding door panels",
+    "Connect northwest bedroom door jamb to wall",
+    "Empty the entry storage compartment",
+    "Remove the extra projecting piece by master entry",
+    "Make applied wall edging and cappings thinner throughout"
+  ],
+  "dimensional_status": "Uncalibrated generated reference; no metric 3D geometry exists, no room dimensions certified. Original floor plan dimension chains remain authoritative.",
+  "v05_source_output": "/Users/cy/.codex/generated_images/01a0a0a4-dc65-7c51-90e4-b22268e0a324/exec-a601ee49-1653-4f39-a221-80e41c7dd951.png",
+  "v05_inputs": [
+    "house-cutaway-v04.png",
+    "house-cutaway-v04-user-markup.png"
+  ],
+  "v05_intermediate": "house-cutaway-v05-draft.png",
+  "v05_user_requested_corrections": [
+    "Add common-bathroom sliding entrance door",
+    "Repair northwest bedroom door connection",
+    "Empty the separate utility niche south of kitchen",
+    "Remove cladding and LED strips from both living-room side walls"
+  ],
+  "v05_inspection_note": "Utility niche and living side walls cleared; bedroom door shown inward-opening attached to jamb; bathroom entry sliding-door concept added in a follow-up edit. Door hardware and dimensions remain image-level concepts, not metric geometry.",
+  "approved_sha256": "0409b27755131d6ce8794286c464d744bee784484eb9f59f2c734d2deccf39d3",
+  "approval_scope": "Appearance reference, not dimension certification"
+}

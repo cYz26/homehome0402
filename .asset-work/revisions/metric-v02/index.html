@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f1ec" />
+    <title>户型预览 · 精装空房</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand"><svg viewBox="0 0 36 40" aria-hidden="true"><path d="M18 2 34 11v18L18 38 2 29V11Z M2 11l16 9 16-9 M18 20v18"/></svg><h1>户型预览</h1></div>
+      <nav class="view-tabs" aria-label="查看方式"><button data-view="orbit" aria-pressed="true">立体</button><button data-view="top" aria-pressed="false">俯视</button><button data-view="interior" aria-pressed="false">室内</button></nav>
+      <button class="reference-button" id="reference"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v16H3z M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="8" r="1.5"/></svg>参考图</button>
+    </header>
+    <div class="workspace">
+      <aside id="sidebar" aria-label="空间导航">
+        <h2>空间</h2><nav id="rooms" aria-label="房间"></nav>
+        <section class="dimensions-summary"><h3>图纸尺寸</h3><dl><div><dt>横向尺寸链</dt><dd>10.50 m</dd></div><div><dt>纵向尺寸链</dt><dd>12.90 m</dd></div><div><dt>暂定净高</dt><dd>2.80 m</dd></div></dl><button id="dimensions-info">尺寸依据</button></section>
+      </aside>
+      <main id="stage" aria-label="房屋三维预览">
+        <div id="canvas-container"></div>
+        <div id="labels" aria-hidden="true"></div>
+        <div id="dimension-labels" aria-hidden="true"></div>
+        <button id="mobile-rooms" aria-expanded="false" aria-controls="sidebar">空间</button>
+        <div id="compass" aria-label="北向"><span>N</span><svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="20"/><path id="north-arrow" d="m21 7 8 26-8-6-8 6Z"/></svg></div>
+        <section id="room-detail" hidden><h2></h2><p class="room-drawing"></p><p class="room-finish"></p></section>
+        <p id="loading" role="status">正在载入米制模型…</p>
+        <div class="canvas-toolbar" aria-label="显示选项"><button id="toggle-labels" aria-pressed="false">房间标签</button><button id="toggle-dimensions" aria-pressed="false">显示尺寸</button><button id="reset">复位</button></div>
+        <p class="gesture-hint" id="gesture-hint">拖动旋转 · 滚轮缩放 · 右键平移</p>
+        <span id="model-status" class="sr-only" role="status"></span>
+      </main>
+    </div>
+    <dialog id="reference-dialog" aria-labelledby="reference-title"><div class="dialog-header"><h2 id="reference-title">参考图</h2><button class="close-dialog" aria-label="关闭参考图">关闭</button></div><nav class="reference-tabs" aria-label="参考图选择"><button data-ref="approved" aria-pressed="true">已确认 v05</button><button data-ref="plan">原始户型图</button><button data-ref="living">客厅实景</button><button data-ref="north">北侧实景</button><button data-ref="southeast">东南卧室</button><button data-ref="master">主卧实景</button></nav><div class="reference-image"><img id="reference-image" src="/references/approved-v05.png" alt="已确认的空房精装外观参考 v05" /></div><p id="reference-caption">v05 已确认外观。3D 比例以原始户型图尺寸链为准。</p></dialog>
+    <dialog id="dimensions-dialog" aria-labelledby="dimensions-title"><div class="dialog-header"><h2 id="dimensions-title">尺寸依据</h2><button class="close-dialog" aria-label="关闭尺寸依据">关闭</button></div><div class="dimension-content"><p>模型以米为单位，按原图的标注分段定位。以下是图纸尺寸链，<strong>不等于扣除墙厚后的室内净尺寸</strong>。</p><table><thead><tr><th>位置</th><th>原图分段（m）</th><th>合计</th></tr></thead><tbody><tr><td>南侧 · 西 → 东</td><td>3.50 + 4.00 + 3.00</td><td>10.50 m</td></tr><tr><td>北侧 · 西 → 东</td><td>0.90 + 2.80 + 2.80 + 2.60 + 1.40</td><td>10.50 m</td></tr><tr><td>西侧 · 北 → 南</td><td>3.40 + 2.10 + 1.90 + 4.90 + 0.60</td><td>12.90 m</td></tr></tbody></table><h3>暂定值与待核实项</h3><ul id="assumptions"></ul><p>凹位、电梯井和入口形成不规则轮廓，10.50 × 12.90 不能当作建筑面积或套内面积。电梯井在户外，以灰色体块表示。</p></div></dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

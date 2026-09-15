@@ -1,0 +1,64 @@
+[
+  {
+    "path": "model/apartment.json",
+    "sha256": "74fe6d80b1921ff209ce4c313adfb30b6a1ff8b5720a0f59ecc8732e3359f0c6"
+  },
+  {
+    "path": "model/measurements.json",
+    "sha256": "77338f6f300ca6da0a1a98c442c2f225416e6a0b3540647fd9cabff2f51c1517"
+  },
+  {
+    "path": "model/validation.json",
+    "sha256": "61942caa1ae6d7c31e117c5aa1ae7f968f666d1ac3b371ccecfb7321e99acd45"
+  },
+  {
+    "path": "model/checks.json",
+    "sha256": "467c7df8de513b583cc198430ef5f591ca3e06f49dbb734b6af1637dc2f9effb"
+  },
+  {
+    "path": "scripts/build-apartment.py",
+    "sha256": "abc9c1df27668a226536afacd7e68314aacfc4a1daca403088dab9c1d1555924"
+  },
+  {
+    "path": "scripts/validate-apartment.py",
+    "sha256": "b5758c792056b51183ef18abb924844e8c98577e6360d62b8dd0ea8535fd3cc5"
+  },
+  {
+    "path": "scripts/check-model.mjs",
+    "sha256": "2f061a0569f9f757e9024f84880776276a45dd70cc3dd41266e3dc72d26811c2"
+  },
+  {
+    "path": "src/viewer.js",
+    "sha256": "54684971e101d769691e53cff4a949747a46e3d2720243e9a31def7a575ca114"
+  },
+  {
+    "path": "README.md",
+    "sha256": "458d3f4310d75040fd1fe4fbf465f2e72b028b6e3f284461f77dbfc0fedf24e0"
+  },
+  {
+    "path": "PLAN.md",
+    "sha256": "6ab0b2da60fa21bb56afb960250c50ee88fdfcc7204dc1814bff4251f0aaeacb"
+  },
+  {
+    "path": "docs/QA.md",
+    "sha256": "ad21098ae6dd641413a2362403f2bffb1fdb4feacfd8eac109566788fa07f195"
+  },
+  {
+    "path": "docs/dimension-status.md",
+    "sha256": "4f75bdc348181f171fcc675d7be33df31bbce04552a9577e575fe241acd943c3"
+  },
+  {
+    "path": "docs/delivery-record.json",
+    "sha256": "aee5315f5b08336e447e4d0d44bf7120c0a7b780c40138456b7a5aecf2aba8e3"
+  },
+  {
+    "path": "art_src/apartment-v01.blend",
+    "sha256": "7ef186d8a6a0635d8490270ddc4546d01081a73ce9d18500f7776543b7447142",
+    "retained_in_place": true
+  },
+  {
+    "path": "public/models/apartment-v01.glb",
+    "sha256": "9f11f142890615655148a4577f7197ccf1803705481a32b405d5d17cb728129e",
+    "retained_in_place": true
+  }
+]

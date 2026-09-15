@@ -1,0 +1,32 @@
+Use case: sketch-to-render.
+Create ONE high-quality photorealistic architectural dollhouse reference image of this exact apartment, using all five supplied reference images. This is a reference for reviewing an existing developer-finished EMPTY apartment before later furnishing, not a redesigned furnished apartment.
+
+REFERENCE ROLES:
+Image 1 is the authoritative architectural floor plan: trace its outline, room adjacency, setbacks, openings and relative dimensions closely.
+Image 2 is the existing entrance-to-living-room view: use its finishes and fixed cabinetry.
+Image 3 shows the room at north center and kitchen at northeast: use its flooring, dark sliding partition and kitchen finishes.
+Image 4 is the southeast bedroom.
+Image 5 is the southwest master bedroom.
+Do not copy people, photo notices, bottles, decorative vases or the diagram's suggested loose furniture.
+
+COMPOSITION:
+A single complete roof-removed 3D bird's-eye axonometric view, north at the top/back, south at the bottom/front, west on the left and east on the right. A high camera elevation around 65–70 degrees above the floor, looking from south toward north with only a slight eastward offset. Keep orientation closely comparable to image 1, without a strong diamond rotation. Portrait 4:5 composition, the whole apartment visible and centered on a quiet warm off-white background, very narrow margin, clean thin architectural slab, realistic surfaces and restrained soft shadows. Show the room interiors clearly. Remove ceilings for visibility and selectively cut away foreground wall portions while retaining the complete plan wall footprints and window positions. Remaining full-height walls represent a provisional 2.8 m room height. Architectural visualization, not a toy-like miniature, exploded view, photo collage or flat 2D colored plan. No titles, dimensions, labels or watermark.
+
+LAYOUT LOCK:
+The plan's principal dimension chains are 10.5 m east–west and 12.9 m north–south, with irregular setbacks, not a filled rectangle.
+At SOUTH / FRONT, preserve exactly three side-by-side spaces: southwest master bedroom 3.5 m width segment, south-center living room 4.0 m segment, southeast bedroom 3.0 m segment. The living room continues northwards into the open central dining / circulation area; there is no wall across the living and dining area.
+At NORTH / BACK, preserve exactly three spaces west-to-east: northwest bedroom 2.8 m width segment, north-center X room 2.8 m, northeast kitchen 2.6 m. The north block is inset about 0.9 m from the far west edge and 1.4 m from the far east edge of the main south frontage.
+Two DISTINCT bathrooms are stacked along the west middle of the apartment, between northwest bedroom and southwest master: the smaller common bathroom to the north with an external washbasin on its east side, the master bathroom immediately south with its own shower and toilet, entered from the master suite.
+The entrance is on the EAST middle side, above the recessed entry storage closet and southeast bedroom. Preserve the utility cabinet beside the entrance. Preserve the separately enclosed entry storage closet immediately south of the entrance. Preserve the external elevator shaft block adjoining it to the east, as a neutral unoccupied architectural block, outside the residential floor. Southeast bedroom has the L-shaped north-side recess around that shaft, exactly as the floor plan.
+Keep window openings on the north of all three north rooms and the south of all three south rooms. The master and southeast bedroom have low stone-topped window platforms. The south-center living room has a broad black-framed window, not a newly invented balcony, terrace or passage.
+Do not add, remove, merge or transpose rooms. Door and wall locations remain as the floor plan. Suggested beds, sofas, armchairs, dining tables and rugs in the plan must be omitted.
+
+EXISTING FINISHES:
+Living / open dining / circulation / entry: continuous large-format warm greige stone-look flooring with subtle natural veins and moderate satin reflection, matching photo 2. Warm pale beige wall panels with subtle texture, fine vertical divisions, slender black trim at base and top. Along the west-facing interior side of the central public zone, reproduce the built-in taupe wood sideboard with stone counter and illuminated recessed display niche seen to the right in photo 2, without loose display ornaments. Keep passage into the master suite readable.
+Southwest master: muted natural oak HERRINGBONE wood floor as in photo 5; warm ivory textured wall panels with thin black vertical trims and a restrained black horizontal band; low cream stone window platform and black window frame. No bed or loose furniture.
+Southeast bedroom: STRAIGHT parallel oak planks as in photo 4, not herringbone; pale beige paneled wall, black fine trims and a single subtle warm vertical light strip; matching low window platform and black window frame. No bed.
+North-center X room: empty flexible room with cooler natural oak straight planks, pale textured walls and black window frame. Reproduce the broad DARK framed sliding-panel arrangement across its southern entrance adjoining the kitchen opening, as shown in photo 3; leave openings readable, do not turn it into a solid divider between the north rooms.
+Northeast kitchen: pale cream/taupe flat cabinet fronts, pale stone worktops and backsplash, black small accents, built-in sink below its north window and cooktop on east run, built-in oven, subtle warm under-cabinet light. Follow the floor-plan cabinet footprint including the west tall-storage run. No island.
+Northwest bedroom and both bathrooms are not shown in photos: use deliberately restrained neutral provisional finishes, a plain straight-plank oak floor for the bedroom and neutral stone tile in bathrooms; basic fixtures only where indicated by image 1. No ornate guessed luxury additions.
+Lighting: soft natural window light balanced with subtle warm integrated niche and strip lighting. Accurate moderate warm-neutral palette, no strong orange cast, no vivid cyan glass. Convey paneling, black joinery and material changes clearly; no dramatic stage lighting.
+Keep every room EMPTY of movable furniture, plants and decorations. Retain only architecture, built-in cabinetry, sanitary fixtures and visible fitted kitchen equipment. This image should clearly convey a coherent existing finish scheme and the supplied apartment layout.

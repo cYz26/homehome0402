@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "stone",
+    "tool": "builtin image_gen",
+    "path": "references/generated/material-stone-v03.png",
+    "sha256": "66f081d91ee79f46a7437f3ab90452be44fdf18d8cfa4e2298ef59593266a24e",
+    "reference": "references/revisions/metric-v03/hall-cabinet.png",
+    "original_output": "/Users/cy/.codex/generated_images/01a0a0a4-dc65-7c51-90e4-b22268e0a324/exec-70fed84d-ea4e-423f-9baf-b54602049030.png",
+    "prompt_path": "references/generated/material-stone-v03-prompt.txt",
+    "prompt": "Generate one square seamless PBR base-color texture for the grey marble floor visible in the supplied apartment photo. The input is a visual material reference, not an edit target. Output a flat orthographic material scan filling the entire square edge-to-edge, no scene, no floor perspective, no tile seams, no labels, no objects, no lighting gradients, no shadows or reflected window highlights. Match the actual photo floor: medium warm-grey / taupe marble, broad flowing fine horizontal-diagonal cloudy mineral bands with delicate light grey veins and some subdued charcoal threads, sophisticated understated grey stone. NOT yellow beige limestone, NOT busy circular fossil pattern, NOT white calacatta marble. Texture represents about 2.4 by 2.4 metres of stone, large-scale directional organic flow, subtle fine mineral grain. Photoreal material surface, neutral calibrated evenly lit albedo suitable for physically based rendering. Single square texture.\n"
+  },
+  {
+    "kind": "counter",
+    "tool": "builtin image_gen",
+    "path": "references/generated/material-counter-v03.png",
+    "sha256": "d3a404accfe06a4c5e488f78186181476d346b772e68b9990bcf618e91db50e5",
+    "reference": "references/revisions/metric-v03/kitchen-hob.jpg",
+    "original_output": "/Users/cy/.codex/generated_images/01a0a0a4-dc65-7c51-90e4-b22268e0a324/exec-cc73b3db-ac7b-4f14-856f-bfa096d76fc0.png",
+    "prompt_path": "references/generated/material-counter-v03-prompt.txt",
+    "prompt": "Create one seamless square PBR base-color texture of the pale ivory marble worktop seen in this kitchen photo. Reference image supplies material appearance only. Output a flat, evenly lit orthographic scan filling the square edge to edge. Warm off-white creamy base, restrained sweeping grey-green mineral veins, a few soft medium grey branches and translucent cloudy patches. Photo-real texture representing 1.8 x 1.8 metres. Broad uncluttered veining like the countertop in the photo, not geometric, not dense fossil limestone. No kitchen objects, no sink, no perspective, no seams, no tile border, no shadows, no baked reflections, no text. Neutral calibrated albedo for rendering the actual 3D kitchen countertop.\n"
+  },
+  {
+    "kind": "veneer",
+    "tool": "builtin image_gen",
+    "path": "references/generated/material-veneer-v03.png",
+    "sha256": "3c68af28a6cef9e7a8e0c3a5b1daecd915258df4ee899610296c05d3c896a24e",
+    "reference": null,
+    "original_output": "/Users/cy/.codex/generated_images/01a0a0a4-dc65-7c51-90e4-b22268e0a324/exec-36c4a63b-43e9-48cb-9aac-333ba269c4cc.png",
+    "prompt_path": "references/generated/material-veneer-v03-prompt.txt",
+    "prompt": "Create a single square seamless PBR albedo texture of refined grey-brown taupe wood veneer for a contemporary apartment display cabinet. Smooth fine straight vertical wood grain, very subtle low-contrast fibers, a few extremely gentle vertical grain waves. Warm mushroom-brown grey oak veneer, desaturated, medium tone. No knots, no planks, no seams, no large cathedral patterns, no yellow or orange tint. Neutral even lighting, orthographic flat scan, edge-to-edge texture only, no highlights, no shadows, no perspective, no objects, no words. Texture covers a 1 by 1 metre sheet of cabinet-grade wood. Photoreal fine-grained veneer, calm and understated.\n"
+  }
+]

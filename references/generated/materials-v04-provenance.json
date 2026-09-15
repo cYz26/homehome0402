@@ -1,0 +1,22 @@
+[
+  {
+    "kind": "hallwood",
+    "tool": "builtin image_gen",
+    "path": "references/generated/material-hallwood-v04.png",
+    "sha256": "a591e40c93d459201a7829dda9a73baed14af3dfdd608c4eed25e983e2b9cf15",
+    "reference": "references/revisions/metric-v04/hall-materials.png",
+    "original_output": "/Users/cy/.codex/generated_images/01a0a0a4-dc65-7c51-90e4-b22268e0a324/exec-0986fdc9-3411-4151-80d6-2b2a371cb2f7.png",
+    "prompt_path": "references/generated/material-hallwood-v04-prompt.txt",
+    "prompt": "Create a single square seamless PBR base-color texture matching the brown cabinet doors in the supplied apartment photograph. Only the wood material is wanted, no room. Smooth satin pale grey-brown taupe veneer with a gently warm mauve-brown cast. Fine, extremely subtle mostly horizontal irregular grain and very soft cloudy patches as seen on the lower cabinet doors. No strong vertical stripes, no knots, no contrasting cathedrals, no plank seams, no orange-yellow coloration. Even neutral diffuse illumination; no shadows, no highlights, no object or text. Flat orthographic edge-to-edge material scan, scale one metre square. Keep the color variation exceptionally low and refined, suitable for large architectural panels.\n"
+  },
+  {
+    "kind": "crystal",
+    "tool": "builtin image_gen",
+    "path": "references/generated/material-crystal-v04.png",
+    "sha256": "52597b1a3fc9edc83ecc0e594ea345c33dc9457d176deb8f628f3ef0c9c033df",
+    "reference": "references/revisions/metric-v04/hall-materials.png",
+    "original_output": "/Users/cy/.codex/generated_images/01a0a0a4-dc65-7c51-90e4-b22268e0a324/exec-d03a6a30-0cc6-4f87-b316-3805e4f68111.png",
+    "prompt_path": "references/generated/material-crystal-v04-prompt.txt",
+    "prompt": "Create one square seamless PBR texture for the narrow luminous decorative stone in the reference display shelves. Only its material, not the room. Mosaic of tiny irregular translucent quartz flakes and mica fragments embedded in a muted champagne ivory matrix, subtle warm grey, pale gold, silver-grey and clear mineral flecks, like the lit crystal stone fascia in the supplied photo. Fine intricate random fragments 2 to 12 mm in scale, flat polished face, understated elegant natural stone. Evenly lit flat orthographic surface scan; no perspective, no external reflections, no hot spots, no room, no words. Edge-to-edge seamless texture representing 30 by 30 cm. Base color only; gentle naturally pale fragments, not a blazing light panel.\n"
+  }
+]
