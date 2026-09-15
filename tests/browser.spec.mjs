@@ -29,6 +29,23 @@ async function nonblank(page, testInfo, name) {
   ).toBeGreaterThan(10);
   await testInfo.attach(name, { body: png, contentType: "image/png" });
 }
+// Rendering may block animation frames while software GPUs compile/draw a new
+// view. Give that work its own named budget, then use normal 30s UI actions.
+async function rendered(page, name) {
+  await test.step(`render complete: ${name}`, async () => {
+    await page.evaluate(async () => {
+      const gl = document.querySelector("canvas").getContext("webgl2");
+      if (!gl || gl.isContextLost()) throw new Error("WebGL context unavailable");
+      // This static-view test uses reduced motion. Drain the viewer's three
+      // trailing frames plus one presentation frame, including GPU completion.
+      for (let frame = 0; frame < 4; frame++) {
+        await new Promise(requestAnimationFrame);
+        gl.finish();
+        if (gl.isContextLost()) throw new Error("WebGL context lost during render");
+      }
+    });
+  }, { timeout: 120000 });
+}
 for (const [label, width, height] of [
   ["desktop", 1280, 900],
   ["tablet", 820, 1180],
@@ -256,6 +273,9 @@ test("model failure, retry, cancellation and re-entry keep a single canvas", asy
 test("standard rendering, north-up plan, current reference and on-demand HD retain the selected view", async ({
   page,
 }, testInfo) => {
+  // This case checks final full-quality views; animated navigation remains
+  // covered by the desktop/tablet/phone flows with normal motion.
+  await page.emulateMedia({ reducedMotion: "reduce" });
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   page.on("console", (e) => {
@@ -263,10 +283,11 @@ test("standard rendering, north-up plan, current reference and on-demand HD reta
   });
   await page.goto("./");
   await ready(page);
+  await rendered(page, "web orbit");
   await expect(page.locator("#quality")).toHaveValue("standard");
   await nonblank(page, testInfo, "standard-orbit");
-  await page.locator('[data-mode="top"]').click();
-  await page.waitForTimeout(750);
+  await page.locator('[data-mode="top"]').click({ noWaitAfter: true });
+  await rendered(page, "web top");
   const top = await view(page);
   expect(top.state.mode).toBe("top");
   expect(
@@ -279,28 +300,31 @@ test("standard rendering, north-up plan, current reference and on-demand HD reta
   await page.locator('#mini-plan [data-entity-id="door_master"]').focus();
   await page.keyboard.press("Enter");
   await expect(page.locator("#properties")).toContainText("主卧房门");
-  await page.locator('[data-mode="interior"]').click();
-  await page.locator('#rooms [data-room="masterbath"]').click();
-  await page.locator('[data-detail="double-basin"]').click();
-  await page.waitForTimeout(750);
+  await page.locator('[data-mode="interior"]').click({ noWaitAfter: true });
+  await rendered(page, "web interior");
+  await page.locator('#rooms [data-room="masterbath"]').click({ noWaitAfter: true });
+  await rendered(page, "web master bathroom");
+  await page.locator('[data-detail="double-basin"]').click({ noWaitAfter: true });
+  await rendered(page, "web double basin");
   await nonblank(page, testInfo, "web-bathroom-standard");
   const before = await view(page);
   await page.locator(".help summary").click();
   const hd = page.waitForRequest("**/apartment-hd.glb");
-  await page.locator("#load-hd").click();
+  await page.locator("#load-hd").click({ noWaitAfter: true });
   await hd;
   await expect(page.locator("#model-placeholder")).toBeHidden();
   await expect(page.locator("canvas")).toHaveCount(1);
+  await rendered(page, "HD double basin");
   const after = await view(page);
   expect(after.state.mode).toBe(before.state.mode);
   expect(after.state.camera.position).toEqual(before.state.camera.position);
   await nonblank(page, testInfo, "hd-bathroom-standard");
-  await page.locator('[data-mode="top"]').click();
-  await page.locator('button[data-room=""]').click();
-  await page.waitForTimeout(750);
+  await page.locator('[data-mode="top"]').click({ noWaitAfter: true });
+  await page.locator('button[data-room=""]').click({ noWaitAfter: true });
+  await rendered(page, "HD top");
   await nonblank(page, testInfo, "hd-top");
-  await page.locator('[data-mode="orbit"]').click();
-  await page.waitForTimeout(750);
+  await page.locator('[data-mode="orbit"]').click({ noWaitAfter: true });
+  await rendered(page, "HD orbit");
   await nonblank(page, testInfo, "hd-orbit");
   await page.locator("[data-open-references]").first().click();
   await expect(page.locator("#reference-image")).toHaveAttribute(

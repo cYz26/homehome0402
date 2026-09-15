@@ -1,0 +1,73 @@
+{
+  "version": "metric-v06",
+  "baseCommit": "34f91462d526de95b362b5f69f8ab8ac6bf2e0ec",
+  "manifestSha256": "870bd80d846ee9a4d761a4b3e5868497c51bc11970498d9b424f07a11e9642bb",
+  "environment": {
+    "os": "Linux container on macOS Colima",
+    "arch": "arm64",
+    "cpus": 2,
+    "vmMemoryGiB": 2,
+    "browserImage": "mcr.microsoft.com/playwright:v1.63.0-noble",
+    "imageDigest": "sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "scope": "Original failing standard/HD browser flow, identical deployed application bytes; no site rendering changes",
+  "runs": {
+    "baseline": {
+      "executedAt": "2026-09-15T12:31:13.408Z",
+      "status": "failed",
+      "durationMs": 73164,
+      "sourceSha256": "2b647921686c5e966ee946e1d6e6e50a4b6e09d4ff3c6feafd8972d48e463603",
+      "reportSha256": "03dfc6175e37b990243864407cc621a4010ec8c593ee665e650871c6042c3c8f",
+      "traceSha256": "e79ceb8b38e767856faf2c09df014164182f300e89384037053857c3f66812fd",
+      "renderSteps": [],
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('[data-detail=\"double-basin\"]')\n    - locator resolved to <button data-detail=\"double-basin\">双人洗手台</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - performing click action\n    - click action done\n    - waiting for scheduled navigations to finish\n"
+    },
+    "candidate": {
+      "executedAt": "2026-09-15T12:33:40.933Z",
+      "status": "passed",
+      "durationMs": 100414,
+      "sourceSha256": "04178931805e30e64effbc3442f9df7199a791425fb7ec855ef93cec4c5ef216",
+      "reportSha256": "b9d51676fac6af4955e45b1939a0ada8ab176ebb3aaa4d948e41c6ddac6016ad",
+      "traceSha256": "8788eb41e7c2c7bc1b36d7d9454d9e6d6bcaad4f305a7a587df920e377f336d5",
+      "renderSteps": [
+        {
+          "name": "render complete: web orbit",
+          "durationMs": 76
+        },
+        {
+          "name": "render complete: web top",
+          "durationMs": 1270
+        },
+        {
+          "name": "render complete: web interior",
+          "durationMs": 10248
+        },
+        {
+          "name": "render complete: web master bathroom",
+          "durationMs": 21135
+        },
+        {
+          "name": "render complete: web double basin",
+          "durationMs": 15701
+        },
+        {
+          "name": "render complete: HD double basin",
+          "durationMs": 72
+        },
+        {
+          "name": "render complete: HD top",
+          "durationMs": 1925
+        },
+        {
+          "name": "render complete: HD orbit",
+          "durationMs": 1560
+        }
+      ],
+      "error": null
+    }
+  },
+  "remoteGitHubActions": "not-verified",
+  "realPhonePerformance": "not-measured",
+  "rawEvidenceLocalDirectory": ".asset-work/tmp/ci-linux"
+}
