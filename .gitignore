@@ -9,3 +9,13 @@ dist/
 __pycache__/
 *.pyc
 .asset-work/*.log
+.asset-work/tools/
+.asset-work/tmp/
+.asset-work/reports/
+.asset-work/renders/
+.asset-work/site-public/
+.asset-work/visual-review/
+.asset-work/browser-evidence/
+public/releases/*/apartment-hd.glb
+playwright-report/
+test-results/

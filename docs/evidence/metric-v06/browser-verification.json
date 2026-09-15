@@ -1,0 +1,229 @@
+{
+  "version": "metric-v06",
+  "executedAt": "2026-09-15T10:59:09.704Z",
+  "browser": "Playwright bundled Chromium 153.0.8010.12",
+  "host": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "release": "25.6.0"
+  },
+  "responsiveViewports": [
+    [
+      1280,
+      900
+    ],
+    [
+      820,
+      1180
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "touch": "Chromium CDP simulation; no physical mobile device",
+  "manifestSha256": "870bd80d846ee9a4d761a4b3e5868497c51bc11970498d9b424f07a11e9642bb",
+  "rawModelSha256": "07a3e658e0d2b7c44227e5e8950f1a27c44c70ea80e4e700ab191fd4f297571f",
+  "testSourceSha256": "e2fc7a47da305682d59e27e60f6e7995c28bb278f12178339d9d70d505516c88",
+  "renderingTestSources": {
+    "tests/section-render.spec.mjs": "0c6e6139b42c3d410f86517ad0f34ce567456e420e24a32ac0f244918a3e724b",
+    "tests/fixtures/section-probe.js": "ecbe33698a06b3c3cf90eb45a71a9c268a1936ed8184a65aa51d559dfc89a5b2",
+    "tests/fixtures/section-probe.html": "7bc6e915de01e926099f5b0afe0add25165eb221ca981accaf7d2f63643a3ac2",
+    "playwright.config.mjs": "b0f16b2fdf702f08667d3c6cfbc62b8514847ad7eeac289f298c32bb4a64abe3"
+  },
+  "collectorSha256": "1f1496be605eabbbb8e6d15c5608ca231ee83bcf94b7ac4403420f09e7beb3b1",
+  "reportSha256": "730fd11944ca20917cd61617ec138fd2e7a0c91b359ba07f4223536cd93c3d1c",
+  "tests": [
+    {
+      "name": "desktop: lazy homepage, model, linked rooms, section, view restore, screenshot",
+      "status": "passed",
+      "durationMs": 32981
+    },
+    {
+      "name": "tablet: lazy homepage, model, linked rooms, section, view restore, screenshot",
+      "status": "passed",
+      "durationMs": 28014
+    },
+    {
+      "name": "phone: lazy homepage, model, linked rooms, section, view restore, screenshot",
+      "status": "passed",
+      "durationMs": 25887
+    },
+    {
+      "name": "mobile touch: immediate two-axis look, stationary hold, two-finger height and release safety",
+      "status": "passed",
+      "durationMs": 15533
+    },
+    {
+      "name": "configuration failure and explicit retry recover without a reload",
+      "status": "passed",
+      "durationMs": 274
+    },
+    {
+      "name": "model failure, retry, cancellation and re-entry keep a single canvas",
+      "status": "passed",
+      "durationMs": 15675
+    },
+    {
+      "name": "standard rendering, north-up plan, current reference and on-demand HD retain the selected view",
+      "status": "passed",
+      "durationMs": 50857
+    },
+    {
+      "name": "section caps stay flat through zoom with full AO, shadows and both model packages",
+      "status": "passed",
+      "durationMs": 24355
+    }
+  ],
+  "images": [
+    {
+      "path": "docs/evidence/metric-v06/desktop-home.png",
+      "sha256": "ae31931715b38d5a6703de06fc77cf15ad2dfd3040109d87317e57bc1b5574db"
+    },
+    {
+      "path": "docs/evidence/metric-v06/desktop-orbit.png",
+      "sha256": "232c643438736d300c2ef2c57affdb62b526bb3d8a10c1082cf6562dbc2fe733"
+    },
+    {
+      "path": "docs/evidence/metric-v06/desktop-section.png",
+      "sha256": "40344eb253b8bf11f98825790ae04540747d339a50648f66f8984bb24e42af4e"
+    },
+    {
+      "path": "docs/evidence/metric-v06/desktop-bathroom.png",
+      "sha256": "997dc4b964a02f1cb5de5497cc775d9c9c388d29588bf554f4506de8e00214f1"
+    },
+    {
+      "path": "docs/evidence/metric-v06/tablet-home.png",
+      "sha256": "5fe9564cabac9abb1d7e72ccaa44f84466f5d3088f15339917b450afd112756c"
+    },
+    {
+      "path": "docs/evidence/metric-v06/tablet-orbit.png",
+      "sha256": "6c7bfcab7bebb3589703133179b889bbc877dd3cc7886c7aa1152e4886b31300"
+    },
+    {
+      "path": "docs/evidence/metric-v06/tablet-section.png",
+      "sha256": "17917a754725d1c537dd4a6c82667a70eca27a3ca2480879e7de281eb2e2bea4"
+    },
+    {
+      "path": "docs/evidence/metric-v06/tablet-bathroom.png",
+      "sha256": "7e175b81f37f9b656fdc8d263d82ccd33ceb97093206e12ca8f494a31383980e"
+    },
+    {
+      "path": "docs/evidence/metric-v06/phone-home.png",
+      "sha256": "f08eebfadb23594a17436f17f0f7956fd6bda91efae4cf7fc88f7cfba25cbc5c"
+    },
+    {
+      "path": "docs/evidence/metric-v06/phone-orbit.png",
+      "sha256": "be29b59fd2cd34c0a929d0830f52a6d4677d54d5122d007a46c9ac6de62d0a5c"
+    },
+    {
+      "path": "docs/evidence/metric-v06/phone-section.png",
+      "sha256": "6dc8bfbe0cc3c1be74ae03d24862c7bd9c57c62d4629965d18d1d65ffaeae138"
+    },
+    {
+      "path": "docs/evidence/metric-v06/phone-bathroom.png",
+      "sha256": "1df891e504ee9e07a40f99124afd42070ee276effd7398424dbf42b046109d62"
+    },
+    {
+      "path": "docs/evidence/metric-v06/mobile-touch-walk.png",
+      "sha256": "2b72d82f6fba835d38e44c750f7a85aea00a16e822a1358b614ec0a2a00dd481"
+    },
+    {
+      "path": "docs/evidence/metric-v06/standard-orbit.png",
+      "sha256": "95f27dead2b82d28b38f0e95c20c96b5b609ab9a0a6fac4e1ed0efc26b99a212"
+    },
+    {
+      "path": "docs/evidence/metric-v06/standard-top.png",
+      "sha256": "019296b2142df50677f3d2f378f4dcad5edc96f4150c6a7facae17c447f42651"
+    },
+    {
+      "path": "docs/evidence/metric-v06/web-bathroom-standard.png",
+      "sha256": "bca569f6699c1c9d65347a9ec2c3bacedb7514b834b72b73c5a1095f2ca33f63"
+    },
+    {
+      "path": "docs/evidence/metric-v06/hd-bathroom-standard.png",
+      "sha256": "ab05bd2acc1c0fa07dcefb05cbda2f348d2af43f8afda63edb660e2fdd2f4020"
+    },
+    {
+      "path": "docs/evidence/metric-v06/hd-top.png",
+      "sha256": "888ec35eb546b8fcc08d02e0a01d3615c9a73cc1cfeba427f29ea084df2e42c2"
+    },
+    {
+      "path": "docs/evidence/metric-v06/hd-orbit.png",
+      "sha256": "b75d2ea9405e030f4f47d45f4769ca83628e01806eb6dde8ad8d7937b47b4ae8"
+    },
+    {
+      "path": "docs/evidence/metric-v06/current-model-reference.png",
+      "sha256": "006530793616ef2de407c06b38522592b642c4f034952455f58d7b4ccadb75ff"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-before-ao-mismatch.png",
+      "sha256": "abbfcf4e53993b5e39a1f2011535d4b5cab4dc87ef3ff2f7406d7de12abf43bc"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-web-zoom-0_9.png",
+      "sha256": "675e917e7e2b5c3c19f5a92eb234421c27cebb699c414dcb751cf7b637423c05"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-web-zoom-1_7.png",
+      "sha256": "0fe2c0a9c173aa0eafdfe8cb87e8768ede80646f1ed59e37251e9d8d18720d5a"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-web-zoom-2_6.png",
+      "sha256": "eb9dc4424239602f48860f7d5f8feb229403b7434d6142377ef78431a676bfe5"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-web-x-0_04.png",
+      "sha256": "029c781a8ce35de985193cc07db965764ae9a337d1baa3c3382e1421c8fd7661"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-web-y-8_9.png",
+      "sha256": "26663c84c64b6b30918d4ff9fefa72e689f3b7988d03536512374c0c809fd544"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-web-z-1_4.png",
+      "sha256": "7f69ed60aabcf9f8384242246734e866c759817eff8df62ba4b3dc57381c1c32"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-hd-zoom-0_9.png",
+      "sha256": "5e0c9efbbcb3cbaa6ceff55638a791e05409de4e2271d18426e398289e388c9e"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-hd-zoom-1_7.png",
+      "sha256": "736a2091b37d84f9fa486ce734ef7cd02abd4f0d16511e180cec39d50cf3669c"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-hd-zoom-2_6.png",
+      "sha256": "23eff7da726276971b2580740ed7375bf047c44ec41a348f4ebe0b02fac5f2a2"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-hd-x-0_04.png",
+      "sha256": "5ecbdb8b74973308b5fe864d168ac76b51c881dd86a534864b00205493ab6d3a"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-hd-y-8_9.png",
+      "sha256": "6752bb9a5e94f2bd0621f1960c89a999455c5e111a59436758aa15b232ab0cd5"
+    },
+    {
+      "path": "docs/evidence/metric-v06/section-hd-z-1_4.png",
+      "sha256": "9a1f44db151ec9ba0cb18ba97796d038cc21f6c249b36309323990a5e9bcca5b"
+    }
+  ],
+  "measurements": [
+    {
+      "path": "docs/evidence/metric-v06/section-metrics.json",
+      "sha256": "b1578ea79c02a720ec4ebe945387459e963ccb4eeb8b3a40e6a2615f2d389d90"
+    }
+  ],
+  "build": {
+    "dist/assets/index-DV7ts7xg.js": "f70e7dd08d468ffc6be2fe701ee60b7278eabd6c4126805729ba4eea066f02ea",
+    "dist/assets/index-QATPqFc5.css": "b4f677593bafe5d35fe6e6d890c8e5482c97647c784dc84f47558a63b96822b2",
+    "dist/assets/three-addons-UIx8Gg4h.js": "5c9b0a8e0d633c3e24e6154148ac2fbc4d8264d8c132198713066ca9fa43464f",
+    "dist/assets/three-core-XspoOlIN.js": "2b477531a82aae14cf7d74c75a107e8128939f998f3fdfed209179912597ec33",
+    "dist/assets/three-renderer-Cv--gwAq.js": "527755e7824e96039d1f1ed6ea2ebaa73df5ba8817b98e840df44307d4eed83b",
+    "dist/assets/viewer-DdiZhF5p.js": "ae4e00c8d763e767cd24ad40a64875f254dad7eb460b1346b77ec68d38ff0283",
+    "dist/index.html": "27b52dabbbb7a2d6c24893adcffbf5e724f9394fa3771373cf79ab828279cabb"
+  },
+  "realPhonePerformance": "not-measured",
+  "visualAcceptance": "pending-user-review"
+}

@@ -1,67 +1,84 @@
-# 户型 3D 预览
+# Home 402 · 家的空间档案
 
-当前版本 metric-v05：修掉冰箱俯瞰时伸出的长杆，保留双开门和内凹中央门缝；门缝与门板使用相同的高度分层。
+当前交付为 **metric-v06**：完整展示网站、同源效果图、交互平面图、构件查询、三向剖切与自由漫游。四处平开门按原始户型图修正朝向并全开靠墙；当前参考图与模型同步，旧版示意图保留为历史参考。
 
-已确认的 v05 外观参考，转为米制 Blender 场景与本地浏览器查看器。几何基准为原始户型图；图片不承担测量。当前为可核对布局与精装分区的基础模型，未达到实测施工模型或实景摄影一致的最终精装验收。
-
-## 查看
+## 本地查看
 
 ```sh
 npm ci
 npm run dev
 ```
 
-正式构建：`npm run build`；本地查看构建产物：`npm run preview -- --port 4173`，打开 `http://127.0.0.1:4173/homehome402/`。开发与预览服务仅绑定本机。
-
-## GitHub Pages 发布
-
-- 源码仓库：[cYz26/homehome402](https://github.com/cYz26/homehome402)。
-- 网站地址：[户型 3D 预览](https://cyz26.github.io/homehome402/)。
-- 在仓库 Settings → Pages 中将 Source 设为 **GitHub Actions**。私有仓库需要账户套餐支持 Pages。
-- 推送到 `main` 后，`.github/workflows/pages.yml` 自动核对模型、构建并发布 `dist/`；也可在 Actions 中手动运行。
-- 网站包含 `public/` 中的户型模型与参考照片，访问者可查看和下载这些网页资源。
-- Vite 的 `base` 和动态资源路径已适配 `/homehome402/`。
-- 参考照片已移除人物和人像倒影，并清理图片定位等元数据；人物遮挡区域经 AI 补全，仅作装修参考。范围及公开前的历史清理边界见 [图片隐私检查](docs/privacy-review.md)。
-
-- 立体：拖动旋转、滚轮缩放、右键拖动平移。
-- 俯视：固定北向，可以打开尺寸链与房间标签。
-- 室内：选择左侧房间切换机位，拖动转头，滚轮调整视野，方向键转头。当前是定点观景，不是带碰撞的自由行走。
-- 参考图：查看已确认 v05、原图、早期实景与最新柜体、推拉门、厨房参考照片。
-- 尺寸依据：区分图纸尺寸链与暂估墙厚、洞口、净高。
-- 复位：回到全屋斜俯瞰。窄屏通过“空间”按钮打开房间列表。
-
-## 可编辑文件
-
-- `model/apartment.json`：尺寸链、高度、轮廓、机位与暂估清单。
-- `scripts/build-apartment.py`：从规格生成墙体、开口、地板、门窗、厨卫、吊顶，保存独立构件与显示层。
-- `art_src/apartment-v05.blend`：米制完整高度源场景；v01、v02、v03、v04 源文件保留。
-- `public/models/apartment-v05.glb`：实际浏览器加载的同源模型，保留独立构件及 layer/room 元数据；文件版本由规格的 assetStem 指定。
-- `src/viewer.js`：Three.js 查看器；俯瞰隐藏 upper/ceiling，室内恢复真实 2.80 m 主顶高度。
-- `docs/dimension-status.md`、`docs/QA.md`：尺寸状态、验证及外观限制。
-
-坐标采用图纸 x 向东、t 向南；Blender 使用 `(x,12.9-t,z)`，GLB 使用 `(x,z,t-12.9)`。图纸基准点、墙中心参考线和饰面厚度分别记录。外墙及内墙厚度暂估，不因薄包边要求缩小结构。
-
-## 重建与核对
+构建与预览：
 
 ```sh
-/Applications/Blender.app/Contents/MacOS/Blender --background --factory-startup --disable-autoexec --python scripts/build-apartment.py
-/Applications/Blender.app/Contents/MacOS/Blender --background --factory-startup --disable-autoexec --python scripts/validate-apartment.py
-npm run check:model
 npm run build
+npm run preview -- --port 4173
 ```
 
-Blender 5.2.1 LTS 已用于本次生成。渲染使用 Blender 内置 Python / NumPy；纹理由内置 image_gen 生成，原图与提示词在 `references/generated/material-*.png` 和相邻 `*-prompt.txt`。
+打开 `http://127.0.0.1:4173/homehome402/`。开发与预览服务仅绑定本机。当前工作只完成本地实现及验证，尚未提交、推送或发布。
 
-Blender Assets doctor 已确认专用 workspace、锁定 Python 环境和离线 Blender 可用。本项目保持建筑图纸原点、透明玻璃和分层构件，因此采用项目内独立重导入核对；未把插件限定为不透明且底部居中的通用道具合同套用到建筑模型，也未声称生成过插件封存交付包。
+## 操作
 
-后续精修可直接修改尺寸表与建模脚本，再从同一模型导出。未来家具软装需新建独立层，不覆盖本轮空房基础。
+- 立体 / 俯视：拖动、缩放，点击模型或平面图查询构件；选择房间定位。
+- 定点观景：切换房间或细节机位，拖动上下左右环顾。
+- 自由漫游：默认视线 **1.65 m**。电脑 WASD 移动，拖动或方向键环顾，Q 降低、E 升高，Esc 退出。
+- 手机漫游：单指滑动立即环顾；静止按住约 0.3 秒开始前进，前进时仍可环顾，松手停止。双指按住约 0.35 秒后上下滑调高度；必须全部松手才能开始下一次前进。
+- 选择漫游目的房间后沿可通行路径前往；触摸或按键停止导航。
+- 剖切支持水平 Z、东西 X、南北 Y 和完整建筑。碰撞始终使用完整建筑数据。
+- 分享链接恢复模式、房间、机位、剖切、画质、视线高度与选中对象；可导出当前 PNG 截图。
+- 标准画质使用原生像素比、32 样本 AO、4× MSAA + SMAA、4096 阴影与 1024 主卫镜面；流畅画质由用户手动选择。操作说明中可按需载入高清模型、导出帧时记录。
 
-metric-v04 已根据照片将北侧门扇框厚调整为约 22 mm，停放组总厚约 96 mm；X 空间和厨房的门洞补齐深色外围边框。次卫门改为薄深色门扇，主卫新增同类推拉门，停放于原门洞右侧。主卫为 1.80 m 一体石材宽槽、两组墙出龙头、悬浮抽屉柜和镜柜。
+## 建筑数据与文件
 
-客厅柜及周边短墙更新为柔和灰褐木纹，壁龛采用灰绿石材、暖灯带及细晶石饰条。此前的厨房设备、低窗台、无栅栏窗户、素墙、空房与空置凹位保留。全屋墙体及门窗洞口与 v03 一致。
+`model/apartment.json` 是可编辑设计源，包括墙体、洞口、门窗、固定设施位置与外包尺寸、材质、灯具、空间多边形及机位。
 
-选择“主卫”可点击“双人洗手台”或“主卫推拉门”；客厅、厨房和 X 空间保留原有四个细节机位。“参考图”已加入本轮照片。浏览器主卫镜面使用 1024 × 1024 平面反射；GLB / Blender 源文件保留对应的金属镜面材质，浏览器照明与反射需单独核对。
+| 文件 | 用途 |
+| --- | --- |
+| `art_src/apartment-v06.blend` | 当前完整米制源场景 |
+| `asset_exchange/apartment-v06.glb` | 原始 GLB，独立重导入核对对象 |
+| `public/releases/metric-v06/apartment-web.glb` | KTX2 + Meshopt 网页模型，约 12.74 MiB |
+| `public/releases/metric-v06/architecture.json` | 73 个逻辑构件、11 个空间及估算面积 |
+| `public/releases/metric-v06/navigation.json` | 完整建筑碰撞、单层可通行网格 |
+| `public/releases/metric-v06/floor-plan.svg` | 当前模型派生平面图 |
+| `public/release.json` | 发布资源、版本、大小和 SHA-256 清单 |
+| `docs/QA.md` | 本轮检查、视觉证据及验收边界 |
 
-19 项模型检查通过；实际 GLB 独立重导入与源场景一致。v03 配方和报告在 `.asset-work/revisions/metric-v03/`，新纹理与提示词见 `references/generated/materials-v04-provenance.json`。当前门窗、柜体细部仍属照片估读，推拉门为静态开启状态。
+墙、窗、平开门由通用算法按 JSON 生成。复杂精装构件的拓扑保留在哈希锁定的 v05 Blender 模板库中，JSON 控制其整体位置、尺寸与材质参数；复杂造型改动仍需更新模板库并重新验证。旧源模型及 GLB 均保留，不进入当前站点构建。
 
-metric-v05 的修订前配方和记录在 `.asset-work/revisions/metric-v04/`，原 v04 Blender / GLB 保持原样。此次仅替换冰箱中央门缝构件，未调整住宅或其他精装构件。
+坐标单位为米：图纸 `(x 向东, t 向南, 高度)` → Blender `(x, 12.9-t, 高度)` → GLB `(x, 高度, t-12.9)`。面积为按空间多边形扣除墙体得到的**模型估算**，不作为实测净面积。详细尺寸依据见 `docs/dimension-status.md`。
+
+## 独立重建步骤
+
+```sh
+npm run model:build
+npm run model:export
+npm run model:validate
+npm run check:model
+npm run model:render
+npm run assets:data
+npm run assets:optimize
+npm run release:prepare
+npm run build
+npm test
+npm run check:release
+npx playwright install chromium
+npm run test:browser
+node scripts/collect-browser-evidence.mjs
+```
+
+- 本轮使用 Blender 5.2.1 LTS。可通过 `BLENDER_BIN` 指定 Blender 可执行文件。
+- 网页优化使用官方 KTX-Software 4.4.2 的 `ktx`，用 `KTX_BIN` 指定其 `bin` 目录；默认查找 `.asset-work/tools/ktx/bin`。
+- 渲染与优化可单独重跑；修改建筑规格后按依赖顺序重新生成派生物。`model:render -- hero` 可仅渲染指定机位。
+- `release:prepare` 将实际 Cycles 输出和经脱敏的参考图转换为 WebP，再绑定哈希。网页默认参考为模型渲染，AI 示意与原始照片分别标注。
+- 构建前只把清单引用的资源暂存到 `.asset-work/site-public`。高清 GLB 从 `asset_exchange` 读取，按需下载；不重复提交一份大型副本。
+- `model:build -- --verify-existing` 在内存中重新建模并核对已验证的构件，不覆盖源文件，用于生成算法等价重构检查。
+- `scripts/migrate-semantic.py` 是已执行的一次性迁移工具，不用于日常重建。
+
+## 发布与验收
+
+现有 GitHub Pages 工作流保留 `/homehome402/` 路径。PR 执行数据一致性、预算、链接与 Chromium 冒烟检查；合并后的 `main` 推送通过检查才发布。CI 使用已生成且哈希匹配的建筑资源，不在发布时重新渲染 Blender。
+
+首屏预算 1 MiB，首次可交互 3D 总资源预算 16 MiB（视觉优先），检查包括 JS、模型、属性、导航和解码器。网页纹理保留源图分辨率，使用高质量 KTX2，不再降至 768 像素；UASTC 块对齐为 1256 像素。历史资源保留在仓库中，不随 `public` 全量复制。
+
+桌面浏览器和触摸模拟不能证明真机性能；真实手机持续漫游 ≥30 FPS 仍需设备实测。用户视觉确认状态独立保留，技术检查不会自动代表外观接受。图片脱敏范围见 `docs/privacy-review.md`。

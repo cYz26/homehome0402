@@ -1,0 +1,10 @@
+{
+  "modelVersion": "metric-v06",
+  "presentationRevision": "2026-09-15-section-quality",
+  "confirmedAt": "2026-09-15T11:07:04.506658+00:00",
+  "confirmation": "这次OK了；提交到远程，然后我准备发布一下",
+  "scope": "Current preview: corrected wall-section rendering and visual-first display quality",
+  "manifestSha256": "870bd80d846ee9a4d761a4b3e5868497c51bc11970498d9b424f07a11e9642bb",
+  "realPhonePerformance": "not-measured",
+  "authorization": "Commit and push this website upgrade to the existing remote."
+}

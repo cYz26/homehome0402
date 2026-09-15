@@ -1,0 +1,123 @@
+"""Reusable construction algorithms; all apartment placements live in JSON."""
+import bpy, math
+from mathutils import Vector
+
+def configure(spec, collection):
+    global MODEL, H, CUT, EXTENT, RECORDS, CONSTRUCTION, capmat, cabinet, oak, black, glass, counter, chrome, wallmat
+    CONSTRUCTION=spec['construction']
+    MODEL=collection; H=spec['height']; CUT=spec['construction']['cutHeight']; EXTENT=spec['coordinateSystem']['planSouthExtent']; RECORDS=[]
+    capmat=bpy.data.materials['Thin_graphite_cut_edge']; cabinet=bpy.data.materials['Warm_ivory_cabinet']; oak=bpy.data.materials['Taupe_wood_joinery']; black=bpy.data.materials['Graphite_frame']; glass=bpy.data.materials['Clear_glass']; counter=bpy.data.materials['Ivory_stone_counter']; chrome=bpy.data.materials['Brushed_steel']; wallmat=bpy.data.materials['Warm_white_plaster']
+
+def objmesh(name,verts,faces,mat,layer='fixed',room=None,uv=None):
+    mesh=bpy.data.meshes.new(name); mesh.from_pydata(verts,[],faces); mesh.update()
+    ob=bpy.data.objects.new(name,mesh); MODEL.objects.link(ob)
+    for m in (mat if isinstance(mat,list) else [mat]): mesh.materials.append(m)
+    ob['layer']=layer
+    if room: ob['room']=room
+    if uv:
+        tex=mesh.uv_layers.new(name='UVMap')
+        for poly in mesh.polygons:
+            for li in poly.loop_indices: tex.data[li].uv=uv[mesh.loops[li].vertex_index]
+    return ob
+
+def cube(name,x,t,z,w,d,h,mat,layer='fixed',room=None,bevel=.006,rot=0):
+    verts=[(-w/2,-d/2,-h/2),(w/2,-d/2,-h/2),(w/2,d/2,-h/2),(-w/2,d/2,-h/2),(-w/2,-d/2,h/2),(w/2,-d/2,h/2),(w/2,d/2,h/2),(-w/2,d/2,h/2)]
+    faces=[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]
+    ob=objmesh(name,verts,faces,mat,layer,room); ob.location=(x,EXTENT-t,z); ob.rotation_euler.z=rot
+    uv=ob.data.uv_layers.new()
+    for poly in ob.data.polygons:
+        axis=max(range(3),key=lambda k:abs(poly.normal[k]))
+        for li in poly.loop_indices:
+            co=ob.data.vertices[ob.data.loops[li].vertex_index].co
+            uv.data[li].uv=(co.x,co.y) if axis==2 else ((-co.y,co.z) if axis==0 else (co.x,co.z))
+    if bevel:
+        mod=ob.modifiers.new('Subtle_edge','BEVEL'); mod.width=min(bevel,w/4,d/4,h/4); mod.segments=2
+        ob.modifiers.new('Weighted_normals','WEIGHTED_NORMAL')
+    return ob
+
+def prism(name,poly,z,h,mat,layer='floor',room=None):
+    # Ensure CCW in Blender XY (plan t is reversed).
+    coords=[(x,EXTENT-t) for x,t in poly]
+    if sum(coords[i][0]*coords[(i+1)%len(coords)][1]-coords[(i+1)%len(coords)][0]*coords[i][1] for i in range(len(coords)))<0: coords.reverse()
+    n=len(coords); verts=[(x,y,z) for x,y in coords]+[(x,y,z+h) for x,y in coords]
+    faces=[tuple(range(n-1,-1,-1)),tuple(range(n,2*n))]+[(i,(i+1)%n,(i+1)%n+n,i+n) for i in range(n)]
+    uv=[(x/2.4,y/2.4) for x,y in coords]*2
+    return objmesh(name,verts,faces,mat,layer,room,uv)
+
+def rect(name,b,z,h,mat,layer='fixed',room=None):
+    x0,t0,x1,t1=b
+    return cube(name,(x0+x1)/2,(t0+t1)/2,z+h/2,x1-x0,t1-t0,h,mat,layer,room)
+
+def vertical(name,x,t,w,d,z0,z1,mat,room=None,rot=0,layer='fixed'):
+    for a,b in [(z0,min(CUT,z1)),(max(CUT,z0),z1)]:
+        if b-a>.0001:
+            ob=cube(name+('_upper' if a>=CUT else '_lower'),x,t,(a+b)/2,w,d,b-a,mat,'upper' if a>=CUT else layer,room,bevel=0,rot=rot)
+            if layer=='wall' and a<CUT and abs(b-CUT)<.0001:
+                ob.data.materials.append(capmat);ob.data.polygons[1].material_index=1
+
+def wall(name,a,b,thick=.16,holes=None,room=None):
+    dx,dt=b[0]-a[0],b[1]-a[1]; L=math.hypot(dx,dt); vx,vt=dx/L,dt/L
+    holes=holes or []; points=sorted(set([0,L]+[p for h in holes for p in h[:2]]))
+    rot=-math.atan2(dt,dx)
+    for i,(s,e) in enumerate(zip(points,points[1:])):
+        mid=(s+e)/2; x,t=a[0]+vx*mid,a[1]+vt*mid
+        hole=next((q for q in holes if q[0]<=mid<=q[1]),None)
+        zs=[(0,H)] if hole is None else [(0,hole[2]),(hole[3],H)]
+        for j,(z0,z1) in enumerate(zs):
+            if z1-z0<.0001: continue
+            vertical(f'wall_{name}_{i}_{j}',x,t,e-s,thick,z0,z1,wallmat,room,rot,layer='wall')
+        if not hole or hole[2]>.15:
+            # Applied skirting projects only 8 mm. No decorative living-room wrapping.
+            height=CONSTRUCTION['skirtingHeight']
+            cube(f'skirting_{name}_{i}',x,t,height/2,e-s,thick+2*CONSTRUCTION['skirtingProjection'],height,capmat,'fixed',room,bevel=CONSTRUCTION['skirtingBevel'],rot=rot)
+    RECORDS.append({'type':'wall','id':name,'a':a,'b':b,'thickness':thick,'openings':holes})
+
+def bar(name,a,b,r,mat=None,layer='fixed'):
+    mat = mat or chrome
+    av=Vector((a[0],EXTENT-a[1],a[2])); bv=Vector((b[0],EXTENT-b[1],b[2])); delta=bv-av
+    bpy.ops.mesh.primitive_cylinder_add(vertices=12,radius=r,depth=delta.length,location=(av+bv)/2)
+    ob=bpy.context.object; ob.name=name
+    for c in list(ob.users_collection): c.objects.unlink(ob)
+    MODEL.objects.link(ob); ob.rotation_euler=delta.to_track_quat('Z','Y').to_euler(); ob.data.materials.append(mat); ob['layer']=layer
+    for f in ob.data.polygons: f.use_smooth=True
+    return ob
+
+def window(name,x,t,width,sill,head,count=2,orientation=0):
+    # Local u along opening, plan v normal. Rotation only needed for west openings.
+    def pos(u,v): return (x+math.cos(orientation)*u-math.sin(orientation)*v,t+math.sin(orientation)*u+math.cos(orientation)*v)
+    divisions=[0,.22,.78,1] if name=='Living_south' else ([0,.20,1] if name=='Kitchen_north' else [i/count for i in range(count+1)])
+    for fraction in divisions:
+        xx,tt=pos(-width/2+fraction*width,0)
+        vertical(name+'_mullion',xx,tt,.052,.07,sill,head,black,rot=-orientation)
+    for z in [sill,head]:
+        xx,tt=pos(0,0); cube(name+'_rail',xx,tt,z,width,.07,.044,black,'upper' if z>CUT else 'fixed',rot=-orientation)
+    for a,b in zip(divisions,divisions[1:]):
+        xx,tt=pos(-width/2+(a+b)*width/2,0)
+        vertical(name+'_glass',xx,tt,width*(b-a)-.055,.012,sill+.025,head-.025,glass,rot=-orientation)
+    # The user requests clear glazing without any safety grille or guard bars.
+    cube(name+'_stone_sill',x,t-.025,sill-.025,width+.10,.30,.04,counter,rot=-orientation)
+    handlebase=1.66 if name=='Kitchen_north' else max(1.12,sill+.3)
+    handlepositions=([-width*.28-.04,width*.28+.04] if name=='Living_south' else
+        [-width*.30+.055] if name=='Kitchen_north' else [width/2-.055] if count==1 else [.045])
+    for u in handlepositions:
+        xx,tt=pos(u,-.06 if t>12 else .06)
+        bar(name+'_handle',(xx,tt,handlebase),(xx,tt,handlebase+.15),.012,black,'upper')
+    RECORDS.append({'type':'window','id':name,'sill':sill,'head':head,'width':width,'guards':False})
+
+def door(name,hinge,width,angle,closed_dir,room,leaf_offset=(0,0)):
+    # angle in plan, measured from +X. Door pivots and jamb use the very same point.
+    x,t=hinge; rot=-angle
+    px=x+leaf_offset[0];pt=t+leaf_offset[1]
+    cx=px+width/2*math.cos(angle); ct=pt+width/2*math.sin(angle)
+    opening_height=CONSTRUCTION['openingHeight']
+    vertical('door_'+name,cx,ct,width,.044,.025,CONSTRUCTION['doorHeight'],oak,room,rot)
+    vertical('jamb_'+name,x,t,.055,.18,0,opening_height+.02,cabinet,room)
+    ex=x+width*math.cos(closed_dir); et=t+width*math.sin(closed_dir)
+    vertical('jamb_far_'+name,ex,et,.05,.18,0,opening_height+.02,cabinet,room)
+    midx=(x+ex)/2; midt=(t+et)/2
+    cube('lintel_'+name,midx,midt,opening_height+.01,width+.05,.18,.055,cabinet,'upper',room,rot=-closed_dir)
+    hx=px+(width-.10)*math.cos(angle); ht=pt+(width-.10)*math.sin(angle)
+    bar('handle_'+name,(hx,ht,1.0),(hx+.11*math.cos(angle),ht+.11*math.sin(angle),1.0),.013,chrome)
+    for z in [.2,.95,1.85]:
+        bar('hinge_'+name,(px,pt,z),(px,pt,z+.08),.012,chrome,'upper' if z>CUT else 'fixed')
+    RECORDS.append({'type':'door','id':name,'hinge':hinge,'width':width,'openAngle':angle,'closedDirection':closed_dir,'room':room,'leafOffset':list(leaf_offset)})

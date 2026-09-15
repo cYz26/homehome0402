@@ -1,5 +1,5 @@
 {
-  "version": "metric-v05",
+  "version": "metric-v06",
   "height_m": 2.8,
   "cut_height_m": 1.15,
   "coordinate_transform": "Plan x east, t south from north edge; Blender (x,12.9-t,z), GLB (x,z,t-12.9)",
@@ -9,7 +9,7 @@
     "west": 12.9
   },
   "plan_reference_sha256": "d34c2a2641938c7541570063eac16a3d481f84bae4cd4826b2124fadd6186af3",
-  "spec_sha256": "8b25210fd34c791782a5ea911625b4120a74f4495b8c62a2d179b8a79cc09c63",
+  "spec_sha256": "624944e362b7dfb3c278ffbd8512b5d47cfeec485b3ba68e91428193aac20ce7",
   "reference_v05_sha256": "0409b27755131d6ce8794286c464d744bee784484eb9f59f2c734d2deccf39d3",
   "components": [
     {
@@ -116,7 +116,7 @@
       "openings": [
         [
           0.72,
-          3.0,
+          3,
           0.28,
           2.55
         ],
@@ -548,33 +548,45 @@
         3.4
       ],
       "width": 0.9,
-      "openAngle": 4.066617157146788,
+      "openAngle": -1.5707963267948966,
       "closedDirection": 3.141592653589793,
-      "room": "northwest"
+      "room": "northwest",
+      "leafOffset": [
+        0,
+        0
+      ]
     },
     {
       "type": "door",
       "id": "master",
       "hinge": [
         3.5,
-        8.45
+        7.55
       ],
       "width": 0.9,
-      "openAngle": 4.066617157146788,
-      "closedDirection": -1.5707963267948966,
-      "room": "master"
+      "openAngle": 3.141592653589793,
+      "closedDirection": 1.5707963267948966,
+      "room": "master",
+      "leafOffset": [
+        0,
+        0
+      ]
     },
     {
       "type": "door",
       "id": "southeast",
       "hinge": [
         7.5,
-        8.52
+        7.62
       ],
       "width": 0.9,
-      "openAngle": 5.410520681182422,
-      "closedDirection": -1.5707963267948966,
-      "room": "southeast"
+      "openAngle": 0,
+      "closedDirection": 1.5707963267948966,
+      "room": "southeast",
+      "leafOffset": [
+        0,
+        0.04
+      ]
     },
     {
       "type": "door",
@@ -584,9 +596,13 @@
         6.18
       ],
       "width": 1.2,
-      "openAngle": 5.305800926062762,
+      "openAngle": 0,
       "closedDirection": -1.5707963267948966,
-      "room": "entry"
+      "room": "entry",
+      "leafOffset": [
+        0,
+        0
+      ]
     },
     {
       "type": "sliding_leaf",

@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -15,7 +16,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run check:model
+      - run: npm test
+      - run: npm run build
+      - run: npm run check:release
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+      - run: node scripts/collect-browser-evidence.mjs --output .asset-work/browser-evidence
+      - name: Preserve version-bound browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: home402-browser-evidence
+          path: |
+            test-results/
+            model/release-checks.json
+            public/release.json
+            .asset-work/browser-evidence/
   deploy:
+    needs: verify
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

@@ -1,6 +1,8 @@
 {
-  "source_sha256": "b22f00f3a73f3c96e3ef8e06b9009e587e430bfe39203d2f988227f4beacb621",
-  "glb_sha256": "d21792868c02718782e5afea69183b613f1ec8abd2b402250dba8e06da4fada8",
+  "version": "metric-v06",
+  "spec_sha256": "624944e362b7dfb3c278ffbd8512b5d47cfeec485b3ba68e91428193aac20ce7",
+  "source_sha256": "62a50fc3b56ae90ca5d2e366fba333b22f78171ff0b4fa2408e02f3e1ca3181a",
+  "glb_sha256": "07a3e658e0d2b7c44227e5e8950f1a27c44c70ea80e4e700ab191fd4f297571f",
   "source_objects": 690,
   "reimport_objects": 690,
   "max_bound_error_m": 9.5367431640625e-07,
@@ -48,6 +50,7 @@
       "triangles": 28,
       "degenerate": 0,
       "layer": "floor",
+      "entityId": "floor_Apartment_floor_slab",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -69,6 +72,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Bath_west",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -90,6 +94,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Bath_west",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -111,6 +116,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Bath_west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -132,6 +138,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Bath_west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -153,6 +160,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Bath_west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -174,6 +182,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Bath_west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -195,6 +204,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Bath_west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -216,6 +226,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Bath_west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -237,6 +248,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Bath_west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -258,6 +270,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Bath_west",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -279,6 +292,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -300,6 +314,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -321,6 +336,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -342,6 +358,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -363,6 +380,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -384,6 +402,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -405,6 +424,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -426,6 +446,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -447,6 +468,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -468,6 +490,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -489,6 +512,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_white_ceiling"
@@ -510,6 +534,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_white_ceiling"
@@ -531,6 +556,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_white_ceiling"
@@ -552,6 +578,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_white_ceiling"
@@ -573,6 +600,7 @@
       "triangles": 28,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_white_ceiling"
@@ -594,6 +622,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-vanity",
       "uv": true,
       "materials": [
         "Porcelain"
@@ -615,6 +644,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-vanity",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -636,6 +666,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-vanity",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -657,6 +688,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -678,6 +710,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "common-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -699,6 +732,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-vanity",
       "uv": true,
       "materials": [
         "Porcelain"
@@ -720,6 +754,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-vanity",
       "uv": true,
       "materials": [
         "Porcelain"
@@ -741,6 +776,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-vanity",
       "uv": true,
       "materials": [
         "Porcelain"
@@ -762,6 +798,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-vanity",
       "uv": true,
       "materials": [
         "Porcelain"
@@ -783,6 +820,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -804,6 +842,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -825,6 +864,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -846,6 +886,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -867,6 +908,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "common-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -888,6 +930,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -909,6 +952,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -930,6 +974,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "common-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -951,6 +996,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "common-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -972,6 +1018,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-sliding-door",
       "uv": true,
       "materials": [
         "Charcoal_bath_privacy_glass"
@@ -993,6 +1040,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "common-sliding-door",
       "uv": true,
       "materials": [
         "Charcoal_bath_privacy_glass"
@@ -1014,6 +1062,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "common-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -1035,6 +1084,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -1056,6 +1106,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -1077,6 +1128,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -1098,6 +1150,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -1119,6 +1172,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -1140,6 +1194,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -1161,6 +1216,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -1182,6 +1238,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -1203,6 +1260,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -1224,6 +1282,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -1245,6 +1304,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -1266,6 +1326,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -1287,6 +1348,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -1308,6 +1370,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -1329,6 +1392,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-shower",
       "uv": true,
       "materials": [
         "Grey_flowing_marble_floor"
@@ -1350,6 +1414,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-toilet",
       "uv": true,
       "materials": [
         "Porcelain"
@@ -1371,6 +1436,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-toilet",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -1392,6 +1458,7 @@
       "triangles": 528,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-toilet",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -1400,12 +1467,12 @@
     "Common_WC_pedestal": {
       "bounds": [
         [
-          1.1399999856948853,
+          1.1400001049041748,
           8.8100004196167,
           0.019999995827674866
         ],
         [
-          1.7000000476837158,
+          1.6999999284744263,
           9.210000038146973,
           0.48000001907348633
         ]
@@ -1413,6 +1480,7 @@
       "triangles": 528,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-toilet",
       "uv": true,
       "materials": [
         "Porcelain"
@@ -1426,7 +1494,7 @@
           0.375
         ],
         [
-          1.7400000095367432,
+          1.7399998903274536,
           9.230000495910645,
           0.48500001430511475
         ]
@@ -1434,6 +1502,7 @@
       "triangles": 528,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "common-toilet",
       "uv": true,
       "materials": [
         "Porcelain"
@@ -1455,6 +1524,7 @@
       "triangles": 28,
       "degenerate": 0,
       "layer": "floor",
+      "entityId": "floor_Continuous_public_stone",
       "uv": true,
       "materials": [
         "Grey_flowing_marble_floor"
@@ -1463,19 +1533,20 @@
     "door_entry_lower": {
       "bounds": [
         [
-          9.08176040649414,
-          6.707697868347168,
+          9.09999942779541,
+          6.697999954223633,
           0.02499997615814209
         ],
         [
-          9.789270401000977,
-          7.727147102355957,
+          10.300000190734863,
+          6.741999626159668,
           1.149999976158142
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_entry",
       "uv": true,
       "materials": [
         "Taupe_wood_joinery"
@@ -1484,19 +1555,20 @@
     "door_entry_upper": {
       "bounds": [
         [
-          9.08176040649414,
-          6.707697868347168,
+          9.09999942779541,
+          6.697999954223633,
           1.149999976158142
         ],
         [
-          9.789270401000977,
-          7.727147102355957,
+          10.300000190734863,
+          6.741999626159668,
           2.179999828338623
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_entry",
       "uv": true,
       "materials": [
         "Taupe_wood_joinery"
@@ -1505,19 +1577,20 @@
     "door_master_lower": {
       "bounds": [
         [
-          2.940796375274658,
-          4.436759948730469,
+          2.5999999046325684,
+          5.328000068664551,
           0.02499997615814209
         ],
         [
-          3.5175700187683105,
-          5.182011604309082,
+          3.5,
+          5.371999740600586,
           1.149999976158142
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_master",
       "uv": true,
       "materials": [
         "Taupe_wood_joinery"
@@ -1526,19 +1599,20 @@
     "door_master_upper": {
       "bounds": [
         [
-          2.940796375274658,
-          4.436759948730469,
+          2.5999999046325684,
+          5.328000068664551,
           1.149999976158142
         ],
         [
-          3.5175700187683105,
-          5.182011604309082,
+          3.5,
+          5.371999740600586,
           2.179999828338623
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_master",
       "uv": true,
       "materials": [
         "Taupe_wood_joinery"
@@ -1547,19 +1621,20 @@
     "door_northwest_lower": {
       "bounds": [
         [
-          3.000796318054199,
-          9.486760139465332,
+          3.5379998683929443,
+          9.5,
           0.02499997615814209
         ],
         [
-          3.5775699615478516,
-          10.232012748718262,
+          3.5820000171661377,
+          10.399999618530273,
           1.149999976158142
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_northwest",
       "uv": true,
       "materials": [
         "Taupe_wood_joinery"
@@ -1568,19 +1643,20 @@
     "door_northwest_upper": {
       "bounds": [
         [
-          3.000796318054199,
-          9.486760139465332,
+          3.5379998683929443,
+          9.5,
           1.149999976158142
         ],
         [
-          3.5775699615478516,
-          10.232012748718262,
+          3.5820000171661377,
+          10.399999618530273,
           2.179999828338623
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_northwest",
       "uv": true,
       "materials": [
         "Taupe_wood_joinery"
@@ -1589,19 +1665,20 @@
     "door_southeast_lower": {
       "bounds": [
         [
-          7.483146667480469,
-          4.365858554840088,
+          7.5,
+          5.2179999351501465,
           0.02499997615814209
         ],
         [
-          8.095361709594727,
-          5.083581447601318,
+          8.399999618530273,
+          5.261999607086182,
           1.149999976158142
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_southeast",
       "uv": true,
       "materials": [
         "Taupe_wood_joinery"
@@ -1610,19 +1687,20 @@
     "door_southeast_upper": {
       "bounds": [
         [
-          7.483146667480469,
-          4.365858554840088,
+          7.5,
+          5.2179999351501465,
           1.149999976158142
         ],
         [
-          8.095361709594727,
-          5.083581447601318,
+          8.399999618530273,
+          5.261999607086182,
           2.179999828338623
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_southeast",
       "uv": true,
       "materials": [
         "Taupe_wood_joinery"
@@ -1644,6 +1722,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -1665,6 +1744,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -1686,6 +1766,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -1707,6 +1788,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -1728,6 +1810,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -1749,6 +1832,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -1770,6 +1854,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -1791,6 +1876,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -1812,6 +1898,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -1833,6 +1920,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -1854,6 +1942,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "extractor",
       "uv": true,
       "materials": [
         "Black_appliance_glass"
@@ -1875,6 +1964,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "extractor",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -1896,6 +1986,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "extractor",
       "uv": true,
       "materials": [
         "Black_appliance_glass"
@@ -1917,6 +2008,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "extractor",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -1938,6 +2030,7 @@
       "triangles": 390,
       "degenerate": 0,
       "layer": "floor",
+      "entityId": "floor_floor_master",
       "uv": true,
       "materials": [
         "Oak_plank_00",
@@ -1964,6 +2057,7 @@
       "triangles": 126,
       "degenerate": 0,
       "layer": "floor",
+      "entityId": "floor_floor_northwest",
       "uv": true,
       "materials": [
         "Oak_plank_00",
@@ -1990,6 +2084,7 @@
       "triangles": 154,
       "degenerate": 0,
       "layer": "floor",
+      "entityId": "floor_floor_southeast",
       "uv": true,
       "materials": [
         "Oak_plank_00",
@@ -2016,6 +2111,7 @@
       "triangles": 36,
       "degenerate": 0,
       "layer": "floor",
+      "entityId": "floor_floor_southeast_entry",
       "uv": true,
       "materials": [
         "Oak_plank_00",
@@ -2042,6 +2138,7 @@
       "triangles": 126,
       "degenerate": 0,
       "layer": "floor",
+      "entityId": "floor_floor_xroom",
       "uv": true,
       "materials": [
         "Oak_plank_00",
@@ -2068,6 +2165,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2089,6 +2187,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2110,6 +2209,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2131,6 +2231,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Pearl_ivory_refrigerator"
@@ -2152,6 +2253,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Pearl_ivory_refrigerator"
@@ -2173,6 +2275,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Pearl_ivory_refrigerator"
@@ -2194,6 +2297,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Pearl_ivory_refrigerator"
@@ -2215,6 +2319,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -2236,6 +2341,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -2257,6 +2363,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -2278,6 +2385,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2299,6 +2407,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -2320,6 +2429,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "fridge",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -2341,6 +2451,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2362,6 +2473,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2383,6 +2495,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2404,6 +2517,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2425,6 +2539,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2446,6 +2561,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2467,6 +2583,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2488,6 +2605,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2509,6 +2627,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2530,6 +2649,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2551,6 +2671,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2572,6 +2693,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2593,6 +2715,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2614,6 +2737,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2635,6 +2759,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2656,6 +2781,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2677,6 +2803,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2698,6 +2825,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2719,6 +2847,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2740,6 +2869,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2761,6 +2891,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2782,6 +2913,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2803,6 +2935,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2824,6 +2957,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2845,6 +2979,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2866,6 +3001,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2887,6 +3023,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Grey_olive_niche_stone"
@@ -2908,6 +3045,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Grey_olive_niche_stone"
@@ -2929,6 +3067,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -2950,6 +3089,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2971,6 +3111,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -2992,6 +3133,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3013,6 +3155,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3034,6 +3177,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3055,6 +3199,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -3076,6 +3221,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -3097,6 +3243,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -3118,6 +3265,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -3139,6 +3287,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -3160,6 +3309,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3181,6 +3331,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3202,6 +3353,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -3223,6 +3375,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -3244,6 +3397,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -3265,6 +3419,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -3286,6 +3441,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -3307,6 +3463,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Grey_olive_niche_stone"
@@ -3328,6 +3485,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3349,6 +3507,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3370,6 +3529,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3391,6 +3551,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3412,6 +3573,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Champagne_crystal_inlay"
@@ -3433,6 +3595,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Champagne_crystal_inlay"
@@ -3454,6 +3617,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Champagne_crystal_inlay"
@@ -3475,6 +3639,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Champagne_crystal_inlay"
@@ -3496,6 +3661,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "hall-joinery",
       "uv": true,
       "materials": [
         "Champagne_crystal_inlay"
@@ -3504,19 +3670,20 @@
     "handle_entry": {
       "bounds": [
         [
-          9.704334259033203,
-          7.624671936035156,
+          10.199999809265137,
+          6.706999778747559,
           0.9869999885559082
         ],
         [
-          9.78740119934082,
-          7.730404853820801,
+          10.3100004196167,
+          6.732999801635742,
           1.0130000114440918
         ]
       ],
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_entry",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3525,19 +3692,20 @@
     "handle_master": {
       "bounds": [
         [
-          2.9419660568237305,
-          5.081084728240967,
+          2.5899999141693115,
+          5.336999893188477,
           0.9869999885559082
         ],
         [
-          3.028930187225342,
-          5.184582233428955,
+          2.700000047683716,
+          5.36299991607666,
           1.0130000114440918
         ]
       ],
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_master",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3546,19 +3714,20 @@
     "handle_northwest": {
       "bounds": [
         [
-          3.0019662380218506,
-          10.131084442138672,
+          3.546999931335449,
+          10.299999237060547,
           0.9869999885559082
         ],
         [
-          3.088930368423462,
-          10.234580993652344,
+          3.572999954223633,
+          10.40999984741211,
           1.0130000114440918
         ]
       ],
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_northwest",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3567,19 +3736,20 @@
     "handle_southeast": {
       "bounds": [
         [
-          8.004271507263184,
-          4.9844794273376465,
+          8.299999237060547,
+          5.226999759674072,
           0.9869999885559082
         ],
         [
-          8.094895362854004,
-          5.085456371307373,
+          8.40999984741211,
+          5.252999782562256,
           1.0130000114440918
         ]
       ],
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_southeast",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3601,6 +3771,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_entry",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3622,6 +3793,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_entry",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3643,6 +3815,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_entry",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3652,18 +3825,19 @@
       "bounds": [
         [
           3.48799991607666,
-          4.437999725341797,
+          5.3379998207092285,
           0.20000001788139343
         ],
         [
           3.51200008392334,
-          4.461999893188477,
+          5.361999988555908,
           0.2800000011920929
         ]
       ],
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_master",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3673,18 +3847,19 @@
       "bounds": [
         [
           3.48799991607666,
-          4.437999725341797,
+          5.3379998207092285,
           0.9500000476837158
         ],
         [
           3.51200008392334,
-          4.461999893188477,
+          5.361999988555908,
           1.0299999713897705
         ]
       ],
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_master",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3694,18 +3869,19 @@
       "bounds": [
         [
           3.48799991607666,
-          4.437999725341797,
+          5.3379998207092285,
           1.850000023841858
         ],
         [
           3.51200008392334,
-          4.461999893188477,
+          5.361999988555908,
           1.9299999475479126
         ]
       ],
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_master",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3727,6 +3903,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_northwest",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3748,6 +3925,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_northwest",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3769,6 +3947,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_northwest",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3778,18 +3957,19 @@
       "bounds": [
         [
           7.48799991607666,
-          4.368000030517578,
+          5.227999687194824,
           0.20000001788139343
         ],
         [
           7.51200008392334,
-          4.392000198364258,
+          5.251999855041504,
           0.2800000011920929
         ]
       ],
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_southeast",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3799,18 +3979,19 @@
       "bounds": [
         [
           7.48799991607666,
-          4.368000030517578,
+          5.227999687194824,
           0.9500000476837158
         ],
         [
           7.51200008392334,
-          4.392000198364258,
+          5.251999855041504,
           1.0299999713897705
         ]
       ],
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_southeast",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3820,18 +4001,19 @@
       "bounds": [
         [
           7.48799991607666,
-          4.368000030517578,
+          5.227999687194824,
           1.850000023841858
         ],
         [
           7.51200008392334,
-          4.392000198364258,
+          5.251999855041504,
           1.9299999475479126
         ]
       ],
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_southeast",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -3853,6 +4035,7 @@
       "triangles": 124,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3874,6 +4057,7 @@
       "triangles": 124,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3895,6 +4079,7 @@
       "triangles": 124,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -3916,6 +4101,7 @@
       "triangles": 124,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Black_appliance_glass"
@@ -3937,6 +4123,7 @@
       "triangles": 124,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Black_appliance_glass"
@@ -3958,6 +4145,7 @@
       "triangles": 124,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Black_appliance_glass"
@@ -3979,6 +4167,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Black_appliance_glass"
@@ -4000,6 +4189,7 @@
       "triangles": 124,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -4021,6 +4211,7 @@
       "triangles": 124,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -4042,6 +4233,7 @@
       "triangles": 124,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -4063,6 +4255,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4084,6 +4277,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4105,6 +4299,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4126,6 +4321,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4147,6 +4343,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4168,6 +4365,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4189,6 +4387,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4210,6 +4409,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4231,6 +4431,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4252,6 +4453,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4273,6 +4475,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4294,6 +4497,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4315,6 +4519,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4336,6 +4541,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4357,6 +4563,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "hob",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4378,6 +4585,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_entry",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4399,6 +4607,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_entry",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4420,6 +4629,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_entry",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4441,6 +4651,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_entry",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4450,18 +4661,19 @@
       "bounds": [
         [
           3.4749999046325684,
-          5.259999752044678,
+          4.359999656677246,
           0.0
         ],
         [
           3.5250000953674316,
-          5.440000057220459,
+          4.539999961853027,
           1.149999976158142
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_master",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4471,18 +4683,19 @@
       "bounds": [
         [
           3.4749999046325684,
-          5.259999752044678,
+          4.359999656677246,
           1.1499998569488525
         ],
         [
           3.5250000953674316,
-          5.440000057220459,
+          4.539999961853027,
           2.2200000286102295
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_master",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4504,6 +4717,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_northwest",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4525,6 +4739,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_northwest",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4534,18 +4749,19 @@
       "bounds": [
         [
           7.474999904632568,
-          5.190000057220459,
+          4.289999961853027,
           0.0
         ],
         [
           7.525000095367432,
-          5.37000036239624,
+          4.470000267028809,
           1.149999976158142
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_southeast",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4555,18 +4771,19 @@
       "bounds": [
         [
           7.474999904632568,
-          5.190000057220459,
+          4.289999961853027,
           1.1499998569488525
         ],
         [
           7.525000095367432,
-          5.37000036239624,
+          4.470000267028809,
           2.2200000286102295
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_southeast",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4576,18 +4793,19 @@
       "bounds": [
         [
           3.4725000858306885,
-          4.359999656677246,
+          5.259999752044678,
           0.0
         ],
         [
           3.5274999141693115,
-          4.539999961853027,
+          5.440000057220459,
           1.149999976158142
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_master",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4597,18 +4815,19 @@
       "bounds": [
         [
           3.4725000858306885,
-          4.359999656677246,
+          5.259999752044678,
           1.1499998569488525
         ],
         [
           3.5274999141693115,
-          4.539999961853027,
+          5.440000057220459,
           2.2200000286102295
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_master",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4630,6 +4849,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_northwest",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4651,6 +4871,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_northwest",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4660,18 +4881,19 @@
       "bounds": [
         [
           7.472499847412109,
-          4.289999961853027,
+          5.190000057220459,
           0.0
         ],
         [
           7.527500152587891,
-          4.470000267028809,
+          5.37000036239624,
           1.149999976158142
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "door_southeast",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4681,18 +4903,19 @@
       "bounds": [
         [
           7.472499847412109,
-          4.289999961853027,
+          5.190000057220459,
           1.1499998569488525
         ],
         [
           7.527500152587891,
-          4.470000267028809,
+          5.37000036239624,
           2.2200000286102295
         ]
       ],
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_southeast",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4714,6 +4937,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -4735,6 +4959,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -4756,6 +4981,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "ceiling",
+      "entityId": "ceiling",
       "uv": true,
       "materials": [
         "Warm_white_ceiling"
@@ -4777,6 +5003,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "detail_Kitchen_drawer_recess",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4798,6 +5025,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "detail_Kitchen_drawer_recess_001",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4819,6 +5047,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4840,6 +5069,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -4861,6 +5091,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -4882,6 +5113,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4903,6 +5135,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4924,6 +5157,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4945,6 +5179,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4966,6 +5201,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -4987,6 +5223,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5008,6 +5245,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5029,6 +5267,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -5050,6 +5289,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -5071,6 +5311,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -5092,6 +5333,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -5113,6 +5355,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-east",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -5134,6 +5377,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "floor",
+      "entityId": "floor_Kitchen_floor",
       "uv": true,
       "materials": [
         "Kitchen_satin_stone"
@@ -5155,6 +5399,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-north",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -5176,6 +5421,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5197,6 +5443,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5218,6 +5465,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5239,6 +5487,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5260,6 +5509,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5281,6 +5531,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-north",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -5302,6 +5553,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -5323,6 +5575,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -5344,6 +5597,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -5365,6 +5619,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -5386,6 +5641,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5407,6 +5663,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5428,6 +5685,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5449,6 +5707,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5470,6 +5729,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5491,6 +5751,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5512,6 +5773,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5533,6 +5795,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5554,6 +5817,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5575,6 +5839,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5596,6 +5861,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Kitchen_north",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -5617,6 +5883,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5638,6 +5905,7 @@
       "triangles": 96,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sliding",
       "uv": false,
       "materials": [
         "Subtle_glass_fluting"
@@ -5659,6 +5927,7 @@
       "triangles": 96,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-sliding",
       "uv": false,
       "materials": [
         "Subtle_glass_fluting"
@@ -5680,6 +5949,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sliding",
       "uv": true,
       "materials": [
         "Smoked_ribbed_sliding_glass"
@@ -5701,6 +5971,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-sliding",
       "uv": true,
       "materials": [
         "Smoked_ribbed_sliding_glass"
@@ -5722,6 +5993,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5743,6 +6015,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5764,6 +6037,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5785,6 +6059,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5806,6 +6081,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5827,6 +6103,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5848,6 +6125,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -5869,6 +6147,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Dark_stainless_sink"
@@ -5890,6 +6169,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -5911,6 +6191,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -5932,6 +6213,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -5953,6 +6235,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -5974,6 +6257,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -5995,6 +6279,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Dark_stainless_sink"
@@ -6016,6 +6301,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Dark_stainless_sink"
@@ -6037,6 +6323,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -6058,6 +6345,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -6079,6 +6367,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -6100,6 +6389,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -6121,6 +6411,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -6142,6 +6433,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -6163,6 +6455,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -6184,6 +6477,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Dark_stainless_sink"
@@ -6205,6 +6499,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Dark_stainless_sink"
@@ -6226,6 +6521,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Dark_stainless_sink"
@@ -6247,6 +6543,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Dark_stainless_sink"
@@ -6268,6 +6565,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Dark_stainless_sink"
@@ -6289,6 +6587,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-sink",
       "uv": true,
       "materials": [
         "Dark_stainless_sink"
@@ -6310,6 +6609,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "detail_Kitchen_under_east_light",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -6331,6 +6631,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "detail_Kitchen_under_west_light",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -6352,6 +6653,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-west",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -6373,6 +6675,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-west",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -6394,6 +6697,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-west",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -6415,6 +6719,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6436,6 +6741,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6457,6 +6763,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6478,6 +6785,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6499,6 +6807,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "kitchen-west",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6520,6 +6829,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-west",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -6541,6 +6851,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "kitchen-west",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -6562,6 +6873,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "detail_Kitchen_window_fixed_transom",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6583,6 +6895,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_entry",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -6604,6 +6917,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_master",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -6625,6 +6939,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_northwest",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -6646,6 +6961,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "door_southeast",
       "uv": true,
       "materials": [
         "Warm_ivory_cabinet"
@@ -6667,6 +6983,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -6688,6 +7005,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -6709,6 +7027,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -6730,6 +7049,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -6751,6 +7071,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -6772,6 +7093,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -6793,6 +7115,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6814,6 +7137,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6835,6 +7159,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6856,6 +7181,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6877,6 +7203,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6898,6 +7225,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6919,6 +7247,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6940,6 +7269,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6961,6 +7291,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -6982,6 +7313,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7003,6 +7335,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7024,6 +7357,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7045,6 +7379,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Living_south",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -7066,6 +7401,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7087,6 +7423,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7108,6 +7445,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7129,6 +7467,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7150,6 +7489,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7171,6 +7511,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Charcoal_bath_privacy_glass"
@@ -7192,6 +7533,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Charcoal_bath_privacy_glass"
@@ -7213,6 +7555,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7234,6 +7577,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7255,6 +7599,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7276,6 +7621,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7297,6 +7643,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7318,6 +7665,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7339,6 +7687,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7360,6 +7709,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-sliding-door",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7381,6 +7731,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Pale_sage_marble_vanity"
@@ -7402,6 +7753,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Pale_sage_marble_vanity"
@@ -7423,6 +7775,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -7444,6 +7797,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -7465,6 +7819,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -7486,6 +7841,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -7507,6 +7863,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -7528,6 +7885,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -7549,6 +7907,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -7570,6 +7929,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -7591,6 +7951,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -7612,6 +7973,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -7633,6 +7995,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -7654,6 +8017,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7675,6 +8039,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7696,6 +8061,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Champagne_crystal_inlay"
@@ -7717,6 +8083,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Champagne_crystal_inlay"
@@ -7738,6 +8105,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -7759,6 +8127,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -7780,6 +8149,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -7801,6 +8171,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -7822,6 +8193,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -7843,6 +8215,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7864,6 +8237,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Silver_mirror"
@@ -7885,6 +8259,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Champagne_crystal_inlay"
@@ -7906,6 +8281,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Champagne_crystal_inlay"
@@ -7927,6 +8303,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Champagne_crystal_inlay"
@@ -7948,6 +8325,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7969,6 +8347,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -7990,6 +8369,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8011,6 +8391,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -8032,6 +8413,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -8053,6 +8435,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -8074,6 +8457,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -8095,6 +8479,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Muted_taupe_hall_panels"
@@ -8116,6 +8501,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8137,6 +8523,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8158,6 +8545,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8179,6 +8567,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8200,6 +8589,7 @@
       "triangles": 28,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Pale_sage_marble_vanity"
@@ -8221,6 +8611,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Warm_light"
@@ -8242,6 +8633,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8263,6 +8655,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-vanity",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8284,6 +8677,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "floor_Master_low_platform",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -8305,6 +8699,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8326,6 +8721,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8347,6 +8743,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8368,6 +8765,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8389,6 +8787,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8410,6 +8809,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8431,6 +8831,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8452,6 +8853,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -8473,6 +8875,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -8494,6 +8897,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8515,6 +8919,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8536,6 +8941,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8557,6 +8963,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8578,6 +8985,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8599,6 +9007,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-shower",
       "uv": true,
       "materials": [
         "Grey_flowing_marble_floor"
@@ -8620,6 +9029,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -8641,6 +9051,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -8662,6 +9073,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -8683,6 +9095,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -8704,6 +9117,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8725,6 +9139,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8746,6 +9161,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8767,6 +9183,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8788,6 +9205,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8809,6 +9227,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8830,6 +9249,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8851,6 +9271,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8872,6 +9293,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -8893,6 +9315,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Master_south",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -8914,6 +9337,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-toilet",
       "uv": true,
       "materials": [
         "Porcelain"
@@ -8935,6 +9359,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-toilet",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -8943,7 +9368,7 @@
     "Master_WC_inner": {
       "bounds": [
         [
-          2.2849998474121094,
+          2.2850000858306885,
           5.940000057220459,
           0.46000000834465027
         ],
@@ -8956,6 +9381,7 @@
       "triangles": 528,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-toilet",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -8977,6 +9403,7 @@
       "triangles": 528,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-toilet",
       "uv": true,
       "materials": [
         "Porcelain"
@@ -8998,6 +9425,7 @@
       "triangles": 528,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "master-toilet",
       "uv": true,
       "materials": [
         "Porcelain"
@@ -9019,6 +9447,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Masterbath_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -9040,6 +9469,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Masterbath_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9061,6 +9491,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Masterbath_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9082,6 +9513,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Masterbath_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9103,6 +9535,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Masterbath_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9124,6 +9557,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_Masterbath_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9145,6 +9579,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_Masterbath_north",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -9166,6 +9601,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9187,6 +9623,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9208,6 +9645,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9229,6 +9667,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9250,6 +9689,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9271,6 +9711,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9292,6 +9733,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9313,6 +9755,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9334,6 +9777,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9355,6 +9799,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9376,6 +9821,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9397,6 +9843,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9418,6 +9865,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9439,6 +9887,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9460,6 +9909,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-surround",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9481,6 +9931,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -9502,6 +9953,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -9523,6 +9975,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -9544,6 +9997,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -9565,6 +10019,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9586,6 +10041,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9607,6 +10063,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9628,6 +10085,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9649,6 +10107,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9670,6 +10129,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9691,6 +10151,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9712,6 +10173,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9733,6 +10195,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9754,6 +10217,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_NW_north",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -9775,6 +10239,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "oven",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9796,6 +10261,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "oven",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -9817,6 +10283,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "oven",
       "uv": true,
       "materials": [
         "Black_appliance_glass"
@@ -9838,6 +10305,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "oven",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -9859,6 +10327,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "oven",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -9880,6 +10349,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "oven",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -9901,6 +10371,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "oven",
       "uv": true,
       "materials": [
         "Brushed_steel"
@@ -9922,6 +10393,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "floor_SE_low_platform",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -9943,6 +10415,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -9964,6 +10437,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -9985,6 +10459,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -10006,6 +10481,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -10027,6 +10503,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -10048,6 +10525,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -10069,6 +10547,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -10090,6 +10569,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -10111,6 +10591,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -10132,6 +10613,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -10153,6 +10635,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -10174,6 +10657,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -10195,6 +10679,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -10216,6 +10701,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_SE_south",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -10237,6 +10723,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_basin_east",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10258,6 +10745,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_closet_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10279,6 +10767,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_closet_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10300,6 +10789,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_closet_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10321,6 +10811,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_common_bath_east",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10342,6 +10833,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_common_bath_east",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10363,6 +10855,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_common_bath_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10384,6 +10877,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_east_elevator",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10405,6 +10899,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_east_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10426,6 +10921,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_east_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10447,6 +10943,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_east_notch",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10468,6 +10965,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_east_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10489,6 +10987,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_kitchen_east_return",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10510,6 +11009,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_kitchen_west_return",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10531,6 +11031,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_living_se",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10552,6 +11053,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_living_se",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10573,6 +11075,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_master_living",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10594,6 +11097,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_master_living",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10615,6 +11119,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_master_living",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10636,6 +11141,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_masterbath_east",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10657,6 +11163,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_masterbath_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10678,6 +11185,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_masterbath_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10699,6 +11207,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10720,6 +11229,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10741,6 +11251,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10762,6 +11273,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10783,6 +11295,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10804,6 +11317,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10825,6 +11339,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10846,6 +11361,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_northwest_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10867,6 +11383,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_northwest_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10888,6 +11405,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_northwest_x",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10909,6 +11427,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10930,6 +11449,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10951,6 +11471,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10972,6 +11493,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -10993,6 +11515,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11014,6 +11537,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11035,6 +11559,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_utility_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11056,6 +11581,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_utility_west",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11077,6 +11603,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_utility_west",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11098,6 +11625,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_west_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11119,6 +11647,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_west_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11140,6 +11669,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_west_north",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11161,6 +11691,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_west_south",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11182,6 +11713,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_west_step",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11203,6 +11735,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_west_step",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11224,6 +11757,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_west_step",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11245,6 +11779,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "wall_x_kitchen",
       "uv": true,
       "materials": [
         "Thin_graphite_cut_edge"
@@ -11266,6 +11801,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_basin_east",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11288,6 +11824,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_basin_east",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11309,6 +11846,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_closet_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11331,6 +11869,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_closet_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11352,6 +11891,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_closet_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11373,6 +11913,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_closet_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11395,6 +11936,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_closet_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11416,6 +11958,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_closet_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11438,6 +11981,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_closet_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11459,6 +12003,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_common_bath_east",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11481,6 +12026,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_common_bath_east",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11502,6 +12048,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_common_bath_east",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11523,6 +12070,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_common_bath_east",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11545,6 +12093,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_common_bath_east",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11566,6 +12115,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_common_bath_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11588,6 +12138,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_common_bath_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11609,6 +12160,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_east_elevator",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11631,6 +12183,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_east_elevator",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11652,6 +12205,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_east_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11674,6 +12228,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_east_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11695,6 +12250,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_east_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11716,6 +12272,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_east_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11738,6 +12295,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_east_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11759,6 +12317,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_east_notch",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11781,6 +12340,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_east_notch",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11802,6 +12362,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_east_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11824,6 +12385,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_east_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11845,6 +12407,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_kitchen_east_return",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11867,6 +12430,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_kitchen_east_return",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11888,6 +12452,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_kitchen_west_return",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11910,6 +12475,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_kitchen_west_return",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11931,6 +12497,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_living_se",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -11953,6 +12520,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_living_se",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11974,6 +12542,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_living_se",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -11995,6 +12564,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_living_se",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12017,6 +12587,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_living_se",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12038,6 +12609,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_master_living",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12060,6 +12632,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_master_living",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12081,6 +12654,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_master_living",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12102,6 +12676,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_master_living",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12124,6 +12699,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_master_living",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12145,6 +12721,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_master_living",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12166,6 +12743,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_master_living",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12188,6 +12766,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_master_living",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12209,6 +12788,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_masterbath_east",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12231,6 +12811,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_masterbath_east",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12252,6 +12833,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_masterbath_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12274,6 +12856,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_masterbath_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12295,6 +12878,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_masterbath_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12316,6 +12900,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_masterbath_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12338,6 +12923,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_masterbath_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12359,6 +12945,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12381,6 +12968,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12402,6 +12990,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12423,6 +13012,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12444,6 +13034,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12466,6 +13057,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12487,6 +13079,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12508,6 +13101,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12529,6 +13123,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12551,6 +13146,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12572,6 +13168,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12593,6 +13190,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12614,6 +13212,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12636,6 +13235,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12657,6 +13257,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_northwest_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12679,6 +13280,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_northwest_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12700,6 +13302,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_northwest_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12721,6 +13324,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_northwest_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12743,6 +13347,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_northwest_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12764,6 +13369,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_northwest_x",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12786,6 +13392,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_northwest_x",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12807,6 +13414,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12829,6 +13437,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12850,6 +13459,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12871,6 +13481,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12892,6 +13503,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12914,6 +13526,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12935,6 +13548,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12956,6 +13570,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -12977,6 +13592,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -12999,6 +13615,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13020,6 +13637,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13041,6 +13659,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13062,6 +13681,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -13084,6 +13704,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13105,6 +13726,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_utility_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -13127,6 +13749,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_utility_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13148,6 +13771,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_utility_west",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -13170,6 +13794,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_utility_west",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13191,6 +13816,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_utility_west",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13212,6 +13838,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_utility_west",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -13234,6 +13861,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_utility_west",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13255,6 +13883,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_west_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -13277,6 +13906,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_west_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13298,6 +13928,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_west_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13319,6 +13950,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_west_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13340,6 +13972,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_west_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -13362,6 +13995,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_west_north",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13383,6 +14017,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_west_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -13405,6 +14040,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_west_south",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13426,6 +14062,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_west_step",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -13448,6 +14085,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_west_step",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13469,6 +14107,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_west_step",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -13491,6 +14130,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_west_step",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13512,6 +14152,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_west_step",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13533,6 +14174,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_west_step",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -13555,6 +14197,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_west_step",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13576,6 +14219,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "wall",
+      "entityId": "wall_x_kitchen",
       "uv": true,
       "materials": [
         "Warm_white_plaster",
@@ -13598,6 +14242,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "wall_x_kitchen",
       "uv": true,
       "materials": [
         "Warm_white_plaster"
@@ -13619,6 +14264,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -13640,6 +14286,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -13661,6 +14308,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -13682,6 +14330,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Clear_glass"
@@ -13703,6 +14352,7 @@
       "triangles": 44,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -13724,6 +14374,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -13745,6 +14396,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -13766,6 +14418,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -13787,6 +14440,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -13808,6 +14462,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -13829,6 +14484,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -13850,6 +14506,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -13871,6 +14528,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -13892,6 +14550,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "window_X_north",
       "uv": true,
       "materials": [
         "Ivory_stone_counter"
@@ -13913,6 +14572,7 @@
       "triangles": 82,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": false,
       "materials": [
         "Subtle_glass_fluting"
@@ -13934,6 +14594,7 @@
       "triangles": 82,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": false,
       "materials": [
         "Subtle_glass_fluting"
@@ -13955,6 +14616,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Smoked_ribbed_sliding_glass"
@@ -13976,6 +14638,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Smoked_ribbed_sliding_glass"
@@ -13997,6 +14660,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14018,6 +14682,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14039,6 +14704,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14060,6 +14726,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14081,6 +14748,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14102,6 +14770,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14123,6 +14792,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14144,6 +14814,7 @@
       "triangles": 82,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": false,
       "materials": [
         "Subtle_glass_fluting"
@@ -14165,6 +14836,7 @@
       "triangles": 82,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": false,
       "materials": [
         "Subtle_glass_fluting"
@@ -14186,6 +14858,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Smoked_ribbed_sliding_glass"
@@ -14207,6 +14880,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Smoked_ribbed_sliding_glass"
@@ -14228,6 +14902,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14249,6 +14924,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14270,6 +14946,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14291,6 +14968,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14312,6 +14990,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14333,6 +15012,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14354,6 +15034,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14375,6 +15056,7 @@
       "triangles": 82,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": false,
       "materials": [
         "Subtle_glass_fluting"
@@ -14396,6 +15078,7 @@
       "triangles": 82,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": false,
       "materials": [
         "Subtle_glass_fluting"
@@ -14417,6 +15100,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Smoked_ribbed_sliding_glass"
@@ -14438,6 +15122,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Smoked_ribbed_sliding_glass"
@@ -14459,6 +15144,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14480,6 +15166,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14501,6 +15188,7 @@
       "triangles": 108,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14522,6 +15210,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14543,6 +15232,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "fixed",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14564,6 +15254,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"
@@ -14585,6 +15276,7 @@
       "triangles": 12,
       "degenerate": 0,
       "layer": "upper",
+      "entityId": "north-sliding",
       "uv": true,
       "materials": [
         "Graphite_frame"

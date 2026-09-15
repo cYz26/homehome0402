@@ -1,0 +1,64 @@
+{
+  "version": "metric-v06",
+  "checks": [
+    {
+      "name": "spec, data, navigation and manifest are one version",
+      "pass": true
+    },
+    {
+      "name": "Every source and published resource matches its SHA-256",
+      "pass": true
+    },
+    {
+      "name": "Published images contain no EXIF, XMP or IPTC metadata",
+      "pass": true
+    },
+    {
+      "name": "690 source parts have unique semantic owners and all IDs resolve",
+      "pass": true
+    },
+    {
+      "name": "all non-door geometry remains identical to v05",
+      "pass": true
+    },
+    {
+      "name": "door hinge sides and fully open directions follow the redlined plan",
+      "pass": true
+    },
+    {
+      "name": "space areas derive from polygons after subtracting walls",
+      "pass": true
+    },
+    {
+      "name": "web textures preserve source resolution with only KTX block alignment",
+      "pass": true
+    },
+    {
+      "name": "KTX2 and Meshopt are present and all component bounds survive compression",
+      "pass": true
+    },
+    {
+      "name": "first-screen and interactive resource budgets are within 1 / 16 MiB (visual-first)",
+      "pass": true
+    },
+    {
+      "name": "Three.js is not preloaded by the initial HTML",
+      "pass": true
+    },
+    {
+      "name": "Build contains only current selected resources and application code",
+      "pass": true
+    },
+    {
+      "name": "SVG includes rooms, entities, doors, north and metre scale without invalid coordinates",
+      "pass": true
+    }
+  ],
+  "passed": 13,
+  "initialBytes": 606135,
+  "firstViewportCoreBytes": 262001,
+  "interactiveBytes": 15571640,
+  "webGLBBytes": 13360600,
+  "sourceSha256": "62a50fc3b56ae90ca5d2e366fba333b22f78171ff0b4fa2408e02f3e1ca3181a",
+  "rawModelSha256": "07a3e658e0d2b7c44227e5e8950f1a27c44c70ea80e4e700ab191fd4f297571f"
+}

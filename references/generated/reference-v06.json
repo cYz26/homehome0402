@@ -1,0 +1,18 @@
+{
+  "modelVersion": "metric-v06",
+  "modelSha256": "07a3e658e0d2b7c44227e5e8950f1a27c44c70ea80e4e700ab191fd4f297571f",
+  "imageSha256": "d6149a478ac5af7fffbabe8c3d9fbaa5fc9ae81a8308c6e6ea8a52ed003b55d0",
+  "tool": "image_gen",
+  "role": "AI generated reference; geometry authority is the current GLB and Cycles render",
+  "revision": "Four hinged doors corrected from user redlined original plan and fully opened against adjacent walls.",
+  "sources": [
+    ".asset-work/renders/metric-v06/reference.png",
+    "public/references/approved-v05.png",
+    "public/references/hall-materials-v04.png",
+    "public/references/master-double-basin-v04.png",
+    "public/references/kitchen-fridge.jpg"
+  ],
+  "review": "Visual comparison: footprint, removed elevator / wardrobes, continuous trough, cabinet arrangement and four open doors checked; user acceptance pending.",
+  "originalImageSha256": "2058564d664ab4bee755f0cc5f4ee0fbf4538ff09770b9833a3f11c673666f11",
+  "metadataCleanup": "Removed ancillary PNG metadata for repository image checks; decoded pixels unchanged. AI origin and source references are preserved here."
+}

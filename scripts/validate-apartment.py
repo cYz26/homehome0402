@@ -5,9 +5,10 @@ opaque/bottom-center generic-prop contract or user artistic acceptance.
 import bpy, json, pathlib, hashlib, math
 from mathutils import Vector
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-STEM=json.loads((ROOT/'model/apartment.json').read_text())['assetStem']
+SPEC=json.loads((ROOT/'model/apartment.json').read_text())
+STEM=SPEC['assetStem']
 SOURCE_PATH=ROOT/'art_src'/f'{STEM}.blend'
-GLB_PATH=ROOT/'public/models'/f'{STEM}.glb'
+GLB_PATH=ROOT/'asset_exchange'/f'{STEM}.glb'
 
 def inspect():
     result={};deps=bpy.context.evaluated_depsgraph_get()
@@ -17,7 +18,7 @@ def inspect():
         points=[ev.matrix_world@v.co for v in mesh.vertices]
         bounds=[[min(p[a] for p in points) for a in range(3)],[max(p[a] for p in points) for a in range(3)]]
         degenerate=sum(1 for tri in mesh.loop_triangles if tri.area<1e-12)
-        result[ob.name]={'bounds':bounds,'triangles':len(mesh.loop_triangles),'degenerate':degenerate,'layer':ob.get('layer'),'uv':bool(mesh.uv_layers),'materials':[m.name for m in ob.data.materials]}
+        result[ob.name]={'bounds':bounds,'triangles':len(mesh.loop_triangles),'degenerate':degenerate,'layer':ob.get('layer'),'entityId':ob.get('entityId'),'uv':bool(mesh.uv_layers),'materials':[m.name for m in ob.data.materials]}
         ev.to_mesh_clear()
     return result
 
@@ -42,7 +43,10 @@ for name,expected in source.items():
     max_error=max(max_error,error)
     if error>.0001:errors.append(f'bounds {name} {error}')
     if expected['triangles']!=actual['triangles']:errors.append('triangle count '+name)
-report={'source_sha256':hashlib.sha256(SOURCE_PATH.read_bytes()).hexdigest(),
+    if expected['entityId']!=actual['entityId']:errors.append('semantic owner '+name)
+for name in imported.keys()-source.keys():errors.append('unexpected '+name)
+report={'version':SPEC['version'],'spec_sha256':hashlib.sha256((ROOT/'model/apartment.json').read_bytes()).hexdigest(),
+ 'source_sha256':hashlib.sha256(SOURCE_PATH.read_bytes()).hexdigest(),
  'glb_sha256':hashlib.sha256(GLB_PATH.read_bytes()).hexdigest(),
  'source_objects':len(source),'reimport_objects':len(imported),'max_bound_error_m':max_error,
  'source_triangles':sum(o['triangles'] for o in source.values()),'reimport_triangles':sum(o['triangles'] for o in imported.values()),

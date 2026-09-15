@@ -1,0 +1,323 @@
+import fs from "node:fs/promises";
+import crypto from "node:crypto";
+import sharp from "sharp";
+const spec = JSON.parse(await fs.readFile("model/apartment.json"));
+const version = spec.version,
+  prefix = `releases/${version}`,
+  out = `public/${prefix}`;
+await fs.mkdir(`${out}/images`, { recursive: true });
+const assets = [],
+  images = [];
+const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
+const validation = JSON.parse(await fs.readFile("model/validation.json"));
+const checks = JSON.parse(await fs.readFile("model/checks.json"));
+const provenance = JSON.parse(
+  await fs.readFile(`.asset-work/renders/${version}/provenance.json`),
+);
+const sourceHash = hash(await fs.readFile(`art_src/${spec.assetStem}.blend`));
+const specHash = hash(await fs.readFile("model/apartment.json"));
+if (
+  validation.version !== version ||
+  !validation.roundtrip_pass ||
+  validation.source_sha256 !== sourceHash ||
+  validation.spec_sha256 !== specHash ||
+  validation.glb_sha256 !==
+    hash(await fs.readFile(`asset_exchange/${spec.assetStem}.glb`)) ||
+  checks.passed !== checks.total
+)
+  throw Error("Validate the current model before preparing a release.");
+for (const view of spec.renderViews) {
+  const record = provenance.images?.[view.id];
+  const source =
+    record ??
+    (provenance.views.some((v) => v.id === view.id) ? provenance : null);
+  if (
+    !source ||
+    source.sourceSha256 !== sourceHash ||
+    source.specSha256 !== specHash
+  )
+    throw Error(`Re-render ${view.id}: image and model versions differ.`);
+  if (
+    record &&
+    record.sha256 !==
+      hash(await fs.readFile(`.asset-work/renders/${version}/${view.id}.png`))
+  )
+    throw Error(`Render image changed: ${view.id}`);
+}
+async function asset(path, role) {
+  const source =
+    role === "hd-model" ? `asset_exchange/${spec.assetStem}.glb` : undefined;
+  const bytes = await fs.readFile(source ?? `public/${path}`);
+  assets.push({
+    path,
+    role,
+    ...(source ? { source } : {}),
+    bytes: bytes.length,
+    sha256: hash(bytes),
+  });
+}
+for (const width of [640, 1000, 1600]) {
+  const path = `${prefix}/images/hero-${width}.webp`;
+  await sharp(`.asset-work/renders/${version}/hero.png`)
+    .resize({ width })
+    .webp({ quality: 82 })
+    .toFile(`public/${path}`);
+  await asset(path, "hero");
+}
+const renderTitles = {
+  hero: "全屋视角",
+  reference: "当前模型",
+  living: "客厅",
+  kitchen: "厨房",
+  master: "主卧",
+  masterbath: "主卫",
+};
+for (const id of ["reference", "living", "kitchen", "master", "masterbath"]) {
+  const path = `${prefix}/images/${id}.webp`;
+  await sharp(`.asset-work/renders/${version}/${id}.png`)
+    .resize({ width: id === "reference" ? 1400 : 1100 })
+    .webp({ quality: 86 })
+    .toFile(`public/${path}`);
+  images.push({
+    id,
+    title: renderTitles[id],
+    path,
+    kind: "模型渲染",
+    version,
+    caption: `由当前 ${version} 源模型以 Cycles 渲染。4 处房门已按原始户型图修正为全开靠墙；空间及构件与交互模型同步。`,
+  });
+  await asset(path, "render");
+}
+const references = [
+  [
+    "plan",
+    "floor-plan.png",
+    "原始户型图",
+    "原始图纸",
+    "原始分段尺寸与门洞朝向依据；图中家具、柜体和电梯外部布局不等于当前模型的展示范围。",
+  ],
+  [
+    "photo-living",
+    "entry-living.jpg",
+    "客厅实景",
+    "实拍",
+    "入户看向南侧客厅；相邻墙面依据后续修订保留素墙。",
+  ],
+  [
+    "photo-north",
+    "north-room-kitchen.jpg",
+    "北侧实景",
+    "实拍 · 已脱敏",
+    "已移除人物和倒影，遮挡处经 AI 补绘；X 空间门扇以当前模型的收起状态为准。",
+  ],
+  [
+    "photo-master",
+    "southwest-master.jpg",
+    "主卧实景",
+    "实拍",
+    "主卧人字拼木地板；柜体按后续修订移除。",
+  ],
+  [
+    "photo-southeast",
+    "southeast-bedroom.jpg",
+    "东南卧室实景",
+    "实拍",
+    "保留直铺木地板，东侧墙面包覆已按后续修订移除。",
+  ],
+  [
+    "photo-hall",
+    "hall-materials-v04.png",
+    "客厅柜细节",
+    "实拍参考",
+    "灰褐木饰面、灰绿石材、薄分格和暖色灯带。",
+  ],
+  [
+    "photo-vanity",
+    "master-double-basin-v04.png",
+    "主卫宽槽细节",
+    "实拍 · 已脱敏",
+    "镜中拍摄者及手机已移除并补绘背景；一体连续宽槽配两组墙出龙头。",
+  ],
+  [
+    "photo-fridge",
+    "kitchen-fridge.jpg",
+    "冰箱与水槽",
+    "实拍",
+    "西侧双门冰箱、北窗下水槽与 U 形台面。",
+  ],
+  [
+    "photo-hob",
+    "kitchen-hob.jpg",
+    "烟机与灶具",
+    "实拍",
+    "东侧三眼灶、斜面烟机与嵌入式烤箱。",
+  ],
+  [
+    "photo-slider",
+    "north-frame-v04.png",
+    "北侧推拉门",
+    "实拍 · 已脱敏",
+    "已去除人物与倒影；薄深色门扇及外围框。",
+  ],
+  [
+    "photo-bathdoor",
+    "master-sliding-door-v04.png",
+    "主卫推拉门",
+    "实拍 · 已脱敏",
+    "已去除人像倒影与视频按钮；门扇收在入口右侧。",
+  ],
+  [
+    "archive",
+    "approved-v05.png",
+    "历史示意 v05",
+    "历史生成参考",
+    "旧版生成参考，未同步后续模型修订。仅供查看历史，不代表当前户型。",
+  ],
+];
+for (const [id, file, title, kind, caption] of references) {
+  const path = `${prefix}/images/${id}.webp`;
+  await sharp(`public/references/${file}`)
+    .resize({ width: id === "plan" ? 1500 : 1200, withoutEnlargement: true })
+    .webp({ quality: id === "plan" ? 95 : 84 })
+    .toFile(`public/${path}`);
+  images.push({
+    id,
+    title,
+    path,
+    kind,
+    version: id === "archive" ? "reference-v05" : "source-reference",
+    caption,
+  });
+  await asset(
+    path,
+    id === "archive" ? "historical-reference" : "source-reference",
+  );
+}
+// An illustrated derivative is optional; the authoritative reference always remains the actual render.
+try {
+  const provenance = JSON.parse(
+    await fs.readFile("references/generated/reference-v06.json"),
+  );
+  if (
+    provenance.modelSha256 ===
+    hash(await fs.readFile(`asset_exchange/${spec.assetStem}.glb`))
+  ) {
+    const path = `${prefix}/images/illustration.webp`;
+    await sharp("references/generated/reference-v06.png")
+      .resize({ width: 1400 })
+      .webp({ quality: 86 })
+      .toFile(`public/${path}`);
+    images.splice(1, 0, {
+      id: "illustration",
+      title: "更新示意 v06",
+      path,
+      kind: "AI 生成参考",
+      version,
+      caption:
+        "基于当前模型和脱敏实拍更新的示意图；几何、尺寸以当前模型和派生平面图为准。",
+    });
+    await asset(path, "generated-reference");
+  }
+} catch (e) {
+  if (e.code !== "ENOENT") throw e;
+}
+await fs.copyFile(
+  `asset_exchange/${spec.assetStem}.glb`,
+  `${out}/apartment-hd.glb`,
+);
+await fs.copyFile("model/apartment.json", `${out}/design-spec.json`);
+const report = {
+  version,
+  sourceSha256: validation.source_sha256,
+  rawModelSha256: validation.glb_sha256,
+  specSha256: hash(await fs.readFile("model/apartment.json")),
+  roundtrip: {
+    passed: validation.roundtrip_pass,
+    sourceObjects: validation.source_objects,
+    importedObjects: validation.reimport_objects,
+    triangles: validation.reimport_triangles,
+    maximumBoundsErrorMeters: validation.max_bound_error_m,
+  },
+  checks,
+  revisions: spec.revisions,
+  renders: provenance,
+  acceptance: {
+    visual: "pending-user-review",
+    realPhonePerformance: "not-measured",
+  },
+};
+await fs.writeFile(
+  `${out}/release-report.json`,
+  JSON.stringify(report, null, 2),
+);
+for (const [path, role] of [
+  ["apartment-web.glb", "model"],
+  ["apartment-hd.glb", "hd-model"],
+  ["architecture.json", "properties"],
+  ["navigation.json", "navigation"],
+  ["floor-plan.svg", "drawing"],
+  ["design-spec.json", "design-source"],
+  ["release-report.json", "report"],
+])
+  await asset(`${prefix}/${path}`, role);
+for (const file of ["basis_transcoder.js", "basis_transcoder.wasm"])
+  await asset(`decoders/basis/${file}`, "decoder");
+await asset("decoders/THREE-LICENSE.txt", "license");
+const sources = {};
+for (const path of [
+  "model/apartment.json",
+  `art_src/${spec.assetStem}.blend`,
+  `asset_exchange/${spec.assetStem}.glb`,
+  "scripts/build-apartment.py",
+  "scripts/architecture_geometry.py",
+  "scripts/render-apartment.py",
+  "scripts/export-apartment.py",
+  "scripts/generate-data.mjs",
+  "scripts/optimize-web.mjs",
+  "scripts/prepare-release.mjs",
+  "scripts/stage-site.mjs",
+  "index.html",
+  "vite.config.js",
+  "package.json",
+  "package-lock.json",
+  ...(await fs.readdir("src"))
+    .filter((f) => /\.(js|css)$/.test(f))
+    .map((f) => `src/${f}`),
+])
+  sources[path] = hash(await fs.readFile(path));
+const manifest = {
+  schemaVersion: 1,
+  version,
+  presentationRevision: "2026-09-15-section-quality",
+  units: "m",
+  project: spec.project,
+  model: `${prefix}/apartment-web.glb`,
+  rawModel: `${prefix}/apartment-hd.glb`,
+  architecture: `${prefix}/architecture.json`,
+  navigation: `${prefix}/navigation.json`,
+  floorplan: `${prefix}/floor-plan.svg`,
+  report: `${prefix}/release-report.json`,
+  spec: `${prefix}/design-spec.json`,
+  images,
+  assets,
+  sources,
+  budgets: { firstScreenBytes: 1048576, interactive3DBytes: 16777216 },
+  visualPolicy:
+    "Preserve source texture resolution; native display pixel ratio by default. Smooth mode is opt-in. Resource budgets follow visual quality.",
+};
+await fs.writeFile("public/release.json", JSON.stringify(manifest, null, 2));
+await fs.writeFile(
+  "docs/delivery-record.json",
+  JSON.stringify(
+    {
+      ...report,
+      releaseManifest: "public/release.json",
+      manifestSha256: hash(await fs.readFile("public/release.json")),
+    },
+    null,
+    2,
+  ),
+);
+console.log(
+  `${version}: ${assets.length} selected resources, ${(assets.reduce((s, a) => s + a.bytes, 0) / 1024 ** 2).toFixed(2)} MiB including on-demand HD.`,
+);

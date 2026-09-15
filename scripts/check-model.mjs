@@ -104,7 +104,7 @@ check('Actual Blender source and independently reimported GLB match',()=>{
 });
 check('Current export and spec match measured artifact digests',()=>{
   const hash=p=>createHash('sha256').update(readFileSync(new URL('../'+p,import.meta.url))).digest('hex');
-  assert.equal(hash('model/apartment.json'),measure.spec_sha256);assert.equal(hash(`public/models/${spec.assetStem}.glb`),validation.glb_sha256);
+  assert.equal(hash('model/apartment.json'),measure.spec_sha256);assert.equal(hash(`asset_exchange/${spec.assetStem}.glb`),validation.glb_sha256);
 });
 const result={checks,passed:checks.filter(c=>c.pass).length,total:checks.length};
 writeFileSync(new URL('../model/checks.json',import.meta.url),JSON.stringify(result,null,2)+'\n');
