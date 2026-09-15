@@ -18,6 +18,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -31,6 +32,7 @@ jobs:
       - run: npm run check:release
       - run: npx playwright install --with-deps chromium
       - run: npm run test:browser
+        timeout-minutes: 22
       - run: node scripts/collect-browser-evidence.mjs --output .asset-work/browser-evidence
       - name: Preserve version-bound browser evidence
         if: always()

@@ -6,7 +6,7 @@ test.use({ deviceScaleFactor: 2 });
 test("section caps stay flat through zoom with full AO, shadows and both model packages", async ({
   page,
 }, testInfo) => {
-  test.setTimeout(180000);
+  test.setTimeout(process.env.CI ? 300000 : 180000);
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   const metrics = [];

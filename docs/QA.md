@@ -63,3 +63,15 @@
 - 已在用户原机位的 Codex IAB 页面刷新并实际缩放，红箭头对应的长墙切面均呈平整颜色。真机帧率仍单独待测。
 
 实现依据：[Three.js SSAOPass 源码（r180）](https://github.com/mrdoob/three.js/blob/r180/examples/jsm/postprocessing/SSAOPass.js)、[材质剖切接口](https://threejs.org/docs/pages/Material.html)。发布清单通过 `presentationRevision` 区分本次显示修订，建筑模型仍为 metric-v06。
+
+## GitHub Actions 浏览器总超时修正 · 2026-09-15
+
+用户提供的 Actions 日志显示 5 / 8 通过，桌面、平板和标准 / 高清三个长流程均耗尽单项测试的 90 秒总时限，分别停在分享按钮、下载 HEAD 请求和 750 ms 的机位等待；没有报告断言不匹配。切面像素回归在该次 CI 中通过，用时约 2 分钟。这说明先前 macOS 的通过记录不能作为远程 CI 已通过的依据。
+
+本机以 SwiftShader 软件渲染运行标准 / 高清流程约 45 秒通过，叠加 6 倍 CPU 限速约 51 秒通过，未复现远程超时。远程日志确认了总预算耗尽，但具体 runner 的 GPU 后端和每阶段耗时尚无 trace 证据，不能据此认定网站存在固定按钮故障。
+
+修正测试预算：CI 单流程上限 300 秒（本地普通流程仍为 90 秒，切面流程仍为 180 秒），整个浏览器套件上限 20 分钟；单次 UI 操作 / 导航上限 30 秒，下载 HEAD 请求上限 15 秒，原有断言上限 20 秒保留。Actions 浏览器步骤上限 22 分钟、verify 作业上限 30 分钟，留出失败报告与证据上传时间。保留单 worker、全部断言及失败 trace，不增加自动重试。
+
+本次只修改验证配置，不调整网站标准画质、资源、渲染实现或用户已确认的视觉版本。2026-09-15 在 macOS 执行 `CI=true npm run test:browser`，**8 / 8 通过，总耗时 183.6 秒**，无跳过、重试或 flaky；标准 / 高清流程 47.6 秒，切面像素回归 22.6 秒。报告确认实际使用单流程 300 秒和套件 1200 秒预算。
+
+证据收集器成功提取 33 张图并绑定当前发布清单、构建和测试源码哈希，保存在本机忽略目录 `.asset-work/browser-evidence/metric-v06/`；保留原先入库的用户已确认视觉证据。JS 语法、文档链接和 `git diff --check` 通过。本机无 GitHub CLI 登录态，公开 Actions API 返回 HTTP 403，远程复验和 Pages 部署结果尚未读取；本地 CI 配置运行不代表 GitHub 托管 runner 或真机通过。

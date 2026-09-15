@@ -134,7 +134,9 @@ for (const [label, width, height] of [
     await page.locator("#reference-dialog [data-close-dialog]").click();
     await page.locator("#documents").scrollIntoViewIfNeeded();
     for (const link of await page.locator("#downloads a").all()) {
-      const response = await page.request.head(await link.getAttribute("href"));
+      const response = await page.request.head(await link.getAttribute("href"), {
+        timeout: 15000,
+      });
       expect(response.ok()).toBe(true);
     }
     expect(

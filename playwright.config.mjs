@@ -2,13 +2,18 @@ import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
   testMatch: "*.spec.mjs",
-  timeout: 90000,
+  // Full-quality WebGL flows accumulate rendering/readback time on CI runners.
+  // Keep individual operations bounded so this does not hide a stuck control.
+  timeout: process.env.CI ? 300000 : 90000,
+  globalTimeout: process.env.CI ? 20 * 60 * 1000 : undefined,
   expect: { timeout: 20000 },
   workers: 1,
   use: {
     baseURL: "http://127.0.0.1:4173/homehome402/",
     viewport: { width: 1280, height: 900 },
     headless: true,
+    actionTimeout: 30000,
+    navigationTimeout: 30000,
     screenshot: "only-on-failure",
     trace: "retain-on-failure",
   },
