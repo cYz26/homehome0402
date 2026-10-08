@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 const fixture =
-  "http://127.0.0.1:4174/homehome402/tests/fixtures/section-probe.html";
+  "http://127.0.0.1:4174/tests/fixtures/section-probe.html";
 test.use({ deviceScaleFactor: 2 });
 test("section caps stay flat through zoom with full AO, shadows and both model packages", async ({
   page,

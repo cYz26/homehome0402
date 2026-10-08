@@ -362,12 +362,18 @@
     "scripts/export-apartment.py": "77e66ce0464364f18f0771fe915ae35e04c80f11fd2625018d106f72e3cd4571",
     "scripts/generate-data.mjs": "7e00a3ea60e905db7dc2a92bf89a1a877d12c4ddcdf9ea5a95cde4be70c76191",
     "scripts/optimize-web.mjs": "b9187a738222cac0d6983bf1204f4934324c73d4dfc34318ed2632111e8f40c4",
-    "scripts/prepare-release.mjs": "31fe4a810a2b6b9452c81a0e009c623005d149810bb7e9bd5ac53882190c3f2c",
+    "scripts/prepare-release.mjs": "ca5af810905060280674188a19f5b211ec593b1dd46ff993f04ec5215497be97",
     "scripts/stage-site.mjs": "d50ec3fb8ae5c354b62ed59f167f859beca2b5da3ccfa85228e5b9b6fa21242c",
     "index.html": "bd70881b74ff6d2ac1967b46d1a5645bd566bef8b04c4434799270edfc436f54",
-    "vite.config.js": "4c3ee9864b7efe6273f6fb135693faf284154979d800eaf8f7a53562ad68cea9",
-    "package.json": "4f269864ee5d6a6d025b14d9e2da531f8598740fa779ffd476c9cf02347a93f8",
-    "package-lock.json": "ee08cf422e6937bc3bbce16fb9b052bff39f56219e1b17a45a3b5dc02a6bb4bf",
+    "vite.config.js": "0eae0af0fe134d7dfc49db18696c2808a271f8e0a653a56e21c66cc87f0586ec",
+    "package.json": "2615c29164769e5f0b98e82092d29cfd86464bc540e98399453d6fa6f576a95e",
+    "package-lock.json": "7e5e84f03f6a48d066bf926b8af5e0a9b68fbbca7fce56e5d9a0e3b0d6864736",
+    "wrangler.jsonc": "f314e064b3298793daa65f73627131ec801e1a9bf650cb613d028e9f440a8057",
+    "worker/index.mjs": "e46633202fdaecb29426fa491168d48fa26437e183ebf8b3bd070d94f4028f8d",
+    "scripts/deploy-worker.mjs": "16e91d2e94a9ef3dcc665e7cd8d5be1d7e403869d28c06627a6ea5a128759df2",
+    "scripts/worker-secrets.mjs": "5642c3ccc677e63f3f5c6dcd7c96c0e0d351eb17ac4701fdde7037304397cedc",
+    "scripts/check-worker.mjs": "9447a07024d99d583e0515c9eea8031ce63535f39a37af38d3208595310f3025",
+    "scripts/check-deployment.mjs": "a37b0c507636715b581c678670623bddf593f71d9da981769c3215d8b506d636",
     "src/camera.js": "d569defab5b8600daa0f893ee3004a9b05b1067178967c05bd50b2ece6357b96",
     "src/main.js": "df106160dfabb013f7a71ddb98cf5b2879f20c8097b132fbb8e6789c72a42e4a",
     "src/model-resource.js": "020ae235eb4396a2084313292e75888acd413abfd8f1e7c428eb0dbf88eaf889",
@@ -386,5 +392,5 @@
     "interactive3DBytes": 16777216
   },
   "visualPolicy": "Preserve source texture resolution; native display pixel ratio by default. Smooth mode is opt-in. Resource budgets follow visual quality.",
-  "applicationRevision": "2026-10-08-home-preload"
+  "applicationRevision": "2026-10-08-workers-private"
 }

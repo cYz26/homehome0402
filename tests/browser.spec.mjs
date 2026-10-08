@@ -180,7 +180,7 @@ test("mobile touch: immediate two-axis look, stationary hold, two-finger height 
     isMobile: true,
   });
   const page = await context.newPage();
-  await page.goto("http://127.0.0.1:4173/homehome402/");
+  await page.goto("http://127.0.0.1:4173/");
   await ready(page);
   await page.locator("#quality").selectOption("smooth");
   await page.locator('[data-mode="walk"]').click();

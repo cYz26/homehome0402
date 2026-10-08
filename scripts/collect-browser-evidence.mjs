@@ -5,7 +5,8 @@ import path from "node:path";
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
 const manifestBytes = await fs.readFile("public/release.json"),
   manifest = JSON.parse(manifestBytes);
-const reportBytes = await fs.readFile("test-results/browser-report.json"),
+const reportAt = process.argv.indexOf("--report");
+const reportBytes = await fs.readFile(reportAt >= 0 ? process.argv[reportAt + 1] : "test-results/browser-report.json"),
   report = JSON.parse(reportBytes);
 if (
   report.errors?.length ||
@@ -126,6 +127,9 @@ const receipt = {
   collectorSha256: hash(
     await fs.readFile("scripts/collect-browser-evidence.mjs"),
   ),
+  deploymentSources: Object.fromEntries(await Promise.all([
+    "wrangler.jsonc", "worker/index.mjs", "tests/worker-auth.spec.mjs",
+  ].map(async (p) => [p, hash(await fs.readFile(p))]))),
   reportSha256: hash(reportBytes),
   inventorySha256,
   buildArtifactId: process.env.HOME402_BUILD_ARTIFACT_ID,

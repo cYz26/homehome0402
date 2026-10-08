@@ -9,7 +9,12 @@ await fs.mkdir(`${out}/images`, { recursive: true });
 const assets = [],
   images = [];
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
-const applicationRevision = "2026-10-08-home-preload";
+const applicationRevision = "2026-10-08-workers-private";
+const deploymentSources = [
+  "wrangler.jsonc", "worker/index.mjs", "scripts/deploy-worker.mjs",
+  "scripts/worker-secrets.mjs", "scripts/check-worker.mjs",
+  "scripts/check-deployment.mjs",
+];
 
 // Frontend-only work can reuse the already verified render/model assets. Reject
 // changed design/build inputs rather than silently certifying stale derivatives.
@@ -21,6 +26,7 @@ if (process.argv.includes("--code-only")) {
   const codePaths = [
     "index.html", "vite.config.js", "package.json", "package-lock.json",
     "scripts/prepare-release.mjs",
+    ...deploymentSources,
     ...(await fs.readdir("src")).filter((f) => /\.(js|css)$/.test(f)).map((f) => `src/${f}`),
   ];
   for (const [path, digest] of Object.entries(manifest.sources)) {
@@ -311,6 +317,7 @@ for (const path of [
   "scripts/optimize-web.mjs",
   "scripts/prepare-release.mjs",
   "scripts/stage-site.mjs",
+  ...deploymentSources,
   "index.html",
   "vite.config.js",
   "package.json",

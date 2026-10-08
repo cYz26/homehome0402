@@ -2,6 +2,28 @@
 
 本轮在 macOS 上核对 metric-v06，迁移基线为 metric-v05。当前源模型、原始 GLB、压缩模型、空间数据、导航、平面图及渲染通过同一发布清单关联。用户视觉确认与真实手机帧率分别记录，技术检查不代替这两项验收。
 
+## Workers 密码发布迁移 · 2026-10-08
+
+本次授权为私有 GitHub → Actions 验证 → Workers Static Assets，并使用用户在本机填写的共享密码。仓库浏览器与 SSH 已核实 `cYz26/homehome0402` 为同一提交 `19106ea` 的 Private 仓库，origin 同步为当前名称；旧版记录及视觉确认保留。
+
+应用修订为 `2026-10-08-workers-private`，31 个发布资产保持原字节及哈希。路径由 `/homehome402/` 改为 `/`，新增全资源密码入口；工作流以同一份通过完整浏览器清单验收的构建部署，部署后检查匿名资源、全文件 SHA-256、模型 Range 及缺失资源 404。
+
+本机环境为 macOS arm64、Node.js 24.13.0、Playwright 1.63.0、Chromium 153.0.8010.12。采用项目 Playwright，因为本会话未提供 Browser 插件；Chrome 原生 UI 只用于账户设置核对。
+
+| 检查 | 实际结果 |
+| --- | --- |
+| 行为与模型 | Node 51 / 51（含 13 项 Worker 验证）、模型 19 / 19、发布 13 / 13；96 张跟踪图片无需脱敏 |
+| 发布预检 | 39 个构建文件，37,042,257 字节；最大高清 GLB 19,790,028 字节，满足单文件 25 MiB；Wrangler dry run 与绑定生成通过 |
+| 完整浏览器 | 17 / 17 通过，276.6 秒，零失败、跳过、重试或 flaky；逐项核对构建时测试清单，提取 39 张截图及版本绑定收据 |
+| 显示与手势 | 桌面 / 平板 / 手机、触摸取消与恢复、首页预加载 / 重用、故障重试、25 秒高清延迟、AO / 阴影 / Z-X-Y 切面与三个缩放倍率均通过；已查看密码页、登录后模型画面 |
+| 密码入口 | 桌面及手机验证错误密码、正确密码、分享片段保留、真实模型显示、清除会话后拒绝资源；用户所填本机密码实际登录为 303，首页为 200 |
+| 本地发布回读 | 对 8787 本地 Worker 验证全部 39 个文件 SHA-256 与构建一致；匿名 HEAD 全部 401，两个 GLB 的 64 KiB Range 为 206，缺失资源为 404 |
+| 文档与归档 | 53 个本地文档链接、工作流 YAML / 部署依赖、源码语法与差异检查通过；原方案及其他任务客厅讨论保留 |
+
+测试证据保存在本机 `/tmp/home402-workers-qa/evidence/metric-v06/`，构建、清单、测试及 Worker 源码通过 SHA-256 绑定。本地发布回读为 `/tmp/home402-workers-qa/local-deployment-verification.json`。底层资产绑定缺少 Content-Length 且忽略 Range 的情况已复现，Worker 使用同一份发布清单中的字节数截取响应流，Node 与真实 workerd 均验证 206；不把本地 runtime 当作 Cloudflare 线上验收。
+
+匿名检查旧 `https://cyz26.github.io/homehome402/` 和改名后 `https://cyz26.github.io/homehome0402/` 均返回 404；Pages 设置仍待登录后核实。远程发布待 GitHub CLI / Cloudflare 部署凭据和对应 Actions 运行完成；本机预检不能替代部署。真机持续漫游及真实 iOS Safari / Android Chrome 触摸验收沿用既有待验项。详细发布操作见 [README](../README.md#首次部署配置)。
+
 ## 预加载与 CI 交付复验 · 2026-10-08
 
 本次将此前待交付的模型下载 / 首页预加载和 CI 分片 / 构建复用合并交付。远程基线为 `7accb4fbd59660834c28be5a8d2eb1a3c2e937dc`，公开 Actions API 核实其[运行](https://github.com/cYz26/homehome402/actions/runs/34987613486)已成功。生成入口及发布清单统一使用应用修订 `2026-10-08-home-preload`，31 个发布资产与基线逐项相同。下方 2026-09-15 各节保留当时的候选及提交前状态，本节记录最终组合的复验。

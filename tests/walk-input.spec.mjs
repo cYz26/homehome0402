@@ -11,11 +11,11 @@ test("walk canvas owns long-press defaults and releases input on interruption", 
   await page.route("**/walk-input-fixture", (route) => route.fulfill({
     contentType: "text/html",
     body: `<!doctype html><meta name="viewport" content="width=device-width">
-      <link rel="stylesheet" href="/homehome402/src/style.css">
+      <link rel="stylesheet" href="/src/style.css">
       <div class="stage"><canvas tabindex="0"></canvas><span class="compass">North</span></div>
       <p id="outside">House description remains selectable</p>
       <script type="module">
-        import { WalkInput } from '/homehome402/src/walk-input.js';
+        import { WalkInput } from '/src/walk-input.js';
         const canvas = document.querySelector('canvas');
         window.active = true;
         window.defaults = [];
@@ -31,7 +31,7 @@ test("walk canvas owns long-press defaults and releases input on interruption", 
       </script>`,
   }));
   try {
-    await page.goto("http://127.0.0.1:4174/homehome402/walk-input-fixture");
+    await page.goto("http://127.0.0.1:4174/walk-input-fixture");
     await page.waitForFunction(() => window.input);
     const cdp = await context.newCDPSession(page);
     const touch = (type, points = []) => cdp.send("Input.dispatchTouchEvent", {

@@ -1,6 +1,6 @@
 # Home 402 开发约定
 
-本项目是单户型、单楼层的房屋设计交付网站，沿用 Blender、Three.js、Vite 和 GitHub Pages。
+本项目是单户型、单楼层的房屋设计交付网站，沿用 Blender、Three.js 和 Vite；私有 GitHub 仓库经 Actions 验证后发布到带密码访问的 Cloudflare Workers Static Assets。
 
 ## 开始任务时
 
@@ -10,7 +10,7 @@
 | --- | --- |
 | 页面、渲染、相机、剖切、漫游输入 | [查看器设计](docs/viewer-design.md) |
 | 建筑尺寸、门向、材质、建模或派生资产 | [尺寸依据](docs/dimension-status.md)、[建筑规格](model/apartment.json)、[README 重建步骤](README.md#独立重建步骤) |
-| 验证、资源预算、交付或发布 | [QA](docs/QA.md)、[发布清单](public/release.json)、[脚本入口](package.json)、[CI 工作流](.github/workflows/pages.yml) |
+| 验证、资源预算、交付或发布 | [QA](docs/QA.md)、[发布清单](public/release.json)、[脚本入口](package.json)、[CI 工作流](.github/workflows/workers.yml)、[发布配置](wrangler.jsonc) |
 | 实拍、参考图及其他对外图片 | [图片脱敏记录](docs/privacy-review.md) |
 | 原始架构意图或后续范围讨论 | [原方案归档](docs/references/house-web-presentation-architecture.md) |
 
