@@ -40,6 +40,7 @@ npm run preview -- --port 4173
 - 剖切支持水平 Z、东西 X、南北 Y 和完整建筑。碰撞始终使用完整建筑数据。
 - 分享链接恢复模式、房间、机位、剖切、画质、视线高度与选中对象；可导出当前 PNG 截图。
 - 标准画质使用原生像素比、32 样本 AO、4× MSAA + SMAA、4096 阴影与 1024 主卫镜面；流畅画质由用户手动选择。操作说明中可按需载入高清模型、导出帧时记录。
+- 首页主视觉显示后会在后台准备网页模型、查看器代码和导航；进入 3D 时复用资源再启动渲染。提前进入会接管同一批下载，高清模型仍按需加载。
 
 ## 建筑数据与文件
 
@@ -83,14 +84,24 @@ node scripts/collect-browser-evidence.mjs
 - 网页优化使用官方 KTX-Software 4.4.2 的 `ktx`，用 `KTX_BIN` 指定其 `bin` 目录；默认查找 `.asset-work/tools/ktx/bin`。
 - 渲染与优化可单独重跑；修改建筑规格后按依赖顺序重新生成派生物。`model:render -- hero` 可仅渲染指定机位。
 - `release:prepare` 将实际 Cycles 输出和经脱敏的参考图转换为 WebP，再绑定哈希。网页默认参考为模型渲染，AI 示意与原始照片分别标注。
+- 仅修改网页代码时，使用 `npm run release:prepare -- --code-only` 更新源码哈希及应用修订，再执行构建和检查；该入口先验证全部既有资源及非网页设计/生成输入未改变，不需要本机保留渲染缓存。建筑或派生资源变化仍按完整依赖顺序重建。
 - 构建前只把清单引用的资源暂存到 `.asset-work/site-public`。高清 GLB 从 `asset_exchange` 读取，按需下载；不重复提交一份大型副本。
 - `model:build -- --verify-existing` 在内存中重新建模并核对已验证的构件，不覆盖源文件，用于生成算法等价重构检查。
 - `scripts/migrate-semantic.py` 是已执行的一次性迁移工具，不用于日常重建。
 
 ## 发布与验收
 
-现有 GitHub Pages 工作流保留 `/homehome402/` 路径。PR 执行数据一致性、预算、链接与 Chromium 冒烟检查；合并后的 `main` 推送通过检查才发布。CI 使用已生成且哈希匹配的建筑资源，不在发布时重新渲染 Blender。
+现有 GitHub Pages 工作流保留 `/homehome402/` 路径。PR 执行数据一致性、预算、链接与完整 Chromium 浏览器检查；合并后的 `main` 推送通过检查才发布。CI 使用已生成且哈希匹配的建筑资源，不在发布时重新渲染 Blender。
 
-首屏预算 1 MiB，首次可交互 3D 总资源预算 16 MiB（视觉优先），检查包括 JS、模型、属性、导航和解码器。网页纹理保留源图分辨率，使用高质量 KTX2，不再降至 768 像素；UASTC 块对齐为 1256 像素。历史资源保留在仓库中，不随 `public` 全量复制。
+CI 按“构建 → 两个浏览器分片 → 合并验收 → 部署”运行：
+
+- `build` 执行图片元数据脱敏、模型、Node 测试与发布检查，只构建一次；保存 `dist`、模型检查结果和完整浏览器测试清单。
+- `browser` 在两个独立 runner 上按测试用例分片，每个 runner 保持单 worker、完整画质和零自动重试。两个分片按同一 artifact ID 下载构建，剖切开发夹具也直接读取这份构建资源；只安装 Chromium headless shell。
+- `verify` 合并两个 blob 报告，逐项核对测试清单，要求每项恰好执行一次并通过，再收集截图、像素指标及构建哈希。缺片、失败、跳过、重复或缺失附件均不能验收；原始 blob 保留失败 trace。
+- `deploy` 等待以上三个作业全部成功，直接发布 `build` 打包的同一份 Pages 产物，无须再次安装、检查或构建。PR 不执行 Pages 打包与部署。
+
+本地仍可用 `npm run test:browser` 执行完整套件。排查单个分片可用 `npm run test:browser -- --shard=1/2 --reporter=list,blob`（另一个为 `2/2`）；执行下一分片前保存已有 blob ZIP，避免输出目录被清理。完整报告用 `npx playwright merge-reports --reporter=json all-blob-reports` 合并，设置 `PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/browser-report.json`，再由证据脚本的 `--inventory` 参数核对构建时通过 `--list --reporter=json` 生成的清单。分片粒度依据 [Playwright 官方说明](https://playwright.dev/docs/test-sharding)。
+
+首屏关键呈现资源预算 1 MiB，呈现后后台预加载及首次可交互 3D 总资源预算 16 MiB（视觉优先），检查包括 JS、模型、属性、导航和解码器。网页纹理保留源图分辨率，使用高质量 KTX2，不再降至 768 像素；UASTC 块对齐为 1256 像素。历史资源保留在仓库中，不随 `public` 全量复制。
 
 桌面浏览器和触摸模拟不能证明真机性能；真实手机持续漫游 ≥30 FPS 仍需设备实测。用户视觉确认状态独立保留，技术检查不会自动代表外观接受。图片脱敏范围见 `docs/privacy-review.md`。

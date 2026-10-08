@@ -1,5 +1,6 @@
 import "./style.css";
-import { fetchResource } from "./resources.js";
+import { fetchResource, abortable } from "./resources.js";
+import { fetchModel } from "./model-resource.js";
 import { decodeView, encodeView } from "./view-state.js";
 const $ = (selector) => document.querySelector(selector);
 const escape = (value) =>
@@ -14,6 +15,12 @@ const url = (path) => import.meta.env.BASE_URL + path;
 let manifest,
   data,
   viewer,
+  preparation,
+  preloadTimer,
+  preloadFrame,
+  preloadIdle,
+  preloadSequence = 0,
+  preloadStarted = false,
   loading,
   loadPromise,
   configPromise,
@@ -136,6 +143,10 @@ function populate() {
   $("#inspector-panel").open = !matchMedia("(max-width:700px)").matches;
 }
 async function initialize() {
+  cancelScheduledPreload();
+  preparation?.controller.abort();
+  preparation = null;
+  preloadStarted = false;
   try {
     $("#site-status").hidden = true;
     manifest = await fetchResource(url("release.json"));
@@ -184,6 +195,7 @@ async function initialize() {
         { threshold: 0.12 },
       );
       observer.observe($("#stage"));
+      schedulePreload();
     }
   } catch (error) {
     manifest = null;
@@ -192,6 +204,68 @@ async function initialize() {
     $("#site-status").hidden = false;
   }
 }
+function cancelScheduledPreload() {
+  preloadSequence++;
+  clearTimeout(preloadTimer);
+  cancelAnimationFrame(preloadFrame);
+  if (preloadIdle !== undefined) window.cancelIdleCallback?.(preloadIdle);
+}
+
+async function schedulePreload() {
+  cancelScheduledPreload();
+  const operation = preloadSequence;
+  // Wait for the hero to decode and paint before using idle time for 3D code.
+  // Preparing bytes never constructs a renderer or changes the homepage UI.
+  try { await $("#hero-image").decode(); } catch { /* Image retry stays available. */ }
+  if (operation !== preloadSequence) return;
+  preloadFrame = requestAnimationFrame(() => {
+    preloadFrame = requestAnimationFrame(() => {
+      const start = () => {
+        if (operation !== preloadSequence || document.hidden || !manifest ||
+          viewer || loadPromise || preparation || preloadStarted) return;
+        preloadStarted = true;
+        prepareModel(manifest);
+      };
+      if (window.requestIdleCallback)
+        preloadIdle = window.requestIdleCallback(start, { timeout: 1500 });
+      else preloadTimer = setTimeout(start, 0);
+    });
+  });
+}
+
+function prepareModel(modelManifest) {
+  const asset = manifest.assets.find((a) => a.path === modelManifest.model);
+  const key = `${modelManifest.model}:${asset?.sha256}`;
+  if (preparation?.key === key) return preparation;
+  preparation?.controller.abort();
+  const task = { key, controller: new AbortController(), progress: null, onProgress: null };
+  const signal = task.controller.signal;
+  preparation = task;
+  task.promise = Promise.all([
+    import("./viewer.js"),
+    fetchResource(url(modelManifest.navigation), { signal }),
+    fetchModel(url(modelManifest.model), asset, {
+      signal,
+      onProgress: (loaded, total) => {
+        task.progress = [loaded, total];
+        task.onProgress?.(loaded, total);
+      },
+    }),
+  ]).catch((error) => {
+    task.controller.abort();
+    if (preparation === task) preparation = null;
+    throw error;
+  });
+  // Background errors are silent; explicit entry can create a fresh request.
+  // Keep the original rejecting promise so a foreground owner sees its error.
+  task.promise.catch(() => {});
+  return task;
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden && manifest && !preloadStarted) schedulePreload();
+});
+
 function sync(state) {
   if (!viewer) return;
   const direction = state.camera.target.map(
@@ -329,6 +403,8 @@ async function loadModel({ force = false, hd = false } = {}) {
   if (loadPromise && !force && !hd) return loadPromise;
   const operation = ++sequence,
     previous = viewer?.snapshot();
+  cancelScheduledPreload();
+  preloadStarted = true;
   observer?.disconnect();
   loading?.abort();
   if (viewer) {
@@ -338,6 +414,9 @@ async function loadModel({ force = false, hd = false } = {}) {
   }
   loading = new AbortController();
   const signal = loading.signal;
+  let claimed;
+  const abortPreparation = () => claimed?.controller.abort(signal.reason);
+  signal.addEventListener("abort", abortPreparation, { once: true });
   modelPlaceholder.hidden = false;
   $("#loading-text").textContent = "正在准备空间数据…";
   $("#load-model").hidden = true;
@@ -345,12 +424,22 @@ async function loadModel({ force = false, hd = false } = {}) {
   const task = (async () => {
     try {
       await configPromise;
-      if (!manifest || !data) throw Error("项目资料未就绪，请先重试资料加载。");
-      const [module, navigation] = await Promise.all([
-        import("./viewer.js"),
-        fetchResource(url(manifest.navigation), { signal }),
-      ]);
       signal.throwIfAborted();
+      if (!manifest || !data) throw Error("项目资料未就绪，请先重试资料加载。");
+      const modelManifest = hd ? { ...manifest, model: manifest.rawModel } : manifest;
+      const progress = (loaded, total) => {
+        if (operation !== sequence || signal.aborted) return;
+        $("#loading-text").textContent = loaded === total && total
+          ? "模型下载完成，正在准备三维画面…"
+          : `正在下载${hd ? "高清" : "网页"}模型 ${total ? Math.min(100, Math.round((loaded / total) * 100)) + "%" : formatSize(loaded)}…`;
+      };
+      // Adopt both pending and completed homepage work without duplicate fetches.
+      claimed = prepareModel(modelManifest);
+      claimed.onProgress = progress;
+      if (claimed.progress) progress(...claimed.progress);
+      const [module, navigation, bytes] = await abortable(claimed.promise, signal);
+      signal.throwIfAborted();
+      if (preparation === claimed) preparation = null;
       if (navigation.version !== data.version)
         throw Error("导航数据与模型版本不一致。");
       viewer = new module.ApartmentViewer(
@@ -362,12 +451,15 @@ async function loadModel({ force = false, hd = false } = {}) {
       );
       const current = viewer;
       await current.load(
-        hd ? { ...manifest, model: manifest.rawModel } : manifest,
+        modelManifest,
         signal,
-        (loaded, total) => {
-          $("#loading-text").textContent =
-            `正在载入${hd ? "高清" : "网页"}模型 ${total ? Math.round((loaded / total) * 100) + "%" : formatSize(loaded)}…`;
+        (stage) => {
+          if (operation !== sequence || signal.aborted) return;
+          $("#loading-text").textContent = stage === "decode"
+            ? "正在解析模型与纹理…"
+            : "正在绘制三维画面…";
         },
+        bytes,
       );
       if (operation !== sequence) return null;
       modelPlaceholder.hidden = true;
@@ -378,6 +470,7 @@ async function loadModel({ force = false, hd = false } = {}) {
       return current;
     } catch (error) {
       if (operation !== sequence) return null;
+      loading.abort();
       if (viewer) {
         viewer.onChange = null;
         viewer.dispose();
@@ -392,6 +485,9 @@ async function loadModel({ force = false, hd = false } = {}) {
       $("#cancel-model").hidden = true;
       return null;
     } finally {
+      signal.removeEventListener("abort", abortPreparation);
+      if (claimed) claimed.onProgress = null;
+      if (preparation === claimed) preparation = null;
       if (operation === sequence) loadPromise = null;
     }
   })();
@@ -587,6 +683,9 @@ window.addEventListener("hashchange", () => {
   }
 });
 window.addEventListener("pagehide", () => {
+  cancelScheduledPreload();
+  preparation?.controller.abort();
+  preparation = null;
   clearTimeout(saveTimer);
   clearTimeout(messageTimer);
   loading?.abort();

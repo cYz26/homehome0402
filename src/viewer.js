@@ -8,7 +8,7 @@ import { Sections } from "./sections.js";
 import { Navigation, inside, clamp, distance } from "./spatial.js";
 import { WalkInput } from "./walk-input.js";
 import { initialState } from "./view-state.js";
-import { fetchResource, abortable } from "./resources.js";
+import { abortable } from "./resources.js";
 
 export class ApartmentViewer {
   constructor(container, data, navigation, onChange, notify) {
@@ -134,7 +134,7 @@ export class ApartmentViewer {
     this.animate = this.animate.bind(this);
     this.animation = requestAnimationFrame(this.animate);
   }
-  async load(manifest, signal, onProgress) {
+  async load(manifest, signal, onStage, bytes) {
     const url = (path) => import.meta.env.BASE_URL + path;
     this.ktx = new KTX2Loader()
       .setTranscoderPath(url("decoders/basis/"))
@@ -143,12 +143,8 @@ export class ApartmentViewer {
     const loader = new GLTFLoader()
       .setKTX2Loader(this.ktx)
       .setMeshoptDecoder(MeshoptDecoder);
-    const bytes = await fetchResource(url(manifest.model), {
-      signal,
-      type: "buffer",
-      onProgress,
-    });
     signal?.throwIfAborted();
+    onStage?.("decode");
     const parsed = loader
       .parseAsync(
         bytes,
@@ -172,6 +168,7 @@ export class ApartmentViewer {
         return gltf;
       });
     const gltf = await abortable(parsed, signal);
+    onStage?.("render");
     this.ktx.dispose();
     this.model = gltf.scene;
     this.model.traverse((ob) => {
@@ -504,7 +501,9 @@ export class ApartmentViewer {
   animate(time) {
     if (!this.running) return;
     this.animation = requestAnimationFrame(this.animate);
-    if (document.hidden || !this.inView) {
+    // The preview covers the canvas until load() installs and draws the model.
+    // Compiling empty-scene AO/shadows here delays download progress and input.
+    if (!this.model || document.hidden || !this.inView) {
       this.lastTime = null;
       return;
     }

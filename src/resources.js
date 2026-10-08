@@ -13,6 +13,27 @@ export function abortable(promise, signal) {
   });
 }
 
+export async function readBuffer(response, onProgress, total) {
+  const length = total ?? Number(response.headers.get("content-length"));
+  if (!response.body || !onProgress) return await response.arrayBuffer();
+  const reader = response.body.getReader(), chunks = [];
+  let loaded = 0;
+  while (true) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    chunks.push(value);
+    loaded += value.length;
+    onProgress(loaded, length);
+  }
+  const result = new Uint8Array(loaded);
+  let offset = 0;
+  for (const chunk of chunks) {
+    result.set(chunk, offset);
+    offset += chunk.length;
+  }
+  return result.buffer;
+}
+
 export async function fetchResource(
   url,
   { signal, type = "json", onProgress, attempts = 2 } = {},
@@ -27,25 +48,7 @@ export async function fetchResource(
       if (!response.ok) throw Error(`HTTP ${response.status}`);
       if (type === "json") return await response.json();
       if (type === "text") return await response.text();
-      const length = Number(response.headers.get("content-length"));
-      if (!response.body || !onProgress) return await response.arrayBuffer();
-      const reader = response.body.getReader(),
-        chunks = [];
-      let loaded = 0;
-      while (true) {
-        const { value, done } = await reader.read();
-        if (done) break;
-        chunks.push(value);
-        loaded += value.length;
-        onProgress(loaded, length);
-      }
-      const result = new Uint8Array(loaded);
-      let offset = 0;
-      for (const chunk of chunks) {
-        result.set(chunk, offset);
-        offset += chunk.length;
-      }
-      return result.buffer;
+      return await readBuffer(response, onProgress);
     } catch (error) {
       if (error.name === "AbortError" || signal?.aborted) throw error;
       last = error;

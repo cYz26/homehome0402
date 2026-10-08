@@ -8,12 +8,38 @@ const manifestBytes = await fs.readFile("public/release.json"),
 const reportBytes = await fs.readFile("test-results/browser-report.json"),
   report = JSON.parse(reportBytes);
 if (
+  report.errors?.length ||
   report.stats.unexpected ||
   report.stats.skipped ||
   report.stats.flaky ||
   !report.stats.expected
 )
   throw Error("Collect evidence only from a completed passing browser run.");
+const inventoryAt = process.argv.indexOf("--inventory");
+let inventorySha256;
+if (inventoryAt >= 0) {
+  const inventoryPath = process.argv[inventoryAt + 1];
+  if (!inventoryPath) throw Error("--inventory requires a file");
+  const inventoryBytes = await fs.readFile(inventoryPath);
+  const cases = (r) =>
+    [...specs(r.suites)].flatMap((spec) =>
+      spec.tests.map((t) => ({
+        key: JSON.stringify([spec.id, t.projectName]),
+        results: t.results,
+      })),
+    );
+  const expected = cases(JSON.parse(inventoryBytes)).map((t) => t.key).sort();
+  const actual = cases(report);
+  if (
+    !expected.length ||
+    JSON.stringify(actual.map((t) => t.key).sort()) !== JSON.stringify(expected) ||
+    actual.some((t) => t.results.length !== 1 || t.results[0].status !== "passed")
+  )
+    throw Error(
+      "Browser results must cover the complete inventory exactly once, without retries.",
+    );
+  inventorySha256 = hash(inventoryBytes);
+}
 const at = process.argv.indexOf("--output"),
   root = at >= 0 ? process.argv[at + 1] : "docs/evidence";
 if (!root) throw Error("--output requires a directory");
@@ -37,21 +63,25 @@ for (const spec of specs(report.suites))
         durationMs: result.duration,
       });
       for (const attachment of result.attachments) {
-        if (attachment.contentType === "application/json" && attachment.body) {
+        if (!["application/json", "image/png"].includes(attachment.contentType))
+          continue;
+        // Merged blob reports can reference extracted files instead of inline
+        // bodies. Missing evidence must fail collection instead of disappearing.
+        const bytes =
+          attachment.body !== undefined
+            ? Buffer.from(attachment.body, "base64")
+            : await fs.readFile(attachment.path);
+        if (attachment.contentType === "application/json") {
           const target = path.join(
             directory,
             attachment.name.replace(/[^a-z0-9-]/gi, "_") + ".json",
           );
-          const bytes = Buffer.from(attachment.body, "base64");
           await fs.writeFile(target, bytes);
           measurements.push({ path: target, sha256: hash(bytes) });
           continue;
         }
-        if (attachment.contentType !== "image/png" || !attachment.body)
-          continue;
         const filename = attachment.name.replace(/[^a-z0-9-]/gi, "_") + ".png",
-          target = path.join(directory, filename),
-          bytes = Buffer.from(attachment.body, "base64");
+          target = path.join(directory, filename);
         await fs.writeFile(target, bytes);
         images.push({ path: target, sha256: hash(bytes) });
       }
@@ -97,6 +127,8 @@ const receipt = {
     await fs.readFile("scripts/collect-browser-evidence.mjs"),
   ),
   reportSha256: hash(reportBytes),
+  inventorySha256,
+  buildArtifactId: process.env.HOME402_BUILD_ARTIFACT_ID,
   tests,
   images,
   measurements,

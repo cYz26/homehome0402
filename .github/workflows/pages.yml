@@ -16,9 +16,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  verify:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
+    outputs:
+      artifact-id: ${{ steps.build-artifact.outputs.artifact-id }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v6
@@ -26,53 +28,124 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+      - name: Check image privacy metadata
+        run: node scripts/check-image-privacy.mjs
       - run: npm run check:model
       - run: npm test
       - run: npm run build
       - run: npm run check:release
-      - run: npx playwright install --with-deps chromium
-      - run: npm run test:browser
+      - name: Record complete browser test inventory
+        run: npm run test:browser -- --list --reporter=json
+        env:
+          PLAYWRIGHT_JSON_OUTPUT_NAME: test-results/browser-inventory.json
+      - name: Share the checked build and test inventory
+        id: build-artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: home402-build
+          path: |
+            dist/
+            model/release-checks.json
+            test-results/browser-inventory.json
+          if-no-files-found: error
+      - name: Package the same build for Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  browser:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v7
+        with:
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
+          merge-multiple: true
+      - name: Serve the checked assets to the section fixture
+        # The fixture uses Vite's dev server; its assets come from the same dist.
+        run: mkdir -p .asset-work && ln -s ../dist .asset-work/site-public
+      - run: npx playwright install --with-deps --only-shell chromium
+      - name: Run browser shard ${{ matrix.shard }} of 2
+        run: npm run test:browser -- --shard=${{ matrix.shard }}/2 --reporter=list,blob
         timeout-minutes: 22
-      - run: node scripts/collect-browser-evidence.mjs --output .asset-work/browser-evidence
+      - name: Preserve mergeable report, screenshots and traces
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: home402-browser-blob-${{ matrix.shard }}
+          path: blob-report/
+          if-no-files-found: error
+      - name: Preserve raw failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v6
+        with:
+          name: home402-browser-failure-${{ matrix.shard }}
+          path: test-results/
+          if-no-files-found: ignore
+
+  verify:
+    needs: [build, browser]
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v7
+        with:
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
+          merge-multiple: true
+      - uses: actions/download-artifact@v7
+        with:
+          pattern: home402-browser-blob-*
+          path: all-blob-reports
+          merge-multiple: true
+      - name: Merge browser results
+        run: npx playwright merge-reports --reporter=json all-blob-reports
+        env:
+          PLAYWRIGHT_JSON_OUTPUT_NAME: test-results/browser-report.json
+      - name: Require every inventoried test and collect evidence
+        run: node scripts/collect-browser-evidence.mjs --inventory test-results/browser-inventory.json --output .asset-work/browser-evidence
+        env:
+          HOME402_BUILD_ARTIFACT_ID: ${{ needs.build.outputs.artifact-id }}
       - name: Preserve version-bound browser evidence
         if: always()
         uses: actions/upload-artifact@v6
         with:
           name: home402-browser-evidence
+          include-hidden-files: true
           path: |
             test-results/
             model/release-checks.json
             public/release.json
             .asset-work/browser-evidence/
+
   deploy:
-    needs: verify
+    needs: [build, browser, verify]
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-          cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Check image privacy metadata
-        run: node scripts/check-image-privacy.mjs
-      - name: Check model
-        run: npm run check:model
-      - name: Build
-        run: npm run build
       - name: Configure Pages
         uses: actions/configure-pages@v6
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: dist
-      - name: Deploy
+      - name: Deploy the tested Pages artifact
         id: deployment
         uses: actions/deploy-pages@v5

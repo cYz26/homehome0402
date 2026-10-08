@@ -362,22 +362,23 @@
     "scripts/export-apartment.py": "77e66ce0464364f18f0771fe915ae35e04c80f11fd2625018d106f72e3cd4571",
     "scripts/generate-data.mjs": "7e00a3ea60e905db7dc2a92bf89a1a877d12c4ddcdf9ea5a95cde4be70c76191",
     "scripts/optimize-web.mjs": "b9187a738222cac0d6983bf1204f4934324c73d4dfc34318ed2632111e8f40c4",
-    "scripts/prepare-release.mjs": "0e8a69b8e8d4832652c430af251de8fbc7fcc57a75f3cc5ee3c6ba558eb8dc27",
+    "scripts/prepare-release.mjs": "31fe4a810a2b6b9452c81a0e009c623005d149810bb7e9bd5ac53882190c3f2c",
     "scripts/stage-site.mjs": "d50ec3fb8ae5c354b62ed59f167f859beca2b5da3ccfa85228e5b9b6fa21242c",
     "index.html": "bd70881b74ff6d2ac1967b46d1a5645bd566bef8b04c4434799270edfc436f54",
     "vite.config.js": "4c3ee9864b7efe6273f6fb135693faf284154979d800eaf8f7a53562ad68cea9",
     "package.json": "4f269864ee5d6a6d025b14d9e2da531f8598740fa779ffd476c9cf02347a93f8",
     "package-lock.json": "ee08cf422e6937bc3bbce16fb9b052bff39f56219e1b17a45a3b5dc02a6bb4bf",
     "src/camera.js": "d569defab5b8600daa0f893ee3004a9b05b1067178967c05bd50b2ece6357b96",
-    "src/main.js": "18df9f9c5f9eb24bd7b5be334530af6bdea3c3d899ff53ffa9f70527346825e5",
-    "src/resources.js": "476050e37672f683e5576e580c54287879cc4833e716d9192037a9170cccf404",
+    "src/main.js": "df106160dfabb013f7a71ddb98cf5b2879f20c8097b132fbb8e6789c72a42e4a",
+    "src/model-resource.js": "020ae235eb4396a2084313292e75888acd413abfd8f1e7c428eb0dbf88eaf889",
+    "src/resources.js": "514d10e46ba15af394850983fd80f00dc61335581d0702da0131ca1e5f8a2eba",
     "src/scene.js": "a6d409afe26e47661465e8bcc688ac6f0fcc4bc5ab3436449e5ec983ff111d0b",
     "src/section-ao.js": "7471b2d29b257cadd58a2464160f3133e842ab5e0eeaf99bc24813c8e4b75dbc",
     "src/sections.js": "378e2e5f29d3386023728a280c11e57b4bd03734ab6540e97e0c7e85fc8b0df0",
     "src/spatial.js": "feb4642c1c3b23b1ddcdcfe040a4b200b21ce76e39f72dae60f35f896ddae058",
     "src/style.css": "91f4d3fec6dacc75ebb5fb0f65ddd56c09d1b5654e07f46a8819f797dfc6178c",
     "src/view-state.js": "37216a878f2bd00ed0e1f4eb66692bd93b18753d43e7aeb4ec55274b5b701cd6",
-    "src/viewer.js": "b301f0555ddb71dec7bb0fe4679af95873a90384aac9c6a0ac36ada2d61f81d8",
+    "src/viewer.js": "2c629cb7c743bc917a04f0b0e384d729d7201b3a020817472ba09321ac590588",
     "src/walk-input.js": "ee8d951cf113450164de39d7eb16dce662c816b6960b594fbe4cc3533392edc5"
   },
   "budgets": {
@@ -385,5 +386,5 @@
     "interactive3DBytes": 16777216
   },
   "visualPolicy": "Preserve source texture resolution; native display pixel ratio by default. Smooth mode is opt-in. Resource budgets follow visual quality.",
-  "applicationRevision": "2026-09-15-walk-long-press"
+  "applicationRevision": "2026-10-08-home-preload"
 }

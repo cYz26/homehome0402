@@ -19,3 +19,5 @@ __pycache__/
 public/releases/*/apartment-hd.glb
 playwright-report/
 test-results/
+blob-report/
+all-blob-reports/

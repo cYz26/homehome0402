@@ -55,9 +55,9 @@
     }
   ],
   "passed": 13,
-  "initialBytes": 606259,
-  "firstViewportCoreBytes": 262125,
-  "interactiveBytes": 15571778,
+  "initialBytes": 610492,
+  "firstViewportCoreBytes": 266358,
+  "interactiveBytes": 15575891,
   "webGLBBytes": 13360600,
   "sourceSha256": "62a50fc3b56ae90ca5d2e366fba333b22f78171ff0b4fa2408e02f3e1ca3181a",
   "rawModelSha256": "07a3e658e0d2b7c44227e5e8950f1a27c44c70ea80e4e700ab191fd4f297571f"

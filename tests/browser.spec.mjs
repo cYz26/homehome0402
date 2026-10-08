@@ -61,7 +61,7 @@ for (const [label, width, height] of [
   ["tablet", 820, 1180],
   ["phone", 390, 844],
 ]) {
-  test(`${label}: lazy homepage, model, linked rooms, section, view restore, screenshot`, async ({
+  test(`${label}: homepage preload, model, linked rooms, section, view restore, screenshot`, async ({
     page,
   }, testInfo) => {
     await page.setViewportSize({ width, height });
@@ -70,14 +70,11 @@ for (const [label, width, height] of [
     page.on("console", (e) => {
       if (e.type() === "error") errors.push(e.text());
     });
-    let threeRequested = false;
-    page.on("request", (r) => {
-      if (/three-|apartment-web\.glb/.test(r.url())) threeRequested = true;
-    });
     await page.goto("./");
     await expect(page.locator("#rooms button")).toHaveCount(11);
     await expect(page.locator("#hero-image")).toBeVisible();
-    expect(threeRequested).toBe(false);
+    // Homepage idle time may download resources; rendering starts on entry.
+    await expect(page.locator("canvas")).toHaveCount(0);
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,

@@ -9,7 +9,41 @@ await fs.mkdir(`${out}/images`, { recursive: true });
 const assets = [],
   images = [];
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
-const applicationRevision = "2026-09-15-walk-long-press";
+const applicationRevision = "2026-10-08-home-preload";
+
+// Frontend-only work can reuse the already verified render/model assets. Reject
+// changed design/build inputs rather than silently certifying stale derivatives.
+if (process.argv.includes("--code-only")) {
+  const manifest = JSON.parse(await fs.readFile("public/release.json"));
+  const record = JSON.parse(await fs.readFile("docs/delivery-record.json"));
+  if (manifest.version !== version || record.version !== version)
+    throw Error("Rebuild changed design versions before preparing a release.");
+  const codePaths = [
+    "index.html", "vite.config.js", "package.json", "package-lock.json",
+    "scripts/prepare-release.mjs",
+    ...(await fs.readdir("src")).filter((f) => /\.(js|css)$/.test(f)).map((f) => `src/${f}`),
+  ];
+  for (const [path, digest] of Object.entries(manifest.sources)) {
+    if (codePaths.includes(path) || path.startsWith("src/")) continue;
+    if (hash(await fs.readFile(path)) !== digest)
+      throw Error(`Rebuild changed design/asset input: ${path}`);
+  }
+  for (const asset of manifest.assets) {
+    const bytes = await fs.readFile(asset.source ?? `public/${asset.path}`);
+    if (bytes.length !== asset.bytes || hash(bytes) !== asset.sha256)
+      throw Error(`Published asset changed: ${asset.path}`);
+  }
+  const sources = Object.fromEntries(Object.entries(manifest.sources)
+    .filter(([path]) => !path.startsWith("src/")));
+  for (const path of codePaths) sources[path] = hash(await fs.readFile(path));
+  const release = JSON.stringify({ ...manifest, applicationRevision, sources }, null, 2);
+  await fs.writeFile("public/release.json", release);
+  await fs.writeFile("docs/delivery-record.json", JSON.stringify({
+    ...record, manifestSha256: hash(release),
+  }, null, 2));
+  console.log(`${version}: frontend source hashes refreshed; ${manifest.assets.length} verified assets retained.`);
+  process.exit(0);
+}
 const validation = JSON.parse(await fs.readFile("model/validation.json"));
 const checks = JSON.parse(await fs.readFile("model/checks.json"));
 const provenance = JSON.parse(

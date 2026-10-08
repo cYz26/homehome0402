@@ -219,5 +219,5 @@
     "realPhonePerformance": "not-measured"
   },
   "releaseManifest": "public/release.json",
-  "manifestSha256": "a2af109200e6a92846956304dc93aaf053b266eb2dc83293c8217f468d770390"
+  "manifestSha256": "f83fce097cb8e585cd810581ef171072ab46a670dbc2d21ccb45cad8b6538def"
 }

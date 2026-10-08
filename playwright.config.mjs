@@ -7,6 +7,9 @@ export default defineConfig({
   timeout: process.env.CI ? 300000 : 90000,
   globalTimeout: process.env.CI ? 20 * 60 * 1000 : undefined,
   expect: { timeout: 20000 },
+  // Allow test-level sharding across CI jobs; each machine still draws one
+  // full-quality WebGL flow at a time.
+  fullyParallel: true,
   workers: 1,
   use: {
     baseURL: "http://127.0.0.1:4173/homehome402/",
