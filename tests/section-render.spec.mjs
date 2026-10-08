@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 const fixture =
   "http://127.0.0.1:4174/tests/fixtures/section-probe.html";
 test.use({ deviceScaleFactor: 2 });
-test("section caps stay flat through zoom with full AO, shadows and both model packages", async ({
+test("legacy AO positive control reproduces cap stripes", async ({
   page,
 }, testInfo) => {
   test.setTimeout(process.env.CI ? 300000 : 180000);
@@ -21,7 +21,17 @@ test("section caps stay flat through zoom with full AO, shadows and both model p
     contentType: "image/png",
   });
   metrics.push({ asset: "web", legacy: true, range: before.range });
-  for (const asset of ["web", "hd"]) {
+  expect(errors).toEqual([]);
+  await testInfo.attach("section-legacy-metrics", {
+    body: Buffer.from(JSON.stringify(metrics, null, 2)),
+    contentType: "application/json",
+  });
+});
+for (const asset of ["web", "hd"]) {
+  test(`${asset}: section caps stay flat through zoom with full AO and shadows`, async ({page}, testInfo) => {
+    test.setTimeout(process.env.CI ? 300000 : 180000);
+    const errors = [], metrics = [];
+    page.on("pageerror", (e) => errors.push(e.message));
     await page.goto(`${fixture}?asset=${asset}`);
     await page.waitForFunction(() => window.ready);
     for (const zoom of [0.9, 1.7, 2.6]) {
@@ -71,10 +81,10 @@ test("section caps stay flat through zoom with full AO, shadows and both model p
         contentType: "image/png",
       });
     }
-  }
-  expect(errors).toEqual([]);
-  await testInfo.attach("section-metrics", {
-    body: Buffer.from(JSON.stringify(metrics, null, 2)),
-    contentType: "application/json",
+    expect(errors).toEqual([]);
+    await testInfo.attach(`section-${asset}-metrics`, {
+      body: Buffer.from(JSON.stringify(metrics, null, 2)),
+      contentType: "application/json",
+    });
   });
-});
+}

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "version": "metric-v09",
   "presentationRevision": "2026-10-08-living-v04-tripo-sofa",
-  "applicationRevision": "2026-10-08-living-v04-bundles",
+  "applicationRevision": "2026-10-08-living-v04-static-frames",
   "units": "m",
   "project": {
     "name": "Home 402",
@@ -399,7 +399,7 @@
     "scripts/validate-apartment.py": "c7be117cb8a4cdc98a8060b4edc33afe9b6787d107f79fefee9b8b8f6267e8e6",
     "scripts/generate-data.mjs": "c8c60db18a9cf67d43f5fb125e707f8562a778cb277957613c1454a7dc8be0b2",
     "scripts/optimize-web.mjs": "c1cc156ad5bda525f7a7fb2fa8474efce93e65e2f3c1d283b99d1b51270196c5",
-    "scripts/prepare-release.mjs": "7a240a0c4ed87552c9a7224fd2f5041e350e4e6fd31ea6a31fe19e8474acfd95",
+    "scripts/prepare-release.mjs": "8e06feca673c89fb4f64f9a20c44e56e34b403c67525c2e3d43d0219c75a0bc5",
     "scripts/stage-site.mjs": "d50ec3fb8ae5c354b62ed59f167f859beca2b5da3ccfa85228e5b9b6fa21242c",
     "wrangler.jsonc": "f314e064b3298793daa65f73627131ec801e1a9bf650cb613d028e9f440a8057",
     "worker/index.mjs": "e46633202fdaecb29426fa491168d48fa26437e183ebf8b3bd070d94f4028f8d",
@@ -407,7 +407,7 @@
     "scripts/worker-secrets.mjs": "5642c3ccc677e63f3f5c6dcd7c96c0e0d351eb17ac4701fdde7037304397cedc",
     "scripts/check-worker.mjs": "9447a07024d99d583e0515c9eea8031ce63535f39a37af38d3208595310f3025",
     "scripts/check-deployment.mjs": "893e9a43647c96ad21045c3b634ce36e0905e7496a8d7bf65a9bfe7762f6bd76",
-    "index.html": "a3b859d1dc4a6786d3346c7faf39264b9629301c7933816e92664b8a98468ff8",
+    "index.html": "ac3834f9521904af94461a2b5b21083dad9dadfe6b8e279877085be9996565b6",
     "vite.config.js": "2657784b4e4dcec646578fe1b89ba9d5d143846a2623686a05a035729e3eea6f",
     "package.json": "2615c29164769e5f0b98e82092d29cfd86464bc540e98399453d6fa6f576a95e",
     "package-lock.json": "7e5e84f03f6a48d066bf926b8af5e0a9b68fbbca7fce56e5d9a0e3b0d6864736",
@@ -441,7 +441,7 @@
     "src/spatial.js": "feb4642c1c3b23b1ddcdcfe040a4b200b21ce76e39f72dae60f35f896ddae058",
     "src/style.css": "91f4d3fec6dacc75ebb5fb0f65ddd56c09d1b5654e07f46a8819f797dfc6178c",
     "src/view-state.js": "37216a878f2bd00ed0e1f4eb66692bd93b18753d43e7aeb4ec55274b5b701cd6",
-    "src/viewer.js": "371306bbfcf3ff0b68b815c3f6c37f3f4d7ad6724e3bd5b9a5c08e52a9b47a8f",
+    "src/viewer.js": "87b23b3152058bc14e1d6b008de95372ec62f4c78d30026fa56cf472a8d4896b",
     "src/walk-input.js": "ee8d951cf113450164de39d7eb16dce662c816b6960b594fbe4cc3533392edc5"
   },
   "budgets": {

@@ -1,0 +1,17 @@
+{
+  "version": "metric-v09",
+  "applicationRevision": "2026-10-08-living-v04-static-frames",
+  "executedOnce": 20,
+  "automaticRetries": 0,
+  "files": {
+    "public/release.json": "fdd2f405d7c566f639a294fd0961a4d761bb29277abd69814154dedc49e51d4d",
+    "docs/evidence/publication-v09/metric-v09/browser-verification.json": "bb405daffa0d7e2d11a8f716b335a6eea3eb3501347fdb66c525042758dcd6b6",
+    "playwright.config.mjs": "15823bd945236a5353f548b5546c8f2fc89e50f140884a21a596cd66470bf4a0",
+    ".github/workflows/workers.yml": "339186a9949fa0d48b75fb510269123b89edf323615c3a0f19bf558a6389e00e",
+    "scripts/run-browser-cases.mjs": "80e45c02f0fac44a6fe20e6a0387475aa191b158a864be611b2a905212600c68",
+    "scripts/probe-browser-renderer.mjs": "ac10036ca9f40ec02b2bad7af81e070e670fa12966f6cdb5272b356fccb49f70",
+    "tests/browser.spec.mjs": "9b64452d0b99cb81f419c6ce663f1241674ca59ef8290b70044db2ee69d0a5d9",
+    "tests/section-render.spec.mjs": "25d10a4b581509cb5dde1d3d3066b8c76e6a190271277b1605a00138cdda19ae",
+    "src/viewer.js": "87b23b3152058bc14e1d6b008de95372ec62f4c78d30026fa56cf472a8d4896b"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "browser": "153.0.8010.12",
+  "channel": "chromium",
+  "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Max, Unspecified Version)",
+  "vendor": "Google Inc. (Apple)",
+  "maxSamples": 4,
+  "nativePixelRatio": 1
+}

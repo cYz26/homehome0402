@@ -15,6 +15,10 @@ export default defineConfig({
     baseURL: "http://127.0.0.1:4173/",
     viewport: { width: 1280, height: 900 },
     headless: true,
+    channel: "chromium",
+    launchOptions: process.env.CI ? {
+      args: ["--use-gl=angle", "--use-angle=gl", "--ignore-gpu-blocklist"],
+    } : undefined,
     actionTimeout: 30000,
     navigationTimeout: 30000,
     screenshot: "only-on-failure",

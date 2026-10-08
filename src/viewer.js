@@ -460,7 +460,6 @@ export class ApartmentViewer {
   }
   invalidate() {
     this.dirty = true;
-    this.tailFrames = 3;
   }
   step(dt, time) {
     if (!["interior", "walk"].includes(this.state.mode)) return;
@@ -525,10 +524,12 @@ export class ApartmentViewer {
       dt -= step;
     }
     this.cameras.update(time);
-    if (this.dirty || this.tailFrames > 0) {
+    // Camera motion, input and scene changes invalidate each actual new view.
+    // The compositor has no temporal accumulation: drawing identical trailing
+    // frames only repeats the full glass/mirror/AO workload on software GPUs.
+    if (this.dirty) {
       this.rendering.render(this.cameras.active);
       this.dirty = false;
-      this.tailFrames--;
       if (raw > 0 && raw < 1) {
         this.frames.push(raw * 1000);
         if (this.frames.length > 180) this.frames.shift();

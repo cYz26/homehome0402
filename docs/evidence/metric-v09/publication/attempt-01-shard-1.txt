@@ -1,0 +1,7 @@
+2026-10-08T14:02:14.1413214Z Timed out waiting 1200s for the teardown for test suite to run
+2026-10-08T14:02:14.1436287Z     Test timeout of 420000ms exceeded.
+2026-10-08T14:02:14.1437723Z     Error: keyboard.up: Test timeout of 420000ms exceeded.
+2026-10-08T14:02:14.1459974Z     Test timeout of 420000ms exceeded.
+2026-10-08T14:02:14.1461074Z     Error: locator.click: Test timeout of 420000ms exceeded.
+2026-10-08T14:02:14.1486530Z   2 failed
+2026-10-08T14:02:14.1491126Z   3 did not run

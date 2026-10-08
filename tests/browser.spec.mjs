@@ -19,6 +19,7 @@ async function ready(page) {
   await expect(page.locator("canvas")).toBeVisible();
 }
 async function view(page) {
+  await rendered(page, "share view");
   await page.locator("#share").click();
   const href = await page.locator("#share-url").inputValue();
   await page.locator("#share-dialog [data-close-dialog]").click();
@@ -33,9 +34,15 @@ async function panel(page, open) {
   if (expanded !== open) await page.locator("#inspector-panel summary").click();
 }
 async function nonblank(page, testInfo, name) {
-  const canvas = page.locator("canvas");
-  await canvas.scrollIntoViewIfNeeded();
-  const png = await canvas.screenshot();
+  const timeout = process.env.CI ? 240000 : 120000;
+  const png = await test.step(`pixel readback: ${name}`, async () => {
+    const canvas = page.locator("canvas");
+    // Scrolling can resume a paused viewer, so drain its frame after scrolling.
+    // Readback/stability on a software GPU belongs to the render phase.
+    await canvas.scrollIntoViewIfNeeded({ timeout });
+    await rendered(page, name, timeout);
+    return canvas.screenshot({ timeout });
+  }, { timeout });
   const stats = await sharp(png).stats();
   expect(
     Math.max(...stats.channels.slice(0, 3).map((c) => c.stdev)),
@@ -44,14 +51,15 @@ async function nonblank(page, testInfo, name) {
 }
 // Rendering may block animation frames while software GPUs compile/draw a new
 // view. Give that work its own named budget, then use normal 30s UI actions.
-async function rendered(page, name, timeout = 120000) {
+async function rendered(page, name, timeout = process.env.CI ? 240000 : 120000) {
   await test.step(`render complete: ${name}`, async () => {
+    await page.bringToFront();
     await page.evaluate(async () => {
       const gl = document.querySelector("canvas").getContext("webgl2");
       if (!gl || gl.isContextLost()) throw new Error("WebGL context unavailable");
-      // Drain the viewer's three trailing frames plus one presentation frame,
-      // including GPU completion. Animated camera transitions remain enabled
-      // in the responsive interaction flows.
+      // Cover camera updates and presentation, including GPU completion.
+      // Static views now render once; transitions still invalidate each frame.
+      // Animated camera transitions remain enabled in the responsive flows.
       for (let frame = 0; frame < 4; frame++) {
         await new Promise(requestAnimationFrame);
         gl.finish();
@@ -93,6 +101,7 @@ for (const [label, width, height] of [
     });
     await ready(page);
     await page.locator("#quality").selectOption("smooth");
+    await rendered(page, `${label} quality switch`);
     await nonblank(page, testInfo, `${label}-orbit`);
     if (width < 700) await panel(page, true);
     await page.locator('#mini-plan [data-room-id="master"] .room').click();

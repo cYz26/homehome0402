@@ -1,0 +1,27 @@
+{
+  "version": "metric-v09",
+  "candidate_commit": "22c0c857205dbf25fe4e2385b4267142ea9f033d",
+  "workflow_run": 37786152410,
+  "url": "https://github.com/cYz26/homehome0402/actions/runs/37786152410",
+  "result": "failed; deployment skipped",
+  "build": "passed",
+  "failures": [
+    {
+      "shard": 1,
+      "test": "desktop / tablet responsive interaction",
+      "failure": "420s per-test; suite teardown exhausted 1200s global bound"
+    },
+    {
+      "shard": 2,
+      "test": "standard / HD flow",
+      "failure": "web master bathroom render-complete phase exceeded 120s"
+    },
+    {
+      "shard": 4,
+      "test": "section cap pixel regression",
+      "failure": "300s accumulated budget exhausted during a zoom probe"
+    }
+  ],
+  "quality_and_assets": "unchanged; all model and release checks passed",
+  "diagnosis": "in progress; no remote acceptance"
+}

@@ -1,7 +1,7 @@
 {
   "design_id": "home402-living-v04",
   "version": "metric-v09",
-  "status": "local integration, technical and browser checks passed; user visual acceptance pending",
+  "status": "technical and complete isolated browser checks passed; remote deployment in progress; user visual acceptance pending",
   "source": {
     "path": "art_src/apartment-v09.blend",
     "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
@@ -12,9 +12,9 @@
   },
   "release": {
     "path": "public/release.json",
-    "sha256": "ae65bf0490f894b4a0552007abe98a03af82373798c4bd3061fc4535e4ef1f17",
+    "sha256": "fdd2f405d7c566f639a294fd0961a4d761bb29277abd69814154dedc49e51d4d",
     "presentationRevision": "2026-10-08-living-v04-tripo-sofa",
-    "applicationRevision": "2026-10-08-living-v04-bundles"
+    "applicationRevision": "2026-10-08-living-v04-static-frames"
   },
   "model_packages": [
     {
@@ -48,17 +48,17 @@
     "logical_ids": 89,
     "triangles": 233175,
     "degenerate_triangles": 0,
-    "maximum_bound_error_m": 9.5367431640625e-07,
+    "maximum_bound_error_m": 9.5367431640625e-7,
     "model_checks_passed": 23,
     "node_checks_passed": 53,
     "release_checks_passed": 16,
-    "browser_checks_passed": 18,
+    "browser_checks_passed": 20,
     "browser_retries": 0,
     "browser_skipped": 0,
     "browser_errors": 0,
     "render_views": 8
   },
-  "browser_evidence": "docs/evidence/metric-v09/browser-verification.json",
+  "browser_evidence": "docs/evidence/publication-v09/metric-v09/browser-verification.json",
   "frozen_inputs": "docs/evidence/metric-v09/freeze-result.json",
   "visual_review": "docs/evidence/metric-v09/living-review/visual-qa.json",
   "source_inspection": "production/inspection/metric-v09-source.json",

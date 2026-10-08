@@ -71,13 +71,22 @@ jobs:
       - name: Serve the checked assets to the section fixture
         # The fixture uses Vite's dev server; its assets come from the same dist.
         run: mkdir -p .asset-work && ln -s ../dist .asset-work/site-public
-      - run: npx playwright install --with-deps --only-shell chromium
+      - run: npx playwright install --with-deps --no-shell chromium
       - name: Record browser runner resources
         run: |
           node --input-type=module -e 'import os from "node:os"; console.log(JSON.stringify({ platform: os.platform(), architecture: os.arch(), cpus: os.availableParallelism(), memoryGiB: Math.round(os.totalmem() / 1024 ** 3) }));'
       - name: Run browser shard ${{ matrix.shard }} of 4
-        run: npm run test:browser -- --shard=${{ matrix.shard }}/4 --reporter=list,blob
+        run: |
+          xvfb-run -a node scripts/probe-browser-renderer.mjs --output test-results/renderer-probe.json
+          xvfb-run -a node scripts/run-browser-cases.mjs --shard ${{ matrix.shard }}/4
         timeout-minutes: 22
+      - name: Preserve browser renderer identity
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: home402-browser-renderer-${{ matrix.shard }}
+          path: test-results/renderer-probe.json
+          if-no-files-found: ignore
       - name: Preserve mergeable report, screenshots and traces
         if: always()
         uses: actions/upload-artifact@v6

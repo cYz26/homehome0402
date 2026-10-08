@@ -1,0 +1,142 @@
+{
+  "scope": "Same native model/PBR/glass/lighting with explicit SwiftShader on macOS; not Linux acceptance",
+  "manifestBefore": "ae65bf0490f894b4a0552007abe98a03af82373798c4bd3061fc4535e4ef1f17",
+  "runs": [
+    {
+      "stage": "baseline",
+      "traceSha256": "08101e1ce0bdbf6335761007099abdc283c18d430d6bf5339d4e81172452f93b",
+      "test": "browser-standard-rendering-8d548-HD-retain-the-selected-view",
+      "longOperations": [
+        {
+          "name": "expect",
+          "durationMs": 4426,
+          "error": false
+        },
+        {
+          "name": "test.step",
+          "durationMs": 4428,
+          "error": false
+        },
+        {
+          "name": "pw:api",
+          "durationMs": 3940,
+          "error": false
+        },
+        {
+          "name": "test.step",
+          "durationMs": 3940,
+          "error": false
+        },
+        {
+          "name": "pw:api",
+          "durationMs": 3843,
+          "error": false
+        },
+        {
+          "name": "test.step",
+          "durationMs": 3844,
+          "error": false
+        },
+        {
+          "name": "pw:api",
+          "durationMs": 13753,
+          "error": false
+        },
+        {
+          "name": "test.step",
+          "durationMs": 127631,
+          "error": true
+        },
+        {
+          "name": "pw:api",
+          "durationMs": 127633,
+          "error": false
+        },
+        {
+          "name": "pw:api",
+          "durationMs": 21347,
+          "error": false
+        },
+        {
+          "name": "fixture",
+          "durationMs": 23480,
+          "error": false
+        },
+        {
+          "name": "hook",
+          "durationMs": 28490,
+          "error": false
+        }
+      ]
+    },
+    {
+      "stage": "static-frame-only",
+      "traceSha256": "180432152d29708fb8d03441e2211682c63c0b9f271fc57070703a7736cecb43",
+      "test": "browser-desktop-homepage-p-d4550-ion-view-restore-screenshot",
+      "longOperations": [
+        {
+          "name": "pw:api",
+          "durationMs": 4188,
+          "error": false
+        },
+        {
+          "name": "pw:api",
+          "durationMs": 124797,
+          "error": true
+        }
+      ]
+    },
+    {
+      "stage": "static-frame-only",
+      "traceSha256": "1b3fafb7601b0992c1c0f4143fd0e683da71d12a17aa796501c09dd59594138c",
+      "test": "browser-standard-rendering-8d548-HD-retain-the-selected-view",
+      "longOperations": [
+        {
+          "name": "expect",
+          "durationMs": 4198,
+          "error": false
+        },
+        {
+          "name": "test.step",
+          "durationMs": 4199,
+          "error": false
+        },
+        {
+          "name": "pw:api",
+          "durationMs": 4182,
+          "error": false
+        },
+        {
+          "name": "pw:api",
+          "durationMs": 14315,
+          "error": false
+        },
+        {
+          "name": "test.step",
+          "durationMs": 14315,
+          "error": false
+        },
+        {
+          "name": "test.step",
+          "durationMs": 140686,
+          "error": true
+        },
+        {
+          "name": "pw:api",
+          "durationMs": 140689,
+          "error": false
+        },
+        {
+          "name": "fixture",
+          "durationMs": 4507,
+          "error": false
+        },
+        {
+          "name": "hook",
+          "durationMs": 9516,
+          "error": false
+        }
+      ]
+    }
+  ]
+}

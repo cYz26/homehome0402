@@ -15,9 +15,9 @@ test("the animation loop waits for the model before drawing behind its preview",
   });
   let draws = 0;
   const viewer = {
-    running: true, inView: true, dirty: true, tailFrames: 3,
+    running: true, inView: true, dirty: true,
     nav: { settings: {} }, cameras: { update() {} },
-    rendering: { render() { draws++; } }, lastPublish: 0,
+    rendering: { render() { draws++; } }, frames: [], lastPublish: 0,
   };
   ApartmentViewer.prototype.animate.call(viewer, 100);
   assert.equal(draws, 0, "no empty full-quality frames while downloading");
@@ -25,4 +25,11 @@ test("the animation loop waits for the model before drawing behind its preview",
   viewer.model = {};
   ApartmentViewer.prototype.animate.call(viewer, 200);
   assert.equal(draws, 1, "normal rendering resumes when the model arrives");
+  ApartmentViewer.prototype.animate.call(viewer, 216);
+  ApartmentViewer.prototype.animate.call(viewer, 232);
+  assert.equal(draws, 1, "a static frame does not repeat expensive glass/mirror passes");
+  viewer.cameras.update = () => ApartmentViewer.prototype.invalidate.call(viewer);
+  ApartmentViewer.prototype.animate.call(viewer, 248);
+  ApartmentViewer.prototype.animate.call(viewer, 264);
+  assert.equal(draws, 3, "camera changes continue drawing every new view");
 });

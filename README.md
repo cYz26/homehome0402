@@ -99,7 +99,7 @@ node scripts/collect-browser-evidence.mjs
 CI 按“构建 → 四个浏览器分片 → 合并验收 → 部署”运行：
 
 - `build` 执行图片元数据脱敏、模型、Node 测试、发布和 Workers 资源限制检查及 Wrangler dry run，只构建一次；保存 `dist`、模型检查结果和完整浏览器测试清单。
-- `browser` 在四个独立 runner 上按测试用例分片，每个 runner 保持单 worker、完整画质和零自动重试。所有分片按同一 artifact ID 下载构建，剖切开发夹具也直接读取这份构建资源；只安装 Chromium headless shell。
+- `browser` 在四个独立 runner 上按测试用例分片，每个 runner 保持单 worker、完整画质和零自动重试。所有分片按同一 artifact ID 下载构建，剖切开发夹具也直接读取这份构建资源；安装完整 Chromium，采用与普通浏览器一致的新无界面模式。Linux 在 Xvfb 下使用 ANGLE GL，并记录实际 WebGL 后端。
 - `verify` 合并四个 blob 报告，逐项核对测试清单，要求每项恰好执行一次并通过，再收集截图、像素指标及构建哈希。缺片、失败、跳过、重复或缺失附件均不能验收；原始 blob 保留失败 trace。
 - `deploy` 等待以上三个作业全部成功，按 artifact ID 下载并发布同一份 `dist`；只安装已锁定的 Wrangler，不再次构建。写入网站访问 secrets 后，对线上所有构建文件执行匿名拒绝 / 登录后 SHA-256 回读，并核对网页及高清 GLB 的 206 分段响应。PR 不接触部署凭据，也不发布。
 
@@ -127,6 +127,8 @@ npm run worker:dev -- --port 8787
 Wrangler Static Assets 单资源限制为 25 MiB，当前将完整场景划为房屋 / 沙发同步模型包，最大的房屋高清包为 24,601,864 字节、沙发高清包 21,232,288 字节，保留原分辨率贴图和画质；[官方限制](https://developers.cloudflare.com/workers/platform/limits/#static-assets)由 `check:worker` 核对。所有资源都经过密码 Worker，请求计入 Worker 配额；静态存储和边缘缓存仍由 Static Assets 负责，见[计费边界](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/)。
 
 本地仍可用 `npm run test:browser` 执行完整套件。排查单个分片可用 `npm run test:browser -- --shard=1/4 --reporter=list,blob`（其余为 `2/4`、`3/4`、`4/4`）；执行下一分片前保存已有 blob ZIP，避免输出目录被清理。完整报告用 `npx playwright merge-reports --reporter=json all-blob-reports` 合并，设置 `PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/browser-report.json`，再由证据脚本的 `--inventory` 参数核对构建时通过 `--list --reporter=json` 生成的清单。分片粒度依据 [Playwright 官方说明](https://playwright.dev/docs/test-sharding)。
+
+metric-v09 的正式图形验收使用独立浏览器进程，避免连续用例复用 GPU 状态：先以 `PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/browser-inventory.json npm run test:browser -- --list --reporter=json` 生成完整清单，再运行 `node scripts/run-browser-cases.mjs`。单个正式分片使用 `--shard 1/4`（其余为 2/4、3/4、4/4），所有 blob 合并后仍必须与完整清单逐项匹配、各通过一次。上面的普通命令保留为诊断入口；独立进程与共享进程结果分别记录。采用完整 Chromium 的依据见 [Playwright 新无界面模式说明](https://playwright.dev/docs/browsers#chromium-new-headless-mode)。
 
 首屏关键呈现资源预算 1 MiB，呈现后后台预加载及首次可交互 3D 总资源预算 36 MiB（metric-v09 接入 Tripo 原始 4K PBR，网页模型总预算 34 MiB，实际字节与依据见 `model/resource-budgets.json`），检查包括 JS、模型、属性、导航和解码器。网页纹理保留源图分辨率：房屋使用高质量 KTX2，沙发使用原 4K JPEG / PNG + Meshopt；建筑源 1254 像素图仅按 UASTC 块对齐到 1256 像素。历史资源保留在仓库中，不随 `public` 全量复制。
 
