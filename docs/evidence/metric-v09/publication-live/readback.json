@@ -1,0 +1,46 @@
+{
+  "verifiedAt": "2026-10-08T18:22:33.982Z",
+  "site": "https://home402.cyz26.workers.dev",
+  "version": "metric-v09",
+  "runtime": "Project Playwright Chromium; responsive widths only, not physical phones",
+  "cases": [
+    {
+      "name": "desktop",
+      "url": "https://home402.cyz26.workers.dev",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "version": "metric-v09",
+      "manifestSha256": "fdd2f405d7c566f639a294fd0961a4d761bb29277abd69814154dedc49e51d4d",
+      "galleryCount": 13,
+      "schemeIds": [
+        "scheme-overview",
+        "scheme-cabinet"
+      ],
+      "sofaProperties": "灰橄榄皮三人沙发living-sofa关联空间客厅模型外包尺寸1.10 × 2.40 × 0.96 m材质沙发原始皮面与木框用户提供 Tripo ZIP / 已准备模型；等比归一到假设宽 2.4 m，深高沿用网格比例，非家具实测。背墙避让向东移 5 cm。已确认外观方案：沙发位于西侧、正对东侧高低模块柜；中央保留活动空间，无电视和茶几。",
+      "canvasCount": 1,
+      "errors": [],
+      "readbackWarnings": []
+    },
+    {
+      "name": "phone",
+      "url": "https://home402.cyz26.workers.dev",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "metric-v09",
+      "manifestSha256": "fdd2f405d7c566f639a294fd0961a4d761bb29277abd69814154dedc49e51d4d",
+      "galleryCount": 13,
+      "schemeIds": [
+        "scheme-overview",
+        "scheme-cabinet"
+      ],
+      "sofaProperties": "灰橄榄皮三人沙发living-sofa关联空间客厅模型外包尺寸1.10 × 2.40 × 0.96 m材质沙发原始皮面与木框用户提供 Tripo ZIP / 已准备模型；等比归一到假设宽 2.4 m，深高沿用网格比例，非家具实测。背墙避让向东移 5 cm。已确认外观方案：沙发位于西侧、正对东侧高低模块柜；中央保留活动空间，无电视和茶几。",
+      "canvasCount": 1,
+      "errors": [],
+      "readbackWarnings": []
+    }
+  ]
+}

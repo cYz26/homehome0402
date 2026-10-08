@@ -1,0 +1,8 @@
+{
+  "browser": "153.0.8010.12",
+  "channel": "chromium",
+  "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL 4.5)",
+  "vendor": "Google Inc. (Mesa)",
+  "maxSamples": 4,
+  "nativePixelRatio": 1
+}

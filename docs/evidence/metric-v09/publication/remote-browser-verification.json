@@ -1,0 +1,358 @@
+{
+  "version": "metric-v09",
+  "executedAt": "2026-10-08T18:01:53.594Z",
+  "browser": "Playwright bundled Chromium 153.0.8010.12",
+  "host": {
+    "platform": "linux",
+    "architecture": "x64",
+    "release": "6.17.0-1022-azure"
+  },
+  "responsiveViewports": [
+    [
+      1280,
+      900
+    ],
+    [
+      820,
+      1180
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "touch": "Chromium CDP simulation; no physical mobile device",
+  "manifestSha256": "fdd2f405d7c566f639a294fd0961a4d761bb29277abd69814154dedc49e51d4d",
+  "rawModelSha256": "bec95e41d32e2b8a0ede7f5e4875fa38b786bf496b6c3b31858444b05539b21f",
+  "modelPackages": [
+    {
+      "path": "releases/metric-v09/apartment-web.glb",
+      "role": "model",
+      "bytes": 17508036,
+      "sha256": "af9946a1f66c2b2f6a16ebb49c4100b5bc9364a2abea994ae97dad64c2aab482"
+    },
+    {
+      "path": "releases/metric-v09/apartment-hd.glb",
+      "role": "hd-model",
+      "bytes": 24601864,
+      "sha256": "bec95e41d32e2b8a0ede7f5e4875fa38b786bf496b6c3b31858444b05539b21f"
+    },
+    {
+      "path": "releases/metric-v09/living-sofa-web.glb",
+      "role": "model",
+      "bytes": 15929940,
+      "sha256": "729de36db7d0693dd609acb301d296bbd612f61bee1715ed5383b7e938cebf62"
+    },
+    {
+      "path": "releases/metric-v09/living-sofa-hd.glb",
+      "role": "hd-model",
+      "bytes": 21232288,
+      "sha256": "65017cdccc06a93b0a26a51faa4579aff5d0655691e7872827395c58314bacd2"
+    }
+  ],
+  "testSourceSha256": "91abbe6662b060e327d0eb89fcdf991f244df7c61eec29b41e84d2f6a4311e18",
+  "renderingTestSources": {
+    "tests/section-render.spec.mjs": "25d10a4b581509cb5dde1d3d3066b8c76e6a190271277b1605a00138cdda19ae",
+    "tests/fixtures/section-probe.js": "3af1c19c75e06a4302d9ca638830c282f6805bcbd7d9eac9dd7725252cbebc7d",
+    "tests/fixtures/section-probe.html": "7bc6e915de01e926099f5b0afe0add25165eb221ca981accaf7d2f63643a3ac2",
+    "playwright.config.mjs": "15823bd945236a5353f548b5546c8f2fc89e50f140884a21a596cd66470bf4a0"
+  },
+  "collectorSha256": "8961a05823eb7eeba38c255c123224cc9c67eff90f03e060313b4ff03a9b0542",
+  "deploymentSources": {
+    "wrangler.jsonc": "f314e064b3298793daa65f73627131ec801e1a9bf650cb613d028e9f440a8057",
+    "worker/index.mjs": "e46633202fdaecb29426fa491168d48fa26437e183ebf8b3bd070d94f4028f8d",
+    "tests/worker-auth.spec.mjs": "db44071023cb91df25bf3ea1a413bd640420f030cf8b01600c342e2ecfb0e0e6"
+  },
+  "reportSha256": "1da1e8f0f5cc3614c110250c3ab5006392327c06460b7ee46376a18c519a6521",
+  "inventorySha256": "ad3ec4df16b47ea396a469afe69dbec5ecb5df1d5eb580c993abd160001d2543",
+  "buildArtifactId": "11568992910",
+  "tests": [
+    {
+      "name": "standard rendering, north-up plan, current reference and on-demand HD retain the selected view",
+      "status": "passed",
+      "durationMs": 239541
+    },
+    {
+      "name": "configuration failure and explicit retry recover without a reload",
+      "status": "passed",
+      "durationMs": 2301
+    },
+    {
+      "name": "tablet: homepage preload, model, linked rooms, section, view restore, screenshot",
+      "status": "passed",
+      "durationMs": 156538
+    },
+    {
+      "name": "secondary furniture package failure retries with complete semantic ownership",
+      "status": "passed",
+      "durationMs": 24588
+    },
+    {
+      "name": "desktop: homepage preload, model, linked rooms, section, view restore, screenshot",
+      "status": "passed",
+      "durationMs": 201303
+    },
+    {
+      "name": "model failure, retry, cancellation and re-entry keep a single canvas",
+      "status": "passed",
+      "durationMs": 33948
+    },
+    {
+      "name": "phone: homepage preload, model, linked rooms, section, view restore, screenshot",
+      "status": "passed",
+      "durationMs": 66146
+    },
+    {
+      "name": "mobile touch: immediate two-axis look, stationary hold, two-finger height and release safety",
+      "status": "passed",
+      "durationMs": 20836
+    },
+    {
+      "name": "desktop: password gate protects assets and restores the shared view",
+      "status": "passed",
+      "durationMs": 21833
+    },
+    {
+      "name": "phone: password gate protects assets and restores the shared view",
+      "status": "passed",
+      "durationMs": 8751
+    },
+    {
+      "name": "homepage 1280: preloads after the hero and reuses the pending model",
+      "status": "passed",
+      "durationMs": 17034
+    },
+    {
+      "name": "homepage 390: preloads after the hero and reuses the pending model",
+      "status": "passed",
+      "durationMs": 11309
+    },
+    {
+      "name": "background resources wait for a delayed homepage hero",
+      "status": "passed",
+      "durationMs": 3714
+    },
+    {
+      "name": "background preload failure leaves the homepage usable and explicit entry retries",
+      "status": "passed",
+      "durationMs": 17192
+    },
+    {
+      "name": "completed homepage preload is reused and does not create a renderer",
+      "status": "passed",
+      "durationMs": 11765
+    },
+    {
+      "name": "web: section caps stay flat through zoom with full AO and shadows",
+      "status": "passed",
+      "durationMs": 116709
+    },
+    {
+      "name": "legacy AO positive control reproduces cap stripes",
+      "status": "passed",
+      "durationMs": 29132
+    },
+    {
+      "name": "hd: section caps stay flat through zoom with full AO and shadows",
+      "status": "passed",
+      "durationMs": 30829
+    },
+    {
+      "name": "walk canvas owns long-press defaults and releases input on interruption",
+      "status": "passed",
+      "durationMs": 2787
+    },
+    {
+      "name": "model download overlaps viewer code and cancellation stays responsive",
+      "status": "passed",
+      "durationMs": 11775
+    }
+  ],
+  "images": [
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/standard-orbit.png",
+      "sha256": "435a3dea183a9044ea4c562e80939354456aee6ea8a217b43ead139b624837cf"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/standard-top.png",
+      "sha256": "71247a1007d1324deb14c40e1c10ac2f7686a5f4624a403a34f9c3e50cc5d04d"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/web-bathroom-standard.png",
+      "sha256": "f37f199ffc1efcf8c565178c61d329c55ab4a20c836391c8af884b2bff32a527"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/hd-bathroom-standard.png",
+      "sha256": "cad4c3bed38589ff6d7650d1d61fb61c52a0f61d0574c4fe205d6e395db3fc5e"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/hd-top.png",
+      "sha256": "9cf6d4694a7bea2a67dd9574378da5343baab64810cccecec63ca41381e3d5e5"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/hd-orbit.png",
+      "sha256": "16259ed5aa0d42ef774b9c0b5c7bf010368cf0ec5b08564de3efaa4b0e721907"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/current-design-reference.png",
+      "sha256": "7ee9c92f8a8eafa28dbd48ea9cabb1a9f8c764670cbf8f41527909780a771713"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/tablet-home.png",
+      "sha256": "badb72e0458574d3159f4577cdb5c1d98bc63766632b91d38eb3180eb8e7d83d"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/tablet-orbit.png",
+      "sha256": "fddf46449e8f4061436ef23416d2caa6ee1f14c12bcfc08d5083a961086e64ec"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/tablet-section.png",
+      "sha256": "6091cc319247e84cf73eae1de9d76b62fb248d0e0b579e26d88b529c9cce4224"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/tablet-bathroom.png",
+      "sha256": "0a98f491b8d1383b94b234486208f31e5af6f480f04481c34b2d793a0f0763c5"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/desktop-home.png",
+      "sha256": "7895a89d8018cb8e812640cbe07341685022b7e39f92881cadbe46f204d65caf"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/desktop-orbit.png",
+      "sha256": "6df8f23a426d3f9e264b6149319a22f4784cdb3aec99d59b8e1e62a02e2b8939"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/desktop-section.png",
+      "sha256": "87d5a14a337c6598f6fd611fd1b4218902e250d38b61a160dc0328f4bec66b12"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/desktop-bathroom.png",
+      "sha256": "7af02ce0ab5c5963c0d0f99ded1388fb817f54b00bc6855211b2dbf4047671f4"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/phone-home.png",
+      "sha256": "7afc181adecaefd33a891454b37698615f4cf28cf5cab9dc9f004c14e9d87c86"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/phone-orbit.png",
+      "sha256": "210f467c3b487706e92273fa40123f885c3244e094601bffcfdb37063108ff6f"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/phone-section.png",
+      "sha256": "497a77420bf900b207c3a75c329580a4c05101e5bcf630a825061bad06107187"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/phone-bathroom.png",
+      "sha256": "a12ae84cb59c33a44d850ff2448c98113ab54c646dc2584bacd7265a4a5ad618"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/mobile-touch-walk.png",
+      "sha256": "7c69b5471ad6e5c0d161885163afa7f2bb3a31779b4c8e8242ef5a595d0bccfc"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/password-desktop.png",
+      "sha256": "8eeefb7b962e09e8c095932155aab0b907af7ef62a9e05a70846b2726dea8efe"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/password-desktop-opened.png",
+      "sha256": "c5052a48736aeb4108b9489353987faa63e383ea019d6e7cabef9d1c23d8bfe5"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/password-phone.png",
+      "sha256": "80725c80e694a5d42c4ed83f97e507a0c36181642a11b738c5c8f3c0eb28fe10"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/password-phone-opened.png",
+      "sha256": "f94feaada7693fb1e598de964c59a59c4ff480629f2dd92e4c6c733d073e243d"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/preload-home-1280.png",
+      "sha256": "7895a89d8018cb8e812640cbe07341685022b7e39f92881cadbe46f204d65caf"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/preload-home-390.png",
+      "sha256": "7afc181adecaefd33a891454b37698615f4cf28cf5cab9dc9f004c14e9d87c86"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-web-zoom-0_9.png",
+      "sha256": "d4d524c597e74ddbecab3da202f96ea54bfc2856d3e28f0e1760c68d665409ba"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-web-zoom-1_7.png",
+      "sha256": "fc4b5a82bf28bcd3e650314d7c953dc0b1d143b4a0206fdf29b92afdf1a947f3"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-web-zoom-2_6.png",
+      "sha256": "a7a82f85fe135865ded3b1c945e0da5ea4dee4487d77cc74da031d2b0cf956d1"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-web-x-0_04.png",
+      "sha256": "4b7890af2524f684dd3edf7b522660cfc68e5196c49465908c9ccc9cde7c5187"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-web-y-8_9.png",
+      "sha256": "82795265150ca65f6626f51874fcefcf7a3657bbff35cf99a0e4c3f3fe3f9c13"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-web-z-1_4.png",
+      "sha256": "933f3da6ee245befbcc8f8d57fd48090dbbc80adf5b6d5d49ba6ead4cf5b9193"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-before-ao-mismatch.png",
+      "sha256": "f722f0266d255f1f8bbfc5b4ba8984aafa4551fffa7aa36002e469c314b762ab"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-hd-zoom-0_9.png",
+      "sha256": "80edef9e0daa1edc6d32b0c5722c83d69d4945af6cc386fa7e1ecc12c5509e12"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-hd-zoom-1_7.png",
+      "sha256": "ad90f6cd3d5e4e078622c09652ab46b376e52add387de43c31be3e08517542b9"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-hd-zoom-2_6.png",
+      "sha256": "ea99664c548cd08e877cbcdfcd8c650036f059c670d003d6697f9c5647eabfcf"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-hd-x-0_04.png",
+      "sha256": "30367ab5bd152f2f0304f716c6e9e3ea253ec9875aac3dde9464e58b5c430084"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-hd-y-8_9.png",
+      "sha256": "39335f923b7c4317dba43c8191b7412085112e2c6607454c9db323b72d5c4757"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-hd-z-1_4.png",
+      "sha256": "148943f8c49986f9b9005195a57078ca59a989de740318a70b695907a6c22b4e"
+    }
+  ],
+  "measurements": [
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/HD_phase_timings.json",
+      "sha256": "792528dbd9859b37ac01cf8592a04c0260bbfb4a5a56fa16d835f1294b6e601c"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-web-metrics.json",
+      "sha256": "1140b01b14bee11bd04220da1fc9cb88ba2d1521269898820fc64d899680487d"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-legacy-metrics.json",
+      "sha256": "4a94cfbf2551f31bade2d6c4936c3e8a03332a397c433c427bf5afea9464cf82"
+    },
+    {
+      "path": ".asset-work/browser-evidence/metric-v09/section-hd-metrics.json",
+      "sha256": "d388c5cda84b696cd25d16c8fcb7db3bf943683b0762c3bfca9708fd54a8fdcb"
+    }
+  ],
+  "build": {
+    "dist/assets/index-BGGrpaBp.css": "1264441d41ca3c4d891c2053471f374af9bbc3c24a5bff4f4445fd57020089f9",
+    "dist/assets/index-CnyhSoj5.js": "eac6adef4eba1714b5ddc3e2484105b4c23f6c7142ebfc7dc8fe31400202ca85",
+    "dist/assets/three-addons-B4rWYbHU.js": "25a66a80f5caf7282871cca27b8c57126891e33e657784f4e953cd875bb90124",
+    "dist/assets/three-core-MA-a2Cmd.js": "92cc45e26428bcc74bcc480c1977752d05dd9e7730813d43121602f847c6bcf4",
+    "dist/assets/three-renderer-BEzRlOVa.js": "f286d6f76733e24e45003e616e9ff8e6889a5aae0c61cc899ddf10584026eea7",
+    "dist/assets/viewer-CA6Fh7Lt.js": "e835b72b4ccb1c493dbec6f21f2fc7be2a880b15235b70e70bc9e69f393770c1",
+    "dist/index.html": "788713c8781aef8c419b3293e7815c24b771e1d76959fb757816b75b25d85247"
+  },
+  "realPhonePerformance": "not-measured",
+  "visualAcceptance": "pending-user-review"
+}

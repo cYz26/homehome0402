@@ -24,6 +24,7 @@
   "decision": "docs/design/living-v04/DECISION.md",
   "inspection": "production/inspection/metric-v09-source.json",
   "checks": "model/checks.json",
-  "browser_evidence": "docs/evidence/metric-v09",
-  "published_remotely": false
+  "browser_evidence": "docs/evidence/metric-v09/publication/remote-browser-verification.json",
+  "published_remotely": true,
+  "publication": "docs/evidence/metric-v09/publication/RESULT.json"
 }

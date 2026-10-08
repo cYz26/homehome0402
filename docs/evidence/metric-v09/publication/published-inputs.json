@@ -1,0 +1,16 @@
+{
+  "version": "metric-v09",
+  "publishedCommit": "8900deaac2d0eecfe393471e15bdef3622c8bffb",
+  "files": {
+    "public/release.json": "fdd2f405d7c566f639a294fd0961a4d761bb29277abd69814154dedc49e51d4d",
+    "model/apartment.json": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
+    "art_src/apartment-v09.blend": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
+    "tests/browser.spec.mjs": "91abbe6662b060e327d0eb89fcdf991f244df7c61eec29b41e84d2f6a4311e18",
+    "tests/section-render.spec.mjs": "25d10a4b581509cb5dde1d3d3066b8c76e6a190271277b1605a00138cdda19ae",
+    "scripts/run-browser-cases.mjs": "80e45c02f0fac44a6fe20e6a0387475aa191b158a864be611b2a905212600c68",
+    "playwright.config.mjs": "15823bd945236a5353f548b5546c8f2fc89e50f140884a21a596cd66470bf4a0",
+    ".github/workflows/workers.yml": "339186a9949fa0d48b75fb510269123b89edf323615c3a0f19bf558a6389e00e",
+    "docs/evidence/metric-v09/publication/remote-browser-verification.json": "742e4c002b3f5dd99fd74739e646ee24bcd1e838494a5e6d0e5c1b9b5870e49a",
+    "docs/evidence/metric-v09/publication/deployment-verification.json": "6db373e93f79870b91933256c61bd3da94190e60e370afb1c475ce7d4f95a40b"
+  }
+}

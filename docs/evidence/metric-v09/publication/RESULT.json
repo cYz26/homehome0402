@@ -1,0 +1,57 @@
+{
+  "version": "metric-v09",
+  "site": "https://home402.cyz26.workers.dev",
+  "publishedCommit": "8900deaac2d0eecfe393471e15bdef3622c8bffb",
+  "designAssetCommit": "22c0c857205dbf25fe4e2385b4267142ea9f033d",
+  "workflowRun": 37820857670,
+  "workflowUrl": "https://github.com/cYz26/homehome0402/actions/runs/37820857670",
+  "workflowConclusion": "success",
+  "buildArtifactId": "11568992910",
+  "workerVersionId": "a516eb45-ddf2-49c1-a39e-2b2efc54ee1a",
+  "deployedAt": "2026-10-08T18:10:15Z",
+  "manifestSha256": "fdd2f405d7c566f639a294fd0961a4d761bb29277abd69814154dedc49e51d4d",
+  "browser": {
+    "passed": 20,
+    "retries": 0,
+    "skipped": 0,
+    "screenshots": 39,
+    "evidence": "docs/evidence/metric-v09/publication/remote-browser-verification.json",
+    "renderer": "docs/evidence/metric-v09/publication/remote-renderer.json"
+  },
+  "deployment": {
+    "filesVerified": 42,
+    "modelRangesVerified": 4,
+    "anonymousAccess": "blocked",
+    "evidence": "docs/evidence/metric-v09/publication/deployment-verification.json",
+    "localBuildMatchesAllCIBytes": true
+  },
+  "livePreview": {
+    "evidence": "docs/evidence/metric-v09/publication-live/readback.json",
+    "viewports": [
+      [
+        1440,
+        1000
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "galleryCount": 13,
+    "schemes": [
+      "scheme-overview",
+      "scheme-cabinet"
+    ],
+    "actualLivingAndCabinet3D": true,
+    "applicationErrors": 0
+  },
+  "optionalLocalFullAssetProbe": {
+    "status": "network timeout; no passing receipt",
+    "authoritativeFullAssetCheck": "CI deployed artifact readback passed; local/CI bytes agreed for all 42 files"
+  },
+  "pending": [
+    "User visual acceptance of current actual model",
+    "Physical mobile performance",
+    "Realtime light is an approximation; no baked GI"
+  ]
+}
