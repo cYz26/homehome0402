@@ -1,0 +1,30 @@
+{
+  "version": "metric-v09",
+  "commit": "abc0f8b65b1868f51b021abad3a421500c5e5224",
+  "run": 37816144692,
+  "result": "17 of 20 passed; deployment skipped",
+  "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL 4.5)",
+  "maxSamples": 4,
+  "failures": [
+    {
+      "viewport": "desktop",
+      "expectedHeightGreaterThan": 1.7,
+      "receivedHeight": 1.65,
+      "cause": "Fixed 300ms key hold not sampled by slow software frame"
+    },
+    {
+      "viewport": "tablet",
+      "expectedHeightGreaterThan": 1.7,
+      "receivedHeight": 1.65,
+      "cause": "Fixed 300ms key hold not sampled by slow software frame"
+    },
+    {
+      "viewport": "phone",
+      "expectedHeightGreaterThan": 1.7,
+      "receivedHeight": 1.65,
+      "cause": "Fixed 300ms key hold not sampled by slow software frame"
+    }
+  ],
+  "sourceAndVisualQuality": "unchanged",
+  "followup": "Hold the real E key until observed UI height, within 30s; keep final original assertion"
+}

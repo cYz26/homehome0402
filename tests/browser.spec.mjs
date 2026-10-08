@@ -141,8 +141,16 @@ for (const [label, width, height] of [
     await page.waitForTimeout(450);
     await page.keyboard.up("KeyW");
     await page.keyboard.down("KeyE");
-    await page.waitForTimeout(300);
-    await page.keyboard.up("KeyE");
+    try {
+      // Software rendering may not sample a 300ms key hold even once. Keep the
+      // real key held until the displayed height confirms movement, bounded by
+      // the ordinary input budget; retain the same height assertion below.
+      await expect.poll(async () => Number(
+        (await page.locator("#eye-height").textContent()).match(/[\d.]+/)[0],
+      ), { timeout: 30000 }).toBeGreaterThan(1.7);
+    } finally {
+      await page.keyboard.up("KeyE");
+    }
     const after = await view(page);
     expect(after.state.camera.position[2]).toBeLessThan(
       before.state.camera.position[2],
