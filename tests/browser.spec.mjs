@@ -2,16 +2,16 @@ import { test, expect } from "@playwright/test";
 import sharp from "sharp";
 // Downloading, decoding and the first full-quality render are one loading
 // phase. A request event only marks its start; ordinary UI assertions stay 20s.
-async function modelReady(page) {
-  await test.step("model ready: download, decode and first render", async () => {
+async function modelReady(page, timeout = 120000, name = "model") {
+  await test.step(`${name} ready: download, decode and first render`, async () => {
     // Read both conditions atomically. A remote trace showed first-render
     // completion followed by a second DOM request waiting behind another
     // software-GPU frame and exhausting this shared 120s phase.
     await expect.poll(() => page.evaluate(() => ({
       placeholderHidden: document.querySelector("#model-placeholder")?.hidden === true,
       canvasCount: document.querySelectorAll("canvas").length,
-    })), { timeout: 120000 }).toEqual({ placeholderHidden: true, canvasCount: 1 });
-  }, { timeout: 120000 });
+    })), { timeout }).toEqual({ placeholderHidden: true, canvasCount: 1 });
+  }, { timeout });
 }
 async function ready(page) {
   await page.locator("[data-explore]").click();
@@ -44,7 +44,7 @@ async function nonblank(page, testInfo, name) {
 }
 // Rendering may block animation frames while software GPUs compile/draw a new
 // view. Give that work its own named budget, then use normal 30s UI actions.
-async function rendered(page, name) {
+async function rendered(page, name, timeout = 120000) {
   await test.step(`render complete: ${name}`, async () => {
     await page.evaluate(async () => {
       const gl = document.querySelector("canvas").getContext("webgl2");
@@ -58,7 +58,7 @@ async function rendered(page, name) {
         if (gl.isContextLost()) throw new Error("WebGL context lost during render");
       }
     });
-  }, { timeout: 120000 });
+  }, { timeout });
 }
 for (const [label, width, height] of [
   ["desktop", 1280, 900],
@@ -291,9 +291,17 @@ test("standard rendering, north-up plan, current reference and on-demand HD reta
 }, testInfo) => {
   // This case checks final full-quality views; animated navigation remains
   // covered by the desktop/tablet/phone flows with normal motion.
-  // The remote trace completes Web views in 212s; HD then adds a 25s network
-  // delay, decoding and three full-quality views. UI/phase limits stay intact.
-  if (process.env.CI) test.setTimeout(600000);
+  // The private runner decodes raw HD textures for ~40s after the injected
+  // 25s download delay, leaving under 50s of the old phase for software drawing.
+  // Only HD phases get additional time; normal UI and Web phase limits remain.
+  if (process.env.CI) test.setTimeout(900000);
+  const hdPhaseTimeout = process.env.CI ? 240000 : 120000;
+  const hdTimings = {};
+  const hdRendered = async (name) => {
+    const start = Date.now();
+    await rendered(page, name, hdPhaseTimeout);
+    hdTimings[name] = Date.now() - start;
+  };
   await page.emulateMedia({ reducedMotion: "reduce" });
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
@@ -343,18 +351,20 @@ test("standard rendering, north-up plan, current reference and on-demand HD reta
   const hd = page.waitForRequest("**/apartment-hd.glb");
   await page.locator("#load-hd").click({ noWaitAfter: true });
   await hd;
-  await modelReady(page);
-  await rendered(page, "HD double basin");
+  const hdStart = Date.now();
+  await modelReady(page, hdPhaseTimeout, "HD model");
+  hdTimings.loadMs = Date.now() - hdStart;
+  await hdRendered("HD double basin");
   const after = await view(page);
   expect(after.state.mode).toBe(before.state.mode);
   expect(after.state.camera.position).toEqual(before.state.camera.position);
   await nonblank(page, testInfo, "hd-bathroom-standard");
   await page.locator('[data-mode="top"]').click({ noWaitAfter: true });
   await page.locator('button[data-room=""]').click({ noWaitAfter: true });
-  await rendered(page, "HD top");
+  await hdRendered("HD top");
   await nonblank(page, testInfo, "hd-top");
   await page.locator('[data-mode="orbit"]').click({ noWaitAfter: true });
-  await rendered(page, "HD orbit");
+  await hdRendered("HD orbit");
   await nonblank(page, testInfo, "hd-orbit");
   await page.locator("[data-open-references]").first().click();
   await expect(page.locator("#reference-image")).toHaveAttribute(
@@ -371,6 +381,10 @@ test("standard rendering, north-up plan, current reference and on-demand HD reta
   await testInfo.attach("current-model-reference", {
     body: await page.locator("#reference-dialog").screenshot(),
     contentType: "image/png",
+  });
+  await testInfo.attach("HD phase timings", {
+    body: Buffer.from(JSON.stringify({ phaseBudgetMs: hdPhaseTimeout, injectedNetworkDelayMs: 25000, ...hdTimings })),
+    contentType: "application/json",
   });
   expect(errors).toEqual([]);
 });
