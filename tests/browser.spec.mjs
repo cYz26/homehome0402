@@ -4,10 +4,13 @@ import sharp from "sharp";
 // phase. A request event only marks its start; ordinary UI assertions stay 20s.
 async function modelReady(page) {
   await test.step("model ready: download, decode and first render", async () => {
-    await expect(page.locator("#model-placeholder")).toBeHidden({
-      timeout: 120000,
-    });
-    await expect(page.locator("canvas")).toHaveCount(1);
+    // Read both conditions atomically. On the private runner, HD finishes its
+    // first render at ~96s, then a second DOM request can wait behind another
+    // software-GPU frame and consume the remainder of this 120s phase.
+    await expect.poll(() => page.evaluate(() => ({
+      placeholderHidden: document.querySelector("#model-placeholder")?.hidden === true,
+      canvasCount: document.querySelectorAll("canvas").length,
+    })), { timeout: 120000 }).toEqual({ placeholderHidden: true, canvasCount: 1 });
   }, { timeout: 120000 });
 }
 async function ready(page) {
