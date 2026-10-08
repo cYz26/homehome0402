@@ -1,0 +1,156 @@
+{
+  "scope": "New task images only; original ZIP, packed Blender / GLB material bytes preserved",
+  "changed": 10,
+  "images": [
+    {
+      "path": "references/generated/sofa-tripo-20261008-r1/01-front.png",
+      "beforeSha256": "b193017a5914a81efb5d592191cac70a7cc74a6e1ec445c3babd59f8101eda0d",
+      "sha256": "fdd3a502af76dab3acdc5f0550687998d5e0515aa0557e947e985daa2330aa3f",
+      "removedChunks": [
+        "caBX"
+      ],
+      "decodedPixelsPreserved": true
+    },
+    {
+      "path": "references/generated/sofa-tripo-20261008-r1/02-left.png",
+      "beforeSha256": "4080b28ec8996ca3f5e8c8bc93b6ac2d92f635145ce838b70a2cb961f8dae42e",
+      "sha256": "b22c6eff2efce8b16e86be4bceec65152c21453f624d2fd979431d815e51266b",
+      "removedChunks": [
+        "caBX"
+      ],
+      "decodedPixelsPreserved": true
+    },
+    {
+      "path": "references/generated/sofa-tripo-20261008-r1/03-back-inferred.png",
+      "beforeSha256": "70fff0f50911819a45d68aa91c704a6f66b7d9953da9dcd276e4a77d8c90b2ec",
+      "sha256": "086575f73cce319d5942e955d9b0f5dff99af92d09703ed467783322a002d8e5",
+      "removedChunks": [
+        "caBX"
+      ],
+      "decodedPixelsPreserved": true
+    },
+    {
+      "path": "references/generated/sofa-tripo-20261008-r1/04-right.png",
+      "beforeSha256": "d4177cb4a8a5ff8fea70b3b53d7a87213e9f6e91378b554abb3413e58abdbf9a",
+      "sha256": "1000a3d62174a5634015c0e533e6bf16feaf1004e52ca01487879b623c4f4d46",
+      "removedChunks": [
+        "caBX"
+      ],
+      "decodedPixelsPreserved": true
+    },
+    {
+      "path": "references/generated/sofa-tripo-20261008-r1/05-three-quarter.png",
+      "beforeSha256": "8f24520130a8f85f7d24411a764242e0f88506689216877f03c30392a08792bc",
+      "sha256": "aa76950d9945869a7bfd973570025d023c41ff302f79a9086943e4eaf5e8c627",
+      "removedChunks": [
+        "caBX"
+      ],
+      "decodedPixelsPreserved": true
+    },
+    {
+      "path": "references/model/metric-v08/cabinet-v07-clay.png",
+      "beforeSha256": "d6cbdd2ecbfc9fad95f114284b699fcf3cd997d40690bd2e05e3acfcd35dc942",
+      "sha256": "33445f053d729881b20f431f1e9b4e064bcedbcba29fab56b812ad2f60a6b1cd",
+      "removedChunks": [
+        "eXIf",
+        "oFFs",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ],
+      "decodedPixelsPreserved": true
+    },
+    {
+      "path": "references/model/metric-v08/cabinet-v08-clay.png",
+      "beforeSha256": "38b612ab2aacbaa2959cccde8cc1ed91ca73d0b64655fed0107907e51c2a1f84",
+      "sha256": "92b7689aab1ee594e1e17df2fef4eb91d768aed98bf322ee7b575c5dcf152dde",
+      "removedChunks": [
+        "eXIf",
+        "oFFs",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ],
+      "decodedPixelsPreserved": true
+    },
+    {
+      "path": "references/model/metric-v09/cabinet-cycles.png",
+      "beforeSha256": "727d1a26ce1c1b038c7b4bb49a3f5b4c03f3ec121fc17387a3f2dc860de58469",
+      "sha256": "a598aa145a08fe897d562fa94272dea36e0442349a692a16265f6c3d6216231e",
+      "removedChunks": [
+        "eXIf",
+        "oFFs",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ],
+      "decodedPixelsPreserved": true
+    },
+    {
+      "path": "references/model/metric-v09/living-cycles.png",
+      "beforeSha256": "a65f63686459750075eed3fd006d395de36ab072229c3c00c11a8a5b4684ad1e",
+      "sha256": "053af736bef1d3200493f86fd147f0f80e51a40fcff54ca2c97dc9b589cb1a3b",
+      "removedChunks": [
+        "eXIf",
+        "oFFs",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ],
+      "decodedPixelsPreserved": true
+    },
+    {
+      "path": "references/model/metric-v09/table-cycles.png",
+      "beforeSha256": "ab71ed4e11823aedf2cf34543ba7b5055a52be1b15f922adefa5eb9c54fc9e2c",
+      "sha256": "39814f1187d9fc9fd09e4279cc9aa9a2fedbf0745b28fcc5e4dce748425bf024",
+      "removedChunks": [
+        "eXIf",
+        "oFFs",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ],
+      "decodedPixelsPreserved": true
+    }
+  ]
+}

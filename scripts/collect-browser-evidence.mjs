@@ -113,6 +113,8 @@ const receipt = {
   touch: "Chromium CDP simulation; no physical mobile device",
   manifestSha256: hash(manifestBytes),
   rawModelSha256: manifest.assets.find((a) => a.role === "hd-model").sha256,
+  modelPackages: manifest.assets.filter(a=>["model","hd-model"].includes(a.role))
+    .map(({path,role,bytes,sha256})=>({path,role,bytes,sha256})),
   testSourceSha256: hash(await fs.readFile("tests/browser.spec.mjs")),
   renderingTestSources: Object.fromEntries(
     await Promise.all(

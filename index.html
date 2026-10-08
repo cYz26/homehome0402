@@ -41,29 +41,29 @@
             >
           </div>
           <p class="hero-meta">
-            <span class="status-dot"></span> 精装空房 · 单层住宅 · 米制模型
+            <span class="status-dot"></span> 客餐厅家具方案 · 单层住宅 · 米制模型
           </p>
         </div>
         <figure class="hero-visual">
           <picture
             ><source
               media="(max-width: 700px)"
-              srcset="/releases/metric-v06/images/hero-640.webp" />
+              srcset="/__RELEASE_PREFIX__/images/hero-640.webp" />
             <img
               id="hero-image"
-              src="/releases/metric-v06/images/hero-1600.webp"
+              src="/__RELEASE_PREFIX__/images/hero-1600.webp"
               srcset="
-                /releases/metric-v06/images/hero-1000.webp 1000w,
-                /releases/metric-v06/images/hero-1600.webp 1600w
+                /__RELEASE_PREFIX__/images/hero-1000.webp 1000w,
+                /__RELEASE_PREFIX__/images/hero-1600.webp 1600w
               "
               sizes="(max-width:700px) 100vw, 65vw"
               width="1600"
               height="1100"
               fetchpriority="high"
-              alt="当前模型的整屋剖面：四处房门已修正为全开靠墙"
+              alt="当前家具方案的整屋剖面；房门全开靠墙"
           /></picture>
           <figcaption>
-            <span>01 / 全屋视角</span><span>模型渲染 · Cycles · v06</span>
+            <span>01 / 全屋视角</span><span>模型渲染 · Cycles · __MODEL_SHORT_VERSION__</span>
           </figcaption>
         </figure>
         <div id="site-status" class="notice" role="status" hidden>
@@ -76,7 +76,7 @@
           <p class="eyebrow">01 — THE PROJECT</p>
           <h2>一个家，一份完整档案。</h2>
           <p class="section-intro">
-            以原始图纸为尺度依据，结合实景照片与逐处修订，保留精装空房的真实布局。图像、平面与三维模型，互相对应。
+            以原始图纸为尺度依据，结合实景照片与逐处修订，保留精装空间的真实布局与家具修订。图像、平面与三维模型，互相对应。
           </p>
         </div>
         <dl class="project-facts">
@@ -94,7 +94,7 @@
           </div>
           <div>
             <dt>当前模型</dt>
-            <dd>v06 <small>米制</small></dd>
+            <dd>__MODEL_SHORT_VERSION__ <small>米制</small></dd>
           </div>
         </dl>
         <p class="basis-note">
@@ -136,7 +136,7 @@
               <div id="canvas-container"></div>
               <div class="model-placeholder" id="model-placeholder">
                 <img
-                  src="/releases/metric-v06/images/hero-1000.webp"
+                  src="/__RELEASE_PREFIX__/images/hero-1000.webp"
                   width="1000"
                   height="688"
                   loading="lazy"
@@ -254,6 +254,10 @@
           <p>同一套模型，同一份设计。<br />从开阔的客厅，到一处安静的转角。</p>
         </div>
         <div id="space-cards" class="space-cards"></div>
+        <div class="help-actions" aria-label="客餐厅方案效果图">
+          <button data-reference="scheme-overview">查看客餐厅效果图 ↗</button>
+          <button data-reference="scheme-cabinet">查看单幅画与柜墙效果 ↗</button>
+        </div>
       </section>
       <section class="section material-section" id="materials">
         <div class="section-heading">
@@ -279,14 +283,14 @@
           <div class="drawing-preview">
             <img
               id="drawing-image"
-              src="/releases/metric-v06/floor-plan.svg"
+              src="/__RELEASE_PREFIX__/floor-plan.svg"
               width="630"
               height="770"
               loading="lazy"
               alt="当前版本派生平面图，含房间、门窗、尺寸、北向和比例尺"
             />
             <p>
-              模型派生平面图 · v06<br /><span
+              模型派生平面图 · __MODEL_SHORT_VERSION__<br /><span
                 >面积为模型估算；原始图纸另附。</span
               >
             </p>
@@ -296,7 +300,7 @@
             <div class="delivery-note">
               <h3>关于这份档案</h3>
               <p>
-                当前模型保留精装空房内容，4
+                当前模型加入已确认客餐厅家具，4
                 处房门按原始户型图修正为全开靠墙。部分尺寸依照片估读，现场复核后可在同一建筑规格中更新。
               </p>
               <button class="text-link" data-reference="plan">
@@ -309,7 +313,7 @@
     </main>
     <footer>
       <a class="brand" href="#home">HOME <strong>402</strong></a>
-      <p>家的空间档案 · metric-v06</p>
+      <p>家的空间档案 · __MODEL_VERSION__</p>
       <a href="#home" class="text-link">回到顶部 ↑</a>
     </footer>
     <dialog id="reference-dialog" aria-labelledby="reference-title">

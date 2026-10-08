@@ -1,0 +1,41 @@
+{
+  "browserPlugin": "not available",
+  "runtime": "project Playwright Chromium",
+  "cases": [
+    {
+      "name": "desktop",
+      "url": "http://127.0.0.1:4173/#view=%7B%22v%22%3A1%2C%22mode%22%3A%22top%22%2C%22roomId%22%3A%22living%22%2C%22entityId%22%3Anull%2C%22section%22%3A%7B%22axis%22%3A%22z%22%2C%22value%22%3A1.15%7D%2C%22quality%22%3A%22standard%22%2C%22eyeHeight%22%3A1.65%2C%22camera%22%3A%7B%22position%22%3A%5B5.5%2C26.15%2C-2.499%5D%2C%22target%22%3A%5B5.5%2C0.15%2C-2.5%5D%2C%22zoom%22%3A1.7%2C%22fov%22%3A72%7D%7D",
+      "title": "Home 402 · 家的空间档案",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "stateMode": "top",
+      "tableAttributes": "餐饮学习办公多功能桌dining-work-table关联空间入口与走廊、客厅模型外包尺寸0.90 × 2.80 × 0.75 m材质红褐胡桃木桌面、炭灰木板、金属五金用户最新尺寸图：2800 × 900 × 750 mm，桌面 70 mm；结构按照片还原依据用户尺寸图：长2.80、宽0.90、高0.75m，桌面厚0.07m；两端悬挑0.26m，0.60m收纳端、1.60m膝部空间、0.08m薄板支撑。开放六层托盘数量及五金为照片推断。",
+      "tableShareURL": "http://127.0.0.1:4173/#view=%7B%22v%22%3A1%2C%22mode%22%3A%22interior%22%2C%22roomId%22%3A%22living%22%2C%22entityId%22%3Anull%2C%22section%22%3A%7B%22axis%22%3A%22off%22%2C%22value%22%3A2.8%7D%2C%22quality%22%3A%22standard%22%2C%22eyeHeight%22%3A1.65%2C%22camera%22%3A%7B%22position%22%3A%5B7.05%2C1.22%2C-8.37%5D%2C%22target%22%3A%5B5.735%2C0.6063%2C-6.9937%5D%2C%22zoom%22%3A1%2C%22fov%22%3A66%7D%7D",
+      "errors": [],
+      "readbackWarnings": [
+        "[.WebGL-0x12c00450a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+        "[.WebGL-0x12c00450a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+        "[.WebGL-0x12c00450a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+        "[.WebGL-0x12c00450a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+      ],
+      "tableScreenshot": "/Users/cY/.codex/visualizations/2026/10/08/01a119da-518b-7df1-b218-b62441929393/living-v07/desktop-table.png"
+    },
+    {
+      "name": "phone",
+      "url": "http://127.0.0.1:4173/#view=%7B%22v%22%3A1%2C%22mode%22%3A%22interior%22%2C%22roomId%22%3A%22living%22%2C%22entityId%22%3Anull%2C%22section%22%3A%7B%22axis%22%3A%22off%22%2C%22value%22%3A2.8%7D%2C%22quality%22%3A%22standard%22%2C%22eyeHeight%22%3A1.65%2C%22camera%22%3A%7B%22position%22%3A%5B7.05%2C1.22%2C-8.37%5D%2C%22target%22%3A%5B5.735%2C0.6063%2C-6.9937%5D%2C%22zoom%22%3A1%2C%22fov%22%3A80%7D%7D",
+      "title": "Home 402 · 家的空间档案",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "stateMode": "interior",
+      "tableAttributes": "餐饮学习办公多功能桌dining-work-table关联空间入口与走廊、客厅模型外包尺寸0.90 × 2.80 × 0.75 m材质红褐胡桃木桌面、炭灰木板、金属五金用户最新尺寸图：2800 × 900 × 750 mm，桌面 70 mm；结构按照片还原依据用户尺寸图：长2.80、宽0.90、高0.75m，桌面厚0.07m；两端悬挑0.26m，0.60m收纳端、1.60m膝部空间、0.08m薄板支撑。开放六层托盘数量及五金为照片推断。",
+      "tableShareURL": "http://127.0.0.1:4173/#view=%7B%22v%22%3A1%2C%22mode%22%3A%22interior%22%2C%22roomId%22%3A%22living%22%2C%22entityId%22%3Anull%2C%22section%22%3A%7B%22axis%22%3A%22off%22%2C%22value%22%3A2.8%7D%2C%22quality%22%3A%22standard%22%2C%22eyeHeight%22%3A1.65%2C%22camera%22%3A%7B%22position%22%3A%5B7.05%2C1.22%2C-8.37%5D%2C%22target%22%3A%5B5.735%2C0.6063%2C-6.9937%5D%2C%22zoom%22%3A1%2C%22fov%22%3A80%7D%7D",
+      "errors": [],
+      "readbackWarnings": [],
+      "tableScreenshot": "/Users/cY/.codex/visualizations/2026/10/08/01a119da-518b-7df1-b218-b62441929393/living-v07/phone-table.png"
+    }
+  ]
+}

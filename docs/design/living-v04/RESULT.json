@@ -1,0 +1,81 @@
+{
+  "design_id": "home402-living-v04",
+  "version": "metric-v09",
+  "status": "local integration, technical and browser checks passed; user visual acceptance pending",
+  "source": {
+    "path": "art_src/apartment-v09.blend",
+    "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
+  },
+  "spec": {
+    "path": "model/apartment.json",
+    "sha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9"
+  },
+  "release": {
+    "path": "public/release.json",
+    "sha256": "ae65bf0490f894b4a0552007abe98a03af82373798c4bd3061fc4535e4ef1f17",
+    "presentationRevision": "2026-10-08-living-v04-tripo-sofa",
+    "applicationRevision": "2026-10-08-living-v04-bundles"
+  },
+  "model_packages": [
+    {
+      "path": "releases/metric-v09/apartment-web.glb",
+      "role": "model",
+      "bytes": 17508036,
+      "sha256": "af9946a1f66c2b2f6a16ebb49c4100b5bc9364a2abea994ae97dad64c2aab482"
+    },
+    {
+      "path": "releases/metric-v09/apartment-hd.glb",
+      "role": "hd-model",
+      "bytes": 24601864,
+      "sha256": "bec95e41d32e2b8a0ede7f5e4875fa38b786bf496b6c3b31858444b05539b21f"
+    },
+    {
+      "path": "releases/metric-v09/living-sofa-web.glb",
+      "role": "model",
+      "bytes": 15929940,
+      "sha256": "729de36db7d0693dd609acb301d296bbd612f61bee1715ed5383b7e938cebf62"
+    },
+    {
+      "path": "releases/metric-v09/living-sofa-hd.glb",
+      "role": "hd-model",
+      "bytes": 21232288,
+      "sha256": "65017cdccc06a93b0a26a51faa4579aff5d0655691e7872827395c58314bacd2"
+    }
+  ],
+  "validation": {
+    "roundtrip_pass": true,
+    "meshes": 707,
+    "logical_ids": 89,
+    "triangles": 233175,
+    "degenerate_triangles": 0,
+    "maximum_bound_error_m": 9.5367431640625e-07,
+    "model_checks_passed": 23,
+    "node_checks_passed": 53,
+    "release_checks_passed": 16,
+    "browser_checks_passed": 18,
+    "browser_retries": 0,
+    "browser_skipped": 0,
+    "browser_errors": 0,
+    "render_views": 8
+  },
+  "browser_evidence": "docs/evidence/metric-v09/browser-verification.json",
+  "frozen_inputs": "docs/evidence/metric-v09/freeze-result.json",
+  "visual_review": "docs/evidence/metric-v09/living-review/visual-qa.json",
+  "source_inspection": "production/inspection/metric-v09-source.json",
+  "source_route_checks": "production/inspection/metric-v09-route-checks.json",
+  "sofa_handoff": "production/sofa-tripo-r1/handoff.json",
+  "sofa_integration": "production/sofa-tripo-r1/INTEGRATED.json",
+  "lineage": [
+    "docs/design/living-v03/RESULT.json",
+    "docs/design/living-v02/DECISION.md"
+  ],
+  "assumptions": [
+    "Cabinet/artwork dimensions chosen from reference proportion, not factory measurements",
+    "Tripo sofa uniformly normalized to assumed 2.4m width",
+    "Outside display geometry and realtime lighting are visual approximation, not survey/photometric evidence"
+  ],
+  "user_visual_acceptance": "pending",
+  "real_device_performance": "not_measured",
+  "commit_push_and_remote_deployment": "authorized_2026-10-08_delivery_in_progress",
+  "publication_authorization": "任务完成后，整理并提交到远程（记得更新最新的效果图并在网站上可预览），并完成最新版本的网站发布"
+}

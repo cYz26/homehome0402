@@ -1,0 +1,7496 @@
+{
+  "version": "metric-v07",
+  "assetStem": "apartment-v07",
+  "units": "m",
+  "coordinates": "Plan x east, t south from north edge; Blender (x,12.9-t,z), GLB (x,z,t-12.9)",
+  "height": 2.8,
+  "cutHeight": 1.15,
+  "wallExterior": 0.2,
+  "wallInterior": 0.16,
+  "trimThickness": 0.012,
+  "chains": {
+    "south": [
+      3.5,
+      4,
+      3
+    ],
+    "north": [
+      0.9,
+      2.8,
+      2.8,
+      2.6,
+      1.4
+    ],
+    "west": [
+      3.4,
+      2.1,
+      1.9,
+      4.9,
+      0.6
+    ]
+  },
+  "outline": [
+    [
+      0.9,
+      0
+    ],
+    [
+      9.1,
+      0
+    ],
+    [
+      9.1,
+      8.6
+    ],
+    [
+      10.5,
+      8.6
+    ],
+    [
+      10.5,
+      12.9
+    ],
+    [
+      0,
+      12.9
+    ],
+    [
+      0,
+      5.5
+    ],
+    [
+      0.9,
+      5.5
+    ]
+  ],
+  "rooms": [
+    {
+      "id": "living",
+      "name": "客厅",
+      "bounds": [
+        3.5,
+        8.65,
+        7.5,
+        12.9
+      ],
+      "label": [
+        5.5,
+        10.4
+      ],
+      "camera": [
+        6.6,
+        3.97
+      ],
+      "look": [
+        5.48,
+        9.5
+      ],
+      "drawing": "南侧横向分段 4.00 m",
+      "finish": "灰色石纹地面 · 无电视客厅 · 沙发正对胡桃木模块柜 · 2.8m餐学办公桌",
+      "polygon": [
+        [
+          3.5,
+          7.4
+        ],
+        [
+          7.5,
+          7.4
+        ],
+        [
+          7.5,
+          12.9
+        ],
+        [
+          3.5,
+          12.9
+        ]
+      ],
+      "areaBasis": "model-estimate",
+      "walkEntry": [
+        5.6,
+        10
+      ],
+      "eye": 1.6,
+      "targetHeight": 1.06,
+      "fov": 57
+    },
+    {
+      "id": "master",
+      "name": "主卧",
+      "bounds": [
+        0,
+        7.4,
+        3.5,
+        12.9
+      ],
+      "label": [
+        1.75,
+        10.3
+      ],
+      "camera": [
+        3,
+        8.45
+      ],
+      "look": [
+        1.3,
+        12.5
+      ],
+      "drawing": "横向分段 3.50 m · 南部纵向分段 4.90 + 0.60 m",
+      "finish": "人字拼橡木 · 空房无柜体",
+      "polygon": [
+        [
+          0,
+          7.4
+        ],
+        [
+          3.5,
+          7.4
+        ],
+        [
+          3.5,
+          12.9
+        ],
+        [
+          0,
+          12.9
+        ]
+      ],
+      "areaBasis": "model-estimate",
+      "walkEntry": [
+        1.8,
+        9.5
+      ]
+    },
+    {
+      "id": "southeast",
+      "name": "东南卧室",
+      "bounds": [
+        7.5,
+        8.6,
+        10.5,
+        12.9
+      ],
+      "label": [
+        9,
+        10.65
+      ],
+      "camera": [
+        7.95,
+        8.75
+      ],
+      "look": [
+        9.1,
+        12.5
+      ],
+      "drawing": "南侧横向分段 3.00 m · 含北侧入口凹角",
+      "finish": "直铺橡木 · 北侧空置 · 东侧素墙",
+      "polygon": [
+        [
+          7.5,
+          7.55
+        ],
+        [
+          9.1,
+          7.55
+        ],
+        [
+          9.1,
+          8.6
+        ],
+        [
+          10.5,
+          8.6
+        ],
+        [
+          10.5,
+          12.9
+        ],
+        [
+          7.5,
+          12.9
+        ]
+      ],
+      "areaBasis": "model-estimate",
+      "walkEntry": [
+        8.8,
+        10.2
+      ]
+    },
+    {
+      "id": "northwest",
+      "name": "西北次卧",
+      "bounds": [
+        0.9,
+        0,
+        3.7,
+        3.4
+      ],
+      "label": [
+        2.3,
+        1.65
+      ],
+      "camera": [
+        3.2,
+        2.85
+      ],
+      "look": [
+        1.6,
+        0.5
+      ],
+      "drawing": "北侧分段 2.80 × 3.40 m",
+      "finish": "直铺木地板 · 未拍区域暂定",
+      "polygon": [
+        [
+          0.9,
+          0
+        ],
+        [
+          3.7,
+          0
+        ],
+        [
+          3.7,
+          3.4
+        ],
+        [
+          0.9,
+          3.4
+        ]
+      ],
+      "areaBasis": "model-estimate",
+      "walkEntry": [
+        2.4,
+        2.2
+      ]
+    },
+    {
+      "id": "xroom",
+      "name": "X 空间",
+      "bounds": [
+        3.7,
+        0,
+        6.5,
+        3.4
+      ],
+      "label": [
+        5.1,
+        1.65
+      ],
+      "camera": [
+        6,
+        6.6
+      ],
+      "look": [
+        5.9,
+        0.5
+      ],
+      "drawing": "北侧分段 2.80 × 3.40 m",
+      "finish": "直铺木地板 · 深色门扇沿东西方向贴墙收纳",
+      "polygon": [
+        [
+          3.7,
+          0
+        ],
+        [
+          6.5,
+          0
+        ],
+        [
+          6.5,
+          3.4
+        ],
+        [
+          3.7,
+          3.4
+        ]
+      ],
+      "areaBasis": "model-estimate",
+      "walkEntry": [
+        5.1,
+        1.8
+      ]
+    },
+    {
+      "id": "kitchen",
+      "name": "厨房",
+      "bounds": [
+        6.5,
+        0,
+        9.1,
+        3.4
+      ],
+      "label": [
+        7.8,
+        1.7
+      ],
+      "camera": [
+        7.63,
+        3.75
+      ],
+      "look": [
+        7.85,
+        1
+      ],
+      "drawing": "北侧分段 2.60 × 3.40 m",
+      "finish": "西侧嵌入式冰箱 · 北侧水槽 · 东侧三眼灶和斜面烟机",
+      "polygon": [
+        [
+          6.5,
+          0
+        ],
+        [
+          9.1,
+          0
+        ],
+        [
+          9.1,
+          3.4
+        ],
+        [
+          6.5,
+          3.4
+        ]
+      ],
+      "areaBasis": "model-estimate",
+      "walkEntry": [
+        7.8,
+        2.5
+      ]
+    },
+    {
+      "id": "masterbath",
+      "name": "主卫",
+      "bounds": [
+        0,
+        5.5,
+        3,
+        7.4
+      ],
+      "label": [
+        1.8,
+        6.45
+      ],
+      "camera": [
+        1.86,
+        7.05
+      ],
+      "look": [
+        1.9,
+        5.7
+      ],
+      "drawing": "纵向分段 1.90 m · 内部分隔图上估读",
+      "finish": "一体宽槽 · 双组墙出龙头 · 薄深色推拉门",
+      "polygon": [
+        [
+          0,
+          5.5
+        ],
+        [
+          3,
+          5.5
+        ],
+        [
+          3,
+          7.4
+        ],
+        [
+          0,
+          7.4
+        ]
+      ],
+      "areaBasis": "model-estimate",
+      "walkEntry": [
+        1.6,
+        6.7
+      ]
+    },
+    {
+      "id": "commonbath",
+      "name": "次卫",
+      "bounds": [
+        0.9,
+        3.4,
+        2.4,
+        5.5
+      ],
+      "label": [
+        1.65,
+        4.05
+      ],
+      "camera": [
+        2,
+        4
+      ],
+      "look": [
+        1.55,
+        5.3
+      ],
+      "drawing": "纵向分段 2.10 m · 内部分隔图上估读",
+      "finish": "南侧淋浴 · 东侧深色薄推拉门",
+      "polygon": [
+        [
+          0.9,
+          3.4
+        ],
+        [
+          3.7,
+          3.4
+        ],
+        [
+          3.7,
+          4.7
+        ],
+        [
+          3.5,
+          4.7
+        ],
+        [
+          3.5,
+          5.5
+        ],
+        [
+          0.9,
+          5.5
+        ]
+      ],
+      "areaBasis": "model-estimate",
+      "walkEntry": [
+        2,
+        4.2
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "玄关库",
+      "bounds": [
+        7.5,
+        6.3,
+        9.1,
+        7.55
+      ],
+      "label": [
+        8.3,
+        6.9
+      ],
+      "camera": [
+        8.3,
+        6.45
+      ],
+      "look": [
+        8.3,
+        7.4
+      ],
+      "drawing": "轮廓图上估读 · 未标净尺寸",
+      "finish": "内部空置",
+      "polygon": [
+        [
+          7.5,
+          6.3
+        ],
+        [
+          9.1,
+          6.3
+        ],
+        [
+          9.1,
+          7.55
+        ],
+        [
+          7.5,
+          7.55
+        ]
+      ],
+      "areaBasis": "model-estimate",
+      "walkEntry": [
+        8.3,
+        6.9
+      ]
+    },
+    {
+      "id": "circulation",
+      "name": "入口与走廊",
+      "label": [
+        5.6,
+        5.5
+      ],
+      "camera": [
+        7.9,
+        5.45
+      ],
+      "look": [
+        4.1,
+        5.7
+      ],
+      "drawing": "连接北侧空间、客厅与卧室",
+      "finish": "灰色石纹地面 · 保留通行空间",
+      "polygon": [
+        [
+          3.7,
+          3.4
+        ],
+        [
+          8.3,
+          3.4
+        ],
+        [
+          8.3,
+          4.82
+        ],
+        [
+          9.1,
+          4.82
+        ],
+        [
+          9.1,
+          6.3
+        ],
+        [
+          7.5,
+          6.3
+        ],
+        [
+          7.5,
+          7.4
+        ],
+        [
+          3,
+          7.4
+        ],
+        [
+          3,
+          5.5
+        ],
+        [
+          3.5,
+          5.5
+        ],
+        [
+          3.5,
+          4.7
+        ],
+        [
+          3.7,
+          4.7
+        ]
+      ],
+      "areaBasis": "model-estimate",
+      "walkEntry": [
+        7.1,
+        5.65
+      ]
+    },
+    {
+      "id": "utility",
+      "name": "家政凹位",
+      "label": [
+        8.7,
+        4.1
+      ],
+      "camera": [
+        7.8,
+        4.1
+      ],
+      "look": [
+        8.8,
+        4.1
+      ],
+      "drawing": "未标独立净尺寸 · 按图估读",
+      "finish": "内部空置",
+      "polygon": [
+        [
+          8.3,
+          3.4
+        ],
+        [
+          9.1,
+          3.4
+        ],
+        [
+          9.1,
+          4.82
+        ],
+        [
+          8.3,
+          4.82
+        ]
+      ],
+      "areaBasis": "model-estimate",
+      "walkEntry": [
+        8.65,
+        4
+      ]
+    }
+  ],
+  "assumptions": [
+    "图纸尺寸链暂作为建模参考线定位；原图未说明轴线或完成面，净尺寸随墙厚假设变化。",
+    "外墙 200 mm、一般内墙 160 mm、饰面收边 12 mm 均为建模暂估。",
+    "门洞净高 2.20 m、卧室门宽约 0.90 m、窗高与窗台高度为图上及照片估读。",
+    "主顶净高 2.80 m 为用户指定；局部降顶暂设 0.16 m。",
+    "厨房、主次卫、家政凹位、玄关库的细部尺寸及未拍区域材质待实测或补照。",
+    "窗台按本次要求调整：客厅约 35 mm、卧室及 X 空间约 280 mm；厨房柜体、烟机和推拉门分扇尺度按照片估读，未指定品牌型号。",
+    "北侧及卫浴门扇框厚暂设约 22 mm；主卫为约 1.80 m 宽一体槽台面、两组墙出龙头，尺寸按照片估读。",
+    "客餐厅家具依用户实拍和已确认 v02 外观建模；最新桌子尺寸图采用2800×900×750mm。其余家具尺度、木纹、装饰图案及隐蔽五金为有界建模推断，不是厂家或现场认证。"
+  ],
+  "windows": {
+    "bedroomSill": 0.28,
+    "bedroomHead": 2.55,
+    "livingSill": 0.035,
+    "livingHead": 2.6,
+    "guards": false
+  },
+  "detailViews": [
+    {
+      "id": "hall",
+      "name": "客厅柜",
+      "room": "living",
+      "camera": [
+        7.08,
+        6.53
+      ],
+      "look": [
+        3.3,
+        6.48
+      ],
+      "eye": 1.52,
+      "targetHeight": 1.27,
+      "fov": 70
+    },
+    {
+      "id": "hob",
+      "name": "烟机灶具",
+      "room": "kitchen",
+      "camera": [
+        7.38,
+        2.78
+      ],
+      "look": [
+        8.65,
+        1.7
+      ],
+      "eye": 1.53,
+      "targetHeight": 1.35,
+      "fov": 67
+    },
+    {
+      "id": "fridge",
+      "name": "冰箱水槽",
+      "room": "kitchen",
+      "camera": [
+        8.05,
+        3.8
+      ],
+      "look": [
+        7.35,
+        0.7
+      ],
+      "eye": 1.54,
+      "targetHeight": 1.28,
+      "fov": 70
+    },
+    {
+      "id": "north",
+      "name": "北侧推拉门",
+      "room": "xroom",
+      "camera": [
+        6.27,
+        6.8
+      ],
+      "look": [
+        6,
+        3.4
+      ],
+      "eye": 1.57,
+      "targetHeight": 1.3,
+      "fov": 72
+    },
+    {
+      "id": "double-basin",
+      "name": "双人洗手台",
+      "room": "masterbath",
+      "camera": [
+        1.79,
+        7.28
+      ],
+      "look": [
+        1.9,
+        5.83
+      ],
+      "eye": 1.33,
+      "targetHeight": 1.18,
+      "fov": 90
+    },
+    {
+      "id": "bath-door",
+      "name": "主卫推拉门",
+      "room": "masterbath",
+      "camera": [
+        1.44,
+        9
+      ],
+      "look": [
+        1.74,
+        7.39
+      ],
+      "eye": 1.5,
+      "targetHeight": 1.26,
+      "fov": 72
+    },
+    {
+      "id": "cabinet",
+      "name": "客厅柜墙",
+      "room": "living",
+      "camera": [
+        4.79,
+        10.4
+      ],
+      "look": [
+        7.3,
+        10.4
+      ],
+      "eye": 1.5,
+      "targetHeight": 1.18,
+      "fov": 72
+    },
+    {
+      "id": "table",
+      "name": "餐学办公桌",
+      "room": "living",
+      "camera": [
+        7.05,
+        4.53
+      ],
+      "look": [
+        5.55,
+        6.1
+      ],
+      "eye": 1.22,
+      "targetHeight": 0.52,
+      "fov": 66
+    }
+  ],
+  "schemaVersion": 2,
+  "coordinateSystem": {
+    "unit": "m",
+    "planSouthExtent": 12.9,
+    "planAxes": [
+      "east",
+      "south"
+    ],
+    "webAxes": [
+      "east",
+      "up",
+      "south"
+    ]
+  },
+  "sourceLibrary": {
+    "path": "art_src/apartment-v05.blend",
+    "sha256": "b22f00f3a73f3c96e3ef8e06b9009e587e430bfe39203d2f988227f4beacb621",
+    "role": "Immutable v05 detail-mesh templates; placements and materials overridden by this spec."
+  },
+  "project": {
+    "name": "Home 402",
+    "title": "把家的每一处，看清楚。",
+    "description": "从整体布局到一处材质，探索这套精装空房的空间、尺度与细节。",
+    "status": "基于图纸与实拍的米制模型 · 部分尺寸暂估",
+    "modelVisualAcceptance": "pending"
+  },
+  "construction": {
+    "cutHeight": 1.15,
+    "skirtingHeight": 0.07,
+    "skirtingProjection": 0.008,
+    "skirtingBevel": 0.001,
+    "doorHeight": 2.18,
+    "openingHeight": 2.2
+  },
+  "walls": [
+    {
+      "type": "wall",
+      "id": "north",
+      "a": [
+        0.9,
+        0
+      ],
+      "b": [
+        9.1,
+        0
+      ],
+      "thickness": 0.2,
+      "openings": [
+        [
+          0.85,
+          2.55,
+          0.28,
+          2.55
+        ],
+        [
+          3.12,
+          4.85,
+          0.28,
+          2.55
+        ],
+        [
+          6.1,
+          7.35,
+          0.94,
+          2.48
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "west_north",
+      "a": [
+        0.9,
+        0
+      ],
+      "b": [
+        0.9,
+        5.5
+      ],
+      "thickness": 0.2,
+      "openings": [
+        [
+          4.55,
+          5.35,
+          0.95,
+          2.35
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "west_step",
+      "a": [
+        0,
+        5.5
+      ],
+      "b": [
+        0.9,
+        5.5
+      ],
+      "thickness": 0.2,
+      "openings": [
+        [
+          0.12,
+          0.67,
+          1.35,
+          2.4
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "west_south",
+      "a": [
+        0,
+        5.5
+      ],
+      "b": [
+        0,
+        12.9
+      ],
+      "thickness": 0.2,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "south",
+      "a": [
+        0,
+        12.9
+      ],
+      "b": [
+        10.5,
+        12.9
+      ],
+      "thickness": 0.2,
+      "openings": [
+        [
+          0.72,
+          3,
+          0.28,
+          2.55
+        ],
+        [
+          3.86,
+          7.1,
+          0.035,
+          2.6
+        ],
+        [
+          7.9,
+          9.93,
+          0.28,
+          2.55
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "east_south",
+      "a": [
+        10.5,
+        8.6
+      ],
+      "b": [
+        10.5,
+        12.9
+      ],
+      "thickness": 0.2,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "east_notch",
+      "a": [
+        9.1,
+        8.6
+      ],
+      "b": [
+        10.5,
+        8.6
+      ],
+      "thickness": 0.2,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "east_north",
+      "a": [
+        9.1,
+        0
+      ],
+      "b": [
+        9.1,
+        6.3
+      ],
+      "thickness": 0.2,
+      "openings": [
+        [
+          4.98,
+          6.18,
+          0,
+          2.3
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "east_elevator",
+      "a": [
+        9.1,
+        6.3
+      ],
+      "b": [
+        9.1,
+        8.6
+      ],
+      "thickness": 0.2,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "northwest_x",
+      "a": [
+        3.7,
+        0
+      ],
+      "b": [
+        3.7,
+        3.4
+      ],
+      "thickness": 0.16,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "x_kitchen",
+      "a": [
+        6.5,
+        0
+      ],
+      "b": [
+        6.5,
+        3.4
+      ],
+      "thickness": 0.16,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "northwest_south",
+      "a": [
+        0.9,
+        3.4
+      ],
+      "b": [
+        3.7,
+        3.4
+      ],
+      "thickness": 0.16,
+      "openings": [
+        [
+          1.76,
+          2.66,
+          0,
+          2.2
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "kitchen_west_return",
+      "a": [
+        6.5,
+        3.4
+      ],
+      "b": [
+        7.2,
+        3.4
+      ],
+      "thickness": 0.16,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "kitchen_east_return",
+      "a": [
+        8.3,
+        3.4
+      ],
+      "b": [
+        9.1,
+        3.4
+      ],
+      "thickness": 0.16,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "utility_west",
+      "a": [
+        8.3,
+        3.4
+      ],
+      "b": [
+        8.3,
+        4.82
+      ],
+      "thickness": 0.12,
+      "openings": [
+        [
+          0.12,
+          1.27,
+          0,
+          2.2
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "utility_south",
+      "a": [
+        8.3,
+        4.82
+      ],
+      "b": [
+        9.1,
+        4.82
+      ],
+      "thickness": 0.12,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "common_bath_south",
+      "a": [
+        0.9,
+        5.5
+      ],
+      "b": [
+        3.5,
+        5.5
+      ],
+      "thickness": 0.16,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "common_bath_east",
+      "a": [
+        2.4,
+        3.4
+      ],
+      "b": [
+        2.4,
+        5.5
+      ],
+      "thickness": 0.12,
+      "openings": [
+        [
+          0.08,
+          1.08,
+          0,
+          2.2
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "basin_east",
+      "a": [
+        3.5,
+        4.7
+      ],
+      "b": [
+        3.5,
+        5.5
+      ],
+      "thickness": 0.12,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "masterbath_east",
+      "a": [
+        3,
+        5.5
+      ],
+      "b": [
+        3,
+        7.4
+      ],
+      "thickness": 0.16,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "masterbath_south",
+      "a": [
+        0,
+        7.4
+      ],
+      "b": [
+        3.5,
+        7.4
+      ],
+      "thickness": 0.16,
+      "openings": [
+        [
+          1.02,
+          1.9,
+          0,
+          2.2
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "master_living",
+      "a": [
+        3.5,
+        5.5
+      ],
+      "b": [
+        3.5,
+        12.9
+      ],
+      "thickness": 0.16,
+      "openings": [
+        [
+          0.15,
+          1.79,
+          0,
+          2.48
+        ],
+        [
+          2.05,
+          2.95,
+          0,
+          2.2
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "living_se",
+      "a": [
+        7.5,
+        6.3
+      ],
+      "b": [
+        7.5,
+        12.9
+      ],
+      "thickness": 0.16,
+      "openings": [
+        [
+          1.32,
+          2.22,
+          0,
+          2.2
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "closet_south",
+      "a": [
+        7.5,
+        7.55
+      ],
+      "b": [
+        9.1,
+        7.55
+      ],
+      "thickness": 0.16,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "closet_north",
+      "a": [
+        7.5,
+        6.3
+      ],
+      "b": [
+        9.1,
+        6.3
+      ],
+      "thickness": 0.16,
+      "openings": [
+        [
+          0.28,
+          1.23,
+          0,
+          2.2
+        ]
+      ]
+    }
+  ],
+  "doors": [
+    {
+      "type": "door",
+      "id": "northwest",
+      "hinge": [
+        3.56,
+        3.4
+      ],
+      "width": 0.9,
+      "openAngle": -1.5707963267948966,
+      "closedDirection": 3.141592653589793,
+      "room": "northwest",
+      "basis": "2026-09-15 用户红框原始户型图：修正铰链朝向，全部打开靠墙；门洞保持原位。"
+    },
+    {
+      "type": "door",
+      "id": "master",
+      "hinge": [
+        3.5,
+        7.55
+      ],
+      "width": 0.9,
+      "openAngle": 3.141592653589793,
+      "closedDirection": 1.5707963267948966,
+      "room": "master",
+      "basis": "2026-09-15 用户红框原始户型图：修正铰链朝向，全部打开靠墙；门洞保持原位。"
+    },
+    {
+      "type": "door",
+      "id": "southeast",
+      "hinge": [
+        7.5,
+        7.62
+      ],
+      "width": 0.9,
+      "openAngle": 0,
+      "closedDirection": 1.5707963267948966,
+      "room": "southeast",
+      "leafOffset": [
+        0,
+        0.04
+      ],
+      "basis": "2026-09-15 用户红框原始户型图：修正铰链朝向，全部打开靠墙；门洞保持原位。"
+    },
+    {
+      "type": "door",
+      "id": "entry",
+      "hinge": [
+        9.1,
+        6.18
+      ],
+      "width": 1.2,
+      "openAngle": 0,
+      "closedDirection": -1.5707963267948966,
+      "room": "entry",
+      "basis": "2026-09-15 用户红框原始户型图：修正铰链朝向，全部打开靠墙；门洞保持原位。"
+    }
+  ],
+  "windowDefinitions": [
+    {
+      "id": "NW_north",
+      "x": 2.6,
+      "t": 0,
+      "width": 1.7,
+      "sill": 0.28,
+      "head": 2.55,
+      "count": 2,
+      "orientation": 0,
+      "room": "northwest"
+    },
+    {
+      "id": "X_north",
+      "x": 4.885,
+      "t": 0,
+      "width": 1.73,
+      "sill": 0.28,
+      "head": 2.55,
+      "count": 2,
+      "orientation": 0,
+      "room": "xroom"
+    },
+    {
+      "id": "Kitchen_north",
+      "x": 7.625,
+      "t": 0,
+      "width": 1.25,
+      "sill": 0.94,
+      "head": 2.48,
+      "count": 2,
+      "orientation": 0,
+      "room": "kitchen"
+    },
+    {
+      "id": "Master_south",
+      "x": 1.86,
+      "t": 12.9,
+      "width": 2.28,
+      "sill": 0.28,
+      "head": 2.55,
+      "count": 2,
+      "orientation": 0,
+      "room": "master"
+    },
+    {
+      "id": "Living_south",
+      "x": 5.48,
+      "t": 12.9,
+      "width": 3.24,
+      "sill": 0.035,
+      "head": 2.6,
+      "count": 4,
+      "orientation": 0,
+      "room": "living"
+    },
+    {
+      "id": "SE_south",
+      "x": 8.915,
+      "t": 12.9,
+      "width": 2.03,
+      "sill": 0.28,
+      "head": 2.55,
+      "count": 2,
+      "orientation": 0,
+      "room": "southeast"
+    },
+    {
+      "id": "Bath_west",
+      "x": 0.9,
+      "t": 4.95,
+      "width": 0.8,
+      "sill": 0.95,
+      "head": 2.35,
+      "count": 1,
+      "orientation": 1.5707963267948966,
+      "room": "commonbath"
+    },
+    {
+      "id": "Masterbath_north",
+      "x": 0.395,
+      "t": 5.5,
+      "width": 0.55,
+      "sill": 1.35,
+      "head": 2.4,
+      "count": 1,
+      "orientation": 0,
+      "room": "masterbath"
+    }
+  ],
+  "navigation": {
+    "eyeHeight": 1.65,
+    "minEyeHeight": 1.25,
+    "maxEyeHeight": 1.9,
+    "radius": 0.19,
+    "bodyHeight": 1.75,
+    "speed": 1.35,
+    "fixedStep": 0.016666666666666666,
+    "maxFrameDelta": 0.1,
+    "stepHeight": 0.12,
+    "start": [
+      7.1,
+      5.65
+    ],
+    "gridSize": 0.12
+  },
+  "lighting": {
+    "environmentIntensity": 0.38,
+    "exposure": 0.96,
+    "sun": {
+      "position": [
+        -3,
+        1,
+        16
+      ],
+      "target": [
+        5,
+        6,
+        0.1
+      ],
+      "intensity": 1.85,
+      "color": "#fff5df"
+    },
+    "strips": [
+      {
+        "id": "hall-upper",
+        "position": [
+          3.43,
+          6.46,
+          2.08
+        ],
+        "size": [
+          0.28,
+          1.42
+        ],
+        "target": [
+          3.7,
+          6.46,
+          1.43
+        ]
+      },
+      {
+        "id": "hall-middle",
+        "position": [
+          3.43,
+          6.47,
+          1.61
+        ],
+        "size": [
+          0.28,
+          1.36
+        ],
+        "target": [
+          3.7,
+          6.47,
+          0.96
+        ]
+      },
+      {
+        "id": "kitchen-east",
+        "position": [
+          8.7,
+          1.95,
+          1.545
+        ],
+        "size": [
+          0.055,
+          2.4
+        ],
+        "target": [
+          8.45,
+          1.95,
+          0.895
+        ]
+      },
+      {
+        "id": "kitchen-west",
+        "position": [
+          6.88,
+          1.35,
+          1.555
+        ],
+        "size": [
+          0.055,
+          1.18
+        ],
+        "target": [
+          7.02,
+          1.35,
+          0.905
+        ]
+      },
+      {
+        "id": "master-mirror",
+        "position": [
+          1.9,
+          5.72,
+          1.385
+        ],
+        "size": [
+          1.7,
+          0.035
+        ],
+        "target": [
+          1.9,
+          5.96,
+          0.735
+        ]
+      },
+      {
+        "id": "master-underlight",
+        "position": [
+          1.9,
+          5.94,
+          0.183
+        ],
+        "size": [
+          1.65,
+          0.025
+        ],
+        "target": [
+          1.9,
+          6.14,
+          0
+        ]
+      }
+    ],
+    "roomLights": [
+      {
+        "id": "Bedroom_downlight",
+        "position": [
+          1.1,
+          9,
+          2.744
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Bedroom_downlight.001",
+        "position": [
+          2.7,
+          9,
+          2.744
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Bedroom_downlight.002",
+        "position": [
+          1.1,
+          11,
+          2.744
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Bedroom_downlight.003",
+        "position": [
+          2.7,
+          11,
+          2.744
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Bedroom_downlight.004",
+        "position": [
+          8.1,
+          10,
+          2.744
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Bedroom_downlight.005",
+        "position": [
+          9.8,
+          10,
+          2.744
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Bedroom_downlight.006",
+        "position": [
+          8.1,
+          11.8,
+          2.744
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Bedroom_downlight.007",
+        "position": [
+          9.8,
+          11.8,
+          2.744
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Bedroom_downlight.008",
+        "position": [
+          4.4,
+          1,
+          2.744
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Bedroom_downlight.009",
+        "position": [
+          5.8,
+          1,
+          2.744
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Downlight",
+        "position": [
+          4.1,
+          4.3,
+          2.7425
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Downlight.001",
+        "position": [
+          4.1,
+          6.2,
+          2.7425
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Downlight.002",
+        "position": [
+          4.1,
+          8.3,
+          2.7425
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Downlight.003",
+        "position": [
+          4.1,
+          10.3,
+          2.7425
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Downlight.004",
+        "position": [
+          4.1,
+          12,
+          2.7425
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Downlight.005",
+        "position": [
+          6.8,
+          4.3,
+          2.7425
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Downlight.006",
+        "position": [
+          6.8,
+          6.2,
+          2.7425
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Downlight.007",
+        "position": [
+          6.8,
+          8.3,
+          2.7425
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Downlight.008",
+        "position": [
+          6.8,
+          10.3,
+          2.7425
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Downlight.009",
+        "position": [
+          6.8,
+          12,
+          2.7425
+        ],
+        "intensity": 1.8,
+        "distance": 4.2
+      },
+      {
+        "id": "Living_petal_floor",
+        "position": [
+          6.985,
+          9.24,
+          1.53
+        ],
+        "intensity": 0.55,
+        "distance": 2.3,
+        "renderPower": 4,
+        "color": "#ffe3ab"
+      },
+      {
+        "id": "Living_petal_table",
+        "position": [
+          7.1,
+          11.42,
+          0.95
+        ],
+        "intensity": 0.25,
+        "distance": 1.4,
+        "renderPower": 2,
+        "color": "#ffe3ab"
+      }
+    ],
+    "render": {
+      "samples": 64,
+      "width": 1600,
+      "height": 1100,
+      "worldStrength": 0.5,
+      "sunPower": 2
+    }
+  },
+  "entities": [
+    {
+      "id": "floor_Apartment_floor_slab",
+      "type": "slab",
+      "name": "建筑底板",
+      "sourceNodes": [
+        "Apartment_floor_slab"
+      ],
+      "roomIds": [
+        "living",
+        "master",
+        "southeast",
+        "northwest",
+        "xroom",
+        "kitchen",
+        "masterbath",
+        "commonbath",
+        "storage",
+        "circulation",
+        "utility"
+      ],
+      "materials": [
+        "Ivory_stone_counter"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          5.25,
+          6.4500002,
+          -0.09
+        ],
+        "size": [
+          10.5,
+          12.8999996,
+          0.18
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          5.25,
+          6.4500002,
+          -0.09
+        ],
+        "size": [
+          10.5,
+          12.8999996,
+          0.18
+        ]
+      }
+    },
+    {
+      "id": "window_Bath_west",
+      "type": "window",
+      "name": "次卫西窗",
+      "sourceNodes": [
+        "Bath_west_glass_lower",
+        "Bath_west_glass_upper",
+        "Bath_west_handle",
+        "Bath_west_mullion_lower",
+        "Bath_west_mullion_lower.001",
+        "Bath_west_mullion_upper",
+        "Bath_west_mullion_upper.001",
+        "Bath_west_rail",
+        "Bath_west_rail.001",
+        "Bath_west_stone_sill"
+      ],
+      "roomIds": [
+        "commonbath"
+      ],
+      "materials": [
+        "Clear_glass",
+        "Graphite_frame",
+        "Ivory_stone_counter"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          0.8999999,
+          4.9254998,
+          1.6385
+        ],
+        "size": [
+          0.3,
+          0.901,
+          1.4669999
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          0.8999999,
+          4.9254998,
+          1.6385
+        ],
+        "size": [
+          0.3,
+          0.901,
+          1.4669999
+        ]
+      },
+      "windowId": "Bath_west"
+    },
+    {
+      "id": "ceiling",
+      "type": "ceiling",
+      "name": "吊顶与灯具",
+      "sourceNodes": [
+        "Bedroom_downlight",
+        "Bedroom_downlight.001",
+        "Bedroom_downlight.002",
+        "Bedroom_downlight.003",
+        "Bedroom_downlight.004",
+        "Bedroom_downlight.005",
+        "Bedroom_downlight.006",
+        "Bedroom_downlight.007",
+        "Bedroom_downlight.008",
+        "Bedroom_downlight.009",
+        "Ceiling_drop",
+        "Ceiling_drop.001",
+        "Ceiling_drop.002",
+        "Ceiling_drop.003",
+        "Ceiling_main",
+        "Downlight",
+        "Downlight.001",
+        "Downlight.002",
+        "Downlight.003",
+        "Downlight.004",
+        "Downlight.005",
+        "Downlight.006",
+        "Downlight.007",
+        "Downlight.008",
+        "Downlight.009",
+        "Kitchen_ceiling_cove",
+        "Kitchen_ceiling_cove.001",
+        "Kitchen_ceiling_recess"
+      ],
+      "roomIds": [
+        "master",
+        "southeast",
+        "xroom",
+        "circulation",
+        "living",
+        "kitchen"
+      ],
+      "materials": [
+        "Warm_light",
+        "Warm_white_ceiling"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          5.25,
+          6.4500002,
+          2.725
+        ],
+        "size": [
+          10.5,
+          12.8999996,
+          0.2699997
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          5.25,
+          6.4500002,
+          2.725
+        ],
+        "size": [
+          10.5,
+          12.8999996,
+          0.2699997
+        ]
+      }
+    },
+    {
+      "id": "common-toilet",
+      "type": "fixture",
+      "name": "次卫坐便器",
+      "sourceNodes": [
+        "Common_WC_cistern",
+        "Common_WC_flush",
+        "Common_WC_inner",
+        "Common_WC_pedestal",
+        "Common_WC_rim"
+      ],
+      "roomIds": [
+        "commonbath"
+      ],
+      "materials": [
+        "Porcelain",
+        "Brushed_steel",
+        "Thin_graphite_cut_edge"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          1.4125,
+          3.8899998,
+          0.42475
+        ],
+        "size": [
+          0.6550001,
+          0.4400005,
+          0.8095
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          1.4125,
+          3.8899998,
+          0.42475
+        ],
+        "size": [
+          0.6550001,
+          0.4400005,
+          0.8095
+        ]
+      }
+    },
+    {
+      "id": "common-vanity",
+      "type": "cabinet",
+      "name": "外置洗手台",
+      "sourceNodes": [
+        "Common_basin_bowl_floor",
+        "Common_basin_cabinet",
+        "Common_basin_counter",
+        "Common_basin_drain",
+        "Common_basin_mirror",
+        "Common_basin_rim",
+        "Common_basin_rim.001",
+        "Common_basin_rim.002",
+        "Common_basin_rim.003",
+        "Common_basin_spout",
+        "Common_basin_tap"
+      ],
+      "roomIds": [
+        "commonbath",
+        "circulation"
+      ],
+      "materials": [
+        "Porcelain",
+        "Warm_ivory_cabinet",
+        "Ivory_stone_counter",
+        "Brushed_steel"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          2.9849999,
+          5.1250001,
+          1.125
+        ],
+        "size": [
+          0.8699999,
+          0.5899997,
+          1.8699999
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          2.9849999,
+          5.1250001,
+          1.125
+        ],
+        "size": [
+          0.8699999,
+          0.5899997,
+          1.8699999
+        ]
+      }
+    },
+    {
+      "id": "common-sliding-door",
+      "type": "door",
+      "name": "次卫推拉门",
+      "sourceNodes": [
+        "Common_bath_slider_handle",
+        "Common_bath_slider_rail",
+        "Common_bath_slider_rail.001",
+        "Common_bath_slider_stile_lower",
+        "Common_bath_slider_stile_lower.001",
+        "Common_bath_slider_stile_upper",
+        "Common_bath_slider_stile_upper.001",
+        "Common_bath_sliding_privacy_panel_lower",
+        "Common_bath_sliding_privacy_panel_upper",
+        "Common_bath_sliding_track"
+      ],
+      "roomIds": [
+        "commonbath",
+        "circulation"
+      ],
+      "materials": [
+        "Graphite_frame",
+        "Charcoal_bath_privacy_glass"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          2.49,
+          4.4500002,
+          1.14125
+        ],
+        "size": [
+          0.0700002,
+          2,
+          2.2325
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          2.49,
+          4.4500002,
+          1.14125
+        ],
+        "size": [
+          0.0700002,
+          2,
+          2.2325
+        ]
+      }
+    },
+    {
+      "id": "common-shower",
+      "type": "fixture",
+      "name": "次卫淋浴",
+      "sourceNodes": [
+        "Common_shower_drain",
+        "Common_shower_drain_slot",
+        "Common_shower_drain_slot.001",
+        "Common_shower_drain_slot.002",
+        "Common_shower_drain_slot.003",
+        "Common_shower_drain_slot.004",
+        "Common_shower_drain_slot.005",
+        "Common_shower_glass_lower",
+        "Common_shower_glass_rail",
+        "Common_shower_glass_upper",
+        "Common_shower_head_arm",
+        "Common_shower_mixer",
+        "Common_shower_rail",
+        "Common_shower_rain_head",
+        "Common_shower_tray"
+      ],
+      "roomIds": [
+        "commonbath"
+      ],
+      "materials": [
+        "Brushed_steel",
+        "Graphite_frame",
+        "Clear_glass",
+        "Grey_flowing_marble_floor"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          1.67,
+          4.9749998,
+          1.0899999
+        ],
+        "size": [
+          1.3199999,
+          0.8700008,
+          2.1399998
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          1.67,
+          4.9749998,
+          1.0899999
+        ],
+        "size": [
+          1.3199999,
+          0.8700008,
+          2.1399998
+        ]
+      }
+    },
+    {
+      "id": "floor_Continuous_public_stone",
+      "type": "slab",
+      "name": "公共区域石纹地面",
+      "sourceNodes": [
+        "Continuous_public_stone"
+      ],
+      "roomIds": [
+        "living",
+        "circulation",
+        "commonbath",
+        "masterbath",
+        "storage",
+        "utility"
+      ],
+      "materials": [
+        "Grey_flowing_marble_floor"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          5.25,
+          6.4500002,
+          0.0085
+        ],
+        "size": [
+          10.5,
+          12.8999996,
+          0.015
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          5.25,
+          6.4500002,
+          0.0085
+        ],
+        "size": [
+          10.5,
+          12.8999996,
+          0.015
+        ]
+      }
+    },
+    {
+      "id": "extractor",
+      "type": "fixture",
+      "name": "斜面烟机",
+      "sourceNodes": [
+        "Extractor_control_notch",
+        "Extractor_inclined_body",
+        "Extractor_inclined_glass",
+        "Extractor_rear_housing"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Black_appliance_glass",
+        "Brushed_steel",
+        "Graphite_frame"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.68998,
+          1.7699999,
+          1.6528783
+        ],
+        "size": [
+          0.5900393,
+          0.9400005,
+          0.4242433
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.68998,
+          1.7699999,
+          1.6528783
+        ],
+        "size": [
+          0.5900393,
+          0.9400005,
+          0.4242433
+        ]
+      }
+    },
+    {
+      "id": "fridge",
+      "type": "cabinet",
+      "name": "嵌入式双开门冰箱",
+      "sourceNodes": [
+        "Fridge_bottom_vent",
+        "Fridge_center_recess_lower",
+        "Fridge_center_recess_upper",
+        "Fridge_door_0_lower",
+        "Fridge_door_0_upper",
+        "Fridge_door_1_lower",
+        "Fridge_door_1_upper",
+        "Fridge_front_edge_lower",
+        "Fridge_front_edge_upper",
+        "Fridge_top_cabinet",
+        "Fridge_top_reveal",
+        "Fridge_west_surround_lower",
+        "Fridge_west_surround_upper"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Graphite_frame",
+        "Pearl_ivory_refrigerator",
+        "Warm_ivory_cabinet"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          6.90625,
+          2.6299995,
+          1.3425001
+        ],
+        "size": [
+          0.6325006,
+          1.2800007,
+          2.5750001
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          6.90625,
+          2.6299995,
+          1.3425001
+        ],
+        "size": [
+          0.6325006,
+          1.2800007,
+          2.5750001
+        ]
+      }
+    },
+    {
+      "id": "hall-joinery",
+      "type": "cabinet",
+      "name": "客厅壁龛展示柜",
+      "sourceNodes": [
+        "Hall_adjacent_wall_joint_0_lower",
+        "Hall_adjacent_wall_joint_0_upper",
+        "Hall_adjacent_wall_joint_1_lower",
+        "Hall_adjacent_wall_joint_1_upper",
+        "Hall_adjacent_wall_panel_0_lower",
+        "Hall_adjacent_wall_panel_0_upper",
+        "Hall_adjacent_wall_panel_1_lower",
+        "Hall_adjacent_wall_panel_1_upper",
+        "Hall_display_shelf_0",
+        "Hall_display_shelf_1",
+        "Hall_display_shelf_2",
+        "Hall_door_front",
+        "Hall_door_front.001",
+        "Hall_drawer_front",
+        "Hall_drawer_front.001",
+        "Hall_drawer_front.002",
+        "Hall_drawer_pull_recess",
+        "Hall_drawer_pull_recess.001",
+        "Hall_front_gap",
+        "Hall_front_gap.001",
+        "Hall_lower_shelf_bracket",
+        "Hall_master_door_dark_head",
+        "Hall_master_door_dark_reveal_lower",
+        "Hall_master_door_dark_reveal_lower.001",
+        "Hall_master_door_dark_reveal_upper",
+        "Hall_master_door_dark_reveal_upper.001",
+        "Hall_niche_back_lower",
+        "Hall_niche_back_upper",
+        "Hall_niche_header",
+        "Hall_niche_header_shadow",
+        "Hall_pilaster_reveal_lower",
+        "Hall_pilaster_reveal_lower.001",
+        "Hall_pilaster_reveal_upper",
+        "Hall_pilaster_reveal_upper.001",
+        "Hall_riser_backlight_0",
+        "Hall_riser_backlight_1",
+        "Hall_shelf_light_0",
+        "Hall_shelf_light_1",
+        "Hall_shelf_light_2",
+        "Hall_short_wall_skirt",
+        "Hall_short_wall_top_reveal",
+        "Hall_side_pilaster_lower",
+        "Hall_side_pilaster_lower.001",
+        "Hall_side_pilaster_upper",
+        "Hall_side_pilaster_upper.001",
+        "Hall_sideboard",
+        "Hall_sideboard_counter",
+        "Hall_sideboard_toekick",
+        "Hall_socket",
+        "Hall_socket.001",
+        "Hall_socket.002",
+        "Hall_stone_fascia_0",
+        "Hall_stone_fascia_1",
+        "Hall_stone_fascia_2",
+        "Hall_stone_riser_0",
+        "Hall_stone_riser_1"
+      ],
+      "roomIds": [
+        "circulation",
+        "living"
+      ],
+      "materials": [
+        "Graphite_frame",
+        "Muted_taupe_hall_panels",
+        "Grey_olive_niche_stone",
+        "Warm_light",
+        "Champagne_crystal_inlay"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          3.3740001,
+          6.6067502,
+          1.2715
+        ],
+        "size": [
+          0.6259999,
+          3.7405,
+          2.543
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          3.3740001,
+          6.6067502,
+          1.2715
+        ],
+        "size": [
+          0.6259999,
+          3.7405,
+          2.543
+        ]
+      }
+    },
+    {
+      "id": "hob",
+      "type": "fixture",
+      "name": "三眼灶具",
+      "sourceNodes": [
+        "Hob_burner_0",
+        "Hob_burner_1",
+        "Hob_burner_2",
+        "Hob_burner_cap_0",
+        "Hob_burner_cap_1",
+        "Hob_burner_cap_2",
+        "Hob_glass",
+        "Hob_knob_0",
+        "Hob_knob_1",
+        "Hob_knob_2",
+        "Hob_knob_marker",
+        "Hob_knob_marker.001",
+        "Hob_knob_marker.002",
+        "Hob_pan_support_0",
+        "Hob_pan_support_0.001",
+        "Hob_pan_support_0.002",
+        "Hob_pan_support_0.003",
+        "Hob_pan_support_1",
+        "Hob_pan_support_1.001",
+        "Hob_pan_support_1.002",
+        "Hob_pan_support_1.003",
+        "Hob_pan_support_2",
+        "Hob_pan_support_2.001",
+        "Hob_pan_support_2.002",
+        "Hob_pan_support_2.003"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Graphite_frame",
+        "Black_appliance_glass",
+        "Brushed_steel"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.6694603,
+          1.7699999,
+          0.94275
+        ],
+        "size": [
+          0.5169201,
+          0.9099998,
+          0.1185
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.6694603,
+          1.7699999,
+          0.94275
+        ],
+        "size": [
+          0.5169201,
+          0.9099998,
+          0.1185
+        ]
+      }
+    },
+    {
+      "id": "detail_Kitchen_drawer_recess",
+      "type": "detail",
+      "name": "厨房抽屉内凹缝",
+      "sourceNodes": [
+        "Kitchen_drawer_recess"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Graphite_frame"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.3549995,
+          2.7500004,
+          0.38
+        ],
+        "size": [
+          0.0249996,
+          1.0400009,
+          0.038
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.3549995,
+          2.7500004,
+          0.38
+        ],
+        "size": [
+          0.0249996,
+          1.0400009,
+          0.038
+        ]
+      }
+    },
+    {
+      "id": "detail_Kitchen_drawer_recess_001",
+      "type": "detail",
+      "name": "厨房抽屉内凹缝",
+      "sourceNodes": [
+        "Kitchen_drawer_recess.001"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Graphite_frame"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.3549995,
+          2.7500004,
+          0.6
+        ],
+        "size": [
+          0.0249996,
+          1.0400009,
+          0.038
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.3549995,
+          2.7500004,
+          0.6
+        ],
+        "size": [
+          0.0249996,
+          1.0400009,
+          0.038
+        ]
+      }
+    },
+    {
+      "id": "kitchen-east",
+      "type": "cabinet",
+      "name": "东侧橱柜",
+      "sourceNodes": [
+        "Kitchen_east_backsplash",
+        "Kitchen_east_bases",
+        "Kitchen_east_counter",
+        "Kitchen_east_door_gap",
+        "Kitchen_east_door_gap.001",
+        "Kitchen_east_door_gap.002",
+        "Kitchen_east_door_gap.003",
+        "Kitchen_east_door_gap.004",
+        "Kitchen_east_handle_recess",
+        "Kitchen_east_toekick",
+        "Kitchen_east_upper_0",
+        "Kitchen_east_upper_1",
+        "Kitchen_east_upper_2",
+        "Kitchen_east_upper_3",
+        "Kitchen_east_upper_4"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Warm_ivory_cabinet",
+        "Ivory_stone_counter",
+        "Graphite_frame"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.6774998,
+          2.0099997,
+          1.3199999
+        ],
+        "size": [
+          0.6450005,
+          2.5799999,
+          2.5999999
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.6774998,
+          2.0099997,
+          1.3199999
+        ],
+        "size": [
+          0.6450005,
+          2.5799999,
+          2.5999999
+        ]
+      }
+    },
+    {
+      "id": "floor_Kitchen_floor",
+      "type": "slab",
+      "name": "厨房地砖",
+      "sourceNodes": [
+        "Kitchen_floor"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Kitchen_satin_stone"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          7.79,
+          1.7400002,
+          0.02
+        ],
+        "size": [
+          2.4200001,
+          3.2800007,
+          0.006
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          7.79,
+          1.7400002,
+          0.02
+        ],
+        "size": [
+          2.4200001,
+          3.2800007,
+          0.006
+        ]
+      }
+    },
+    {
+      "id": "kitchen-north",
+      "type": "cabinet",
+      "name": "北侧橱柜",
+      "sourceNodes": [
+        "Kitchen_north_bases",
+        "Kitchen_north_door_gap",
+        "Kitchen_north_door_gap.001",
+        "Kitchen_north_door_gap.002",
+        "Kitchen_north_door_gap.003",
+        "Kitchen_north_door_gap.004",
+        "Kitchen_north_fronts",
+        "Kitchen_north_handle_recess",
+        "Kitchen_north_toekick"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Warm_ivory_cabinet",
+        "Graphite_frame"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          7.8000002,
+          0.4214996,
+          0.428
+        ],
+        "size": [
+          2.3999996,
+          0.6429996,
+          0.816
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          7.8000002,
+          0.4214996,
+          0.428
+        ],
+        "size": [
+          2.3999996,
+          0.6429996,
+          0.816
+        ]
+      }
+    },
+    {
+      "id": "window_Kitchen_north",
+      "type": "window",
+      "name": "厨房北窗",
+      "sourceNodes": [
+        "Kitchen_north_glass_lower",
+        "Kitchen_north_glass_lower.001",
+        "Kitchen_north_glass_upper",
+        "Kitchen_north_glass_upper.001",
+        "Kitchen_north_handle",
+        "Kitchen_north_mullion_lower",
+        "Kitchen_north_mullion_lower.001",
+        "Kitchen_north_mullion_lower.002",
+        "Kitchen_north_mullion_upper",
+        "Kitchen_north_mullion_upper.001",
+        "Kitchen_north_mullion_upper.002",
+        "Kitchen_north_rail",
+        "Kitchen_north_rail.001",
+        "Kitchen_north_stone_sill"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Clear_glass",
+        "Graphite_frame",
+        "Ivory_stone_counter"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          7.625,
+          -0.0250002,
+          1.6985001
+        ],
+        "size": [
+          1.3500004,
+          0.2999992,
+          1.6070001
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          7.625,
+          -0.0250002,
+          1.6985001
+        ],
+        "size": [
+          1.3500004,
+          0.2999992,
+          1.6070001
+        ]
+      },
+      "windowId": "Kitchen_north"
+    },
+    {
+      "id": "kitchen-sliding",
+      "type": "door",
+      "name": "厨房推拉门",
+      "sourceNodes": [
+        "Kitchen_retracted_leaf_0_fluting_fixed",
+        "Kitchen_retracted_leaf_0_fluting_upper",
+        "Kitchen_retracted_leaf_0_glass_lower",
+        "Kitchen_retracted_leaf_0_glass_upper",
+        "Kitchen_retracted_leaf_0_pull",
+        "Kitchen_retracted_leaf_0_rail",
+        "Kitchen_retracted_leaf_0_rail.001",
+        "Kitchen_retracted_leaf_0_stile_lower",
+        "Kitchen_retracted_leaf_0_stile_lower.001",
+        "Kitchen_retracted_leaf_0_stile_upper",
+        "Kitchen_retracted_leaf_0_stile_upper.001"
+      ],
+      "roomIds": [
+        "kitchen",
+        "circulation"
+      ],
+      "materials": [
+        "Subtle_glass_fluting",
+        "Smoked_ribbed_sliding_glass",
+        "Graphite_frame"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          6.6399999,
+          3.57625,
+          1.2675
+        ],
+        "size": [
+          1.118,
+          0.0264997,
+          2.485
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          6.6399999,
+          3.57625,
+          1.2675
+        ],
+        "size": [
+          1.118,
+          0.0264997,
+          2.485
+        ]
+      }
+    },
+    {
+      "id": "kitchen-sink",
+      "type": "fixture",
+      "name": "厨房水槽",
+      "sourceNodes": [
+        "Kitchen_sink_bowl_floor",
+        "Kitchen_sink_counter_back",
+        "Kitchen_sink_counter_front",
+        "Kitchen_sink_counter_left",
+        "Kitchen_sink_counter_right",
+        "Kitchen_sink_drain",
+        "Kitchen_sink_end",
+        "Kitchen_sink_end.001",
+        "Kitchen_sink_mixer",
+        "Kitchen_sink_mixer.001",
+        "Kitchen_sink_mixer.002",
+        "Kitchen_sink_mixer.003",
+        "Kitchen_sink_mixer.004",
+        "Kitchen_sink_mixer.005",
+        "Kitchen_sink_mixer_lever",
+        "Kitchen_sink_rim",
+        "Kitchen_sink_rim.001",
+        "Kitchen_sink_rim.002",
+        "Kitchen_sink_rim.003",
+        "Kitchen_sink_side",
+        "Kitchen_sink_side.001"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Dark_stainless_sink",
+        "Ivory_stone_counter",
+        "Brushed_steel"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          7.7950001,
+          0.4149999,
+          0.9793641
+        ],
+        "size": [
+          2.4099998,
+          0.6300001,
+          0.4987282
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          7.7950001,
+          0.4149999,
+          0.9793641
+        ],
+        "size": [
+          2.4099998,
+          0.6300001,
+          0.4987282
+        ]
+      }
+    },
+    {
+      "id": "detail_Kitchen_under_east_light",
+      "type": "detail",
+      "name": "东侧橱柜灯带",
+      "sourceNodes": [
+        "Kitchen_under_east_light"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Warm_light"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.7049999,
+          2.0049995,
+          1.557
+        ],
+        "size": [
+          0.0359993,
+          2.4799995,
+          0.0120001
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.7049999,
+          2.0049995,
+          1.557
+        ],
+        "size": [
+          0.0359993,
+          2.4799995,
+          0.0120001
+        ]
+      }
+    },
+    {
+      "id": "detail_Kitchen_under_west_light",
+      "type": "detail",
+      "name": "西侧橱柜灯带",
+      "sourceNodes": [
+        "Kitchen_under_west_light"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Warm_light"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          6.9000001,
+          1.36,
+          1.567
+        ],
+        "size": [
+          0.0340004,
+          1.210001,
+          0.0120001
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          6.9000001,
+          1.36,
+          1.567
+        ],
+        "size": [
+          0.0340004,
+          1.210001,
+          0.0120001
+        ]
+      }
+    },
+    {
+      "id": "kitchen-west",
+      "type": "cabinet",
+      "name": "西侧橱柜",
+      "sourceNodes": [
+        "Kitchen_west_backsplash",
+        "Kitchen_west_bases",
+        "Kitchen_west_counter",
+        "Kitchen_west_door_gap",
+        "Kitchen_west_door_gap.001",
+        "Kitchen_west_door_gap.002",
+        "Kitchen_west_handle_recess",
+        "Kitchen_west_toekick",
+        "Kitchen_west_upper_0",
+        "Kitchen_west_upper_1"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Warm_ivory_cabinet",
+        "Ivory_stone_counter",
+        "Graphite_frame"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          6.9124999,
+          1.36,
+          1.3199999
+        ],
+        "size": [
+          0.625,
+          1.2800007,
+          2.5999999
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          6.9124999,
+          1.36,
+          1.3199999
+        ],
+        "size": [
+          0.625,
+          1.2800007,
+          2.5999999
+        ]
+      }
+    },
+    {
+      "id": "detail_Kitchen_window_fixed_transom",
+      "type": "detail",
+      "name": "厨房窗固定横档",
+      "sourceNodes": [
+        "Kitchen_window_fixed_transom"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Graphite_frame"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          7.75,
+          4e-07,
+          1.3200001
+        ],
+        "size": [
+          1,
+          0.0699997,
+          0.0450001
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          7.75,
+          4e-07,
+          1.3200001
+        ],
+        "size": [
+          1,
+          0.0699997,
+          0.0450001
+        ]
+      }
+    },
+    {
+      "id": "window_Living_south",
+      "type": "window",
+      "name": "客厅南窗",
+      "sourceNodes": [
+        "Living_south_glass_lower",
+        "Living_south_glass_lower.001",
+        "Living_south_glass_lower.002",
+        "Living_south_glass_upper",
+        "Living_south_glass_upper.001",
+        "Living_south_glass_upper.002",
+        "Living_south_handle",
+        "Living_south_handle.001",
+        "Living_south_mullion_lower",
+        "Living_south_mullion_lower.001",
+        "Living_south_mullion_lower.002",
+        "Living_south_mullion_lower.003",
+        "Living_south_mullion_upper",
+        "Living_south_mullion_upper.001",
+        "Living_south_mullion_upper.002",
+        "Living_south_mullion_upper.003",
+        "Living_south_rail",
+        "Living_south_rail.001",
+        "Living_south_stone_sill"
+      ],
+      "roomIds": [
+        "living"
+      ],
+      "materials": [
+        "Clear_glass",
+        "Graphite_frame",
+        "Ivory_stone_counter"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          5.48,
+          12.875,
+          1.306
+        ],
+        "size": [
+          3.3400002,
+          0.3,
+          2.632
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          5.48,
+          12.875,
+          1.306
+        ],
+        "size": [
+          3.3400002,
+          0.3,
+          2.632
+        ]
+      },
+      "windowId": "Living_south"
+    },
+    {
+      "id": "master-toilet",
+      "type": "fixture",
+      "name": "主卫坐便器",
+      "sourceNodes": [
+        "Master_WC_cistern",
+        "Master_WC_flush",
+        "Master_WC_inner",
+        "Master_WC_pedestal",
+        "Master_WC_rim"
+      ],
+      "roomIds": [
+        "masterbath"
+      ],
+      "materials": [
+        "Porcelain",
+        "Brushed_steel",
+        "Thin_graphite_cut_edge"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          2.5075001,
+          6.8200001,
+          0.42475
+        ],
+        "size": [
+          0.655,
+          0.4399996,
+          0.8095
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          2.5075001,
+          6.8200001,
+          0.42475
+        ],
+        "size": [
+          0.655,
+          0.4399996,
+          0.8095
+        ]
+      }
+    },
+    {
+      "id": "master-sliding-door",
+      "type": "door",
+      "name": "主卫推拉门",
+      "sourceNodes": [
+        "Master_bath_entry_head",
+        "Master_bath_entry_jamb_lower",
+        "Master_bath_entry_jamb_lower.001",
+        "Master_bath_entry_jamb_upper",
+        "Master_bath_entry_jamb_upper.001",
+        "Master_bath_sliding_privacy_glass_lower",
+        "Master_bath_sliding_privacy_glass_upper",
+        "Master_bath_sliding_privacy_pull",
+        "Master_bath_sliding_privacy_rail",
+        "Master_bath_sliding_privacy_rail.001",
+        "Master_bath_sliding_privacy_stile_lower",
+        "Master_bath_sliding_privacy_stile_lower.001",
+        "Master_bath_sliding_privacy_stile_upper",
+        "Master_bath_sliding_privacy_stile_upper.001",
+        "Master_bath_sliding_track"
+      ],
+      "roomIds": [
+        "master",
+        "masterbath"
+      ],
+      "materials": [
+        "Graphite_frame",
+        "Charcoal_bath_privacy_glass"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          1.947,
+          7.42175,
+          1.1264999
+        ],
+        "size": [
+          1.9400001,
+          0.2145004,
+          2.2529998
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          1.947,
+          7.42175,
+          1.1264999
+        ],
+        "size": [
+          1.9400001,
+          0.2145004,
+          2.2529998
+        ]
+      }
+    },
+    {
+      "id": "master-vanity",
+      "type": "cabinet",
+      "name": "主卫一体双人洗手台",
+      "sourceNodes": [
+        "Master_double_backsplash_lower",
+        "Master_double_backsplash_upper",
+        "Master_double_cabinet_back",
+        "Master_double_cabinet_deck",
+        "Master_double_cabinet_deck.001",
+        "Master_double_cabinet_partition",
+        "Master_double_cabinet_partition.001",
+        "Master_double_cabinet_partition.002",
+        "Master_double_cabinet_partition.003",
+        "Master_double_control_lever_0",
+        "Master_double_control_lever_1",
+        "Master_double_control_rose_0",
+        "Master_double_control_rose_1",
+        "Master_double_cubby_back",
+        "Master_double_cubby_back.001",
+        "Master_double_cubby_crystal",
+        "Master_double_cubby_crystal.001",
+        "Master_double_cubby_light",
+        "Master_double_cubby_light.001",
+        "Master_double_drain",
+        "Master_double_drawer",
+        "Master_double_drawer.001",
+        "Master_double_drawer_pull",
+        "Master_double_mirror",
+        "Master_double_mirror_crystal",
+        "Master_double_mirror_crystal.001",
+        "Master_double_mirror_crystal.002",
+        "Master_double_mirror_cubby",
+        "Master_double_mirror_divider",
+        "Master_double_mirror_frame",
+        "Master_double_mirror_light",
+        "Master_double_mirror_shelf",
+        "Master_double_mirror_shelf.001",
+        "Master_double_mirror_shelf.002",
+        "Master_double_right_lower_drawer",
+        "Master_double_spout_lip_0",
+        "Master_double_spout_lip_1",
+        "Master_double_spout_rose_0",
+        "Master_double_spout_rose_1",
+        "Master_double_stone_trough",
+        "Master_double_underlight",
+        "Master_double_wall_spout_0",
+        "Master_double_wall_spout_1"
+      ],
+      "roomIds": [
+        "masterbath"
+      ],
+      "materials": [
+        "Pale_sage_marble_vanity",
+        "Muted_taupe_hall_panels",
+        "Brushed_steel",
+        "Graphite_frame",
+        "Champagne_crystal_inlay",
+        "Warm_light",
+        "Silver_mirror"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          1.8999999,
+          5.8965003,
+          1.28925
+        ],
+        "size": [
+          1.84,
+          0.6069999,
+          2.2124999
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          1.8999999,
+          5.8965003,
+          1.28925
+        ],
+        "size": [
+          1.84,
+          0.6069999,
+          2.2124999
+        ]
+      }
+    },
+    {
+      "id": "floor_Master_low_platform",
+      "type": "slab",
+      "name": "主卧低窗台",
+      "sourceNodes": [
+        "Master_low_platform"
+      ],
+      "roomIds": [
+        "master"
+      ],
+      "materials": [
+        "Ivory_stone_counter"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          1.7600001,
+          12.55,
+          0.131
+        ],
+        "size": [
+          3.3200001,
+          0.5,
+          0.23
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          1.7600001,
+          12.55,
+          0.131
+        ],
+        "size": [
+          3.3200001,
+          0.5,
+          0.23
+        ]
+      }
+    },
+    {
+      "id": "master-shower",
+      "type": "fixture",
+      "name": "主卫淋浴",
+      "sourceNodes": [
+        "Master_shower_drain",
+        "Master_shower_drain_slot",
+        "Master_shower_drain_slot.001",
+        "Master_shower_drain_slot.002",
+        "Master_shower_drain_slot.003",
+        "Master_shower_drain_slot.004",
+        "Master_shower_drain_slot.005",
+        "Master_shower_glass_lower",
+        "Master_shower_glass_upper",
+        "Master_shower_handle",
+        "Master_shower_head_arm",
+        "Master_shower_mixer",
+        "Master_shower_rail",
+        "Master_shower_rain_head",
+        "Master_shower_tray"
+      ],
+      "roomIds": [
+        "masterbath"
+      ],
+      "materials": [
+        "Brushed_steel",
+        "Graphite_frame",
+        "Clear_glass",
+        "Grey_flowing_marble_floor"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          0.536,
+          6.4599999,
+          1.0899999
+        ],
+        "size": [
+          0.872,
+          1.7200003,
+          2.1399998
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          0.536,
+          6.4599999,
+          1.0899999
+        ],
+        "size": [
+          0.872,
+          1.7200003,
+          2.1399998
+        ]
+      }
+    },
+    {
+      "id": "window_Master_south",
+      "type": "window",
+      "name": "主卧南窗",
+      "sourceNodes": [
+        "Master_south_glass_lower",
+        "Master_south_glass_lower.001",
+        "Master_south_glass_upper",
+        "Master_south_glass_upper.001",
+        "Master_south_handle",
+        "Master_south_mullion_lower",
+        "Master_south_mullion_lower.001",
+        "Master_south_mullion_lower.002",
+        "Master_south_mullion_upper",
+        "Master_south_mullion_upper.001",
+        "Master_south_mullion_upper.002",
+        "Master_south_rail",
+        "Master_south_rail.001",
+        "Master_south_stone_sill"
+      ],
+      "roomIds": [
+        "master"
+      ],
+      "materials": [
+        "Clear_glass",
+        "Graphite_frame",
+        "Ivory_stone_counter"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          1.8600001,
+          12.875,
+          1.4035
+        ],
+        "size": [
+          2.3800002,
+          0.3,
+          2.337
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          1.8600001,
+          12.875,
+          1.4035
+        ],
+        "size": [
+          2.3800002,
+          0.3,
+          2.337
+        ]
+      },
+      "windowId": "Master_south"
+    },
+    {
+      "id": "window_Masterbath_north",
+      "type": "window",
+      "name": "主卫北窗",
+      "sourceNodes": [
+        "Masterbath_north_glass_upper",
+        "Masterbath_north_handle",
+        "Masterbath_north_mullion_upper",
+        "Masterbath_north_mullion_upper.001",
+        "Masterbath_north_rail",
+        "Masterbath_north_rail.001",
+        "Masterbath_north_stone_sill"
+      ],
+      "roomIds": [
+        "masterbath"
+      ],
+      "materials": [
+        "Clear_glass",
+        "Graphite_frame",
+        "Ivory_stone_counter"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          0.395,
+          5.4749998,
+          1.8635001
+        ],
+        "size": [
+          0.65,
+          0.3000002,
+          1.1170001
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          0.395,
+          5.4749998,
+          1.8635001
+        ],
+        "size": [
+          0.65,
+          0.3000002,
+          1.1170001
+        ]
+      },
+      "windowId": "Masterbath_north"
+    },
+    {
+      "id": "window_NW_north",
+      "type": "window",
+      "name": "西北次卧北窗",
+      "sourceNodes": [
+        "NW_north_glass_lower",
+        "NW_north_glass_lower.001",
+        "NW_north_glass_upper",
+        "NW_north_glass_upper.001",
+        "NW_north_handle",
+        "NW_north_mullion_lower",
+        "NW_north_mullion_lower.001",
+        "NW_north_mullion_lower.002",
+        "NW_north_mullion_upper",
+        "NW_north_mullion_upper.001",
+        "NW_north_mullion_upper.002",
+        "NW_north_rail",
+        "NW_north_rail.001",
+        "NW_north_stone_sill"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Clear_glass",
+        "Graphite_frame",
+        "Ivory_stone_counter"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          2.6,
+          -0.0250002,
+          1.4035
+        ],
+        "size": [
+          1.8000001,
+          0.2999992,
+          2.337
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          2.6,
+          -0.0250002,
+          1.4035
+        ],
+        "size": [
+          1.8000001,
+          0.2999992,
+          2.337
+        ]
+      },
+      "windowId": "NW_north"
+    },
+    {
+      "id": "north-surround",
+      "type": "door",
+      "name": "北侧门洞外围框",
+      "sourceNodes": [
+        "North_sliding_header",
+        "North_sliding_track",
+        "North_sliding_track.001",
+        "North_sliding_track.002",
+        "North_sliding_track.003",
+        "North_surround_Kitchen_left_lower",
+        "North_surround_Kitchen_left_upper",
+        "North_surround_Kitchen_right_lower",
+        "North_surround_Kitchen_right_upper",
+        "North_surround_Kitchen_threshold",
+        "North_surround_X_left_lower",
+        "North_surround_X_left_upper",
+        "North_surround_X_right_lower",
+        "North_surround_X_right_upper",
+        "North_surround_X_threshold"
+      ],
+      "roomIds": [
+        "xroom",
+        "kitchen",
+        "circulation"
+      ],
+      "materials": [
+        "Graphite_frame"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          6.3400002,
+          3.4575004,
+          1.3275
+        ],
+        "size": [
+          5.3400002,
+          0.3149996,
+          2.6250001
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          6.3400002,
+          3.4575004,
+          1.3275
+        ],
+        "size": [
+          5.3400002,
+          0.3149996,
+          2.6250001
+        ]
+      }
+    },
+    {
+      "id": "oven",
+      "type": "fixture",
+      "name": "嵌入式烤箱",
+      "sourceNodes": [
+        "Oven_controls",
+        "Oven_display",
+        "Oven_glass",
+        "Oven_handle",
+        "Oven_handle_standoff",
+        "Oven_handle_standoff.001",
+        "Oven_surround"
+      ],
+      "roomIds": [
+        "kitchen"
+      ],
+      "materials": [
+        "Graphite_frame",
+        "Brushed_steel",
+        "Black_appliance_glass"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.3167496,
+          1.7500004,
+          0.453
+        ],
+        "size": [
+          0.1014996,
+          0.6800003,
+          0.64
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.3167496,
+          1.7500004,
+          0.453
+        ],
+        "size": [
+          0.1014996,
+          0.6800003,
+          0.64
+        ]
+      }
+    },
+    {
+      "id": "floor_SE_low_platform",
+      "type": "slab",
+      "name": "东南卧室低窗台",
+      "sourceNodes": [
+        "SE_low_platform"
+      ],
+      "roomIds": [
+        "southeast"
+      ],
+      "materials": [
+        "Ivory_stone_counter"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.9899998,
+          12.55,
+          0.131
+        ],
+        "size": [
+          2.8199997,
+          0.5,
+          0.23
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.9899998,
+          12.55,
+          0.131
+        ],
+        "size": [
+          2.8199997,
+          0.5,
+          0.23
+        ]
+      }
+    },
+    {
+      "id": "window_SE_south",
+      "type": "window",
+      "name": "东南卧室南窗",
+      "sourceNodes": [
+        "SE_south_glass_lower",
+        "SE_south_glass_lower.001",
+        "SE_south_glass_upper",
+        "SE_south_glass_upper.001",
+        "SE_south_handle",
+        "SE_south_mullion_lower",
+        "SE_south_mullion_lower.001",
+        "SE_south_mullion_lower.002",
+        "SE_south_mullion_upper",
+        "SE_south_mullion_upper.001",
+        "SE_south_mullion_upper.002",
+        "SE_south_rail",
+        "SE_south_rail.001",
+        "SE_south_stone_sill"
+      ],
+      "roomIds": [
+        "southeast"
+      ],
+      "materials": [
+        "Clear_glass",
+        "Graphite_frame",
+        "Ivory_stone_counter"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.9149997,
+          12.875,
+          1.4035
+        ],
+        "size": [
+          2.1299996,
+          0.3,
+          2.337
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.9149997,
+          12.875,
+          1.4035
+        ],
+        "size": [
+          2.1299996,
+          0.3,
+          2.337
+        ]
+      },
+      "windowId": "SE_south"
+    },
+    {
+      "id": "window_X_north",
+      "type": "window",
+      "name": "X 空间北窗",
+      "sourceNodes": [
+        "X_north_glass_lower",
+        "X_north_glass_lower.001",
+        "X_north_glass_upper",
+        "X_north_glass_upper.001",
+        "X_north_handle",
+        "X_north_mullion_lower",
+        "X_north_mullion_lower.001",
+        "X_north_mullion_lower.002",
+        "X_north_mullion_upper",
+        "X_north_mullion_upper.001",
+        "X_north_mullion_upper.002",
+        "X_north_rail",
+        "X_north_rail.001",
+        "X_north_stone_sill"
+      ],
+      "roomIds": [
+        "xroom"
+      ],
+      "materials": [
+        "Clear_glass",
+        "Graphite_frame",
+        "Ivory_stone_counter"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          4.8850002,
+          -0.0250002,
+          1.4035
+        ],
+        "size": [
+          1.8299999,
+          0.2999992,
+          2.337
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          4.8850002,
+          -0.0250002,
+          1.4035
+        ],
+        "size": [
+          1.8299999,
+          0.2999992,
+          2.337
+        ]
+      },
+      "windowId": "X_north"
+    },
+    {
+      "id": "north-sliding",
+      "type": "door",
+      "name": "X 空间推拉门",
+      "sourceNodes": [
+        "X_retracted_leaf_0_fluting_fixed",
+        "X_retracted_leaf_0_fluting_upper",
+        "X_retracted_leaf_0_glass_lower",
+        "X_retracted_leaf_0_glass_upper",
+        "X_retracted_leaf_0_pull",
+        "X_retracted_leaf_0_rail",
+        "X_retracted_leaf_0_rail.001",
+        "X_retracted_leaf_0_stile_lower",
+        "X_retracted_leaf_0_stile_lower.001",
+        "X_retracted_leaf_0_stile_upper",
+        "X_retracted_leaf_0_stile_upper.001",
+        "X_retracted_leaf_1_fluting_fixed",
+        "X_retracted_leaf_1_fluting_upper",
+        "X_retracted_leaf_1_glass_lower",
+        "X_retracted_leaf_1_glass_upper",
+        "X_retracted_leaf_1_pull",
+        "X_retracted_leaf_1_rail",
+        "X_retracted_leaf_1_rail.001",
+        "X_retracted_leaf_1_stile_lower",
+        "X_retracted_leaf_1_stile_lower.001",
+        "X_retracted_leaf_1_stile_upper",
+        "X_retracted_leaf_1_stile_upper.001",
+        "X_retracted_leaf_2_fluting_fixed",
+        "X_retracted_leaf_2_fluting_upper",
+        "X_retracted_leaf_2_glass_lower",
+        "X_retracted_leaf_2_glass_upper",
+        "X_retracted_leaf_2_pull",
+        "X_retracted_leaf_2_rail",
+        "X_retracted_leaf_2_rail.001",
+        "X_retracted_leaf_2_stile_lower",
+        "X_retracted_leaf_2_stile_lower.001",
+        "X_retracted_leaf_2_stile_upper",
+        "X_retracted_leaf_2_stile_upper.001"
+      ],
+      "roomIds": [
+        "xroom",
+        "circulation"
+      ],
+      "materials": [
+        "Subtle_glass_fluting",
+        "Smoked_ribbed_sliding_glass",
+        "Graphite_frame"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          6.7220001,
+          3.5262503,
+          1.2675
+        ],
+        "size": [
+          0.9820004,
+          0.0744991,
+          2.485
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          6.7220001,
+          3.5262503,
+          1.2675
+        ],
+        "size": [
+          0.9820004,
+          0.0744991,
+          2.485
+        ]
+      }
+    },
+    {
+      "id": "door_entry",
+      "type": "door",
+      "name": "入户门",
+      "sourceNodes": [
+        "door_entry_lower",
+        "door_entry_upper",
+        "handle_entry",
+        "hinge_entry",
+        "hinge_entry.001",
+        "hinge_entry.002",
+        "jamb_entry_lower",
+        "jamb_entry_upper",
+        "jamb_far_entry_lower",
+        "jamb_far_entry_upper",
+        "lintel_entry"
+      ],
+      "roomIds": [
+        "circulation"
+      ],
+      "materials": [
+        "Taupe_wood_joinery",
+        "Brushed_steel",
+        "Warm_ivory_cabinet"
+      ],
+      "basis": "原始图纸门洞；2026-09-15 红框修订朝向和全开靠墙状态",
+      "placement": {
+        "center": [
+          9.3996353,
+          5.5800001,
+          1.11875
+        ],
+        "size": [
+          0.7792702,
+          1.3800006,
+          2.2375
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          9.3996353,
+          5.5800001,
+          1.11875
+        ],
+        "size": [
+          0.7792702,
+          1.3800006,
+          2.2375
+        ]
+      },
+      "doorId": "entry"
+    },
+    {
+      "id": "door_master",
+      "type": "door",
+      "name": "主卧房门",
+      "sourceNodes": [
+        "door_master_lower",
+        "door_master_upper",
+        "handle_master",
+        "hinge_master",
+        "hinge_master.001",
+        "hinge_master.002",
+        "jamb_far_master_lower",
+        "jamb_far_master_upper",
+        "jamb_master_lower",
+        "jamb_master_upper",
+        "lintel_master"
+      ],
+      "roomIds": [
+        "master",
+        "living"
+      ],
+      "materials": [
+        "Taupe_wood_joinery",
+        "Brushed_steel",
+        "Warm_ivory_cabinet"
+      ],
+      "basis": "原始图纸门洞；2026-09-15 红框修订朝向和全开靠墙状态",
+      "placement": {
+        "center": [
+          3.2653981,
+          8.0000001,
+          1.11875
+        ],
+        "size": [
+          0.6492035,
+          1.0800004,
+          2.2375
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          3.2653981,
+          8.0000001,
+          1.11875
+        ],
+        "size": [
+          0.6492035,
+          1.0800004,
+          2.2375
+        ]
+      },
+      "doorId": "master"
+    },
+    {
+      "id": "door_northwest",
+      "type": "door",
+      "name": "西北次卧房门",
+      "sourceNodes": [
+        "door_northwest_lower",
+        "door_northwest_upper",
+        "handle_northwest",
+        "hinge_northwest",
+        "hinge_northwest.001",
+        "hinge_northwest.002",
+        "jamb_far_northwest_lower",
+        "jamb_far_northwest_upper",
+        "jamb_northwest_lower",
+        "jamb_northwest_upper",
+        "lintel_northwest"
+      ],
+      "roomIds": [
+        "northwest",
+        "commonbath",
+        "circulation"
+      ],
+      "materials": [
+        "Taupe_wood_joinery",
+        "Brushed_steel",
+        "Warm_ivory_cabinet"
+      ],
+      "basis": "原始图纸门洞；2026-09-15 红框修订朝向和全开靠墙状态",
+      "placement": {
+        "center": [
+          3.1112499,
+          3.0777096,
+          1.11875
+        ],
+        "size": [
+          0.9524999,
+          0.8245811,
+          2.2375
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          3.1112499,
+          3.0777096,
+          1.11875
+        ],
+        "size": [
+          0.9524999,
+          0.8245811,
+          2.2375
+        ]
+      },
+      "doorId": "northwest"
+    },
+    {
+      "id": "door_southeast",
+      "type": "door",
+      "name": "东南卧室房门",
+      "sourceNodes": [
+        "door_southeast_lower",
+        "door_southeast_upper",
+        "handle_southeast",
+        "hinge_southeast",
+        "hinge_southeast.001",
+        "hinge_southeast.002",
+        "jamb_far_southeast_lower",
+        "jamb_far_southeast_upper",
+        "jamb_southeast_lower",
+        "jamb_southeast_upper",
+        "lintel_southeast"
+      ],
+      "roomIds": [
+        "southeast",
+        "living",
+        "storage"
+      ],
+      "materials": [
+        "Taupe_wood_joinery",
+        "Brushed_steel",
+        "Warm_ivory_cabinet"
+      ],
+      "basis": "原始图纸门洞；2026-09-15 红框修订朝向和全开靠墙状态",
+      "placement": {
+        "center": [
+          7.7526808,
+          8.0699998,
+          1.11875
+        ],
+        "size": [
+          0.6853619,
+          1.0800004,
+          2.2375
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          7.7526808,
+          8.0699998,
+          1.11875
+        ],
+        "size": [
+          0.6853619,
+          1.0800004,
+          2.2375
+        ]
+      },
+      "doorId": "southeast"
+    },
+    {
+      "id": "floor_floor_master",
+      "type": "slab",
+      "name": "主卧人字拼木地板",
+      "sourceNodes": [
+        "floor_master"
+      ],
+      "roomIds": [
+        "master"
+      ],
+      "materials": [
+        "Oak_plank_00",
+        "Oak_plank_01",
+        "Oak_plank_02",
+        "Oak_plank_03",
+        "Oak_plank_04",
+        "Oak_plank_05"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          1.7600117,
+          9.8500507,
+          0.024
+        ],
+        "size": [
+          3.3198204,
+          4.8997009,
+          0
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          1.7600117,
+          9.8500507,
+          0.024
+        ],
+        "size": [
+          3.3198204,
+          4.8997009,
+          0
+        ]
+      }
+    },
+    {
+      "id": "floor_floor_northwest",
+      "type": "slab",
+      "name": "西北次卧木地板",
+      "sourceNodes": [
+        "floor_northwest"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Oak_plank_00",
+        "Oak_plank_01",
+        "Oak_plank_02",
+        "Oak_plank_03",
+        "Oak_plank_04",
+        "Oak_plank_05"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          2.3100401,
+          1.7502998,
+          0.024
+        ],
+        "size": [
+          2.6195201,
+          3.2987995,
+          0
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          2.3100401,
+          1.7502998,
+          0.024
+        ],
+        "size": [
+          2.6195201,
+          3.2987995,
+          0
+        ]
+      }
+    },
+    {
+      "id": "floor_floor_southeast",
+      "type": "slab",
+      "name": "东南卧室木地板",
+      "sourceNodes": [
+        "floor_southeast"
+      ],
+      "roomIds": [
+        "southeast"
+      ],
+      "materials": [
+        "Oak_plank_00",
+        "Oak_plank_01",
+        "Oak_plank_02",
+        "Oak_plank_03",
+        "Oak_plank_04",
+        "Oak_plank_05"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.9901197,
+          10.45035,
+          0.024
+        ],
+        "size": [
+          2.8196797,
+          3.6988999,
+          0
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.9901197,
+          10.45035,
+          0.024
+        ],
+        "size": [
+          2.8196797,
+          3.6988999,
+          0
+        ]
+      }
+    },
+    {
+      "id": "floor_floor_southeast_entry",
+      "type": "slab",
+      "name": "东南卧室入口木地板",
+      "sourceNodes": [
+        "floor_southeast_entry"
+      ],
+      "roomIds": [
+        "southeast"
+      ],
+      "materials": [
+        "Oak_plank_00",
+        "Oak_plank_01",
+        "Oak_plank_02",
+        "Oak_plank_03",
+        "Oak_plank_04",
+        "Oak_plank_05"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.3001001,
+          8.1203698,
+          0.024
+        ],
+        "size": [
+          1.4396405,
+          0.97894,
+          0
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.3001001,
+          8.1203698,
+          0.024
+        ],
+        "size": [
+          1.4396405,
+          0.97894,
+          0
+        ]
+      }
+    },
+    {
+      "id": "floor_floor_xroom",
+      "type": "slab",
+      "name": "X 空间木地板",
+      "sourceNodes": [
+        "floor_xroom"
+      ],
+      "roomIds": [
+        "xroom"
+      ],
+      "materials": [
+        "Oak_plank_00",
+        "Oak_plank_01",
+        "Oak_plank_02",
+        "Oak_plank_03",
+        "Oak_plank_04",
+        "Oak_plank_05"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          5.1000202,
+          1.7502998,
+          0.024
+        ],
+        "size": [
+          2.6394801,
+          3.2987995,
+          0
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          5.1000202,
+          1.7502998,
+          0.024
+        ],
+        "size": [
+          2.6394801,
+          3.2987995,
+          0
+        ]
+      }
+    },
+    {
+      "id": "wall_basin_east",
+      "type": "wall",
+      "name": "外置洗手台东墙",
+      "sourceNodes": [
+        "skirting_basin_east_0",
+        "wall_basin_east_0_0_lower",
+        "wall_basin_east_0_0_upper"
+      ],
+      "roomIds": [
+        "commonbath",
+        "circulation"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          3.5,
+          5.1,
+          1.4
+        ],
+        "size": [
+          0.1360002,
+          0.7999997,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          3.5,
+          5.1,
+          1.4
+        ],
+        "size": [
+          0.1360002,
+          0.7999997,
+          2.8
+        ]
+      },
+      "wallId": "basin_east"
+    },
+    {
+      "id": "wall_closet_north",
+      "type": "wall",
+      "name": "玄关库北墙",
+      "sourceNodes": [
+        "skirting_closet_north_0",
+        "skirting_closet_north_2",
+        "wall_closet_north_0_0_lower",
+        "wall_closet_north_0_0_upper",
+        "wall_closet_north_1_1_upper",
+        "wall_closet_north_2_0_lower",
+        "wall_closet_north_2_0_upper"
+      ],
+      "roomIds": [
+        "storage",
+        "circulation"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.3000002,
+          6.3000001,
+          1.4
+        ],
+        "size": [
+          1.6000004,
+          0.1759996,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.3000002,
+          6.3000001,
+          1.4
+        ],
+        "size": [
+          1.6000004,
+          0.1759996,
+          2.8
+        ]
+      },
+      "wallId": "closet_north"
+    },
+    {
+      "id": "wall_closet_south",
+      "type": "wall",
+      "name": "玄关库南墙",
+      "sourceNodes": [
+        "skirting_closet_south_0",
+        "wall_closet_south_0_0_lower",
+        "wall_closet_south_0_0_upper"
+      ],
+      "roomIds": [
+        "southeast",
+        "storage"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.3000002,
+          7.5500001,
+          1.4
+        ],
+        "size": [
+          1.6000004,
+          0.1759996,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.3000002,
+          7.5500001,
+          1.4
+        ],
+        "size": [
+          1.6000004,
+          0.1759996,
+          2.8
+        ]
+      },
+      "wallId": "closet_south"
+    },
+    {
+      "id": "wall_common_bath_east",
+      "type": "wall",
+      "name": "次卫东侧隔墙",
+      "sourceNodes": [
+        "skirting_common_bath_east_0",
+        "skirting_common_bath_east_2",
+        "wall_common_bath_east_0_0_lower",
+        "wall_common_bath_east_0_0_upper",
+        "wall_common_bath_east_1_1_upper",
+        "wall_common_bath_east_2_0_lower",
+        "wall_common_bath_east_2_0_upper"
+      ],
+      "roomIds": [
+        "northwest",
+        "commonbath"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          2.4000001,
+          4.4500002,
+          1.4
+        ],
+        "size": [
+          0.1360002,
+          2.1000004,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          2.4000001,
+          4.4500002,
+          1.4
+        ],
+        "size": [
+          0.1360002,
+          2.1000004,
+          2.8
+        ]
+      },
+      "wallId": "common_bath_east"
+    },
+    {
+      "id": "wall_common_bath_south",
+      "type": "wall",
+      "name": "次卫南墙",
+      "sourceNodes": [
+        "skirting_common_bath_south_0",
+        "wall_common_bath_south_0_0_lower",
+        "wall_common_bath_south_0_0_upper"
+      ],
+      "roomIds": [
+        "masterbath",
+        "commonbath"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          2.2,
+          5.4999999,
+          1.4
+        ],
+        "size": [
+          2.5999999,
+          0.1759996,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          2.2,
+          5.4999999,
+          1.4
+        ],
+        "size": [
+          2.5999999,
+          0.1759996,
+          2.8
+        ]
+      },
+      "wallId": "common_bath_south"
+    },
+    {
+      "id": "wall_east_elevator",
+      "type": "wall",
+      "name": "东侧凹位外墙",
+      "sourceNodes": [
+        "skirting_east_elevator_0",
+        "wall_east_elevator_0_0_lower",
+        "wall_east_elevator_0_0_upper"
+      ],
+      "roomIds": [
+        "storage"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          9.1000004,
+          7.4500002,
+          1.4
+        ],
+        "size": [
+          0.2159996,
+          2.3000002,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          9.1000004,
+          7.4500002,
+          1.4
+        ],
+        "size": [
+          0.2159996,
+          2.3000002,
+          2.8
+        ]
+      },
+      "wallId": "east_elevator"
+    },
+    {
+      "id": "wall_east_north",
+      "type": "wall",
+      "name": "东侧外墙",
+      "sourceNodes": [
+        "skirting_east_north_0",
+        "skirting_east_north_2",
+        "wall_east_north_0_0_lower",
+        "wall_east_north_0_0_upper",
+        "wall_east_north_1_1_upper",
+        "wall_east_north_2_0_lower",
+        "wall_east_north_2_0_upper"
+      ],
+      "roomIds": [
+        "kitchen",
+        "circulation"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          9.1000004,
+          3.1500002,
+          1.4
+        ],
+        "size": [
+          0.2159996,
+          6.2999997,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          9.1000004,
+          3.1500002,
+          1.4
+        ],
+        "size": [
+          0.2159996,
+          6.2999997,
+          2.8
+        ]
+      },
+      "wallId": "east_north"
+    },
+    {
+      "id": "wall_east_notch",
+      "type": "wall",
+      "name": "东南外轮廓折墙",
+      "sourceNodes": [
+        "skirting_east_notch_0",
+        "wall_east_notch_0_0_lower",
+        "wall_east_notch_0_0_upper"
+      ],
+      "roomIds": [
+        "southeast"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          9.8000002,
+          8.5999998,
+          1.4
+        ],
+        "size": [
+          1.3999996,
+          0.2159996,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          9.8000002,
+          8.5999998,
+          1.4
+        ],
+        "size": [
+          1.3999996,
+          0.2159996,
+          2.8
+        ]
+      },
+      "wallId": "east_notch"
+    },
+    {
+      "id": "wall_east_south",
+      "type": "wall",
+      "name": "东南卧室东墙",
+      "sourceNodes": [
+        "skirting_east_south_0",
+        "wall_east_south_0_0_lower",
+        "wall_east_south_0_0_upper"
+      ],
+      "roomIds": [
+        "southeast"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          10.5,
+          10.7499999,
+          1.4
+        ],
+        "size": [
+          0.2159996,
+          4.3000002,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          10.5,
+          10.7499999,
+          1.4
+        ],
+        "size": [
+          0.2159996,
+          4.3000002,
+          2.8
+        ]
+      },
+      "wallId": "east_south"
+    },
+    {
+      "id": "wall_kitchen_east_return",
+      "type": "wall",
+      "name": "厨房东侧门垛",
+      "sourceNodes": [
+        "skirting_kitchen_east_return_0",
+        "wall_kitchen_east_return_0_0_lower",
+        "wall_kitchen_east_return_0_0_upper"
+      ],
+      "roomIds": [
+        "kitchen",
+        "utility"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.6999998,
+          3.4,
+          1.4
+        ],
+        "size": [
+          0.7999992,
+          0.1760006,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.6999998,
+          3.4,
+          1.4
+        ],
+        "size": [
+          0.7999992,
+          0.1760006,
+          2.8
+        ]
+      },
+      "wallId": "kitchen_east_return"
+    },
+    {
+      "id": "wall_kitchen_west_return",
+      "type": "wall",
+      "name": "厨房西侧门垛",
+      "sourceNodes": [
+        "skirting_kitchen_west_return_0",
+        "wall_kitchen_west_return_0_0_lower",
+        "wall_kitchen_west_return_0_0_upper"
+      ],
+      "roomIds": [
+        "kitchen",
+        "circulation"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          6.8499999,
+          3.4,
+          1.4
+        ],
+        "size": [
+          0.6999998,
+          0.1760006,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          6.8499999,
+          3.4,
+          1.4
+        ],
+        "size": [
+          0.6999998,
+          0.1760006,
+          2.8
+        ]
+      },
+      "wallId": "kitchen_west_return"
+    },
+    {
+      "id": "wall_living_se",
+      "type": "wall",
+      "name": "客厅东侧隔墙",
+      "sourceNodes": [
+        "skirting_living_se_0",
+        "skirting_living_se_2",
+        "wall_living_se_0_0_lower",
+        "wall_living_se_0_0_upper",
+        "wall_living_se_1_1_upper",
+        "wall_living_se_2_0_lower",
+        "wall_living_se_2_0_upper"
+      ],
+      "roomIds": [
+        "storage",
+        "circulation",
+        "living",
+        "southeast"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          7.5,
+          9.6,
+          1.4
+        ],
+        "size": [
+          0.1760006,
+          6.5999999,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          7.5,
+          9.6,
+          1.4
+        ],
+        "size": [
+          0.1760006,
+          6.5999999,
+          2.8
+        ]
+      },
+      "wallId": "living_se"
+    },
+    {
+      "id": "wall_master_living",
+      "type": "wall",
+      "name": "主卧与客厅隔墙",
+      "sourceNodes": [
+        "skirting_master_living_0",
+        "skirting_master_living_2",
+        "skirting_master_living_4",
+        "wall_master_living_0_0_lower",
+        "wall_master_living_0_0_upper",
+        "wall_master_living_1_1_upper",
+        "wall_master_living_2_0_lower",
+        "wall_master_living_2_0_upper",
+        "wall_master_living_3_1_upper",
+        "wall_master_living_4_0_lower",
+        "wall_master_living_4_0_upper"
+      ],
+      "roomIds": [
+        "circulation",
+        "living",
+        "master"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          3.5,
+          9.2000002,
+          1.4000001
+        ],
+        "size": [
+          0.1760001,
+          7.3999996,
+          2.8000002
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          3.5,
+          9.2000002,
+          1.4000001
+        ],
+        "size": [
+          0.1760001,
+          7.3999996,
+          2.8000002
+        ]
+      },
+      "wallId": "master_living"
+    },
+    {
+      "id": "wall_masterbath_east",
+      "type": "wall",
+      "name": "主卫东墙",
+      "sourceNodes": [
+        "skirting_masterbath_east_0",
+        "wall_masterbath_east_0_0_lower",
+        "wall_masterbath_east_0_0_upper"
+      ],
+      "roomIds": [
+        "masterbath",
+        "circulation"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          3,
+          6.4500002,
+          1.4
+        ],
+        "size": [
+          0.1760001,
+          1.8999996,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          3,
+          6.4500002,
+          1.4
+        ],
+        "size": [
+          0.1760001,
+          1.8999996,
+          2.8
+        ]
+      },
+      "wallId": "masterbath_east"
+    },
+    {
+      "id": "wall_masterbath_south",
+      "type": "wall",
+      "name": "主卫南墙",
+      "sourceNodes": [
+        "skirting_masterbath_south_0",
+        "skirting_masterbath_south_2",
+        "wall_masterbath_south_0_0_lower",
+        "wall_masterbath_south_0_0_upper",
+        "wall_masterbath_south_1_1_upper",
+        "wall_masterbath_south_2_0_lower",
+        "wall_masterbath_south_2_0_upper"
+      ],
+      "roomIds": [
+        "master",
+        "masterbath"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          1.75,
+          7.4,
+          1.4
+        ],
+        "size": [
+          3.5,
+          0.1759996,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          1.75,
+          7.4,
+          1.4
+        ],
+        "size": [
+          3.5,
+          0.1759996,
+          2.8
+        ]
+      },
+      "wallId": "masterbath_south"
+    },
+    {
+      "id": "wall_north",
+      "type": "wall",
+      "name": "北侧外墙",
+      "sourceNodes": [
+        "skirting_north_0",
+        "skirting_north_1",
+        "skirting_north_2",
+        "skirting_north_3",
+        "skirting_north_4",
+        "skirting_north_5",
+        "skirting_north_6",
+        "wall_north_0_0_lower",
+        "wall_north_0_0_upper",
+        "wall_north_1_0_lower",
+        "wall_north_1_1_upper",
+        "wall_north_2_0_lower",
+        "wall_north_2_0_upper",
+        "wall_north_3_0_lower",
+        "wall_north_3_1_upper",
+        "wall_north_4_0_lower",
+        "wall_north_4_0_upper",
+        "wall_north_5_0_lower",
+        "wall_north_5_1_upper",
+        "wall_north_6_0_lower",
+        "wall_north_6_0_upper"
+      ],
+      "roomIds": [
+        "northwest",
+        "xroom",
+        "kitchen"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          5.0000002,
+          4e-07,
+          1.4000001
+        ],
+        "size": [
+          8.2000003,
+          0.2159996,
+          2.8000002
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          5.0000002,
+          4e-07,
+          1.4000001
+        ],
+        "size": [
+          8.2000003,
+          0.2159996,
+          2.8000002
+        ]
+      },
+      "wallId": "north"
+    },
+    {
+      "id": "wall_northwest_south",
+      "type": "wall",
+      "name": "西北次卧南墙",
+      "sourceNodes": [
+        "skirting_northwest_south_0",
+        "skirting_northwest_south_2",
+        "wall_northwest_south_0_0_lower",
+        "wall_northwest_south_0_0_upper",
+        "wall_northwest_south_1_1_upper",
+        "wall_northwest_south_2_0_lower",
+        "wall_northwest_south_2_0_upper"
+      ],
+      "roomIds": [
+        "northwest",
+        "commonbath",
+        "circulation"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          2.3,
+          3.4,
+          1.4
+        ],
+        "size": [
+          2.8000001,
+          0.1760006,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          2.3,
+          3.4,
+          1.4
+        ],
+        "size": [
+          2.8000001,
+          0.1760006,
+          2.8
+        ]
+      },
+      "wallId": "northwest_south"
+    },
+    {
+      "id": "wall_northwest_x",
+      "type": "wall",
+      "name": "西北次卧与 X 空间隔墙",
+      "sourceNodes": [
+        "skirting_northwest_x_0",
+        "wall_northwest_x_0_0_lower",
+        "wall_northwest_x_0_0_upper"
+      ],
+      "roomIds": [
+        "northwest",
+        "xroom"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          3.7,
+          1.7000002,
+          1.4
+        ],
+        "size": [
+          0.1760001,
+          3.3999996,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          3.7,
+          1.7000002,
+          1.4
+        ],
+        "size": [
+          0.1760001,
+          3.3999996,
+          2.8
+        ]
+      },
+      "wallId": "northwest_x"
+    },
+    {
+      "id": "wall_south",
+      "type": "wall",
+      "name": "南侧外墙",
+      "sourceNodes": [
+        "skirting_south_0",
+        "skirting_south_1",
+        "skirting_south_2",
+        "skirting_south_4",
+        "skirting_south_5",
+        "skirting_south_6",
+        "wall_south_0_0_lower",
+        "wall_south_0_0_upper",
+        "wall_south_1_0_lower",
+        "wall_south_1_1_upper",
+        "wall_south_2_0_lower",
+        "wall_south_2_0_upper",
+        "wall_south_3_0_lower",
+        "wall_south_3_1_upper",
+        "wall_south_4_0_lower",
+        "wall_south_4_0_upper",
+        "wall_south_5_0_lower",
+        "wall_south_5_1_upper",
+        "wall_south_6_0_lower",
+        "wall_south_6_0_upper"
+      ],
+      "roomIds": [
+        "master",
+        "southeast",
+        "living"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          5.25,
+          12.9,
+          1.4
+        ],
+        "size": [
+          10.5,
+          0.216,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          5.25,
+          12.9,
+          1.4
+        ],
+        "size": [
+          10.5,
+          0.216,
+          2.8
+        ]
+      },
+      "wallId": "south"
+    },
+    {
+      "id": "wall_utility_south",
+      "type": "wall",
+      "name": "家政凹位南墙",
+      "sourceNodes": [
+        "skirting_utility_south_0",
+        "wall_utility_south_0_0_lower",
+        "wall_utility_south_0_0_upper"
+      ],
+      "roomIds": [
+        "circulation",
+        "utility"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.6999998,
+          4.8200001,
+          1.4
+        ],
+        "size": [
+          0.7999992,
+          0.1359997,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.6999998,
+          4.8200001,
+          1.4
+        ],
+        "size": [
+          0.7999992,
+          0.1359997,
+          2.8
+        ]
+      },
+      "wallId": "utility_south"
+    },
+    {
+      "id": "wall_utility_west",
+      "type": "wall",
+      "name": "家政凹位西墙",
+      "sourceNodes": [
+        "skirting_utility_west_0",
+        "skirting_utility_west_2",
+        "wall_utility_west_0_0_lower",
+        "wall_utility_west_0_0_upper",
+        "wall_utility_west_1_1_upper",
+        "wall_utility_west_2_0_lower",
+        "wall_utility_west_2_0_upper"
+      ],
+      "roomIds": [
+        "kitchen",
+        "circulation",
+        "utility"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          8.3000002,
+          4.11,
+          1.4
+        ],
+        "size": [
+          0.1359997,
+          1.4200001,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          8.3000002,
+          4.11,
+          1.4
+        ],
+        "size": [
+          0.1359997,
+          1.4200001,
+          2.8
+        ]
+      },
+      "wallId": "utility_west"
+    },
+    {
+      "id": "wall_west_north",
+      "type": "wall",
+      "name": "西北侧外墙",
+      "sourceNodes": [
+        "skirting_west_north_0",
+        "skirting_west_north_1",
+        "skirting_west_north_2",
+        "wall_west_north_0_0_lower",
+        "wall_west_north_0_0_upper",
+        "wall_west_north_1_0_lower",
+        "wall_west_north_1_1_upper",
+        "wall_west_north_2_0_lower",
+        "wall_west_north_2_0_upper"
+      ],
+      "roomIds": [
+        "northwest",
+        "commonbath",
+        "masterbath"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          0.9,
+          2.7499997,
+          1.4
+        ],
+        "size": [
+          0.2160003,
+          5.5000005,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          0.9,
+          2.7499997,
+          1.4
+        ],
+        "size": [
+          0.2160003,
+          5.5000005,
+          2.8
+        ]
+      },
+      "wallId": "west_north"
+    },
+    {
+      "id": "wall_west_south",
+      "type": "wall",
+      "name": "主卧西墙",
+      "sourceNodes": [
+        "skirting_west_south_0",
+        "wall_west_south_0_0_lower",
+        "wall_west_south_0_0_upper"
+      ],
+      "roomIds": [
+        "master"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          0,
+          9.2,
+          1.4
+        ],
+        "size": [
+          0.2160003,
+          7.4000001,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          0,
+          9.2,
+          1.4
+        ],
+        "size": [
+          0.2160003,
+          7.4000001,
+          2.8
+        ]
+      },
+      "wallId": "west_south"
+    },
+    {
+      "id": "wall_west_step",
+      "type": "wall",
+      "name": "西侧轮廓折墙",
+      "sourceNodes": [
+        "skirting_west_step_0",
+        "skirting_west_step_1",
+        "skirting_west_step_2",
+        "wall_west_step_0_0_lower",
+        "wall_west_step_0_0_upper",
+        "wall_west_step_1_0_lower",
+        "wall_west_step_1_0_upper",
+        "wall_west_step_1_1_upper",
+        "wall_west_step_2_0_lower",
+        "wall_west_step_2_0_upper"
+      ],
+      "roomIds": [
+        "masterbath",
+        "commonbath"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          0.45,
+          5.4999999,
+          1.4
+        ],
+        "size": [
+          0.9,
+          0.2159996,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          0.45,
+          5.4999999,
+          1.4
+        ],
+        "size": [
+          0.9,
+          0.2159996,
+          2.8
+        ]
+      },
+      "wallId": "west_step"
+    },
+    {
+      "id": "wall_x_kitchen",
+      "type": "wall",
+      "name": "X 空间与厨房隔墙",
+      "sourceNodes": [
+        "skirting_x_kitchen_0",
+        "wall_x_kitchen_0_0_lower",
+        "wall_x_kitchen_0_0_upper"
+      ],
+      "roomIds": [
+        "xroom",
+        "kitchen"
+      ],
+      "materials": [
+        "Thin_graphite_cut_edge",
+        "Warm_white_plaster"
+      ],
+      "basis": "图纸定位 / 照片估读，非现场实测",
+      "placement": {
+        "center": [
+          6.5,
+          1.7000002,
+          1.4
+        ],
+        "size": [
+          0.1760006,
+          3.3999996,
+          2.8
+        ]
+      },
+      "templatePlacement": {
+        "center": [
+          6.5,
+          1.7000002,
+          1.4
+        ],
+        "size": [
+          0.1760006,
+          3.3999996,
+          2.8
+        ]
+      },
+      "wallId": "x_kitchen"
+    },
+    {
+      "id": "living-sofa",
+      "type": "furniture",
+      "name": "灰橄榄皮三人沙发",
+      "sourceNodes": [
+        "Furniture_living_sofa"
+      ],
+      "roomIds": [
+        "living"
+      ],
+      "materials": [
+        "Furniture_olive_leather",
+        "Furniture_walnut",
+        "Furniture_stitch"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "living-sofa"
+    },
+    {
+      "id": "dining-work-table",
+      "type": "furniture",
+      "name": "餐饮学习办公多功能桌",
+      "sourceNodes": [
+        "Furniture_dining_work_table"
+      ],
+      "roomIds": [
+        "circulation",
+        "living"
+      ],
+      "materials": [
+        "Furniture_table_wood",
+        "Furniture_charcoal",
+        "Furniture_metal"
+      ],
+      "basis": "用户最新尺寸图：2800 × 900 × 750 mm，桌面 70 mm；结构按照片还原",
+      "furnitureId": "dining-work-table"
+    },
+    {
+      "id": "dining-bench",
+      "type": "furniture",
+      "name": "多功能桌西侧长条凳",
+      "sourceNodes": [
+        "Furniture_dining_bench"
+      ],
+      "roomIds": [
+        "circulation",
+        "living"
+      ],
+      "materials": [
+        "Furniture_walnut",
+        "Furniture_taupe_leather"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "dining-bench"
+    },
+    {
+      "id": "dining-chair-1",
+      "type": "furniture",
+      "name": "多功能桌东侧座椅 1",
+      "sourceNodes": [
+        "Furniture_dining_chair_1"
+      ],
+      "roomIds": [
+        "circulation",
+        "living"
+      ],
+      "materials": [
+        "Furniture_dark_wood",
+        "Furniture_taupe_leather"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "dining-chair-1"
+    },
+    {
+      "id": "dining-chair-2",
+      "type": "furniture",
+      "name": "多功能桌东侧座椅 2",
+      "sourceNodes": [
+        "Furniture_dining_chair_2"
+      ],
+      "roomIds": [
+        "circulation",
+        "living"
+      ],
+      "materials": [
+        "Furniture_dark_wood",
+        "Furniture_taupe_leather"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "dining-chair-2"
+    },
+    {
+      "id": "dining-chair-3",
+      "type": "furniture",
+      "name": "多功能桌东侧座椅 3",
+      "sourceNodes": [
+        "Furniture_dining_chair_3"
+      ],
+      "roomIds": [
+        "circulation",
+        "living"
+      ],
+      "materials": [
+        "Furniture_dark_wood",
+        "Furniture_taupe_leather"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "dining-chair-3"
+    },
+    {
+      "id": "living-modular-cabinet",
+      "type": "cabinet",
+      "name": "高低错落胡桃木模块柜",
+      "sourceNodes": [
+        "Furniture_living_modular_cabinet"
+      ],
+      "roomIds": [
+        "living"
+      ],
+      "materials": [
+        "Furniture_walnut",
+        "Furniture_dark_wood",
+        "Furniture_smoked_glass",
+        "Furniture_book"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "living-modular-cabinet"
+    },
+    {
+      "id": "living-reading-chair",
+      "type": "furniture",
+      "name": "窗边棕色阅读椅",
+      "sourceNodes": [
+        "Furniture_living_reading_chair"
+      ],
+      "roomIds": [
+        "living"
+      ],
+      "materials": [
+        "Furniture_cognac_leather",
+        "Furniture_walnut"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "living-reading-chair"
+    },
+    {
+      "id": "living-rug",
+      "type": "furniture",
+      "name": "客厅灰米色织物地毯",
+      "sourceNodes": [
+        "Furniture_living_rug"
+      ],
+      "roomIds": [
+        "living"
+      ],
+      "materials": [
+        "Furniture_rug",
+        "Furniture_rug_edge"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "living-rug"
+    },
+    {
+      "id": "dining-rug",
+      "type": "furniture",
+      "name": "多功能桌下织物地毯",
+      "sourceNodes": [
+        "Furniture_dining_rug"
+      ],
+      "roomIds": [
+        "circulation",
+        "living"
+      ],
+      "materials": [
+        "Furniture_rug",
+        "Furniture_rug_edge"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "dining-rug"
+    },
+    {
+      "id": "living-floor-lamp",
+      "type": "furniture",
+      "name": "黑色弧形花瓣罩落地灯",
+      "sourceNodes": [
+        "Furniture_living_floor_lamp"
+      ],
+      "roomIds": [
+        "living"
+      ],
+      "materials": [
+        "Furniture_charcoal",
+        "Furniture_lampshade",
+        "Furniture_brass"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "living-floor-lamp"
+    },
+    {
+      "id": "living-table-lamp",
+      "type": "furniture",
+      "name": "柜面花瓣罩台灯",
+      "sourceNodes": [
+        "Furniture_living_table_lamp"
+      ],
+      "roomIds": [
+        "living"
+      ],
+      "materials": [
+        "Furniture_brass",
+        "Furniture_lampshade"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "living-table-lamp"
+    },
+    {
+      "id": "living-art-panels",
+      "type": "furniture",
+      "name": "柜墙六幅竖向装饰画",
+      "sourceNodes": [
+        "Furniture_living_art_panels"
+      ],
+      "roomIds": [
+        "living"
+      ],
+      "materials": [
+        "Furniture_walnut",
+        "Furniture_art_atlas",
+        "Furniture_metal"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "living-art-panels"
+    },
+    {
+      "id": "living-wall-finish",
+      "type": "finish",
+      "name": "沙发背墙灰褐木饰面",
+      "sourceNodes": [
+        "Furniture_living_wall_finish",
+        "Furniture_living_wall_finish_upper"
+      ],
+      "roomIds": [
+        "living"
+      ],
+      "materials": [
+        "Furniture_wall_veneer",
+        "Furniture_charcoal"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "living-wall-finish"
+    },
+    {
+      "id": "table-desktop-items",
+      "type": "furniture",
+      "name": "桌面书本与学习办公用品",
+      "sourceNodes": [
+        "Furniture_table_desktop_items"
+      ],
+      "roomIds": [
+        "circulation",
+        "living"
+      ],
+      "materials": [
+        "Furniture_book",
+        "Furniture_paper",
+        "Furniture_charcoal"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "table-desktop-items"
+    },
+    {
+      "id": "living-cabinet-items",
+      "type": "furniture",
+      "name": "柜面书本与花器",
+      "sourceNodes": [
+        "Furniture_living_cabinet_items"
+      ],
+      "roomIds": [
+        "living"
+      ],
+      "materials": [
+        "Furniture_book",
+        "Furniture_ceramic",
+        "Furniture_leaf",
+        "Furniture_flower"
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "furnitureId": "living-cabinet-items"
+    }
+  ],
+  "materials": [
+    {
+      "id": "Black_appliance_glass",
+      "baseColor": [
+        0.014000000432133675,
+        0.01600000075995922,
+        0.017000000923871994,
+        1
+      ],
+      "roughness": 0.11999999731779099,
+      "metallic": 0.2800000011920929,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Brushed_steel",
+      "baseColor": [
+        0.47999998927116394,
+        0.5299999713897705,
+        0.5199999809265137,
+        1
+      ],
+      "roughness": 0.2800000011920929,
+      "metallic": 0.800000011920929,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Champagne_crystal_inlay",
+      "baseColor": [
+        0.7400000095367432,
+        0.699999988079071,
+        0.5899999737739563,
+        1
+      ],
+      "roughness": 0.25999999046325684,
+      "metallic": 0.1599999964237213,
+      "alpha": 1,
+      "emissionStrength": 1.25,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": "material-crystal-v04.png"
+    },
+    {
+      "id": "Charcoal_bath_privacy_glass",
+      "baseColor": [
+        0.07199999690055847,
+        0.0689999982714653,
+        0.06300000101327896,
+        1
+      ],
+      "roughness": 0.2800000011920929,
+      "metallic": 0.23999999463558197,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Clear_glass",
+      "baseColor": [
+        0.7900000214576721,
+        0.8600000143051147,
+        0.8799999952316284,
+        0.10000000149011612
+      ],
+      "roughness": 0.07999999821186066,
+      "metallic": 0,
+      "alpha": 0.10000000149011612,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Dark_stainless_sink",
+      "baseColor": [
+        0.10000000149011612,
+        0.11500000208616257,
+        0.11999999731779099,
+        1
+      ],
+      "roughness": 0.25999999046325684,
+      "metallic": 0.75,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Graphite_frame",
+      "baseColor": [
+        0.017999999225139618,
+        0.01899999938905239,
+        0.017999999225139618,
+        1
+      ],
+      "roughness": 0.30000001192092896,
+      "metallic": 0.30000001192092896,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Grey_flowing_marble_floor",
+      "baseColor": [
+        0.5099999904632568,
+        0.47999998927116394,
+        0.4399999976158142,
+        1
+      ],
+      "roughness": 0.25,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        0.8600000143051147,
+        0.8799999952316284,
+        0.8899999856948853,
+        1
+      ],
+      "texture": "material-stone-v03.png"
+    },
+    {
+      "id": "Grey_olive_niche_stone",
+      "baseColor": [
+        0.3100000023841858,
+        0.30000001192092896,
+        0.23999999463558197,
+        1
+      ],
+      "roughness": 0.3799999952316284,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        0.3199999928474426,
+        0.3100000023841858,
+        0.2549999952316284,
+        1
+      ],
+      "texture": "material-counter-v03.png"
+    },
+    {
+      "id": "Ivory_stone_counter",
+      "baseColor": [
+        0.8299999833106995,
+        0.800000011920929,
+        0.7099999785423279,
+        1
+      ],
+      "roughness": 0.30000001192092896,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": "material-counter-v03.png"
+    },
+    {
+      "id": "Kitchen_satin_stone",
+      "baseColor": [
+        0.75,
+        0.7200000286102295,
+        0.6600000262260437,
+        1
+      ],
+      "roughness": 0.47999998927116394,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        1.0299999713897705,
+        1.0199999809265137,
+        1,
+        1
+      ],
+      "texture": "material-stone.png"
+    },
+    {
+      "id": "Muted_taupe_hall_panels",
+      "baseColor": [
+        0.30000001192092896,
+        0.23000000417232513,
+        0.1850000023841858,
+        1
+      ],
+      "roughness": 0.46000000834465027,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        0.8700000047683716,
+        0.7900000214576721,
+        0.7300000190734863,
+        1
+      ],
+      "texture": "material-hallwood-v04.png"
+    },
+    {
+      "id": "Oak_plank_00",
+      "baseColor": [
+        0.6000000238418579,
+        0.5199999809265137,
+        0.4000000059604645,
+        1
+      ],
+      "roughness": 0.5400000214576721,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        0.6899999976158142,
+        0.6899999976158142,
+        0.6899999976158142,
+        1
+      ],
+      "texture": "material-oak.png"
+    },
+    {
+      "id": "Oak_plank_01",
+      "baseColor": [
+        0.6000000238418579,
+        0.5199999809265137,
+        0.4000000059604645,
+        1
+      ],
+      "roughness": 0.5400000214576721,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        0.7099999785423279,
+        0.7099999785423279,
+        0.7099999785423279,
+        1
+      ],
+      "texture": "material-oak.png"
+    },
+    {
+      "id": "Oak_plank_02",
+      "baseColor": [
+        0.6000000238418579,
+        0.5199999809265137,
+        0.4000000059604645,
+        1
+      ],
+      "roughness": 0.5400000214576721,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        0.7300000190734863,
+        0.7300000190734863,
+        0.7300000190734863,
+        1
+      ],
+      "texture": "material-oak.png"
+    },
+    {
+      "id": "Oak_plank_03",
+      "baseColor": [
+        0.6000000238418579,
+        0.5199999809265137,
+        0.4000000059604645,
+        1
+      ],
+      "roughness": 0.5400000214576721,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        0.75,
+        0.75,
+        0.75,
+        1
+      ],
+      "texture": "material-oak.png"
+    },
+    {
+      "id": "Oak_plank_04",
+      "baseColor": [
+        0.6000000238418579,
+        0.5199999809265137,
+        0.4000000059604645,
+        1
+      ],
+      "roughness": 0.5400000214576721,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        0.7699999809265137,
+        0.7699999809265137,
+        0.7699999809265137,
+        1
+      ],
+      "texture": "material-oak.png"
+    },
+    {
+      "id": "Oak_plank_05",
+      "baseColor": [
+        0.6000000238418579,
+        0.5199999809265137,
+        0.4000000059604645,
+        1
+      ],
+      "roughness": 0.5400000214576721,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        0.7900000214576721,
+        0.7900000214576721,
+        0.7900000214576721,
+        1
+      ],
+      "texture": "material-oak.png"
+    },
+    {
+      "id": "Pale_sage_marble_vanity",
+      "baseColor": [
+        0.5899999737739563,
+        0.6299999952316284,
+        0.49000000953674316,
+        1
+      ],
+      "roughness": 0.2800000011920929,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        0.6200000047683716,
+        0.6899999976158142,
+        0.6499999761581421,
+        1
+      ],
+      "texture": "material-counter-v03.png"
+    },
+    {
+      "id": "Pearl_ivory_refrigerator",
+      "baseColor": [
+        0.7900000214576721,
+        0.7699999809265137,
+        0.7099999785423279,
+        1
+      ],
+      "roughness": 0.2199999988079071,
+      "metallic": 0.2199999988079071,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Porcelain",
+      "baseColor": [
+        0.8999999761581421,
+        0.9100000262260437,
+        0.8700000047683716,
+        1
+      ],
+      "roughness": 0.23000000417232513,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Silver_mirror",
+      "baseColor": [
+        0.8399999737739563,
+        0.8700000047683716,
+        0.8500000238418579,
+        1
+      ],
+      "roughness": 0.03500000014901161,
+      "metallic": 1,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Smoked_ribbed_sliding_glass",
+      "baseColor": [
+        0.0430000014603138,
+        0.039000000804662704,
+        0.03400000184774399,
+        0.9300000071525574
+      ],
+      "roughness": 0.1899999976158142,
+      "metallic": 0.2800000011920929,
+      "alpha": 0.9300000071525574,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Subtle_glass_fluting",
+      "baseColor": [
+        0.035999998450279236,
+        0.032999999821186066,
+        0.029999999329447746,
+        1
+      ],
+      "roughness": 0.23999999463558197,
+      "metallic": 0.20000000298023224,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Taupe_wood_joinery",
+      "baseColor": [
+        0.3199999928474426,
+        0.25,
+        0.20000000298023224,
+        1
+      ],
+      "roughness": 0.41999998688697815,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": [
+        0.800000011920929,
+        0.7599999904632568,
+        0.7200000286102295,
+        1
+      ],
+      "texture": "material-veneer-v03.png"
+    },
+    {
+      "id": "Thin_graphite_cut_edge",
+      "baseColor": [
+        0.07500000298023224,
+        0.07199999690055847,
+        0.06599999964237213,
+        1
+      ],
+      "roughness": 0.550000011920929,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Warm_ivory_cabinet",
+      "baseColor": [
+        0.7200000286102295,
+        0.6600000262260437,
+        0.550000011920929,
+        1
+      ],
+      "roughness": 0.3199999928474426,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Warm_light",
+      "baseColor": [
+        0.949999988079071,
+        0.8299999833106995,
+        0.5699999928474426,
+        1
+      ],
+      "roughness": 0.4000000059604645,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 2.5,
+      "emissionColor": [
+        1,
+        0.7200000286102295,
+        0.3799999952316284,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Warm_white_ceiling",
+      "baseColor": [
+        0.8399999737739563,
+        0.7900000214576721,
+        0.7099999785423279,
+        1
+      ],
+      "roughness": 0.7799999713897705,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    },
+    {
+      "id": "Warm_white_plaster",
+      "baseColor": [
+        0.6700000166893005,
+        0.6100000143051147,
+        0.5299999713897705,
+        1
+      ],
+      "roughness": 0.7200000286102295,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tint": null,
+      "texture": null
+    }
+  ],
+  "annotations": [
+    {
+      "id": "note-trough",
+      "entityId": "master-vanity",
+      "content": "一体连续宽槽、两组墙出龙头。1.80 m 为照片估算尺度。"
+    },
+    {
+      "id": "note-fridge",
+      "entityId": "fridge",
+      "content": "双门冰箱使用内凹中央门缝，俯瞰时不再出现突出长杆。"
+    },
+    {
+      "id": "note-hall",
+      "entityId": "hall-joinery",
+      "content": "灰褐木饰面、灰绿石材与暖色灯带，保留相邻长墙素面。"
+    },
+    {
+      "id": "note-living-v02",
+      "entityId": "living-sofa",
+      "content": "已确认外观方案：沙发位于西侧、正对东侧高低模块柜；中央保留活动空间，无电视和茶几。"
+    },
+    {
+      "id": "note-table-r2",
+      "entityId": "dining-work-table",
+      "content": "依据用户尺寸图：长2.80、宽0.90、高0.75m，桌面厚0.07m；两端悬挑0.26m，0.60m收纳端、1.60m膝部空间、0.08m薄板支撑。开放六层托盘数量及五金为照片推断。"
+    },
+    {
+      "id": "note-living-cabinet",
+      "entityId": "living-modular-cabinet",
+      "content": "左端开放格+玻璃柜、中间三个低模块、右端两层玻璃柜；尺寸按照片估读，顶部不齐平。"
+    },
+    {
+      "id": "note-wall-v02",
+      "entityId": "living-wall-finish",
+      "content": "按已确认效果增添薄木饰面；原结构墙、主卧门洞和门扇保持原尺寸与位置。"
+    }
+  ],
+  "renderViews": [
+    {
+      "id": "hero",
+      "name": "全屋轴测",
+      "mode": "cutaway",
+      "camera": [
+        17,
+        26,
+        25
+      ],
+      "target": [
+        5.3,
+        6.3,
+        0.5
+      ],
+      "orthoScale": 21
+    },
+    {
+      "id": "reference",
+      "name": "当前模型俯瞰",
+      "mode": "cutaway",
+      "camera": [
+        5.5,
+        25,
+        30
+      ],
+      "target": [
+        5.3,
+        6.4,
+        0
+      ],
+      "orthoScale": 16,
+      "width": 1400,
+      "height": 1600
+    },
+    {
+      "id": "living",
+      "name": "客餐厅 v02 / 桌 r2",
+      "mode": "interior",
+      "camera": [
+        6.6,
+        3.97,
+        1.6
+      ],
+      "target": [
+        5.48,
+        9.5,
+        1.06
+      ],
+      "fov": 57
+    },
+    {
+      "id": "master",
+      "name": "主卧",
+      "mode": "interior",
+      "camera": [
+        3,
+        8.45,
+        1.58
+      ],
+      "target": [
+        1.3,
+        12.5,
+        1.3
+      ],
+      "fov": 72
+    },
+    {
+      "id": "kitchen",
+      "name": "厨房",
+      "mode": "interior",
+      "camera": [
+        7.63,
+        3.75,
+        1.58
+      ],
+      "target": [
+        7.85,
+        1,
+        1.3
+      ],
+      "fov": 72
+    },
+    {
+      "id": "masterbath",
+      "name": "主卫",
+      "mode": "interior",
+      "camera": [
+        1.79,
+        7.28,
+        1.33
+      ],
+      "target": [
+        1.9,
+        5.83,
+        1.18
+      ],
+      "fov": 90
+    },
+    {
+      "id": "cabinet",
+      "name": "高低模块柜墙",
+      "mode": "interior",
+      "camera": [
+        4.66,
+        10.4,
+        1.47
+      ],
+      "target": [
+        7.31,
+        10.53,
+        1.18
+      ],
+      "fov": 65
+    },
+    {
+      "id": "table",
+      "name": "多功能桌结构",
+      "mode": "interior",
+      "camera": [
+        6.88,
+        4.22,
+        1.22
+      ],
+      "target": [
+        5.53,
+        6.22,
+        0.54
+      ],
+      "fov": 62
+    }
+  ],
+  "revisions": [
+    {
+      "id": "doors-open-against-wall",
+      "date": "2026-09-15",
+      "basis": "用户标红原始户型图",
+      "entityIds": [
+        "door_northwest",
+        "door_master",
+        "door_southeast",
+        "door_entry"
+      ],
+      "changes": "西北门向北贴东墙；主卧及东南门改北端铰链，分别向西及向东打开；入户门向东外开。保留原门洞。东南门叶留 4 cm 合页偏移避让墙面。"
+    },
+    {
+      "id": "living-v02-furniture-table-r2",
+      "date": "2026-10-08",
+      "basis": "用户确认 v02，随后补充多功能桌照片和尺寸图",
+      "entityIds": [
+        "living-sofa",
+        "dining-work-table",
+        "dining-bench",
+        "dining-chair-1",
+        "dining-chair-2",
+        "dining-chair-3",
+        "living-modular-cabinet",
+        "living-reading-chair",
+        "living-rug",
+        "dining-rug",
+        "living-floor-lamp",
+        "living-table-lamp",
+        "living-art-panels",
+        "living-wall-finish",
+        "table-desktop-items",
+        "living-cabinet-items"
+      ],
+      "changes": "无电视无茶几；西侧沙发正对东侧错落柜墙；2.8m桌采用收纳端与薄板支撑端，单侧三椅和对侧长凳。建筑、门向及原精装构件保留。"
+    }
+  ],
+  "furnitureDecision": "docs/design/living-v02/selection.json",
+  "furnitureMaterials": [
+    {
+      "id": "Furniture_walnut",
+      "baseColor": [
+        0.2,
+        0.085,
+        0.04,
+        1
+      ],
+      "roughness": 0.36,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": "references/generated/living-furniture-20261008/walnut-albedo-r1.png"
+    },
+    {
+      "id": "Furniture_table_wood",
+      "baseColor": [
+        0.25,
+        0.1,
+        0.045,
+        1
+      ],
+      "roughness": 0.31,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": "references/generated/living-furniture-20261008/walnut-albedo-r1.png"
+    },
+    {
+      "id": "Furniture_olive_leather",
+      "baseColor": [
+        0.078,
+        0.084,
+        0.071,
+        1
+      ],
+      "roughness": 0.36,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null,
+      "grain": true
+    },
+    {
+      "id": "Furniture_taupe_leather",
+      "baseColor": [
+        0.16,
+        0.137,
+        0.109,
+        1
+      ],
+      "roughness": 0.4,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null,
+      "grain": true
+    },
+    {
+      "id": "Furniture_cognac_leather",
+      "baseColor": [
+        0.24,
+        0.096,
+        0.035,
+        1
+      ],
+      "roughness": 0.35,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null,
+      "grain": true
+    },
+    {
+      "id": "Furniture_dark_wood",
+      "baseColor": [
+        0.029,
+        0.022,
+        0.017,
+        1
+      ],
+      "roughness": 0.35,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_charcoal",
+      "baseColor": [
+        0.023,
+        0.023,
+        0.021,
+        1
+      ],
+      "roughness": 0.4,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_metal",
+      "baseColor": [
+        0.19,
+        0.2,
+        0.185,
+        1
+      ],
+      "roughness": 0.3,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_smoked_glass",
+      "baseColor": [
+        0.04,
+        0.036,
+        0.031,
+        1
+      ],
+      "roughness": 0.14,
+      "metallic": 0,
+      "alpha": 0.55,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_stitch",
+      "baseColor": [
+        0.065,
+        0.071,
+        0.055,
+        1
+      ],
+      "roughness": 0.58,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_rug",
+      "baseColor": [
+        0.47,
+        0.435,
+        0.37,
+        1
+      ],
+      "roughness": 0.92,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_rug_edge",
+      "baseColor": [
+        0.37,
+        0.34,
+        0.28,
+        1
+      ],
+      "roughness": 0.94,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_brass",
+      "baseColor": [
+        0.47,
+        0.285,
+        0.095,
+        1
+      ],
+      "roughness": 0.3,
+      "metallic": 0.72,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_lampshade",
+      "baseColor": [
+        0.94,
+        0.795,
+        0.53,
+        1
+      ],
+      "roughness": 0.67,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null,
+      "emission": 0.25
+    },
+    {
+      "id": "Furniture_book",
+      "baseColor": [
+        0.34,
+        0.287,
+        0.2,
+        1
+      ],
+      "roughness": 0.68,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_paper",
+      "baseColor": [
+        0.71,
+        0.68,
+        0.61,
+        1
+      ],
+      "roughness": 0.8,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_ceramic",
+      "baseColor": [
+        0.53,
+        0.53,
+        0.445,
+        1
+      ],
+      "roughness": 0.32,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_leaf",
+      "baseColor": [
+        0.048,
+        0.12,
+        0.023,
+        1
+      ],
+      "roughness": 0.71,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_art_atlas",
+      "baseColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "roughness": 0.7,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": "references/generated/living-furniture-20261008/independent/cabinet-wall-r1.png"
+    },
+    {
+      "id": "Furniture_wall_veneer",
+      "baseColor": [
+        0.45,
+        0.393,
+        0.313,
+        1
+      ],
+      "roughness": 0.6,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    },
+    {
+      "id": "Furniture_flower",
+      "baseColor": [
+        0.81,
+        0.59,
+        0.37,
+        1
+      ],
+      "roughness": 0.65,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": null
+    }
+  ],
+  "furnishings": [
+    {
+      "id": "living-sofa",
+      "recipe": "sofa",
+      "node": "Furniture_living_sofa",
+      "position": [
+        4.12,
+        10.4
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        2.4,
+        1.02,
+        1.04
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "dining-work-table",
+      "recipe": "table",
+      "node": "Furniture_dining_work_table",
+      "position": [
+        5.55,
+        6.0
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        2.8,
+        0.9,
+        0.75
+      ],
+      "basis": "用户最新尺寸图：2800 × 900 × 750 mm，桌面 70 mm；结构按照片还原",
+      "widthSign": 1,
+      "structure": {
+        "topThickness": 0.07,
+        "endOverhang": 0.26,
+        "storageLength": 0.6,
+        "storageDepth": 0.7,
+        "storageHeight": 0.68,
+        "openKneeSpan": 1.6,
+        "panelThickness": 0.08,
+        "panelDepth": 0.53,
+        "trayCount": 6
+      }
+    },
+    {
+      "id": "dining-bench",
+      "recipe": "bench",
+      "node": "Furniture_dining_bench",
+      "position": [
+        4.88,
+        5.76
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        2.12,
+        0.43,
+        0.455
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "dining-chair-1",
+      "recipe": "chair",
+      "node": "Furniture_dining_chair_1",
+      "position": [
+        6.42,
+        5.22
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.49,
+        0.54,
+        0.84
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "dining-chair-2",
+      "recipe": "chair",
+      "node": "Furniture_dining_chair_2",
+      "position": [
+        6.42,
+        5.75
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.49,
+        0.54,
+        0.84
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "dining-chair-3",
+      "recipe": "chair",
+      "node": "Furniture_dining_chair_3",
+      "position": [
+        6.42,
+        6.28
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.49,
+        0.54,
+        0.84
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "living-modular-cabinet",
+      "recipe": "cabinet",
+      "node": "Furniture_living_modular_cabinet",
+      "position": [
+        7.19,
+        10.62
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        3.8,
+        0.42,
+        1.28
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "moduleWidths": [
+        0.85,
+        0.68,
+        0.68,
+        0.68,
+        0.91
+      ]
+    },
+    {
+      "id": "living-reading-chair",
+      "recipe": "armchair",
+      "node": "Furniture_living_reading_chair",
+      "position": [
+        4.72,
+        12.13
+      ],
+      "front": [
+        0.65,
+        -0.76
+      ],
+      "dimensions": [
+        0.76,
+        0.73,
+        0.76
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "living-rug",
+      "recipe": "rug",
+      "node": "Furniture_living_rug",
+      "position": [
+        5.37,
+        10.56
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        3.66,
+        2.64,
+        0.008
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "dining-rug",
+      "recipe": "rug",
+      "node": "Furniture_dining_rug",
+      "position": [
+        5.61,
+        6.08
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        3.16,
+        2.38,
+        0.006
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "living-floor-lamp",
+      "recipe": "floor_lamp",
+      "node": "Furniture_living_floor_lamp",
+      "position": [
+        7.01,
+        8.72
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.78,
+        0.4,
+        1.76
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "living-table-lamp",
+      "recipe": "table_lamp",
+      "node": "Furniture_living_table_lamp",
+      "position": [
+        7.1,
+        11.42
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.3,
+        0.3,
+        0.76
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "baseHeight": 0.58
+    },
+    {
+      "id": "living-art-panels",
+      "recipe": "art_panels",
+      "node": "Furniture_living_art_panels",
+      "position": [
+        7.395,
+        10.41
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        2.96,
+        0.025,
+        0.84
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "panelWidth": 0.37,
+      "panelHeight": 0.67,
+      "centerHeight": 1.94,
+      "atlas": "references/generated/living-furniture-20261008/independent/cabinet-wall-r1.png",
+      "uvRanges": [
+        [
+          0.224,
+          0.297,
+          0.621,
+          0.886
+        ],
+        [
+          0.32,
+          0.392,
+          0.621,
+          0.886
+        ],
+        [
+          0.416,
+          0.488,
+          0.621,
+          0.886
+        ],
+        [
+          0.513,
+          0.584,
+          0.621,
+          0.886
+        ],
+        [
+          0.607,
+          0.679,
+          0.621,
+          0.886
+        ],
+        [
+          0.705,
+          0.777,
+          0.621,
+          0.886
+        ]
+      ]
+    },
+    {
+      "id": "living-wall-finish",
+      "recipe": "wall_finish",
+      "node": "Furniture_living_wall_finish",
+      "position": [
+        3.596,
+        10.63
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        4.12,
+        0.008,
+        1.15
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "bottom": 0,
+      "panels": 6,
+      "layer": "lower"
+    },
+    {
+      "id": "living-wall-finish-upper",
+      "recipe": "wall_finish",
+      "node": "Furniture_living_wall_finish_upper",
+      "position": [
+        3.596,
+        10.63
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        4.12,
+        0.008,
+        1.46
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "bottom": 1.15,
+      "panels": 6,
+      "layer": "upper"
+    },
+    {
+      "id": "table-desktop-items",
+      "recipe": "accessories",
+      "node": "Furniture_table_desktop_items",
+      "position": [
+        5.55,
+        5.95
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        0.9,
+        0.48,
+        0.24
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "variant": "desk",
+      "baseHeight": 0.75
+    },
+    {
+      "id": "living-cabinet-items",
+      "recipe": "accessories",
+      "node": "Furniture_living_cabinet_items",
+      "position": [
+        7.08,
+        9.14
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.5,
+        0.35,
+        0.35
+      ],
+      "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
+      "variant": "cabinet",
+      "baseHeight": 0.95
+    }
+  ]
+}

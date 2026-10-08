@@ -1,6 +1,7 @@
 import "./style.css";
 import { fetchResource, abortable } from "./resources.js";
 import { fetchModel } from "./model-resource.js";
+import { modelBundles, highDefinitionManifest } from "./model-bundles.js";
 import { decodeView, encodeView } from "./view-state.js";
 const $ = (selector) => document.querySelector(selector);
 const escape = (value) =>
@@ -28,7 +29,6 @@ let manifest,
   observer,
   saveTimer,
   messageTimer,
-  referenceId = "reference",
   lastProperties = "",
   restoring = false;
 const modelPlaceholder = $("#model-placeholder");
@@ -44,6 +44,11 @@ function notify(message, error = false) {
 function imageById(id) {
   return manifest.images.find((i) => i.id === id);
 }
+function referenceImages() {
+  return manifest.images.filter(
+    (image) => image.kind !== "模型渲染" && !image.kind.startsWith("历史"),
+  );
+}
 function showImage(image) {
   const el = $("#reference-image");
   el.dataset.retryUrl = url(image.path);
@@ -57,11 +62,13 @@ function showImage(image) {
       b.setAttribute("aria-pressed", String(b.dataset.reference === image.id)),
     );
 }
-async function openReference(id = "reference") {
+async function openReference(id) {
   await configPromise;
   if (!manifest) return;
-  referenceId = id;
-  showImage(imageById(id) ?? imageById("reference"));
+  const images = referenceImages();
+  const image = images.find((image) => image.id === id) ?? images[0];
+  if (!image) return;
+  showImage(image);
   if (!$("#reference-dialog").open) $("#reference-dialog").showModal();
 }
 const formatSize = (bytes) =>
@@ -78,14 +85,11 @@ function populate() {
   $("#assumptions").innerHTML = data.assumptions
     .map((s) => `<li>${escape(s)}</li>`)
     .join("");
-  $("#reference-tabs").innerHTML = manifest.images
-    .filter(
-      (i) => !["living", "master", "kitchen", "masterbath"].includes(i.id),
-    )
+  $("#reference-tabs").innerHTML = referenceImages()
     .map((i) => `<button data-reference="${i.id}">${escape(i.title)}</button>`)
     .join("");
   const descriptions = {
-    living: "公共空间以连续石纹地面相连，南侧整面玻璃引入自然光。",
+    living: "无电视客厅连接餐学办公长桌；沙发正对胡桃木柜墙，中央保留活动空间。",
     master: "人字拼橡木与温和墙面，保留空房的完整尺度。",
     kitchen: "西侧冰箱、北侧水槽、东侧烟机灶具，让 U 形动线清晰可见。",
     masterbath: "连续一体宽槽、双组墙出龙头与镜柜，细节对应实拍修订。",
@@ -94,7 +98,7 @@ function populate() {
     .map((id, i) => {
       const image = imageById(id),
         room = data.rooms.find((r) => r.id === id);
-      return `<article class="space-card"><a href="#explore" data-room-jump="${id}"><figure><img src="${url(image.path)}" width="1100" height="756" loading="lazy" decoding="async" alt="${escape(room.name)}的当前模型渲染"><span class="image-badge">模型渲染 · Cycles · v06</span></figure></a><header><h3>${escape(room.name)}</h3><small>0${i + 1} / ${room.area.toFixed(2)} m² · 模型估算</small></header><p>${descriptions[id]}</p><a class="text-link" href="#explore" data-room-jump="${id}">进入这个空间 ↗</a></article>`;
+      return `<article class="space-card"><a href="#explore" data-room-jump="${id}"><figure><img src="${url(image.path)}" width="1100" height="756" loading="lazy" decoding="async" alt="${escape(room.name)}的当前模型渲染"><span class="image-badge">模型渲染 · Cycles · ${escape(manifest.version)}</span></figure></a><header><h3>${escape(room.name)}</h3><small>0${i + 1} / ${room.area.toFixed(2)} m² · 模型估算</small></header><p>${descriptions[id]}</p><a class="text-link" href="#explore" data-room-jump="${id}">进入这个空间 ↗</a></article>`;
     })
     .join("");
   $("#material-cards").innerHTML = [
@@ -124,7 +128,8 @@ function populate() {
     .join("");
   const downloads = [
     [manifest.floorplan, "模型派生平面图", "SVG · 房间 / 门窗 / 尺寸 / 比例尺"],
-    [manifest.rawModel, "高清原始模型", "GLB · 原始纹理 · 按需下载"],
+    [manifest.rawModel, manifest.additionalModels?.length ? "房屋高清模型" : "高清原始模型", "GLB · 原始纹理 · 按需下载"],
+    ...(manifest.additionalModels ?? []).map(p => [p.rawModel, p.id === "living-sofa" ? "沙发高清模型" : `${p.id} 高清模型`, "GLB · 与房屋包共同组成完整场景 · 原始纹理"]),
     [manifest.spec, "可编辑建筑规格", "JSON · 尺寸、构件、材质与机位"],
     [
       manifest.architecture,
@@ -234,23 +239,26 @@ async function schedulePreload() {
 }
 
 function prepareModel(modelManifest) {
-  const asset = manifest.assets.find((a) => a.path === modelManifest.model);
-  const key = `${modelManifest.model}:${asset?.sha256}`;
+  const bundles = modelBundles(modelManifest);
+  const key = bundles.map(p => `${p.path}:${p.asset.sha256}`).join("|");
   if (preparation?.key === key) return preparation;
   preparation?.controller.abort();
   const task = { key, controller: new AbortController(), progress: null, onProgress: null };
   const signal = task.controller.signal;
+  const downloaded = bundles.map(() => 0);
+  const totalBytes = bundles.reduce((n,p) => n+p.asset.bytes, 0);
   preparation = task;
   task.promise = Promise.all([
     import("./viewer.js"),
     fetchResource(url(modelManifest.navigation), { signal }),
-    fetchModel(url(modelManifest.model), asset, {
+    Promise.all(bundles.map(({path, asset}, index) => fetchModel(url(path), asset, {
       signal,
-      onProgress: (loaded, total) => {
-        task.progress = [loaded, total];
-        task.onProgress?.(loaded, total);
+      onProgress: (loaded) => {
+        downloaded[index] = loaded;
+        task.progress = [downloaded.reduce((a,b)=>a+b,0), totalBytes];
+        task.onProgress?.(...task.progress);
       },
-    }),
+    }).then(bytes => ({path, bytes})))),
   ]).catch((error) => {
     task.controller.abort();
     if (preparation === task) preparation = null;
@@ -362,6 +370,29 @@ function sync(state) {
       Thin_graphite_cut_edge: "深灰收边",
       Warm_ivory_cabinet: "暖白柜体",
       Warm_light: "暖色灯带",
+      Furniture_walnut: "胡桃木",
+      Furniture_table_wood: "红褐胡桃木桌面",
+      Furniture_olive_leather: "灰橄榄皮革",
+      Furniture_taupe_leather: "灰褐皮革",
+      Furniture_cognac_leather: "棕色皮革",
+      Furniture_dark_wood: "深色木框",
+      Furniture_charcoal: "炭灰木板",
+      Furniture_smoked_glass: "烟灰玻璃",
+      Furniture_art_atlas: "艺术画布",
+      Window_clear_glass: "窗户透射玻璃",
+      Tripo_sofa_original_PBR: "沙发原始皮面与木框",
+      Furniture_rug: "灰米色织物",
+      Furniture_rug_edge: "织物收边",
+      Furniture_brass: "黄铜灯架",
+      Furniture_lampshade: "暖白花瓣灯罩",
+      Furniture_stitch: "皮革缝线",
+      Furniture_metal: "金属五金",
+      Furniture_book: "书本纸张",
+      Furniture_paper: "纸张",
+      Furniture_ceramic: "陶瓷花器",
+      Furniture_leaf: "绿植",
+      Furniture_flower: "柜面花饰",
+      Furniture_wall_veneer: "灰褐木饰面",
     };
     const materialNames = entity
       ? [
@@ -426,7 +457,7 @@ async function loadModel({ force = false, hd = false } = {}) {
       await configPromise;
       signal.throwIfAborted();
       if (!manifest || !data) throw Error("项目资料未就绪，请先重试资料加载。");
-      const modelManifest = hd ? { ...manifest, model: manifest.rawModel } : manifest;
+      const modelManifest = hd ? highDefinitionManifest(manifest) : manifest;
       const progress = (loaded, total) => {
         if (operation !== sequence || signal.aborted) return;
         $("#loading-text").textContent = loaded === total && total

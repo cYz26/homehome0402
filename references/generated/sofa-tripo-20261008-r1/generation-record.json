@@ -1,0 +1,157 @@
+{
+  "directory": "/Users/cY/dev/homehome402/references/generated/sofa-tripo-20261008-r1",
+  "source": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-04c00fd5-0d5c-4686-86d2-420a70230109.png",
+  "views": [
+    {
+      "view": "front",
+      "filename": "01-front.png",
+      "path": "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-45b3d7ce-6ff8-4217-8ac4-d6eca126ef46.png",
+      "prompt": "Use case: product-mockup.\nAsset type: independent FRONT elevation of the real photographed sofa, for a Tripo multiview set.\nInput image 1 is the authoritative REAL product photo. Input image 2 is the faithful isolated three-quarter view of that product, used for background/lighting and to see the revealed bare sofa. Preserve the actual sofa in these images.\nPrimary request: rotate the camera ONLY to a centered straight-on FRONT view of this exact sofa. Photorealistic true orthographic front elevation, level horizontal camera, no three-quarter perspective or overhead tilt.\nProduct identity locked: three separate wide deep seat cushions with softly rounded downturned fronts, three substantial backward-reclined back cushions, dark smoky gray-olive leather with understated natural creases and fine seams. Keep muted gray-green undertone; avoid light silver leather or black. Broad soft padded arms lean inwards above walnut side panels. All leather thickness and padding proportions follow the real photo.\nHeadrests: exactly three SHALLOW elongated padded rectangles. Match the photographed settings: above the viewer's LEFT seat the headrest is folded low/back into a nearly horizontal position, visible as a slim low padded strip at the top; the CENTER and viewer's RIGHT headrests are raised and slightly leaned back, equal modest height. Do not raise the left headrest, thicken the pads into bulky blocks, or invent additional headrests.\nWoodwork: deep reddish dark walnut, subtle quiet grain, thin front underframe mostly tucked under the seat cushions. At BOTH front outer corners, a slender rounded nearly VERTICAL walnut support post runs from the outer arm-side frame to the floor, as seen at the near corner of input 2. These are straight round-ended upright posts, NOT matching diagonal splayed legs. Preserve one short dark central support below the center/front underside. No thick prominent continuous wood apron.\nComposition: square canvas, one sofa fully visible and centered, approx 88 percent canvas width, preserve every headrest/arm/foot with margin. Uniform very light neutral gray studio backdrop matching input 2, neutral diffuse light, small soft grounding shadow, crisp detailed leather and restrained wood grain.\nConstraints: one sofa only. No scene, no throw pillows, no price tags, no logos, no text, no collage, no extra furniture. Preserve the real product and headrest settings. Generate the FRONT view only.",
+      "references": [
+        "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-04c00fd5-0d5c-4686-86d2-420a70230109.png",
+        "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-2be79747-722d-4d31-b800-ee23f1cceaf5.png"
+      ],
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "metadata_removed": [
+        "caBX"
+      ],
+      "decoded_pixels_preserved": true,
+      "saved_path": "/Users/cY/dev/homehome402/references/generated/sofa-tripo-20261008-r1/01-front.png",
+      "sha256": "fdd3a502af76dab3acdc5f0550687998d5e0515aa0557e947e985daa2330aa3f",
+      "original_sha256": "b193017a5914a81efb5d592191cac70a7cc74a6e1ec445c3babd59f8101eda0d",
+      "visual_review": "single sofa, headrest pose, upright front posts, palette, no price tags or scene inspected"
+    },
+    {
+      "view": "left",
+      "filename": "02-left.png",
+      "path": "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-c49a5a86-edb9-4b5a-9717-a93dcb21c29e.png",
+      "prompt": "Use case: product-mockup.\nAsset type: ONE independent LEFT side elevation of the actual photographed sofa, for a consistent Tripo reference set.\nInput image 1: authoritative real product photograph.\nInput image 2: isolated three-quarter view of that product (same near side).\nInput image 3: exact matching isolated FRONT view, used to lock headrest settings, leather colors and slender upright front posts.\nPrimary request: show the same physical sofa in a TRUE LEVEL LEFT SIDE ORTHOGRAPHIC elevation. This is the sofa's own LEFT side, the near walnut side seen in image 1/2. In this output the FRONT points LEFT, BACK points RIGHT. Camera optical axis is horizontal, exactly perpendicular to the walnut side panel. No three-quarter angle, no overhead view, no visible front or back face, no perspective convergence.\nIdentity: dark smoky gray leather with muted gray-olive tone, subdued satin highlights and natural modest creases. The broad long padded arm is directly above a flat broad deep reddish dark walnut side panel with quiet grain. Panel has almost square corners with a subtle small radius. At its FRONT/LEFT edge is the slender rounded nearly VERTICAL walnut corner post, continuing from arm-side height down to floor; it is not a diagonally splayed leg. At the rear/RIGHT edge a short tapered slightly inclined dark walnut foot emerges beneath the panel. Slim dark underframe, no added furniture details.\nCritical upholstery projection: one near armrest, not a far second arm. One raised shallow rectangular near headrest in side profile, slightly tilted back, resting above a thick backward-leaning back cushion side profile. The near headrest is the raised headrest above the rightmost seat in the front reference. Because this is an exact side elevation, other identical cushions behind it are occluded. Keep the far seat's lowered headrest state, but it should be mostly occluded; do NOT raise it or create a second tall headrest silhouette. The panel and arm proportions, recline and seat-front curved edge must match the real photograph, not a generic sofa.\nComposition: square image, one whole sofa centered, full headrest, front upright post and rear short foot visible with clean margins. Plain very light neutral gray seamless background, broad diffuse neutral studio light identical to image 2/3, only faint soft grounding shadow.\nConstraints: same product, same headrest poses, same subdued dark walnut grain. No room, no tags, no pillow, no text, no dimensions, no watermark, no extra objects or multiple views. LEFT orthographic view only, FRONT pointing LEFT.",
+      "references": [
+        "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-04c00fd5-0d5c-4686-86d2-420a70230109.png",
+        "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-2be79747-722d-4d31-b800-ee23f1cceaf5.png",
+        "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-45b3d7ce-6ff8-4217-8ac4-d6eca126ef46.png"
+      ],
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "metadata_removed": [
+        "caBX"
+      ],
+      "decoded_pixels_preserved": true,
+      "saved_path": "/Users/cY/dev/homehome402/references/generated/sofa-tripo-20261008-r1/02-left.png",
+      "sha256": "b22c6eff2efce8b16e86be4bceec65152c21453f624d2fd979431d815e51266b",
+      "original_sha256": "4080b28ec8996ca3f5e8c8bc93b6ac2d92f635145ce838b70a2cb961f8dae42e",
+      "visual_review": "single sofa, headrest pose, upright front posts, palette, no price tags or scene inspected"
+    },
+    {
+      "view": "back",
+      "filename": "03-back-inferred.png",
+      "path": "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-623a1a11-afd1-4a1e-927c-c9f25464faae.png",
+      "prompt": "Use case: product-mockup.\nAsset type: ONE independent BACK elevation, inferred conservatively from the real product's visible construction, for a Tripo multiview sofa reference set.\nImage 1 is the authoritative real sofa photograph, Image 2 is its isolated three-quarter view, Image 3 is the matching front elevation, Image 4 is the matching left elevation. They all depict the SAME sofa. Derive a plausible simple rear continuation of the exact visible construction; do not add new decoration or mechanisms.\nPrimary request: move the camera to a straight-on BACK view of that exact sofa, level true orthographic rear elevation, fully centered, no perspective yaw or top view. This image must show the REAR of a sofa, NOT another front view: no seat cushions or seating surfaces visible.\nLocked identity: same wide three-seat proportions, dark smoky gray-olive leather, restrained satin highlights and natural fine creases; subdued deep reddish dark walnut lower framework, short modest floor clearance. Both arms retain their rounded padded contours above the side boards. The wooden lower rear is a simple continuous flat walnut panel connecting the two outer walnut side frames, matching their height, thickness and understated grain. Above it is the upholstered rear back structure corresponding to the three back sections, simply padded, no button tufting or added ornamental trim.\nHeadrest orientation matters: because this is the REAR view, the front image's left/right order reverses. Thus the headrest at the viewer's RIGHT is the low nearly-horizontal folded headrest; the CENTER and viewer's LEFT headrests are raised shallow elongated rectangular pads, tilted modestly backwards. Keep thin realistic padding, not three thick pillows. Show the rear faces of the pads, not their front seating faces. No invented exposed metal hinges, switches, handles or outlets.\nVisible feet: two short slightly tapered/splayed rear corner walnut feet emerging beneath the rear board. The same short center underframe support may be visible in the floor gap. Do not use the long front-side upright posts as tall rear legs or invent extra support rows.\nComposition: square canvas, one complete sofa centered, about 88 percent canvas width, margin on all sides, all headrests and feet uncut. Very light neutral-gray seamless studio backdrop, broad neutral diffuse lighting identical to the front/side references, faint soft grounding shadow, crisp wood/leather detail.\nConstraints: ONE rear view of ONE sofa; no room, no pillows, no tags, no text, no collage, no watermark or other furniture. Maintain the same product and asymmetric photographed headrest states.",
+      "references": [
+        "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-04c00fd5-0d5c-4686-86d2-420a70230109.png",
+        "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-2be79747-722d-4d31-b800-ee23f1cceaf5.png",
+        "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-45b3d7ce-6ff8-4217-8ac4-d6eca126ef46.png",
+        "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-c49a5a86-edb9-4b5a-9717-a93dcb21c29e.png"
+      ],
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "metadata_removed": [
+        "caBX"
+      ],
+      "decoded_pixels_preserved": true,
+      "saved_path": "/Users/cY/dev/homehome402/references/generated/sofa-tripo-20261008-r1/03-back-inferred.png",
+      "sha256": "086575f73cce319d5942e955d9b0f5dff99af92d09703ed467783322a002d8e5",
+      "original_sha256": "70fff0f50911819a45d68aa91c704a6f66b7d9953da9dcd276e4a77d8c90b2ec",
+      "visual_review": "single sofa, headrest pose, upright front posts, palette, no price tags or scene inspected"
+    },
+    {
+      "view": "right",
+      "filename": "04-right.png",
+      "path": "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-c9b0f941-7f0f-471e-9ebc-5c75b7c49b43.png",
+      "prompt": "Use case: product-mockup.\nAsset type: ONE individual RIGHT side elevation of the same real photographed sofa, completing a front/left/back/right Tripo reference set.\nImage 1 is the authoritative REAL sofa photograph. Image 2 is its isolated three-quarter view. Image 3 is the matching FRONT elevation locking headrest settings and product identity. Image 4 is the matching LEFT side elevation locking walnut panel and front/rear foot construction.\nPrimary request: show the same sofa from its opposite RIGHT side in a true level perpendicular orthographic side elevation. In this image the FRONT of the sofa points RIGHT, BACK points LEFT. Camera is exactly perpendicular to the side board, zero overhead angle, no perspective revealing the front or rear faces.\nPreserve dark smoky gray-olive leather, modest satin highlights, real soft creases and subtle piping. Same broad long padded arm above a flat quiet-grained deep reddish walnut side board, same gently rounded board edge. Slender ROUND near-VERTICAL walnut FRONT corner post now at the image RIGHT edge, continuing down to the floor. Short slightly tapered rear foot at the image LEFT edge, leaning subtly toward the rear. Slim underframe. Do not turn the front post into an angled short leg.\nHeadrest settings MUST match the actual photo and front reference; don't merely mirror the left image's headrest:\n- This right side's NEAREST seat is the LEFT seat in the front elevation, whose headrest is folded LOW/HORIZONTAL toward the back. Show its shallow horizontal pad above the reclined back cushion.\n- The center and opposite-left seats retain their RAISED shallow rectangular headrests. Their taller side profiles can be seen above and behind the near lowered pad in this view; where identical profiles align, they overlap into one raised silhouette.\nThus a low horizontal near pad and a higher raised far-pad profile are plausible here because the product has deliberately different headrest settings. Keep all of them attached to ONE continuous sofa, not separate chairs.\nOnly the near armrest should be visibly face-on, far arm is occluded in strict side elevation. A single visible side board. Preserve the real sofa's full depth, upholstery thickness and rearward recline.\nComposition: square single-product image, whole sofa centered, no clipped feet or headrests, plain very light neutral gray seamless backdrop matching all references. Broad diffuse neutral white light and faint soft floor-contact shadow. Crisp leather and wood detail, restrained grain.\nConstraints: one sofa, right side only, FRONT pointing RIGHT. No room, tags, throw pillow, text, arrows, dimensions, collage, logo, watermark or additional objects.",
+      "references": [
+        "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-04c00fd5-0d5c-4686-86d2-420a70230109.png",
+        "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-2be79747-722d-4d31-b800-ee23f1cceaf5.png",
+        "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-45b3d7ce-6ff8-4217-8ac4-d6eca126ef46.png",
+        "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-c49a5a86-edb9-4b5a-9717-a93dcb21c29e.png"
+      ],
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "metadata_removed": [
+        "caBX"
+      ],
+      "decoded_pixels_preserved": true,
+      "saved_path": "/Users/cY/dev/homehome402/references/generated/sofa-tripo-20261008-r1/04-right.png",
+      "sha256": "1000a3d62174a5634015c0e533e6bf16feaf1004e52ca01487879b623c4f4d46",
+      "original_sha256": "d4177cb4a8a5ff8fea70b3b53d7a87213e9f6e91378b554abb3413e58abdbf9a",
+      "visual_review": "single sofa, headrest pose, upright front posts, palette, no price tags or scene inspected"
+    },
+    {
+      "view": "three-quarter",
+      "filename": "05-three-quarter.png",
+      "path": "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-2be79747-722d-4d31-b800-ee23f1cceaf5.png",
+      "prompt": "Use case: precise-object-edit.\nAsset type: faithful isolated single-product reference for generating a 3D sofa.\nInput image 1 is the SOLE authoritative real photograph. It is an edit target, not a style suggestion.\nPrimary request: Extract ONLY the actual sofa from this real photo and show it alone on a plain seamless very light neutral gray background. Preserve the original elevated three-quarter camera angle, exact silhouette, seat proportions, leather shapes, wood side board, wood support posts and the photographed headrest positions. Do not redesign, stylize or replace it with a generic sofa.\nProduct invariants:\n- Exactly three distinct deep, wide, substantial seat cushions and three large sloping back cushions. Smoky DARK gray leather with a muted gray-olive cast; smooth gently lustrous real leather with the original subtle stretched creases. Avoid bright silver-gray leather, added decorative seams, heavy tufting or exaggerated wrinkles.\n- The headrests are shallow elongated upholstered rectangles, not tall blocky pillows. Preserve their photographed settings: the headrest above the image-left seat is folded low/horizontal toward the back; the center and image-right headrests are raised and slightly tilted. Do not equalize all three.\n- Each arm has a long padded roll-like cushion leaning inward over the wood side. Preserve the near-side arm's slope, piped edge and softness.\n- Near outer side board is dark reddish-brown walnut with quiet natural grain, not orange wood or wildly contrasting zebra grain. A flat broad rectangular walnut side board, its front end has a slender ROUND nearly VERTICAL wood corner support post extending down to the floor. The short rear foot is slightly tapered/splayed. Do not convert both feet into matching outward-splayed legs. Preserve the front post's long vertical silhouette.\n- Front seat bottoms curve down softly; a very thin dark wood underframe is mostly concealed below them. Do not add a conspicuous thick continuous walnut apron across the front.\nEditing: remove all store background, bed, wardrobe, plants, dining table, chairs, price tags, hanging labels and beige loose throw pillow. The pillow is a separate accessory, not part of the sofa. Inpaint only the small sofa patches these objects occluded, using the visible neighboring upholstery. Keep every unobstructed sofa region faithful to the real photo, including its darker near arm and side board.\nLighting: broad diffuse neutral studio light, preserve leather and walnut hues of the real photo, restrained satin highlights, no warm orange cast. Faint soft floor contact shadow only.\nComposition: square canvas, ONE sofa fully visible and centered, comfortably fills the width with 6-10 percent margin, no clipping of legs or arm edges. No text, no dimensions, no logos, no watermark, no other objects. This is the same actual sofa photographed in the reference, isolated rather than newly designed.",
+      "references": [
+        "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-04c00fd5-0d5c-4686-86d2-420a70230109.png"
+      ],
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "metadata_removed": [
+        "caBX"
+      ],
+      "decoded_pixels_preserved": true,
+      "saved_path": "/Users/cY/dev/homehome402/references/generated/sofa-tripo-20261008-r1/05-three-quarter.png",
+      "sha256": "aa76950d9945869a7bfd973570025d023c41ff302f79a9086943e4eaf5e8c627",
+      "original_sha256": "8f24520130a8f85f7d24411a764242e0f88506689216877f03c30392a08792bc",
+      "visual_review": "single sofa, headrest pose, upright front posts, palette, no price tags or scene inspected"
+    }
+  ],
+  "discarded_candidates": [
+    "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-b6895f6f-0494-469b-84ea-ef3af5f205a1.png",
+    "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-4358b60a-c0d1-42e6-b498-42d72d4a386c.png",
+    "/Users/cY/.codex/generated_images/01a11ae4-3232-7f11-b0cc-393073238d77/exec-12aa6d69-3afc-4470-b802-03cd43c30097.png"
+  ],
+  "generated_with": "built-in image_gen",
+  "scope": "side-conversation sofa reference images only",
+  "original_output_policy": "Original image_gen output files preserved",
+  "status": "generated_visuals_reviewed_by_assistant; user_visual_confirmation_pending; no_tripo_model_generated",
+  "limitations": [
+    "All outputs are AI-derived references, not measurements or photographs of an actual alternate view.",
+    "Rear panel and rear upholstery construction are inferred without a real back-view photo.",
+    "Side projections are approximate; the headrest settings differ physically across seats.",
+    "No building source, 3D scene, website, release manifest, Git commit or remote publication modified."
+  ],
+  "source_record": {
+    "original_path": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-04c00fd5-0d5c-4686-86d2-420a70230109.png",
+    "original_sha256": "c76647caba328d50d883649e36c4b9fe46b412cc2e1687302f3db44bf19505e9",
+    "saved_path": "/Users/cY/dev/homehome402/references/generated/sofa-tripo-20261008-r1/inputs/source-photo.png",
+    "dimensions": [
+      4096,
+      3072
+    ],
+    "mode": "RGBA",
+    "metadata_removed": [
+      "eXIf"
+    ],
+    "decoded_pixels_preserved": true,
+    "sha256": "e05ae09d7aba809a6fb23f183e44e9effde76f654d74ce85a2373a7a59cc1614"
+  },
+  "created_at": "2026-10-08T10:09:26.599594+00:00",
+  "publication_metadata_review": "production/privacy-publication-20261008.json"
+}

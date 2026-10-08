@@ -106,6 +106,70 @@ check('Current export and spec match measured artifact digests',()=>{
   const hash=p=>createHash('sha256').update(readFileSync(new URL('../'+p,import.meta.url))).digest('hex');
   assert.equal(hash('model/apartment.json'),measure.spec_sha256);assert.equal(hash(`asset_exchange/${spec.assetStem}.glb`),validation.glb_sha256);
 });
+if(spec.furnishings?.length) {
+  const furniture=json('model/furniture-measurements.json');
+  const sofa = spec.furnishings.find(c=>c.id==='living-sofa');
+  if(sofa?.source) check('Tripo sofa retains the source bounds, PBR material and back-wall clearance',()=>{
+    const hash=p=>createHash('sha256').update(readFileSync(new URL('../'+p,import.meta.url))).digest('hex');
+    assert.equal(hash(sofa.source.path),sofa.source.sha256);
+    const current=nodes[sofa.node];
+    assert.deepEqual(current.materials,['Tripo_sofa_original_PBR']);
+    approx(current.bounds[1][0]-current.bounds[0][0],sofa.dimensions[1]);
+    approx(current.bounds[1][1]-current.bounds[0][1],sofa.dimensions[0]);
+    approx(current.bounds[1][2]-current.bounds[0][2],sofa.dimensions[2]);
+    approx(current.bounds[0][2],sofa.source.floorElevation);
+    assert.ok(current.bounds[0][0]>3.60,'sofa penetrates west finish');
+    assert.equal(current.triangles,149999);
+    assert.equal(validation.model_packages.length,2);
+    for(const p of validation.model_packages) assert.equal(hash(p.path),p.sha256);
+  });
+  check('Measured table follows the supplied 2800 x 900 x 750 mm drawing and asymmetric supports',()=>{
+    assert.equal(furniture.version,spec.version);
+    assert.equal(furniture.sourceSha256,validation.source_sha256);
+    assert.equal(furniture.specSha256,measure.spec_sha256);
+    const parts=furniture.components.find(c=>c.id==='dining-work-table').parts;
+    const top=parts.find(c=>c.name.includes('_tabletop_')).bounds;
+    approx(top[1][0]-top[0][0],.9);approx(top[1][1]-top[0][1],2.8);
+    approx(top[1][2],.75);approx(top[1][2]-top[0][2],.07);
+    const panel=parts.find(c=>c.name.includes('_panel_support_')).bounds;
+    approx(panel[1][0]-panel[0][0],.53);approx(panel[1][1]-panel[0][1],.08);
+    const sides=parts.filter(c=>c.name.includes('_storage_side_')).map(c=>c.bounds);
+    const low=Math.min(...sides.map(b=>b[0][1])),high=Math.max(...sides.map(b=>b[1][1]));
+    approx(high-low,.60);for(const b of sides){approx(b[1][0]-b[0][0],.70);approx(b[1][1]-b[0][1],.05);approx(b[1][2],.68);}
+    approx(panel[0][1]-high,1.6);approx(low-top[0][1],.26);approx(top[1][1]-panel[1][1],.26);
+    assert.equal(parts.filter(c=>c.name.includes('_pullout_tray_')).length,6);
+  });
+  check('Furnishing preserves every v06 architectural part and no-TV no-coffee-table layout',()=>{
+    const old=json('model/baseline-v06/validation.json');
+    for(const [name,o] of Object.entries(old.objects)){
+      assert.ok(nodes[name],name);assert.equal(nodes[name].entityId,o.entityId,name);assert.equal(nodes[name].triangles,o.triangles,name);
+      for(let side=0;side<2;side++)for(let axis=0;axis<3;axis++)approx(nodes[name].bounds[side][axis],o.bounds[side][axis]);
+    }
+    assert.ok(!spec.entities.some(e=>/coffee-table|television/.test(e.id)));
+    const sofa=spec.furnishings.find(c=>c.id==='living-sofa'),cabinet=spec.furnishings.find(c=>c.id==='living-modular-cabinet');
+    assert.deepEqual(sofa.front,[1,0]);assert.deepEqual(cabinet.front,[-1,0]);assert.ok(sofa.position[0]<cabinet.position[0]);
+    const table=spec.furnishings.find(c=>c.id==='dining-work-table'),bench=spec.furnishings.find(c=>c.id==='dining-bench');
+    const chairs=spec.furnishings.filter(c=>c.recipe==='chair');assert.equal(chairs.length,3);
+    assert.ok(bench.position[0]<table.position[0]);for(const c of chairs)assert.ok(c.position[0]>table.position[0]);
+  });
+  const cabinet=spec.furnishings.find(c=>c.id==='living-modular-cabinet');
+  if(cabinet.moduleHeights) check('Measured cabinet tiers and single artwork follow the revised hanging layout',()=>{
+    const parts=furniture.components.find(c=>c.id===cabinet.id).parts;
+    let t=cabinet.position[1]-cabinet.dimensions[0]/2;
+    cabinet.moduleWidths.forEach((w,i)=>{
+      const y=spec.coordinateSystem.planSouthExtent-(t+w/2);
+      const group=parts.filter(p=>Math.abs((p.bounds[0][1]+p.bounds[1][1])/2-y)<w/2-.012);
+      assert.ok(group.length>5);approx(Math.max(...group.map(p=>p.bounds[1][2])),cabinet.moduleHeights[i]);t+=w;
+    });
+    const art=spec.furnishings.find(c=>c.recipe==='framed_art');
+    const bounds=nodes[art.node].bounds;
+    approx(bounds[1][1]-bounds[0][1],2);approx(bounds[1][2]-bounds[0][2],.9);
+    approx((bounds[0][2]+bounds[1][2])/2,1.57);
+    assert.ok(!furniture.components.find(c=>c.id===art.id).parts.some(p=>p.name.includes('panel_board')));
+    // Painting spans the middle low modules and stops before the high end module.
+    assert.ok(art.position[1]+art.dimensions[0]/2 < cabinet.position[1]+cabinet.dimensions[0]/2-cabinet.moduleWidths.at(-1));
+  });
+}
 const result={checks,passed:checks.filter(c=>c.pass).length,total:checks.length};
 writeFileSync(new URL('../model/checks.json',import.meta.url),JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify(result,null,2));if(result.passed!==result.total)process.exitCode=1;

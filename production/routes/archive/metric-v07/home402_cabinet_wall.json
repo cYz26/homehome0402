@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_cabinet_wall",
+  "task_id": "home402-living-v02-to-metric-v07",
+  "intent": "new_static",
+  "route": "reference_blender",
+  "decision_basis": {
+    "path": "docs/design/living-v02/DECISION.md",
+    "sha256": "961bd4701170dd6647d4e74e44ca727b96000ad5107b4b63ff9c58576432b8d6"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Author static furniture geometry and PBR surfaces from the selected standalone reference",
+    "Place under metric-v07 JSON dimensions and preserve architectural geometry"
+  ],
+  "references": [
+    {
+      "path": "references/generated/living-furniture-20261008/independent/cabinet-wall-r1.png",
+      "sha256": "aa13e2a456bf13bd343234b845e447586e89a64e3f9cdca6e2fc5f445ff431d7"
+    }
+  ],
+  "geometry": {
+    "source": {
+      "path": "art_src/apartment-v07.blend",
+      "sha256": "1b5274fd7519d9b5838b18a8be7e7375cc804fa33216718674c28f823a04da0d"
+    },
+    "inspection": {
+      "path": "production/inspection/home402_cabinet_wall.json",
+      "sha256": "158376b1c5f9d1c7bdfd159e8cd383b44e27b967e774224543fa1ada00051b2e"
+    },
+    "basis": "blender_authored",
+    "generation": null
+  },
+  "reuse": []
+}

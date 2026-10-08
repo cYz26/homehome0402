@@ -1,0 +1,128 @@
+{
+  "id": "home402-living-v02",
+  "date": "2026-10-08",
+  "user_acceptance": {
+    "quote": "现在看起来不错了。",
+    "scope": "v02 furniture arrangement and appearance in the AI previews",
+    "model_acceptance": "pending real 3D review"
+  },
+  "user_authorization": {
+    "quote": "将最新的方案改动上下文在项目中保存好，让后续的迭代可以关联上。然后参考最新的客厅效果图，更新到3D空间",
+    "scope": "Persist lineage and implement the selected furniture scheme in the existing 3D apartment; no remote publication requested"
+  },
+  "selected_previews": [
+    {
+      "path": "references/generated/living-furniture-20261008/dining-living-v02.png",
+      "sha256": "9fbd3b2ae7e69c709c706c9d611dc00d9e3f8f11713b4e1fb9901524e583198c"
+    },
+    {
+      "path": "references/generated/living-furniture-20261008/cabinet-wall-v02.png",
+      "sha256": "6d0201f448425a1043b3b5968a893478b1efc89f5c9d61e1a24ad4cb06f6d9bb"
+    },
+    {
+      "path": "references/generated/living-furniture-20261008/generation-record-v02.json",
+      "sha256": "a2ac5e4316e0028cbf96ce08551c6e85afd172396bcea966eff51251ffbcdc67"
+    }
+  ],
+  "independent_references": [
+    {
+      "asset": "sofa",
+      "path": "references/generated/living-furniture-20261008/independent/sofa-r1.png",
+      "sha256": "207695f478249e0cc3c0237bf35495dc5f7329ea32095d8625b551228840f25d",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority."
+    },
+    {
+      "asset": "table-set",
+      "path": "references/generated/living-furniture-20261008/independent/table-set-r1.png",
+      "sha256": "4a65f62b4e248e9eaafedbe317f39a0878de9bf1134435e1fe02977b6e367fce",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority.",
+      "role": "historical table legs; chair and bench style reference"
+    },
+    {
+      "asset": "cabinet-wall",
+      "path": "references/generated/living-furniture-20261008/independent/cabinet-wall-r1.png",
+      "sha256": "aa13e2a456bf13bd343234b845e447586e89a64e3f9cdca6e2fc5f445ff431d7",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority."
+    },
+    {
+      "asset": "armchair",
+      "path": "references/generated/living-furniture-20261008/independent/armchair-r1.png",
+      "sha256": "43e618e18adcb950c8ac878ecef8d39090282f446a656b7231ff99be470b215d",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority."
+    }
+  ],
+  "baseline": {
+    "version": "metric-v06",
+    "spec": "model/baseline-v06/apartment.json",
+    "spec_sha256": "624944e362b7dfb3c278ffbd8512b5d47cfeec485b3ba68e91428193aac20ce7"
+  },
+  "target_version": "metric-v07",
+  "confirmed": {
+    "noTV": true,
+    "noCoffeeTable": true,
+    "sofaFacesCabinet": true,
+    "steppedCabinet": true,
+    "tableFunctions": [
+      "dining",
+      "study",
+      "work"
+    ],
+    "tableLengthAboveMeters": 2.5,
+    "chairsOnOneSide": true,
+    "oneBenchOnOppositeSide": true
+  },
+  "dimensions": {
+    "tableLengthMeters": 2.8,
+    "basis": "Latest user-provided dimension drawing supersedes visual assumption",
+    "remaining": "bounded inferred sizes recorded in apartment.json"
+  },
+  "route": "reference_blender for new static furniture; existing v05 templates retained for architecture",
+  "table_revision": {
+    "supersedes": "2.6m preview assumption and table-set-r1 geometry",
+    "latest_user_request": "多功能桌参考这些图再还原的一致一些",
+    "reference_directory": "references/revisions/living-furniture-20261008/table-r2",
+    "dimensions_from_drawing_m": {
+      "length": 2.8,
+      "width": 0.9,
+      "height": 0.75,
+      "topThickness": 0.07,
+      "endOverhang": 0.26,
+      "storageLength": 0.6,
+      "storageDepth": 0.7,
+      "storageHeight": 0.68,
+      "openKneeSpan": 1.6,
+      "panelThickness": 0.08,
+      "panelDepth": 0.53
+    },
+    "scope": "Use new table structure and dimensions; keep one chair side/opposite bench, sofa/cabinet placement and the approved overall palette.",
+    "standalone_reference": {
+      "path": "references/generated/living-furniture-20261008/independent/table-set-r2.png",
+      "sha256": "1133dab518a9471da066c60b61cbf333c29614d13f71bee59afb6830c0d355d3"
+    },
+    "inferred": "Tray count six and concealed hardware are interpretation; drawing dimensions are not site/manufacturer certification.",
+    "source_files": [
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/02-table-structure.png",
+        "sha256": "d87e274d3b53df93e09dcf2922895f48a6fcc0bffd725d5ae72a6d182ed868b0"
+      },
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/03-table-dimensions.png",
+        "sha256": "e3265533252e8c37d1768698ffc93ddc9639d05530656a64f7a73baaea8d3a80"
+      },
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/01-table-photo.png",
+        "sha256": "662895561aad8eac07a1aed7fd114e2b81401321eb847c59038a0626278844d0"
+      }
+    ]
+  },
+  "metadata_cleanup": "Nine added input/reference PNGs stripped without pixel re-encoding; decoded RGBA equality verified on 2026-10-08. Generation provenance retained separately.",
+  "texture_reference": {
+    "path": "references/generated/living-furniture-20261008/walnut-albedo-r1.png",
+    "sha256": "121afabfb94e86456e7159985650f9453efd6d433417e6fef536d387f2de2586",
+    "role": "AI albedo interpretation for furniture; no manufacturer texture certification"
+  }
+}

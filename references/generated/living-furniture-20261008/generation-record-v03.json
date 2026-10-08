@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-08",
+  "tool": "built-in image_gen",
+  "entries": [
+    {
+      "output": {
+        "path": "references/generated/living-furniture-20261008/dining-living-v03-table-only.png",
+        "sha256": "d47cf9cf16dfa7beb68d85e39ea8cc554a37fa1ed0d06a2b79e83935af3692c5"
+      },
+      "prompt": {
+        "path": "references/generated/living-furniture-20261008/prompts-v03/01-table-and-lamp.txt",
+        "sha256": "91469eb2c8d0060b8c770e5c72e234af7011e2152d4c5a3ff859cfd5aafa1b59"
+      },
+      "inputs": [
+        {
+          "path": "references/generated/living-furniture-20261008/dining-living-v02.png",
+          "sha256": "9fbd3b2ae7e69c709c706c9d611dc00d9e3f8f11713b4e1fb9901524e583198c"
+        },
+        {
+          "path": "references/revisions/living-furniture-20261008/table-r2/01-table-photo.png",
+          "sha256": "662895561aad8eac07a1aed7fd114e2b81401321eb847c59038a0626278844d0"
+        },
+        {
+          "path": "references/revisions/living-furniture-20261008/table-r2/02-table-structure.png",
+          "sha256": "d87e274d3b53df93e09dcf2922895f48a6fcc0bffd725d5ae72a6d182ed868b0"
+        },
+        {
+          "path": "references/revisions/living-furniture-20261008/table-r2/03-table-dimensions.png",
+          "sha256": "e3265533252e8c37d1768698ffc93ddc9639d05530656a64f7a73baaea8d3a80"
+        },
+        {
+          "path": "references/02-entry-living.jpg",
+          "sha256": "ae5e2dcdf738eb7f6d59cf8ace98fb993e32a4b274b5c2e1b81d57b091e33359"
+        }
+      ],
+      "original": "/Users/cY/.codex/generated_images/01a119da-518b-7df1-b218-b62441929393/exec-0020985f-5727-4b0e-9106-366edc416045.png",
+      "role": "lamp/table correction intermediate; six posters superseded"
+    },
+    {
+      "output": {
+        "path": "references/generated/living-furniture-20261008/art-landscape-r1.png",
+        "sha256": "d40f07bb1521a36c61c605494a0056712bd62c88aec6923cf4c460d4317dafb9"
+      },
+      "prompt": {
+        "path": "references/generated/living-furniture-20261008/prompts-v03/02-original-art.txt",
+        "sha256": "0efdc6e51ec3b7852b6ef60501688f00263912ec268f7a963bd7ceff78da120a"
+      },
+      "inputs": [],
+      "original": "/Users/cY/.codex/generated_images/01a119da-518b-7df1-b218-b62441929393/exec-e32f3733-4bb1-4b5d-98ac-aaa6ec320889.png",
+      "role": "Original flat artwork texture, not an existing artist reproduction"
+    },
+    {
+      "output": {
+        "path": "references/generated/living-furniture-20261008/cabinet-wall-v03.png",
+        "sha256": "4060cc6b61632059661f9cde4b1493910f20a1d77a51267f12a2bc1d11942b75"
+      },
+      "prompt": {
+        "path": "references/generated/living-furniture-20261008/prompts-v03/03-cabinet-art.txt",
+        "sha256": "21bb0debc1480dc527feb5a0fbbbac411ef0afe08a2a02ed13eff0dc7e641741"
+      },
+      "inputs": [
+        {
+          "path": "references/generated/living-furniture-20261008/cabinet-wall-v02.png",
+          "sha256": "6d0201f448425a1043b3b5968a893478b1efc89f5c9d61e1a24ad4cb06f6d9bb"
+        },
+        {
+          "path": "references/generated/living-furniture-20261008/art-landscape-r1.png",
+          "sha256": "d40f07bb1521a36c61c605494a0056712bd62c88aec6923cf4c460d4317dafb9"
+        }
+      ],
+      "original": "/Users/cY/.codex/generated_images/01a119da-518b-7df1-b218-b62441929393/exec-ab192c93-8b66-4f53-ba55-107e8b69130c.png",
+      "role": "Single-artwork cabinet-wall proposal; agent reviewed, user review pending"
+    },
+    {
+      "output": {
+        "path": "references/generated/living-furniture-20261008/dining-living-v03.png",
+        "sha256": "328c4f0fa31ead4aead61a889500ca3709c12e2adaa01beb9fd07e534516c160"
+      },
+      "prompt": {
+        "path": "references/generated/living-furniture-20261008/prompts-v03/04-overview-art.txt",
+        "sha256": "41148cacff5e8c7f5370cf09a30232d0596efb2aa4a447a6870160dcd240defc"
+      },
+      "inputs": [
+        {
+          "path": "references/generated/living-furniture-20261008/dining-living-v03-table-only.png",
+          "sha256": "d47cf9cf16dfa7beb68d85e39ea8cc554a37fa1ed0d06a2b79e83935af3692c5"
+        },
+        {
+          "path": "references/generated/living-furniture-20261008/art-landscape-r1.png",
+          "sha256": "d40f07bb1521a36c61c605494a0056712bd62c88aec6923cf4c460d4317dafb9"
+        },
+        {
+          "path": "references/generated/living-furniture-20261008/cabinet-wall-v03.png",
+          "sha256": "4060cc6b61632059661f9cde4b1493910f20a1d77a51267f12a2bc1d11942b75"
+        }
+      ],
+      "original": "/Users/cY/.codex/generated_images/01a119da-518b-7df1-b218-b62441929393/exec-813b7667-1bac-4dcf-9417-f8c4d1ad3fc1.png",
+      "role": "Matching overall proposal, corrected table and single lamp stem"
+    }
+  ],
+  "privacy": [
+    {
+      "path": "references/generated/living-furniture-20261008/dining-living-v03-table-only.png",
+      "sourceSha256": "e54bd1671a067399ffe511e6d61cecdf42e345a977d792edd66247dcdec4e447",
+      "sha256": "d47cf9cf16dfa7beb68d85e39ea8cc554a37fa1ed0d06a2b79e83935af3692c5",
+      "pixelsIdentical": true
+    },
+    {
+      "path": "references/generated/living-furniture-20261008/art-landscape-r1.png",
+      "sourceSha256": "5a22782984ca50f5ec9ec9df9a28e5b34edb61a078edbc7c5cd873f5d73d4912",
+      "sha256": "d40f07bb1521a36c61c605494a0056712bd62c88aec6923cf4c460d4317dafb9",
+      "pixelsIdentical": true
+    },
+    {
+      "path": "references/generated/living-furniture-20261008/cabinet-wall-v03.png",
+      "sourceSha256": "a999b55d12d72a48c309fd6d8b6f1693ff2bb26623af61b4bd3157971c50ac6d",
+      "sha256": "4060cc6b61632059661f9cde4b1493910f20a1d77a51267f12a2bc1d11942b75",
+      "pixelsIdentical": true
+    },
+    {
+      "path": "references/generated/living-furniture-20261008/dining-living-v03.png",
+      "sourceSha256": "50c7217667e7ebdf404b71d51de8fdcd615cbcb02c17bdbae9e689e9774855e9",
+      "sha256": "328c4f0fa31ead4aead61a889500ca3709c12e2adaa01beb9fd07e534516c160",
+      "pixelsIdentical": true
+    },
+    {
+      "path": "references/revisions/living-furniture-20261008/feedback-r3/01-web-cabinet-height.png",
+      "sourceSha256": "f7dd4b7842f243a2abab461fc2a643c150e86d58da4fb849e0f2c80893b37c16",
+      "sha256": "873c285fea09c3bcea44783b9b34d7fcbf03aceb096afa296b031a1b147ac7d8",
+      "pixelsIdentical": true
+    },
+    {
+      "path": "references/revisions/living-furniture-20261008/feedback-r3/02-artwork-request.png",
+      "sourceSha256": "7e86370417c1494b0da20cd62b447138483dbb3a76ad6be2c006c5d894aca6d6",
+      "sha256": "187e20e98e7a7ec163bb8f5369af1f745bf3a3f63215ba88df912def2d87ad66",
+      "pixelsIdentical": true
+    }
+  ],
+  "acceptance": "Proposal displayed; original v02 accepted separately, new single-artwork proposal pending user review"
+}

@@ -1,0 +1,7 @@
+{
+  "version": "metric-v08",
+  "firstScreenBytes": 1048576,
+  "webModelBytes": 18874368,
+  "interactive3DBytes": 20971520,
+  "basis": "Add the accepted furniture at full texture resolution: nine source textures instead of seven, plus the new static geometry. Keep UASTC quality, AO, shadows, mirrors and native display resolution. The furnished version expands the interactive budget from 16 to 20 MiB; the independent Workers 25 MiB per-asset limit remains in force."
+}

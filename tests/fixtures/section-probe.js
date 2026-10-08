@@ -6,8 +6,9 @@ import { SSAOPass } from "three/addons/postprocessing/SSAOPass.js";
 import { ApartmentScene } from "../../src/scene.js";
 import { Sections } from "../../src/sections.js";
 const base = import.meta.env.BASE_URL;
+const manifest = await (await fetch(`${base}release.json`)).json();
 const data = await (
-  await fetch(`${base}releases/metric-v06/architecture.json`)
+  await fetch(`${base}${manifest.architecture}`)
 ).json();
 // Seed AO sampling so a failed pixel comparison is reproducible.
 let seed = 402;
@@ -28,9 +29,10 @@ const ktx = new KTX2Loader()
   .detectSupport(app.renderer);
 loader.setKTX2Loader(ktx).setMeshoptDecoder(MeshoptDecoder);
 const asset = new URLSearchParams(location.search).get("asset") ?? "web";
-const model = (
-  await loader.loadAsync(`${base}releases/metric-v06/apartment-${asset}.glb`)
-).scene;
+const model = new THREE.Group();
+for (const pack of [manifest,...(manifest.additionalModels ?? [])]) {
+  model.add((await loader.loadAsync(`${base}${asset === "hd" ? pack.rawModel : pack.model}`)).scene);
+}
 model.traverse((ob) => {
   if (!ob.isMesh) return;
   let owner = ob;

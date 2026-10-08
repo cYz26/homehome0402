@@ -27,6 +27,9 @@ test("AO matches the clipped surface, cap depth bias and glass visibility", () =
   assert.equal(cn.polygonOffsetUnits, -4);
   assert.equal(cn.side, THREE.DoubleSide);
   assert.equal(ao.normalFor(glass).visible, false);
+  const windowGlass=new THREE.MeshPhysicalMaterial({transmission:.96});
+  assert.equal(windowGlass.transparent,false);
+  assert.equal(ao.normalFor(windowGlass).visible,false);
   wall.clippingPlanes = [];
   assert.equal(ao.normalFor(wall), wn);
   assert.equal(wn.clippingPlanes.length, 0);
@@ -34,6 +37,7 @@ test("AO matches the clipped surface, cap depth bias and glass visibility", () =
   wall.dispose();
   cap.dispose();
   glass.dispose();
+  windowGlass.dispose();
 });
 
 test("disposing temporary selection materials releases cached AO materials", () => {

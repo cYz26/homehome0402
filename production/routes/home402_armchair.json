@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_armchair",
+  "task_id": "home402-living-v04-to-metric-v09",
+  "intent": "revise_static",
+  "route": "existing_blender",
+  "decision_basis": {
+    "path": "docs/design/living-v04/DECISION.md",
+    "sha256": "3f926319c1bacef407486a9cde76f7554026f5312e5381d88f907a56fe07fb45"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Rebuild current JSON-controlled furniture and adopt hash-locked prepared Tripo sofa with original PBR; preserve architecture, facing arrangement and other approved furnishing dimensions"
+  ],
+  "references": [
+    {
+      "path": "references/generated/living-furniture-20261008/independent/armchair-r1.png",
+      "sha256": "43e618e18adcb950c8ac878ecef8d39090282f446a656b7231ff99be470b215d"
+    }
+  ],
+  "geometry": {
+    "source": {
+      "path": "art_src/apartment-v09.blend",
+      "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
+    },
+    "inspection": {
+      "path": "production/inspection/home402_armchair-metric-v09.json",
+      "sha256": "6da4fe52c733c91f9592f2dbb5ca1368541953eaf198aadfe228ed824eba750d"
+    },
+    "basis": "existing",
+    "generation": null
+  },
+  "reuse": []
+}

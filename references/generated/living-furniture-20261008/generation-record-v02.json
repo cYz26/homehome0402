@@ -1,0 +1,118 @@
+{
+  "version": "v02",
+  "date": "2026-10-08",
+  "mode": "built-in image_gen",
+  "actual_3d_render": false,
+  "user_visual_acceptance": {
+    "status": "accepted",
+    "quote": "现在看起来不错了。",
+    "scope": "AI v02 visual appearance and arrangement",
+    "model_acceptance": "pending"
+  },
+  "published": false,
+  "previous_version": "generation-record.json",
+  "corrections": [
+    "Sofa and cabinet directly face each other across the living room; sofa back along west wall and cabinet along opposite east wall",
+    "Keep original/reference stepped modular cabinet shape, not a flat top across the entire run",
+    "Large multifunction dining/study/work table: user requests length above 2.5m, matching source material/color/design",
+    "One long side has chairs, the opposite long side has one long bench"
+  ],
+  "prior_partial_acceptance": "v01 cabinet close-up appearance accepted; sofa orientation in that view required correction",
+  "dimension_basis": {
+    "table_length_user_requirement": "长度在2米5以上",
+    "table_length_visual_assumption_m": 2.6,
+    "table_length_product_measured": false,
+    "other_furniture_dimensions": "illustrative; product dimensions and on-site circulation remain unverified"
+  },
+  "geometry_guide": {
+    "file": "references/generated/living-furniture-20261008/layout-v02.png",
+    "sha256": "d3ddb6724a36e49193d51701c132bbaa02f1935247b3a4eeca3370dbfc432f0a",
+    "authority": "relative furniture orientation guide only; original apartment.json and user floor plan retain architectural authority"
+  },
+  "outputs": [
+    {
+      "file": "references/generated/living-furniture-20261008/dining-living-v02.png",
+      "role": "Corrected overview: chair/bench multifunction table, stepped cabinet, directly opposing sofa",
+      "sha256": "9fbd3b2ae7e69c709c706c9d611dc00d9e3f8f11713b4e1fb9901524e583198c",
+      "source_sha256": "4e70a88f0f55e77e93ad9b225bd91cadb58a275e0b56cbeddee46eec71e2e449",
+      "width": 1448,
+      "height": 1086,
+      "decoded_pixels_preserved": true
+    },
+    {
+      "file": "references/generated/living-furniture-20261008/cabinet-wall-v02.png",
+      "role": "Corrected companion: sofa long back parallel to opposite cabinet run",
+      "sha256": "6d0201f448425a1043b3b5968a893478b1efc89f5c9d61e1a24ad4cb06f6d9bb",
+      "source_sha256": "8e2673509c64a3c053d7d2bce0b1e6154e5eb58e8c238afb6f628306e0f76852",
+      "width": 1448,
+      "height": 1086,
+      "decoded_pixels_preserved": true
+    }
+  ],
+  "prompts": [
+    {
+      "file": "references/generated/living-furniture-20261008/dining-living-v02-prompt.txt",
+      "sha256": "e1c94d2243603ff0181b44ff795d44bfe27f97da630872e09ae8d8da1831aecc"
+    },
+    {
+      "file": "references/generated/living-furniture-20261008/cabinet-wall-v02-prompt.txt",
+      "sha256": "7822caacceb2a7ef2f46b82182f8db009030556db62175fd016c88efae2f9bc4"
+    }
+  ],
+  "inputs": {
+    "overview": [
+      {
+        "file": "references/generated/living-furniture-20261008/dining-living-v01.png",
+        "sha256": "2f0968d325eaa4b5c44ff3a9d49d36e8071a2428ff77d40bb81aa54db1ef6bcc"
+      },
+      {
+        "file": "references/revisions/living-furniture-20261008/01-dining-table.png",
+        "sha256": "cca8215e1c027f8a5342ad1a8a24aafbf77db4dd672459205fda990ece363223"
+      },
+      {
+        "file": "references/generated/living-furniture-20261008/cabinet-wall-v01.png",
+        "sha256": "4180a02d97a9fe20710662e4d20d69484fde66ba1fad8dcbcc6985631c2871bf"
+      },
+      {
+        "file": "references/revisions/living-furniture-20261008/03-sofa.jpg",
+        "sha256": "c25011d8067441969eb0805548e967af2ca4cea75e3bb5e2b0eb0b99c120e258"
+      },
+      {
+        "file": "references/generated/living-furniture-20261008/layout-v02.png",
+        "sha256": "d3ddb6724a36e49193d51701c132bbaa02f1935247b3a4eeca3370dbfc432f0a"
+      }
+    ],
+    "cabinet_view": [
+      {
+        "file": "references/generated/living-furniture-20261008/cabinet-wall-v01.png",
+        "sha256": "4180a02d97a9fe20710662e4d20d69484fde66ba1fad8dcbcc6985631c2871bf"
+      },
+      {
+        "file": "references/revisions/living-furniture-20261008/02-cabinet-wall.jpg",
+        "sha256": "dffed667dc011dd53692077336f97c6294607f858fb64f7e0957e7ee52158e40"
+      },
+      {
+        "file": "references/generated/living-furniture-20261008/dining-living-v02.png",
+        "sha256": "9fbd3b2ae7e69c709c706c9d611dc00d9e3f8f11713b4e1fb9901524e583198c"
+      },
+      {
+        "file": "references/generated/living-furniture-20261008/layout-v02.png",
+        "sha256": "d3ddb6724a36e49193d51701c132bbaa02f1935247b3a4eeca3370dbfc432f0a"
+      },
+      {
+        "file": "references/revisions/living-furniture-20261008/03-sofa.jpg",
+        "sha256": "c25011d8067441969eb0805548e967af2ca4cea75e3bb5e2b0eb0b99c120e258"
+      }
+    ]
+  },
+  "visual_review": {
+    "overview": "Three chairs on one long side, a visible single long bench on the other; substantial source-style wood table; stepped cabinet ends; sofa facing cabinet; no coffee table",
+    "cabinet_view": "Three sofa headrest backs and the long walnut rear frame visible in foreground parallel to the cabinet run, facing it across the empty center; raised end modules and lower middle retained"
+  },
+  "limitations": [
+    "AI photographic revision, not metrically verified Blender render",
+    "2.6m is a stated preview assumption satisfying the user lower bound; product size and furniture footprints await confirmation",
+    "Apparent scale, unseen angles and architecture may contain image-generation deviations; doorway and circulation distances are not certified",
+    "v01 original source and previews retained"
+  ]
+}

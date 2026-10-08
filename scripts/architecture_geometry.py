@@ -3,8 +3,9 @@ import bpy, math
 from mathutils import Vector
 
 def configure(spec, collection):
-    global MODEL, H, CUT, EXTENT, RECORDS, CONSTRUCTION, capmat, cabinet, oak, black, glass, counter, chrome, wallmat
+    global MODEL, H, CUT, EXTENT, RECORDS, CONSTRUCTION, capmat, cabinet, oak, black, glass, window_glass, counter, chrome, wallmat
     CONSTRUCTION=spec['construction']
+    window_glass=bpy.data.materials[spec.get('windowAppearance',{}).get('material','Clear_glass')]
     MODEL=collection; H=spec['height']; CUT=spec['construction']['cutHeight']; EXTENT=spec['coordinateSystem']['planSouthExtent']; RECORDS=[]
     capmat=bpy.data.materials['Thin_graphite_cut_edge']; cabinet=bpy.data.materials['Warm_ivory_cabinet']; oak=bpy.data.materials['Taupe_wood_joinery']; black=bpy.data.materials['Graphite_frame']; glass=bpy.data.materials['Clear_glass']; counter=bpy.data.materials['Ivory_stone_counter']; chrome=bpy.data.materials['Brushed_steel']; wallmat=bpy.data.materials['Warm_white_plaster']
 
@@ -93,7 +94,7 @@ def window(name,x,t,width,sill,head,count=2,orientation=0):
         xx,tt=pos(0,0); cube(name+'_rail',xx,tt,z,width,.07,.044,black,'upper' if z>CUT else 'fixed',rot=-orientation)
     for a,b in zip(divisions,divisions[1:]):
         xx,tt=pos(-width/2+(a+b)*width/2,0)
-        vertical(name+'_glass',xx,tt,width*(b-a)-.055,.012,sill+.025,head-.025,glass,rot=-orientation)
+        vertical(name+'_glass',xx,tt,width*(b-a)-.055,.012,sill+.025,head-.025,window_glass,rot=-orientation)
     # The user requests clear glazing without any safety grille or guard bars.
     cube(name+'_stone_sill',x,t-.025,sill-.025,width+.10,.30,.04,counter,rot=-orientation)
     handlebase=1.66 if name=='Kitchen_north' else max(1.12,sill+.3)

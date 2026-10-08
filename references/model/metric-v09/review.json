@@ -1,0 +1,50 @@
+{
+  "version": "metric-v09",
+  "source_sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
+  "spec_sha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
+  "model_packages": [
+    {
+      "id": "apartment",
+      "path": "asset_exchange/apartment-v09.glb",
+      "sha256": "bec95e41d32e2b8a0ede7f5e4875fa38b786bf496b6c3b31858444b05539b21f",
+      "bytes": 24601864
+    },
+    {
+      "id": "living-sofa",
+      "path": "asset_exchange/living-sofa-v09.glb",
+      "sha256": "65017cdccc06a93b0a26a51faa4579aff5d0655691e7872827395c58314bacd2",
+      "bytes": 21232288
+    }
+  ],
+  "visual_evidence": [
+    {
+      "path": "references/model/metric-v09/cabinet-cycles.png",
+      "sha256": "a598aa145a08fe897d562fa94272dea36e0442349a692a16265f6c3d6216231e",
+      "kind": "Blender Cycles actual render"
+    },
+    {
+      "path": "references/model/metric-v09/living-cycles.png",
+      "sha256": "053af736bef1d3200493f86fd147f0f80e51a40fcff54ca2c97dc9b589cb1a3b",
+      "kind": "Blender Cycles actual render"
+    },
+    {
+      "path": "references/model/metric-v09/table-cycles.png",
+      "sha256": "39814f1187d9fc9fd09e4279cc9aa9a2fedbf0745b28fcc5e4dce748425bf024",
+      "kind": "Blender Cycles actual render"
+    }
+  ],
+  "runtime_source_inspection": "production/inspection/metric-v09-source.json",
+  "cabinet_neutral_comparison": [
+    "references/model/metric-v08/cabinet-v07-clay.png",
+    "references/model/metric-v08/cabinet-v08-clay.png"
+  ],
+  "observed": "Actual source/render review, not AI proxy; original architecture retained",
+  "limitations": [
+    "User visual acceptance pending",
+    "Real device performance not measured",
+    "Realtime lighting approximates photos; no baked GI or photometric capture",
+    "Remote publication not requested"
+  ],
+  "runtime_visual_qa": "docs/evidence/metric-v09/living-review/visual-qa.json",
+  "publication_metadata_review": "production/privacy-publication-20261008.json"
+}

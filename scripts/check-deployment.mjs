@@ -43,7 +43,7 @@ for (const file of assets.sort()) {
 }
 const manifest = JSON.parse(await fs.readFile("dist/release.json", "utf8"));
 const ranges = [];
-for (const file of [manifest.model, manifest.rawModel]) {
+for (const file of [manifest, ...(manifest.additionalModels ?? [])].flatMap(p=>[p.model,p.rawModel])) {
   const response = await request(file, { headers: { Range: "bytes=0-65535" } }, true);
   assert.equal(response.status, 206, `Range unsupported: ${file}`);
   const asset = manifest.assets.find((a) => a.path === file);

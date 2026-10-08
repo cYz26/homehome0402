@@ -82,7 +82,7 @@ export class Sections {
       const materials = Array.isArray(ob.material)
         ? ob.material
         : [ob.material];
-      if (materials.some((m) => m.transparent)) return;
+      if (materials.some((m) => m.transparent || m.transmission>0)) return;
       const owner =
         ob.parent?.userData.entityId === ob.userData.entityId &&
         ob.parent.children.every((child) => child.isMesh)

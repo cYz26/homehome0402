@@ -1,0 +1,29 @@
+{
+  "version": "metric-v09",
+  "input_handoff": "production/sofa-tripo-r1/handoff.json",
+  "authority": "User requested source integration and authorized handoff to main thread",
+  "scene_source": "art_src/apartment-v09.blend",
+  "scene_source_sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
+  "scene_spec": "model/apartment.json",
+  "stable_entity_id": "living-sofa",
+  "stable_node": "Furniture_living_sofa",
+  "position": [
+    4.17,
+    10.4
+  ],
+  "front": [
+    1,
+    0
+  ],
+  "eastward_shift_from_handoff_m": 0.05,
+  "shift_basis": "Avoid west finish x=3.60 with actual 1.10178m depth",
+  "model_packages": [
+    "asset_exchange/apartment-v09.glb",
+    "asset_exchange/living-sofa-v09.glb"
+  ],
+  "decision": "docs/design/living-v04/DECISION.md",
+  "inspection": "production/inspection/metric-v09-source.json",
+  "checks": "model/checks.json",
+  "browser_evidence": "docs/evidence/metric-v09",
+  "published_remotely": false
+}

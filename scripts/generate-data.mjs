@@ -1,20 +1,20 @@
 import fs from "node:fs/promises";
 import { NodeIO } from "@gltf-transform/core";
 import { ALL_EXTENSIONS } from "@gltf-transform/extensions";
+import { modelPackages } from "./model-packages.mjs";
 import polygonClipping from "polygon-clipping";
 import { convexHull, polygonArea, Navigation } from "../src/spatial.js";
 const spec = JSON.parse(await fs.readFile("model/apartment.json"));
 const version = spec.version,
   out = `public/releases/${version}`;
 await fs.mkdir(out, { recursive: true });
-const doc = await new NodeIO()
-  .registerExtensions(ALL_EXTENSIONS)
-  .read(`asset_exchange/${spec.assetStem}.glb`);
+const io = new NodeIO().registerExtensions(ALL_EXTENSIONS);
+const docs = await Promise.all(modelPackages(spec).map(pack => io.read(`asset_exchange/${pack.assetStem}.glb`)));
 const extent = spec.coordinateSystem.planSouthExtent;
 const round = (n) => Math.round(n * 1e5) / 1e5;
 const nodeRows = [],
   colliders = [];
-for (const node of doc.getRoot().listNodes()) {
+for (const node of docs.flatMap(doc=>doc.getRoot().listNodes())) {
   if (!node.getMesh()) continue;
   const m = node.getWorldMatrix(),
     vertices = [],
@@ -32,8 +32,8 @@ for (const node of doc.getRoot().listNodes()) {
     }
   }
   if (!extras.entityId) throw Error(`Missing entity: ${node.getName()}`);
-  const min = [0, 1, 2].map((i) => Math.min(...vertices.map((v) => v[i]))),
-    max = [0, 1, 2].map((i) => Math.max(...vertices.map((v) => v[i])));
+  const min = [0, 1, 2].map((i) => vertices.reduce((n,v)=>Math.min(n,v[i]),Infinity)),
+    max = [0, 1, 2].map((i) => vertices.reduce((n,v)=>Math.max(n,v[i]),-Infinity));
   const polygon = convexHull(
     vertices.map((v) => [round(v[0]), round(v[2] + extent)]),
   );
@@ -121,10 +121,11 @@ const data = {
   chains: spec.chains,
   rooms,
   entities,
-  materials: spec.materials,
+  materials: [...spec.materials, ...(spec.furnitureMaterials ?? []), ...(spec.externalMaterials ?? [])],
   nodes: nodeRows,
   detailViews: spec.detailViews,
   lighting: spec.lighting,
+  presentationEnvironment: spec.presentationEnvironment,
   assumptions: spec.assumptions,
 };
 const size = spec.navigation.gridSize,
@@ -216,7 +217,7 @@ const svg =
     )
     .join("") +
   entities
-    .filter((e) => ["cabinet", "fixture"].includes(e.type))
+    .filter((e) => ["cabinet", "fixture", "furniture"].includes(e.type) && !/rug|art-panels|lamp|items/.test(e.id))
     .map(
       (e) =>
         `<rect class="entity" data-entity-id="${e.id}" x="${e.min[0]}" y="${e.min[2] + extent}" width="${e.size[0]}" height="${e.size[2]}"/>`,

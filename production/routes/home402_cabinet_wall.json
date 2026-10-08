@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_cabinet_wall",
+  "task_id": "home402-living-v04-to-metric-v09",
+  "intent": "revise_static",
+  "route": "existing_blender",
+  "decision_basis": {
+    "path": "docs/design/living-v04/DECISION.md",
+    "sha256": "3f926319c1bacef407486a9cde76f7554026f5312e5381d88f907a56fe07fb45"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Rebuild current JSON-controlled furniture and adopt hash-locked prepared Tripo sofa with original PBR; preserve architecture, facing arrangement and other approved furnishing dimensions"
+  ],
+  "references": [
+    {
+      "path": "references/generated/living-furniture-20261008/independent/cabinet-wall-r1.png",
+      "sha256": "aa13e2a456bf13bd343234b845e447586e89a64e3f9cdca6e2fc5f445ff431d7"
+    },
+    {
+      "path": "references/generated/living-furniture-20261008/art-landscape-r1.png",
+      "sha256": "d40f07bb1521a36c61c605494a0056712bd62c88aec6923cf4c460d4317dafb9"
+    },
+    {
+      "path": "references/generated/living-furniture-20261008/cabinet-wall-v03.png",
+      "sha256": "4060cc6b61632059661f9cde4b1493910f20a1d77a51267f12a2bc1d11942b75"
+    }
+  ],
+  "geometry": {
+    "source": {
+      "path": "art_src/apartment-v09.blend",
+      "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
+    },
+    "inspection": {
+      "path": "production/inspection/home402_cabinet_wall-metric-v09.json",
+      "sha256": "63a1087add5b135d29a28bc2d551a44ee6e57fb1080a3becd463907b86ba8b79"
+    },
+    "basis": "existing",
+    "generation": null
+  },
+  "reuse": []
+}

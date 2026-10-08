@@ -1,7 +1,20 @@
 import fs from "node:fs/promises";
 import crypto from "node:crypto";
 import sharp from "sharp";
+import nodePath from "node:path";
+import { modelPackages } from "./model-packages.mjs";
 const spec = JSON.parse(await fs.readFile("model/apartment.json"));
+const resourceBudgets = JSON.parse(await fs.readFile("model/resource-budgets.json"));
+if (resourceBudgets.version !== spec.version) throw Error("Resource budget and model versions differ");
+const designSelection = spec.furnitureDecision ? JSON.parse(await fs.readFile(spec.furnitureDecision)) : null;
+const designInputs = designSelection ? [
+  ...designSelection.selected_previews.map(r => r.path),
+  ...designSelection.independent_references.map(r => r.path),
+  ...designSelection.table_revision.source_files.map(r => r.path),
+  designSelection.table_revision.standalone_reference.path,
+  ...(designSelection.display_effects ?? []).map(r=>r.source),
+] : [];
+const packages = modelPackages(spec);
 const version = spec.version,
   prefix = `releases/${version}`,
   out = `public/${prefix}`;
@@ -9,7 +22,7 @@ await fs.mkdir(`${out}/images`, { recursive: true });
 const assets = [],
   images = [];
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
-const applicationRevision = "2026-10-08-workers-private";
+const applicationRevision = "2026-10-08-living-v04-bundles";
 const deploymentSources = [
   "wrangler.jsonc", "worker/index.mjs", "scripts/deploy-worker.mjs",
   "scripts/worker-secrets.mjs", "scripts/check-worker.mjs",
@@ -67,6 +80,9 @@ if (
   checks.passed !== checks.total
 )
   throw Error("Validate the current model before preparing a release.");
+for (const p of validation.model_packages ?? []) {
+  if(hash(await fs.readFile(p.path)) !== p.sha256) throw Error(`Revalidate model package ${p.path}`);
+}
 for (const view of spec.renderViews) {
   const record = provenance.images?.[view.id];
   const source =
@@ -85,9 +101,7 @@ for (const view of spec.renderViews) {
   )
     throw Error(`Render image changed: ${view.id}`);
 }
-async function asset(path, role) {
-  const source =
-    role === "hd-model" ? `asset_exchange/${spec.assetStem}.glb` : undefined;
+async function asset(path, role, source) {
   const bytes = await fs.readFile(source ?? `public/${path}`);
   assets.push({
     path,
@@ -113,7 +127,7 @@ const renderTitles = {
   master: "主卧",
   masterbath: "主卫",
 };
-for (const id of ["reference", "living", "kitchen", "master", "masterbath"]) {
+for (const id of ["reference", "living", "kitchen", "master", "masterbath"].filter(id => spec.renderViews.some(v => v.id === id))) {
   const path = `${prefix}/images/${id}.webp`;
   await sharp(`.asset-work/renders/${version}/${id}.png`)
     .resize({ width: id === "reference" ? 1400 : 1100 })
@@ -125,9 +139,15 @@ for (const id of ["reference", "living", "kitchen", "master", "masterbath"]) {
     path,
     kind: "模型渲染",
     version,
-    caption: `由当前 ${version} 源模型以 Cycles 渲染。4 处房门已按原始户型图修正为全开靠墙；空间及构件与交互模型同步。`,
+    caption: `由当前 ${version} 源模型以 Cycles 渲染；家具、空间、门向及构件与交互模型同步。家具外观按用户参考建模，尺寸依据见构件属性。`,
   });
   await asset(path, "render");
+}
+for(const effect of (designSelection?.display_effects ?? []).filter(effect => !effect.kind.startsWith("历史"))) {
+  const imagePath=`${prefix}/images/${effect.id}.webp`;
+  await sharp(effect.source).resize({width:1448,withoutEnlargement:true}).webp({quality:90}).toFile(`public/${imagePath}`);
+  images.push({id:effect.id,title:effect.title,path:imagePath,kind:effect.kind,version:effect.designVersion,caption:effect.caption});
+  await asset(imagePath, 'design-effect');
 }
 const references = [
   [
@@ -207,13 +227,6 @@ const references = [
     "实拍 · 已脱敏",
     "已去除人像倒影与视频按钮；门扇收在入口右侧。",
   ],
-  [
-    "archive",
-    "approved-v05.png",
-    "历史示意 v05",
-    "历史生成参考",
-    "旧版生成参考，未同步后续模型修订。仅供查看历史，不代表当前户型。",
-  ],
 ];
 for (const [id, file, title, kind, caption] of references) {
   const path = `${prefix}/images/${id}.webp`;
@@ -226,13 +239,10 @@ for (const [id, file, title, kind, caption] of references) {
     title,
     path,
     kind,
-    version: id === "archive" ? "reference-v05" : "source-reference",
+    version: "source-reference",
     caption,
   });
-  await asset(
-    path,
-    id === "archive" ? "historical-reference" : "source-reference",
-  );
+  await asset(path, "source-reference");
 }
 // An illustrated derivative is optional; the authoritative reference always remains the actual render.
 try {
@@ -262,15 +272,18 @@ try {
 } catch (e) {
   if (e.code !== "ENOENT") throw e;
 }
-await fs.copyFile(
-  `asset_exchange/${spec.assetStem}.glb`,
-  `${out}/apartment-hd.glb`,
-);
+for (const pack of packages) {
+  await fs.copyFile(`asset_exchange/${pack.assetStem}.glb`, `${out}/${pack.hdFile}`);
+  await asset(`${prefix}/${pack.webFile}`, "model");
+  await asset(`${prefix}/${pack.hdFile}`, "hd-model", `asset_exchange/${pack.assetStem}.glb`);
+}
+await asset(`${prefix}/model-packages.json`, "model-report");
 await fs.copyFile("model/apartment.json", `${out}/design-spec.json`);
 const report = {
   version,
   sourceSha256: validation.source_sha256,
   rawModelSha256: validation.glb_sha256,
+  modelPackages: validation.model_packages,
   specSha256: hash(await fs.readFile("model/apartment.json")),
   roundtrip: {
     passed: validation.roundtrip_pass,
@@ -281,6 +294,12 @@ const report = {
   },
   checks,
   revisions: spec.revisions,
+  designContext: designSelection ? {
+    id: designSelection.id,
+    selectionSha256: hash(await fs.readFile(spec.furnitureDecision)),
+    userAcceptance: designSelection.user_acceptance,
+    tableRevision: designSelection.table_revision,
+  } : null,
   renders: provenance,
   acceptance: {
     visual: "pending-user-review",
@@ -292,8 +311,6 @@ await fs.writeFile(
   JSON.stringify(report, null, 2),
 );
 for (const [path, role] of [
-  ["apartment-web.glb", "model"],
-  ["apartment-hd.glb", "hd-model"],
   ["architecture.json", "properties"],
   ["navigation.json", "navigation"],
   ["floor-plan.svg", "drawing"],
@@ -307,12 +324,21 @@ await asset("decoders/THREE-LICENSE.txt", "license");
 const sources = {};
 for (const path of [
   "model/apartment.json",
+  "model/resource-budgets.json",
   `art_src/${spec.assetStem}.blend`,
-  `asset_exchange/${spec.assetStem}.glb`,
+  ...packages.map(p => `asset_exchange/${p.assetStem}.glb`),
+  ...spec.furnishings.filter(f => f.source).map(f => f.source.path),
+  ...(designSelection?.sofa_revision ? [designSelection.sofa_revision.handoff] : []),
+  "scripts/model-packages.mjs",
+  "scripts/model_packages.py",
   "scripts/build-apartment.py",
   "scripts/architecture_geometry.py",
+  "scripts/furniture_geometry.py",
   "scripts/render-apartment.py",
+  "scripts/render_exterior.py",
+  "scripts/environment-data.mjs",
   "scripts/export-apartment.py",
+  "scripts/validate-apartment.py",
   "scripts/generate-data.mjs",
   "scripts/optimize-web.mjs",
   "scripts/prepare-release.mjs",
@@ -322,6 +348,9 @@ for (const path of [
   "vite.config.js",
   "package.json",
   "package-lock.json",
+  ...(spec.furnitureDecision ? [spec.furnitureDecision, nodePath.posix.join(nodePath.posix.dirname(spec.furnitureDecision),'DECISION.md')] : []),
+  ...new Set((spec.furnitureMaterials ?? []).map(m => m.texture).filter(Boolean)),
+  ...new Set(designInputs),
   ...(await fs.readdir("src"))
     .filter((f) => /\.(js|css)$/.test(f))
     .map((f) => `src/${f}`),
@@ -330,12 +359,13 @@ for (const path of [
 const manifest = {
   schemaVersion: 1,
   version,
-  presentationRevision: "2026-09-15-section-quality",
+  presentationRevision: spec.presentationRevision ?? (spec.furnishings?.length ? "2026-10-08-living-v02-table-r2" : "2026-09-15-section-quality"),
   applicationRevision,
   units: "m",
   project: spec.project,
-  model: `${prefix}/apartment-web.glb`,
-  rawModel: `${prefix}/apartment-hd.glb`,
+  model: `${prefix}/${packages[0].webFile}`,
+  rawModel: `${prefix}/${packages[0].hdFile}`,
+  additionalModels: packages.slice(1).map(p=>({id:p.id,model:`${prefix}/${p.webFile}`,rawModel:`${prefix}/${p.hdFile}`})),
   architecture: `${prefix}/architecture.json`,
   navigation: `${prefix}/navigation.json`,
   floorplan: `${prefix}/floor-plan.svg`,
@@ -344,7 +374,7 @@ const manifest = {
   images,
   assets,
   sources,
-  budgets: { firstScreenBytes: 1048576, interactive3DBytes: 16777216 },
+  budgets: { firstScreenBytes: resourceBudgets.firstScreenBytes, interactive3DBytes: resourceBudgets.interactive3DBytes, webModelBytes: resourceBudgets.webModelBytes },
   visualPolicy:
     "Preserve source texture resolution; native display pixel ratio by default. Smooth mode is opt-in. Resource budgets follow visual quality.",
 };

@@ -160,11 +160,12 @@ for (const [label, width, height] of [
     if (width < 700) await panel(page, false);
     await nonblank(page, testInfo, `${label}-bathroom`);
     await page.locator("[data-open-references]").first().click();
-    await expect(page.locator("#reference-caption")).toContainText("模型渲染");
+    await expect(page.locator("#reference-caption")).toContainText("AI 方案效果图");
     await expect(page.locator("#reference-image")).toHaveAttribute(
       "src",
-      /\/reference\.webp$/,
+      /\/scheme-overview\.webp$/,
     );
+    await expect(page.locator('#reference-tabs [data-reference="reference"], #reference-tabs [data-reference="cabinet"], #reference-tabs [data-reference="table"], #reference-tabs [data-reference="scheme-cabinet-v02"], #reference-tabs [data-reference="archive"]')).toHaveCount(0);
     await page.locator("#reference-dialog [data-close-dialog]").click();
     await page.locator("#documents").scrollIntoViewIfNeeded();
     for (const link of await page.locator("#downloads a").all()) {
@@ -286,6 +287,21 @@ test("model failure, retry, cancellation and re-entry keep a single canvas", asy
   await modelReady(page);
 });
 
+test("secondary furniture package failure retries with complete semantic ownership", async ({page}) => {
+  await page.route("**/living-sofa-web.glb", r => r.fulfill({status:503,body:"unavailable"}));
+  await page.goto("./");
+  await page.locator("[data-explore]").click();
+  await expect(page.locator("#loading-text")).toContainText("暂时无法载入");
+  await expect(page.locator("canvas")).toHaveCount(0);
+  await page.unroute("**/living-sofa-web.glb");
+  await page.locator("#load-model").click();
+  await modelReady(page);
+  await page.locator('#mini-plan [data-entity-id="living-sofa"]').click();
+  await expect(page.locator("#properties")).toContainText("沙发原始皮面与木框");
+  const result = await view(page);
+  expect(result.state.entityId).toBe("living-sofa");
+});
+
 test("standard rendering, north-up plan, current reference and on-demand HD retain the selected view", async ({
   page,
 }, testInfo) => {
@@ -293,8 +309,10 @@ test("standard rendering, north-up plan, current reference and on-demand HD reta
   // covered by the desktop/tablet/phone flows with normal motion.
   // The private runner decodes raw HD textures for ~40s after the injected
   // 25s download delay, leaving under 50s of the old phase for software drawing.
-  // Only HD phases get additional time; normal UI and Web phase limits remain.
-  if (process.env.CI) test.setTimeout(900000);
+  // HD phases keep their own bound; normal UI and Web phase limits remain.
+  // The whole local Web + HD workflow also includes the intentional 25s delay.
+  // Its former 90s limit cancelled HD while its own 120s phase still had time.
+  test.setTimeout(process.env.CI ? 900000 : 240000);
   const hdPhaseTimeout = process.env.CI ? 240000 : 120000;
   const hdTimings = {};
   const hdRendered = async (name) => {
@@ -369,7 +387,7 @@ test("standard rendering, north-up plan, current reference and on-demand HD reta
   await page.locator("[data-open-references]").first().click();
   await expect(page.locator("#reference-image")).toHaveAttribute(
     "src",
-    /\/reference\.webp$/,
+    /\/scheme-overview\.webp$/,
   );
   await expect
     .poll(() =>
@@ -378,7 +396,7 @@ test("standard rendering, north-up plan, current reference and on-demand HD reta
         .evaluate((img) => img.complete && img.naturalWidth > 0),
     )
     .toBe(true);
-  await testInfo.attach("current-model-reference", {
+  await testInfo.attach("current-design-reference", {
     body: await page.locator("#reference-dialog").screenshot(),
     contentType: "image/png",
   });

@@ -16,7 +16,9 @@ __pycache__/
 .asset-work/site-public/
 .asset-work/visual-review/
 .asset-work/browser-evidence/
-public/releases/*/apartment-hd.glb
+.asset-work/sofa-tripo-r1/
+asset_exchange/sofa-tripo-r1/original/
+public/releases/*/*-hd.glb
 playwright-report/
 test-results/
 blob-report/

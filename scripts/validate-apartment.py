@@ -2,9 +2,11 @@
 Preserves the original plan origin and transparent glass. Does not claim the plugin's
 opaque/bottom-center generic-prop contract or user artistic acceptance.
 """
-import bpy, json, pathlib, hashlib, math
+import bpy, json, pathlib, hashlib, math, sys
 from mathutils import Vector
 ROOT=pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'scripts'))
+from model_packages import packages
 SPEC=json.loads((ROOT/'model/apartment.json').read_text())
 STEM=SPEC['assetStem']
 SOURCE_PATH=ROOT/'art_src'/f'{STEM}.blend'
@@ -25,7 +27,11 @@ def inspect():
 bpy.ops.wm.open_mainfile(filepath=str(SOURCE_PATH))
 source=inspect()
 bpy.ops.wm.read_factory_settings(use_empty=True)
-bpy.ops.import_scene.gltf(filepath=str(GLB_PATH))
+package_hashes=[]
+for pack in packages(SPEC):
+    path=ROOT/'asset_exchange'/f"{pack['assetStem']}.glb"
+    bpy.ops.import_scene.gltf(filepath=str(path))
+    package_hashes.append({'id':pack['id'],'path':str(path.relative_to(ROOT)),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'bytes':path.stat().st_size})
 imported=inspect()
 trough_samples=[]
 if 'Master_double_stone_trough' in imported:
@@ -47,7 +53,7 @@ for name,expected in source.items():
 for name in imported.keys()-source.keys():errors.append('unexpected '+name)
 report={'version':SPEC['version'],'spec_sha256':hashlib.sha256((ROOT/'model/apartment.json').read_bytes()).hexdigest(),
  'source_sha256':hashlib.sha256(SOURCE_PATH.read_bytes()).hexdigest(),
- 'glb_sha256':hashlib.sha256(GLB_PATH.read_bytes()).hexdigest(),
+ 'glb_sha256':hashlib.sha256(GLB_PATH.read_bytes()).hexdigest(),'model_packages':package_hashes,
  'source_objects':len(source),'reimport_objects':len(imported),'max_bound_error_m':max_error,
  'source_triangles':sum(o['triangles'] for o in source.values()),'reimport_triangles':sum(o['triangles'] for o in imported.values()),
  'source_degenerate_triangles':sum(o['degenerate'] for o in source.values()),

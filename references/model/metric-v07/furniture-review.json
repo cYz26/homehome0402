@@ -1,0 +1,83 @@
+{
+  "version": "metric-v07",
+  "sourceSha256": "1b5274fd7519d9b5838b18a8be7e7375cc804fa33216718674c28f823a04da0d",
+  "role": "Actual Cycles neutral geometry review, not AI artwork",
+  "contactSheet": {
+    "path": "references/model/metric-v07/furniture-shape-review.png",
+    "sha256": "39d2775a3abac5b15b4e3e3085fd0c968de97e94af80952cb18b0c0d86966a42"
+  },
+  "originalViews": [
+    {
+      "asset": "sofa",
+      "view": "front",
+      "path": ".asset-work/visual-review/metric-v07/sofa-front.png",
+      "sha256": "17c282f98e1d57d4d5ab983bdb52f006eefcaa55e1760b78f57dfb842e82991a"
+    },
+    {
+      "asset": "sofa",
+      "view": "side",
+      "path": ".asset-work/visual-review/metric-v07/sofa-side.png",
+      "sha256": "6ffb8b55198cb5d98b78ff5f2d0608caff40b0a25f5ef1bf7da52c38fed3e15d"
+    },
+    {
+      "asset": "sofa",
+      "view": "quarter",
+      "path": ".asset-work/visual-review/metric-v07/sofa-quarter.png",
+      "sha256": "576047f5f873564238077e16c7c46e58f2b5fffd32f895b09b6ef9e907c1a639"
+    },
+    {
+      "asset": "table",
+      "view": "front",
+      "path": ".asset-work/visual-review/metric-v07/table-front.png",
+      "sha256": "14d51d3d4ff94dc64b37f9b041bd05ad33bd42204396a4496d352f83616048d0"
+    },
+    {
+      "asset": "table",
+      "view": "side",
+      "path": ".asset-work/visual-review/metric-v07/table-side.png",
+      "sha256": "92bb05f5f1a8727c4196804081bbfd10506b45244c2d524f4a5b76cf86277520"
+    },
+    {
+      "asset": "table",
+      "view": "quarter",
+      "path": ".asset-work/visual-review/metric-v07/table-quarter.png",
+      "sha256": "52893c28d62d5bf31293c9c06aa0b265039fd0992ffc5302681301e4ab073c9c"
+    },
+    {
+      "asset": "cabinet",
+      "view": "front",
+      "path": ".asset-work/visual-review/metric-v07/cabinet-front.png",
+      "sha256": "144d0fce166c0a1638f27fdcb449956639f504f2385ff84bfc0308f698c75d07"
+    },
+    {
+      "asset": "cabinet",
+      "view": "side",
+      "path": ".asset-work/visual-review/metric-v07/cabinet-side.png",
+      "sha256": "8a4287112e8a2ac47a29c245e2fd92aff51b251a788f7fe3e8241827e3dcf003"
+    },
+    {
+      "asset": "cabinet",
+      "view": "quarter",
+      "path": ".asset-work/visual-review/metric-v07/cabinet-quarter.png",
+      "sha256": "b2c09384629a5f4f72aeb56258465f45a76422e8cf682228f4b24a202fa616a4"
+    },
+    {
+      "asset": "chair",
+      "view": "front",
+      "path": ".asset-work/visual-review/metric-v07/chair-front.png",
+      "sha256": "af8a6995c4992a57f57b6c886b9fb7e5d5939103f6dd8e68894d5345e247489a"
+    },
+    {
+      "asset": "chair",
+      "view": "side",
+      "path": ".asset-work/visual-review/metric-v07/chair-side.png",
+      "sha256": "4e4f5c2ca20b9c66e5f3ad6238198e9d34741cfa3821a73591c7c4a4f6ed0782"
+    },
+    {
+      "asset": "chair",
+      "view": "quarter",
+      "path": ".asset-work/visual-review/metric-v07/chair-quarter.png",
+      "sha256": "45a09a0d6977390330ba739aea2e9583aecb5a6428401da7ef0a15cb452710b2"
+    }
+  ]
+}

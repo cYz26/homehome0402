@@ -1,0 +1,72 @@
+{
+  "version": "metric-v08",
+  "checks": [
+    {
+      "name": "spec, data, navigation and manifest are one version",
+      "pass": true
+    },
+    {
+      "name": "Every source and published resource matches its SHA-256",
+      "pass": true
+    },
+    {
+      "name": "Published images contain no EXIF, XMP or IPTC metadata",
+      "pass": true
+    },
+    {
+      "name": "All source parts have unique semantic owners and all IDs resolve",
+      "pass": true
+    },
+    {
+      "name": "all geometry outside recorded revisions remains identical to v05",
+      "pass": true
+    },
+    {
+      "name": "Every v06 architectural part remains unchanged after furnishing",
+      "pass": true
+    },
+    {
+      "name": "door hinge sides and fully open directions follow the redlined plan",
+      "pass": true
+    },
+    {
+      "name": "space areas derive from polygons after subtracting walls",
+      "pass": true
+    },
+    {
+      "name": "web textures preserve source resolution with only KTX block alignment",
+      "pass": true
+    },
+    {
+      "name": "KTX2 and Meshopt are present and all component bounds survive compression",
+      "pass": true
+    },
+    {
+      "name": "Static homepage images, drawing and version labels bind the current release",
+      "pass": true
+    },
+    {
+      "name": "first-screen, web model and interactive resources fit the versioned visual-first budgets",
+      "pass": true
+    },
+    {
+      "name": "Three.js is not preloaded by the initial HTML",
+      "pass": true
+    },
+    {
+      "name": "Build contains only current selected resources and application code",
+      "pass": true
+    },
+    {
+      "name": "SVG includes rooms, entities, doors, north and metre scale without invalid coordinates",
+      "pass": true
+    }
+  ],
+  "passed": 15,
+  "initialBytes": 653722,
+  "firstViewportCoreBytes": 289262,
+  "interactiveBytes": 19787616,
+  "webGLBBytes": 17582848,
+  "sourceSha256": "35b96705e4ce25df42fbd0a180c0de0eabc5be77d82a146409d560ac53f7643b",
+  "rawModelSha256": "57962ad91e6caeb1b1a4423a404c1733c8e04f60967e316833813ed0ce49e5e6"
+}

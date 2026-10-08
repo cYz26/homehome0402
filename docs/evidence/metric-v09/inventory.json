@@ -1,0 +1,476 @@
+{
+  "config": {
+    "argv": [
+      "/Users/cY/.nvm/versions/node/v24.13.0/bin/node",
+      "/Users/cY/dev/homehome402/node_modules/.bin/playwright",
+      "test",
+      "--list",
+      "--reporter=json"
+    ],
+    "configFile": "/Users/cY/dev/homehome402/playwright.config.mjs",
+    "rootDir": "/Users/cY/dev/homehome402/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/cY/dev/homehome402/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "",
+        "name": "",
+        "testDir": "/Users/cY/dev/homehome402/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.mjs"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "browser.spec.mjs",
+      "file": "browser.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "desktop: homepage preload, model, linked rooms, section, view restore, screenshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-8cd04fcbc9907410b673",
+          "file": "browser.spec.mjs",
+          "line": 68,
+          "column": 3
+        },
+        {
+          "title": "tablet: homepage preload, model, linked rooms, section, view restore, screenshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-698a641a9769944a516f",
+          "file": "browser.spec.mjs",
+          "line": 68,
+          "column": 3
+        },
+        {
+          "title": "phone: homepage preload, model, linked rooms, section, view restore, screenshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-98c8af1a4653ddbb5195",
+          "file": "browser.spec.mjs",
+          "line": 68,
+          "column": 3
+        },
+        {
+          "title": "mobile touch: immediate two-axis look, stationary hold, two-finger height and release safety",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-4c07cba727d7e5cd7b61",
+          "file": "browser.spec.mjs",
+          "line": 185,
+          "column": 1
+        },
+        {
+          "title": "configuration failure and explicit retry recover without a reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-11358f5a28e56f65af76",
+          "file": "browser.spec.mjs",
+          "line": 257,
+          "column": 1
+        },
+        {
+          "title": "model failure, retry, cancellation and re-entry keep a single canvas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-7ba5cb316959b4eb466f",
+          "file": "browser.spec.mjs",
+          "line": 270,
+          "column": 1
+        },
+        {
+          "title": "secondary furniture package failure retries with complete semantic ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-6935866ddcab17991d51",
+          "file": "browser.spec.mjs",
+          "line": 290,
+          "column": 1
+        },
+        {
+          "title": "standard rendering, north-up plan, current reference and on-demand HD retain the selected view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-4f6eb49cee3088492d60",
+          "file": "browser.spec.mjs",
+          "line": 305,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "loading.spec.mjs",
+      "file": "loading.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "model download overlaps viewer code and cancellation stays responsive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "8846761104401fa70e55-70181ad31a43e4ef3644",
+          "file": "loading.spec.mjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "preload.spec.mjs",
+      "file": "preload.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "background resources wait for a delayed homepage hero",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee6a5fc7d7a3259f369f-092e20d854104b130ca7",
+          "file": "preload.spec.mjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "homepage 1280: preloads after the hero and reuses the pending model",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee6a5fc7d7a3259f369f-784143109fedfe1d18b9",
+          "file": "preload.spec.mjs",
+          "line": 29,
+          "column": 3
+        },
+        {
+          "title": "homepage 390: preloads after the hero and reuses the pending model",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee6a5fc7d7a3259f369f-d14141451c1bc634dd69",
+          "file": "preload.spec.mjs",
+          "line": 29,
+          "column": 3
+        },
+        {
+          "title": "completed homepage preload is reused and does not create a renderer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee6a5fc7d7a3259f369f-3033afbbd01c160fd0e7",
+          "file": "preload.spec.mjs",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "background preload failure leaves the homepage usable and explicit entry retries",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee6a5fc7d7a3259f369f-de7b97595db26fa15d6d",
+          "file": "preload.spec.mjs",
+          "line": 86,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "section-render.spec.mjs",
+      "file": "section-render.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "section caps stay flat through zoom with full AO, shadows and both model packages",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c90fc3a24022a12031de-30c408a3e3a8691abbd3",
+          "file": "section-render.spec.mjs",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "walk-input.spec.mjs",
+      "file": "walk-input.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "walk canvas owns long-press defaults and releases input on interruption",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "4ca4fa4e6b43f9422ec5-dbb62ca9abfbe9264267",
+          "file": "walk-input.spec.mjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "worker-auth.spec.mjs",
+      "file": "worker-auth.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "desktop: password gate protects assets and restores the shared view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c52f8b12d926c47a04a4-416e1f70c6bd05fa8688",
+          "file": "worker-auth.spec.mjs",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "phone: password gate protects assets and restores the shared view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c52f8b12d926c47a04a4-2d4cb6efb015843792f2",
+          "file": "worker-auth.spec.mjs",
+          "line": 4,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T11:40:30.187Z",
+    "duration": 85.18,
+    "expected": 0,
+    "skipped": 18,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

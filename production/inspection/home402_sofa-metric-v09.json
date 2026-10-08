@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "art_src/apartment-v09.blend",
+    "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
+  },
+  "meshes": [
+    "Furniture_living_sofa"
+  ],
+  "armatures": [],
+  "actions": [],
+  "evidence": {
+    "path": "production/inspection/metric-v09-source.json",
+    "sha256": "456a5b9b2406980daa9b89f5e3c6286fe51a8392bc1befc80d1939a1cf92df01"
+  }
+}

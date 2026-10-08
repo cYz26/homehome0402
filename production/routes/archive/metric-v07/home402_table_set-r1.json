@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_table_set",
+  "task_id": "home402-living-v02-to-metric-v07",
+  "intent": "new_static",
+  "route": "reference_blender",
+  "decision_basis": {
+    "path": "docs/design/living-v02/DECISION-table-r1.md",
+    "sha256": "fed070093ab35875ef2a0226d6078b8944b3ab0467018d17e7faf9890671c226"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Author static furniture geometry and PBR surfaces from the selected standalone reference",
+    "Place under metric-v07 JSON dimensions and preserve architectural geometry"
+  ],
+  "references": [
+    {
+      "path": "references/generated/living-furniture-20261008/independent/table-set-r1.png",
+      "sha256": "4a65f62b4e248e9eaafedbe317f39a0878de9bf1134435e1fe02977b6e367fce"
+    }
+  ],
+  "geometry": null,
+  "reuse": []
+}

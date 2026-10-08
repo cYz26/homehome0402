@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "task_id": "home402-tripo-sofa-replacement-20261008",
+  "user_request": "将3D场景中的沙发替换为tripo生成的模型",
+  "handoff_authorization": "可以，发给主线程接入（推荐）",
+  "own_scope": "Independent sofa source intake/preparation/preview only; shared scene source and release remain owned by main thread",
+  "observed_scene_version": "metric-v08",
+  "observed_release_version": "metric-v08",
+  "asset": {
+    "schema_version": 1,
+    "full_source": {
+      "path": "art_src/furniture/sofa-tripo-r1-full-ready.blend",
+      "sha256": "10350863cc4cc09577eca17d0b3185c626a6feb02e4d6f3c0228bd093630e61e",
+      "bytes": 79883640,
+      "triangles": 1941920,
+      "vertices": 970976,
+      "bounds": [
+        [
+          -0.5508517026901245,
+          -1.2000000476837158,
+          0.0
+        ],
+        [
+          0.5508517026901245,
+          1.2000000476837158,
+          0.9625330567359924
+        ]
+      ],
+      "dimensions_width_depth_height": [
+        2.4000000953674316,
+        1.101703405380249,
+        0.9625330567359924
+      ]
+    },
+    "runtime_source": {
+      "path": "art_src/furniture/sofa-tripo-r1-ready.blend",
+      "sha256": "012aaf0d133d13effc1d0a0c3d61ce800d6118c5bdfdd2e438a0d6fb585e2ec7",
+      "bytes": 15582055,
+      "triangles": 149999,
+      "vertices": 75015,
+      "bounds": [
+        [
+          -0.5508880615234375,
+          -1.200028896331787,
+          0.0
+        ],
+        [
+          0.5508880615234375,
+          1.200028896331787,
+          0.9626138210296631
+        ]
+      ],
+      "dimensions_width_depth_height": [
+        2.400057792663574,
+        1.101776123046875,
+        0.9626138210296631
+      ]
+    },
+    "preview_full": {
+      "path": ".asset-work/sofa-tripo-r1/full-front-quarter.png",
+      "sha256": "d767f9680d65c4285a9b0abaeb36f3f069aabddabba93d665e1886e4ab0b69df"
+    },
+    "preview_runtime": {
+      "path": ".asset-work/sofa-tripo-r1/ready-front-quarter.png",
+      "sha256": "a5aaa0e7ff62cb28eb70daf65fbaa2e2562921dab6eb0b747bb04706a267f76a"
+    },
+    "glb": {
+      "path": "asset_exchange/sofa-tripo-r1/sofa-ready.glb",
+      "sha256": "3a20c5b269690a6a43b3f334c24459362e80d83f000b3c8457c88b6e3680cce6",
+      "bytes": 21232036,
+      "origin": "Blender-derived GLB; supplied archive contains FBX, not a provider-original GLB"
+    },
+    "source_front_axis_verified": "+X after 180 degree rotation around Z; seating surfaces confirmed from inspected original -X view",
+    "normalization_basis": "Uniform width normalization to the existing assumed 2.4 m furniture width; same aspect ratio, z=0 floor origin",
+    "texture_resolution_policy": "All original PBR channels retained at 4096 x 4096; no image resizing or repainting",
+    "target_placement": {
+      "id": "living-sofa",
+      "node": "Furniture_living_sofa",
+      "plan_position": [
+        4.12,
+        10.4
+      ],
+      "plan_front": [
+        1,
+        0
+      ],
+      "blender_floor_elevation": 0.016,
+      "dimensions_width_depth_height": [
+        2.400057792663574,
+        1.101776123046875,
+        0.9626138210296631
+      ]
+    },
+    "independent_glb_reimport": {
+      "objects": [
+        {
+          "name": "Furniture_living_sofa",
+          "bounds": [
+            [
+              -0.5508880615234375,
+              -1.200028896331787,
+              0.0
+            ],
+            [
+              0.5508880615234375,
+              1.200028896331787,
+              0.9626138210296631
+            ]
+          ],
+          "triangles": 149999,
+          "uv_layers": [
+            "UVMap"
+          ],
+          "materials": [
+            "Tripo_sofa_original_PBR"
+          ]
+        }
+      ],
+      "maximum_bounds_error_meters": 0.0,
+      "triangles_match": true,
+      "images": [
+        {
+          "name": "modern_sofa_3d_model_basecolor",
+          "size": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "name": "modern_sofa_3d_model_metallic-modern_sofa_3d_model_roughness",
+          "size": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "name": "modern_sofa_3d_model_normal",
+          "size": [
+            4096,
+            4096
+          ]
+        }
+      ],
+      "armatures": [],
+      "actions": []
+    },
+    "visual_comparison": {
+      "same_camera_light_materials": true,
+      "resolution": [
+        1200,
+        800
+      ],
+      "mean_rgb_absolute_difference_0_to_255": 0.4238458333333333,
+      "maximum_channel_difference": 120,
+      "review": "Inspected both actual Cycles views: three seats, folded outer headrest, padded arm silhouette and wood frame retained. Minor highlight/raster differences remain; this does not establish browser or real-device acceptance."
+    },
+    "durable_preview_images": [
+      {
+        "path": "references/model/sofa-tripo-r1/full-source.png",
+        "sha256": "b0b3365937926e8c8d23b531a59396e1eb5b1e2a5f7a1c07a670386e8adf7e1f",
+        "pixels_preserved": true
+      },
+      {
+        "path": "references/model/sofa-tripo-r1/runtime-source.png",
+        "sha256": "c0b023267bd1c1d8245adab09860039cdaf3e96e823cc669c71d75595631cbf5",
+        "pixels_preserved": true
+      }
+    ]
+  },
+  "intake_record": "asset_exchange/sofa-tripo-r1/intake.json",
+  "original_inspection": "asset_exchange/sofa-tripo-r1/inspection-import.json",
+  "provider_settings_unknown": [
+    "task_id",
+    "model_version",
+    "actual_uploaded_views",
+    "generation_settings",
+    "credits"
+  ],
+  "integration_requirements": [
+    "Replace the procedural living-sofa through model/apartment.json plus an imported-source branch in furniture_geometry.py; ensure future rebuilds retain the supplied model.",
+    "Keep living-sofa/Furniture_living_sofa logical identity and current approved position [4.12,10.4], facing [1,0].",
+    "Append the ready packed Blender object with its original PBR material; do not substitute the procedural sofa shader.",
+    "Ready local axes are front +X, width +Y, up +Z, origin centered at floor z=0. Apply scene placement rotation and finished-floor elevation 0.016 m.",
+    "Width is normalized uniformly to the existing assumed 2.4 m; actual depth 1.101776 m and height 0.962614 m differ from previous 1.02/1.04 m assumptions. Update derived properties/colliders from actual geometry.",
+    "Keep supplied ZIP, FBX and texture bytes, packed full-density source and standalone candidate as history.",
+    "Retain all 4096-pixel PBR channels unless an actual visual comparison supports a separate export treatment.",
+    "Rebuild dependent GLB/data/nav/plan/renders/release consistently; check actual browser appearance before claiming scene integration complete.",
+    "Reconcile model/download budgets and the Workers 25 MiB per-file bound: standalone GLB is 21,232,036 bytes, merging it into the current full apartment will require a packaging decision.",
+    "No new Tripo generation, API calls, spending, source geometry redesign, commit, push or deployment requested."
+  ]
+}

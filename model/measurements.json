@@ -1,5 +1,5 @@
 {
-  "version": "metric-v06",
+  "version": "metric-v09",
   "height_m": 2.8,
   "cut_height_m": 1.15,
   "coordinate_transform": "Plan x east, t south from north edge; Blender (x,12.9-t,z), GLB (x,z,t-12.9)",
@@ -9,7 +9,7 @@
     "west": 12.9
   },
   "plan_reference_sha256": "d34c2a2641938c7541570063eac16a3d481f84bae4cd4826b2124fadd6186af3",
-  "spec_sha256": "624944e362b7dfb3c278ffbd8512b5d47cfeec485b3ba68e91428193aac20ce7",
+  "spec_sha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
   "reference_v05_sha256": "0409b27755131d6ce8794286c464d744bee784484eb9f59f2c734d2deccf39d3",
   "components": [
     {
@@ -704,7 +704,7 @@
       "one_continuous_bowl": true
     }
   ],
-  "object_count": 690,
+  "object_count": 707,
   "room_clear_width_estimates_m": {
     "northwest": 2.62,
     "xroom": 2.64,
@@ -713,5 +713,330 @@
     "living_south": 3.84,
     "southeast_south": 2.82
   },
-  "clear_estimate_note": "Between assumed wall faces in main rectangular zones, excluding skirting and cabinet projections. Not measured site dimensions or whole-room areas."
+  "clear_estimate_note": "Between assumed wall faces in main rectangular zones, excluding skirting and cabinet projections. Not measured site dimensions or whole-room areas.",
+  "furnishings": [
+    {
+      "id": "living-sofa",
+      "recipe": "external_static",
+      "node": "Furniture_living_sofa",
+      "position": [
+        4.17,
+        10.4
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        2.400057792663574,
+        1.101776123046875,
+        0.9626138210296631
+      ],
+      "dimensionBasis": "用户提供 Tripo ZIP / 已准备模型；等比归一到假设宽 2.4 m，深高沿用网格比例，非家具实测。背墙避让向东移 5 cm。"
+    },
+    {
+      "id": "dining-work-table",
+      "recipe": "table",
+      "node": "Furniture_dining_work_table",
+      "position": [
+        5.55,
+        6
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        2.8,
+        0.9,
+        0.75
+      ],
+      "dimensionBasis": "用户最新尺寸图：2800 × 900 × 750 mm，桌面 70 mm；结构按照片还原"
+    },
+    {
+      "id": "dining-bench",
+      "recipe": "bench",
+      "node": "Furniture_dining_bench",
+      "position": [
+        4.88,
+        5.76
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        2.12,
+        0.43,
+        0.455
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "dining-chair-1",
+      "recipe": "chair",
+      "node": "Furniture_dining_chair_1",
+      "position": [
+        6.42,
+        5.22
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.49,
+        0.54,
+        0.84
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "dining-chair-2",
+      "recipe": "chair",
+      "node": "Furniture_dining_chair_2",
+      "position": [
+        6.42,
+        5.75
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.49,
+        0.54,
+        0.84
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "dining-chair-3",
+      "recipe": "chair",
+      "node": "Furniture_dining_chair_3",
+      "position": [
+        6.42,
+        6.28
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.49,
+        0.54,
+        0.84
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "living-modular-cabinet",
+      "recipe": "cabinet",
+      "node": "Furniture_living_modular_cabinet",
+      "position": [
+        7.19,
+        10.62
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        3.8,
+        0.42,
+        1.16
+      ],
+      "dimensionBasis": "按用户柜墙图 2 校准高低比例；0.78 / 0.50 / 1.16 m 为未实测的建模假设"
+    },
+    {
+      "id": "living-reading-chair",
+      "recipe": "armchair",
+      "node": "Furniture_living_reading_chair",
+      "position": [
+        4.72,
+        12.13
+      ],
+      "front": [
+        0.65,
+        -0.76
+      ],
+      "dimensions": [
+        0.76,
+        0.73,
+        0.76
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "living-rug",
+      "recipe": "rug",
+      "node": "Furniture_living_rug",
+      "position": [
+        5.37,
+        10.56
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        3.66,
+        2.64,
+        0.008
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "dining-rug",
+      "recipe": "rug",
+      "node": "Furniture_dining_rug",
+      "position": [
+        5.61,
+        6.08
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        3.16,
+        2.38,
+        0.006
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "living-floor-lamp",
+      "recipe": "floor_lamp",
+      "node": "Furniture_living_floor_lamp",
+      "position": [
+        7.01,
+        8.72
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.78,
+        0.4,
+        1.76
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "living-table-lamp",
+      "recipe": "table_lamp",
+      "node": "Furniture_living_table_lamp",
+      "position": [
+        7.1,
+        11.42
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.3,
+        0.3,
+        0.76
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "living-art-panels",
+      "recipe": "framed_art",
+      "node": "Furniture_living_art_panels",
+      "position": [
+        7.395,
+        10.62
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        2,
+        0.035,
+        0.9
+      ],
+      "dimensionBasis": "用户要求单幅大艺术画；原创生成画面，2.00 × 0.90 m、中心 1.57 m 为方案假设"
+    },
+    {
+      "id": "living-wall-finish",
+      "recipe": "wall_finish",
+      "node": "Furniture_living_wall_finish",
+      "position": [
+        3.596,
+        10.63
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        4.12,
+        0.008,
+        1.15
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "living-wall-finish-upper",
+      "recipe": "wall_finish",
+      "node": "Furniture_living_wall_finish_upper",
+      "position": [
+        3.596,
+        10.63
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        4.12,
+        0.008,
+        1.46
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "table-desktop-items",
+      "recipe": "accessories",
+      "node": "Furniture_table_desktop_items",
+      "position": [
+        5.55,
+        5.95
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        0.9,
+        0.48,
+        0.24
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    },
+    {
+      "id": "living-cabinet-items",
+      "recipe": "accessories",
+      "node": "Furniture_living_cabinet_items",
+      "position": [
+        7.08,
+        9.14
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.5,
+        0.35,
+        0.35
+      ],
+      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+    }
+  ]
 }

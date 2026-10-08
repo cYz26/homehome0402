@@ -31,7 +31,7 @@ export class SectionSSAOPass extends SSAOPass {
     normal.polygonOffset = source.polygonOffset;
     normal.polygonOffsetFactor = source.polygonOffsetFactor;
     normal.polygonOffsetUnits = source.polygonOffsetUnits;
-    normal.visible = source.visible && !source.transparent;
+    normal.visible = source.visible && !source.transparent && !(source.transmission>0);
     if (planeCount !== (normal.clippingPlanes?.length ?? 0))
       normal.needsUpdate = true;
     return normal;

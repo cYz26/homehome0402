@@ -1,0 +1,42 @@
+{
+  "designId": "home402-living-v02",
+  "modelVersion": "metric-v07",
+  "source": "art_src/apartment-v07.blend",
+  "sourceSha256": "1b5274fd7519d9b5838b18a8be7e7375cc804fa33216718674c28f823a04da0d",
+  "rawModel": "asset_exchange/apartment-v07.glb",
+  "rawModelSha256": "759ecc17da1bcb77d54ef1d5b9a0403b08739c0f1596939d5d571185e5d23db1",
+  "spec": "model/apartment.json",
+  "specSha256": "a0b26a6fb0793b1b0593113db35e07a800fc0a703d7a60828cf69efb1980a13a",
+  "context": "docs/design/living-v02/selection.json",
+  "actualRenders": [
+    "public/releases/metric-v07/images/living.webp",
+    "public/releases/metric-v07/images/table.webp",
+    "public/releases/metric-v07/images/cabinet.webp"
+  ],
+  "shapeReview": "references/model/metric-v07/furniture-shape-review.png",
+  "modelChecks": "model/checks.json",
+  "tableMeasurements": "model/furniture-measurements.json",
+  "releaseChecks": "model/release-checks.json",
+  "browserValidation": {
+    "passed": 17,
+    "total": 17,
+    "receipt": "docs/evidence/metric-v07/browser-verification.json",
+    "scope": "local Chromium, desktop/tablet/phone width and touch simulation; not a physical phone",
+    "visualReceipt": "docs/evidence/metric-v07/visual-qa.json",
+    "visualScreenshots": [
+      "/Users/cY/.codex/visualizations/2026/10/08/01a119da-518b-7df1-b218-b62441929393/living-v07/desktop-cabinet.png",
+      "/Users/cY/.codex/visualizations/2026/10/08/01a119da-518b-7df1-b218-b62441929393/living-v07/phone-table.png",
+      "/Users/cY/.codex/visualizations/2026/10/08/01a119da-518b-7df1-b218-b62441929393/living-v07/desktop-table.png",
+      "/Users/cY/.codex/visualizations/2026/10/08/01a119da-518b-7df1-b218-b62441929393/living-v07/desktop-living-top.png"
+    ]
+  },
+  "userAcceptance": {
+    "v02AIappearance": "accepted",
+    "metricV07Actual3D": "pending-user-review"
+  },
+  "realPhonePerformance": "not-measured",
+  "remotePublication": "not-requested for metric-v07; existing online version remains independent",
+  "resourceBudgets": "model/resource-budgets.json",
+  "retainedOnlineBaseline": "metric-v06 (not modified by this task)",
+  "previewURL": "http://127.0.0.1:4173/#view=%7B%22v%22%3A1%2C%22mode%22%3A%22interior%22%2C%22roomId%22%3A%22living%22%2C%22entityId%22%3Anull%2C%22section%22%3A%7B%22axis%22%3A%22off%22%2C%22value%22%3A2.8%7D%2C%22quality%22%3A%22standard%22%2C%22eyeHeight%22%3A1.65%2C%22camera%22%3A%7B%22position%22%3A%5B7.05%2C1.22%2C-8.37%5D%2C%22target%22%3A%5B5.735%2C0.6063%2C-6.9937%5D%2C%22zoom%22%3A1%2C%22fov%22%3A66%7D%7D"
+}

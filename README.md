@@ -1,6 +1,6 @@
 # Home 402 · 家的空间档案
 
-当前交付为 **metric-v06**：完整展示网站、同源效果图、交互平面图、构件查询、三向剖切与自由漫游。四处平开门按原始户型图修正朝向并全开靠墙；当前参考图与模型同步，旧版示意图保留为历史参考。
+当前本机设计为 **metric-v09**：已接入原始 4K PBR 的 Tripo 沙发，加入客餐厅家具、单幅艺术画、暖色洗墙光、透射玻璃与窗外庭院展示。网站同时提供明确区分的 AI 方案效果图、同源模型渲染和实拍；交互平面图、构件查询、三向剖切与漫游沿用。远程已发布状态另见 QA，不能由本机版本推断。
 
 ## 本地查看
 
@@ -44,16 +44,17 @@ npm run preview -- --port 4173
 
 ## 建筑数据与文件
 
-`model/apartment.json` 是可编辑设计源，包括墙体、洞口、门窗、固定设施位置与外包尺寸、材质、灯具、空间多边形及机位。
+`model/apartment.json` 是可编辑设计源，包括墙体、洞口、门窗、固定设施、家具位置与结构尺寸、材质、灯具、空间多边形及机位。当前客餐厅设计与修订链见[迭代上下文](docs/design/living-v04/DECISION.md)。
 
 | 文件 | 用途 |
 | --- | --- |
-| `art_src/apartment-v06.blend` | 当前完整米制源场景 |
-| `asset_exchange/apartment-v06.glb` | 原始 GLB，独立重导入核对对象 |
-| `public/releases/metric-v06/apartment-web.glb` | KTX2 + Meshopt 网页模型，约 12.74 MiB |
-| `public/releases/metric-v06/architecture.json` | 73 个逻辑构件、11 个空间及估算面积 |
-| `public/releases/metric-v06/navigation.json` | 完整建筑碰撞、单层可通行网格 |
-| `public/releases/metric-v06/floor-plan.svg` | 当前模型派生平面图 |
+| `art_src/apartment-v09.blend` | 当前完整米制源场景，包含原始贴图沙发 |
+| `art_src/furniture/sofa-tripo-r1-ready.blend` | 哈希锁定的外部家具源；完整版、ZIP / FBX 保留归档 |
+| `asset_exchange/apartment-v09.glb` / `living-sofa-v09.glb` | 同版本房屋与沙发两包，合并重导入核对全场景 |
+| `public/releases/metric-v09/apartment-web.glb` / `living-sofa-web.glb` | 共同组成当前网页模型；编码与字节记录见 model-packages.json |
+| `public/releases/metric-v09/architecture.json` | 89 个逻辑构件、11 个空间及估算面积 |
+| `public/releases/metric-v09/navigation.json` | 完整建筑与沙发碰撞、单层可通行网格 |
+| `public/releases/metric-v09/floor-plan.svg` | 当前模型派生平面图 |
 | `public/release.json` | 发布资源、版本、大小和 SHA-256 清单 |
 | `docs/QA.md` | 本轮检查、视觉证据及验收边界 |
 
@@ -83,7 +84,7 @@ node scripts/collect-browser-evidence.mjs
 - 本轮使用 Blender 5.2.1 LTS。可通过 `BLENDER_BIN` 指定 Blender 可执行文件。
 - 网页优化使用官方 KTX-Software 4.4.2 的 `ktx`，用 `KTX_BIN` 指定其 `bin` 目录；默认查找 `.asset-work/tools/ktx/bin`。
 - 渲染与优化可单独重跑；修改建筑规格后按依赖顺序重新生成派生物。`model:render -- hero` 可仅渲染指定机位。
-- `release:prepare` 将实际 Cycles 输出和经脱敏的参考图转换为 WebP，再绑定哈希。网页默认参考为模型渲染，AI 示意与原始照片分别标注。
+- `release:prepare` 将页面使用的 Cycles 输出和经脱敏的参考图转换为 WebP，再绑定哈希。图廊默认显示最新 AI 方案效果图，仅保留当前效果、户型图和实拍；模型渲染用于首页与空间卡片，历史参考保留归档。
 - 仅修改网页代码时，使用 `npm run release:prepare -- --code-only` 更新源码哈希及应用修订，再执行构建和检查；该入口先验证全部既有资源及非网页设计/生成输入未改变，不需要本机保留渲染缓存。建筑或派生资源变化仍按完整依赖顺序重建。
 - 构建前只把清单引用的资源暂存到 `.asset-work/site-public`。高清 GLB 从 `asset_exchange` 读取，按需下载；不重复提交一份大型副本。
 - `model:build -- --verify-existing` 在内存中重新建模并核对已验证的构件，不覆盖源文件，用于生成算法等价重构检查。
@@ -93,7 +94,7 @@ node scripts/collect-browser-evidence.mjs
 
 采用 **私有 GitHub 仓库 → GitHub Actions 验证 → Cloudflare Workers Static Assets 发布**。当前仓库为 [cYz26/homehome0402](https://github.com/cYz26/homehome0402)，网站使用 `/` 根路径；站内旧 `/homehome402/` 分享路径在验证后重定向到根路径，保留视角片段。PR 执行数据一致性、预算与完整 Chromium 浏览器检查；`main` 推送通过检查才发布。CI 使用已生成且哈希匹配的建筑资源，不在发布时重新渲染 Blender。
 
-网站使用共享密码入口。Worker 先验证全部请求，再访问静态资源，图片、图纸、清单、解码器和两个 GLB 都受保护。登录使用 24 小时的 Secure / HttpOnly / SameSite 签名 Cookie，保留分享链接；错误密码限速，缺少密码配置时返回 503。修改密码会使原会话失效，已经下载到访问者设备的内容无法远程收回。页面和资源回复使用 `private, no-store`；模型的既有浏览器哈希缓存仍用于已登录查看。预览版本 URL 默认关闭。
+网站使用共享密码入口。Worker 先验证全部请求，再访问静态资源，图片、图纸、清单、解码器和全部 GLB 包都受保护。登录使用 24 小时的 Secure / HttpOnly / SameSite 签名 Cookie，保留分享链接；错误密码限速，缺少密码配置时返回 503。修改密码会使原会话失效，已经下载到访问者设备的内容无法远程收回。页面和资源回复使用 `private, no-store`；模型的既有浏览器哈希缓存仍用于已登录查看。预览版本 URL 默认关闭。
 
 CI 按“构建 → 四个浏览器分片 → 合并验收 → 部署”运行：
 
@@ -109,6 +110,8 @@ CI 按“构建 → 四个浏览器分片 → 合并验收 → 部署”运行�
 3. 在本机 `~/.config/home402/site-password.txt` 保存一行网站密码，再运行 `npm run worker:secrets -- --github`，将密码 SHA-256 和随机会话密钥保存为 `SITE_PASSWORD_SHA256` / `SESSION_SECRET`。脚本通过标准输入传递，密码及密钥不进入 Git、静态构建或命令日志。
 4. 设置仓库变量 `HOME402_WORKER_URL` 为实际 Worker HTTPS 地址；`wrangler.jsonc` 锁定 Worker 名 `home402`。随后推送 `main`，等待 `build → browser → verify → deploy` 全部成功；`home402-deployment-evidence` artifact 保存实际资源回读。
 
+当前发布地址为 [Home 402](https://home402.cyz26.workers.dev)，完整验证及部署源见[最终 QA](docs/QA.md#远程验收与首次发布完成)。首次写入 secrets 后，传播期间入口可能短暂返回 503 并保持关闭；若该状态导致回读失败，确认入口恢复密码页后使用 `gh run rerun RUN_ID --failed` 仅重跑失败的部署作业，继续复用已完整验收的同一构建。
+
 本机密码入口检查：
 
 ```sh
@@ -121,10 +124,20 @@ npm run worker:dev -- --port 8787
 
 打开 `http://127.0.0.1:8787/`。`.dev.vars`、`.wrangler` 及本机密码文件均不提交。完整浏览器套件使用独立测试密码启动本地 Worker，避免读取生产密码；测试端口为 4173 / 4174 / 4175。
 
-Wrangler Static Assets 单资源限制为 25 MiB，当前最大的高清 GLB 为 19,790,028 字节，无需拆分或修改画质；[官方限制](https://developers.cloudflare.com/workers/platform/limits/#static-assets)由 `check:worker` 核对。所有资源都经过密码 Worker，请求计入 Worker 配额；静态存储和边缘缓存仍由 Static Assets 负责，见[计费边界](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/)。
+Wrangler Static Assets 单资源限制为 25 MiB，当前将完整场景划为房屋 / 沙发同步模型包，最大的房屋高清包为 24,601,864 字节、沙发高清包 21,232,288 字节，保留原分辨率贴图和画质；[官方限制](https://developers.cloudflare.com/workers/platform/limits/#static-assets)由 `check:worker` 核对。所有资源都经过密码 Worker，请求计入 Worker 配额；静态存储和边缘缓存仍由 Static Assets 负责，见[计费边界](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/)。
 
 本地仍可用 `npm run test:browser` 执行完整套件。排查单个分片可用 `npm run test:browser -- --shard=1/4 --reporter=list,blob`（其余为 `2/4`、`3/4`、`4/4`）；执行下一分片前保存已有 blob ZIP，避免输出目录被清理。完整报告用 `npx playwright merge-reports --reporter=json all-blob-reports` 合并，设置 `PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/browser-report.json`，再由证据脚本的 `--inventory` 参数核对构建时通过 `--list --reporter=json` 生成的清单。分片粒度依据 [Playwright 官方说明](https://playwright.dev/docs/test-sharding)。
 
-首屏关键呈现资源预算 1 MiB，呈现后后台预加载及首次可交互 3D 总资源预算 16 MiB（视觉优先），检查包括 JS、模型、属性、导航和解码器。网页纹理保留源图分辨率，使用高质量 KTX2，不再降至 768 像素；UASTC 块对齐为 1256 像素。历史资源保留在仓库中，不随 `public` 全量复制。
+首屏关键呈现资源预算 1 MiB，呈现后后台预加载及首次可交互 3D 总资源预算 36 MiB（metric-v09 接入 Tripo 原始 4K PBR，网页模型总预算 34 MiB，实际字节与依据见 `model/resource-budgets.json`），检查包括 JS、模型、属性、导航和解码器。网页纹理保留源图分辨率：房屋使用高质量 KTX2，沙发使用原 4K JPEG / PNG + Meshopt；建筑源 1254 像素图仅按 UASTC 块对齐到 1256 像素。历史资源保留在仓库中，不随 `public` 全量复制。
 
 桌面浏览器和触摸模拟不能证明真机性能；真实手机持续漫游 ≥30 FPS 仍需设备实测。用户视觉确认状态独立保留，技术检查不会自动代表外观接受。图片脱敏范围见 `docs/privacy-review.md`。
+
+当前家具由 `scripts/furniture_geometry.py` 按 `model/apartment.json` 从源生成，最新反馈及选择留在 `docs/design/living-v04/`，v03 / v02 及对应版本记录继续保留。`model/furniture-measurements.json` 保留实际桌面 / 支撑 / 柜墙测量；`scripts/render-furniture-review.py` 可从同一 Blend 生成独立中性形体审查。`src/presentation-environment.js` 从同一规格生成窗外展示几何，由 Three.js 和 Cycles 共用；这部分不属于建筑 GLB、不参与选取 / 碰撞 / 面积，当前只在室内视角显示。
+
+## 当前家具 / 窗外展示源
+
+外部沙发通过 `external_static` 路线读取已视觉检查的 packed Blend，验证 SHA-256，保留原 UV、PBR 和 4K 图像。家具局部 +X 为正面，+Y 为宽度，Z 为高度；由 JSON 位置与朝向变换到房屋坐标。不要只覆盖输出 GLB，或以原程序沙发材质覆盖导入材质。
+
+`modelPackages` 将完整源划为互斥的实体包，导出、重导入、数据与压缩均检查合并语义覆盖。发布清单的 `additionalModels` 必须同主包一起加载，标准 / 高清各有两包，下载区明确列出。每文件遵守 Workers 25 MiB；网页总预算随完整纹理记录在 `model/resource-budgets.json`，不通过缩图降低画质。KTX 如超过单文件限额，保留原图编码 + Meshopt，实际编码记录在 `model-packages.json`。
+
+窗外庭院使用 `presentationEnvironment` 的确定性展示几何，`src/presentation-environment.js` 同供 Three.js 和 Blender 渲染适配器使用；不加入建筑 GLB、空间面积和碰撞。室内透射玻璃、暖色洗墙和灯光参数来自当前 JSON；AI 氛围图与真实模型始终标明来源。当前设计与历史、尺寸假设、用户要求和验收边界见 [v04 上下文](docs/design/living-v04/DECISION.md)。

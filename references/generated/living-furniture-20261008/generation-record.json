@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-08",
+  "mode": "built-in image_gen",
+  "purpose": "Discussion preview of user-specified dining table, cabinet wall and sofa in the existing show-apartment environment",
+  "actual_3d_render": false,
+  "user_visual_acceptance": "pending",
+  "published": false,
+  "base_references": [
+    {
+      "file": "references/02-entry-living.jpg",
+      "sha256": "ae5e2dcdf738eb7f6d59cf8ace98fb993e32a4b274b5c2e1b81d57b091e33359"
+    },
+    {
+      "file": "references/01-floor-plan.png",
+      "sha256": "3f076ed44c51cf4500dae1991226ab5cd1e0979afe1bcf0ed01a2b9d4b6064b7"
+    }
+  ],
+  "files": [
+    {
+      "file": "references/revisions/living-furniture-20261008/01-dining-table.png",
+      "role": "User image 1: dining table and matching chairs; other living furniture excluded",
+      "source_sha256": "b3b005531ec3451b5d9f756fe63a81c2c2104d03e32dc177a816d98e9c16fee4",
+      "sha256": "cca8215e1c027f8a5342ad1a8a24aafbf77db4dd672459205fda990ece363223",
+      "width": 1316,
+      "height": 737,
+      "metadata_stripped": true,
+      "decoded_pixels_preserved": true
+    },
+    {
+      "file": "references/revisions/living-furniture-20261008/02-cabinet-wall.jpg",
+      "role": "User image 2: walnut modular cabinets, six vertical wall panels and scalloped lamps; foreground coffee tables excluded",
+      "source_sha256": "654c1dbfee7654c88cdd5833e673020ab7263c89e51b778ad34bbe1293df4ae8",
+      "sha256": "dffed667dc011dd53692077336f97c6294607f858fb64f7e0957e7ee52158e40",
+      "width": 4096,
+      "height": 3072,
+      "metadata_stripped": true,
+      "decoded_pixels_preserved": true
+    },
+    {
+      "file": "references/revisions/living-furniture-20261008/03-sofa.jpg",
+      "role": "User image 3: gray-olive leather sofa with walnut side frame and adjustable headrests; showroom background excluded",
+      "source_sha256": "0cdb33413f0491ca38ce8f10de90e87690e981f6c62c16f8890261fa27986a4b",
+      "sha256": "c25011d8067441969eb0805548e967af2ca4cea75e3bb5e2b0eb0b99c120e258",
+      "width": 4096,
+      "height": 3072,
+      "metadata_stripped": true,
+      "decoded_pixels_preserved": true
+    },
+    {
+      "file": "references/generated/living-furniture-20261008/dining-living-v01.png",
+      "role": "AI photo-based furnishing overview",
+      "source_sha256": "c2b5f7da91ede1ca7610a31d1e96590f4a48ec4321810607c53e1df1bde724a0",
+      "sha256": "2f0968d325eaa4b5c44ff3a9d49d36e8071a2428ff77d40bb81aa54db1ef6bcc",
+      "width": 1448,
+      "height": 1086,
+      "metadata_stripped": true,
+      "decoded_pixels_preserved": true
+    },
+    {
+      "file": "references/generated/living-furniture-20261008/cabinet-wall-v01.png",
+      "role": "AI companion cabinet-wall perspective",
+      "source_sha256": "e61f6e8ba58d355bf1004c942fa9738dc4b27c4ecc13e65471ea7879950c3804",
+      "sha256": "4180a02d97a9fe20710662e4d20d69484fde66ba1fad8dcbcc6985631c2871bf",
+      "width": 1448,
+      "height": 1086,
+      "metadata_stripped": true,
+      "decoded_pixels_preserved": true
+    }
+  ],
+  "prompt_summaries": "prompt-summary.md",
+  "inspection": {
+    "overview": "Dining table in middle/foreground; gray-olive leather sofa beyond bedroom opening; original lit cabinet, gray stone floor, black-frame south window and one reading chair retained; no living-room coffee table",
+    "cabinet_wall": "Modular walnut stepped assembly, six portrait wall panels, arch lamp and cabinet-top lamp shown; center kept clear"
+  },
+  "limitations": [
+    "AI photo-based preview, not a dimension-verified Blender render",
+    "Source furniture dimensions and module lengths not provided; scale and doorway/circulation fit require measured validation",
+    "Cabinet companion angle is synthesized from the reference environment and plan; unseen architecture and material/color calibration are not verified",
+    "Original three user references and base/generated originals are preserved; only project copies have non-display metadata removed"
+  ]
+}

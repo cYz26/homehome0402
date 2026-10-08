@@ -7,6 +7,7 @@ import { SMAAPass } from "three/addons/postprocessing/SMAAPass.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { RectAreaLightUniformsLib } from "three/addons/lights/RectAreaLightUniformsLib.js";
 import { Reflector } from "three/addons/objects/Reflector.js";
+import { createExterior } from "./exterior.js";
 
 export class ApartmentScene {
   constructor(container, data) {
@@ -56,10 +57,15 @@ export class ApartmentScene {
     this.scene.add(this.sun, this.sun.target);
     this.lights = new THREE.Group();
     this.scene.add(this.lights);
+    this.exterior=createExterior(data.presentationEnvironment,(p)=>this.point(p));
+    this.scene.add(this.exterior);
     RectAreaLightUniformsLib.init();
     for (const c of data.lighting.roomLights) {
-      const light = new THREE.PointLight(0xffe7ca, c.intensity, c.distance, 2);
+      const light = c.type==='spot'
+        ? new THREE.SpotLight(c.color,c.intensity,c.distance,c.angle,c.penumbra,2)
+        : new THREE.PointLight(c.color ?? 0xffe7ca, c.intensity, c.distance, 2);
       light.position.copy(this.point(c.position));
+      if(c.type==='spot'){light.target.position.copy(this.point(c.target));this.lights.add(light.target);}
       this.lights.add(light);
     }
     for (const c of data.lighting.strips) {
@@ -67,6 +73,19 @@ export class ApartmentScene {
       light.position.copy(this.point(c.position));
       light.lookAt(this.point(c.target));
       this.lights.add(light);
+    }
+    for(const c of data.lighting.wallWash ?? []) {
+      const light=new THREE.SpotLight(c.color,c.intensity,c.distance,c.angle,c.penumbra,2);
+      light.position.copy(this.point(c.position));light.target.position.copy(this.point(c.target));
+      light.castShadow=!!c.castShadow;light.userData.castsStandardShadow=!!c.castShadow;
+      light.shadow.mapSize.set(c.shadowMapSize,c.shadowMapSize);
+      light.shadow.bias=-.0002;light.shadow.normalBias=.012;
+      this.lights.add(light,light.target);
+    }
+    const daylight=data.lighting.windowDaylight;
+    if(daylight) {
+      const light=new THREE.RectAreaLight(daylight.color,daylight.intensity,...daylight.size);
+      light.position.copy(this.point(daylight.position));light.lookAt(this.point(daylight.target));this.lights.add(light);
     }
     this.ground = new THREE.Mesh(
       new THREE.PlaneGeometry(70, 70),
@@ -118,6 +137,7 @@ export class ApartmentScene {
           m.depthWrite = false;
           ob.castShadow = false;
         }
+        if(m.transmission>0) ob.castShadow=false;
       }
       if (ob.userData.part === "mirror" || ob.name === "Master_double_mirror")
         this.mirrorProxy = ob;
@@ -160,8 +180,13 @@ export class ApartmentScene {
       : 0;
     this.ao.ssaoMaterial.needsUpdate = true;
     this.lights.visible = interior;
-    this.ambient.intensity = interior ? 0.95 : 1.3;
-    this.sun.intensity = interior ? 1 : this.data.lighting.sun.intensity;
+    this.exterior.visible = interior;
+    const settings=this.data.lighting.interior ?? {};
+    this.ambient.intensity = interior ? settings.ambientIntensity ?? .95 : 1.3;
+    this.sun.intensity = interior ? settings.sunIntensity ?? 1 : this.data.lighting.sun.intensity;
+    this.scene.environmentIntensity=interior ? settings.environmentIntensity ?? this.data.lighting.environmentIntensity : this.data.lighting.environmentIntensity;
+    this.renderer.toneMappingExposure=interior ? settings.exposure ?? this.data.lighting.exposure : this.data.lighting.exposure;
+    this.scene.background.set(interior ? settings.background ?? '#edeee7' : '#edeee7');
   }
   setQuality(quality) {
     if (this.quality !== quality) {
@@ -173,6 +198,7 @@ export class ApartmentScene {
     this.ao.enabled = quality !== "smooth";
     this.smaa.enabled = quality !== "smooth";
     this.sun.castShadow = quality !== "smooth";
+    this.lights.traverse(light=>{if(light.userData.castsStandardShadow)light.castShadow=quality!=="smooth";});
     const samples =
       quality === "smooth"
         ? 0

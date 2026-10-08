@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "art_src/apartment-v07.blend",
+    "sha256": "1b5274fd7519d9b5838b18a8be7e7375cc804fa33216718674c28f823a04da0d"
+  },
+  "meshes": [
+    "Furniture_living_reading_chair"
+  ],
+  "armatures": [],
+  "actions": [],
+  "evidence": {
+    "path": "production/inspection/metric-v07-source.json",
+    "sha256": "f8d131a9cf645f78d3819228302caa209d4af993a14f55ae527863c8c1ba63c3"
+  }
+}

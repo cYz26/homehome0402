@@ -1,0 +1,242 @@
+{
+  "id": "home402-living-v04",
+  "date": "2026-10-08",
+  "user_acceptance": {
+    "quote": "现在看起来不错了。",
+    "scope": "prior v02 furniture arrangement only; current requested single large art replaces the six poster boards",
+    "model_acceptance": "metric-v09 source/website pending user visual review"
+  },
+  "user_authorization": {
+    "quotes": [
+      "将这些效果图也更新到网站中，功能桌参考后面专门补充的参考图再更新一下",
+      "3D空间内柜子和壁挂的图是不是偏高了？保持跟图2的布局位置一致",
+      "3D空间的灯光效果可以与实景照片中一致么？",
+      "窗户的效果和窗外的景色也可以优化一下",
+      "这里挂的画框也换一下，那种整幅的单个大艺术画合适么？",
+      "将3D场景中的沙发替换为tripo生成的模型",
+      "可以，发给主线程接入（推荐）"
+    ],
+    "scope": "Correct and integrate effect images, calibrate furniture and hanging art, lighting and glazing/courtyard in existing website; no explicit remote push/deployment request"
+  },
+  "selected_previews": [
+    {
+      "path": "references/generated/living-furniture-20261008/dining-living-v03.png",
+      "sha256": "328c4f0fa31ead4aead61a889500ca3709c12e2adaa01beb9fd07e534516c160"
+    },
+    {
+      "path": "references/generated/living-furniture-20261008/cabinet-wall-v03.png",
+      "sha256": "4060cc6b61632059661f9cde4b1493910f20a1d77a51267f12a2bc1d11942b75"
+    },
+    {
+      "path": "references/generated/living-furniture-20261008/generation-record-v03.json",
+      "sha256": "4e3b60494652e6e9792cce60077d8e5d09765265eb24e0c6be1bf1c423693ec1"
+    }
+  ],
+  "independent_references": [
+    {
+      "asset": "sofa",
+      "path": "references/generated/living-furniture-20261008/independent/sofa-r1.png",
+      "sha256": "207695f478249e0cc3c0237bf35495dc5f7329ea32095d8625b551228840f25d",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority."
+    },
+    {
+      "asset": "table-set",
+      "path": "references/generated/living-furniture-20261008/independent/table-set-r1.png",
+      "sha256": "4a65f62b4e248e9eaafedbe317f39a0878de9bf1134435e1fe02977b6e367fce",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority.",
+      "role": "historical table legs; chair and bench style reference"
+    },
+    {
+      "asset": "cabinet-wall",
+      "path": "references/generated/living-furniture-20261008/independent/cabinet-wall-r1.png",
+      "sha256": "aa13e2a456bf13bd343234b845e447586e89a64e3f9cdca6e2fc5f445ff431d7",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority."
+    },
+    {
+      "asset": "armchair",
+      "path": "references/generated/living-furniture-20261008/independent/armchair-r1.png",
+      "sha256": "43e618e18adcb950c8ac878ecef8d39090282f446a656b7231ff99be470b215d",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority."
+    },
+    {
+      "asset": "single-artwork",
+      "path": "references/generated/living-furniture-20261008/art-landscape-r1.png",
+      "sha256": "d40f07bb1521a36c61c605494a0056712bd62c88aec6923cf4c460d4317dafb9",
+      "role": "original edge-to-edge painting"
+    }
+  ],
+  "baseline": {
+    "version": "metric-v08",
+    "spec": "model/baseline-v08/apartment.json",
+    "source": {
+      "path": "art_src/apartment-v08.blend",
+      "sha256": "35b96705e4ce25df42fbd0a180c0de0eabc5be77d82a146409d560ac53f7643b"
+    }
+  },
+  "target_version": "metric-v09",
+  "confirmed": {
+    "noTV": true,
+    "noCoffeeTable": true,
+    "sofaFacesCabinet": true,
+    "steppedCabinet": true,
+    "tableFunctions": [
+      "dining",
+      "study",
+      "work"
+    ],
+    "tableLengthAboveMeters": 2.5,
+    "chairsOnOneSide": true,
+    "oneBenchOnOppositeSide": true,
+    "wallArt": "single horizontal original artwork requested; palette and size chosen by agent for proposal"
+  },
+  "dimensions": {
+    "tableLengthMeters": 2.8,
+    "basis": "Latest user-provided dimension drawing supersedes visual assumption",
+    "remaining": "bounded inferred sizes recorded in apartment.json"
+  },
+  "route": "reference_blender for new static furniture; existing v05 templates retained for architecture",
+  "table_revision": {
+    "supersedes": "2.6m preview assumption and table-set-r1 geometry",
+    "latest_user_request": "多功能桌参考这些图再还原的一致一些",
+    "reference_directory": "references/revisions/living-furniture-20261008/table-r2",
+    "dimensions_from_drawing_m": {
+      "length": 2.8,
+      "width": 0.9,
+      "height": 0.75,
+      "topThickness": 0.07,
+      "endOverhang": 0.26,
+      "storageLength": 0.6,
+      "storageDepth": 0.7,
+      "storageHeight": 0.68,
+      "openKneeSpan": 1.6,
+      "panelThickness": 0.08,
+      "panelDepth": 0.53
+    },
+    "scope": "Use new table structure and dimensions; keep one chair side/opposite bench, sofa/cabinet placement and the approved overall palette.",
+    "standalone_reference": {
+      "path": "references/generated/living-furniture-20261008/independent/table-set-r2.png",
+      "sha256": "1133dab518a9471da066c60b61cbf333c29614d13f71bee59afb6830c0d355d3"
+    },
+    "inferred": "Tray count six and concealed hardware are interpretation; drawing dimensions are not site/manufacturer certification.",
+    "source_files": [
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/02-table-structure.png",
+        "sha256": "d87e274d3b53df93e09dcf2922895f48a6fcc0bffd725d5ae72a6d182ed868b0"
+      },
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/03-table-dimensions.png",
+        "sha256": "e3265533252e8c37d1768698ffc93ddc9639d05530656a64f7a73baaea8d3a80"
+      },
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/01-table-photo.png",
+        "sha256": "662895561aad8eac07a1aed7fd114e2b81401321eb847c59038a0626278844d0"
+      }
+    ]
+  },
+  "metadata_cleanup": "Nine added input/reference PNGs stripped without pixel re-encoding; decoded RGBA equality verified on 2026-10-08. Generation provenance retained separately.",
+  "texture_reference": {
+    "path": "references/generated/living-furniture-20261008/walnut-albedo-r1.png",
+    "sha256": "121afabfb94e86456e7159985650f9453efd6d433417e6fef536d387f2de2586",
+    "role": "AI albedo interpretation for furniture; no manufacturer texture certification"
+  },
+  "previous_context": {
+    "path": "docs/design/living-v02/selection.json",
+    "sha256": "252457587aa3bfbc240118f814ee3d8583c136993a57f5e472f57a3bf329160f"
+  },
+  "previous_decision": {
+    "path": "docs/design/living-v02/DECISION.md",
+    "sha256": "961bd4701170dd6647d4e74e44ca727b96000ad5107b4b63ff9c58576432b8d6"
+  },
+  "feedback": [
+    {
+      "path": "references/revisions/living-furniture-20261008/feedback-r3/01-web-cabinet-height.png",
+      "sha256": "873c285fea09c3bcea44783b9b34d7fcbf03aceb096afa296b031a1b147ac7d8"
+    },
+    {
+      "path": "references/revisions/living-furniture-20261008/feedback-r3/02-artwork-request.png",
+      "sha256": "187e20e98e7a7ec163bb8f5369af1f745bf3a3f63215ba88df912def2d87ad66"
+    }
+  ],
+  "calibration": {
+    "cabinetHeights": [
+      0.78,
+      0.5,
+      1.16
+    ],
+    "cabinetWidth": 3.8,
+    "art": {
+      "width": 2,
+      "height": 0.9,
+      "centerHeight": 1.57
+    },
+    "basis": "bounded layout comparison against v02 wall view; dimensions remain assumptions, camera not known"
+  },
+  "display_effects": [
+    {
+      "id": "scheme-overview",
+      "title": "客餐厅方案 v03",
+      "source": "references/generated/living-furniture-20261008/dining-living-v03.png",
+      "kind": "AI 方案效果图",
+      "designVersion": "living-v03",
+      "caption": "单根灯杆、不对称开放托盘桌与单幅艺术画；尺寸以桌 r2 图纸与当前模型属性为准。AI 图仅表达外观，非模型渲染或实拍。"
+    },
+    {
+      "id": "scheme-cabinet",
+      "title": "单幅画 · 柜墙方案",
+      "source": "references/generated/living-furniture-20261008/cabinet-wall-v03.png",
+      "kind": "AI 方案效果图",
+      "designVersion": "living-v03",
+      "caption": "一幅 2.00 × 0.90 m 灰绿原创艺术画置于低柜上方；新挂画为待讨论方案。画作与柜体比例按 3D 属性记录，照明为效果示意。"
+    },
+    {
+      "id": "scheme-cabinet-v02",
+      "title": "原柜墙布局 v02",
+      "source": "references/generated/living-furniture-20261008/cabinet-wall-v02.png",
+      "kind": "历史 AI 方案效果图",
+      "designVersion": "living-v02",
+      "caption": "用户此前确认的高低模块柜布局；六块宣传图板已由本轮单幅艺术画替换，保留此图供后续迭代对照。"
+    }
+  ],
+  "art_albedo": {
+    "path": "references/generated/living-furniture-20261008/art-landscape-r1-albedo.jpg",
+    "sha256": "f263abeec2e000a7d9a7e31983f220e867b35f28be8f89f5c3ca20a653a44042",
+    "master": "references/generated/living-furniture-20261008/art-landscape-r1.png",
+    "masterSha256": "d40f07bb1521a36c61c605494a0056712bd62c88aec6923cf4c460d4317dafb9",
+    "dimensions": [
+      1870,
+      841
+    ],
+    "conversion": "JPEG 97, 4:4:4; full original dimensions",
+    "meanAbsoluteChannelDifference": 1.055705477521243,
+    "maximumChannelDifference": 11,
+    "reason": "PNG candidate raw GLB 26648680 bytes exceeded the independent Workers 25 MiB per-asset limit. Preserve original PNG master; use full-resolution high-quality albedo compression."
+  },
+  "sofa_revision": {
+    "handoff": "production/sofa-tripo-r1/handoff.json",
+    "source": {
+      "path": "art_src/furniture/sofa-tripo-r1-ready.blend",
+      "sha256": "012aaf0d133d13effc1d0a0c3d61ce800d6118c5bdfdd2e438a0d6fb585e2ec7",
+      "object": "Furniture_living_sofa",
+      "localFront": "+X",
+      "floorElevation": 0.016
+    },
+    "normalization": "Uniform 2.4m width assumption; full original 4K PBR retained",
+    "placement": {
+      "position": [
+        4.17,
+        10.4
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "eastward_clearance_adjustment_m": 0.05
+    },
+    "provider_metadata": "Unknown task id, settings and cost; user supplied ZIP originally contained FBX and 4K images"
+  },
+  "lineage_v03": "docs/design/living-v03/selection.json"
+}

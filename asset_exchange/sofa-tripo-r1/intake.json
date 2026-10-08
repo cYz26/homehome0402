@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_sofa",
+  "task": "2026-10-08-tripo-sofa-replacement",
+  "provider": "tripo",
+  "provider_basis": "user-described supplied ZIP",
+  "provider_task_id": null,
+  "provider_model": null,
+  "generation_settings": null,
+  "uploaded_views": null,
+  "credits": null,
+  "archive": {
+    "path": "asset_exchange/sofa-tripo-r1/modern+sofa+3d+model.zip",
+    "sha256": "b1bc30447d9a29730cd4aec67470fb6b42bd870cb1d028b760981bbf4eeebd33",
+    "bytes": 69119464
+  },
+  "original_files": [
+    {
+      "path": "asset_exchange/sofa-tripo-r1/original/tripo_convert_f4956b7f-a3d4-475b-9493-b30543871a9f.fbm/modern_sofa_3d_model_basecolor.JPEG",
+      "bytes": 3448268,
+      "sha256": "42585a7733d0dd60d67bb38b7f2c6645e8ff99ca6773cc9c47fffcae6ffefe71",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "mode": "RGB",
+      "metadata_keys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ]
+    },
+    {
+      "path": "asset_exchange/sofa-tripo-r1/original/tripo_convert_f4956b7f-a3d4-475b-9493-b30543871a9f.fbm/modern_sofa_3d_model_metallic.JPEG",
+      "bytes": 1147657,
+      "sha256": "a11c14938da489206402a60f91fed1de6823e4f59dd4715ff4d515301db57adc",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "mode": "L",
+      "metadata_keys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ]
+    },
+    {
+      "path": "asset_exchange/sofa-tripo-r1/original/tripo_convert_f4956b7f-a3d4-475b-9493-b30543871a9f.fbm/modern_sofa_3d_model_normal.PNG",
+      "bytes": 3683985,
+      "sha256": "0ae892f3c4abcba6e9ed90bdf21b95ebe485f2ead7c7b84eedc5e47423259c48",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "mode": "RGB",
+      "metadata_keys": []
+    },
+    {
+      "path": "asset_exchange/sofa-tripo-r1/original/tripo_convert_f4956b7f-a3d4-475b-9493-b30543871a9f.fbm/modern_sofa_3d_model_rm.JPEG",
+      "bytes": 1085863,
+      "sha256": "931bfb1112a14c8ebeb8981b9b74ce1e5bfa9282d5db2e9feb8e4fc3c0cf42aa",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "mode": "RGB",
+      "metadata_keys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ]
+    },
+    {
+      "path": "asset_exchange/sofa-tripo-r1/original/tripo_convert_f4956b7f-a3d4-475b-9493-b30543871a9f.fbm/modern_sofa_3d_model_roughness.JPEG",
+      "bytes": 1060698,
+      "sha256": "177a7d28296c3f1e672d2193f8be6f6a62691edab7007ad9593a0cff1694dccb",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "mode": "L",
+      "metadata_keys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ]
+    },
+    {
+      "path": "asset_exchange/sofa-tripo-r1/original/tripo_convert_f4956b7f-a3d4-475b-9493-b30543871a9f.fbx",
+      "bytes": 62141980,
+      "sha256": "670d5d75473459cc8e166267166b9320045584664039470f9554a75477651233"
+    }
+  ],
+  "requested_action": "Replace living-sofa mesh in existing 3D scene; retain approved position, facing and footprint",
+  "source_photograph": "references/generated/sofa-tripo-20261008-r1/inputs/source-photo.png",
+  "selected_reference_package": "references/generated/sofa-tripo-20261008-r1/generation-record.json",
+  "reference_upload_status": "Unknown; prepared reference images are not asserted as actual provider uploads"
+}

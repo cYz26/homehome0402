@@ -75,8 +75,24 @@
     {
       "name": "Current export and spec match measured artifact digests",
       "pass": true
+    },
+    {
+      "name": "Tripo sofa retains the source bounds, PBR material and back-wall clearance",
+      "pass": true
+    },
+    {
+      "name": "Measured table follows the supplied 2800 x 900 x 750 mm drawing and asymmetric supports",
+      "pass": true
+    },
+    {
+      "name": "Furnishing preserves every v06 architectural part and no-TV no-coffee-table layout",
+      "pass": true
+    },
+    {
+      "name": "Measured cabinet tiers and single artwork follow the revised hanging layout",
+      "pass": true
     }
   ],
-  "passed": 19,
-  "total": 19
+  "passed": 23,
+  "total": 23
 }

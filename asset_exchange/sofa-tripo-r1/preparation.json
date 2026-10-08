@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "original_triangles": 1941920,
+  "derivative_triangles": 149999,
+  "original_vertices": 970976,
+  "derivative_vertices": 75015,
+  "uniform_scale": 2.4484943627002362,
+  "source_bounds": [
+    [
+      -0.5508516430854797,
+      -1.2000000476837158,
+      0.0
+    ],
+    [
+      0.5508516430854797,
+      1.2000000476837158,
+      0.9625330567359924
+    ]
+  ],
+  "derivative_bounds": [
+    [
+      -0.5508743524551392,
+      -1.2000319957733154,
+      -3.590778214856982e-05
+    ],
+    [
+      0.5509016513824463,
+      1.2000257968902588,
+      0.9625779390335083
+    ]
+  ],
+  "bounds_max_error_meters": 5.0008296966552734e-05,
+  "dimensions_width_depth_height": [
+    2.400057792663574,
+    1.1017760038375854,
+    0.9626138468156569
+  ],
+  "provisional_front_axis": "+X",
+  "normalization_basis": "Uniform scale to existing assumed 2.4 m width; center XY and rest on z=0, not a measured furniture dimension",
+  "textures": [
+    {
+      "name": "modern_sofa_3d_model_basecolor",
+      "size": [
+        4096,
+        4096
+      ],
+      "color_space": "sRGB"
+    },
+    {
+      "name": "modern_sofa_3d_model_metallic",
+      "size": [
+        4096,
+        4096
+      ],
+      "color_space": "Non-Color"
+    },
+    {
+      "name": "modern_sofa_3d_model_normal",
+      "size": [
+        4096,
+        4096
+      ],
+      "color_space": "Non-Color"
+    },
+    {
+      "name": "modern_sofa_3d_model_roughness",
+      "size": [
+        4096,
+        4096
+      ],
+      "color_space": "Non-Color"
+    }
+  ],
+  "full_source": {
+    "path": "art_src/furniture/sofa-tripo-r1-full.blend",
+    "sha256": "adc4040d28a5e395db6c68344fd69e7b71a7a206fb9f9c1e33ab34949c99745a"
+  },
+  "derivative_source": {
+    "path": "art_src/furniture/sofa-tripo-r1.blend",
+    "sha256": "a29bc95aeb882eeca076daa5b844eaf0da782988821fca177bc523fb0c8c560a"
+  },
+  "derived_glb": {
+    "path": "asset_exchange/sofa-tripo-r1/sofa-derived.glb",
+    "sha256": "30dc579d72cfe8ff6f93b3c435ec868fc339f0ad78eaabb7f3e894e48ff636a6",
+    "bytes": 21231992,
+    "role": "Blender-derived runtime candidate, not a provider-original GLB"
+  }
+}

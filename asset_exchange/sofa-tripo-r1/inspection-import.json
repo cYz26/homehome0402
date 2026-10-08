@@ -1,0 +1,324 @@
+{
+  "original_fbx_sha256": "670d5d75473459cc8e166267166b9320045584664039470f9554a75477651233",
+  "blender_version": "5.2.1 LTS",
+  "objects": [
+    {
+      "name": "tripo_node_f4956b7f",
+      "mesh_name": "tripo_mesh_f4956b7f",
+      "vertices": 970976,
+      "polygons": 1941920,
+      "triangles": 1941920,
+      "polygon_sizes": {
+        "3": 1941920
+      },
+      "uv_layers": [
+        "UVMap"
+      ],
+      "custom_normals": true,
+      "bounds": [
+        [
+          -0.22467046976089478,
+          -0.4901428818702698,
+          -2.005417698569545e-08
+        ],
+        [
+          0.22528082132339478,
+          0.4900513291358948,
+          0.3931121826171875
+        ]
+      ],
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0003051832318305969
+        ],
+        [
+          0.0,
+          1.0,
+          4.371138828673793e-08,
+          -4.57763671875e-05
+        ],
+        [
+          0.0,
+          -4.371138828673793e-08,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "materials": [
+        "tripo_mat_f4956b7f"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Dots Stroke",
+      "nodes": [
+        {
+          "type": "FRAME",
+          "name": "Frame"
+        },
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output"
+        },
+        {
+          "type": "BSDF_PRINCIPLED",
+          "name": "Principled BSDF",
+          "inputs": {
+            "Base Color": {
+              "linked": false,
+              "value": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                1.0
+              ]
+            },
+            "Metallic": {
+              "linked": false,
+              "value": 0.0
+            },
+            "Roughness": {
+              "linked": false,
+              "value": 0.5
+            },
+            "Normal": {
+              "linked": false,
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output.001"
+        },
+        {
+          "type": "BSDF_DIFFUSE",
+          "name": "Diffuse BSDF"
+        }
+      ],
+      "links": [
+        {
+          "from": "Principled BSDF/BSDF",
+          "to": "Material Output/Surface"
+        },
+        {
+          "from": "Diffuse BSDF/BSDF",
+          "to": "Material Output.001/Surface"
+        }
+      ]
+    },
+    {
+      "name": "Material",
+      "nodes": [
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output"
+        },
+        {
+          "type": "BSDF_PRINCIPLED",
+          "name": "Principled BSDF",
+          "inputs": {
+            "Base Color": {
+              "linked": false,
+              "value": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                1.0
+              ]
+            },
+            "Metallic": {
+              "linked": false,
+              "value": 0.0
+            },
+            "Roughness": {
+              "linked": false,
+              "value": 0.5
+            },
+            "Normal": {
+              "linked": false,
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      ],
+      "links": [
+        {
+          "from": "Principled BSDF/BSDF",
+          "to": "Material Output/Surface"
+        }
+      ]
+    },
+    {
+      "name": "tripo_mat_f4956b7f",
+      "nodes": [
+        {
+          "type": "BSDF_PRINCIPLED",
+          "name": "Principled BSDF",
+          "inputs": {
+            "Base Color": {
+              "linked": true,
+              "value": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                1.0
+              ]
+            },
+            "Metallic": {
+              "linked": true,
+              "value": 0.0
+            },
+            "Roughness": {
+              "linked": true,
+              "value": 0.5
+            },
+            "Normal": {
+              "linked": true,
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        {
+          "type": "OUTPUT_MATERIAL",
+          "name": "Material Output"
+        },
+        {
+          "type": "NORMAL_MAP",
+          "name": "Normal Map"
+        },
+        {
+          "type": "TEX_IMAGE",
+          "name": "Image Texture",
+          "image": "modern_sofa_3d_model_basecolor"
+        },
+        {
+          "type": "TEX_IMAGE",
+          "name": "Image Texture.001",
+          "image": "modern_sofa_3d_model_normal"
+        },
+        {
+          "type": "TEX_IMAGE",
+          "name": "Image Texture.002",
+          "image": "modern_sofa_3d_model_roughness"
+        },
+        {
+          "type": "TEX_IMAGE",
+          "name": "Image Texture.003",
+          "image": "modern_sofa_3d_model_metallic"
+        }
+      ],
+      "links": [
+        {
+          "from": "Principled BSDF/BSDF",
+          "to": "Material Output/Surface"
+        },
+        {
+          "from": "Normal Map/Normal",
+          "to": "Principled BSDF/Normal"
+        },
+        {
+          "from": "Image Texture/Color",
+          "to": "Principled BSDF/Base Color"
+        },
+        {
+          "from": "Image Texture.001/Color",
+          "to": "Normal Map/Color"
+        },
+        {
+          "from": "Image Texture.002/Color",
+          "to": "Principled BSDF/Roughness"
+        },
+        {
+          "from": "Image Texture.003/Color",
+          "to": "Principled BSDF/Metallic"
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "modern_sofa_3d_model_basecolor",
+      "filepath": "/Users/cY/dev/homehome402/asset_exchange/sofa-tripo-r1/original/tripo_convert_f4956b7f-a3d4-475b-9493-b30543871a9f.fbm/modern_sofa_3d_model_basecolor.JPEG",
+      "size": [
+        4096,
+        4096
+      ],
+      "color_space": "sRGB",
+      "packed": false
+    },
+    {
+      "name": "modern_sofa_3d_model_metallic",
+      "filepath": "/Users/cY/dev/homehome402/asset_exchange/sofa-tripo-r1/original/tripo_convert_f4956b7f-a3d4-475b-9493-b30543871a9f.fbm/modern_sofa_3d_model_metallic.JPEG",
+      "size": [
+        4096,
+        4096
+      ],
+      "color_space": "Non-Color",
+      "packed": false
+    },
+    {
+      "name": "modern_sofa_3d_model_normal",
+      "filepath": "/Users/cY/dev/homehome402/asset_exchange/sofa-tripo-r1/original/tripo_convert_f4956b7f-a3d4-475b-9493-b30543871a9f.fbm/modern_sofa_3d_model_normal.PNG",
+      "size": [
+        4096,
+        4096
+      ],
+      "color_space": "Non-Color",
+      "packed": false
+    },
+    {
+      "name": "modern_sofa_3d_model_roughness",
+      "filepath": "/Users/cY/dev/homehome402/asset_exchange/sofa-tripo-r1/original/tripo_convert_f4956b7f-a3d4-475b-9493-b30543871a9f.fbm/modern_sofa_3d_model_roughness.JPEG",
+      "size": [
+        4096,
+        4096
+      ],
+      "color_space": "Non-Color",
+      "packed": false
+    }
+  ],
+  "armatures": [],
+  "actions": [],
+  "bounds": [
+    [
+      -0.22467046976089478,
+      -0.4901428818702698,
+      -2.005417698569545e-08
+    ],
+    [
+      0.22528082132339478,
+      0.4900513291358948,
+      0.3931121826171875
+    ]
+  ],
+  "dimensions": [
+    0.44995129108428955,
+    0.9801942110061646,
+    0.3931122026713645
+  ],
+  "packed_import_source": "art_src/furniture/sofa-tripo-r1-import.blend",
+  "packed_import_sha256": "118d1d23958996e8f60779e7bf485fc6032691e82a8086fc6af41d4e3f8c6971"
+}

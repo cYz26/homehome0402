@@ -6,6 +6,7 @@ import { NodeIO } from "@gltf-transform/core";
 import { ALL_EXTENSIONS } from "@gltf-transform/extensions";
 import { MeshoptDecoder } from "meshoptimizer";
 import { getBounds } from "@gltf-transform/functions";
+import { modelPackages } from "./model-packages.mjs";
 import { polygonArea } from "../src/spatial.js";
 const json = async (p) => JSON.parse(await fs.readFile(p));
 const spec = await json("model/apartment.json"),
@@ -49,15 +50,16 @@ checks.push({
   pass: true,
 });
 check(
-  "690 source parts have unique semantic owners and all IDs resolve",
+  "All source parts have unique semantic owners and all IDs resolve",
   () => {
     assert.equal(
       new Set(spec.entities.map((e) => e.id)).size,
       spec.entities.length,
     );
     const all = spec.entities.flatMap((e) => e.sourceNodes);
-    assert.equal(all.length, 690);
-    assert.equal(new Set(all).size, 690);
+    assert.equal(all.length, validation.source_objects);
+    assert.equal(new Set(all).size, all.length);
+    assert.deepEqual(new Set(all), new Set(Object.keys(validation.objects)));
     for (const e of spec.entities)
       for (const r of e.roomIds)
         assert.ok(
@@ -66,7 +68,7 @@ check(
         );
   },
 );
-check("all non-door geometry remains identical to v05", () => {
+check("all geometry outside recorded revisions remains identical to v05", () => {
   const exceptions = new Set(spec.revisions.flatMap((r) => r.entityIds));
   for (const [name, current] of Object.entries(validation.objects)) {
     if (exceptions.has(current.entityId)) continue;
@@ -82,6 +84,19 @@ check("all non-door geometry remains identical to v05", () => {
         );
   }
 });
+if (spec.furnishings?.length) {
+  const previous = await json("model/baseline-v06/validation.json");
+  check("Every v06 architectural part remains unchanged after furnishing", () => {
+    for (const [name, old] of Object.entries(previous.objects)) {
+      const current = validation.objects[name];
+      assert.ok(current, name);
+      assert.equal(current.entityId, old.entityId, name);
+      assert.equal(current.triangles, old.triangles, name);
+      for (let side=0; side<2; side++) for (let axis=0; axis<3; axis++)
+        assert.ok(Math.abs(current.bounds[side][axis]-old.bounds[side][axis])<0.0001, name);
+    }
+  });
+}
 check(
   "door hinge sides and fully open directions follow the redlined plan",
   () => {
@@ -119,13 +134,32 @@ await MeshoptDecoder.ready;
 const io = new NodeIO()
   .registerExtensions(ALL_EXTENSIONS)
   .registerDependencies({ "meshopt.decoder": MeshoptDecoder });
-const packed = await io.read(`public/${manifest.model}`);
-const raw = await io.read(`asset_exchange/${spec.assetStem}.glb`);
+const packages = modelPackages(spec);
+const pairs = await Promise.all(packages.map(async p=>({pack:p,packed:await io.read(`public/releases/${spec.version}/${p.webFile}`),raw:await io.read(`asset_exchange/${p.assetStem}.glb`)})));
+const packed = pairs[0].packed;
+check('All model packages bind the same source, preserve ownership and retain the original sofa PBR',()=>{
+  const seen = new Set();
+  for(const {pack,packed} of pairs) {
+    const ids = new Set(packed.getRoot().listNodes().map(n=>n.getExtras().entityId).filter(Boolean));
+    for(const id of ids) {assert.ok(!seen.has(id),id);seen.add(id);}
+    const raw = validation.model_packages.find(p=>p.id===pack.id);
+    const hd = manifest.assets.find(a=>a.path.endsWith('/'+pack.hdFile));
+    assert.equal(raw.sha256,hd.sha256);
+    for(const n of packed.getRoot().listNodes().filter(n=>n.getExtras().entityId))
+      assert.equal(n.getExtras().modelVersion,spec.version);
+    if(pack.id==='living-sofa') {
+      assert.deepEqual([...ids],['living-sofa']);
+      assert.ok(packed.getRoot().listMaterials().some(m=>m.getName()==='Tripo_sofa_original_PBR' && m.getNormalTexture()));
+      assert.ok(packed.getRoot().listTextures().every(t=>t.getSize().every(n=>n===4096)));
+    }
+  }
+  assert.deepEqual(seen,new Set(spec.entities.map(e=>e.id)));
+});
 check(
   "web textures preserve source resolution with only KTX block alignment",
   () => {
-    for (const source of raw.getRoot().listTextures()) {
-      const texture = packed
+    for (const pair of pairs) for (const source of pair.raw.getRoot().listTextures()) {
+      const texture = pair.packed
         .getRoot()
         .listTextures()
         .find((t) => t.getName() === source.getName());
@@ -133,7 +167,7 @@ check(
       // UASTC aligns the original 1254-pixel images to a 1256-pixel block boundary.
       assert.deepEqual(
         texture.getSize(),
-        source.getSize().map((n) => Math.ceil(n / 4) * 4),
+        texture.getMimeType() === "image/ktx2" ? source.getSize().map((n) => Math.ceil(n / 4) * 4) : source.getSize(),
         source.getName(),
       );
     }
@@ -149,15 +183,11 @@ check(
     assert.ok(ext.includes("KHR_texture_basisu"));
     assert.ok(ext.includes("EXT_meshopt_compression"));
     assert.ok(
-      packed
-        .getRoot()
-        .listTextures()
-        .every((t) => t.getMimeType() === "image/ktx2"),
+      packed.getRoot().listTextures().every((t) => t.getMimeType() === "image/ktx2"),
     );
+    for(const pair of pairs) assert.ok(pair.packed.getRoot().listExtensionsUsed().some(e=>e.extensionName === "EXT_meshopt_compression"));
     for (const e of data.entities) {
-      const nodes = packed
-        .getRoot()
-        .listNodes()
+      const nodes = pairs.flatMap(p=>p.packed.getRoot().listNodes())
         .filter((n) => n.getMesh() && n.getExtras().entityId === e.id);
       assert.ok(nodes.length, e.id);
       const b = nodes.map(getBounds),
@@ -171,6 +201,18 @@ check(
   },
 );
 const html = await fs.readFile("dist/index.html", "utf8");
+check("Static homepage images, drawing and version labels bind the current release", () => {
+  assert.ok(!/__RELEASE_PREFIX__|__MODEL_(?:SHORT_)?VERSION__/.test(html));
+  assert.ok(html.includes(manifest.version));
+  for (const match of html.matchAll(/(?:src|srcset)="([^"]+)"/g)) {
+    for (const source of match[1].split(",")) {
+      const url=source.trim().split(/\s+/)[0];
+      if (!url.includes("/releases/")) continue;
+      const path=url.replace(/^\//, "");
+      assert.ok(manifest.assets.some(a => a.path === path), `Homepage resource is stale: ${url}`);
+    }
+  }
+});
 const statics = await fs.readdir("dist/assets");
 let jsBytes = 0,
   initialBytes = Buffer.byteLength(html);
@@ -213,13 +255,14 @@ const interactiveBytes =
     )
     .reduce((s, a) => s + a.bytes, 0);
 check(
-  "first-screen and interactive resource budgets are within 1 / 16 MiB (visual-first)",
+  "first-screen, web model and interactive resources fit the versioned visual-first budgets",
   () => {
     assert.ok(initialBytes <= manifest.budgets.firstScreenBytes, initialBytes);
     assert.ok(
       interactiveBytes <= manifest.budgets.interactive3DBytes,
       interactiveBytes,
     );
+    assert.ok(manifest.assets.filter(a => a.role === "model").reduce((n,a)=>n+a.bytes,0) <= manifest.budgets.webModelBytes);
   },
 );
 check("Three.js is not preloaded by the initial HTML", () => {
@@ -262,7 +305,8 @@ const result = {
   initialBytes,
   firstViewportCoreBytes,
   interactiveBytes,
-  webGLBBytes: manifest.assets.find((a) => a.role === "model").bytes,
+  webGLBBytes: manifest.assets.filter(a=>a.role === "model").reduce((n,a)=>n+a.bytes,0),
+  modelPackages: manifest.assets.filter(a=>["model","hd-model"].includes(a.role)),
   sourceSha256: validation.source_sha256,
   rawModelSha256: validation.glb_sha256,
 };

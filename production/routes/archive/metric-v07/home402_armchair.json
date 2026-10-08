@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_armchair",
+  "task_id": "home402-living-v02-to-metric-v07",
+  "intent": "new_static",
+  "route": "reference_blender",
+  "decision_basis": {
+    "path": "docs/design/living-v02/DECISION.md",
+    "sha256": "961bd4701170dd6647d4e74e44ca727b96000ad5107b4b63ff9c58576432b8d6"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Author static furniture geometry and PBR surfaces from the selected standalone reference",
+    "Place under metric-v07 JSON dimensions and preserve architectural geometry"
+  ],
+  "references": [
+    {
+      "path": "references/generated/living-furniture-20261008/independent/armchair-r1.png",
+      "sha256": "43e618e18adcb950c8ac878ecef8d39090282f446a656b7231ff99be470b215d"
+    }
+  ],
+  "geometry": {
+    "source": {
+      "path": "art_src/apartment-v07.blend",
+      "sha256": "1b5274fd7519d9b5838b18a8be7e7375cc804fa33216718674c28f823a04da0d"
+    },
+    "inspection": {
+      "path": "production/inspection/home402_armchair.json",
+      "sha256": "cc275803ad5e4c56c1c4f5e2d6a66939d6f290a66263ea93ce18a32970025e17"
+    },
+    "basis": "blender_authored",
+    "generation": null
+  },
+  "reuse": []
+}

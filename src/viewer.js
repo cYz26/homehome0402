@@ -145,10 +145,16 @@ export class ApartmentViewer {
       .setMeshoptDecoder(MeshoptDecoder);
     signal?.throwIfAborted();
     onStage?.("decode");
+    const root = new THREE.Group();
+    root.name = `Apartment_${manifest.version}`;
+    this.model = root;
+    const bundles = Array.isArray(bytes) ? bytes : [{path:manifest.model,bytes}];
+    try {
+    for (const bundle of bundles) {
     const parsed = loader
       .parseAsync(
-        bytes,
-        url(manifest.model.substring(0, manifest.model.lastIndexOf("/") + 1)),
+        bundle.bytes,
+        url(bundle.path.substring(0, bundle.path.lastIndexOf("/") + 1)),
       )
       .then((gltf) => {
         if (!this.running || signal?.aborted) {
@@ -168,9 +174,12 @@ export class ApartmentViewer {
         return gltf;
       });
     const gltf = await abortable(parsed, signal);
+    root.add(gltf.scene);
+    }
+    } finally {
+      this.ktx.dispose();
+    }
     onStage?.("render");
-    this.ktx.dispose();
-    this.model = gltf.scene;
     this.model.traverse((ob) => {
       if (ob.isMesh) {
         let owner = ob;

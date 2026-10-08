@@ -1,0 +1,126 @@
+{
+  "design_id": "home402-living-v03",
+  "version": "metric-v08",
+  "status": "source-and-technical-checks-passed; superseded by metric-v09 before full consistent browser acceptance",
+  "source": {
+    "path": "art_src/apartment-v08.blend",
+    "sha256": "35b96705e4ce25df42fbd0a180c0de0eabc5be77d82a146409d560ac53f7643b"
+  },
+  "spec": {
+    "path": "model/baseline-v08/apartment.json",
+    "sha256": "104962a7b2832f3a9d4a12b40b01fe8fffaf6d62303c9ca01e379bbeb71971ce"
+  },
+  "raw_model_sha256": "57962ad91e6caeb1b1a4423a404c1733c8e04f60967e316833813ed0ce49e5e6",
+  "primary_web_sha256": "83488d35f5c644f57f8d9aeb95e4064a70665e6388d1e49512f38cc3f4d6c409",
+  "technical": {
+    "source_objects": 707,
+    "reimport_objects": 707,
+    "triangles": 94632,
+    "roundtrip_pass": true,
+    "maximum_bound_error_m": 9.5367431640625e-07,
+    "model_checks": {
+      "checks": [
+        {
+          "name": "North and south dimension chains close at 10.50 m",
+          "pass": true
+        },
+        {
+          "name": "West dimension chain closes at 12.90 m",
+          "pass": true
+        },
+        {
+          "name": "Specified main ceiling height is 2.80 m",
+          "pass": true
+        },
+        {
+          "name": "Actual GLB southern wall references match 3.50 / 4.00 / 3.00",
+          "pass": true
+        },
+        {
+          "name": "Actual GLB north partitions match 2.80 / 2.80 / 2.60",
+          "pass": true
+        },
+        {
+          "name": "NW door hinge and real opening endpoint coincide",
+          "pass": true
+        },
+        {
+          "name": "Both storage niches and master contain no generated cabinet assets",
+          "pass": true
+        },
+        {
+          "name": "Common bathroom privacy door is independent of shower glass",
+          "pass": true
+        },
+        {
+          "name": "Common vanity mixer stands on the south wall side of the actual bowl",
+          "pass": true
+        },
+        {
+          "name": "All parked north sliding leaves lie east-west, not perpendicular to the facade",
+          "pass": true
+        },
+        {
+          "name": "Living glazing reaches the floor; bedroom glazing has lowered sills and no guards",
+          "pass": true
+        },
+        {
+          "name": "Kitchen equipment occupies west / north / east positions and sink is recessed",
+          "pass": true
+        },
+        {
+          "name": "Earlier removed elevator shell and bedroom wardrobes remain absent",
+          "pass": true
+        },
+        {
+          "name": "North parked door frames are thin and the full stack is under 10 cm",
+          "pass": true
+        },
+        {
+          "name": "X room and kitchen have dark side surrounds, header and thresholds",
+          "pass": true
+        },
+        {
+          "name": "Master vanity is a continuous 1.8 m double-user trough with two wall outlets",
+          "pass": true
+        },
+        {
+          "name": "Both bathrooms have thin dark privacy leaves and master entry remains clear",
+          "pass": true
+        },
+        {
+          "name": "Actual Blender source and independently reimported GLB match",
+          "pass": true
+        },
+        {
+          "name": "Current export and spec match measured artifact digests",
+          "pass": true
+        },
+        {
+          "name": "Measured table follows the supplied 2800 x 900 x 750 mm drawing and asymmetric supports",
+          "pass": true
+        },
+        {
+          "name": "Furnishing preserves every v06 architectural part and no-TV no-coffee-table layout",
+          "pass": true
+        },
+        {
+          "name": "Measured cabinet tiers and single artwork follow the revised hanging layout",
+          "pass": true
+        }
+      ],
+      "passed": 22,
+      "total": 22
+    },
+    "node_passed": 53,
+    "release_passed": 15
+  },
+  "browser": {
+    "first_full_run": "15/17; mixed-build phone assertion and whole-case HD timeout; not full acceptance",
+    "failure_archive": ".asset-work/tmp/browser-v08-first-failure",
+    "actual_visual_qa": "/Users/cY/.codex/visualizations/2026/10/08/01a119da-518b-7df1-b218-b62441929393/living-v08/visual-qa.json"
+  },
+  "successor": "docs/design/living-v04/DECISION.md",
+  "no_commit_push_or_deployment": true,
+  "user_visual_acceptance": "pending"
+}

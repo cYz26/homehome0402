@@ -1,0 +1,76 @@
+{
+  "version": "metric-v09",
+  "mode": "read-only route guard; project native pipeline owns source generation",
+  "checks": [
+    {
+      "asset_id": "home402_sofa",
+      "status": "source_bound",
+      "decision_path": "production/routes/home402_sofa.json",
+      "decision_sha256": "6f4a2222e152b1f679313383e8c1174b358a562a33588de3e1535aac12077f3c",
+      "source": {
+        "path": "art_src/apartment-v09.blend",
+        "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
+      },
+      "inputs": {
+        "art_src/apartment-v09.blend": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
+        "docs/design/living-v04/DECISION.md": "3f926319c1bacef407486a9cde76f7554026f5312e5381d88f907a56fe07fb45",
+        "production/inspection/home402_sofa-metric-v09.json": "a2899ed2a478bb93ea6094b430ae0e1f8660f7c41be7ee6623a16c93fc8a9b52",
+        "production/inspection/metric-v09-source.json": "456a5b9b2406980daa9b89f5e3c6286fe51a8392bc1befc80d1939a1cf92df01",
+        "references/model/sofa-tripo-r1/runtime-source.png": "c0b023267bd1c1d8245adab09860039cdaf3e96e823cc669c71d75595631cbf5"
+      }
+    },
+    {
+      "asset_id": "home402_table_set",
+      "status": "source_bound",
+      "decision_path": "production/routes/home402_table_set.json",
+      "decision_sha256": "09c4f56046507276e6a4473cef0a370f45e942060e82c6a357e052fe75c0bbc7",
+      "source": {
+        "path": "art_src/apartment-v09.blend",
+        "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
+      },
+      "inputs": {
+        "art_src/apartment-v09.blend": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
+        "docs/design/living-v04/DECISION.md": "3f926319c1bacef407486a9cde76f7554026f5312e5381d88f907a56fe07fb45",
+        "production/inspection/home402_table_set-metric-v09.json": "fdc49e7694cbefab978f868f85d194e9b1e71d96b6289cac17e520381bb8da9a",
+        "production/inspection/metric-v09-source.json": "456a5b9b2406980daa9b89f5e3c6286fe51a8392bc1befc80d1939a1cf92df01",
+        "references/generated/living-furniture-20261008/independent/table-set-r2.png": "1133dab518a9471da066c60b61cbf333c29614d13f71bee59afb6830c0d355d3"
+      }
+    },
+    {
+      "asset_id": "home402_cabinet_wall",
+      "status": "source_bound",
+      "decision_path": "production/routes/home402_cabinet_wall.json",
+      "decision_sha256": "9611b4a676c0b2b86568a8899d1583f6683a8205db184626149c9cc86cdaa908",
+      "source": {
+        "path": "art_src/apartment-v09.blend",
+        "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
+      },
+      "inputs": {
+        "art_src/apartment-v09.blend": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
+        "docs/design/living-v04/DECISION.md": "3f926319c1bacef407486a9cde76f7554026f5312e5381d88f907a56fe07fb45",
+        "production/inspection/home402_cabinet_wall-metric-v09.json": "63a1087add5b135d29a28bc2d551a44ee6e57fb1080a3becd463907b86ba8b79",
+        "production/inspection/metric-v09-source.json": "456a5b9b2406980daa9b89f5e3c6286fe51a8392bc1befc80d1939a1cf92df01",
+        "references/generated/living-furniture-20261008/art-landscape-r1.png": "d40f07bb1521a36c61c605494a0056712bd62c88aec6923cf4c460d4317dafb9",
+        "references/generated/living-furniture-20261008/cabinet-wall-v03.png": "4060cc6b61632059661f9cde4b1493910f20a1d77a51267f12a2bc1d11942b75",
+        "references/generated/living-furniture-20261008/independent/cabinet-wall-r1.png": "aa13e2a456bf13bd343234b845e447586e89a64e3f9cdca6e2fc5f445ff431d7"
+      }
+    },
+    {
+      "asset_id": "home402_armchair",
+      "status": "source_bound",
+      "decision_path": "production/routes/home402_armchair.json",
+      "decision_sha256": "871b28996971adf61c11ed030d8ad56f97ed480c7489d7f45b1bae5088522783",
+      "source": {
+        "path": "art_src/apartment-v09.blend",
+        "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
+      },
+      "inputs": {
+        "art_src/apartment-v09.blend": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
+        "docs/design/living-v04/DECISION.md": "3f926319c1bacef407486a9cde76f7554026f5312e5381d88f907a56fe07fb45",
+        "production/inspection/home402_armchair-metric-v09.json": "6da4fe52c733c91f9592f2dbb5ca1368541953eaf198aadfe228ed824eba750d",
+        "production/inspection/metric-v09-source.json": "456a5b9b2406980daa9b89f5e3c6286fe51a8392bc1befc80d1939a1cf92df01",
+        "references/generated/living-furniture-20261008/independent/armchair-r1.png": "43e618e18adcb950c8ac878ecef8d39090282f446a656b7231ff99be470b215d"
+      }
+    }
+  ]
+}

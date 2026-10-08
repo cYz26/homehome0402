@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_armchair",
+  "task_id": "home402-living-v03-to-metric-v08",
+  "intent": "revise_static",
+  "route": "existing_blender",
+  "decision_basis": {
+    "path": "docs/design/living-v03/DECISION.md",
+    "sha256": "bc1b18adffe45cb5aa1a0be52db0e3f10d2fee0331742df307c26f46a83adb4f"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Rebuild current JSON-controlled static furnishings under metric-v08; preserve architectural geometry",
+    "Cabinet wall: calibrate module heights and replace six posters with single original horizontal artwork; preserve other approved furniture"
+  ],
+  "references": [
+    {
+      "path": "references/generated/living-furniture-20261008/independent/armchair-r1.png",
+      "sha256": "43e618e18adcb950c8ac878ecef8d39090282f446a656b7231ff99be470b215d"
+    }
+  ],
+  "geometry": {
+    "source": {
+      "path": "art_src/apartment-v08.blend",
+      "sha256": "35b96705e4ce25df42fbd0a180c0de0eabc5be77d82a146409d560ac53f7643b"
+    },
+    "inspection": {
+      "path": "production/inspection/home402_armchair-metric-v08.json",
+      "sha256": "673392bb54c1ee0e0e65ea26cbf47fecc148c88a8c9c29e2d67079bc3f4570c9"
+    },
+    "basis": "existing",
+    "generation": null
+  },
+  "reuse": []
+}

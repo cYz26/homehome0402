@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_cabinet_wall",
+  "task_id": "home402-living-v03-to-metric-v08",
+  "intent": "revise_static",
+  "route": "existing_blender",
+  "decision_basis": {
+    "path": "docs/design/living-v03/DECISION.md",
+    "sha256": "bc1b18adffe45cb5aa1a0be52db0e3f10d2fee0331742df307c26f46a83adb4f"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Rebuild current JSON-controlled static furnishings under metric-v08; preserve architectural geometry",
+    "Cabinet wall: calibrate module heights and replace six posters with single original horizontal artwork; preserve other approved furniture"
+  ],
+  "references": [
+    {
+      "path": "references/generated/living-furniture-20261008/independent/cabinet-wall-r1.png",
+      "sha256": "aa13e2a456bf13bd343234b845e447586e89a64e3f9cdca6e2fc5f445ff431d7"
+    },
+    {
+      "path": "references/generated/living-furniture-20261008/art-landscape-r1.png",
+      "sha256": "d40f07bb1521a36c61c605494a0056712bd62c88aec6923cf4c460d4317dafb9"
+    },
+    {
+      "path": "references/generated/living-furniture-20261008/cabinet-wall-v03.png",
+      "sha256": "4060cc6b61632059661f9cde4b1493910f20a1d77a51267f12a2bc1d11942b75"
+    }
+  ],
+  "geometry": {
+    "source": {
+      "path": "art_src/apartment-v08.blend",
+      "sha256": "35b96705e4ce25df42fbd0a180c0de0eabc5be77d82a146409d560ac53f7643b"
+    },
+    "inspection": {
+      "path": "production/inspection/home402_cabinet_wall-metric-v08.json",
+      "sha256": "469fdf1774437322013289d7685e499fb5bbb0b81ef7031f16bffec1ad16cf6b"
+    },
+    "basis": "existing",
+    "generation": null
+  },
+  "reuse": []
+}
