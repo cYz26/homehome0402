@@ -4,9 +4,9 @@ import sharp from "sharp";
 // phase. A request event only marks its start; ordinary UI assertions stay 20s.
 async function modelReady(page) {
   await test.step("model ready: download, decode and first render", async () => {
-    // Read both conditions atomically. On the private runner, HD finishes its
-    // first render at ~96s, then a second DOM request can wait behind another
-    // software-GPU frame and consume the remainder of this 120s phase.
+    // Read both conditions atomically. A remote trace showed first-render
+    // completion followed by a second DOM request waiting behind another
+    // software-GPU frame and exhausting this shared 120s phase.
     await expect.poll(() => page.evaluate(() => ({
       placeholderHidden: document.querySelector("#model-placeholder")?.hidden === true,
       canvasCount: document.querySelectorAll("canvas").length,
@@ -330,9 +330,14 @@ test("standard rendering, north-up plan, current reference and on-demand HD reta
   await page.locator(".help summary").click();
   // Regression: a successful model load can exceed the ordinary 20s UI
   // assertion budget. Keep the real HD asset and all full-quality checks.
+  let delayedHdResponse = false;
   await page.route("**/apartment-hd.glb", async (route) => {
+    const delay = !delayedHdResponse;
+    delayedHdResponse = true;
     const response = await route.fetch();
-    await new Promise((resolve) => setTimeout(resolve, 25000));
+    // Delay once: the loader probes Range before its parallel segment requests.
+    // Delaying every response accidentally makes this a 50s network stall.
+    if (delay) await new Promise((resolve) => setTimeout(resolve, 25000));
     await route.fulfill({ response });
   });
   const hd = page.waitForRequest("**/apartment-hd.glb");
