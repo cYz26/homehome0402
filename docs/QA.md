@@ -22,7 +22,19 @@
 
 测试证据保存在本机 `/tmp/home402-workers-qa/evidence/metric-v06/`，构建、清单、测试及 Worker 源码通过 SHA-256 绑定。本地发布回读为 `/tmp/home402-workers-qa/local-deployment-verification.json`。底层资产绑定缺少 Content-Length 且忽略 Range 的情况已复现，Worker 使用同一份发布清单中的字节数截取响应流，Node 与真实 workerd 均验证 206；不把本地 runtime 当作 Cloudflare 线上验收。
 
-匿名检查旧 `https://cyz26.github.io/homehome402/` 和改名后 `https://cyz26.github.io/homehome0402/` 均返回 404；Pages 设置仍待登录后核实。远程发布待 GitHub CLI / Cloudflare 部署凭据和对应 Actions 运行完成；本机预检不能替代部署。真机持续漫游及真实 iOS Safari / Android Chrome 触摸验收沿用既有待验项。详细发布操作见 [README](../README.md#首次部署配置)。
+匿名检查旧 `https://cyz26.github.io/homehome402/` 和改名后 `https://cyz26.github.io/homehome0402/` 均返回 404；GitHub CLI 登录后读取 Pages API 仍为 404，当前没有可读的 Pages 站点设置。CLI 已授权，用户保存的 Cloudflare token 已验证 active；四项部署 secrets 已通过 stdin 写入 GitHub，URL 变量为 `https://home402.cyz26.workers.dev`。此处地址仅为完成配置后的部署目标，首次线上发布仍待 CI 完整验收。真机持续漫游及真实 iOS Safari / Android Chrome 触摸验收沿用既有待验项。详细发布操作见 [README](../README.md#首次部署配置)。
+
+### 首次远程失败诊断
+
+[运行 37731573066](https://github.com/cYz26/homehome0402/actions/runs/37731573066) 对应 `a963db8`：构建及 51 项 Node 检查通过；浏览器 12 / 17 通过，完整性守卫拒绝失败报告，部署未执行。原始日志与失败 trace 保存在本机 `/tmp/home402-workers-remote/`。
+
+- 两项密码浏览器测试已登录并显示模型；仅精确 URL 字符串断言失败。网页 600 ms 后为分享状态补全 camera / 默认字段，实际 mode、quality、section 与输入相同。改为从查看器分享按钮读取真实快照并断言原状态。
+- 桌面 / 平板均在双人洗手台点击等待结束时超过 30 秒，平板 trace 确认点击已完成。为室内 / 主卫 / 细节切换明确添加 GPU 完成等待；点击继续检查可见、稳定、命中，不使用强制点击，保留正常机位动画。
+- 标准画质 trace 中 Web 检查完成约 212 秒，其中主卫与细节绘制分别 88.9 / 70.2 秒；高清在解析阶段碰到 300 秒总时限，尚未耗尽其 120 秒加载阶段上限。仅三个响应式流程调整为 420 秒、标准 / 高清为 600 秒，普通操作和阶段限制保留；将完整 17 项用例分为四个单 worker runner，避免所有长流程集中在同一分片。无跳过或自动重试。
+
+[GitHub runner 规格](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)列明私有仓库的标准 Ubuntu runner 为 2 CPU / 8 GiB，公开仓库为 4 CPU / 16 GiB；这可能影响软件绘制时长，下一轮记录实际 CPU 和内存，不能仅凭规格断言本轮性能差异原因。
+
+本机将旧密码断言保留在仓库外副本，仅等待 URL 已补全 camera 后执行，8.1 秒复现同一失败。修正后的三个响应式流程、标准 / 高清及两个密码流程 **6 / 6 通过，约 192 秒**，无跳过或重试；Node **51 / 51**。环境沿用上述 macOS / Chromium，原始红绿报告和截图保存在 `/tmp/home402-ci-fixes/`。此结果仅证明本机修改后的流程与状态断言，完整清单及 Linux 超时仍以新提交的 Actions 为准。
 
 ## 预加载与 CI 交付复验 · 2026-10-08
 

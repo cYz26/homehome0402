@@ -95,11 +95,11 @@ node scripts/collect-browser-evidence.mjs
 
 网站使用共享密码入口。Worker 先验证全部请求，再访问静态资源，图片、图纸、清单、解码器和两个 GLB 都受保护。登录使用 24 小时的 Secure / HttpOnly / SameSite 签名 Cookie，保留分享链接；错误密码限速，缺少密码配置时返回 503。修改密码会使原会话失效，已经下载到访问者设备的内容无法远程收回。页面和资源回复使用 `private, no-store`；模型的既有浏览器哈希缓存仍用于已登录查看。预览版本 URL 默认关闭。
 
-CI 按“构建 → 两个浏览器分片 → 合并验收 → 部署”运行：
+CI 按“构建 → 四个浏览器分片 → 合并验收 → 部署”运行：
 
 - `build` 执行图片元数据脱敏、模型、Node 测试、发布和 Workers 资源限制检查及 Wrangler dry run，只构建一次；保存 `dist`、模型检查结果和完整浏览器测试清单。
-- `browser` 在两个独立 runner 上按测试用例分片，每个 runner 保持单 worker、完整画质和零自动重试。两个分片按同一 artifact ID 下载构建，剖切开发夹具也直接读取这份构建资源；只安装 Chromium headless shell。
-- `verify` 合并两个 blob 报告，逐项核对测试清单，要求每项恰好执行一次并通过，再收集截图、像素指标及构建哈希。缺片、失败、跳过、重复或缺失附件均不能验收；原始 blob 保留失败 trace。
+- `browser` 在四个独立 runner 上按测试用例分片，每个 runner 保持单 worker、完整画质和零自动重试。所有分片按同一 artifact ID 下载构建，剖切开发夹具也直接读取这份构建资源；只安装 Chromium headless shell。
+- `verify` 合并四个 blob 报告，逐项核对测试清单，要求每项恰好执行一次并通过，再收集截图、像素指标及构建哈希。缺片、失败、跳过、重复或缺失附件均不能验收；原始 blob 保留失败 trace。
 - `deploy` 等待以上三个作业全部成功，按 artifact ID 下载并发布同一份 `dist`；只安装已锁定的 Wrangler，不再次构建。写入网站访问 secrets 后，对线上所有构建文件执行匿名拒绝 / 登录后 SHA-256 回读，并核对网页及高清 GLB 的 206 分段响应。PR 不接触部署凭据，也不发布。
 
 ### 首次部署配置
@@ -123,7 +123,7 @@ npm run worker:dev -- --port 8787
 
 Wrangler Static Assets 单资源限制为 25 MiB，当前最大的高清 GLB 为 19,790,028 字节，无需拆分或修改画质；[官方限制](https://developers.cloudflare.com/workers/platform/limits/#static-assets)由 `check:worker` 核对。所有资源都经过密码 Worker，请求计入 Worker 配额；静态存储和边缘缓存仍由 Static Assets 负责，见[计费边界](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/)。
 
-本地仍可用 `npm run test:browser` 执行完整套件。排查单个分片可用 `npm run test:browser -- --shard=1/2 --reporter=list,blob`（另一个为 `2/2`）；执行下一分片前保存已有 blob ZIP，避免输出目录被清理。完整报告用 `npx playwright merge-reports --reporter=json all-blob-reports` 合并，设置 `PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/browser-report.json`，再由证据脚本的 `--inventory` 参数核对构建时通过 `--list --reporter=json` 生成的清单。分片粒度依据 [Playwright 官方说明](https://playwright.dev/docs/test-sharding)。
+本地仍可用 `npm run test:browser` 执行完整套件。排查单个分片可用 `npm run test:browser -- --shard=1/4 --reporter=list,blob`（其余为 `2/4`、`3/4`、`4/4`）；执行下一分片前保存已有 blob ZIP，避免输出目录被清理。完整报告用 `npx playwright merge-reports --reporter=json all-blob-reports` 合并，设置 `PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/browser-report.json`，再由证据脚本的 `--inventory` 参数核对构建时通过 `--list --reporter=json` 生成的清单。分片粒度依据 [Playwright 官方说明](https://playwright.dev/docs/test-sharding)。
 
 首屏关键呈现资源预算 1 MiB，呈现后后台预加载及首次可交互 3D 总资源预算 16 MiB（视觉优先），检查包括 JS、模型、属性、导航和解码器。网页纹理保留源图分辨率，使用高质量 KTX2，不再降至 768 像素；UASTC 块对齐为 1256 像素。历史资源保留在仓库中，不随 `public` 全量复制。
 

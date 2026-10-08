@@ -20,7 +20,13 @@ for (const [name, width, height] of [["desktop", 1280, 900], ["phone", 390, 844]
     await page.getByRole("button", { name: "进入空间" }).click();
     await expect(page.locator("#model-placeholder")).toBeHidden({ timeout: 120000 });
     await expect(page.locator("canvas")).toHaveCount(1);
-    expect(new URL(page.url()).hash).toBe(fragment);
+    // The viewer canonicalizes a restored URL with camera/default fields after
+    // 600 ms. Read its actual snapshot instead of racing that URL update.
+    await page.locator("#share").click();
+    const shared = await page.locator("#share-url").inputValue();
+    const restored = JSON.parse(decodeURIComponent(new URL(shared).hash.slice(6)));
+    expect(restored).toMatchObject(state);
+    await page.locator("#share-dialog [data-close-dialog]").click();
     // The browser treats localhost as secure for cookies; Playwright's separate
     // HTTP client does not. Exercise the actual browser's credential path.
     const manifest = await page.evaluate(async () => {

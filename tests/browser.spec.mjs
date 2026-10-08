@@ -46,8 +46,9 @@ async function rendered(page, name) {
     await page.evaluate(async () => {
       const gl = document.querySelector("canvas").getContext("webgl2");
       if (!gl || gl.isContextLost()) throw new Error("WebGL context unavailable");
-      // This static-view test uses reduced motion. Drain the viewer's three
-      // trailing frames plus one presentation frame, including GPU completion.
+      // Drain the viewer's three trailing frames plus one presentation frame,
+      // including GPU completion. Animated camera transitions remain enabled
+      // in the responsive interaction flows.
       for (let frame = 0; frame < 4; frame++) {
         await new Promise(requestAnimationFrame);
         gl.finish();
@@ -64,6 +65,9 @@ for (const [label, width, height] of [
   test(`${label}: homepage preload, model, linked rooms, section, view restore, screenshot`, async ({
     page,
   }, testInfo) => {
+    // Remote traces on the private runner spend over four minutes in this
+    // animated flow before its final detail view. Keep each action/render bound.
+    if (process.env.CI) test.setTimeout(420000);
     await page.setViewportSize({ width, height });
     const errors = [];
     page.on("pageerror", (e) => errors.push(e.message));
@@ -143,10 +147,13 @@ for (const [label, width, height] of [
     expect(stoppedAgain.state.camera.position).toEqual(
       stopped.state.camera.position,
     );
-    await page.locator('[data-mode="interior"]').click();
+    await page.locator('[data-mode="interior"]').click({ noWaitAfter: true });
+    await rendered(page, `${label} interior`);
     if (width < 700) await panel(page, true);
-    await page.locator('#rooms [data-room="masterbath"]').click();
-    await page.locator('[data-detail="double-basin"]').click();
+    await page.locator('#rooms [data-room="masterbath"]').click({ noWaitAfter: true });
+    await rendered(page, `${label} master bathroom`);
+    await page.locator('[data-detail="double-basin"]').click({ noWaitAfter: true });
+    await rendered(page, `${label} double basin`);
     if (width < 700) await panel(page, false);
     await nonblank(page, testInfo, `${label}-bathroom`);
     await page.locator("[data-open-references]").first().click();
@@ -281,6 +288,9 @@ test("standard rendering, north-up plan, current reference and on-demand HD reta
 }, testInfo) => {
   // This case checks final full-quality views; animated navigation remains
   // covered by the desktop/tablet/phone flows with normal motion.
+  // The remote trace completes Web views in 212s; HD then adds a 25s network
+  // delay, decoding and three full-quality views. UI/phase limits stay intact.
+  if (process.env.CI) test.setTimeout(600000);
   await page.emulateMedia({ reducedMotion: "reduce" });
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
