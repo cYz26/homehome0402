@@ -130,7 +130,8 @@ const receipt = {
     await fs.readFile("scripts/collect-browser-evidence.mjs"),
   ),
   deploymentSources: Object.fromEntries(await Promise.all([
-    "wrangler.jsonc", "worker/index.mjs", "tests/worker-auth.spec.mjs",
+    ".github/workflows/pages.yml", "vite.config.js", "scripts/check-pages-deployment.mjs",
+    "tests/pages-routing.spec.mjs",
   ].map(async (p) => [p, hash(await fs.readFile(p))]))),
   reportSha256: hash(reportBytes),
   inventorySha256,

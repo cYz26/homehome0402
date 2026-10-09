@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-09T07:42:54.749Z",
+  "url": "https://cyz26.github.io/homehome0402/",
+  "checks": [
+    {
+      "viewport": "1280x900",
+      "version": "metric-v09",
+      "canvasCount": 1,
+      "shareUrl": "https://cyz26.github.io/homehome0402/#view=%7B%22v%22%3A1%2C%22mode%22%3A%22orbit%22%2C%22roomId%22%3Anull%2C%22entityId%22%3Anull%2C%22section%22%3A%7B%22axis%22%3A%22z%22%2C%22value%22%3A1.15%7D%2C%22quality%22%3A%22standard%22%2C%22eyeHeight%22%3A1.65%2C%22camera%22%3A%7B%22position%22%3A%5B14.2%2C23.15%2C9.5%5D%2C%22target%22%3A%5B5.2%2C0.15%2C-6.5%5D%2C%22zoom%22%3A0.9%2C%22fov%22%3A72%7D%7D",
+      "errors": []
+    },
+    {
+      "viewport": "390x844",
+      "horizontalOverflow": false,
+      "heroLoaded": true,
+      "touch": "desktop Chromium simulation"
+    }
+  ],
+  "realPhonePerformance": "not-measured",
+  "mainlandNetworkAccess": "not-measured"
+}

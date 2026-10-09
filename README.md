@@ -16,7 +16,7 @@ npm run build
 npm run preview -- --port 4173
 ```
 
-打开 `http://127.0.0.1:4173/`。开发与预览服务仅绑定本机；Vite 用于本机设计预览，线上密码入口由 Worker 提供。远程版本以 Git 提交为准，检查及部署结果以 GitHub Actions 和部署回读为准。
+打开 `http://127.0.0.1:4173/homehome0402/`。开发与预览服务仅绑定本机，与线上 GitHub Pages 使用相同项目路径。远程版本以 Git 提交为准，检查及部署结果以 GitHub Actions 和部署回读为准。
 
 ## 持续开发与文档入口
 
@@ -92,39 +92,27 @@ node scripts/collect-browser-evidence.mjs
 
 ## 发布与验收
 
-采用 **私有 GitHub 仓库 → GitHub Actions 验证 → Cloudflare Workers Static Assets 发布**。当前仓库为 [cYz26/homehome0402](https://github.com/cYz26/homehome0402)，网站使用 `/` 根路径；站内旧 `/homehome402/` 分享路径在验证后重定向到根路径，保留视角片段。PR 执行数据一致性、预算与完整 Chromium 浏览器检查；`main` 推送通过检查才发布。CI 使用已生成且哈希匹配的建筑资源，不在发布时重新渲染 Blender。
+采用 **公开 GitHub 仓库 → GitHub Actions 验证 → GitHub Pages 发布**。当前仓库为 [cYz26/homehome0402](https://github.com/cYz26/homehome0402)，站点为 [Home 402](https://cyz26.github.io/homehome0402/)，使用 `/homehome0402/` 项目路径。网站、图片、图纸、模型和下载均公开、免密码；此前 Workers 入口及其密码验证代码保留历史，不参与当前发布。
 
-网站使用共享密码入口。Worker 先验证全部请求，再访问静态资源，图片、图纸、清单、解码器和全部 GLB 包都受保护。登录使用 24 小时的 Secure / HttpOnly / SameSite 签名 Cookie，保留分享链接；错误密码限速，缺少密码配置时返回 503。修改密码会使原会话失效，已经下载到访问者设备的内容无法远程收回。页面和资源回复使用 `private, no-store`；模型的既有浏览器哈希缓存仍用于已登录查看。预览版本 URL 默认关闭。
+PR 执行数据一致性、预算与完整 Chromium 浏览器检查；`main` 推送通过检查才发布。CI 使用已生成且哈希匹配的建筑资源，不在发布时重新渲染 Blender。发布配置为 `.github/workflows/pages.yml` 和 `vite.config.js`；仓库重命名时同步修改站点 base、检查及文档。
 
 CI 按“构建 → 四个浏览器分片 → 合并验收 → 部署”运行：
 
-- `build` 执行图片元数据脱敏、模型、Node 测试、发布和 Workers 资源限制检查及 Wrangler dry run，只构建一次；保存 `dist`、模型检查结果和完整浏览器测试清单。
-- `browser` 在四个独立 runner 上按测试用例分片，每个 runner 保持单 worker、完整画质和零自动重试。所有分片按同一 artifact ID 下载构建，剖切开发夹具也直接读取这份构建资源；安装完整 Chromium，采用与普通浏览器一致的新无界面模式。Linux 在 Xvfb 下使用 ANGLE GL，并记录实际 WebGL 后端。
-- `verify` 合并四个 blob 报告，逐项核对测试清单，要求每项恰好执行一次并通过，再收集截图、像素指标及构建哈希。缺片、失败、跳过、重复或缺失附件均不能验收；原始 blob 保留失败 trace。
-- `deploy` 等待以上三个作业全部成功，按 artifact ID 下载并发布同一份 `dist`；只安装已锁定的 Wrangler，不再次构建。写入网站访问 secrets 后，对线上所有构建文件执行匿名拒绝 / 登录后 SHA-256 回读，并核对网页及高清 GLB 的 206 分段响应。PR 不接触部署凭据，也不发布。
+- `build` 执行图片元数据、模型、Node 测试及发布资源检查，只构建一次；保存 `dist`、模型检查结果和完整浏览器清单，并把同一 `dist` 打包为 Pages artifact。
+- `browser` 在四个独立 runner 上按测试用例分片，每个用例使用独立 Chromium 进程、完整画质和零自动重试。所有分片按同一 artifact ID 下载构建，剖切夹具直接读取这份资源；Linux 在 Xvfb 下使用 ANGLE GL，并记录实际 WebGL 后端。Workers 密码入口用例保留历史，当前套件覆盖公开项目路径、资源、Range 及全部应用行为。
+- `verify` 合并四个 blob 报告，逐项核对测试清单，要求每项恰好执行一次并通过，再收集截图、像素指标及构建哈希。缺片、失败、跳过、重复或缺失附件均不能验收。
+- `deploy` 等待以上作业全部成功，使用官方 configure-pages / deploy-pages 发布已打包产物；按 artifact ID 下载同一份 `dist`，回读全部线上文件 SHA-256、四个模型包的 206 响应及缺失资源 404。PR 不申请 Pages 写权限，也不发布；无需 Cloudflare secrets。
 
 ### 首次部署配置
 
-1. 仓库保持 Private，启用 Actions，停用旧 GitHub Pages 站点，避免旧公开地址继续提供资源。
-2. 在目标 Cloudflare 账户配置一个仅用于本项目部署的 API token，采用官方 [Workers CI/CD 权限说明](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/)，限定目标账户。凭据只保存在 GitHub Actions secrets：`CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID`；不用 Cloudflare 的 Git 自动构建绕过 Actions 验收。
-3. 在本机 `~/.config/home402/site-password.txt` 保存一行网站密码，再运行 `npm run worker:secrets -- --github`，将密码 SHA-256 和随机会话密钥保存为 `SITE_PASSWORD_SHA256` / `SESSION_SECRET`。脚本通过标准输入传递，密码及密钥不进入 Git、静态构建或命令日志。
-4. 设置仓库变量 `HOME402_WORKER_URL` 为实际 Worker HTTPS 地址；`wrangler.jsonc` 锁定 Worker 名 `home402`。随后推送 `main`，等待 `build → browser → verify → deploy` 全部成功；`home402-deployment-evidence` artifact 保存实际资源回读。
+1. 仓库设为 Public，启用 Actions。
+2. 在 Settings → Pages → Build and deployment 中选择 GitHub Actions；API 配置对应 `build_type: workflow`。
+3. 推送 `main`，等待 `build → browser → verify → deploy` 全部成功。部署作业使用 `github-pages` 环境和短期 GitHub OIDC 凭据，无需手动保存发布 token。
+4. 打开 [Home 402](https://cyz26.github.io/homehome0402/)。完整结果见 [QA](docs/QA.md#github-pages-恢复--2026-10-09)，线上资源回读保存在 `home402-deployment-evidence` artifact。
 
-当前发布地址为 [Home 402](https://home402.cyz26.workers.dev)，完整验证及部署源见[最终 QA](docs/QA.md#远程验收与首次发布完成)。首次写入 secrets 后，传播期间入口可能短暂返回 503 并保持关闭；若该状态导致回读失败，确认入口恢复密码页后使用 `gh run rerun RUN_ID --failed` 仅重跑失败的部署作业，继续复用已完整验收的同一构建。
+本机预览和浏览器检查使用端口 4173 / 4174，与站点一样保留 `/homehome0402/` 前缀。历史 Worker 凭据和源码不进入 `dist`；其本机测试仍可由原脚本单独执行，不读取或改动生产密码。
 
-本机密码入口检查：
-
-```sh
-npm run worker:secrets -- --local
-npm run build
-npm run check:worker
-npm run worker:dry-run
-npm run worker:dev -- --port 8787
-```
-
-打开 `http://127.0.0.1:8787/`。`.dev.vars`、`.wrangler` 及本机密码文件均不提交。完整浏览器套件使用独立测试密码启动本地 Worker，避免读取生产密码；测试端口为 4173 / 4174 / 4175。
-
-Wrangler Static Assets 单资源限制为 25 MiB，当前将完整场景划为房屋 / 沙发同步模型包，最大的房屋高清包为 24,601,864 字节、沙发高清包 21,232,288 字节，保留原分辨率贴图和画质；[官方限制](https://developers.cloudflare.com/workers/platform/limits/#static-assets)由 `check:worker` 核对。所有资源都经过密码 Worker，请求计入 Worker 配额；静态存储和边缘缓存仍由 Static Assets 负责，见[计费边界](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/)。
+既有房屋 / 沙发同步模型包继续保留原分辨率贴图和画质。此前 25 MiB 单文件边界属于 Workers 部署；当前 Pages 发布按项目首屏与完整交互预算检查，不用降低纹理质量完成迁移。
 
 本地仍可用 `npm run test:browser` 执行完整套件。排查单个分片可用 `npm run test:browser -- --shard=1/4 --reporter=list,blob`（其余为 `2/4`、`3/4`、`4/4`）；执行下一分片前保存已有 blob ZIP，避免输出目录被清理。完整报告用 `npx playwright merge-reports --reporter=json all-blob-reports` 合并，设置 `PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/browser-report.json`，再由证据脚本的 `--inventory` 参数核对构建时通过 `--list --reporter=json` 生成的清单。分片粒度依据 [Playwright 官方说明](https://playwright.dev/docs/test-sharding)。
 
@@ -140,6 +128,6 @@ metric-v09 的正式图形验收使用独立浏览器进程，避免连续用例
 
 外部沙发通过 `external_static` 路线读取已视觉检查的 packed Blend，验证 SHA-256，保留原 UV、PBR 和 4K 图像。家具局部 +X 为正面，+Y 为宽度，Z 为高度；由 JSON 位置与朝向变换到房屋坐标。不要只覆盖输出 GLB，或以原程序沙发材质覆盖导入材质。
 
-`modelPackages` 将完整源划为互斥的实体包，导出、重导入、数据与压缩均检查合并语义覆盖。发布清单的 `additionalModels` 必须同主包一起加载，标准 / 高清各有两包，下载区明确列出。每文件遵守 Workers 25 MiB；网页总预算随完整纹理记录在 `model/resource-budgets.json`，不通过缩图降低画质。KTX 如超过单文件限额，保留原图编码 + Meshopt，实际编码记录在 `model-packages.json`。
+`modelPackages` 将完整源划为互斥的实体包，导出、重导入、数据与压缩均检查合并语义覆盖。发布清单的 `additionalModels` 必须同主包一起加载，标准 / 高清各有两包，下载区明确列出。既有同步分包保持；网页总预算随完整纹理记录在 `model/resource-budgets.json`，不通过缩图降低画质。KTX 如超过单文件限额，保留原图编码 + Meshopt，实际编码记录在 `model-packages.json`。
 
 窗外庭院使用 `presentationEnvironment` 的确定性展示几何，`src/presentation-environment.js` 同供 Three.js 和 Blender 渲染适配器使用；不加入建筑 GLB、空间面积和碰撞。室内透射玻璃、暖色洗墙和灯光参数来自当前 JSON；AI 氛围图与真实模型始终标明来源。当前设计与历史、尺寸假设、用户要求和验收边界见 [v04 上下文](docs/design/living-v04/DECISION.md)。

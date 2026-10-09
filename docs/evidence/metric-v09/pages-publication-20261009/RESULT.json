@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "checkedAt": "2026-10-09T07:42:54.749Z",
+  "repository": {
+    "name": "cYz26/homehome0402",
+    "visibility": "PUBLIC",
+    "branch": "main"
+  },
+  "provider": "github-pages",
+  "url": "https://cyz26.github.io/homehome0402/",
+  "version": "metric-v09",
+  "applicationRevision": "2026-10-09-github-pages",
+  "deploymentSource": "fdfc9b54c0eb1a134cddbc3e767827cbc770bfa2",
+  "actions": {
+    "runId": 37899320386,
+    "url": "https://github.com/cYz26/homehome0402/actions/runs/37899320386",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "build",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T07:29:38Z",
+        "completedAt": "2026-10-09T07:30:27Z"
+      },
+      {
+        "name": "browser (3)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T07:30:29Z",
+        "completedAt": "2026-10-09T07:34:02Z"
+      },
+      {
+        "name": "browser (4)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T07:30:29Z",
+        "completedAt": "2026-10-09T07:32:39Z"
+      },
+      {
+        "name": "browser (1)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T07:30:29Z",
+        "completedAt": "2026-10-09T07:34:38Z"
+      },
+      {
+        "name": "browser (2)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T07:30:30Z",
+        "completedAt": "2026-10-09T07:34:16Z"
+      },
+      {
+        "name": "verify",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T07:34:40Z",
+        "completedAt": "2026-10-09T07:35:23Z"
+      },
+      {
+        "name": "deploy",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T07:35:26Z",
+        "completedAt": "2026-10-09T07:36:18Z"
+      }
+    ],
+    "buildArtifactId": "11600968738",
+    "pagesArtifactId": 11601033496,
+    "artifacts": [
+      {
+        "expired": false,
+        "id": 11602585028,
+        "name": "home402-deployment-evidence",
+        "size_in_bytes": 2796
+      },
+      {
+        "expired": false,
+        "id": 11602235314,
+        "name": "home402-browser-blob-3",
+        "size_in_bytes": 11066908
+      },
+      {
+        "expired": false,
+        "id": 11601797356,
+        "name": "home402-browser-renderer-4",
+        "size_in_bytes": 318
+      },
+      {
+        "expired": false,
+        "id": 11601768031,
+        "name": "home402-browser-blob-2",
+        "size_in_bytes": 10608391
+      },
+      {
+        "expired": false,
+        "id": 11601733463,
+        "name": "home402-browser-blob-1",
+        "size_in_bytes": 4905294
+      },
+      {
+        "expired": false,
+        "id": 11601574367,
+        "name": "home402-browser-renderer-2",
+        "size_in_bytes": 318
+      },
+      {
+        "expired": false,
+        "id": 11601549572,
+        "name": "home402-browser-renderer-1",
+        "size_in_bytes": 318
+      },
+      {
+        "expired": false,
+        "id": 11601524694,
+        "name": "home402-browser-evidence",
+        "size_in_bytes": 54225070
+      },
+      {
+        "expired": false,
+        "id": 11601519159,
+        "name": "home402-browser-blob-4",
+        "size_in_bytes": 730471
+      },
+      {
+        "expired": false,
+        "id": 11601444715,
+        "name": "home402-browser-renderer-3",
+        "size_in_bytes": 318
+      },
+      {
+        "expired": false,
+        "id": 11601033496,
+        "name": "github-pages",
+        "size_in_bytes": 74458640
+      },
+      {
+        "expired": false,
+        "id": 11600968738,
+        "name": "home402-build",
+        "size_in_bytes": 74463707
+      }
+    ]
+  },
+  "manifestSha256": "3d742ccd316a21b0e5b94410bdd20ab099e8c2b1989324584b579874373a58dc",
+  "localChecks": {
+    "nodeTests": 53,
+    "modelChecks": 23,
+    "releaseChecks": 16,
+    "trackedImagesWithoutPrivacyMetadata": 230,
+    "relatedBrowserFlowsPassed": 4,
+    "publicRoutingFixtureCorrection": "ignore an empty, unloaded gallery image",
+    "liveProbeCorrection": "phone room buttons exist inside the collapsed inspector; wait for DOM attachment"
+  },
+  "browser": {
+    "passed": 19,
+    "skipped": 0,
+    "retries": 0,
+    "screenshots": 35,
+    "summary": "ci-browser-summary.json"
+  },
+  "publicReadback": {
+    "files": 42,
+    "modelRanges": 4,
+    "anonymousAccess": "public",
+    "missingAssetStatus": 404,
+    "receipt": "deployment-verification.json",
+    "localDistMatchesAllRemoteDigests": true
+  },
+  "liveBrowser": {
+    "receipt": "readback.json",
+    "screenshots": [
+      "phone-home.png",
+      "desktop-model.png",
+      "desktop-home.png"
+    ],
+    "reviewedByAgent": true,
+    "desktopModelCanvasCount": 1,
+    "applicationErrors": 0
+  },
+  "preservation": {
+    "baselineCommit": "0b6d31e8be52f6a14124beba2e770a7b2c57a53a",
+    "publishedAssetsUnchanged": 34,
+    "imageBindingsUnchanged": 18,
+    "concurrentLocalDesign": "metric-v12 retained outside deployment scope"
+  },
+  "remaining": {
+    "mainlandNetworkAccess": "not-measured",
+    "realPhonePerformance": "not-measured",
+    "modelVisualAcceptance": "pending-user-review"
+  }
+}

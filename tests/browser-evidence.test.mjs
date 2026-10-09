@@ -19,7 +19,8 @@ async function fixture(t) {
     "dist/index.html", "dist/assets/app.js", "tests/browser.spec.mjs",
     "tests/section-render.spec.mjs", "tests/fixtures/section-probe.js",
     "tests/fixtures/section-probe.html", "playwright.config.mjs",
-    "wrangler.jsonc", "worker/index.mjs", "tests/worker-auth.spec.mjs",
+    ".github/workflows/pages.yml", "vite.config.js", "scripts/check-pages-deployment.mjs",
+    "tests/pages-routing.spec.mjs",
   ]) await write(name, name);
   await write("scripts/collect-browser-evidence.mjs", await fs.readFile(collector));
   await write("public/release.json", JSON.stringify({

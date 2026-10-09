@@ -1,7 +1,8 @@
 import { test, expect } from "@playwright/test";
+import config from "../playwright.config.mjs";
 
 const fixture =
-  "http://127.0.0.1:4174/tests/fixtures/section-probe.html";
+  new URL("tests/fixtures/section-probe.html", config.webServer[1].url).href;
 test.use({ deviceScaleFactor: 2 });
 test("legacy AO positive control reproduces cap stripes", async ({
   page,
