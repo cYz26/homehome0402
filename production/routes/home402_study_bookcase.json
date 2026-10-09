@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_study_bookcase",
+  "task_id": "home402-study-v04-to-metric-v13",
+  "intent": "new_static",
+  "route": "reference_blender",
+  "decision_basis": {
+    "path": "docs/design/study-v04/DECISION.md",
+    "sha256": "bda4916cc0ca18e73fffcade99d623b07d507854ece5ee470ca5933d8ae93f0c"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Author this regular rigid furniture locally from its selected independent reference; dimensions/placement/materials follow approved study layout. Keep other spaces unchanged; static presentation only."
+  ],
+  "references": [
+    {
+      "path": "references/generated/study-20261009/independent/bookcase-r1.png",
+      "sha256": "4a6ceacc929d4e5c6b93eef9bd1edb7d36b44e5a817217fb9112b13f3f0557c2"
+    }
+  ],
+  "geometry": null,
+  "reuse": []
+}

@@ -91,8 +91,20 @@
     {
       "name": "Measured cabinet tiers and single artwork follow the revised hanging layout",
       "pass": true
+    },
+    {
+      "name": "Study change preserves all other published architecture and furniture parts",
+      "pass": true
+    },
+    {
+      "name": "Actual study has the specified desk, one deep seat-base row and four facade modules",
+      "pass": true
+    },
+    {
+      "name": "Actual study clears static walls/slider; drawer-use limitation stays explicit",
+      "pass": true
     }
   ],
-  "passed": 23,
-  "total": 23
+  "passed": 26,
+  "total": 26
 }

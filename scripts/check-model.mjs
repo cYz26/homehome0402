@@ -51,11 +51,14 @@ check('Living glazing reaches the floor; bedroom glazing has lowered sills and n
   assert.ok(!Object.keys(nodes).some(n=>/guard/i.test(n)));
   const living=nodes.Living_south_glass_lower.bounds;
   assert.ok(living[0][2]<.08);
-  for(const prefix of ['Master_south','SE_south','NW_north','X_north']) {
+  for(const prefix of ['Master_south','SE_south','NW_north']) {
     const b=nodes[prefix+'_glass_lower'].bounds;
     assert.ok(b[0][2]<.32 && b[0][2]>.20,prefix);
     assert.ok(nodes[prefix+'_glass_upper'].bounds[1][2]>2.50,prefix);
   }
+  const study=nodes.X_north_glass_lower.bounds;
+  approx(study[0][2],spec.windowDefinitions.find(w=>w.id==='X_north').sill+.025);
+  assert.ok(nodes.X_north_glass_upper.bounds[1][2]>2.50);
 });
 check('Kitchen equipment occupies west / north / east positions and sink is recessed',()=>{
   const fridge=nodes.Fridge_door_0_lower.bounds,oven=nodes.Oven_glass.bounds;
@@ -120,7 +123,7 @@ if(spec.furnishings?.length) {
     approx(current.bounds[0][2],sofa.source.floorElevation);
     assert.ok(current.bounds[0][0]>3.60,'sofa penetrates west finish');
     assert.equal(current.triangles,149999);
-    assert.equal(validation.model_packages.length,2);
+    assert.equal(validation.model_packages.length,spec.modelPackages.length);
     for(const p of validation.model_packages) assert.equal(hash(p.path),p.sha256);
   });
   check('Measured table follows the supplied 2800 x 900 x 750 mm drawing and asymmetric supports',()=>{
@@ -141,8 +144,13 @@ if(spec.furnishings?.length) {
   });
   check('Furnishing preserves every v06 architectural part and no-TV no-coffee-table layout',()=>{
     const old=json('model/baseline-v06/validation.json');
+    const allowedStudy=new Set(spec.studyDecision ? [
+      ...spec.entities.find(e=>e.windowId==='X_north').sourceNodes,
+      'wall_north_3_0_lower',
+    ] : []);
     for(const [name,o] of Object.entries(old.objects)){
       assert.ok(nodes[name],name);assert.equal(nodes[name].entityId,o.entityId,name);assert.equal(nodes[name].triangles,o.triangles,name);
+      if(allowedStudy.has(name))continue;
       for(let side=0;side<2;side++)for(let axis=0;axis<3;axis++)approx(nodes[name].bounds[side][axis],o.bounds[side][axis]);
     }
     assert.ok(!spec.entities.some(e=>/coffee-table|television/.test(e.id)));
@@ -168,6 +176,43 @@ if(spec.furnishings?.length) {
     assert.ok(!furniture.components.find(c=>c.id===art.id).parts.some(p=>p.name.includes('panel_board')));
     // Painting spans the middle low modules and stops before the high end module.
     assert.ok(art.position[1]+art.dimensions[0]/2 < cabinet.position[1]+cabinet.dimensions[0]/2-cabinet.moduleWidths.at(-1));
+  });
+}
+if(spec.studyDecision) {
+  const old=json('model/baseline-v09/validation.json'), furniture=json('model/furniture-measurements.json');
+  check('Study change preserves all other published architecture and furniture parts',()=>{
+    const allowed=new Set([...spec.entities.find(e=>e.windowId==='X_north').sourceNodes,'wall_north_3_0_lower']);
+    for(const [name,o] of Object.entries(old.objects)) {
+      const current=nodes[name];assert.ok(current,name);assert.equal(current.entityId,o.entityId,name);
+      if(allowed.has(name))continue;
+      assert.equal(current.triangles,o.triangles,name);
+      for(let side=0;side<2;side++)for(let axis=0;axis<3;axis++)approx(current.bounds[side][axis],o.bounds[side][axis]);
+    }
+    const ids=spec.modelPackages.find(p=>p.id==='study').entityIds;
+    assert.equal(ids.length,5);
+    for(const id of ids)assert.deepEqual(spec.entities.find(e=>e.id===id).roomIds,['xroom']);
+  });
+  check('Actual study has the specified desk, one deep seat-base row and four facade modules',()=>{
+    const parts=id=>furniture.components.find(c=>c.id===id).parts;
+    const top=parts('study-standing-desk').find(p=>p.name.includes('_desk_top_')).bounds;
+    approx(top[1][0]-top[0][0],.70);approx(top[1][1]-top[0][1],1.40);approx(top[1][2]-.024,.74);
+    const base=parts('study-bookcase').find(p=>p.name.includes('_bench_top_')).bounds;
+    approx(base[1][0]-base[0][0],.80);approx(base[1][1]-base[0][1],3);approx(base[1][2]-.024,.42);
+    assert.equal(parts('study-bookcase').filter(p=>p.name.includes('_single_row_drawer_')).length,4);
+    const cushion=parts('study-bookcase').find(p=>p.name.includes('_seat_cushion_')).bounds;
+    approx(cushion[1][2]-.024,.45);
+    const config=spec.furnishings.find(f=>f.id==='study-bookcase');
+    approx(config.moduleWidths.reduce((a,b)=>a+b,0),3);
+    approx(config.upperDepth,.35);approx(config.dimensions[1]-config.upperDepth,.45);
+  });
+  check('Actual study clears static walls/slider; drawer-use limitation stays explicit',()=>{
+    const base=nodes.Furniture_study_bookcase.bounds, desk=nodes.Furniture_study_standing_desk.bounds, side=nodes.Furniture_study_side_cabinet.bounds;
+    approx(desk[0][0]-base[1][0],1.07);
+    assert.ok(base[0][0]>=3.788 && side[1][0]<6.412,'furniture crosses wall/skirting');
+    assert.ok(12.9-base[0][1]<3.30,'bookcase crosses southern door frame');
+    assert.ok(12.9-side[0][1]<3.10,'cabinet reaches southern sliding door');
+    assert.deepEqual(spec.rooms.find(r=>r.id==='xroom').walkEntry,[5.30,2.97]);
+    assert.match(spec.entities.find(e=>e.id==='study-bookcase').basis,/移椅/);
   });
 }
 const result={checks,passed:checks.filter(c=>c.pass).length,total:checks.length};

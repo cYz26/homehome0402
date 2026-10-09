@@ -1,0 +1,80 @@
+{
+  "version": "metric-v13",
+  "subject": "asset_exchange/study-v13.glb",
+  "subjectSha256": "00bd96447f389d1b4288f0f38a8d4d24e854b84f7bea808a46d7759271dc1868",
+  "engine": "Cycles study-final",
+  "views": [
+    {
+      "asset": "bookcase",
+      "view": "front",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/bookcase-front.png",
+      "sha256": "036fa9ed1285c19bf3558091c257984f044e9d551af6a91e3966a6c88bd3adf7"
+    },
+    {
+      "asset": "bookcase",
+      "view": "side",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/bookcase-side.png",
+      "sha256": "ad7c801ac7c97900d153f47cb067ef0e19959234d6718abd6585d02d3738363e"
+    },
+    {
+      "asset": "bookcase",
+      "view": "quarter",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/bookcase-quarter.png",
+      "sha256": "af9aec5d1b543cb6fee3334d02b0e02649de33728cf08fe4c6d8789ddda58154"
+    },
+    {
+      "asset": "desk",
+      "view": "front",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/desk-front.png",
+      "sha256": "d4326fe53942b3c255de51d0295159bed64ddb123a91cc3e280579fd084c483f"
+    },
+    {
+      "asset": "desk",
+      "view": "side",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/desk-side.png",
+      "sha256": "6303daf78dede2d1f86fb645e50f395ca5a24499d56171186b284c3aea448c76"
+    },
+    {
+      "asset": "desk",
+      "view": "quarter",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/desk-quarter.png",
+      "sha256": "e3073b93af27725c8e113727edd8249837595a1ad5d7b37a3e6de7f75489adee"
+    },
+    {
+      "asset": "chair",
+      "view": "front",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/chair-front.png",
+      "sha256": "d45e360ce3f558fcb15968032d8edecc9555c0b05e98f8af19483f88d6b8b5fb"
+    },
+    {
+      "asset": "chair",
+      "view": "side",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/chair-side.png",
+      "sha256": "ab4993a7cd499aa9b7f36f62f1d5382cab0abe8abe8a5fe8d37e553358366c3f"
+    },
+    {
+      "asset": "chair",
+      "view": "quarter",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/chair-quarter.png",
+      "sha256": "9e9d56eabe31cc3aab9d1916d3c2a685d6a77e4d139c614fee325a7cb39f185f"
+    },
+    {
+      "asset": "side-cabinet",
+      "view": "front",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/side-cabinet-front.png",
+      "sha256": "4ab7cff5f50cb5ba3cff612038da7a69bd72c1981771e31773345b70bbb92b3b"
+    },
+    {
+      "asset": "side-cabinet",
+      "view": "side",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/side-cabinet-side.png",
+      "sha256": "45e0a4b2392a41d03ff85c5bb3857af44e9fbdbd36656d1ceee73e8a6cbc7212"
+    },
+    {
+      "asset": "side-cabinet",
+      "view": "quarter",
+      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/side-cabinet-quarter.png",
+      "sha256": "4c8a35aeb5f6d21684f7eac0142cb235e9785835674f9b40546f0e6036dfcae5"
+    }
+  ]
+}

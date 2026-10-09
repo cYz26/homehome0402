@@ -1,0 +1,193 @@
+{
+  "id": "home402-study-v03",
+  "date": "2026-10-09",
+  "status": "visually-confirmed-design",
+  "roomId": "xroom",
+  "userRequirements": {
+    "room": "正北 X 空间（厨房左侧）",
+    "west": "图1书柜；尽量布满西侧墙，保留底部向房间凸出的抽屉柜",
+    "east": "图2升降桌，1400 × 700 mm；旁边增加一组柜子",
+    "chair": "图3深色转椅，一把",
+    "entrance": "南侧推拉门"
+  },
+  "coordinates": {
+    "unit": "m",
+    "origin": "X 空间北西墙面交点；x 向东、y 向南",
+    "planOrigin": [
+      3.78,
+      0.1
+    ]
+  },
+  "room": {
+    "width": 2.64,
+    "depth": 3.3,
+    "height": 2.8,
+    "drawingReferenceChain": [
+      2.8,
+      3.4
+    ],
+    "basis": "当前建筑规格扣假设墙厚；南端为入口界线，非南墙面；未扣额外饰面、踢脚线和门框投影；非现场实测",
+    "northWindow": {
+      "startX": 0.24,
+      "width": 1.73,
+      "sill": 0.9,
+      "head": 2.55,
+      "basis": "窗形和高窗台以用户选取的初版 v01 及实景照片为准；0.90m仅为外观估读。该新要求优先于当前模型0.28m假设，本轮未改共享建筑源"
+    },
+    "entrance": {
+      "side": "south",
+      "type": "sliding",
+      "stack": "east of entrance; east-west orientation"
+    }
+  },
+  "westBookcase": {
+    "x": 0.02,
+    "y": 0.18,
+    "length": 3,
+    "upperDepth": 0.35,
+    "baseDepth": 0.8,
+    "height": 2.5,
+    "baseHeight": 0.42,
+    "drawerExtensionAssumption": 0.35,
+    "material": "新参考的中深胡桃木；木框玻璃、实木门、浅色石纹嵌板、开放书格和展示格；局部暖光",
+    "basis": "用户要求底部更突出且可坐人；上柜35cm、底柜80cm、坐面净深45cm为试排假设，底柜需按坐人荷载设计承重隔板与连接/固定，不能默认普通抽屉顶板已可坐人",
+    "seat": {
+      "exposedDepth": 0.45,
+      "y": 2,
+      "length": 1.18,
+      "cushionThickness": 0.03,
+      "finishedHeight": 0.45,
+      "basis": "南段约1.18m加薄坐垫，形成座位；非厂家承重认证"
+    },
+    "frontComposition": {
+      "order": "正视柜体从左至右 = 本方案从南端到北端",
+      "modules": [
+        {
+          "type": "solid-double-door",
+          "width": 0.9
+        },
+        {
+          "type": "pale-three-panel-insert",
+          "width": 0.45
+        },
+        {
+          "type": "open-four-tier-bookshelves",
+          "width": 0.85
+        },
+        {
+          "type": "glass-double-door",
+          "width": 0.8
+        }
+      ],
+      "displayNiches": {
+        "bottom": 0.45,
+        "top": 1,
+        "count": 4,
+        "back": "warm pale stone-look panels",
+        "lighting": "concealed warm strips; appearance only"
+      },
+      "horizontalBand": {
+        "bottom": 1,
+        "top": 1.13
+      },
+      "upperStart": 1.13,
+      "baseDrawerRows": 1,
+      "baseDrawerModules": 4,
+      "lighting": "暖色隐藏灯带，开放书格和下部展示格重点照明，不做全屋金黄滤镜",
+      "basis": "模块分配、高度分段和材料解释来自本轮外观试配，照片没有产品尺寸图"
+    }
+  },
+  "desk": {
+    "x": 1.89,
+    "y": 0.3,
+    "depth": 0.7,
+    "length": 1.4,
+    "eastWallGap": 0.05,
+    "previewHeight": 0.74,
+    "front": "west; seated person faces east",
+    "material": "木纹桌面，黑色双柱电动升降桌架",
+    "basis": "桌面尺寸用户明确指定；预览高度及离墙距离是方案假设，升降范围待产品确认"
+  },
+  "eastSideCabinet": {
+    "x": 2.22,
+    "y": 1.85,
+    "depth": 0.4,
+    "length": 1,
+    "height": 1.1,
+    "deskGap": 0.15,
+    "southEntranceSetback": 0.45,
+    "material": "与西侧书柜协调的胡桃木封闭收纳柜",
+    "basis": "用户已确认当前整体预览中的配柜外观与位置；尺寸和安装仍为方案假设，不与升降桌刚性连接，不设置跨桌吊柜"
+  },
+  "chair": {
+    "center": [
+      1.48,
+      1
+    ],
+    "bodyDepth": 0.765,
+    "baseDiameter": 0.735,
+    "armWidth": 0.66,
+    "totalHeightRange": [
+      1.115,
+      1.27
+    ],
+    "color": "dark",
+    "front": "east",
+    "basis": "附件尺寸图；摆位及二维全深占用是方案估计，不包含人体或动态后仰包络"
+  },
+  "clearances": {
+    "deskToProjectingBase": 1.07,
+    "deskToUpperCase": 1.52,
+    "chairRearToBaseAtPreviewPosition": 0.2775,
+    "chairRearToOpenDrawerAtPreviewPosition": -0.0725,
+    "drawerUse": "底柜加深后，椅背后仅约28cm；相对抽屉拉出35cm会进入当前椅位，必须先收/移椅。主要坐位设在南段，避开桌前转椅",
+    "depthSensitivity": "底柜每增深 5 cm，桌柜间距及椅后余量均减少 5 cm",
+    "seatFrontToOppositeCabinet": 1.4
+  },
+  "acceptance": {
+    "dimensionCalculation": "previous footprint and clearances retained and compared to study-v02; facade widths sum to3.00m; not metric image proof",
+    "visualReview": "agent inspected overview and frontal detail against both new references",
+    "userVisualAcceptance": "confirmed",
+    "manufacturerAndSiteDimensions": "pending",
+    "appliedToApartmentModel": false,
+    "websiteOrRemotePublication": false
+  },
+  "previous": "docs/design/study-v02/layout.json",
+  "latestFeedback": {
+    "request": "书房的柜子参考这个展现一下",
+    "intake": "references/revisions/study-20261009/cabinet-r2/intake.json"
+  },
+  "selectedPreview": {
+    "path": "references/generated/study-20261009/study-concept-v06.png",
+    "kind": "AI 书房整体方案图，非模型渲染或实拍"
+  },
+  "detailPreview": {
+    "path": "references/generated/study-20261009/study-cabinet-r2-front.png",
+    "kind": "AI 同一柜体正面合成视角，非实际照片"
+  },
+  "userConfirmation": {
+    "status": "confirmed",
+    "date": "2026-10-09",
+    "quote": "这个版本OK",
+    "evidence": "当前聊天中，用户在最新整体图和柜体正面近景之后直接确认",
+    "scope": "最新书房整体布局外观和新参考柜体外观",
+    "assets": [
+      {
+        "path": "references/generated/study-20261009/study-concept-v06.png",
+        "sha256": "1bbcd5761ec89792913e4d568812c83652ed313f7cf3a3ee5d906a426d8f2bc7",
+        "kind": "AI 书房整体方案图"
+      },
+      {
+        "path": "references/generated/study-20261009/study-cabinet-r2-front.png",
+        "sha256": "47160ee27288a7c26cf674ebad7ba08ad827d96768e4d5956079361b56260847",
+        "kind": "AI 柜体正面合成近景"
+      }
+    ],
+    "doesNotCertify": [
+      "现场或厂家尺寸",
+      "座柜承重",
+      "完整动态/人体活动",
+      "实际3D实现或网站发布"
+    ]
+  }
+}

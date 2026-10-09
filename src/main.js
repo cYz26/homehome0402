@@ -93,10 +93,11 @@ function populate() {
     master: "人字拼橡木与温和墙面，保留空房的完整尺度。",
     kitchen: "西侧冰箱、北侧水槽、东侧烟机灶具，让 U 形动线清晰可见。",
     masterbath: "连续一体宽槽、双组墙出龙头与镜柜，细节对应实拍修订。",
+    xroom: "整墙胡桃木书柜配可坐深底柜；东侧140×70cm升降桌、深色转椅与配柜，入口为推拉门。底柜尺寸与承重待现场核对，桌前抽屉开启需先移椅。",
   };
-  $("#space-cards").innerHTML = ["living", "kitchen", "master", "masterbath"]
+  $("#space-cards").innerHTML = ["living", "xroom", "kitchen", "master", "masterbath"]
     .map((id, i) => {
-      const image = imageById(id),
+      const image = imageById(id === "xroom" ? "study" : id),
         room = data.rooms.find((r) => r.id === id);
       return `<article class="space-card"><a href="#explore" data-room-jump="${id}"><figure><img src="${url(image.path)}" width="1100" height="756" loading="lazy" decoding="async" alt="${escape(room.name)}的当前模型渲染"><span class="image-badge">模型渲染 · Cycles · ${escape(manifest.version)}</span></figure></a><header><h3>${escape(room.name)}</h3><small>0${i + 1} / ${room.area.toFixed(2)} m² · 模型估算</small></header><p>${descriptions[id]}</p><a class="text-link" href="#explore" data-room-jump="${id}">进入这个空间 ↗</a></article>`;
     })
@@ -129,7 +130,7 @@ function populate() {
   const downloads = [
     [manifest.floorplan, "模型派生平面图", "SVG · 房间 / 门窗 / 尺寸 / 比例尺"],
     [manifest.rawModel, manifest.additionalModels?.length ? "房屋高清模型" : "高清原始模型", "GLB · 原始纹理 · 按需下载"],
-    ...(manifest.additionalModels ?? []).map(p => [p.rawModel, p.id === "living-sofa" ? "沙发高清模型" : `${p.id} 高清模型`, "GLB · 与房屋包共同组成完整场景 · 原始纹理"]),
+    ...(manifest.additionalModels ?? []).map(p => [p.rawModel, p.id === "living-sofa" ? "沙发高清模型" : p.id === "study" ? "书房家具高清模型" : `${p.id} 高清模型`, "GLB · 与房屋包共同组成完整场景 · 原始纹理"]),
     [manifest.spec, "可编辑建筑规格", "JSON · 尺寸、构件、材质与机位"],
     [
       manifest.architecture,

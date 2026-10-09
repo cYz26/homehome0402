@@ -1,0 +1,39 @@
+{
+  "id": "home402-study-native-plan-v01",
+  "authority": "User: 更新到网站中吧 / 效果图和书房 3D 一起更新",
+  "baseCommit": "0b6d31e8be52f6a14124beba2e770a7b2c57a53a",
+  "baseVersion": "metric-v09",
+  "version": "metric-v13",
+  "scope": [
+    "X north sill and corresponding wall opening",
+    "New west bookcase/deep seating base, standing desk, dark task chair, east side cabinet and desktop accessories",
+    "Study cameras, fixed lights, collisions, gallery and source-bound release"
+  ],
+  "designInputs": [
+    {
+      "path": "docs/design/study-v04/selection.json",
+      "sha256": "0c1cd06221cfab7a0e063307f4a182000146d1abd228e33c3b3678b7609518fd"
+    },
+    {
+      "path": "docs/design/study-v04/alignment.json",
+      "sha256": "6c0532943106862b055c9a961ad022c913a7e8dad32b407c3f6735e93b3b4b76"
+    }
+  ],
+  "nativeEntry": "scripts/build-apartment.py / scripts/study_geometry.py / model/apartment.json",
+  "noChangesTo": [
+    "Living room WIP metric-v10-v12 in the primary checkout",
+    "Other bedroom/kitchen window sills",
+    "Sliding door park, thresholds and surrounds",
+    "Existing 4K sofa/PBR, standard quality and camera/section/walk behavior"
+  ],
+  "steps": [
+    "Route preflight",
+    "Create real neutral base geometry / inspect front, side, quarter",
+    "Complete detail, rebuild/export/independent reimport and preservation",
+    "Same-source Cycles views/data/web packages/gallery",
+    "Desktop/mobile rendered checks, Node checks/full CI",
+    "Push scoped main update, CI publish, authenticated live byte/Range readback"
+  ],
+  "costCap": 0,
+  "spending": "No paid provider/API used; built-in image tool generated interpreted independent references."
+}

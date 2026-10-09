@@ -1,6 +1,6 @@
 {
-  "version": "metric-v09",
-  "assetStem": "apartment-v09",
+  "version": "metric-v13",
+  "assetStem": "apartment-v13",
   "units": "m",
   "coordinates": "Plan x east, t south from north edge; Blender (x,12.9-t,z), GLB (x,z,t-12.9)",
   "height": 2.8,
@@ -265,7 +265,7 @@
     },
     {
       "id": "xroom",
-      "name": "X 空间",
+      "name": "书房",
       "bounds": [
         3.7,
         0,
@@ -277,15 +277,15 @@
         1.65
       ],
       "camera": [
-        6,
-        6.6
+        5.22,
+        4.5
       ],
       "look": [
-        5.9,
-        0.5
+        5.14,
+        0.7
       ],
       "drawing": "北侧分段 2.80 × 3.40 m",
-      "finish": "直铺木地板 · 深色门扇沿东西方向贴墙收纳",
+      "finish": "整墙胡桃木书柜与可坐深底柜 · 140×70cm升降桌 · 深色转椅 · 东侧配柜",
       "polygon": [
         [
           3.7,
@@ -306,9 +306,12 @@
       ],
       "areaBasis": "model-estimate",
       "walkEntry": [
-        5.1,
-        1.8
-      ]
+        5.3,
+        2.97
+      ],
+      "eye": 1.58,
+      "targetHeight": 1.25,
+      "fov": 72
     },
     {
       "id": "kitchen",
@@ -630,14 +633,16 @@
     "窗台按本次要求调整：客厅约 35 mm、卧室及 X 空间约 280 mm；厨房柜体、烟机和推拉门分扇尺度按照片估读，未指定品牌型号。",
     "北侧及卫浴门扇框厚暂设约 22 mm；主卫为约 1.80 m 宽一体槽台面、两组墙出龙头，尺寸按照片估读。",
     "客餐厅家具依用户实拍和已确认 v02 外观建模；最新桌子尺寸图采用2800×900×750mm。其余家具尺度、木纹、装饰图案及隐蔽五金为有界建模推断，不是厂家或现场认证。",
-    "窗外庭院及绿植为实拍启发的展示环境，位置/种类未测绘，不计入面积、建筑构件或碰撞。单幅画及柜体高度为可调整方案假设；实时光照接近照片气氛，不是实测照度或烘焙 GI。"
+    "窗外庭院及绿植为实拍启发的展示环境，位置/种类未测绘，不计入面积、建筑构件或碰撞。单幅画及柜体高度为可调整方案假设；实时光照接近照片气氛，不是实测照度或烘焙 GI。",
+    "书房高窗台约0.90m，3m书柜/80cm深座柜及配柜尺寸为方案假设；坐人承重需核验，桌前底柜抽屉打开需先移转椅。"
   ],
   "windows": {
     "bedroomSill": 0.28,
     "bedroomHead": 2.55,
     "livingSill": 0.035,
     "livingHead": 2.6,
-    "guards": false
+    "guards": false,
+    "studySill": 0.9
   },
   "detailViews": [
     {
@@ -767,6 +772,38 @@
       "eye": 1.22,
       "targetHeight": 0.52,
       "fov": 66
+    },
+    {
+      "id": "study",
+      "name": "书房整体与深底柜",
+      "room": "xroom",
+      "camera": [
+        5.22,
+        4.5
+      ],
+      "look": [
+        5.14,
+        0.7
+      ],
+      "eye": 1.58,
+      "targetHeight": 1.25,
+      "fov": 72
+    },
+    {
+      "id": "study-cabinet",
+      "name": "书房柜体",
+      "room": "xroom",
+      "camera": [
+        6.39,
+        1.78
+      ],
+      "look": [
+        4.1,
+        1.78
+      ],
+      "eye": 1.4,
+      "targetHeight": 1.18,
+      "fov": 78
     }
   ],
   "schemaVersion": 2,
@@ -826,7 +863,7 @@
         [
           3.12,
           4.85,
-          0.28,
+          0.9,
           2.55
         ],
         [
@@ -1344,7 +1381,7 @@
       "x": 4.885,
       "t": 0,
       "width": 1.73,
-      "sill": 0.28,
+      "sill": 0.9,
       "head": 2.55,
       "count": 2,
       "orientation": 0,
@@ -1551,6 +1588,91 @@
           1.9,
           6.14,
           0
+        ]
+      },
+      {
+        "id": "study-display-0",
+        "position": [
+          4.1,
+          2.83,
+          1.003
+        ],
+        "target": [
+          3.93,
+          2.83,
+          0.7
+        ],
+        "size": [
+          0.045,
+          0.8400000000000001
+        ]
+      },
+      {
+        "id": "study-display-1",
+        "position": [
+          4.1,
+          2.1550000000000002,
+          1.003
+        ],
+        "target": [
+          3.93,
+          2.1550000000000002,
+          0.7
+        ],
+        "size": [
+          0.045,
+          0.39
+        ]
+      },
+      {
+        "id": "study-display-2",
+        "position": [
+          4.1,
+          1.505,
+          1.003
+        ],
+        "target": [
+          3.93,
+          1.505,
+          0.7
+        ],
+        "size": [
+          0.045,
+          0.79
+        ]
+      },
+      {
+        "id": "study-display-3",
+        "position": [
+          4.1,
+          0.6799999999999999,
+          1.003
+        ],
+        "target": [
+          3.93,
+          0.6799999999999999,
+          0.7
+        ],
+        "size": [
+          0.045,
+          0.74
+        ]
+      },
+      {
+        "id": "study-open-shelves",
+        "position": [
+          4.1,
+          1.505,
+          2.45
+        ],
+        "target": [
+          3.93,
+          1.505,
+          1.7
+        ],
+        "size": [
+          0.045,
+          0.77
         ]
       }
     ],
@@ -1878,6 +2000,18 @@
         "distance": 1.4,
         "renderPower": 10,
         "color": "#ffe3ab"
+      },
+      {
+        "id": "Study_task_lamp",
+        "position": [
+          6.18,
+          1.51,
+          1.16
+        ],
+        "intensity": 0.32,
+        "distance": 1.1,
+        "renderPower": 2.5,
+        "color": "#ffe3b4"
       }
     ],
     "render": {
@@ -1977,7 +2111,28 @@
       "intensity": 2.4,
       "color": "#e7f3ff",
       "renderPower": 130
-    }
+    },
+    "additionalWindowDaylights": [
+      {
+        "position": [
+          4.885,
+          -0.055,
+          1.7
+        ],
+        "target": [
+          5.2,
+          2.4,
+          1.0
+        ],
+        "size": [
+          1.5,
+          1.5
+        ],
+        "intensity": 2,
+        "color": "#e7f3ff",
+        "renderPower": 75
+      }
+    ]
   },
   "entities": [
     {
@@ -3915,7 +4070,7 @@
     {
       "id": "window_X_north",
       "type": "window",
-      "name": "X 空间北窗",
+      "name": "书房北侧高窗台",
       "sourceNodes": [
         "X_north_glass_lower",
         "X_north_glass_lower.001",
@@ -3940,7 +4095,7 @@
         "Graphite_frame",
         "Ivory_stone_counter"
       ],
-      "basis": "图纸定位 / 照片估读，非现场实测",
+      "basis": "用户确认高窗台外观及实景照片；0.90m为估读，宽1.73m/窗头2.55m沿用，非实测",
       "placement": {
         "center": [
           4.8850002,
@@ -5948,6 +6103,76 @@
       ],
       "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
       "furnitureId": "living-cabinet-items"
+    },
+    {
+      "id": "study-bookcase",
+      "type": "furniture",
+      "name": "胡桃木书柜与可坐深底柜",
+      "sourceNodes": [
+        "Furniture_study_bookcase"
+      ],
+      "roomIds": [
+        "xroom"
+      ],
+      "materials": [],
+      "basis": "已确认柜体外观；3.00m长/上柜35cm/底柜80cm与坐高45cm为方案假设。座柜承重待厂家/施工核验。椅前抽屉开启需先移椅。",
+      "furnitureId": "study-bookcase"
+    },
+    {
+      "id": "study-standing-desk",
+      "type": "furniture",
+      "name": "140×70cm电动升降桌",
+      "sourceNodes": [
+        "Furniture_study_standing_desk"
+      ],
+      "roomIds": [
+        "xroom"
+      ],
+      "materials": [],
+      "basis": "桌面1400×700mm由用户指定；74cm静态预览高与升降架细节为估读，产品行程待核对。",
+      "furnitureId": "study-standing-desk"
+    },
+    {
+      "id": "study-task-chair",
+      "type": "furniture",
+      "name": "深色网背转椅",
+      "sourceNodes": [
+        "Furniture_study_task_chair"
+      ],
+      "roomIds": [
+        "xroom"
+      ],
+      "materials": [],
+      "basis": "用户尺寸图深色款：五爪底径73.5cm、全深76.5cm、扶手宽66cm；姿态/机械隐藏细节估读，非人体动态包络。",
+      "furnitureId": "study-task-chair"
+    },
+    {
+      "id": "study-side-cabinet",
+      "type": "furniture",
+      "name": "书房东侧配柜",
+      "sourceNodes": [
+        "Furniture_study_side_cabinet"
+      ],
+      "roomIds": [
+        "xroom"
+      ],
+      "materials": [],
+      "basis": "用户确认外观和桌旁位置；100×40×110cm为未实测方案假设，与桌间留15cm，不刚性连接。",
+      "furnitureId": "study-side-cabinet"
+    },
+    {
+      "id": "study-desktop-items",
+      "type": "furniture",
+      "name": "书房笔记本与台灯",
+      "sourceNodes": [
+        "Furniture_study_desktop_items"
+      ],
+      "roomIds": [
+        "xroom"
+      ],
+      "materials": [],
+      "basis": "已确认整体图中的笔记本与台灯示意；不计入桌面名义尺寸，不代表采购型号。",
+      "furnitureId": "study-desktop-items"
     }
   ],
   "materials": [
@@ -6711,6 +6936,11 @@
       "id": "note-wall-v02",
       "entityId": "living-wall-finish",
       "content": "按已确认效果增添薄木饰面；原结构墙、主卧门洞和门扇保持原尺寸与位置。"
+    },
+    {
+      "id": "note-study-seat",
+      "entityId": "study-bookcase",
+      "content": "可坐深底柜的尺寸与固定/承重为设计表达；厂家/施工核验待完成。桌前抽屉开启需先移转椅。"
     }
   ],
   "renderViews": [
@@ -6843,6 +7073,42 @@
         0.54
       ],
       "fov": 62
+    },
+    {
+      "id": "study",
+      "name": "书房 / 确认设计的实际模型",
+      "mode": "interior",
+      "camera": [
+        5.22,
+        4.5,
+        1.58
+      ],
+      "target": [
+        5.14,
+        0.7,
+        1.25
+      ],
+      "fov": 72,
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": "study-cabinet",
+      "name": "书房柜体实际模型",
+      "mode": "interior",
+      "camera": [
+        6.39,
+        1.78,
+        1.4
+      ],
+      "target": [
+        4.1,
+        1.78,
+        1.18
+      ],
+      "fov": 78,
+      "width": 1448,
+      "height": 1086
     }
   ],
   "revisions": [
@@ -6908,6 +7174,21 @@
         "living-sofa"
       ],
       "changes": "接入用户授权 Tripo 沙发，保留原始 4K PBR 与稳定语义 ID；实际深度对应碰撞，背墙避让东移 5 cm。完整 Blend 派生房屋 / 沙发两个同版本 GLB 包，均低于 Workers 25 MiB 单文件限制。"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "study-v04",
+      "basis": "用户确认study-v03后明确要求效果图和书房3D一起更新",
+      "changes": "增加规则书房家具、仅提升X北窗台，保留推拉门；从发布v09隔离实施，不包含客厅未提交v10-v12。",
+      "entityIds": [
+        "study-bookcase",
+        "study-standing-desk",
+        "study-task-chair",
+        "study-side-cabinet",
+        "study-desktop-items",
+        "window_X_north",
+        "wall_north"
+      ]
     }
   ],
   "furnitureDecision": "docs/design/living-v04/selection.json",
@@ -7335,6 +7616,153 @@
         1
       ],
       "texture": null
+    },
+    {
+      "id": "Study_clear_glass",
+      "baseColor": [
+        0.14,
+        0.13,
+        0.115,
+        1
+      ],
+      "roughness": 0.13,
+      "alpha": 0.3,
+      "metallic": 0
+    },
+    {
+      "id": "Study_chair_mesh",
+      "baseColor": [
+        0.017,
+        0.019,
+        0.018,
+        1
+      ],
+      "roughness": 0.72,
+      "alpha": 0.65,
+      "metallic": 0
+    },
+    {
+      "id": "Study_mesh_thread",
+      "baseColor": [
+        0.009,
+        0.012,
+        0.011,
+        1
+      ],
+      "roughness": 0.8,
+      "alpha": 1,
+      "metallic": 0
+    },
+    {
+      "id": "Study_chrome",
+      "baseColor": [
+        0.52,
+        0.56,
+        0.55,
+        1
+      ],
+      "roughness": 0.2,
+      "alpha": 1,
+      "metallic": 0.82
+    },
+    {
+      "id": "Study_seat_dark",
+      "baseColor": [
+        0.025,
+        0.027,
+        0.024,
+        1
+      ],
+      "roughness": 0.86,
+      "alpha": 1,
+      "metallic": 0,
+      "grain": true
+    },
+    {
+      "id": "Study_seat_linen",
+      "baseColor": [
+        0.55,
+        0.5,
+        0.415,
+        1
+      ],
+      "roughness": 0.87,
+      "alpha": 1,
+      "metallic": 0,
+      "grain": true
+    },
+    {
+      "id": "Study_warm_strip",
+      "baseColor": [
+        1,
+        0.67,
+        0.31,
+        1
+      ],
+      "roughness": 0.5,
+      "alpha": 1,
+      "metallic": 0,
+      "emission": 3
+    },
+    {
+      "id": "Study_controller",
+      "baseColor": [
+        0.11,
+        0.35,
+        0.28,
+        1
+      ],
+      "roughness": 0.3,
+      "alpha": 1,
+      "metallic": 0
+    },
+    {
+      "id": "Study_book_sage",
+      "baseColor": [
+        0.13,
+        0.23,
+        0.2,
+        1
+      ],
+      "roughness": 0.65,
+      "alpha": 1,
+      "metallic": 0
+    },
+    {
+      "id": "Study_book_rust",
+      "baseColor": [
+        0.34,
+        0.105,
+        0.045,
+        1
+      ],
+      "roughness": 0.65,
+      "alpha": 1,
+      "metallic": 0
+    },
+    {
+      "id": "Study_book_cream",
+      "baseColor": [
+        0.58,
+        0.5,
+        0.34,
+        1
+      ],
+      "roughness": 0.7,
+      "alpha": 1,
+      "metallic": 0
+    },
+    {
+      "id": "Study_book_charcoal",
+      "baseColor": [
+        0.035,
+        0.05,
+        0.052,
+        1
+      ],
+      "roughness": 0.7,
+      "alpha": 1,
+      "metallic": 0
     }
   ],
   "furnishings": [
@@ -7707,9 +8135,132 @@
       "basis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设",
       "variant": "cabinet",
       "baseHeight": 0.78
+    },
+    {
+      "id": "study-bookcase",
+      "recipe": "study_bookcase",
+      "node": "Furniture_study_bookcase",
+      "position": [
+        4.2,
+        1.78
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        3,
+        0.8,
+        2.5
+      ],
+      "upperDepth": 0.35,
+      "baseHeight": 0.42,
+      "seatLength": 1.18,
+      "seatDepth": 0.45,
+      "moduleWidths": [
+        0.9,
+        0.45,
+        0.85,
+        0.8
+      ],
+      "basis": "已确认柜体外观；3.00m长/上柜35cm/底柜80cm与坐高45cm为方案假设。座柜承重待厂家/施工核验。椅前抽屉开启需先移椅。",
+      "floorElevation": 0.024,
+      "details": true,
+      "designDecision": "docs/design/study-v04/selection.json"
+    },
+    {
+      "id": "study-standing-desk",
+      "recipe": "study_standing_desk",
+      "node": "Furniture_study_standing_desk",
+      "position": [
+        6.02,
+        1.1
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        1.4,
+        0.7,
+        0.74
+      ],
+      "topThickness": 0.025,
+      "basis": "桌面1400×700mm由用户指定；74cm静态预览高与升降架细节为估读，产品行程待核对。",
+      "floorElevation": 0.024,
+      "details": true,
+      "designDecision": "docs/design/study-v04/selection.json"
+    },
+    {
+      "id": "study-task-chair",
+      "recipe": "study_task_chair",
+      "node": "Furniture_study_task_chair",
+      "position": [
+        5.26,
+        1.1
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        0.735,
+        0.765,
+        1.27
+      ],
+      "baseDiameter": 0.735,
+      "basis": "用户尺寸图深色款：五爪底径73.5cm、全深76.5cm、扶手宽66cm；姿态/机械隐藏细节估读，非人体动态包络。",
+      "floorElevation": 0.024,
+      "details": true,
+      "designDecision": "docs/design/study-v04/selection.json"
+    },
+    {
+      "id": "study-side-cabinet",
+      "recipe": "study_side_cabinet",
+      "node": "Furniture_study_side_cabinet",
+      "position": [
+        6.2,
+        2.45
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        1,
+        0.4,
+        1.1
+      ],
+      "basis": "用户确认外观和桌旁位置；100×40×110cm为未实测方案假设，与桌间留15cm，不刚性连接。",
+      "floorElevation": 0.024,
+      "details": true,
+      "designDecision": "docs/design/study-v04/selection.json"
+    },
+    {
+      "id": "study-desktop-items",
+      "recipe": "study_desktop_items",
+      "node": "Furniture_study_desktop_items",
+      "position": [
+        6.02,
+        1.1
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.62,
+        0.33,
+        0.42
+      ],
+      "baseHeight": 0.74,
+      "basis": "已确认整体图中的笔记本与台灯示意；不计入桌面名义尺寸，不代表采购型号。",
+      "floorElevation": 0.024,
+      "details": true,
+      "designDecision": "docs/design/study-v04/selection.json"
     }
   ],
-  "presentationRevision": "2026-10-08-living-v04-tripo-sofa",
+  "presentationRevision": "2026-10-09-study-v04",
   "windowAppearance": {
     "material": "Window_clear_glass",
     "basis": "Physical transmission and reflection; frame/division/sill geometry retained"
@@ -7722,7 +8273,7 @@
     "visibleModes": [
       "interior"
     ],
-    "basis": "根据实拍估读的窗外浅色光井、近景绿植和建筑层次；展示环境，无现场测绘与结构/碰撞/面积含义",
+    "basis": "根据实拍估读的窗外浅色光井、近景绿植和建筑层次；展示环境，无现场测绘与结构/碰撞/面积含义；北窗树为已确认书房图的展示背景解释，非现场窗外测绘",
     "courtyard": {
       "bounds": [
         0,
@@ -7760,26 +8311,53 @@
         ],
         "height": 2.5,
         "crownRadius": 0.86
+      },
+      {
+        "position": [
+          4.85,
+          -1.95,
+          0.02
+        ],
+        "height": 3.1,
+        "crownRadius": 1.15
       }
     ]
   },
   "modelPackages": [
     {
       "id": "apartment",
-      "assetStem": "apartment-v09",
+      "assetStem": "apartment-v13",
       "webFile": "apartment-web.glb",
       "hdFile": "apartment-hd.glb",
       "excludeEntityIds": [
-        "living-sofa"
+        "living-sofa",
+        "study-bookcase",
+        "study-standing-desk",
+        "study-task-chair",
+        "study-side-cabinet",
+        "study-desktop-items"
       ]
     },
     {
       "id": "living-sofa",
-      "assetStem": "living-sofa-v09",
+      "assetStem": "living-sofa-v13",
       "webFile": "living-sofa-web.glb",
       "hdFile": "living-sofa-hd.glb",
       "entityIds": [
         "living-sofa"
+      ]
+    },
+    {
+      "id": "study",
+      "assetStem": "study-v13",
+      "webFile": "study-web.glb",
+      "hdFile": "study-hd.glb",
+      "entityIds": [
+        "study-bookcase",
+        "study-standing-desk",
+        "study-task-chair",
+        "study-side-cabinet",
+        "study-desktop-items"
       ]
     }
   ],
@@ -7800,5 +8378,6 @@
       ],
       "basis": "Imported original material, never replaced with procedural furniture shader"
     }
-  ]
+  ],
+  "studyDecision": "docs/design/study-v04/selection.json"
 }

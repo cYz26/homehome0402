@@ -7,13 +7,16 @@ const spec = JSON.parse(await fs.readFile("model/apartment.json"));
 const resourceBudgets = JSON.parse(await fs.readFile("model/resource-budgets.json"));
 if (resourceBudgets.version !== spec.version) throw Error("Resource budget and model versions differ");
 const designSelection = spec.furnitureDecision ? JSON.parse(await fs.readFile(spec.furnitureDecision)) : null;
-const designInputs = designSelection ? [
-  ...designSelection.selected_previews.map(r => r.path),
-  ...designSelection.independent_references.map(r => r.path),
-  ...designSelection.table_revision.source_files.map(r => r.path),
-  designSelection.table_revision.standalone_reference.path,
-  ...(designSelection.display_effects ?? []).map(r=>r.source),
-] : [];
+const studySelection = spec.studyDecision ? JSON.parse(await fs.readFile(spec.studyDecision)) : null;
+const designSelections = [designSelection, studySelection].filter(Boolean);
+const designInputs = designSelections.flatMap(selection => [
+  ...(selection.selected_previews ?? []).map(r => r.path ?? r.source),
+  ...(selection.independent_references ?? []).map(r => r.path),
+  ...(selection.table_revision?.source_files ?? []).map(r => r.path),
+  selection.table_revision?.standalone_reference?.path,
+  ...(selection.display_effects ?? []).map(r=>r.source),
+  ...(selection.support_inputs ?? []).map(r=>r.path),
+]).filter(Boolean);
 const packages = modelPackages(spec);
 const version = spec.version,
   prefix = `releases/${version}`,
@@ -22,7 +25,7 @@ await fs.mkdir(`${out}/images`, { recursive: true });
 const assets = [],
   images = [];
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
-const applicationRevision = "2026-10-08-living-v04-static-frames";
+const applicationRevision = "2026-10-09-study-v04";
 const deploymentSources = [
   "wrangler.jsonc", "worker/index.mjs", "scripts/deploy-worker.mjs",
   "scripts/worker-secrets.mjs", "scripts/check-worker.mjs",
@@ -126,8 +129,10 @@ const renderTitles = {
   kitchen: "厨房",
   master: "主卧",
   masterbath: "主卫",
+  study: "书房",
+  "study-cabinet": "书房柜体",
 };
-for (const id of ["reference", "living", "kitchen", "master", "masterbath"].filter(id => spec.renderViews.some(v => v.id === id))) {
+for (const id of ["reference", "living", "kitchen", "master", "masterbath", "study", "study-cabinet"].filter(id => spec.renderViews.some(v => v.id === id))) {
   const path = `${prefix}/images/${id}.webp`;
   await sharp(`.asset-work/renders/${version}/${id}.png`)
     .resize({ width: id === "reference" ? 1400 : 1100 })
@@ -143,7 +148,7 @@ for (const id of ["reference", "living", "kitchen", "master", "masterbath"].filt
   });
   await asset(path, "render");
 }
-for(const effect of (designSelection?.display_effects ?? []).filter(effect => !effect.kind.startsWith("历史"))) {
+for(const effect of designSelections.flatMap(s=>s.display_effects ?? []).filter(effect => !effect.kind.startsWith("历史"))) {
   const imagePath=`${prefix}/images/${effect.id}.webp`;
   await sharp(effect.source).resize({width:1448,withoutEnlargement:true}).webp({quality:90}).toFile(`public/${imagePath}`);
   images.push({id:effect.id,title:effect.title,path:imagePath,kind:effect.kind,version:effect.designVersion,caption:effect.caption});
@@ -300,6 +305,13 @@ const report = {
     userAcceptance: designSelection.user_acceptance,
     tableRevision: designSelection.table_revision,
   } : null,
+  studyContext: studySelection ? {
+    id: studySelection.id,
+    selectionSha256: hash(await fs.readFile(spec.studyDecision)),
+    userAcceptance: studySelection.user_acceptance,
+    layout: studySelection.layout,
+    alignment: studySelection.alignment,
+  } : null,
   renders: provenance,
   acceptance: {
     visual: "pending-user-review",
@@ -334,6 +346,7 @@ for (const path of [
   "scripts/build-apartment.py",
   "scripts/architecture_geometry.py",
   "scripts/furniture_geometry.py",
+  ...(spec.studyDecision ? ["scripts/study_geometry.py", "scripts/render-study-review.py"] : []),
   "scripts/render-apartment.py",
   "scripts/render_exterior.py",
   "scripts/environment-data.mjs",
@@ -349,6 +362,7 @@ for (const path of [
   "package.json",
   "package-lock.json",
   ...(spec.furnitureDecision ? [spec.furnitureDecision, nodePath.posix.join(nodePath.posix.dirname(spec.furnitureDecision),'DECISION.md')] : []),
+  ...(spec.studyDecision ? [spec.studyDecision, nodePath.posix.join(nodePath.posix.dirname(spec.studyDecision),'DECISION.md')] : []),
   ...new Set((spec.furnitureMaterials ?? []).map(m => m.texture).filter(Boolean)),
   ...new Set(designInputs),
   ...(await fs.readdir("src"))

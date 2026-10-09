@@ -82,8 +82,7 @@ export class ApartmentScene {
       light.shadow.bias=-.0002;light.shadow.normalBias=.012;
       this.lights.add(light,light.target);
     }
-    const daylight=data.lighting.windowDaylight;
-    if(daylight) {
+    for(const daylight of [data.lighting.windowDaylight,...(data.lighting.additionalWindowDaylights ?? [])].filter(Boolean)) {
       const light=new THREE.RectAreaLight(daylight.color,daylight.intensity,...daylight.size);
       light.position.copy(this.point(daylight.position));light.lookAt(this.point(daylight.target));this.lights.add(light);
     }

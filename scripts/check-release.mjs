@@ -86,12 +86,17 @@ check("all geometry outside recorded revisions remains identical to v05", () => 
 });
 if (spec.furnishings?.length) {
   const previous = await json("model/baseline-v06/validation.json");
-  check("Every v06 architectural part remains unchanged after furnishing", () => {
+  check("Every v06 architectural part outside the explicit study window change remains unchanged", () => {
+    const allowed = new Set(spec.studyDecision ? [
+      ...spec.entities.find(e=>e.windowId==='X_north').sourceNodes,
+      "wall_north_3_0_lower",
+    ] : []);
     for (const [name, old] of Object.entries(previous.objects)) {
       const current = validation.objects[name];
       assert.ok(current, name);
       assert.equal(current.entityId, old.entityId, name);
       assert.equal(current.triangles, old.triangles, name);
+      if(allowed.has(name)) continue;
       for (let side=0; side<2; side++) for (let axis=0; axis<3; axis++)
         assert.ok(Math.abs(current.bounds[side][axis]-old.bounds[side][axis])<0.0001, name);
     }

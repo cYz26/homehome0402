@@ -1,7 +1,7 @@
 """Reference-authored static furnishings. Dimensions/placements live in apartment.json.
 Existing architectural template meshes are never edited by this module.
 """
-import bpy, bmesh, math, pathlib, hashlib
+import bpy, bmesh, math, pathlib, hashlib, sys
 from mathutils import Vector
 
 def configure(spec, collection, root):
@@ -33,14 +33,18 @@ def configure(spec, collection, root):
     for item in spec.get('furnishings', []):
         FRAME=item; PARTS=[]; COUNT=0
         globals()['FRAME'], globals()['PARTS'], globals()['COUNT'] = FRAME, PARTS, COUNT
-        globals()[item['recipe']](item)
+        if item['recipe'].startswith('study_'):
+            import study_geometry
+            study_geometry.build(sys.modules[__name__], item)
+        else:
+            globals()[item['recipe']](item)
         finish(item['node'], item.get('layer','fixed'))
 
 def world(p):
     x,t=FRAME['position']; fx,ft=FRAME.get('front',[0,1]); length=math.hypot(fx,ft);fx/=length;ft/=length
     # u along width, v toward the front, z up. Facing east => width runs N/S.
     u,v,z=p;u*=FRAME.get('widthSign',1)
-    return Vector((x+ft*u+fx*v, EXT-(t-fx*u+ft*v), z))
+    return Vector((x+ft*u+fx*v, EXT-(t-fx*u+ft*v), z+FRAME.get('floorElevation',0)))
 
 def mat(name): return bpy.data.materials[name]
 
@@ -135,7 +139,7 @@ def finish(name, layer):
     for ob in PARTS:ob.select_set(True)
     bpy.context.view_layer.objects.active=PARTS[0];bpy.ops.object.join()
     ob=bpy.context.object;ob.name=name;ob['layer']=layer;ob['furnitureRecipe']=FRAME['recipe']
-    ob['frontPlan']=FRAME.get('front',[0,1]);ob['designDecision']=SPEC.get('furnitureDecision','home402-living-v02')
+    ob['frontPlan']=FRAME.get('front',[0,1]);ob['designDecision']=FRAME.get('designDecision',SPEC.get('furnitureDecision','home402-living-v02'))
     RECORDS.append({'id':FRAME['id'],'node':name,'recipe':FRAME['recipe'],'parts':measured})
     return ob
 

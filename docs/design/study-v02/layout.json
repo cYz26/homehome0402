@@ -1,0 +1,128 @@
+{
+  "id": "home402-study-v02",
+  "date": "2026-10-09",
+  "status": "revised-discussion-candidate",
+  "roomId": "xroom",
+  "userRequirements": {
+    "room": "正北 X 空间（厨房左侧）",
+    "west": "图1书柜；尽量布满西侧墙，保留底部向房间凸出的抽屉柜",
+    "east": "图2升降桌，1400 × 700 mm；旁边增加一组柜子",
+    "chair": "图3深色转椅，一把",
+    "entrance": "南侧推拉门"
+  },
+  "coordinates": {
+    "unit": "m",
+    "origin": "X 空间北西墙面交点；x 向东、y 向南",
+    "planOrigin": [
+      3.78,
+      0.1
+    ]
+  },
+  "room": {
+    "width": 2.64,
+    "depth": 3.3,
+    "height": 2.8,
+    "drawingReferenceChain": [
+      2.8,
+      3.4
+    ],
+    "basis": "当前建筑规格扣假设墙厚；南端为入口界线，非南墙面；未扣额外饰面、踢脚线和门框投影；非现场实测",
+    "northWindow": {
+      "startX": 0.24,
+      "width": 1.73,
+      "sill": 0.9,
+      "head": 2.55,
+      "basis": "窗形和高窗台以用户选取的初版 v01 及实景照片为准；0.90m仅为外观估读。该新要求优先于当前模型0.28m假设，本轮未改共享建筑源"
+    },
+    "entrance": {
+      "side": "south",
+      "type": "sliding",
+      "stack": "east of entrance; east-west orientation"
+    }
+  },
+  "westBookcase": {
+    "x": 0.02,
+    "y": 0.18,
+    "length": 3,
+    "upperDepth": 0.35,
+    "baseDepth": 0.8,
+    "height": 2.5,
+    "baseHeight": 0.42,
+    "drawerExtensionAssumption": 0.35,
+    "material": "深胡桃木，木框玻璃门与开放格/实木门组合",
+    "basis": "用户要求底部更突出且可坐人；上柜35cm、底柜80cm、坐面净深45cm为试排假设，底柜需按坐人荷载设计承重隔板与连接/固定，不能默认普通抽屉顶板已可坐人",
+    "seat": {
+      "exposedDepth": 0.45,
+      "y": 2,
+      "length": 1.18,
+      "cushionThickness": 0.03,
+      "finishedHeight": 0.45,
+      "basis": "南段约1.18m加薄坐垫，形成座位；非厂家承重认证"
+    }
+  },
+  "desk": {
+    "x": 1.89,
+    "y": 0.3,
+    "depth": 0.7,
+    "length": 1.4,
+    "eastWallGap": 0.05,
+    "previewHeight": 0.74,
+    "front": "west; seated person faces east",
+    "material": "木纹桌面，黑色双柱电动升降桌架",
+    "basis": "桌面尺寸用户明确指定；预览高度及离墙距离是方案假设，升降范围待产品确认"
+  },
+  "eastSideCabinet": {
+    "x": 2.22,
+    "y": 1.85,
+    "depth": 0.4,
+    "length": 1,
+    "height": 1.1,
+    "deskGap": 0.15,
+    "southEntranceSetback": 0.45,
+    "material": "与西侧书柜协调的胡桃木封闭收纳柜",
+    "basis": "执行代理推荐，尚未用户视觉确认；不与升降桌刚性连接，不设置跨桌吊柜"
+  },
+  "chair": {
+    "center": [
+      1.48,
+      1
+    ],
+    "bodyDepth": 0.765,
+    "baseDiameter": 0.735,
+    "armWidth": 0.66,
+    "totalHeightRange": [
+      1.115,
+      1.27
+    ],
+    "color": "dark",
+    "front": "east",
+    "basis": "附件尺寸图；摆位及二维全深占用是方案估计，不包含人体或动态后仰包络"
+  },
+  "clearances": {
+    "deskToProjectingBase": 1.07,
+    "deskToUpperCase": 1.52,
+    "chairRearToBaseAtPreviewPosition": 0.2775,
+    "chairRearToOpenDrawerAtPreviewPosition": -0.0725,
+    "drawerUse": "底柜加深后，椅背后仅约28cm；相对抽屉拉出35cm会进入当前椅位，必须先收/移椅。主要坐位设在南段，避开桌前转椅",
+    "depthSensitivity": "底柜每增深 5 cm，桌柜间距及椅后余量均减少 5 cm",
+    "seatFrontToOppositeCabinet": 1.4
+  },
+  "acceptance": {
+    "dimensionCalculation": "passed; 2D checks and identified drawer conflict in verification.json",
+    "visualReview": "agent inspected proportional plan and selected high-sill/seating concept",
+    "userVisualAcceptance": "pending",
+    "manufacturerAndSiteDimensions": "pending",
+    "appliedToApartmentModel": false,
+    "websiteOrRemotePublication": false
+  },
+  "previous": "docs/design/study-v01/layout.json",
+  "latestFeedback": {
+    "window": "窗户应该是更接近这个效果（请参考实景照片）",
+    "bookcase": "书柜的底柜伸出来应该会长一些，可以坐人",
+    "selectedWindowReference": "references/generated/study-20261009/study-concept-v01.png"
+  },
+  "selectedPreview": {
+    "path": "references/generated/study-20261009/study-concept-v04.png",
+    "kind": "AI 方案空间示意；非模型渲染或实拍"
+  }
+}

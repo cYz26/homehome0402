@@ -1,5 +1,44 @@
 import { test, expect } from "@playwright/test";
 import sharp from "sharp";
+// Study flow covers its independent package, source-labelled images and stable
+// entity queries through the real UI at desktop and mobile widths.
+for (const [label,width,height] of [["desktop",1280,900],["phone",390,844]]) {
+  test(`study ${label}: confirmed images, complete 3D and furniture properties`, async ({page},testInfo)=>{
+    test.setTimeout(process.env.CI ? 420000 : 180000);
+    await page.setViewportSize({width,height});
+    await page.emulateMedia({reducedMotion:"reduce"});
+    const errors=[];page.on("pageerror",e=>errors.push(e.message));
+    page.on("console",e=>{if(e.type()==="error")errors.push(e.text());});
+    await page.goto("./");
+    await expect(page).toHaveTitle(/402/);
+    await expect(page.locator("#hero-image")).toBeVisible();
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+    for(const [id,file] of [["scheme-study","scheme-study"],["scheme-study-cabinet","scheme-study-cabinet"]]) {
+      await page.locator(`[data-reference="${id}"]`).first().click();
+      await expect(page.locator("#reference-dialog")).toBeVisible();
+      await expect(page.locator("#reference-image")).toHaveAttribute("src",new RegExp(`/${file}\\.webp$`));
+      await expect(page.locator("#reference-caption")).toContainText("用户已确认");
+      await expect.poll(()=>page.locator("#reference-image").evaluate(e=>e.complete&&e.naturalWidth>1000)).toBe(true);
+      await page.locator("#reference-dialog [data-close-dialog]").click();
+    }
+    await ready(page);
+    await page.locator('#rooms [data-room="xroom"]').click({noWaitAfter:true});
+    await page.locator('[data-mode="interior"]').click({noWaitAfter:true});
+    await page.locator('[data-detail="study"]').click({noWaitAfter:true});
+    await nonblank(page,testInfo,`study-${label}-interior`);
+    if(width<700)await panel(page,true);
+    for(const [id,text] of [["study-bookcase","可坐深底柜"],["study-standing-desk","140×70"],["study-task-chair","网背转椅"],["study-side-cabinet","东侧配柜"]]) {
+      await page.locator(`#mini-plan [data-entity-id="${id}"]`).click();
+      await expect(page.locator("#properties")).toContainText(text);
+    }
+    await page.locator('#mini-plan [data-entity-id="study-bookcase"]').click();
+    await expect(page.locator("#properties")).toContainText("先移");
+    const release=await page.request.get("release.json").then(r=>r.json());
+    expect(release.additionalModels.map(p=>p.id)).toContain("study");
+    expect(errors).toEqual([]);
+    expect(await page.locator("vite-error-overlay").count()).toBe(0);
+  });
+}
 // Downloading, decoding and the first full-quality render are one loading
 // phase. A request event only marks its start; ordinary UI assertions stay 20s.
 async function modelReady(page, timeout = 120000, name = "model") {

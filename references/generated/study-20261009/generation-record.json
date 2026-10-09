@@ -1,0 +1,304 @@
+{
+  "date": "2026-10-09",
+  "tool": "built-in image_gen.imagegen",
+  "kind": "AI layout concept; no 3D model or site publication",
+  "selected": "references/generated/study-20261009/study-concept-v06.png",
+  "iterations": [
+    {
+      "id": "v01",
+      "mode": "room and furniture composition",
+      "prompt": {
+        "path": "references/generated/study-20261009/study-concept-v01-prompt.txt",
+        "sha256": "7e88d215351d565e996f61eb3312f1f5a076b0fa6483834d4a4b800dc7082560"
+      },
+      "inputs": [
+        {
+          "path": "references/03-north-room-kitchen.jpg",
+          "sha256": "d8da536c37e8927e382c323164df210506d93f33bad0ac0cf817f3a16c30bcc6"
+        },
+        {
+          "path": "references/generated/study-20261009/study-layout-v01.png",
+          "sha256": "dc80f6691b465b1b31061d659557270998bdb05566d82fdba9b70d023af55bd8"
+        },
+        {
+          "path": "references/revisions/study-20261009/01-west-bookcase.jpg",
+          "sha256": "ff7ea2ac1833a8032c0f3502a1995e4a82c7729f279f8239918514513e463075"
+        },
+        {
+          "path": "references/revisions/study-20261009/02-standing-desk.png",
+          "sha256": "dd4afd470d44e55d75fc87752a1ea5844bddb950c23fc046b01829d2ba4d5178"
+        },
+        {
+          "path": "references/revisions/study-20261009/03-dark-chair-dimensions.png",
+          "sha256": "896c00ce279cbaa4e83c2d85a92e7fb77c24c00e42458d13b1f96bb66f99c434"
+        }
+      ],
+      "output": {
+        "path": "references/generated/study-20261009/study-concept-v01.png",
+        "originalPath": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-2b7a9e67-b874-4714-a0b4-af97744161db.png",
+        "originalSha256": "9e5957c45425f06c2d16449f2777403d600e695dd80a874aae5de31e1e1ed4d9",
+        "projectSha256": "44b82572a9779bf59702e862adea3de70ee87e160bfc727fa699c6e664f75a81",
+        "decodedRgbaUnchanged": true,
+        "visualReview": "Preserved initial preview; high north sill superseded by v02.",
+        "selected": false
+      },
+      "selection": "User selected this window appearance as revision baseline"
+    },
+    {
+      "id": "v02",
+      "mode": "precise-object-edit; lower north sill, keep furniture and room",
+      "prompt": {
+        "path": "references/generated/study-20261009/study-concept-v02-prompt.txt",
+        "sha256": "c3adde2c19719cabb0c598fb330374da0243e3ce7009e4cf26a3ab76650b7bca"
+      },
+      "inputs": [
+        {
+          "path": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-2b7a9e67-b874-4714-a0b4-af97744161db.png",
+          "sha256": "9e5957c45425f06c2d16449f2777403d600e695dd80a874aae5de31e1e1ed4d9"
+        },
+        {
+          "path": "references/generated/study-20261009/study-layout-v01.png",
+          "sha256": "dc80f6691b465b1b31061d659557270998bdb05566d82fdba9b70d023af55bd8"
+        }
+      ],
+      "output": {
+        "path": "references/generated/study-20261009/study-concept-v02.png",
+        "originalPath": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-9705c3f3-235d-46d9-9d61-7c0992faa29a.png",
+        "originalSha256": "a919aad8bed263bbc59cdc7cf944d40f57af925f437a5c7332e85fcd5e925108",
+        "projectSha256": "e93f1511cc1fbdf6dedf7ef08364ef623eda9fe0badd9d1c86da4675cea6ca59",
+        "size": [
+          1448,
+          1086
+        ],
+        "decodedRgbaUnchanged": true,
+        "selected": false,
+        "visualReview": "Agent inspected: nearly full west walnut wood/glass bookcase and projecting closed drawer bank; east black-frame lift desk with separate foreground storage cabinet; one dark mesh swivel chair facing east; low north window and south sliding frame retained. AI image does not certify exact sizes or clearances."
+      },
+      "selection": "Superseded by explicit user high-sill/photo correction; retained as history"
+    },
+    {
+      "id": "v03",
+      "mode": "precise-object-edit; restore user-selected high sill and deepen west cabinet as seat",
+      "prompt": {
+        "path": "references/generated/study-20261009/study-concept-v03-prompt.txt",
+        "sha256": "85b3fccf7a1675c82b753e5a50af96573c2d54e6244b30826311ac6d96264f85"
+      },
+      "inputs": [
+        {
+          "path": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-2b7a9e67-b874-4714-a0b4-af97744161db.png",
+          "sha256": "9e5957c45425f06c2d16449f2777403d600e695dd80a874aae5de31e1e1ed4d9"
+        },
+        {
+          "path": "references/03-north-room-kitchen.jpg",
+          "sha256": "d8da536c37e8927e382c323164df210506d93f33bad0ac0cf817f3a16c30bcc6"
+        },
+        {
+          "path": "references/revisions/study-20261009/01-west-bookcase.jpg",
+          "sha256": "ff7ea2ac1833a8032c0f3502a1995e4a82c7729f279f8239918514513e463075"
+        },
+        {
+          "path": "references/generated/study-20261009/study-layout-v02.png",
+          "sha256": "0958d7c4bf93000bb26d6a19cb471cc7d09486e3d21b51ea5a71804fdfad499d"
+        }
+      ],
+      "output": {
+        "path": "references/generated/study-20261009/study-concept-v03.png",
+        "sha256": "b5d6bcb48e32f77b2d51e1d8a870c015c41f6df2436d1e723852d3099fe46d6e",
+        "originalPath": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-53a00dbb-ca4a-4fe8-b5f8-731b2bdf07aa.png",
+        "originalSha256": "994251cb532fb3704cb2a5485fd2c75420666c9d967d47def05895d888a5dedd",
+        "decodedRgbaUnchanged": true,
+        "selected": false
+      },
+      "selection": "Intermediate deepened base; visually too tall, superseded by v04"
+    },
+    {
+      "id": "v04",
+      "mode": "precise-object-edit; lower supported bench base while preserving high-sill window and furniture",
+      "prompt": {
+        "path": "references/generated/study-20261009/study-concept-v04-prompt.txt",
+        "sha256": "162f69a9b7c1a2a6dea2910ec20438e94802df39a3e24d1cce9812b219f043e4"
+      },
+      "inputs": [
+        {
+          "path": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-53a00dbb-ca4a-4fe8-b5f8-731b2bdf07aa.png",
+          "sha256": "994251cb532fb3704cb2a5485fd2c75420666c9d967d47def05895d888a5dedd"
+        },
+        {
+          "path": "references/generated/study-20261009/study-layout-v02.png",
+          "sha256": "0958d7c4bf93000bb26d6a19cb471cc7d09486e3d21b51ea5a71804fdfad499d"
+        }
+      ],
+      "output": {
+        "path": "references/generated/study-20261009/study-concept-v04.png",
+        "sha256": "e390f91a5d7374e8447e97c5e803ba62d5b7f47cc183ac0366562411e5f073a4",
+        "originalPath": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-e11c9474-04d7-4da7-a05a-a1629c63d05e.png",
+        "originalSha256": "d57e6f90400053fea0b0acf17a5d4ae812780e91ed9bfa87f49acca94e18441d",
+        "decodedRgbaUnchanged": true,
+        "selected": false
+      },
+      "selection": "prior cabinet appearance, superseded by new references; preserved"
+    },
+    {
+      "id": "v05",
+      "mode": "precise-object-edit; apply new references to existing study",
+      "prompt": {
+        "path": "references/generated/study-20261009/study-concept-v05-prompt.txt",
+        "sha256": "ded1a3993919d0536e826e78291dc1d04c537e1544e8f69d39465f3278c01b23"
+      },
+      "inputs": [
+        {
+          "path": "references/generated/study-20261009/study-concept-v04.png",
+          "sha256": "e390f91a5d7374e8447e97c5e803ba62d5b7f47cc183ac0366562411e5f073a4"
+        },
+        {
+          "path": "references/revisions/study-20261009/cabinet-r2/01-cabinet-front.png",
+          "sha256": "af03d6250e6bdd18f67e36e84b974a55d4831ff7d518555064158d7d3efe4d1c"
+        },
+        {
+          "path": "references/revisions/study-20261009/cabinet-r2/02-cabinet-angle.png",
+          "sha256": "8ad83b716d3d65cd0a08834d522b980140bcc7131e5c7e09dbfdb1cc7276eb32"
+        }
+      ],
+      "output": {
+        "path": "references/generated/study-20261009/study-concept-v05.png",
+        "role": "initial cabinet facade revision, preserved",
+        "originalPath": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-0311a8dd-f40c-4845-b87f-0db284414ce3.png",
+        "originalSha256": "352fe18ea3091625c1684bbd10d66edcf6bc3f703beacf8b4069147867aab64e",
+        "projectSha256": "d5afdfa432e324f2ac498be44e895f4748408043f158c3b1f2c541c857fac9c5",
+        "size": [
+          1448,
+          1086
+        ],
+        "decodedRgbaUnchanged": true,
+        "selected": false
+      },
+      "selection": "intermediate; two-row base corrected next"
+    },
+    {
+      "id": "v06",
+      "mode": "precise-object-edit; change only lowest drawer-face divisions to one row",
+      "prompt": {
+        "path": "references/generated/study-20261009/study-concept-v06-prompt.txt",
+        "sha256": "775161a6f9914bd62c6c67abd4c23f8b5654948b55cdefcd21db66e9c11066e7"
+      },
+      "inputs": [
+        {
+          "path": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-0311a8dd-f40c-4845-b87f-0db284414ce3.png",
+          "sha256": "352fe18ea3091625c1684bbd10d66edcf6bc3f703beacf8b4069147867aab64e"
+        },
+        {
+          "path": "references/revisions/study-20261009/cabinet-r2/01-cabinet-front.png",
+          "sha256": "af03d6250e6bdd18f67e36e84b974a55d4831ff7d518555064158d7d3efe4d1c"
+        }
+      ],
+      "output": {
+        "path": "references/generated/study-20261009/study-concept-v06.png",
+        "role": "selected study overview; single-row deep sitting drawer base",
+        "originalPath": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-5a31a804-084d-4d9a-90c9-f820d108c261.png",
+        "originalSha256": "be90b7ec9223b546fcff5168e77f782576fd5cc3ea8637cf5df9a605611191dd",
+        "projectSha256": "1bbcd5761ec89792913e4d568812c83652ed313f7cf3a3ee5d906a426d8f2bc7",
+        "size": [
+          1448,
+          1086
+        ],
+        "decodedRgbaUnchanged": true,
+        "selected": true
+      },
+      "selection": "User confirmed the selected appearance on2026-10-09: 这个版本OK"
+    },
+    {
+      "id": "cabinet-r2-front",
+      "mode": "frontal synthesized view of same revised cabinet",
+      "prompt": {
+        "path": "references/generated/study-20261009/study-cabinet-r2-front-prompt.txt",
+        "sha256": "7d5c633156ba46cd3ddf144c2fd299f7c5b643d88fdc60ec01b3ac16a86217bb"
+      },
+      "inputs": [
+        {
+          "path": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-5a31a804-084d-4d9a-90c9-f820d108c261.png",
+          "sha256": "be90b7ec9223b546fcff5168e77f782576fd5cc3ea8637cf5df9a605611191dd"
+        },
+        {
+          "path": "references/revisions/study-20261009/cabinet-r2/01-cabinet-front.png",
+          "sha256": "af03d6250e6bdd18f67e36e84b974a55d4831ff7d518555064158d7d3efe4d1c"
+        },
+        {
+          "path": "references/revisions/study-20261009/cabinet-r2/02-cabinet-angle.png",
+          "sha256": "8ad83b716d3d65cd0a08834d522b980140bcc7131e5c7e09dbfdb1cc7276eb32"
+        }
+      ],
+      "output": {
+        "path": "references/generated/study-20261009/study-cabinet-r2-front.png",
+        "role": "selected frontal cabinet detail; synthesized view, not photo",
+        "originalPath": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-ef13c191-977d-4087-a880-b8593596ba39.png",
+        "originalSha256": "07b94ea3651862bd434ae3b1c28212c90ce194ea490536bdb41f2aa8f06edc2f",
+        "projectSha256": "47160ee27288a7c26cf674ebad7ba08ad827d96768e4d5956079361b56260847",
+        "size": [
+          1448,
+          1086
+        ],
+        "decodedRgbaUnchanged": true,
+        "selected": true
+      },
+      "selection": "User confirmed the selected appearance on2026-10-09: 这个版本OK"
+    }
+  ],
+  "plan": {
+    "script": "docs/design/study-v01/draw-plan.mjs",
+    "layout": "docs/design/study-v01/layout.json",
+    "svg": {
+      "path": "references/generated/study-20261009/study-layout-v01.svg",
+      "sha256": "f8a0e4ae27ceb5476d2a1994705c49ea8d38bcfa0fadd34492920a6a32d09fe9"
+    },
+    "png": {
+      "path": "references/generated/study-20261009/study-layout-v01.png",
+      "sha256": "dc80f6691b465b1b31061d659557270998bdb05566d82fdba9b70d023af55bd8"
+    },
+    "type": "code-drawn proportional plan from candidate dimensions"
+  },
+  "sourceGeometrySnapshot": "docs/design/study-v01/source-geometry.json",
+  "inputIntake": "references/revisions/study-20261009/intake.json",
+  "checks": "docs/design/study-v03/verification.json",
+  "metadataPolicy": "Only scoped project copies sanitized by existing project parser; decoded RGBA unchanged. Original attachment copies and image_gen outputs retained.",
+  "designCandidate": "docs/design/study-v03/layout.json",
+  "currentPlan": {
+    "script": "docs/design/study-v01/draw-plan.mjs",
+    "command": "node docs/design/study-v01/draw-plan.mjs docs/design/study-v02/layout.json v02",
+    "layout": "docs/design/study-v02/layout.json",
+    "svg": {
+      "path": "references/generated/study-20261009/study-layout-v02.svg",
+      "sha256": "dbbe6860ad8895c2bec46e73362dbf9add763c2dbdd4db78d1284c8a94fbb497"
+    },
+    "png": {
+      "path": "references/generated/study-20261009/study-layout-v02.png",
+      "sha256": "0958d7c4bf93000bb26d6a19cb471cc7d09486e3d21b51ea5a71804fdfad499d"
+    }
+  },
+  "selectedFront": "references/generated/study-20261009/study-cabinet-r2-front.png",
+  "currentCabinetIntake": "references/revisions/study-20261009/cabinet-r2/intake.json",
+  "userVisualAcceptance": {
+    "status": "confirmed",
+    "date": "2026-10-09",
+    "quote": "这个版本OK",
+    "evidence": "当前聊天中，用户在最新整体图和柜体正面近景之后直接确认",
+    "scope": "最新书房整体布局外观和新参考柜体外观",
+    "assets": [
+      {
+        "path": "references/generated/study-20261009/study-concept-v06.png",
+        "sha256": "1bbcd5761ec89792913e4d568812c83652ed313f7cf3a3ee5d906a426d8f2bc7",
+        "kind": "AI 书房整体方案图"
+      },
+      {
+        "path": "references/generated/study-20261009/study-cabinet-r2-front.png",
+        "sha256": "47160ee27288a7c26cf674ebad7ba08ad827d96768e4d5956079361b56260847",
+        "kind": "AI 柜体正面合成近景"
+      }
+    ],
+    "doesNotCertify": [
+      "现场或厂家尺寸",
+      "座柜承重",
+      "完整动态/人体活动",
+      "实际3D实现或网站发布"
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "home402-study-v04-implementation",
+  "date": "2026-10-09",
+  "approvedDesign": {
+    "path": "docs/design/study-v03/selection.json",
+    "sha256": "76f8964112d65501429ef2664f7347fc98b147c9951c2cd89b5ebdfd97afdf55"
+  },
+  "layout": {
+    "path": "docs/design/study-v03/layout.json",
+    "sha256": "7302f7dc45284cdb15b000f0a23c02ad41cedc4171b0e20e3f8b4f2124a40ef9"
+  },
+  "alignment": {
+    "path": "docs/design/study-v04/alignment.json",
+    "sha256": "6c0532943106862b055c9a961ad022c913a7e8dad32b407c3f6735e93b3b4b76"
+  },
+  "user_acceptance": {
+    "status": "confirmed-design-preview",
+    "quote": "这个版本OK",
+    "implementationRequest": "效果图和书房 3D 一起更新",
+    "actualModelAcceptance": "separate; not inferred from AI image approval"
+  },
+  "selected_previews": [
+    {
+      "id": "scheme-study",
+      "title": "书房整体方案",
+      "source": "references/generated/study-20261009/study-concept-v06.png",
+      "sha256": "1bbcd5761ec89792913e4d568812c83652ed313f7cf3a3ee5d906a426d8f2bc7",
+      "kind": "AI 生成方案 · 用户已确认",
+      "designVersion": "study-v03",
+      "caption": "用户已确认的书房整体外观；西侧整墙胡桃木书柜与可坐深底柜，东侧140×70cm升降桌、深色转椅和配柜。AI 方案示意；几何尺寸以同版本真实模型及属性为准。"
+    },
+    {
+      "id": "scheme-study-cabinet",
+      "title": "书房柜体近景",
+      "source": "references/generated/study-20261009/study-cabinet-r2-front.png",
+      "sha256": "47160ee27288a7c26cf674ebad7ba08ad827d96768e4d5956079361b56260847",
+      "kind": "AI 生成方案 · 用户已确认",
+      "designVersion": "study-v03",
+      "caption": "用户已确认的柜体外观：双实木门、三段浅色嵌板、开放书格、木框玻璃门及下部暖光展示格；单排深底柜与薄坐垫。AI 合成近景，非实拍或模型渲染。"
+    }
+  ],
+  "independent_references": [
+    {
+      "path": "references/generated/study-20261009/independent/bookcase-r1.png",
+      "sha256": "4a6ceacc929d4e5c6b93eef9bd1edb7d36b44e5a817217fb9112b13f3f0557c2"
+    },
+    {
+      "path": "references/generated/study-20261009/independent/desk-r1.png",
+      "sha256": "b895ae90d5c1ef59fe06c40de6882d6dfdec64e9640ca3d7507d25ae7ea43faa"
+    },
+    {
+      "path": "references/revisions/study-20261009/03-dark-chair-dimensions.png",
+      "sha256": "896c00ce279cbaa4e83c2d85a92e7fb77c24c00e42458d13b1f96bb66f99c434"
+    },
+    {
+      "path": "references/generated/study-20261009/independent/side-cabinet-r1.png",
+      "sha256": "71e56ec1aa68043accd95ef34390d129e2ab73f228500a86c9aa414c3a77465d"
+    }
+  ],
+  "display_effects": [
+    {
+      "id": "scheme-study",
+      "title": "书房整体方案",
+      "source": "references/generated/study-20261009/study-concept-v06.png",
+      "sha256": "1bbcd5761ec89792913e4d568812c83652ed313f7cf3a3ee5d906a426d8f2bc7",
+      "kind": "AI 生成方案 · 用户已确认",
+      "designVersion": "study-v03",
+      "caption": "用户已确认的书房整体外观；西侧整墙胡桃木书柜与可坐深底柜，东侧140×70cm升降桌、深色转椅和配柜。AI 方案示意；几何尺寸以同版本真实模型及属性为准。"
+    },
+    {
+      "id": "scheme-study-cabinet",
+      "title": "书房柜体近景",
+      "source": "references/generated/study-20261009/study-cabinet-r2-front.png",
+      "sha256": "47160ee27288a7c26cf674ebad7ba08ad827d96768e4d5956079361b56260847",
+      "kind": "AI 生成方案 · 用户已确认",
+      "designVersion": "study-v03",
+      "caption": "用户已确认的柜体外观：双实木门、三段浅色嵌板、开放书格、木框玻璃门及下部暖光展示格；单排深底柜与薄坐垫。AI 合成近景，非实拍或模型渲染。"
+    }
+  ],
+  "support_inputs": [
+    {
+      "path": "docs/design/study-v04/DECISION.md",
+      "sha256": "bda4916cc0ca18e73fffcade99d623b07d507854ece5ee470ca5933d8ae93f0c"
+    },
+    {
+      "path": "docs/design/study-v04/alignment.json",
+      "sha256": "6c0532943106862b055c9a961ad022c913a7e8dad32b407c3f6735e93b3b4b76"
+    },
+    {
+      "path": "docs/design/study-v03/layout.json",
+      "sha256": "7302f7dc45284cdb15b000f0a23c02ad41cedc4171b0e20e3f8b4f2124a40ef9"
+    },
+    {
+      "path": "docs/design/study-v03/selection.json",
+      "sha256": "76f8964112d65501429ef2664f7347fc98b147c9951c2cd89b5ebdfd97afdf55"
+    }
+  ],
+  "pending": [
+    "Site/manufacturer dimensions",
+    "Seat load verification",
+    "Real-device performance",
+    "Actual 3D visual acceptance"
+  ]
+}

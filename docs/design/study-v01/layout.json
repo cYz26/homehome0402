@@ -1,0 +1,112 @@
+{
+  "id": "home402-study-v01",
+  "date": "2026-10-09",
+  "status": "discussion-candidate",
+  "roomId": "xroom",
+  "userRequirements": {
+    "room": "正北 X 空间（厨房左侧）",
+    "west": "图1书柜；尽量布满西侧墙，保留底部向房间凸出的抽屉柜",
+    "east": "图2升降桌，1400 × 700 mm；旁边增加一组柜子",
+    "chair": "图3深色转椅，一把",
+    "entrance": "南侧推拉门"
+  },
+  "coordinates": {
+    "unit": "m",
+    "origin": "X 空间北西墙面交点；x 向东、y 向南",
+    "planOrigin": [
+      3.78,
+      0.1
+    ]
+  },
+  "room": {
+    "width": 2.64,
+    "depth": 3.3,
+    "height": 2.8,
+    "drawingReferenceChain": [
+      2.8,
+      3.4
+    ],
+    "basis": "当前建筑规格扣假设墙厚；南端为入口界线，非南墙面；未扣额外饰面、踢脚线和门框投影；非现场实测",
+    "northWindow": {
+      "startX": 0.24,
+      "width": 1.73,
+      "sill": 0.28,
+      "head": 2.55
+    },
+    "entrance": {
+      "side": "south",
+      "type": "sliding",
+      "stack": "east of entrance; east-west orientation"
+    }
+  },
+  "westBookcase": {
+    "x": 0.02,
+    "y": 0.18,
+    "length": 3,
+    "upperDepth": 0.35,
+    "baseDepth": 0.55,
+    "height": 2.5,
+    "baseHeight": 0.5,
+    "drawerExtensionAssumption": 0.35,
+    "material": "深胡桃木，木框玻璃门与开放格/实木门组合",
+    "basis": "用户要求尽量满墙；照片没有厂家尺寸。所有柜体尺寸、模块数和抽屉行程是试排假设"
+  },
+  "desk": {
+    "x": 1.89,
+    "y": 0.3,
+    "depth": 0.7,
+    "length": 1.4,
+    "eastWallGap": 0.05,
+    "previewHeight": 0.74,
+    "front": "west; seated person faces east",
+    "material": "木纹桌面，黑色双柱电动升降桌架",
+    "basis": "桌面尺寸用户明确指定；预览高度及离墙距离是方案假设，升降范围待产品确认"
+  },
+  "eastSideCabinet": {
+    "x": 2.22,
+    "y": 1.85,
+    "depth": 0.4,
+    "length": 1,
+    "height": 1.1,
+    "deskGap": 0.15,
+    "southEntranceSetback": 0.45,
+    "material": "与西侧书柜协调的胡桃木封闭收纳柜",
+    "basis": "执行代理推荐，尚未用户视觉确认；不与升降桌刚性连接，不设置跨桌吊柜"
+  },
+  "chair": {
+    "center": [
+      1.48,
+      1
+    ],
+    "bodyDepth": 0.765,
+    "baseDiameter": 0.735,
+    "armWidth": 0.66,
+    "totalHeightRange": [
+      1.115,
+      1.27
+    ],
+    "color": "dark",
+    "front": "east",
+    "basis": "附件尺寸图；摆位及二维全深占用是方案估计，不包含人体或动态后仰包络"
+  },
+  "clearances": {
+    "deskToProjectingBase": 1.32,
+    "deskToUpperCase": 1.52,
+    "chairRearToBaseAtPreviewPosition": 0.5275,
+    "chairRearToOpenDrawerAtPreviewPosition": 0.1775,
+    "drawerUse": "取抽屉时先把椅子收向桌下或移开；不将椅背后约半米当作舒适通道",
+    "depthSensitivity": "底柜每增深 5 cm，桌柜间距及椅后余量均减少 5 cm"
+  },
+  "acceptance": {
+    "dimensionCalculation": "passed; 2D checks in verification.json",
+    "visualReview": "agent reviewed proportional plan and selected AI concept",
+    "userVisualAcceptance": "pending",
+    "manufacturerAndSiteDimensions": "pending",
+    "appliedToApartmentModel": false,
+    "websiteOrRemotePublication": false
+  },
+  "selectedPreview": {
+    "path": "references/generated/study-20261009/study-concept-v02.png",
+    "kind": "AI 方案空间示意，不是模型渲染或实拍"
+  }
+}

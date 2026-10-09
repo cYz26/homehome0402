@@ -1,0 +1,54 @@
+{
+  "id": "home402-study-v04-alignment",
+  "selectedContext": {
+    "path": "references/generated/study-20261009/study-concept-v06.png",
+    "sha256": "1bbcd5761ec89792913e4d568812c83652ed313f7cf3a3ee5d906a426d8f2bc7"
+  },
+  "authority": "User confirmed containing study design with 这个版本OK; agent selected standalone interpretations for shape comparison, not new user acceptance.",
+  "confirmation": {
+    "path": "docs/design/study-v03/selection.json",
+    "sha256": "76f8964112d65501429ef2664f7347fc98b147c9951c2cd89b5ebdfd97afdf55"
+  },
+  "room": "xroom",
+  "environmentBase": "metric-v09, 0b6d31e8be52f6a14124beba2e770a7b2c57a53a",
+  "dimensions": {
+    "path": "docs/design/study-v03/layout.json",
+    "sha256": "7302f7dc45284cdb15b000f0a23c02ad41cedc4171b0e20e3f8b4f2124a40ef9"
+  },
+  "camera": "south sliding entry looking north; frontal bookcase camera from east; near-orthographic object review",
+  "palette": [
+    "medium-dark walnut",
+    "pale stone inserts",
+    "black desk frame / dark mesh chair",
+    "chrome chair base",
+    "local warm light / neutral daylight"
+  ],
+  "independentReferences": {
+    "bookcase": {
+      "path": "references/generated/study-20261009/independent/bookcase-r1.png",
+      "sha256": "4a6ceacc929d4e5c6b93eef9bd1edb7d36b44e5a817217fb9112b13f3f0557c2"
+    },
+    "desk": {
+      "path": "references/generated/study-20261009/independent/desk-r1.png",
+      "sha256": "b895ae90d5c1ef59fe06c40de6882d6dfdec64e9640ca3d7507d25ae7ea43faa"
+    },
+    "chair": {
+      "path": "references/revisions/study-20261009/03-dark-chair-dimensions.png",
+      "sha256": "896c00ce279cbaa4e83c2d85a92e7fb77c24c00e42458d13b1f96bb66f99c434"
+    },
+    "side_cabinet": {
+      "path": "references/generated/study-20261009/independent/side-cabinet-r1.png",
+      "sha256": "71e56ec1aa68043accd95ef34390d129e2ab73f228500a86c9aa414c3a77465d"
+    }
+  },
+  "observations": {
+    "bookcase": "All four modules readable; single base drawer row, 3 pale inserts, 4 shelf tiers, lower display niches and deep seat step. Hidden rear/structural connectors inferred.",
+    "desk": "Complete 140:70 top and paired T feet readable. Seated height74cm is an estimate; actual lift range not certified.",
+    "chair": "Bottom dark variant selected: independent front and side product views include headrest, split back, five-spoke base and listed width/depth. No model or brand certification.",
+    "side_cabinet": "Complete standalone cabinet with two upper drawers, two lower doors, slim top and recessed plinth; hidden shelves inferred."
+  },
+  "remaining": [
+    "Seat load, site/manufacturer dimensions, human movement envelope",
+    "Generated standalone images are interpreted modeling guides; source approval is the selected overall design"
+  ]
+}

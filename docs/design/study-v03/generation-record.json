@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-09",
+  "tool": "built-in image_gen.imagegen",
+  "selected": "references/generated/study-20261009/study-concept-v06.png",
+  "selectedFront": "references/generated/study-20261009/study-cabinet-r2-front.png",
+  "intake": "references/revisions/study-20261009/cabinet-r2/intake.json",
+  "iterations": [
+    {
+      "id": "v05",
+      "mode": "precise-object-edit; apply new references to existing study",
+      "prompt": {
+        "path": "references/generated/study-20261009/study-concept-v05-prompt.txt",
+        "sha256": "ded1a3993919d0536e826e78291dc1d04c537e1544e8f69d39465f3278c01b23"
+      },
+      "inputs": [
+        {
+          "path": "references/generated/study-20261009/study-concept-v04.png",
+          "sha256": "e390f91a5d7374e8447e97c5e803ba62d5b7f47cc183ac0366562411e5f073a4"
+        },
+        {
+          "path": "references/revisions/study-20261009/cabinet-r2/01-cabinet-front.png",
+          "sha256": "af03d6250e6bdd18f67e36e84b974a55d4831ff7d518555064158d7d3efe4d1c"
+        },
+        {
+          "path": "references/revisions/study-20261009/cabinet-r2/02-cabinet-angle.png",
+          "sha256": "8ad83b716d3d65cd0a08834d522b980140bcc7131e5c7e09dbfdb1cc7276eb32"
+        }
+      ],
+      "output": {
+        "path": "references/generated/study-20261009/study-concept-v05.png",
+        "role": "initial cabinet facade revision, preserved",
+        "originalPath": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-0311a8dd-f40c-4845-b87f-0db284414ce3.png",
+        "originalSha256": "352fe18ea3091625c1684bbd10d66edcf6bc3f703beacf8b4069147867aab64e",
+        "projectSha256": "d5afdfa432e324f2ac498be44e895f4748408043f158c3b1f2c541c857fac9c5",
+        "size": [
+          1448,
+          1086
+        ],
+        "decodedRgbaUnchanged": true,
+        "selected": false
+      },
+      "selection": "intermediate; two-row base corrected next"
+    },
+    {
+      "id": "v06",
+      "mode": "precise-object-edit; change only lowest drawer-face divisions to one row",
+      "prompt": {
+        "path": "references/generated/study-20261009/study-concept-v06-prompt.txt",
+        "sha256": "775161a6f9914bd62c6c67abd4c23f8b5654948b55cdefcd21db66e9c11066e7"
+      },
+      "inputs": [
+        {
+          "path": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-0311a8dd-f40c-4845-b87f-0db284414ce3.png",
+          "sha256": "352fe18ea3091625c1684bbd10d66edcf6bc3f703beacf8b4069147867aab64e"
+        },
+        {
+          "path": "references/revisions/study-20261009/cabinet-r2/01-cabinet-front.png",
+          "sha256": "af03d6250e6bdd18f67e36e84b974a55d4831ff7d518555064158d7d3efe4d1c"
+        }
+      ],
+      "output": {
+        "path": "references/generated/study-20261009/study-concept-v06.png",
+        "role": "selected study overview; single-row deep sitting drawer base",
+        "originalPath": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-5a31a804-084d-4d9a-90c9-f820d108c261.png",
+        "originalSha256": "be90b7ec9223b546fcff5168e77f782576fd5cc3ea8637cf5df9a605611191dd",
+        "projectSha256": "1bbcd5761ec89792913e4d568812c83652ed313f7cf3a3ee5d906a426d8f2bc7",
+        "size": [
+          1448,
+          1086
+        ],
+        "decodedRgbaUnchanged": true,
+        "selected": true
+      },
+      "selection": "User confirmed the selected appearance on2026-10-09: 这个版本OK"
+    },
+    {
+      "id": "cabinet-r2-front",
+      "mode": "frontal synthesized view of same revised cabinet",
+      "prompt": {
+        "path": "references/generated/study-20261009/study-cabinet-r2-front-prompt.txt",
+        "sha256": "7d5c633156ba46cd3ddf144c2fd299f7c5b643d88fdc60ec01b3ac16a86217bb"
+      },
+      "inputs": [
+        {
+          "path": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-5a31a804-084d-4d9a-90c9-f820d108c261.png",
+          "sha256": "be90b7ec9223b546fcff5168e77f782576fd5cc3ea8637cf5df9a605611191dd"
+        },
+        {
+          "path": "references/revisions/study-20261009/cabinet-r2/01-cabinet-front.png",
+          "sha256": "af03d6250e6bdd18f67e36e84b974a55d4831ff7d518555064158d7d3efe4d1c"
+        },
+        {
+          "path": "references/revisions/study-20261009/cabinet-r2/02-cabinet-angle.png",
+          "sha256": "8ad83b716d3d65cd0a08834d522b980140bcc7131e5c7e09dbfdb1cc7276eb32"
+        }
+      ],
+      "output": {
+        "path": "references/generated/study-20261009/study-cabinet-r2-front.png",
+        "role": "selected frontal cabinet detail; synthesized view, not photo",
+        "originalPath": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-ef13c191-977d-4087-a880-b8593596ba39.png",
+        "originalSha256": "07b94ea3651862bd434ae3b1c28212c90ce194ea490536bdb41f2aa8f06edc2f",
+        "projectSha256": "47160ee27288a7c26cf674ebad7ba08ad827d96768e4d5956079361b56260847",
+        "size": [
+          1448,
+          1086
+        ],
+        "decodedRgbaUnchanged": true,
+        "selected": true
+      },
+      "selection": "User confirmed the selected appearance on2026-10-09: 这个版本OK"
+    }
+  ],
+  "metadataPolicy": "scoped project copies stripped with existing parser; original inputs and generated outputs retained; all decoded pixels unchanged",
+  "userVisualAcceptance": {
+    "status": "confirmed",
+    "date": "2026-10-09",
+    "quote": "这个版本OK",
+    "evidence": "当前聊天中，用户在最新整体图和柜体正面近景之后直接确认",
+    "scope": "最新书房整体布局外观和新参考柜体外观",
+    "assets": [
+      {
+        "path": "references/generated/study-20261009/study-concept-v06.png",
+        "sha256": "1bbcd5761ec89792913e4d568812c83652ed313f7cf3a3ee5d906a426d8f2bc7",
+        "kind": "AI 书房整体方案图"
+      },
+      {
+        "path": "references/generated/study-20261009/study-cabinet-r2-front.png",
+        "sha256": "47160ee27288a7c26cf674ebad7ba08ad827d96768e4d5956079361b56260847",
+        "kind": "AI 柜体正面合成近景"
+      }
+    ],
+    "doesNotCertify": [
+      "现场或厂家尺寸",
+      "座柜承重",
+      "完整动态/人体活动",
+      "实际3D实现或网站发布"
+    ]
+  }
+}

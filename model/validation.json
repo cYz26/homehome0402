@@ -1,27 +1,33 @@
 {
-  "version": "metric-v09",
-  "spec_sha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
-  "source_sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
-  "glb_sha256": "bec95e41d32e2b8a0ede7f5e4875fa38b786bf496b6c3b31858444b05539b21f",
+  "version": "metric-v13",
+  "spec_sha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+  "source_sha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+  "glb_sha256": "3715a9e3de8e4a963b07bc6090e345d1ec130d60566faf05172ab9c053922813",
   "model_packages": [
     {
       "id": "apartment",
-      "path": "asset_exchange/apartment-v09.glb",
-      "sha256": "bec95e41d32e2b8a0ede7f5e4875fa38b786bf496b6c3b31858444b05539b21f",
-      "bytes": 24601864
+      "path": "asset_exchange/apartment-v13.glb",
+      "sha256": "3715a9e3de8e4a963b07bc6090e345d1ec130d60566faf05172ab9c053922813",
+      "bytes": 24601768
     },
     {
       "id": "living-sofa",
-      "path": "asset_exchange/living-sofa-v09.glb",
-      "sha256": "65017cdccc06a93b0a26a51faa4579aff5d0655691e7872827395c58314bacd2",
+      "path": "asset_exchange/living-sofa-v13.glb",
+      "sha256": "0095d2d3a150c88a06b117a0e2ec01e4c621aec7f3ddc5ad9af88811bed885c6",
       "bytes": 21232288
+    },
+    {
+      "id": "study",
+      "path": "asset_exchange/study-v13.glb",
+      "sha256": "00bd96447f389d1b4288f0f38a8d4d24e854b84f7bea808a46d7759271dc1868",
+      "bytes": 6746256
     }
   ],
-  "source_objects": 707,
-  "reimport_objects": 707,
+  "source_objects": 712,
+  "reimport_objects": 712,
   "max_bound_error_m": 9.5367431640625e-07,
-  "source_triangles": 233175,
-  "reimport_triangles": 233175,
+  "source_triangles": 287019,
+  "reimport_triangles": 287019,
   "source_degenerate_triangles": 0,
   "reimport_degenerate_triangles": 0,
   "roundtrip_errors": [],
@@ -13463,7 +13469,7 @@
         [
           5.75,
           13.0,
-          0.2800000011920929
+          0.8999999761581421
         ]
       ],
       "triangles": 12,
@@ -14643,12 +14649,12 @@
         [
           4.047499656677246,
           12.894000053405762,
-          0.3050000071525574
+          0.925000011920929
         ],
         [
           4.857500076293945,
           12.905999183654785,
-          1.1500000953674316
+          1.149999976158142
         ]
       ],
       "triangles": 12,
@@ -14665,12 +14671,12 @@
         [
           4.912499904632568,
           12.894000053405762,
-          0.3050000071525574
+          0.925000011920929
         ],
         [
           5.722500324249268,
           12.905999183654785,
-          1.1500000953674316
+          1.149999976158142
         ]
       ],
       "triangles": 12,
@@ -14731,12 +14737,12 @@
         [
           4.917999744415283,
           12.82800006866455,
-          1.119999885559082
+          1.2000000476837158
         ],
         [
           4.941999912261963,
           12.85200023651123,
-          1.2699999809265137
+          1.3500001430511475
         ]
       ],
       "triangles": 44,
@@ -14753,7 +14759,7 @@
         [
           3.99399995803833,
           12.864999771118164,
-          0.2799999713897705
+          0.8999999761581421
         ],
         [
           4.046000003814697,
@@ -14775,7 +14781,7 @@
         [
           4.859000205993652,
           12.864999771118164,
-          0.2799999713897705
+          0.8999999761581421
         ],
         [
           4.9110002517700195,
@@ -14797,7 +14803,7 @@
         [
           5.723999977111816,
           12.864999771118164,
-          0.2799999713897705
+          0.8999999761581421
         ],
         [
           5.776000022888184,
@@ -14885,12 +14891,12 @@
         [
           4.020000457763672,
           12.864999771118164,
-          0.2580000162124634
+          0.8779999613761902
         ],
         [
           5.75,
           12.934999465942383,
-          0.3019999861717224
+          0.921999990940094
         ]
       ],
       "triangles": 108,
@@ -14929,12 +14935,12 @@
         [
           3.9700002670288086,
           12.77500057220459,
-          0.23499999940395355
+          0.8550000190734863
         ],
         [
           5.800000190734863,
           13.074999809265137,
-          0.2750000059604645
+          0.8949999809265137
         ]
       ],
       "triangles": 108,
@@ -15692,6 +15698,138 @@
       "uv": true,
       "materials": [
         "Tripo_sofa_original_PBR"
+      ]
+    },
+    "Furniture_study_bookcase": {
+      "bounds": [
+        [
+          3.799999952316284,
+          9.619999885559082,
+          0.024000000208616257
+        ],
+        [
+          4.599999904632568,
+          12.619999885559082,
+          2.5239999294281006
+        ]
+      ],
+      "triangles": 37100,
+      "degenerate": 0,
+      "layer": "fixed",
+      "entityId": "study-bookcase",
+      "uv": true,
+      "materials": [
+        "Furniture_dark_wood.001",
+        "Furniture_walnut.001",
+        "Study_seat_linen",
+        "Ivory_stone_counter.001",
+        "Study_warm_strip",
+        "Study_book_sage",
+        "Furniture_paper.001",
+        "Study_book_rust",
+        "Study_book_cream",
+        "Study_book_charcoal",
+        "Furniture_ceramic.001",
+        "Study_clear_glass",
+        "Furniture_brass.001"
+      ]
+    },
+    "Furniture_study_desktop_items": {
+      "bounds": [
+        [
+          5.900000095367432,
+          11.27299976348877,
+          0.7639999985694885
+        ],
+        [
+          6.247000217437744,
+          11.949999809265137,
+          1.1710000038146973
+        ]
+      ],
+      "triangles": 472,
+      "degenerate": 0,
+      "layer": "fixed",
+      "entityId": "study-desktop-items",
+      "uv": true,
+      "materials": [
+        "Study_chrome",
+        "Furniture_charcoal.001",
+        "Study_warm_strip"
+      ]
+    },
+    "Furniture_study_side_cabinet": {
+      "bounds": [
+        [
+          6.0,
+          9.949999809265137,
+          0.024000000208616257
+        ],
+        [
+          6.400000095367432,
+          10.949999809265137,
+          1.1239999532699585
+        ]
+      ],
+      "triangles": 1564,
+      "degenerate": 0,
+      "layer": "fixed",
+      "entityId": "study-side-cabinet",
+      "uv": true,
+      "materials": [
+        "Furniture_dark_wood.001",
+        "Furniture_walnut.001"
+      ]
+    },
+    "Furniture_study_standing_desk": {
+      "bounds": [
+        [
+          5.670000076293945,
+          11.100000381469727,
+          0.029999999329447746
+        ],
+        [
+          6.369999885559082,
+          12.5,
+          0.7639999985694885
+        ]
+      ],
+      "triangles": 2336,
+      "degenerate": 0,
+      "layer": "fixed",
+      "entityId": "study-standing-desk",
+      "uv": true,
+      "materials": [
+        "Furniture_table_wood.001",
+        "Furniture_charcoal.001",
+        "Furniture_dark_wood.001",
+        "Study_controller"
+      ]
+    },
+    "Furniture_study_task_chair": {
+      "bounds": [
+        [
+          4.868163108825684,
+          11.445638656616211,
+          0.026999998837709427
+        ],
+        [
+          5.625831604003906,
+          12.156859397888184,
+          1.3054126501083374
+        ]
+      ],
+      "triangles": 12372,
+      "degenerate": 0,
+      "layer": "fixed",
+      "entityId": "study-task-chair",
+      "uv": true,
+      "materials": [
+        "Study_chrome",
+        "Furniture_charcoal.001",
+        "Study_seat_dark",
+        "Study_chair_mesh",
+        "Study_mesh_thread"
       ]
     }
   }

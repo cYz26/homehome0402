@@ -1,0 +1,45 @@
+{
+  "version": "metric-v13-blockout-r2",
+  "reviewer": "Codex agent",
+  "authority": "Agent resemblance review within user-authorized implementation; not user approval of actual 3D",
+  "sourceSha256": "cd89cc386476b39c97da17f9fa68f4289cf080a13c026173c5f9e07687bc870e",
+  "status": "pass-structural-silhouette",
+  "checks": [
+    {
+      "asset": "bookcase",
+      "observed": "Front shows four facade modules, three insert panels, four open shelf tiers, four lower niches and one drawer row. Side/quarter show80cm lower/35cm upper step and42cm low bench with cushion. Quarter framing corrected to show full unit.",
+      "evidence": [
+        "bookcase-front.png",
+        "bookcase-side.png",
+        "bookcase-quarter.png"
+      ]
+    },
+    {
+      "asset": "desk",
+      "observed": "140:70 slab proportions, paired telescoping columns and T feet/controller retained; regular rigid silhouette matches independent reference.",
+      "evidence": [
+        "desk-quarter.png"
+      ]
+    },
+    {
+      "asset": "chair",
+      "observed": "Split lumbar/upper/head outline, curved rear spine, broad mesh seat, two armrests and five-spoke rolling base align with dark front/side reference. Initial nonplanar fan faceting corrected with smooth quad membranes.",
+      "evidence": [
+        "chair-front.png",
+        "chair-side.png",
+        "chair-quarter.png"
+      ]
+    },
+    {
+      "asset": "side-cabinet",
+      "observed": "Two upper shallow drawers above two closed lower doors, recessed pulls/plinth and thin top preserve standalone reference.",
+      "evidence": [
+        "side-cabinet-quarter.png"
+      ]
+    }
+  ],
+  "remaining": [
+    "Materials/details and independent GLB reimport review",
+    "Room placement/dynamic human movement, seat structural certification not established"
+  ]
+}

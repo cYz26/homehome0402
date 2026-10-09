@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-09",
+  "userRequest": "书房的柜子参考这个展现一下",
+  "scope": "柜体外观修订和空间预览，未指定厂家尺寸或授权共享3D/网站更新",
+  "entries": [
+    {
+      "source": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-83d7d1a8-b089-4cc0-9fb9-38f9cd28cc9b.png",
+      "projectPath": "references/revisions/study-20261009/cabinet-r2/01-cabinet-front.png",
+      "originalArchive": ".asset-work/tmp/study-cabinet-r2/intake/01-cabinet-front.png",
+      "role": "正面模块 / 横向展示格 / 暖光与凸出底柜依据",
+      "originalSha256": "b8da6ac223f061554a4418f7e9948a2122ac1a39369ee60a26111f671ff55019",
+      "projectSha256": "af03d6250e6bdd18f67e36e84b974a55d4831ff7d518555064158d7d3efe4d1c",
+      "size": [
+        1316,
+        787
+      ],
+      "decodedRgbaUnchanged": true
+    },
+    {
+      "source": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-759a1033-f91f-4bab-8361-f47f85f7ac57.png",
+      "projectPath": "references/revisions/study-20261009/cabinet-r2/02-cabinet-angle.png",
+      "originalArchive": ".asset-work/tmp/study-cabinet-r2/intake/02-cabinet-angle.png",
+      "role": "侧面深度层次 / 木框玻璃 / 木纹与灯带依据",
+      "originalSha256": "a0d40b694a5a1bfa97e55dd4077ae8e51051450509bccfe0f9e9f413459a75b5",
+      "projectSha256": "8ad83b716d3d65cd0a08834d522b980140bcc7131e5c7e09dbfdb1cc7276eb32",
+      "size": [
+        929,
+        1231
+      ],
+      "decodedRgbaUnchanged": true
+    }
+  ],
+  "visualReview": "Two cabinet photos inspected. No现场人物 or readable personal contacts; books/decorations are product/reference content. Source room, plants, rug and table are not adopted as study layout."
+}

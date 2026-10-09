@@ -39,9 +39,8 @@ for c in spec['lighting'].get('wallWash',[]):
     ob=light(c['id'],'SPOT',c['position'],c['renderPower'],.04,c['target'])
     ob.data.spot_size=c['angle']*2;ob.data.spot_blend=c['penumbra'];ob.data.shadow_soft_size=.035
     ob.data.color=color(c['color']);interior.append(ob)
-c=spec['lighting'].get('windowDaylight')
-if c:
-    ob=light('Window_daylight','AREA',c['position'],c['renderPower'],c['size'][0],c['target'])
+for i,c in enumerate([c for c in [spec['lighting'].get('windowDaylight'),*spec['lighting'].get('additionalWindowDaylights',[])] if c]):
+    ob=light('Window_daylight_'+str(i),'AREA',c['position'],c['renderPower'],c['size'][0],c['target'])
     ob.data.shape='RECTANGLE';ob.data.size=c['size'][0];ob.data.size_y=c['size'][1];ob.data.color=(.83,.92,1);interior.append(ob)
 scene.world.use_nodes=True
 scene.world.node_tree.nodes['Background'].inputs[0].default_value=(.78,.82,.88,1)

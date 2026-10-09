@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-09",
+  "status": "passed",
+  "scope": "2D candidate dimensions and image inspection; not physical load or full 3D/dynamic proof",
+  "checks": {
+    "allFurnitureWithinNominalRoom": true,
+    "seatExposedDepth": 0.45,
+    "seatFinishedHeight": 0.45,
+    "deskToBaseGap": 1.07,
+    "chairRearGap": 0.2775,
+    "openDrawerConflictsCurrentChairPosition": true,
+    "seatSegmentOutsideChairZone": true,
+    "seatToOppositeCabinetGap": 1.4,
+    "slidingEntrancePreserved": true
+  },
+  "knownConflicts": [
+    "Open drawer of assumed35cm stroke overlaps current chair envelope by7.25cm; chair must move before use",
+    "The current shared model still has low X-room window sill; this preview follows latest photo/high-sill user requirement"
+  ],
+  "visualReview": {
+    "plan": "North-up plan reviewed with deeper base, south seat segment and drawer/chair conflict; dimension labels readable",
+    "concept": "High north sill matches user-selected v01 appearance; deep west bench ledge and entrance-side thin cushion visible; lower supported drawer bank has two low rows; east desk/cabinet, one dark chair and sliding entrance retained. AI image is not metric evidence."
+  },
+  "images": [
+    {
+      "path": "references/revisions/study-20261009/01-west-bookcase.jpg",
+      "sha256": "ff7ea2ac1833a8032c0f3502a1995e4a82c7729f279f8239918514513e463075",
+      "size": [
+        4096,
+        3072
+      ],
+      "metadataClean": true
+    },
+    {
+      "path": "references/revisions/study-20261009/02-standing-desk.png",
+      "sha256": "dd4afd470d44e55d75fc87752a1ea5844bddb950c23fc046b01829d2ba4d5178",
+      "size": [
+        982,
+        730
+      ],
+      "metadataClean": true
+    },
+    {
+      "path": "references/revisions/study-20261009/03-dark-chair-dimensions.png",
+      "sha256": "896c00ce279cbaa4e83c2d85a92e7fb77c24c00e42458d13b1f96bb66f99c434",
+      "size": [
+        1316,
+        1725
+      ],
+      "metadataClean": true
+    },
+    {
+      "path": "references/generated/study-20261009/study-layout-v01.png",
+      "sha256": "dc80f6691b465b1b31061d659557270998bdb05566d82fdba9b70d023af55bd8",
+      "size": [
+        1600,
+        1440
+      ],
+      "metadataClean": true
+    },
+    {
+      "path": "references/generated/study-20261009/study-layout-v02.png",
+      "sha256": "0958d7c4bf93000bb26d6a19cb471cc7d09486e3d21b51ea5a71804fdfad499d",
+      "size": [
+        1600,
+        1440
+      ],
+      "metadataClean": true
+    },
+    {
+      "path": "references/generated/study-20261009/study-concept-v01.png",
+      "sha256": "44b82572a9779bf59702e862adea3de70ee87e160bfc727fa699c6e664f75a81",
+      "size": [
+        1448,
+        1086
+      ],
+      "metadataClean": true
+    },
+    {
+      "path": "references/generated/study-20261009/study-concept-v02.png",
+      "sha256": "e93f1511cc1fbdf6dedf7ef08364ef623eda9fe0badd9d1c86da4675cea6ca59",
+      "size": [
+        1448,
+        1086
+      ],
+      "metadataClean": true
+    },
+    {
+      "path": "references/generated/study-20261009/study-concept-v03.png",
+      "sha256": "b5d6bcb48e32f77b2d51e1d8a870c015c41f6df2436d1e723852d3099fe46d6e",
+      "size": [
+        1448,
+        1086
+      ],
+      "metadataClean": true
+    },
+    {
+      "path": "references/generated/study-20261009/study-concept-v04.png",
+      "sha256": "e390f91a5d7374e8447e97c5e803ba62d5b7f47cc183ac0366562411e5f073a4",
+      "size": [
+        1448,
+        1086
+      ],
+      "metadataClean": true
+    }
+  ],
+  "originalPixelsPreserved": true,
+  "pending": [
+    "User visual acceptance",
+    "Site/manufacturer dimensions and window survey",
+    "Seat-board/partition/fixing load capacity",
+    "Full 3D geometry and human/dynamic review"
+  ]
+}

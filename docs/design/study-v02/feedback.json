@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-09",
+  "quotes": {
+    "window": "窗户应该是更接近这个效果（请参考实景照片）",
+    "bookcase": "书柜的底柜伸出来应该会长一些，可以坐人",
+    "selectedWindowReference": "references/generated/study-20261009/study-concept-v01.png"
+  },
+  "reference": {
+    "path": "references/generated/study-20261009/study-concept-v01.png",
+    "original": "/Users/cY/.codex/generated_images/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/exec-2b7a9e67-b874-4714-a0b4-af97744161db.png"
+  },
+  "supersedes": [
+    "study-v01 low-sill concept v02",
+    "study-v01 bottom-depth 55cm assumption"
+  ],
+  "scope": "furnished concept and dimension review; no shared 3D or website update requested"
+}

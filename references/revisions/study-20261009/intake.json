@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-09",
+  "scope": "local study design discussion",
+  "entries": [
+    {
+      "name": "01-west-bookcase.jpg",
+      "role": "书柜外观；不采用图中桌椅/吊灯",
+      "originalAttachment": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-fc5db21a-5a1d-422a-9ac7-56898a450f0a.jpg",
+      "originalArchive": ".asset-work/tmp/study-v01/intake/01-west-bookcase.jpg",
+      "originalSha256": "17a9d731972a2b3a1da9dc8d5caa54392a6af9467ef4a5632d61c71a9d41f435",
+      "projectCopy": "references/revisions/study-20261009/01-west-bookcase.jpg",
+      "projectSha256": "ff7ea2ac1833a8032c0f3502a1995e4a82c7729f279f8239918514513e463075",
+      "dimensions": [
+        4096,
+        3072
+      ],
+      "decodedRgbaUnchanged": true,
+      "metadataRemoved": true
+    },
+    {
+      "name": "02-standing-desk.png",
+      "role": "木桌面与黑色双柱升降桌架；1400×700mm来自用户文字",
+      "originalAttachment": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-68ab4403-d42a-4859-97d4-ef1f65ed0603.png",
+      "originalArchive": ".asset-work/tmp/study-v01/intake/02-standing-desk.png",
+      "originalSha256": "82b8d69a8ab23504d2cee7102aaf29fc795ab5059b054f3cb3074d890dd2c399",
+      "projectCopy": "references/revisions/study-20261009/02-standing-desk.png",
+      "projectSha256": "dd4afd470d44e55d75fc87752a1ea5844bddb950c23fc046b01829d2ba4d5178",
+      "dimensions": [
+        982,
+        730
+      ],
+      "decodedRgbaUnchanged": true,
+      "metadataRemoved": true
+    },
+    {
+      "name": "03-dark-chair-dimensions.png",
+      "role": "采用深色款；尺寸来自附件标注",
+      "originalAttachment": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-b5a568b1-c97e-4d89-8204-8355bf0c8163.png",
+      "originalArchive": ".asset-work/tmp/study-v01/intake/03-dark-chair-dimensions.png",
+      "originalSha256": "711d5b59996eacc0c305e85bbf1e88f4b37f218875525be00d24628be3eeeea7",
+      "projectCopy": "references/revisions/study-20261009/03-dark-chair-dimensions.png",
+      "projectSha256": "896c00ce279cbaa4e83c2d85a92e7fb77c24c00e42458d13b1f96bb66f99c434",
+      "dimensions": [
+        1316,
+        1725
+      ],
+      "decodedRgbaUnchanged": true,
+      "metadataRemoved": true
+    }
+  ],
+  "visualReview": "Furniture and dimensions inspected; shop signs/promotional text and small framed print in reference 1 retained as provenance, not selected for website publication"
+}

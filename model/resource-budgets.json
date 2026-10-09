@@ -1,7 +1,7 @@
 {
-  "version": "metric-v09",
+  "version": "metric-v13",
   "firstScreenBytes": 1048576,
-  "webModelBytes": 35651584,
-  "interactive3DBytes": 37748736,
-  "basis": "Measured two-package web model 33,437,976 bytes / 31.89 MiB. Preserve original 4K Tripo PBR plus existing architecture resolution and standard quality. Architecture uses unchanged-quality KTX2; sofa uses original image encoding because its KTX2 trial exceeded Workers 25 MiB. Aggregate web budget 34 MiB and interactive budget 36 MiB; every individual published file must remain under 25 MiB. No image resizing."
+  "webModelBytes": 39845888,
+  "interactive3DBytes": 41943040,
+  "basis": "Study adds a full-resolution walnut/stone/glass/mesh package. Measured first candidate aggregate37,644,964 bytes /35.90MiB; keep all textures and original sofa PBR. Aggregate web budget38MiB, interactive40MiB; first-screen1MiB and each-file25MiB unchanged. Final bytes checked in release receipt."
 }

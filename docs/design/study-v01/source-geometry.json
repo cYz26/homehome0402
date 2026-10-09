@@ -1,0 +1,915 @@
+{
+  "date": "2026-10-09",
+  "source": {
+    "path": "model/apartment.json",
+    "sha256": "93d4f2b50ebe6dc58abe8b6a1d251dd0e7054506b6fd65cab92e2d0ae9e5c5e7",
+    "version": "metric-v11"
+  },
+  "measuredScene": {
+    "path": "public/releases/metric-v10/architecture.json",
+    "sha256": "7bc49619f861fc9eee53c8a57ca325eeabdcbb5cf4bf9c61b42b53a7fbbd52c5",
+    "version": "metric-v10"
+  },
+  "room": {
+    "id": "xroom",
+    "name": "X 空间",
+    "bounds": [
+      3.7,
+      0,
+      6.5,
+      3.4
+    ],
+    "label": [
+      5.1,
+      1.65
+    ],
+    "camera": [
+      6,
+      6.6
+    ],
+    "look": [
+      5.9,
+      0.5
+    ],
+    "drawing": "北侧分段 2.80 × 3.40 m",
+    "finish": "直铺木地板 · 深色门扇沿东西方向贴墙收纳",
+    "polygon": [
+      [
+        3.7,
+        0
+      ],
+      [
+        6.5,
+        0
+      ],
+      [
+        6.5,
+        3.4
+      ],
+      [
+        3.7,
+        3.4
+      ]
+    ],
+    "areaBasis": "model-estimate",
+    "walkEntry": [
+      5.1,
+      1.8
+    ]
+  },
+  "walls": [
+    {
+      "type": "wall",
+      "id": "north",
+      "a": [
+        0.9,
+        0
+      ],
+      "b": [
+        9.1,
+        0
+      ],
+      "thickness": 0.2,
+      "openings": [
+        [
+          0.85,
+          2.55,
+          0.28,
+          2.55
+        ],
+        [
+          3.12,
+          4.85,
+          0.28,
+          2.55
+        ],
+        [
+          6.1,
+          7.35,
+          0.94,
+          2.48
+        ]
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "northwest_x",
+      "a": [
+        3.7,
+        0
+      ],
+      "b": [
+        3.7,
+        3.4
+      ],
+      "thickness": 0.16,
+      "openings": []
+    },
+    {
+      "type": "wall",
+      "id": "x_kitchen",
+      "a": [
+        6.5,
+        0
+      ],
+      "b": [
+        6.5,
+        3.4
+      ],
+      "thickness": 0.16,
+      "openings": []
+    }
+  ],
+  "window": {
+    "id": "X_north",
+    "x": 4.885,
+    "t": 0,
+    "width": 1.73,
+    "sill": 0.28,
+    "head": 2.55,
+    "count": 2,
+    "orientation": 0,
+    "room": "xroom"
+  },
+  "sourceDoor": {
+    "id": "north-sliding",
+    "type": "door",
+    "name": "X 空间推拉门",
+    "sourceNodes": [
+      "X_retracted_leaf_0_fluting_fixed",
+      "X_retracted_leaf_0_fluting_upper",
+      "X_retracted_leaf_0_glass_lower",
+      "X_retracted_leaf_0_glass_upper",
+      "X_retracted_leaf_0_pull",
+      "X_retracted_leaf_0_rail",
+      "X_retracted_leaf_0_rail.001",
+      "X_retracted_leaf_0_stile_lower",
+      "X_retracted_leaf_0_stile_lower.001",
+      "X_retracted_leaf_0_stile_upper",
+      "X_retracted_leaf_0_stile_upper.001",
+      "X_retracted_leaf_1_fluting_fixed",
+      "X_retracted_leaf_1_fluting_upper",
+      "X_retracted_leaf_1_glass_lower",
+      "X_retracted_leaf_1_glass_upper",
+      "X_retracted_leaf_1_pull",
+      "X_retracted_leaf_1_rail",
+      "X_retracted_leaf_1_rail.001",
+      "X_retracted_leaf_1_stile_lower",
+      "X_retracted_leaf_1_stile_lower.001",
+      "X_retracted_leaf_1_stile_upper",
+      "X_retracted_leaf_1_stile_upper.001",
+      "X_retracted_leaf_2_fluting_fixed",
+      "X_retracted_leaf_2_fluting_upper",
+      "X_retracted_leaf_2_glass_lower",
+      "X_retracted_leaf_2_glass_upper",
+      "X_retracted_leaf_2_pull",
+      "X_retracted_leaf_2_rail",
+      "X_retracted_leaf_2_rail.001",
+      "X_retracted_leaf_2_stile_lower",
+      "X_retracted_leaf_2_stile_lower.001",
+      "X_retracted_leaf_2_stile_upper",
+      "X_retracted_leaf_2_stile_upper.001"
+    ],
+    "roomIds": [
+      "xroom",
+      "circulation"
+    ],
+    "materials": [
+      "Subtle_glass_fluting",
+      "Smoked_ribbed_sliding_glass",
+      "Graphite_frame"
+    ],
+    "basis": "图纸定位 / 照片估读，非现场实测",
+    "placement": {
+      "center": [
+        6.7220001,
+        3.5262503,
+        1.2675
+      ],
+      "size": [
+        0.9820004,
+        0.0744991,
+        2.485
+      ]
+    },
+    "templatePlacement": {
+      "center": [
+        6.7220001,
+        3.5262503,
+        1.2675
+      ],
+      "size": [
+        0.9820004,
+        0.0744991,
+        2.485
+      ]
+    }
+  },
+  "architectureRoom": {
+    "id": "xroom",
+    "name": "X 空间",
+    "bounds": [
+      3.7,
+      0,
+      6.5,
+      3.4
+    ],
+    "label": [
+      5.1,
+      1.65
+    ],
+    "camera": [
+      6,
+      6.6
+    ],
+    "look": [
+      5.9,
+      0.5
+    ],
+    "drawing": "北侧分段 2.80 × 3.40 m",
+    "finish": "直铺木地板 · 深色门扇沿东西方向贴墙收纳",
+    "polygon": [
+      [
+        3.7,
+        0
+      ],
+      [
+        6.5,
+        0
+      ],
+      [
+        6.5,
+        3.4
+      ],
+      [
+        3.7,
+        3.4
+      ]
+    ],
+    "areaBasis": "model-estimate",
+    "walkEntry": [
+      5.1,
+      1.8
+    ],
+    "polygons": [
+      [
+        [
+          [
+            3.7800000000000002,
+            0.1
+          ],
+          [
+            6.42,
+            0.1
+          ],
+          [
+            6.42,
+            3.4
+          ],
+          [
+            3.7800000000000002,
+            3.4
+          ],
+          [
+            3.7800000000000002,
+            0.1
+          ]
+        ]
+      ]
+    ],
+    "area": 8.71,
+    "areaLabel": "模型估算；按空间多边形扣除墙体，不含测绘认证"
+  },
+  "measuredEntryParts": [
+    {
+      "name": "North_sliding_track",
+      "entityId": "north-surround",
+      "layer": "upper",
+      "min": [
+        3.67,
+        2.5075,
+        -9.404
+      ],
+      "max": [
+        9.01,
+        2.5165,
+        -9.396
+      ]
+    },
+    {
+      "name": "North_sliding_track.001",
+      "entityId": "north-surround",
+      "layer": "upper",
+      "min": [
+        3.67,
+        2.5075,
+        -9.38
+      ],
+      "max": [
+        9.01,
+        2.5165,
+        -9.372
+      ]
+    },
+    {
+      "name": "North_sliding_track.002",
+      "entityId": "north-surround",
+      "layer": "upper",
+      "min": [
+        3.67,
+        2.5075,
+        -9.356
+      ],
+      "max": [
+        9.01,
+        2.5165,
+        -9.348
+      ]
+    },
+    {
+      "name": "North_sliding_track.003",
+      "entityId": "north-surround",
+      "layer": "upper",
+      "min": [
+        3.67,
+        2.5075,
+        -9.33
+      ],
+      "max": [
+        9.01,
+        2.5165,
+        -9.322
+      ]
+    },
+    {
+      "name": "North_surround_X_left_lower",
+      "entityId": "north-surround",
+      "layer": "fixed",
+      "min": [
+        3.696,
+        0.015,
+        -9.6
+      ],
+      "max": [
+        3.744,
+        1.15,
+        -9.39
+      ]
+    },
+    {
+      "name": "North_surround_X_left_upper",
+      "entityId": "north-surround",
+      "layer": "upper",
+      "min": [
+        3.696,
+        1.15,
+        -9.6
+      ],
+      "max": [
+        3.744,
+        2.54,
+        -9.39
+      ]
+    },
+    {
+      "name": "North_surround_X_right_lower",
+      "entityId": "north-surround",
+      "layer": "fixed",
+      "min": [
+        6.441,
+        0.015,
+        -9.6
+      ],
+      "max": [
+        6.489,
+        1.15,
+        -9.39
+      ]
+    },
+    {
+      "name": "North_surround_X_right_upper",
+      "entityId": "north-surround",
+      "layer": "upper",
+      "min": [
+        6.441,
+        1.15,
+        -9.6
+      ],
+      "max": [
+        6.489,
+        2.54,
+        -9.39
+      ]
+    },
+    {
+      "name": "North_surround_X_threshold",
+      "entityId": "north-surround",
+      "layer": "fixed",
+      "min": [
+        3.744,
+        0.018,
+        -9.519
+      ],
+      "max": [
+        6.441,
+        0.026,
+        -9.471
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_0_fluting_fixed",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.272,
+        0.055,
+        -9.395
+      ],
+      "max": [
+        7.1532,
+        1.15,
+        -9.395
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_0_fluting_upper",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.272,
+        1.15,
+        -9.395
+      ],
+      "max": [
+        7.1532,
+        2.475,
+        -9.395
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_0_glass_lower",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.252,
+        0.045,
+        -9.404
+      ],
+      "max": [
+        7.168,
+        1.15,
+        -9.396
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_0_glass_upper",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.252,
+        1.15,
+        -9.404
+      ],
+      "max": [
+        7.168,
+        2.48,
+        -9.396
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_0_pull",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.289,
+        0.9,
+        -9.3895
+      ],
+      "max": [
+        6.301,
+        1.14,
+        -9.3845
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_0_rail",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.231,
+        0.025,
+        -9.411
+      ],
+      "max": [
+        7.189,
+        0.045,
+        -9.389
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_0_rail.001",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.231,
+        2.49,
+        -9.411
+      ],
+      "max": [
+        7.189,
+        2.51,
+        -9.389
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_0_stile_lower",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.231,
+        0.025,
+        -9.411
+      ],
+      "max": [
+        6.249,
+        1.15,
+        -9.389
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_0_stile_lower.001",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        7.171,
+        0.025,
+        -9.411
+      ],
+      "max": [
+        7.189,
+        1.15,
+        -9.389
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_0_stile_upper",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.231,
+        1.15,
+        -9.411
+      ],
+      "max": [
+        6.249,
+        2.51,
+        -9.389
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_0_stile_upper.001",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        7.171,
+        1.15,
+        -9.411
+      ],
+      "max": [
+        7.189,
+        2.51,
+        -9.389
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_1_fluting_fixed",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.284,
+        0.055,
+        -9.371
+      ],
+      "max": [
+        7.1652,
+        1.15,
+        -9.371
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_1_fluting_upper",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.284,
+        1.15,
+        -9.371
+      ],
+      "max": [
+        7.1652,
+        2.475,
+        -9.371
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_1_glass_lower",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.264,
+        0.045,
+        -9.38
+      ],
+      "max": [
+        7.18,
+        1.15,
+        -9.372
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_1_glass_upper",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.264,
+        1.15,
+        -9.38
+      ],
+      "max": [
+        7.18,
+        2.48,
+        -9.372
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_1_pull",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.301,
+        0.9,
+        -9.3655
+      ],
+      "max": [
+        6.313,
+        1.14,
+        -9.3605
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_1_rail",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.243,
+        0.025,
+        -9.387
+      ],
+      "max": [
+        7.201,
+        0.045,
+        -9.365
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_1_rail.001",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.243,
+        2.49,
+        -9.387
+      ],
+      "max": [
+        7.201,
+        2.51,
+        -9.365
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_1_stile_lower",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.243,
+        0.025,
+        -9.387
+      ],
+      "max": [
+        6.261,
+        1.15,
+        -9.365
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_1_stile_lower.001",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        7.183,
+        0.025,
+        -9.387
+      ],
+      "max": [
+        7.201,
+        1.15,
+        -9.365
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_1_stile_upper",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.243,
+        1.15,
+        -9.387
+      ],
+      "max": [
+        6.261,
+        2.51,
+        -9.365
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_1_stile_upper.001",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        7.183,
+        1.15,
+        -9.387
+      ],
+      "max": [
+        7.201,
+        2.51,
+        -9.365
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_2_fluting_fixed",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.296,
+        0.055,
+        -9.347
+      ],
+      "max": [
+        7.1772,
+        1.15,
+        -9.347
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_2_fluting_upper",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.296,
+        1.15,
+        -9.347
+      ],
+      "max": [
+        7.1772,
+        2.475,
+        -9.347
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_2_glass_lower",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.276,
+        0.045,
+        -9.356
+      ],
+      "max": [
+        7.192,
+        1.15,
+        -9.348
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_2_glass_upper",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.276,
+        1.15,
+        -9.356
+      ],
+      "max": [
+        7.192,
+        2.48,
+        -9.348
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_2_pull",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.313,
+        0.9,
+        -9.3415
+      ],
+      "max": [
+        6.325,
+        1.14,
+        -9.3365
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_2_rail",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.255,
+        0.025,
+        -9.363
+      ],
+      "max": [
+        7.213,
+        0.045,
+        -9.341
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_2_rail.001",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.255,
+        2.49,
+        -9.363
+      ],
+      "max": [
+        7.213,
+        2.51,
+        -9.341
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_2_stile_lower",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        6.255,
+        0.025,
+        -9.363
+      ],
+      "max": [
+        6.273,
+        1.15,
+        -9.341
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_2_stile_lower.001",
+      "entityId": "north-sliding",
+      "layer": "fixed",
+      "min": [
+        7.195,
+        0.025,
+        -9.363
+      ],
+      "max": [
+        7.213,
+        1.15,
+        -9.341
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_2_stile_upper",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        6.255,
+        1.15,
+        -9.363
+      ],
+      "max": [
+        6.273,
+        2.51,
+        -9.341
+      ]
+    },
+    {
+      "name": "X_retracted_leaf_2_stile_upper.001",
+      "entityId": "north-sliding",
+      "layer": "upper",
+      "min": [
+        7.195,
+        1.15,
+        -9.363
+      ],
+      "max": [
+        7.213,
+        2.51,
+        -9.341
+      ]
+    }
+  ]
+}

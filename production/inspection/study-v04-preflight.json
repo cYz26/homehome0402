@@ -1,0 +1,25 @@
+{
+  "mode": "read-only source guard; native project modeling pipeline",
+  "checks": [
+    {
+      "asset": "bookcase",
+      "status": "awaiting_geometry",
+      "decision_sha256": "26956ef9bc21c332624caa3ae0a322842d484f1d3b0ad8832f077635436fe455"
+    },
+    {
+      "asset": "desk",
+      "status": "awaiting_geometry",
+      "decision_sha256": "e19e672dfe5cba79d2870fbd205e7201b7ea1aaf889c4bdb5511f1a4d59019b1"
+    },
+    {
+      "asset": "chair",
+      "status": "awaiting_geometry",
+      "decision_sha256": "bdcceb628afdae6564eb9bd759b460cc7c2d16fdd63a52935282d32f705cc5d6"
+    },
+    {
+      "asset": "side_cabinet",
+      "status": "awaiting_geometry",
+      "decision_sha256": "ab4a610323053012c60e7548cf5f67b18efbe32ab3503d8d8cdc513c3944c64e"
+    }
+  ]
+}

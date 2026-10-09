@@ -1,0 +1,94 @@
+{
+  "modelVersion": "metric-v13",
+  "sourceSha256": "31f66d22bfa021bba1ea96ad08bd6f720ce301498ec9e69d5d99610a87eebc51",
+  "specSha256": "c96b6453e5badc614a5bdca00c459dd923be8808ff1548a4639e9137be4a0aea",
+  "engine": "Cycles",
+  "blender": "5.2.1 LTS",
+  "views": [
+    {
+      "id": "study",
+      "name": "书房 / 确认设计的实际模型",
+      "mode": "interior",
+      "camera": [
+        5.22,
+        3.7,
+        1.55
+      ],
+      "target": [
+        5.14,
+        0.7,
+        1.28
+      ],
+      "fov": 61,
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": "study-cabinet",
+      "name": "书房柜体实际模型",
+      "mode": "interior",
+      "camera": [
+        6.2,
+        1.78,
+        1.35
+      ],
+      "target": [
+        4.04,
+        1.78,
+        1.29
+      ],
+      "fov": 64,
+      "width": 1448,
+      "height": 1086
+    }
+  ],
+  "images": {
+    "study": {
+      "view": {
+        "id": "study",
+        "name": "书房 / 确认设计的实际模型",
+        "mode": "interior",
+        "camera": [
+          5.22,
+          3.7,
+          1.55
+        ],
+        "target": [
+          5.14,
+          0.7,
+          1.28
+        ],
+        "fov": 61,
+        "width": 1448,
+        "height": 1086
+      },
+      "sourceSha256": "31f66d22bfa021bba1ea96ad08bd6f720ce301498ec9e69d5d99610a87eebc51",
+      "specSha256": "c96b6453e5badc614a5bdca00c459dd923be8808ff1548a4639e9137be4a0aea",
+      "sha256": "91377e0b20e551ca26b55cf7b5e3b9972b4404c8ec4a93bd563cde7cba80addd"
+    },
+    "study-cabinet": {
+      "view": {
+        "id": "study-cabinet",
+        "name": "书房柜体实际模型",
+        "mode": "interior",
+        "camera": [
+          6.2,
+          1.78,
+          1.35
+        ],
+        "target": [
+          4.04,
+          1.78,
+          1.29
+        ],
+        "fov": 64,
+        "width": 1448,
+        "height": 1086
+      },
+      "sourceSha256": "31f66d22bfa021bba1ea96ad08bd6f720ce301498ec9e69d5d99610a87eebc51",
+      "specSha256": "c96b6453e5badc614a5bdca00c459dd923be8808ff1548a4639e9137be4a0aea",
+      "sha256": "2753b5d818a75d01abc9270e5c0716f2ffd58764f5106d60ef01c645dd73050f"
+    }
+  },
+  "role": "Same-model Cycles renders; not site photographs"
+}
