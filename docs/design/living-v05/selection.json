@@ -1,0 +1,254 @@
+{
+  "id": "home402-living-v05",
+  "date": "2026-10-09",
+  "user_acceptance": {
+    "scope": "Television requested; new cabinet option not yet selected",
+    "model_acceptance": "metric-v10 pending user visual review"
+  },
+  "user_authorization": {
+    "quotes": [
+      "将客厅沙发对面的墙面壁画改为电视，就还是电视墙的布置",
+      "下面的电视柜也可以给几个方案效果图看下"
+    ],
+    "scope": "Replace wall painting with television; cabinet concepts for discussion. No remote push or deployment request."
+  },
+  "selected_previews": [
+    {
+      "path": "references/generated/tv-wall-20261009/tv-cabinet-a-v01.png",
+      "sha256": "a5c38106b1fbcb1c50fc632b4c7a51d14099236481be7287e2d4ce25b7e6b11b"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009/tv-cabinet-b-v01.png",
+      "sha256": "5b36af1a123bf23ba26f6dc39a1d15a821b9d08fcf6913bbc6008407d3ca2948"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009/tv-cabinet-c-v01.png",
+      "sha256": "77b787b8c2af0b036095e57e743fb25f59f590c4d0922722a73e3b0ec4e64bd7"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009/dining-living-tv-v01.png",
+      "sha256": "49f126450edd9e0ac5d749e62f8d373fc6489b0f4943cc0122463a86bdf168f8"
+    }
+  ],
+  "independent_references": [
+    {
+      "asset": "sofa",
+      "path": "references/generated/living-furniture-20261008/independent/sofa-r1.png",
+      "sha256": "207695f478249e0cc3c0237bf35495dc5f7329ea32095d8625b551228840f25d",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority."
+    },
+    {
+      "asset": "table-set",
+      "path": "references/generated/living-furniture-20261008/independent/table-set-r1.png",
+      "sha256": "4a65f62b4e248e9eaafedbe317f39a0878de9bf1134435e1fe02977b6e367fce",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority.",
+      "role": "historical table legs; chair and bench style reference"
+    },
+    {
+      "asset": "cabinet-wall",
+      "path": "references/generated/living-furniture-20261008/independent/cabinet-wall-r1.png",
+      "sha256": "aa13e2a456bf13bd343234b845e447586e89a64e3f9cdca6e2fc5f445ff431d7",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority."
+    },
+    {
+      "asset": "armchair",
+      "path": "references/generated/living-furniture-20261008/independent/armchair-r1.png",
+      "sha256": "43e618e18adcb950c8ac878ecef8d39090282f446a656b7231ff99be470b215d",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority."
+    }
+  ],
+  "baseline": {
+    "version": "metric-v09",
+    "spec": "model/baseline-v09/apartment.json",
+    "source": {
+      "path": "art_src/apartment-v09.blend",
+      "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
+    },
+    "release": {
+      "path": "model/baseline-v09/release.json",
+      "sha256": "fdd2f405d7c566f639a294fd0961a4d761bb29277abd69814154dedc49e51d4d"
+    }
+  },
+  "target_version": "metric-v10",
+  "confirmed": {
+    "noTV": false,
+    "noCoffeeTable": true,
+    "sofaFacesCabinet": true,
+    "steppedCabinet": "retained baseline, alternatives pending user selection",
+    "tableFunctions": [
+      "dining",
+      "study",
+      "work"
+    ],
+    "tableLengthAboveMeters": 2.5,
+    "chairsOnOneSide": true,
+    "oneBenchOnOppositeSide": true,
+    "wallArt": "replaced by wall-mounted television per latest user request"
+  },
+  "dimensions": {
+    "tableLengthMeters": 2.8,
+    "basis": "Latest user-provided dimension drawing supersedes visual assumption",
+    "remaining": "bounded inferred sizes recorded in apartment.json"
+  },
+  "route": "reference_blender for new static furniture; existing v05 templates retained for architecture",
+  "table_revision": {
+    "supersedes": "2.6m preview assumption and table-set-r1 geometry",
+    "latest_user_request": "多功能桌参考这些图再还原的一致一些",
+    "reference_directory": "references/revisions/living-furniture-20261008/table-r2",
+    "dimensions_from_drawing_m": {
+      "length": 2.8,
+      "width": 0.9,
+      "height": 0.75,
+      "topThickness": 0.07,
+      "endOverhang": 0.26,
+      "storageLength": 0.6,
+      "storageDepth": 0.7,
+      "storageHeight": 0.68,
+      "openKneeSpan": 1.6,
+      "panelThickness": 0.08,
+      "panelDepth": 0.53
+    },
+    "scope": "Use new table structure and dimensions; keep one chair side/opposite bench, sofa/cabinet placement and the approved overall palette.",
+    "standalone_reference": {
+      "path": "references/generated/living-furniture-20261008/independent/table-set-r2.png",
+      "sha256": "1133dab518a9471da066c60b61cbf333c29614d13f71bee59afb6830c0d355d3"
+    },
+    "inferred": "Tray count six and concealed hardware are interpretation; drawing dimensions are not site/manufacturer certification.",
+    "source_files": [
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/02-table-structure.png",
+        "sha256": "d87e274d3b53df93e09dcf2922895f48a6fcc0bffd725d5ae72a6d182ed868b0"
+      },
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/03-table-dimensions.png",
+        "sha256": "e3265533252e8c37d1768698ffc93ddc9639d05530656a64f7a73baaea8d3a80"
+      },
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/01-table-photo.png",
+        "sha256": "662895561aad8eac07a1aed7fd114e2b81401321eb847c59038a0626278844d0"
+      }
+    ]
+  },
+  "metadata_cleanup": "All four new AI PNG project copies stripped without pixel re-encoding; decoded RGBA equality verified 2026-10-09. Original image_gen output retained.",
+  "texture_reference": {
+    "path": "references/generated/living-furniture-20261008/walnut-albedo-r1.png",
+    "sha256": "121afabfb94e86456e7159985650f9453efd6d433417e6fef536d387f2de2586",
+    "role": "AI albedo interpretation for furniture; no manufacturer texture certification"
+  },
+  "previous_context": {
+    "path": "docs/design/living-v04/selection.json",
+    "sha256": "453add2bd5e71122dfe2ee949ab229e2e4d17763f1eb2408fdc9c852326a781e"
+  },
+  "previous_decision": {
+    "path": "docs/design/living-v04/DECISION.md",
+    "sha256": "3f926319c1bacef407486a9cde76f7554026f5312e5381d88f907a56fe07fb45"
+  },
+  "feedback": [
+    {
+      "path": "references/revisions/living-furniture-20261008/feedback-r3/01-web-cabinet-height.png",
+      "sha256": "873c285fea09c3bcea44783b9b34d7fcbf03aceb096afa296b031a1b147ac7d8"
+    },
+    {
+      "path": "references/revisions/living-furniture-20261008/feedback-r3/02-artwork-request.png",
+      "sha256": "187e20e98e7a7ec163bb8f5369af1f745bf3a3f63215ba88df912def2d87ad66"
+    }
+  ],
+  "calibration": {
+    "cabinetHeights": [
+      0.78,
+      0.5,
+      1.16
+    ],
+    "cabinetWidth": 3.8,
+    "basis": "bounded layout comparison against v02 wall view; dimensions remain assumptions, camera not known",
+    "television": {
+      "width": 1.66,
+      "height": 0.934,
+      "centerHeight": 1.35,
+      "basis": "provisional 75 inch screen layout"
+    }
+  },
+  "display_effects": [
+    {
+      "id": "scheme-overview",
+      "title": "电视墙 · 客餐厅整体",
+      "source": "references/generated/tv-wall-20261009/dining-living-tv-v01.png",
+      "kind": "AI 方案效果图",
+      "designVersion": "living-v05",
+      "caption": "原客餐厅大画改为电视，保持多功能桌、沙发和中央空地；柜体沿用原布局。AI 图为外观预览，非模型渲染或实拍。"
+    },
+    {
+      "id": "scheme-tv-a",
+      "title": "电视柜 A · 悬浮浅木",
+      "source": "references/generated/tv-wall-20261009/tv-cabinet-a-v01.png",
+      "kind": "AI 方案效果图",
+      "designVersion": "living-v05",
+      "caption": "一字悬浮柜、浅木抽屉及底部留空，视觉轻盈。 新柜方案待用户选择，图中尺寸与细节不证明当前 3D；75 英寸为方案假设。"
+    },
+    {
+      "id": "scheme-tv-b",
+      "title": "电视柜 B · 落地胡桃木",
+      "source": "references/generated/tv-wall-20261009/tv-cabinet-b-v01.png",
+      "kind": "AI 方案效果图",
+      "designVersion": "living-v05",
+      "caption": "连续低柜、封闭收纳及设备开放格，材质呼应餐桌。 新柜方案待用户选择，图中尺寸与细节不证明当前 3D；75 英寸为方案假设。"
+    },
+    {
+      "id": "scheme-tv-c",
+      "title": "电视柜 C · 高低组合",
+      "source": "references/generated/tv-wall-20261009/tv-cabinet-c-v01.png",
+      "kind": "AI 方案效果图",
+      "designVersion": "living-v05",
+      "caption": "延续胡桃木高低模块、开放格与玻璃柜组合。 新柜方案待用户选择，图中尺寸与细节不证明当前 3D；75 英寸为方案假设。"
+    }
+  ],
+  "sofa_revision": {
+    "handoff": "production/sofa-tripo-r1/handoff.json",
+    "source": {
+      "path": "art_src/furniture/sofa-tripo-r1-ready.blend",
+      "sha256": "012aaf0d133d13effc1d0a0c3d61ce800d6118c5bdfdd2e438a0d6fb585e2ec7",
+      "object": "Furniture_living_sofa",
+      "localFront": "+X",
+      "floorElevation": 0.016
+    },
+    "normalization": "Uniform 2.4m width assumption; full original 4K PBR retained",
+    "placement": {
+      "position": [
+        4.17,
+        10.4
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "eastward_clearance_adjustment_m": 0.05
+    },
+    "provider_metadata": "Unknown task id, settings and cost; user supplied ZIP originally contained FBX and 4K images"
+  },
+  "lineage_v03": "docs/design/living-v03/selection.json",
+  "cabinet_options": {
+    "A": "悬浮浅木柜",
+    "B": "落地胡桃木收纳柜",
+    "C": "高低错落胡桃木组合柜",
+    "selection": null,
+    "status": "pending; baseline cabinet retained in model"
+  },
+  "television_revision": {
+    "logical_id": "living-art-panels",
+    "recipe": "television",
+    "dimensions_m": [
+      1.66,
+      0.064,
+      0.934
+    ],
+    "center_height_m": 1.35,
+    "nominal_diagonal_inches": 75,
+    "basis": "agent proposal, no product selected or site mounting dimensions certified",
+    "lamp_avoidance": "moved to high cabinet outer end"
+  },
+  "lineage_v04": "docs/design/living-v04/selection.json"
+}

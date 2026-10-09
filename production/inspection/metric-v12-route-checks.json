@@ -1,0 +1,91 @@
+{
+  "status": "source_bound",
+  "policy_sha256": "73835a2855c27aa15fff13dc89a485108e4c5f45a39c14ee34dba91f85fe72d2",
+  "decision_path": "production/routes/home402_cabinet_wall.json",
+  "decision_sha256": "dfe039ffdc2d013c36ac4a963b522cdd08cc5dad123c54cef470a763af1c3535",
+  "decision": {
+    "schema_version": 1,
+    "asset_id": "home402_cabinet_wall",
+    "task_id": "home402-living-v07-to-metric-v12",
+    "intent": "revise_static",
+    "route": "existing_blender",
+    "decision_basis": {
+      "path": "docs/design/living-v07/DECISION.md",
+      "sha256": "0fa2672d6c383e9e759437ac6337b3cf098cbe5f764a4727b6702d109a908805"
+    },
+    "route_override": null,
+    "allowed_changes": [
+      "Apply user-selected C: remove two full-height tall-cabinet nodes, extend existing low cabinet to 3.56m with five drawers, move table lamp and corresponding under-cabinet lighting. Preserve exact TV, wall panels/black side/stone, photographed outlet locations, adjacent doorway, all other architecture, original sofa PBR and CAD table. Save A/B images and original generation records unchanged."
+    ],
+    "references": [
+      {
+        "path": "references/generated/tv-wall-20261009-r2/cabinet-c-floating-door-r2.png",
+        "sha256": "297f62b0782e36c93b32ecf4a63696607ed0989fbef72f066ea9a2d169b04323"
+      },
+      {
+        "path": "references/revisions/tv-wall-20261009/01-existing-wall.png",
+        "sha256": "896f3e9a1b6c18f9601d417de9234a033c054db697185b0560defdcebad76106"
+      },
+      {
+        "path": "references/revisions/tv-wall-20261009/04-wall-side-and-door.png",
+        "sha256": "31e1025876633ff5a35d9e1949e1d3d715021629cf70807dbde51c1f5f5e24aa"
+      }
+    ],
+    "geometry": {
+      "source": {
+        "path": "art_src/apartment-v11.blend",
+        "sha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea"
+      },
+      "inspection": {
+        "path": "production/inspection/home402_cabinet_wall-metric-v11.json",
+        "sha256": "57f17f824206e3d2ba3949318456dd510df1ab63261802d8c2147c721b69f901"
+      },
+      "basis": "existing",
+      "generation": null
+    },
+    "reuse": []
+  },
+  "inputs": {
+    "art_src/apartment-v11.blend": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+    "docs/design/living-v07/DECISION.md": "0fa2672d6c383e9e759437ac6337b3cf098cbe5f764a4727b6702d109a908805",
+    "production/inspection/home402_cabinet_wall-metric-v11.json": "57f17f824206e3d2ba3949318456dd510df1ab63261802d8c2147c721b69f901",
+    "production/inspection/metric-v11-source.json": "7f42617082593f8a8a39bf2ee17d70a2645403c0cf0f7aafe548a49b8e9a1fdb",
+    "references/generated/tv-wall-20261009-r2/cabinet-c-floating-door-r2.png": "297f62b0782e36c93b32ecf4a63696607ed0989fbef72f066ea9a2d169b04323",
+    "references/revisions/tv-wall-20261009/01-existing-wall.png": "896f3e9a1b6c18f9601d417de9234a033c054db697185b0560defdcebad76106",
+    "references/revisions/tv-wall-20261009/04-wall-side-and-door.png": "31e1025876633ff5a35d9e1949e1d3d715021629cf70807dbde51c1f5f5e24aa"
+  },
+  "geometry_inventory": {
+    "schema_version": 1,
+    "source": {
+      "path": "art_src/apartment-v11.blend",
+      "sha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea"
+    },
+    "meshes": [
+      "door_southeast_upper",
+      "Furniture_living_art_panels",
+      "Furniture_living_cabinet_items",
+      "Furniture_living_floor_lamp",
+      "Furniture_living_modular_cabinet",
+      "Furniture_living_table_lamp",
+      "Furniture_living_tall_cabinet",
+      "Furniture_living_tall_cabinet_upper",
+      "Furniture_living_tv_outlets",
+      "Furniture_living_tv_stone",
+      "Furniture_living_tv_stone_upper",
+      "Furniture_living_tv_wall_finish",
+      "Furniture_living_tv_wall_finish_upper",
+      "jamb_far_southeast_lower",
+      "jamb_far_southeast_upper",
+      "jamb_southeast_lower",
+      "jamb_southeast_upper",
+      "lintel_southeast",
+      "wall_living_se_1_1_upper"
+    ],
+    "armatures": [],
+    "actions": [],
+    "evidence": {
+      "path": "production/inspection/metric-v11-source.json",
+      "sha256": "7f42617082593f8a8a39bf2ee17d70a2645403c0cf0f7aafe548a49b8e9a1fdb"
+    }
+  }
+}

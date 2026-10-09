@@ -1,0 +1,255 @@
+{
+  "config": {
+    "argv": [
+      "/Users/cY/.nvm/versions/node/v24.13.0/bin/node",
+      "/Users/cY/dev/homehome402/node_modules/.bin/playwright",
+      "test",
+      "--list",
+      "--reporter=json"
+    ],
+    "configFile": "/Users/cY/dev/homehome402/playwright.config.mjs",
+    "rootDir": "/Users/cY/dev/homehome402/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/cY/dev/homehome402/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "",
+        "name": "",
+        "testDir": "/Users/cY/dev/homehome402/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.mjs"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "browser.spec.mjs",
+      "file": "browser.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "desktop: homepage preload, model, linked rooms, section, view restore, screenshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-8cd04fcbc9907410b673",
+          "file": "browser.spec.mjs",
+          "line": 76,
+          "column": 3
+        },
+        {
+          "title": "phone: homepage preload, model, linked rooms, section, view restore, screenshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-98c8af1a4653ddbb5195",
+          "file": "browser.spec.mjs",
+          "line": 76,
+          "column": 3
+        },
+        {
+          "title": "standard rendering, north-up plan, current reference and on-demand HD retain the selected view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-4f6eb49cee3088492d60",
+          "file": "browser.spec.mjs",
+          "line": 322,
+          "column": 1
+        }
+      ],
+      "suites": []
+    },
+    {
+      "title": "section-render.spec.mjs",
+      "file": "section-render.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "legacy AO positive control reproduces cap stripes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c90fc3a24022a12031de-5c9be17c9e094970987c",
+          "file": "section-render.spec.mjs",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "web: section caps stay flat through zoom with full AO and shadows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c90fc3a24022a12031de-4d4eafc4f707a88f4af1",
+          "file": "section-render.spec.mjs",
+          "line": 31,
+          "column": 3
+        },
+        {
+          "title": "hd: section caps stay flat through zoom with full AO and shadows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c90fc3a24022a12031de-5f17d329da95e95bea8b",
+          "file": "section-render.spec.mjs",
+          "line": 31,
+          "column": 3
+        }
+      ],
+      "suites": []
+    },
+    {
+      "title": "worker-auth.spec.mjs",
+      "file": "worker-auth.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "desktop: password gate protects assets and restores the shared view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c52f8b12d926c47a04a4-416e1f70c6bd05fa8688",
+          "file": "worker-auth.spec.mjs",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "phone: password gate protects assets and restores the shared view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c52f8b12d926c47a04a4-2d4cb6efb015843792f2",
+          "file": "worker-auth.spec.mjs",
+          "line": 4,
+          "column": 3
+        }
+      ],
+      "suites": []
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-09T07:10:31.346Z",
+    "duration": 55.09100000000001,
+    "expected": 0,
+    "skipped": 20,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

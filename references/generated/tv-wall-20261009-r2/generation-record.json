@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-09",
+  "tool": "built-in image_gen",
+  "role": "reference interpretation and local design previews; no dimensional certification",
+  "independent": {
+    "path": "references/generated/tv-wall-20261009-r2/independent-wall-r1.png",
+    "original": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-b45279ee-9e08-41d9-a973-555e92b75adc.png",
+    "raw_sha256": "053d0b12f72993b9dd79fab02d81cad438b3d4c3bc1f92e1cdfe045f0256130f",
+    "prompt": "references/generated/tv-wall-20261009-r2/prompts/independent-assembly.txt",
+    "selection_authority": "agent under user-authorized 85 inch television and cabinetry scene revision",
+    "selection": "selected for complete wall/cabinet assembly shape comparison; left cabinet preserves right stone and light strip",
+    "project_sha256": "d94d4cf6d6644d6df04ed171765cb770076a77fdbc7bc18ea75f52ee3ea0d3f9",
+    "metadata_cleanup": "Non-display chunks removed; original raw digest retained, decoded RGBA unchanged."
+  },
+  "inputs": [
+    "references/revisions/tv-wall-20261009/01-existing-wall.png",
+    "references/revisions/tv-wall-20261009/02-tv-cabinet-style.png"
+  ],
+  "revision2": {
+    "original": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-51b3edb2-a692-48f3-907e-d9e12bcd514f.png",
+    "rawSha256": "05d3b086260c451412ea055ebf052dfbe8ed881bb781fe2ebcf6d8b9feb24b7e",
+    "projectPath": "references/generated/tv-wall-20261009-r2/independent-wall-r2.png",
+    "prompt": "references/generated/tv-wall-20261009-r2/prompts/independent-assembly-r2.txt",
+    "role": "AI revision reference; lowered cabinet and expressed projection; superseded tall cabinet width/door count by next user request",
+    "sha256": "66ff6b5ec14b8f56718be1c3f4dfae69e86a14e1ab3255d387d0a60387c29e77"
+  },
+  "metadataCleanup": "Project PNG copies stripped of non-display metadata; RGBA byte equality checked; original generator outputs retained.",
+  "revision3": {
+    "original": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-6cf663f7-dd59-41d1-b43e-b0bd87bd9c70.png",
+    "originalSha256": "615758fd3b269b224a975005d76591cb300261fafc666e03a4e94f0599de4cd9",
+    "path": "references/generated/tv-wall-20261009-r2/independent-wall-r3.png",
+    "sha256": "8c26fe63d31062e2b20dfa5ae936ad36084c5ffc587033fe73006fbaac79b60f",
+    "pixelsUnchanged": true,
+    "prompt": "references/generated/tv-wall-20261009-r2/prompts/independent-assembly-r3.txt",
+    "role": "single door / low cabinet assembly; side-return interpretation superseded by latest annotated photo"
+  },
+  "comparisonDoorR1": [
+    {
+      "original": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-b8ca7a13-89df-4c3a-9dc4-68c99787b5a7.png",
+      "originalSha256": "1d91a2c6ddda530bf87735a46a19a735a2880fd8fd3224598bbe9afc3b8c817c",
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-a-single-door-r1.png",
+      "sha256": "54b3374c7aa0105d17da2247474c1028904cfa3c11325b42b51d13eac4485716",
+      "pixelsUnchanged": true,
+      "prompt": "references/generated/tv-wall-20261009-r2/prompts/cabinet-a-single-v01.txt",
+      "role": "superseded doorway and black-return interpretation; preserve history"
+    },
+    {
+      "original": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-4a7b377e-b3e7-4b2c-b162-c26f0c64fdfb.png",
+      "originalSha256": "5b207df6af2468b5bd5e9f80a461c161b4afc2c35ea60568b723237b503e46ab",
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-b-combination-door-r1.png",
+      "sha256": "08763dfd1b02c34f3b5e7e25202eded213ef9f984ba389faa85cd7fc2541c347",
+      "pixelsUnchanged": true,
+      "prompt": "references/generated/tv-wall-20261009-r2/prompts/cabinet-b-combination-v01.txt",
+      "role": "superseded doorway and black-return interpretation; preserve history"
+    },
+    {
+      "original": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-14b32354-d847-422b-aaf6-d07781db0637.png",
+      "originalSha256": "86e58e63be4031263756a686da86fe6d211ac710fbc57a64b5804736b5fe6831",
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-c-floating-door-r1.png",
+      "sha256": "8bbf2678c47d9ac6c2aea31747d07627d2408640bf2240243e30f54ceb25a756",
+      "pixelsUnchanged": true,
+      "prompt": "references/generated/tv-wall-20261009-r2/prompts/cabinet-c-floating-v01.txt",
+      "role": "superseded doorway and black-return interpretation; preserve history"
+    }
+  ],
+  "comparisonDoorR2": [
+    {
+      "title": "A · 单门立柜＋低位悬空柜",
+      "original": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-4be0b266-a03a-475a-a1d1-d520c284cb35.png",
+      "rawSha256": "10bd5df3b0f14e36367e1b1e679e47b968579bba828dc641422c0701583b4e5d",
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-a-single-door-r2.png",
+      "sha256": "36bd85adba67bc279462771c8208530ebc81d65a9408b0178112b96f66ce6266",
+      "prompt": "references/generated/tv-wall-20261009-r2/prompts/cabinet-a-single-door-r2.txt",
+      "inputs": [
+        {
+          "path": ".asset-work/tmp/tv-wall-v11/pre-camera-r2/renders/tv-door.png",
+          "sha256": "2e0e0237d6442035e44230c796441f0bfa7d337705a879bf7422da8605d62601",
+          "originalCreationPath": ".asset-work/renders/metric-v11/tv-door.png",
+          "preservedBecause": "Later overall camera revision rebuilds source; this exact image was consumed by image_gen.",
+          "projectCopy": {
+            "path": "references/model/metric-v11/tv-door-ai-input-r2.png",
+            "sha256": "bba1b5cbbf4a2c8b3e23cae7080022a46877aabe9431967660c33a25607743f8",
+            "rgbaUnchanged": true
+          }
+        },
+        {
+          "path": "references/revisions/tv-wall-20261009/04-wall-side-and-door.png",
+          "sha256": "31e1025876633ff5a35d9e1949e1d3d715021629cf70807dbde51c1f5f5e24aa"
+        }
+      ],
+      "role": "AI cabinet comparison; approximate photography / geometry, not a model render or site survey",
+      "pixelsUnchanged": true
+    },
+    {
+      "title": "B · 高低组合柜",
+      "original": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-35f83e1e-75da-4bb4-ab2b-9c3b65a25412.png",
+      "rawSha256": "093681a415c7db91958806b211e0c2d27bba6ee16e476fa8e05f00a0e454a644",
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-b-combination-door-r2.png",
+      "sha256": "dfbc9d3a9b72170fd3133f248bb5fad6c877fc41b6a1433d78d7855459ba5960",
+      "prompt": "references/generated/tv-wall-20261009-r2/prompts/cabinet-b-combination-door-r2.txt",
+      "inputs": [
+        {
+          "path": ".asset-work/tmp/tv-wall-v11/pre-camera-r2/renders/tv-door.png",
+          "sha256": "2e0e0237d6442035e44230c796441f0bfa7d337705a879bf7422da8605d62601",
+          "originalCreationPath": ".asset-work/renders/metric-v11/tv-door.png",
+          "preservedBecause": "Later overall camera revision rebuilds source; this exact image was consumed by image_gen.",
+          "projectCopy": {
+            "path": "references/model/metric-v11/tv-door-ai-input-r2.png",
+            "sha256": "bba1b5cbbf4a2c8b3e23cae7080022a46877aabe9431967660c33a25607743f8",
+            "rgbaUnchanged": true
+          }
+        },
+        {
+          "path": "references/revisions/tv-wall-20261009/04-wall-side-and-door.png",
+          "sha256": "31e1025876633ff5a35d9e1949e1d3d715021629cf70807dbde51c1f5f5e24aa"
+        },
+        {
+          "path": "references/revisions/tv-wall-20261009/03-combination-style.png",
+          "sha256": "dd8a87d62c3074a07c65558c2fd29a06138de3f0b69edf3816198cd53afbb0c0"
+        }
+      ],
+      "role": "AI cabinet comparison; approximate photography / geometry, not a model render or site survey",
+      "pixelsUnchanged": true
+    },
+    {
+      "title": "C · 一字悬空柜",
+      "original": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-165716d1-51ec-4280-9689-bc0d2a011976.png",
+      "rawSha256": "a3df8e952031ee029a0724f24a10bfa814442adcdd6948bb19e649f52a34ca2a",
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-c-floating-door-r2.png",
+      "sha256": "297f62b0782e36c93b32ecf4a63696607ed0989fbef72f066ea9a2d169b04323",
+      "prompt": "references/generated/tv-wall-20261009-r2/prompts/cabinet-c-floating-door-r2.txt",
+      "inputs": [
+        {
+          "path": ".asset-work/tmp/tv-wall-v11/pre-camera-r2/renders/tv-door.png",
+          "sha256": "2e0e0237d6442035e44230c796441f0bfa7d337705a879bf7422da8605d62601",
+          "originalCreationPath": ".asset-work/renders/metric-v11/tv-door.png",
+          "preservedBecause": "Later overall camera revision rebuilds source; this exact image was consumed by image_gen.",
+          "projectCopy": {
+            "path": "references/model/metric-v11/tv-door-ai-input-r2.png",
+            "sha256": "bba1b5cbbf4a2c8b3e23cae7080022a46877aabe9431967660c33a25607743f8",
+            "rgbaUnchanged": true
+          }
+        },
+        {
+          "path": "references/revisions/tv-wall-20261009/04-wall-side-and-door.png",
+          "sha256": "31e1025876633ff5a35d9e1949e1d3d715021629cf70807dbde51c1f5f5e24aa"
+        }
+      ],
+      "role": "AI cabinet comparison; approximate photography / geometry, not a model render or site survey",
+      "pixelsUnchanged": true
+    }
+  ]
+}

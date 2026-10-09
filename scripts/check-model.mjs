@@ -142,26 +142,38 @@ if(spec.furnishings?.length) {
     approx(panel[0][1]-high,1.6);approx(low-top[0][1],.26);approx(top[1][1]-panel[1][1],.26);
     assert.equal(parts.filter(c=>c.name.includes('_pullout_tray_')).length,6);
   });
-  check('Furnishing preserves every v06 architectural part and no-TV no-coffee-table layout',()=>{
+  check('Furnishing preserves v06 architecture outside the explicitly revised photo doorway, facing arrangement and open center',()=>{
     const old=json('model/baseline-v06/validation.json');
+    const photoDoorNodes=new Set(spec.revisions.filter(r=>r.id==='living-v06-photo-tv-wall').flatMap(r=>r.nodeNames??[]));
     const allowedStudy=new Set(spec.studyDecision ? [
       ...spec.entities.find(e=>e.windowId==='X_north').sourceNodes,
       'wall_north_3_0_lower',
     ] : []);
     for(const [name,o] of Object.entries(old.objects)){
+      if(photoDoorNodes.has(name))continue;
       assert.ok(nodes[name],name);assert.equal(nodes[name].entityId,o.entityId,name);assert.equal(nodes[name].triangles,o.triangles,name);
       if(allowedStudy.has(name))continue;
       for(let side=0;side<2;side++)for(let axis=0;axis<3;axis++)approx(nodes[name].bounds[side][axis],o.bounds[side][axis]);
     }
-    assert.ok(!spec.entities.some(e=>/coffee-table|television/.test(e.id)));
+    assert.ok(!spec.entities.some(e=>/coffee-table/.test(e.id)));
     const sofa=spec.furnishings.find(c=>c.id==='living-sofa'),cabinet=spec.furnishings.find(c=>c.id==='living-modular-cabinet');
     assert.deepEqual(sofa.front,[1,0]);assert.deepEqual(cabinet.front,[-1,0]);assert.ok(sofa.position[0]<cabinet.position[0]);
     const table=spec.furnishings.find(c=>c.id==='dining-work-table'),bench=spec.furnishings.find(c=>c.id==='dining-bench');
-    const chairs=spec.furnishings.filter(c=>c.recipe==='chair');assert.equal(chairs.length,3);
+    const chairs=spec.furnishings.filter(c=>c.recipe==='chair');assert.equal(chairs.length,4);
     assert.ok(bench.position[0]<table.position[0]);for(const c of chairs)assert.ok(c.position[0]>table.position[0]);
   });
+  check('Fourth dining chair matches the existing chair and remains distinct in actual geometry',()=>{
+    const added=nodes.Furniture_dining_chair_4,existing=nodes.Furniture_dining_chair_1;
+    assert.equal(added.entityId,'dining-chair-4');assert.equal(added.triangles,existing.triangles);
+    assert.deepEqual(added.materials,existing.materials);
+    for(let axis=0;axis<3;axis++)approx(added.bounds[1][axis]-added.bounds[0][axis],existing.bounds[1][axis]-existing.bounds[0][axis]);
+    for(const chair of spec.furnishings.filter(c=>c.recipe==='chair'&&c.id!=='dining-chair-4')){
+      const other=nodes[chair.node].bounds;
+      assert.ok(added.bounds[0][1]-other[1][1]>.02,'chair footprints overlap');
+    }
+  });
   const cabinet=spec.furnishings.find(c=>c.id==='living-modular-cabinet');
-  if(cabinet.moduleHeights) check('Measured cabinet tiers and single artwork follow the revised hanging layout',()=>{
+  if(cabinet.moduleHeights) check('Measured cabinet tiers and wall display follow the revised hanging layout',()=>{
     const parts=furniture.components.find(c=>c.id===cabinet.id).parts;
     let t=cabinet.position[1]-cabinet.dimensions[0]/2;
     cabinet.moduleWidths.forEach((w,i)=>{
@@ -169,20 +181,110 @@ if(spec.furnishings?.length) {
       const group=parts.filter(p=>Math.abs((p.bounds[0][1]+p.bounds[1][1])/2-y)<w/2-.012);
       assert.ok(group.length>5);approx(Math.max(...group.map(p=>p.bounds[1][2])),cabinet.moduleHeights[i]);t+=w;
     });
-    const art=spec.furnishings.find(c=>c.recipe==='framed_art');
-    const bounds=nodes[art.node].bounds;
-    approx(bounds[1][1]-bounds[0][1],2);approx(bounds[1][2]-bounds[0][2],.9);
-    approx((bounds[0][2]+bounds[1][2])/2,1.57);
-    assert.ok(!furniture.components.find(c=>c.id===art.id).parts.some(p=>p.name.includes('panel_board')));
-    // Painting spans the middle low modules and stops before the high end module.
-    assert.ok(art.position[1]+art.dimensions[0]/2 < cabinet.position[1]+cabinet.dimensions[0]/2-cabinet.moduleWidths.at(-1));
+    const display=spec.furnishings.find(c=>c.id==='living-art-panels');
+    const bounds=nodes[display.node].bounds;
+    approx(bounds[1][1]-bounds[0][1],display.dimensions[0]);approx(bounds[1][2]-bounds[0][2],display.dimensions[2]);
+    approx((bounds[0][2]+bounds[1][2])/2,display.centerHeight);
+    assert.ok(!furniture.components.find(c=>c.id===display.id).parts.some(p=>p.name.includes('panel_board')));
+    // The wall display spans the low modules and stops before the high end module.
+    assert.ok(display.position[1]+display.dimensions[0]/2 < cabinet.position[1]+cabinet.dimensions[0]/2-cabinet.moduleWidths.at(-1));
   });
+  const television=spec.furnishings.find(c=>c.recipe==='television');
+  if(television) check('Television replaces the painting with a clear screen and stable query identity',()=>{
+    assert.equal(television.id,'living-art-panels');assert.deepEqual(television.front,[-1,0]);
+    assert.ok(!spec.furnishings.some(c=>c.recipe==='framed_art'||c.recipe==='art_panels'));
+    const parts=furniture.components.find(c=>c.id===television.id).parts;
+    assert.equal(parts.filter(p=>p.name.includes('_tv_screen_')).length,1);
+    assert.ok(!nodes[television.node].materials.includes('Furniture_art_atlas'));
+    const screen=parts.find(p=>p.name.includes('_tv_screen_')).bounds;
+    const cabinetTop=cabinet.moduleHeights ? Math.max(...cabinet.moduleHeights.slice(1,-1)) : nodes[cabinet.node].bounds[1][2];
+    assert.ok(screen[0][2]>cabinetTop+.20);
+    const lamp=spec.furnishings.find(c=>c.id==='living-table-lamp');
+    const lampBounds=nodes[lamp.node].bounds;
+    // Lamp is beside the screen in the wall elevation; a different depth cannot hide overlap.
+    assert.ok(lampBounds[1][1]<screen[0][1]||lampBounds[0][1]>screen[1][1]);
+    const screenMaterial=spec.furnitureMaterials.find(m=>m.id==='Furniture_tv_screen');
+    assert.ok(!screenMaterial.texture);assert.equal(screenMaterial.emissionStrength,0);
+    if(television.diagonalInches===85){
+      const width=screen[1][1]-screen[0][1],height=screen[1][2]-screen[0][2];
+      assert.ok(Math.abs(Math.hypot(width,height)/.0254-85)<.02);
+      assert.ok(Math.abs(width/height-16/9)<.002);
+    }
+  });
+  if(cabinet.recipe==='floating_cabinet') {
+    const component=id=>furniture.components.find(c=>c.id===id);
+    check('Low floating cabinet has a real floor gap, closed drawers and socket service clearance',()=>{
+      const parts=component(cabinet.id).parts;
+      const body=parts.filter(p=>p.name.includes('_carcass_')).map(p=>p.bounds);
+      approx(Math.min(...body.map(b=>b[0][2]))-.016,.12);
+      approx(Math.max(...body.map(b=>b[1][2]))-.016,.42);
+      assert.equal(parts.filter(p=>p.name.includes('_drawer_face_')).length,5);
+      assert.ok(!parts.some(p=>p.name.includes('plinth')));
+      const back=parts.find(p=>p.name.includes('_removable_service_back_')).bounds;
+      const sockets=component('living-tv-outlets').parts.filter(p=>p.name.includes('_plate_'));
+      for(const p of sockets){assert.ok(p.bounds[0][0]-back[1][0]>.065);assert.ok(p.bounds[0][2]>.136+.018&&p.bounds[1][2]<.436-.018);}
+      const brackets=parts.filter(p=>p.name.includes('_wall_bracket_'));
+      for(const p of sockets)for(const b of brackets)assert.ok(b.bounds[1][1]<p.bounds[0][1]||b.bounds[0][1]>p.bounds[1][1]);
+    });
+    check('Photographed socket groups retain their common height and middle-wall placement',()=>{
+      const parts=component('living-tv-outlets').parts.filter(p=>p.name.includes('_plate_'));
+      assert.equal(parts.length,2);
+      for(const [label,t,width] of [['triple',10.26,.258],['single',10.92,.086]]){
+        const b=parts.find(p=>p.name.includes('_outlet_'+label+'_')).bounds;
+        approx(12.9-(b[0][1]+b[1][1])/2,t);approx((b[0][2]+b[1][2])/2,.355);approx(b[1][1]-b[0][1],width);
+      }
+      const cab=nodes[cabinet.node].bounds;
+      for(const p of parts)assert.ok(p.bounds[0][1]>cab[0][1]&&p.bounds[1][1]<cab[1][1]);
+    });
+    check('Selected C extends the low cabinet and exposes the wall side and bedroom doorway',()=>{
+      assert.ok(!spec.entities.some(e=>e.id==='living-tall-cabinet'));
+      assert.ok(!Object.keys(nodes).some(name=>name.startsWith('Furniture_living_tall_cabinet')));
+      assert.ok(!furniture.components.some(c=>c.id.startsWith('living-tall-cabinet')));
+      const cab=nodes[cabinet.node].bounds;
+      approx(cab[1][1]-cab[0][1],3.56);approx(cab[1][0]-cab[0][0],.40);
+      approx(12.9-cab[1][1],8.57);approx(12.9-cab[0][1],12.13);
+      const parts=component('living-tv-wall-finish').parts;
+      const side=parts.find(p=>p.name.includes('_left_black_return_')).bounds;
+      const light=parts.find(p=>/_vertical_light_\d+$/.test(p.name)).bounds;
+      assert.ok(side[0][1]-cab[1][1]>.02);
+      assert.ok(cab[0][1]-light[1][1]>.02);
+      const jamb=nodes.jamb_far_southeast_lower.bounds;
+      assert.ok(jamb[0][1]-cab[1][1]>.04);
+      assert.ok(nodes.door_southeast_lower.bounds[0][0]>cab[1][0]);
+      const stone=nodes.Furniture_living_tv_stone.bounds;
+      assert.ok(cab[0][1]>stone[1][1]);
+    });
+    check('Photo wall retains four vertical panel bays, continuous stone and warm light across cut height',()=>{
+      for(const id of ['living-tv-wall-finish','living-tv-wall-finish-upper'])assert.equal(component(id).parts.filter(p=>p.name.includes('_greige_panel_')).length,4);
+      for(const tag of ['greige_panel_0','greige_panel_1','greige_panel_2','greige_panel_3','vertical_light','left_black_return']){
+        const low=component('living-tv-wall-finish').parts.find(p=>p.name.includes('_'+tag+'_')).bounds;
+        const high=component('living-tv-wall-finish-upper').parts.find(p=>p.name.includes('_'+tag+'_')).bounds;
+        approx(low[1][2],high[0][2]);for(const a of [0,1])for(const side of [0,1])approx(low[side][a],high[side][a]);
+      }
+      assert.ok(nodes.Furniture_living_tv_stone.materials.includes('Grey_olive_niche_stone'));
+      assert.ok(nodes.Furniture_living_tv_wall_finish.materials.includes('Furniture_tv_wall_light'));
+    });
+    check('Black return is the built-out wall side beside a tall flush bedroom doorway',()=>{
+      const parts=component('living-tv-wall-finish').parts;
+      const side=parts.find(p=>p.name.includes('_left_black_return_')).bounds;
+      assert.ok(side[1][0]-side[0][0]>.22);assert.ok(side[1][1]-side[0][1]<.009);
+      const grey=parts.find(p=>p.name.includes('_greige_panel_0_')).bounds;
+      approx(grey[0][0],7.198);
+      const doorway=spec.doors.find(c=>c.id==='southeast');assert.deepEqual(doorway.hinge,[7.5,7.62]);approx(doorway.width,.90);
+      assert.equal(doorway.finish.style,'flush');approx(doorway.finish.openingHeight,2.62);
+      const jamb=nodes.jamb_far_southeast_upper.bounds;approx(jamb[1][1]-jamb[0][1],.010);approx(jamb[1][2],2.62);
+      assert.ok(nodes.jamb_southeast_upper.materials.includes('Warm_white_plaster'));
+      approx(nodes.wall_living_se_1_1_upper.bounds[0][2],2.62);
+    });
+  }
 }
 if(spec.studyDecision) {
   const old=json('model/baseline-v09/validation.json'), furniture=json('model/furniture-measurements.json');
-  check('Study change preserves all other published architecture and furniture parts',()=>{
+  check('Recorded living and study changes preserve every other v09 part',()=>{
     const allowed=new Set([...spec.entities.find(e=>e.windowId==='X_north').sourceNodes,'wall_north_3_0_lower']);
+    const livingChanges=new Set(spec.revisions.find(r=>r.id==='living-study-integrated')?.livingChangedNodesFromV09 ?? []);
     for(const [name,o] of Object.entries(old.objects)) {
+      if(livingChanges.has(name))continue;
       const current=nodes[name];assert.ok(current,name);assert.equal(current.entityId,o.entityId,name);
       if(allowed.has(name))continue;
       assert.equal(current.triangles,o.triangles,name);
@@ -213,6 +315,30 @@ if(spec.studyDecision) {
     assert.ok(12.9-side[0][1]<3.10,'cabinet reaches southern sliding door');
     assert.deepEqual(spec.rooms.find(r=>r.id==='xroom').walkEntry,[5.30,2.97]);
     assert.match(spec.entities.find(e=>e.id==='study-bookcase').basis,/移椅/);
+  });
+}
+const integration=spec.revisions.find(r=>r.id==='living-study-integrated');
+if(integration) {
+  const assertPart=(name,original)=>{
+    const actual=nodes[name];assert.ok(actual,name);
+    assert.equal(actual.entityId,original.entityId,name);assert.equal(actual.triangles,original.triangles,name);
+    // Blender numeric suffixes vary with import order; compare stable material identities.
+    if(original.materials)assert.deepEqual(actual.materials.map(m=>m.replace(/\.\d{3}$/,'')),original.materials.map(m=>m.replace(/\.\d{3}$/,'')),name);
+    for(let side=0;side<2;side++)for(let axis=0;axis<3;axis++)approx(actual.bounds[side][axis],original.bounds[side][axis]);
+  };
+  check('Integrated source preserves every published study part and all other unmodified published parts',()=>{
+    const baseline=json(integration.studyBaseline),livingChanges=new Set(integration.livingChangedNodesFromV09);
+    const priorSpec=json('model/baseline-v13/apartment.json');
+    const studyMaterialIds=new Set(Object.entries(baseline.objects).filter(([name])=>name.startsWith('Furniture_study_')).flatMap(([,part])=>part.materials.map(m=>m.replace(/\.\d{3}$/,''))));
+    for(const prior of priorSpec.furnitureMaterials.filter(m=>studyMaterialIds.has(m.id)))assert.deepEqual(spec.furnitureMaterials.find(m=>m.id===prior.id),prior,prior.id);
+    for(const [name,part] of Object.entries(baseline.objects))if(!livingChanges.has(name))assertPart(name,part);
+  });
+  check('Integrated source preserves the complete latest living model outside the published study window change',()=>{
+    const baseline=json(integration.livingBaseline);
+    const studyChanges=new Set([...spec.entities.find(e=>e.windowId==='X_north').sourceNodes,'wall_north_3_0_lower']);
+    for(const [name,part] of Object.entries(baseline.objects))if(!studyChanges.has(name))assertPart(name,part);
+    const expectedNames=new Set([...Object.keys(baseline.objects),...spec.modelPackages.find(p=>p.id==='study').entityIds.flatMap(id=>spec.entities.find(e=>e.id===id).sourceNodes)]);
+    assert.deepEqual(Object.keys(nodes).sort(),[...expectedNames].sort());
   });
 }
 const result={checks,passed:checks.filter(c=>c.pass).length,total:checks.length};

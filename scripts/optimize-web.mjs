@@ -59,33 +59,39 @@ for (const pack of modelPackages(spec)) {
   }
   // KTX compression first; geometry encoding last prevents decode/re-encode quantization drift.
   await io.write(`${temp}/textures.glb`, doc);
-  const ktx = process.env.KTX_BIN ?? path.resolve(".asset-work/tools/ktx/bin");
-  const result = spawnSync(
-    "node",
-    [
-      "node_modules/@gltf-transform/cli/bin/cli.js",
-      "uastc",
-      `${temp}/textures.glb`,
-      `${temp}/basis.glb`,
-      "--level",
-      "4",
-      "--rdo",
-      "false",
-      "--zstd",
-      "18",
-      "--jobs",
-      "4",
-    ],
-    {
-      stdio: "inherit",
-      env: { ...process.env, PATH: `${ktx}${path.delimiter}${process.env.PATH}` },
-    },
-  );
-  if (result.status !== 0)
-    throw Error(
-      "KTX2 encoding failed. Install official KTX-Software and set KTX_BIN to its bin directory.",
+  // Reuse the previously verified full-resolution image policy for large PBR packages.
+  const preserveOriginal = budgets.originalImagePackages?.includes(pack.id) ?? false;
+  let packed;
+  if (preserveOriginal) packed = await io.read(`${temp}/textures.glb`);
+  else {
+    const ktx = process.env.KTX_BIN ?? path.resolve(".asset-work/tools/ktx/bin");
+    const result = spawnSync(
+      "node",
+      [
+        "node_modules/@gltf-transform/cli/bin/cli.js",
+        "uastc",
+        `${temp}/textures.glb`,
+        `${temp}/basis.glb`,
+        "--level",
+        "4",
+        "--rdo",
+        "false",
+        "--zstd",
+        "18",
+        "--jobs",
+        "4",
+      ],
+      {
+        stdio: "inherit",
+        env: { ...process.env, PATH: `${ktx}${path.delimiter}${process.env.PATH}` },
+      },
     );
-  let packed = await io.read(`${temp}/basis.glb`);
+    if (result.status !== 0)
+      throw Error(
+        "KTX2 encoding failed. Install official KTX-Software and set KTX_BIN to its bin directory.",
+      );
+    packed = await io.read(`${temp}/basis.glb`);
+  }
   await packed.transform(
     meshopt({
       encoder: MeshoptEncoder,
@@ -108,7 +114,7 @@ for (const pack of modelPackages(spec)) {
   if (ids.size !== expected.size || [...ids].some(id => !expected.has(id)))
     throw Error(`Semantic coverage lost in ${pack.id}`);
   let size = (await fs.stat(destination)).size;
-  let textureCodec = "KTX2 UASTC level 4, RDO disabled";
+  let textureCodec = preserveOriginal ? "Original image encoding at full resolution; Meshopt geometry" : "KTX2 UASTC level 4, RDO disabled";
   if (size > 25 * 1024 ** 2) {
     // Retain original full-resolution image encoding if UASTC cannot fit the
     // hosting file limit. Never resize or reduce the image/geometry quality.

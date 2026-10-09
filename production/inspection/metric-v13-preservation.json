@@ -1,0 +1,37 @@
+{
+  "version": "metric-v13",
+  "baseline": "metric-v12",
+  "sourceSha256": "75b885fae30d292c246af44c4c265a54477c9eb47d7a3804b8bfb9fc9d91ebcc",
+  "specSha256": "9c66e5c9630d4884fc74feb1df28eee3e024744458fafaf0aadfd7b74357b7f5",
+  "unchangedCount": 712,
+  "checks": "bounds, triangles, material names and entity IDs",
+  "changedNodes": [],
+  "removedNodes": [],
+  "addedNodes": [
+    "Furniture_dining_chair_4"
+  ],
+  "priorCWallTVOutletsPreserved": true,
+  "original4KPBRPreserved": true,
+  "priorReferencesPreserved": [
+    {
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-a-single-door-r2.png",
+      "sha256": "36bd85adba67bc279462771c8208530ebc81d65a9408b0178112b96f66ce6266"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-b-combination-door-r2.png",
+      "sha256": "dfbc9d3a9b72170fd3133f248bb5fad6c877fc41b6a1433d78d7855459ba5960"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-c-floating-door-r2.png",
+      "sha256": "297f62b0782e36c93b32ecf4a63696607ed0989fbef72f066ea9a2d169b04323"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009-r2/generation-record.json",
+      "sha256": "2845b9100aa77003d4fb64d3679cd4eda3b0332e1b6d7e491b5e37446e4b298d"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009-r2/REVIEW.md",
+      "sha256": "3128a6120aa3af95098991aed4805d1f799ec92d8fafc54b3ec4f327185fd49e"
+    }
+  ]
+}

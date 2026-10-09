@@ -322,6 +322,89 @@ def framed_art(c):
     for zz in [z-h/2+f/2,z+h/2-f/2]:box('frame_horizontal',(0,.005,zz),(w-2*f,d,f),'Furniture_dark_wood',.002)
     mesh('original_artwork',[(-w/2+f,d/2+.001,z-h/2+f),(w/2-f,d/2+.001,z-h/2+f),(w/2-f,d/2+.001,z+h/2-f),(-w/2+f,d/2+.001,z+h/2-f)],[(0,1,2,3)],'Furniture_art_atlas',[(0,0),(1,0),(1,1),(0,1)])
 
+def television(c):
+    # One stable wall-display entity: actual chassis, dark screen and rear mount.
+    # No painting texture or screen emission; preserve the room's warm lighting.
+    w,d,h=c['dimensions'];z=c['centerHeight'];b=c['bezelWidth']
+    box('tv_chassis',(0,.005,z),(w,d-.014,h),'Furniture_tv_frame',.004)
+    box('tv_rear_mount',(0,-d/2+.008,z),(.44,.016,.25),'Furniture_charcoal',.002)
+    box('tv_screen',(0,d/2-.002,z),(w-2*b,.004,h-2*b),'Furniture_tv_screen',.001)
+
+def floating_cabinet(c):
+    L,D,H=c['dimensions'];z=c['bottom'];b=.018
+    # Closed drawers retain a clear rear service void for the existing sockets.
+    for u in [-L/2+b/2,L/2-b/2]:box('carcass_side',(u,0,z+H/2),(b,D,H),'Furniture_walnut',.001)
+    for h in [z+b/2,z+H-b/2]:box('carcass_horizontal',(0,0,h),(L-2*b,D,b),'Furniture_walnut',.001)
+    rear=-D/2+c['rearServiceDepth']
+    box('removable_service_back',(0,rear+b/2,z+H/2),(L-2*b,b,H-2*b),'Furniture_dark_wood',.001)
+    w=L/c['drawers'];gap=.003
+    for i in range(c['drawers']):
+        u=-L/2+(i+.5)*w
+        box('drawer_face',(u,D/2-.009,z+H/2),(w-gap,.018,H-.014),'Furniture_walnut',.001)
+        box('drawer_bottom',(u,(rear+D/2)/2,z+.047),(w-.045,D/2-rear-.039,.012),'Furniture_dark_wood',.001)
+    # Brackets sit clear of both photographed outlet groups, without a plinth.
+    for u in [-L/2+.12,L/2-.12]:box('wall_bracket',(u,-D/2+.005,z+H/2),(.035,.010,H-.06),'Furniture_charcoal',0)
+    box('underside_light',(0,.10,z-.002),(L-.14,.014,.003),'Furniture_tv_wall_light',0)
+
+def tall_cabinet(c):
+    L,D,H=c['dimensions'];z=c['bottom'];b=.018
+    for u in [-L/2+b/2,L/2-b/2]:box('carcass_side',(u,0,z+H/2),(b,D,H),'Furniture_walnut',.001)
+    box('carcass_back',(0,-D/2+b/2,z+H/2),(L-2*b,b,H),'Furniture_dark_wood',.001)
+    # Layer joins are internal; continuous doors have no horizontal line at cut height.
+    if c.get('base'):box('carcass_bottom',(0,0,z+b/2),(L-2*b,D,b),'Furniture_walnut',.001)
+    if c.get('top'):box('carcass_top',(0,0,z+H-b/2),(L-2*b,D,b),'Furniture_walnut',.001)
+    bands=[(z,z+H)]
+    line=c.get('drawerBand')
+    if line and z<line<z+H:bands=[(z,line-.002),(line+.002,z+H)]
+    for low,high in bands:
+        for i in range(c['doors']):
+            w=L/c['doors'];u=-L/2+(i+.5)*w
+            door=box('vertical_door',(u,D/2-.009,(low+high)/2),(w-.003,.018,high-low),'Furniture_walnut',0)
+            # Keep vertical wood grain only on the new tall cabinet, leaving old UVs intact.
+            for uv in door.data.uv_layers.active.data:uv.uv=(uv.uv.y,uv.uv.x)
+
+def tv_wall_finish(c):
+    L,D,H=c['dimensions'];z=c['bottom'];cursor=-L/2
+    box('joint_back',(0,-.008,z+H/2),(L,.006,H),'Furniture_charcoal',0)
+    # The photographed black strip is the north-facing SIDE of a built-out wall,
+    # not a broad black decoration on its frontal plane.
+    core=c['buildupDepth']
+    box('wall_buildup_core',(0,-D/2-core/2,z+H/2),(L,core,H),'Furniture_tv_wall_panel',0)
+    box('left_black_return',(cursor+.002,-D/2-core/2,z+H/2),(.008,core+D+.008,H),'Furniture_charcoal',0)
+    for i,w in enumerate(c['panelWidths']):
+        box('greige_panel_'+str(i),(cursor+w/2,0,z+H/2),(w-.003,D,H),'Furniture_tv_wall_panel',0);cursor+=w
+    light_u=c['lightPlanT']-c['position'][1]
+    box('vertical_light_channel',(light_u,-.001,z+H/2),(.040,.012,H),'Furniture_charcoal',0)
+    box('vertical_light',(light_u,.008,z+H/2),(.012,.006,H),'Furniture_tv_wall_light',0)
+    if c.get('base'):box('bottom_reveal',(0,.007,z+.004),(L,.008,.008),'Furniture_charcoal',0)
+    if c.get('top'):box('top_reveal',(0,.007,z+H-.004),(L,.008,.008),'Furniture_charcoal',0)
+
+def tv_stone_finish(c):
+    L,D,H=c['dimensions'];z=c['bottom']
+    core=c['buildupDepth']
+    box('stone_buildup_core',(0,-D/2-core/2,z+H/2),(L,core,H),'Furniture_tv_wall_panel',0)
+    box('stone_panel',(0,0,z+H/2),(L-.006,D,H),'Grey_olive_niche_stone',0)
+    for u in [-L/2+.0015,L/2-.0015]:box('stone_edge',(u,.002,z+H/2),(.003,D+.004,H),'Furniture_charcoal',0)
+    if c.get('base'):box('bottom_reveal',(0,.007,z+.004),(L,.008,.008),'Furniture_charcoal',0)
+    if c.get('top'):box('top_reveal',(0,.007,z+H-.004),(L,.008,.008),'Furniture_charcoal',0)
+
+def wall_outlets(c):
+    # One logical installation with the photographed three-gang + single-plate layout.
+    for group in c['groups']:
+        u=group['planT']-c['position'][1];w,h=group['size'];z=group['centerHeight']
+        box('outlet_'+group['id']+'_plate',(u,0,z),(w,.012,h),'Furniture_charcoal',.001)
+        unit=w/group['gangs']
+        for i in range(group['gangs']):
+            p=u-w/2+(i+.5)*unit
+            if i:box('outlet_'+group['id']+'_seam',(p-unit/2,.0065,z),(.001,.001,h-.010),'Furniture_dark_wood',0)
+            for du,dz in [(-.012,-.006),(.012,-.006),(0,.016)]:
+                box('outlet_'+group['id']+'_slot',(p+du,.007,z+dz),(.003,.002,.009),'Furniture_dark_wood',0)
+
+def media_accessories(c):
+    z=c['baseHeight']
+    for j in range(3):box('low_book',(-.18+j*.006,0,z+.015+j*.027),(.25,.17,.025),'Furniture_book',.001)
+    box('media_player',(.20,0,z+.023),(.18,.14,.042),'Furniture_charcoal',.004)
+
 def wall_finish(c):
     L,D,H=c['dimensions'];z0=c['bottom'];w=L/c['panels']
     for i in range(c['panels']):box('veneer_panel',(-L/2+(i+.5)*w,0,z0+H/2),(w-.003,D,H),'Furniture_wall_veneer',.001)

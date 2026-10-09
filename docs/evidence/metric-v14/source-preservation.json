@@ -1,0 +1,163 @@
+{
+  "version": "metric-v14",
+  "baselines": {
+    "livingBaseline": {
+      "path": "docs/evidence/metric-v14/integration-inputs/living-only-v13/model/validation.json",
+      "sha256": "8f6ba48d857f889ef6217a5b7c622d3e81a2e633daa1cbed8bf1ff5d7048f953"
+    },
+    "studyBaseline": {
+      "path": "model/baseline-v13/validation.json",
+      "sha256": "40372529e108471a46f56447a0eaae9a5cb199301493e014a64cc76a6723b05b"
+    }
+  },
+  "checks": {
+    "checks": [
+      {
+        "name": "North and south dimension chains close at 10.50 m",
+        "pass": true
+      },
+      {
+        "name": "West dimension chain closes at 12.90 m",
+        "pass": true
+      },
+      {
+        "name": "Specified main ceiling height is 2.80 m",
+        "pass": true
+      },
+      {
+        "name": "Actual GLB southern wall references match 3.50 / 4.00 / 3.00",
+        "pass": true
+      },
+      {
+        "name": "Actual GLB north partitions match 2.80 / 2.80 / 2.60",
+        "pass": true
+      },
+      {
+        "name": "NW door hinge and real opening endpoint coincide",
+        "pass": true
+      },
+      {
+        "name": "Both storage niches and master contain no generated cabinet assets",
+        "pass": true
+      },
+      {
+        "name": "Common bathroom privacy door is independent of shower glass",
+        "pass": true
+      },
+      {
+        "name": "Common vanity mixer stands on the south wall side of the actual bowl",
+        "pass": true
+      },
+      {
+        "name": "All parked north sliding leaves lie east-west, not perpendicular to the facade",
+        "pass": true
+      },
+      {
+        "name": "Living glazing reaches the floor; bedroom glazing has lowered sills and no guards",
+        "pass": true
+      },
+      {
+        "name": "Kitchen equipment occupies west / north / east positions and sink is recessed",
+        "pass": true
+      },
+      {
+        "name": "Earlier removed elevator shell and bedroom wardrobes remain absent",
+        "pass": true
+      },
+      {
+        "name": "North parked door frames are thin and the full stack is under 10 cm",
+        "pass": true
+      },
+      {
+        "name": "X room and kitchen have dark side surrounds, header and thresholds",
+        "pass": true
+      },
+      {
+        "name": "Master vanity is a continuous 1.8 m double-user trough with two wall outlets",
+        "pass": true
+      },
+      {
+        "name": "Both bathrooms have thin dark privacy leaves and master entry remains clear",
+        "pass": true
+      },
+      {
+        "name": "Actual Blender source and independently reimported GLB match",
+        "pass": true
+      },
+      {
+        "name": "Current export and spec match measured artifact digests",
+        "pass": true
+      },
+      {
+        "name": "Tripo sofa retains the source bounds, PBR material and back-wall clearance",
+        "pass": true
+      },
+      {
+        "name": "Measured table follows the supplied 2800 x 900 x 750 mm drawing and asymmetric supports",
+        "pass": true
+      },
+      {
+        "name": "Furnishing preserves v06 architecture outside the explicitly revised photo doorway, facing arrangement and open center",
+        "pass": true
+      },
+      {
+        "name": "Fourth dining chair matches the existing chair and remains distinct in actual geometry",
+        "pass": true
+      },
+      {
+        "name": "Television replaces the painting with a clear screen and stable query identity",
+        "pass": true
+      },
+      {
+        "name": "Low floating cabinet has a real floor gap, closed drawers and socket service clearance",
+        "pass": true
+      },
+      {
+        "name": "Photographed socket groups retain their common height and middle-wall placement",
+        "pass": true
+      },
+      {
+        "name": "Selected C extends the low cabinet and exposes the wall side and bedroom doorway",
+        "pass": true
+      },
+      {
+        "name": "Photo wall retains four vertical panel bays, continuous stone and warm light across cut height",
+        "pass": true
+      },
+      {
+        "name": "Black return is the built-out wall side beside a tall flush bedroom doorway",
+        "pass": true
+      },
+      {
+        "name": "Recorded living and study changes preserve every other v09 part",
+        "pass": true
+      },
+      {
+        "name": "Actual study has the specified desk, one deep seat-base row and four facade modules",
+        "pass": true
+      },
+      {
+        "name": "Actual study clears static walls/slider; drawer-use limitation stays explicit",
+        "pass": true
+      },
+      {
+        "name": "Integrated source preserves every published study part and all other unmodified published parts",
+        "pass": true
+      },
+      {
+        "name": "Integrated source preserves the complete latest living model outside the published study window change",
+        "pass": true
+      }
+    ],
+    "passed": 34,
+    "total": 34
+  },
+  "reviewedRenders": [
+    "living",
+    "study",
+    "table",
+    "tv-door",
+    "study-cabinet"
+  ],
+  "note": "Model geometry checked against both exact input candidates; actual living/study renders separately reviewed before publishing. Real-phone and actual-model human acceptance remain separate."
+}

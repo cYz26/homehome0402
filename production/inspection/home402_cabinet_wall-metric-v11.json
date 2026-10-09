@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "art_src/apartment-v11.blend",
+    "sha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea"
+  },
+  "meshes": [
+    "door_southeast_upper",
+    "Furniture_living_art_panels",
+    "Furniture_living_cabinet_items",
+    "Furniture_living_floor_lamp",
+    "Furniture_living_modular_cabinet",
+    "Furniture_living_table_lamp",
+    "Furniture_living_tall_cabinet",
+    "Furniture_living_tall_cabinet_upper",
+    "Furniture_living_tv_outlets",
+    "Furniture_living_tv_stone",
+    "Furniture_living_tv_stone_upper",
+    "Furniture_living_tv_wall_finish",
+    "Furniture_living_tv_wall_finish_upper",
+    "jamb_far_southeast_lower",
+    "jamb_far_southeast_upper",
+    "jamb_southeast_lower",
+    "jamb_southeast_upper",
+    "lintel_southeast",
+    "wall_living_se_1_1_upper"
+  ],
+  "armatures": [],
+  "actions": [],
+  "evidence": {
+    "path": "production/inspection/metric-v11-source.json",
+    "sha256": "7f42617082593f8a8a39bf2ee17d70a2645403c0cf0f7aafe548a49b8e9a1fdb"
+  }
+}

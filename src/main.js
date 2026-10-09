@@ -89,7 +89,7 @@ function populate() {
     .map((i) => `<button data-reference="${i.id}">${escape(i.title)}</button>`)
     .join("");
   const descriptions = {
-    living: "无电视客厅连接餐学办公长桌；沙发正对胡桃木柜墙，中央保留活动空间。",
+    living: "已选 C：85 寸电视搭配低位一字悬空柜，墙侧面、卧室门洞和窗侧石材灯缝完整露出；连接餐学办公长桌。",
     master: "人字拼橡木与温和墙面，保留空房的完整尺度。",
     kitchen: "西侧冰箱、北侧水槽、东侧烟机灶具，让 U 形动线清晰可见。",
     masterbath: "连续一体宽槽、双组墙出龙头与镜柜，细节对应实拍修订。",
@@ -380,6 +380,10 @@ function sync(state) {
       Furniture_charcoal: "炭灰木板",
       Furniture_smoked_glass: "烟灰玻璃",
       Furniture_art_atlas: "艺术画布",
+      Furniture_tv_frame: "电视石墨色边框",
+      Furniture_tv_screen: "电视深色屏幕",
+      Furniture_tv_wall_panel: "实拍灰米色电视墙面板",
+      Furniture_tv_wall_light: "电视墙暖色灯缝",
       Window_clear_glass: "窗户透射玻璃",
       Tripo_sofa_original_PBR: "沙发原始皮面与木框",
       Furniture_rug: "灰米色织物",

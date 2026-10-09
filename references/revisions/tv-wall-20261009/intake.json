@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-09",
+  "inputs": [
+    {
+      "path": "references/revisions/tv-wall-20261009/01-existing-wall.png",
+      "original": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-85e4f6e7-55cc-4252-ad23-9a3398e1972d.png",
+      "original_local_copy": ".asset-work/tmp/tv-wall-v11/intake-original/01-existing-wall.png",
+      "raw_sha256": "5a1d7500b6477590576d375f4bfa20d6fdd0983c0ccd01333c7d31d74b11d42f",
+      "role": "User wall photograph: panel joints, dark trim, stone side and vertical warm light",
+      "sha256": "896f3e9a1b6c18f9601d417de9234a033c054db697185b0560defdcebad76106",
+      "metadata_cleanup": "PNG non-display metadata removed from project copy; original retained; RGBA unchanged"
+    },
+    {
+      "path": "references/revisions/tv-wall-20261009/02-tv-cabinet-style.png",
+      "original": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-26c57506-e97a-43f0-8299-f1162078d65e.png",
+      "original_local_copy": ".asset-work/tmp/tv-wall-v11/intake-original/02-tv-cabinet-style.png",
+      "raw_sha256": "3d3dfd725cef4b925956a46e5afeb1ed43872a9a583115768ca258a99477e430",
+      "role": "User cabinet style reference: 85 inch television, floating horizontal cabinet and one tall cabinet group; not the Home 402 room",
+      "sha256": "d92a712c75395abbb06b75cc1f8cdae4159ef0fe78fb082a21a72794efab2406",
+      "metadata_cleanup": "PNG non-display metadata removed from project copy; original retained; RGBA unchanged"
+    }
+  ],
+  "followups": [
+    {
+      "original": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-b951959c-f8a0-4118-ac1b-a6adf29cb728.png",
+      "originalSha256": "896caa6ac56f113b2a39aba09346ce171a1b1cdd97934b6fffce23aaa4b8607c",
+      "path": "references/revisions/tv-wall-20261009/03-combination-style.png",
+      "sha256": "dd8a87d62c3074a07c65558c2fd29a06138de3f0b69edf3816198cd53afbb0c0",
+      "pixelsUnchanged": true,
+      "role": "五模块高低组合柜形式"
+    },
+    {
+      "original": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-5368dd56-8ed9-4599-a6e0-4e431e6d276a.png",
+      "originalSha256": "046a29033a2347bdd86bd5014cf91a4a1d929be354a2928ac80d5a228d33b479",
+      "path": "references/revisions/tv-wall-20261009/04-wall-side-and-door.png",
+      "sha256": "31e1025876633ff5a35d9e1949e1d3d715021629cf70807dbde51c1f5f5e24aa",
+      "pixelsUnchanged": true,
+      "role": "用户标注：黑条是电视墙侧立面；卧室门洞关系"
+    }
+  ]
+}

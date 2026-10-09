@@ -1,0 +1,651 @@
+{
+  "version": "metric-v11",
+  "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+  "rawModelSha256": "f268949be9c3e9ab3cd11b92ae437afbeefb8128a0c14df26880148191e79014",
+  "modelPackages": [
+    {
+      "id": "apartment",
+      "path": "asset_exchange/apartment-v11.glb",
+      "sha256": "f268949be9c3e9ab3cd11b92ae437afbeefb8128a0c14df26880148191e79014",
+      "bytes": 23293448
+    },
+    {
+      "id": "living-sofa",
+      "path": "asset_exchange/living-sofa-v11.glb",
+      "sha256": "4ae9576be7e47972482b2a9dbcf176cc9e2800ea2c3edb1414762a0c4c584ce4",
+      "bytes": 21232288
+    }
+  ],
+  "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+  "roundtrip": {
+    "passed": true,
+    "sourceObjects": 714,
+    "importedObjects": 714,
+    "triangles": 219007,
+    "maximumBoundsErrorMeters": 9.5367431640625e-7
+  },
+  "checks": {
+    "checks": [
+      {
+        "name": "North and south dimension chains close at 10.50 m",
+        "pass": true
+      },
+      {
+        "name": "West dimension chain closes at 12.90 m",
+        "pass": true
+      },
+      {
+        "name": "Specified main ceiling height is 2.80 m",
+        "pass": true
+      },
+      {
+        "name": "Actual GLB southern wall references match 3.50 / 4.00 / 3.00",
+        "pass": true
+      },
+      {
+        "name": "Actual GLB north partitions match 2.80 / 2.80 / 2.60",
+        "pass": true
+      },
+      {
+        "name": "NW door hinge and real opening endpoint coincide",
+        "pass": true
+      },
+      {
+        "name": "Both storage niches and master contain no generated cabinet assets",
+        "pass": true
+      },
+      {
+        "name": "Common bathroom privacy door is independent of shower glass",
+        "pass": true
+      },
+      {
+        "name": "Common vanity mixer stands on the south wall side of the actual bowl",
+        "pass": true
+      },
+      {
+        "name": "All parked north sliding leaves lie east-west, not perpendicular to the facade",
+        "pass": true
+      },
+      {
+        "name": "Living glazing reaches the floor; bedroom glazing has lowered sills and no guards",
+        "pass": true
+      },
+      {
+        "name": "Kitchen equipment occupies west / north / east positions and sink is recessed",
+        "pass": true
+      },
+      {
+        "name": "Earlier removed elevator shell and bedroom wardrobes remain absent",
+        "pass": true
+      },
+      {
+        "name": "North parked door frames are thin and the full stack is under 10 cm",
+        "pass": true
+      },
+      {
+        "name": "X room and kitchen have dark side surrounds, header and thresholds",
+        "pass": true
+      },
+      {
+        "name": "Master vanity is a continuous 1.8 m double-user trough with two wall outlets",
+        "pass": true
+      },
+      {
+        "name": "Both bathrooms have thin dark privacy leaves and master entry remains clear",
+        "pass": true
+      },
+      {
+        "name": "Actual Blender source and independently reimported GLB match",
+        "pass": true
+      },
+      {
+        "name": "Current export and spec match measured artifact digests",
+        "pass": true
+      },
+      {
+        "name": "Tripo sofa retains the source bounds, PBR material and back-wall clearance",
+        "pass": true
+      },
+      {
+        "name": "Measured table follows the supplied 2800 x 900 x 750 mm drawing and asymmetric supports",
+        "pass": true
+      },
+      {
+        "name": "Furnishing preserves v06 architecture outside the explicitly revised photo doorway, facing arrangement and open center",
+        "pass": true
+      },
+      {
+        "name": "Television replaces the painting with a clear screen and stable query identity",
+        "pass": true
+      },
+      {
+        "name": "Low floating cabinet has a real floor gap, closed drawers and socket service clearance",
+        "pass": true
+      },
+      {
+        "name": "Photographed socket groups retain their common height and middle-wall placement",
+        "pass": true
+      },
+      {
+        "name": "Narrow single-door tall cabinet projects into the room and clears the actual doorway",
+        "pass": true
+      },
+      {
+        "name": "Photo wall retains four vertical panel bays, continuous stone and warm light across cut height",
+        "pass": true
+      },
+      {
+        "name": "Black return is the built-out wall side beside a tall flush bedroom doorway",
+        "pass": true
+      }
+    ],
+    "passed": 28,
+    "total": 28
+  },
+  "revisions": [
+    {
+      "id": "doors-open-against-wall",
+      "date": "2026-09-15",
+      "basis": "用户标红原始户型图",
+      "entityIds": [
+        "door_northwest",
+        "door_master",
+        "door_southeast",
+        "door_entry"
+      ],
+      "changes": "西北门向北贴东墙；主卧及东南门改北端铰链，分别向西及向东打开；入户门向东外开。保留原门洞。东南门叶留 4 cm 合页偏移避让墙面。"
+    },
+    {
+      "id": "living-v02-furniture-table-r2",
+      "date": "2026-10-08",
+      "basis": "用户确认 v02，随后补充多功能桌照片和尺寸图",
+      "entityIds": [
+        "living-sofa",
+        "dining-work-table",
+        "dining-bench",
+        "dining-chair-1",
+        "dining-chair-2",
+        "dining-chair-3",
+        "living-modular-cabinet",
+        "living-reading-chair",
+        "living-rug",
+        "dining-rug",
+        "living-floor-lamp",
+        "living-table-lamp",
+        "living-art-panels",
+        "living-wall-finish",
+        "table-desktop-items",
+        "living-cabinet-items"
+      ],
+      "changes": "无电视无茶几；西侧沙发正对东侧错落柜墙；2.8m桌采用收纳端与薄板支撑端，单侧三椅和对侧长凳。建筑、门向及原精装构件保留。"
+    },
+    {
+      "id": "living-v03-art-light-window",
+      "date": "2026-10-08",
+      "basis": "用户对 metric-v07 柜墙比例、重复灯杆、桌结构、灯光、窗景和单幅大画的反馈；柜墙以图 2 为相对比例依据，桌 r2 尺寸不变",
+      "entityIds": [
+        "living-modular-cabinet",
+        "living-art-panels",
+        "living-table-lamp",
+        "living-cabinet-items",
+        "window_Bath_west",
+        "window_Kitchen_north",
+        "window_Living_south",
+        "window_Master_south",
+        "window_Masterbath_north",
+        "window_NW_north",
+        "window_SE_south",
+        "window_X_north"
+      ]
+    },
+    {
+      "id": "living-v04-tripo-sofa",
+      "date": "2026-10-08",
+      "entityIds": [
+        "living-sofa"
+      ],
+      "changes": "接入用户授权 Tripo 沙发，保留原始 4K PBR 与稳定语义 ID；实际深度对应碰撞，背墙避让东移 5 cm。完整 Blend 派生房屋 / 沙发两个同版本 GLB 包，均低于 Workers 25 MiB 单文件限制。"
+    },
+    {
+      "id": "living-v05-tv-wall",
+      "date": "2026-10-09",
+      "basis": "用户要求沙发对面壁画改为电视并提供电视柜方案效果图",
+      "entityIds": [
+        "living-art-panels",
+        "living-table-lamp"
+      ],
+      "changes": "原单幅画从源替换为电视，75 英寸为未选产品的方案假设；台灯移至右侧高柜外端。提供 A/B/C AI 柜方案，暂保留原柜体参数，无茶几。"
+    },
+    {
+      "id": "living-v06-photo-tv-wall",
+      "date": "2026-10-09",
+      "previousVersion": "metric-v10",
+      "version": "metric-v11",
+      "basis": "用户实拍与 85 寸悬空柜参考及连续反馈",
+      "changes": "保留墙面竖缝 / 黑立边 / 窗侧石材灯缝；85 寸电视、低位横排悬空柜、凸出墙面的窄单门立柜；实拍插座留在后部服务空腔；新增立柜与实际门洞同框视图。；根据用户最新红框实拍纠正黑色侧立面及邻接卧室门洞，门洞原位置与宽度保留，平口高度暂与饰面顶 2.62 m 对齐。",
+      "entityIds": [
+        "wall_living_se",
+        "door_southeast",
+        "living-modular-cabinet",
+        "living-art-panels",
+        "living-floor-lamp",
+        "living-table-lamp",
+        "living-cabinet-items",
+        "living-tall-cabinet",
+        "living-tv-wall-finish",
+        "living-tv-stone",
+        "living-tv-outlets"
+      ],
+      "nodeNames": [
+        "wall_living_se_1_1_upper",
+        "door_southeast_upper",
+        "jamb_southeast_lower",
+        "jamb_southeast_upper",
+        "jamb_far_southeast_lower",
+        "jamb_far_southeast_upper",
+        "lintel_southeast"
+      ]
+    }
+  ],
+  "designContext": {
+    "id": "home402-living-v06",
+    "selectionSha256": "999e70b7bde09a50b7fa428566e92d830f6ab4528cfdc4bb93e3c31dc297f2bd",
+    "userAcceptance": {
+      "scope": "实拍侧立面 / 邻接门洞 / 85 寸电视 / 降低悬柜 / 单门立柜；新增三柜型概念待选，当前真实模型为 A",
+      "model_acceptance": "metric-v11 pending user visual review"
+    },
+    "tableRevision": {
+      "supersedes": "2.6m preview assumption and table-set-r1 geometry",
+      "latest_user_request": "多功能桌参考这些图再还原的一致一些",
+      "reference_directory": "references/revisions/living-furniture-20261008/table-r2",
+      "dimensions_from_drawing_m": {
+        "length": 2.8,
+        "width": 0.9,
+        "height": 0.75,
+        "topThickness": 0.07,
+        "endOverhang": 0.26,
+        "storageLength": 0.6,
+        "storageDepth": 0.7,
+        "storageHeight": 0.68,
+        "openKneeSpan": 1.6,
+        "panelThickness": 0.08,
+        "panelDepth": 0.53
+      },
+      "scope": "Use new table structure and dimensions; keep one chair side/opposite bench, sofa/cabinet placement and the approved overall palette.",
+      "standalone_reference": {
+        "path": "references/generated/living-furniture-20261008/independent/table-set-r2.png",
+        "sha256": "1133dab518a9471da066c60b61cbf333c29614d13f71bee59afb6830c0d355d3"
+      },
+      "inferred": "Tray count six and concealed hardware are interpretation; drawing dimensions are not site/manufacturer certification.",
+      "source_files": [
+        {
+          "path": "references/revisions/living-furniture-20261008/table-r2/02-table-structure.png",
+          "sha256": "d87e274d3b53df93e09dcf2922895f48a6fcc0bffd725d5ae72a6d182ed868b0"
+        },
+        {
+          "path": "references/revisions/living-furniture-20261008/table-r2/03-table-dimensions.png",
+          "sha256": "e3265533252e8c37d1768698ffc93ddc9639d05530656a64f7a73baaea8d3a80"
+        },
+        {
+          "path": "references/revisions/living-furniture-20261008/table-r2/01-table-photo.png",
+          "sha256": "662895561aad8eac07a1aed7fd114e2b81401321eb847c59038a0626278844d0"
+        }
+      ]
+    }
+  },
+  "renders": {
+    "modelVersion": "metric-v11",
+    "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+    "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+    "engine": "Cycles",
+    "blender": "5.2.1 LTS",
+    "views": [
+      {
+        "id": "cabinet",
+        "name": "85 寸电视与低位悬空柜",
+        "mode": "interior",
+        "camera": [
+          4,
+          10.65,
+          1.45
+        ],
+        "target": [
+          7.25,
+          10.65,
+          1.32
+        ],
+        "fov": 68
+      },
+      {
+        "id": "tv-door",
+        "name": "电视墙侧立面、单门柜与卧室门洞",
+        "mode": "interior",
+        "camera": [
+          4.1,
+          7.85,
+          1.52
+        ],
+        "target": [
+          7.1,
+          10.15,
+          1.3
+        ],
+        "fov": 68
+      },
+      {
+        "id": "hero",
+        "name": "全屋轴测",
+        "mode": "cutaway",
+        "camera": [
+          17,
+          26,
+          25
+        ],
+        "target": [
+          5.3,
+          6.3,
+          0.5
+        ],
+        "orthoScale": 21
+      },
+      {
+        "id": "reference",
+        "name": "当前模型俯瞰",
+        "mode": "cutaway",
+        "camera": [
+          5.5,
+          25,
+          30
+        ],
+        "target": [
+          5.3,
+          6.4,
+          0
+        ],
+        "orthoScale": 16,
+        "width": 1400,
+        "height": 1600
+      },
+      {
+        "id": "living",
+        "name": "客餐厅 v06 / 实拍电视墙",
+        "mode": "interior",
+        "camera": [
+          3.92,
+          5.15,
+          1.62
+        ],
+        "target": [
+          5.75,
+          10.55,
+          1.06
+        ],
+        "fov": 65
+      },
+      {
+        "id": "master",
+        "name": "主卧",
+        "mode": "interior",
+        "camera": [
+          3,
+          8.45,
+          1.58
+        ],
+        "target": [
+          1.3,
+          12.5,
+          1.3
+        ],
+        "fov": 72
+      },
+      {
+        "id": "kitchen",
+        "name": "厨房",
+        "mode": "interior",
+        "camera": [
+          7.63,
+          3.75,
+          1.58
+        ],
+        "target": [
+          7.85,
+          1,
+          1.3
+        ],
+        "fov": 72
+      },
+      {
+        "id": "masterbath",
+        "name": "主卫",
+        "mode": "interior",
+        "camera": [
+          1.79,
+          7.28,
+          1.33
+        ],
+        "target": [
+          1.9,
+          5.83,
+          1.18
+        ],
+        "fov": 90
+      },
+      {
+        "id": "table",
+        "name": "多功能桌结构",
+        "mode": "interior",
+        "camera": [
+          6.88,
+          4.22,
+          1.22
+        ],
+        "target": [
+          5.53,
+          6.22,
+          0.54
+        ],
+        "fov": 62
+      }
+    ],
+    "images": {
+      "cabinet": {
+        "view": {
+          "id": "cabinet",
+          "name": "85 寸电视与低位悬空柜",
+          "mode": "interior",
+          "camera": [
+            4,
+            10.65,
+            1.45
+          ],
+          "target": [
+            7.25,
+            10.65,
+            1.32
+          ],
+          "fov": 68
+        },
+        "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+        "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+        "sha256": "669b7f8ef47e0a3a3869d9f18d45d1b3e4ccf637f34ca8ab337ab8908ef8176f"
+      },
+      "tv-door": {
+        "view": {
+          "id": "tv-door",
+          "name": "电视墙侧立面、单门柜与卧室门洞",
+          "mode": "interior",
+          "camera": [
+            4.1,
+            7.85,
+            1.52
+          ],
+          "target": [
+            7.1,
+            10.15,
+            1.3
+          ],
+          "fov": 68
+        },
+        "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+        "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+        "sha256": "7d5a1a6b17681e0f7be58f02fbc4c86e164022d38d8a7ccd263f7b2c797aa738"
+      },
+      "hero": {
+        "view": {
+          "id": "hero",
+          "name": "全屋轴测",
+          "mode": "cutaway",
+          "camera": [
+            17,
+            26,
+            25
+          ],
+          "target": [
+            5.3,
+            6.3,
+            0.5
+          ],
+          "orthoScale": 21
+        },
+        "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+        "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+        "sha256": "d0cfc5465ea1f007f15f40dfbd7d2d3762e17e62898d4c493efdb6f6717169fb"
+      },
+      "reference": {
+        "view": {
+          "id": "reference",
+          "name": "当前模型俯瞰",
+          "mode": "cutaway",
+          "camera": [
+            5.5,
+            25,
+            30
+          ],
+          "target": [
+            5.3,
+            6.4,
+            0
+          ],
+          "orthoScale": 16,
+          "width": 1400,
+          "height": 1600
+        },
+        "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+        "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+        "sha256": "ce6e0f51ea04f21339e545d1699a6d9c894c4055173d076ce71184d974894025"
+      },
+      "living": {
+        "view": {
+          "id": "living",
+          "name": "客餐厅 v06 / 实拍电视墙",
+          "mode": "interior",
+          "camera": [
+            3.92,
+            5.15,
+            1.62
+          ],
+          "target": [
+            5.75,
+            10.55,
+            1.06
+          ],
+          "fov": 65
+        },
+        "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+        "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+        "sha256": "6fdabcb3ad262c7de9b08cceb835b753db929e2873987c4e56bca5525b2ac03c"
+      },
+      "master": {
+        "view": {
+          "id": "master",
+          "name": "主卧",
+          "mode": "interior",
+          "camera": [
+            3,
+            8.45,
+            1.58
+          ],
+          "target": [
+            1.3,
+            12.5,
+            1.3
+          ],
+          "fov": 72
+        },
+        "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+        "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+        "sha256": "8e6142935794092ab134d3f82d694d7b9a80bbbf7b9a87efa7bd584a1591f277"
+      },
+      "kitchen": {
+        "view": {
+          "id": "kitchen",
+          "name": "厨房",
+          "mode": "interior",
+          "camera": [
+            7.63,
+            3.75,
+            1.58
+          ],
+          "target": [
+            7.85,
+            1,
+            1.3
+          ],
+          "fov": 72
+        },
+        "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+        "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+        "sha256": "7beac8f0d4cb4662ed813810bea898926042e4e1a2c60a5025631a2d510225e0"
+      },
+      "masterbath": {
+        "view": {
+          "id": "masterbath",
+          "name": "主卫",
+          "mode": "interior",
+          "camera": [
+            1.79,
+            7.28,
+            1.33
+          ],
+          "target": [
+            1.9,
+            5.83,
+            1.18
+          ],
+          "fov": 90
+        },
+        "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+        "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+        "sha256": "bc67c3704e03822199e968f000086a6f35ff5f274f6b2621f9737633f5de11a5"
+      },
+      "table": {
+        "view": {
+          "id": "table",
+          "name": "多功能桌结构",
+          "mode": "interior",
+          "camera": [
+            6.88,
+            4.22,
+            1.22
+          ],
+          "target": [
+            5.53,
+            6.22,
+            0.54
+          ],
+          "fov": 62
+        },
+        "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+        "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+        "sha256": "fceb62c1d0299a567af1a18ee8cd1502bd1359c8e09428507288e87c1867cd3c"
+      }
+    },
+    "role": "Same-model Cycles renders; not site photographs"
+  },
+  "acceptance": {
+    "visual": "pending-user-review",
+    "realPhonePerformance": "not-measured"
+  },
+  "releaseManifest": "public/release.json",
+  "manifestSha256": "e4bfd1c4b93708996aeb89c2c68c320114e39e5eef53607ebcf15589bc32764e"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "art_src/apartment-v12.blend",
+    "sha256": "a3a98ba1a66dd2344adcf650205e3e9244574aefc9d4180b7ffa66446f6b6f1e"
+  },
+  "meshes": [
+    "Furniture_dining_work_table",
+    "Furniture_dining_bench",
+    "Furniture_dining_chair_1",
+    "Furniture_dining_chair_2",
+    "Furniture_dining_chair_3"
+  ],
+  "armatures": [],
+  "actions": [],
+  "evidence": {
+    "path": "production/inspection/metric-v12-source.json",
+    "sha256": "e5793466e1e9d5dc755a8c490014c0a25b9abecf25730f9f874add5d640690d0"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "design_id": "home402-living-v05",
+  "version": "metric-v10",
+  "status": "local model and website preview verified; cabinet options pending user selection; not committed, pushed or deployed",
+  "source": {
+    "path": "art_src/apartment-v10.blend",
+    "sha256": "f1c130c3504ffd62d7f712f2e0c016435835d0b4e9d124c9ff953e1560c67c62"
+  },
+  "spec": {
+    "path": "model/apartment.json",
+    "sha256": "949f41570acda3d4e71b1cd249e39f5406df1e503df4adc35a23a631e7367d73"
+  },
+  "release": {
+    "path": "public/release.json",
+    "sha256": "342c40da2c4ff68483ba93884c248da752ced4869744fe1ddf95d9bedfa2b4ed"
+  },
+  "selection": {
+    "path": "docs/design/living-v05/selection.json",
+    "sha256": "2557ba79ec7a9513f34b3e8a9f3b90a3cfc35ccd3cdbba6f2ecec463fe951ab6"
+  },
+  "validation": {
+    "roundtrip_pass": true,
+    "meshes": 707,
+    "triangles": 233037,
+    "degenerate_triangles": 0,
+    "max_bound_error_m": 9.5367431640625e-07,
+    "model_checks": 24,
+    "node_checks": 53,
+    "release_checks": 16,
+    "browser_selected_cases": 8,
+    "browser_full_inventory": 20,
+    "browser_retries": 0,
+    "browser_failures": 0,
+    "additional_targeted_UI_viewports": [
+      "desktop 1280x900",
+      "phone 390x844"
+    ],
+    "render_views": 8
+  },
+  "source_route": "production/inspection/metric-v10-route-checks.json",
+  "preservation": "production/inspection/metric-v10-preservation.json",
+  "browser_evidence": "docs/evidence/metric-v10/tv-wall/browser-verification.json",
+  "targeted_ui_evidence": "docs/evidence/metric-v10/tv-wall/ui-readback.json",
+  "preview_url": "http://127.0.0.1:4173/",
+  "cad_reference": "references/revisions/living-furniture-20261008/table-r2",
+  "tv_assumptions": {
+    "nominal_inches": 75,
+    "width_m": 1.66,
+    "height_m": 0.934,
+    "center_height_m": 1.35,
+    "product_selected": false
+  },
+  "cabinet_selection": null,
+  "real_device_performance": "not_measured",
+  "user_visual_acceptance": "pending",
+  "remote_release": "unchanged metric-v09; no current push/deploy authorization",
+  "image_generation": "built-in image_gen; prompts and original sources recorded under references/generated/tv-wall-20261009"
+}

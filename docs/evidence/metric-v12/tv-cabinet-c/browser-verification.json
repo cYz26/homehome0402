@@ -1,0 +1,307 @@
+{
+  "version": "metric-v12",
+  "executedAt": "2026-10-09T07:16:49.161Z",
+  "browser": "Playwright bundled Chromium 153.0.8010.12",
+  "host": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "release": "25.6.0"
+  },
+  "responsiveViewports": [
+    [
+      1280,
+      900
+    ],
+    [
+      820,
+      1180
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "touch": "Chromium CDP simulation; no physical mobile device",
+  "manifestSha256": "123d8b810e86b944bc606c607b2bcbf1259c3628c8fcd3b4a8c4f034bde811e6",
+  "rawModelSha256": "8b71e51a63d11422a82462a0b8ff882021db91a559464f8e07007ea2ced397a7",
+  "modelPackages": [
+    {
+      "path": "releases/metric-v12/apartment-web.glb",
+      "role": "model",
+      "bytes": 15465308,
+      "sha256": "3d7628fb6626914757cc84679af8efb455d89540f47dd66fa628f1d8cce17876"
+    },
+    {
+      "path": "releases/metric-v12/apartment-hd.glb",
+      "role": "hd-model",
+      "bytes": 23260440,
+      "sha256": "8b71e51a63d11422a82462a0b8ff882021db91a559464f8e07007ea2ced397a7"
+    },
+    {
+      "path": "releases/metric-v12/living-sofa-web.glb",
+      "role": "model",
+      "bytes": 15929940,
+      "sha256": "8e1f4c042d7419ec1b6964d57741214d9894c088f5086766adeab19d269e1487"
+    },
+    {
+      "path": "releases/metric-v12/living-sofa-hd.glb",
+      "role": "hd-model",
+      "bytes": 21232288,
+      "sha256": "6aa1dc600f96c10444c1a2605419e924da1947a29f869a724b83518a4f9edcc2"
+    }
+  ],
+  "testSourceSha256": "91abbe6662b060e327d0eb89fcdf991f244df7c61eec29b41e84d2f6a4311e18",
+  "renderingTestSources": {
+    "tests/section-render.spec.mjs": "25d10a4b581509cb5dde1d3d3066b8c76e6a190271277b1605a00138cdda19ae",
+    "tests/fixtures/section-probe.js": "3af1c19c75e06a4302d9ca638830c282f6805bcbd7d9eac9dd7725252cbebc7d",
+    "tests/fixtures/section-probe.html": "7bc6e915de01e926099f5b0afe0add25165eb221ca981accaf7d2f63643a3ac2",
+    "playwright.config.mjs": "15823bd945236a5353f548b5546c8f2fc89e50f140884a21a596cd66470bf4a0"
+  },
+  "collectorSha256": "8961a05823eb7eeba38c255c123224cc9c67eff90f03e060313b4ff03a9b0542",
+  "deploymentSources": {
+    "wrangler.jsonc": "f314e064b3298793daa65f73627131ec801e1a9bf650cb613d028e9f440a8057",
+    "worker/index.mjs": "e46633202fdaecb29426fa491168d48fa26437e183ebf8b3bd070d94f4028f8d",
+    "tests/worker-auth.spec.mjs": "db44071023cb91df25bf3ea1a413bd640420f030cf8b01600c342e2ecfb0e0e6"
+  },
+  "reportSha256": "13488f472d35267669e7731c0cdf7def23f3fcd940c3581e972ce3a0f577a996",
+  "inventorySha256": "5075519ec4f761bf54534f0c8b806860d995559e9710c7fee4422341682b983c",
+  "tests": [
+    {
+      "name": "standard rendering, north-up plan, current reference and on-demand HD retain the selected view",
+      "status": "passed",
+      "durationMs": 30684
+    },
+    {
+      "name": "desktop: homepage preload, model, linked rooms, section, view restore, screenshot",
+      "status": "passed",
+      "durationMs": 5605
+    },
+    {
+      "name": "phone: homepage preload, model, linked rooms, section, view restore, screenshot",
+      "status": "passed",
+      "durationMs": 5588
+    },
+    {
+      "name": "web: section caps stay flat through zoom with full AO and shadows",
+      "status": "passed",
+      "durationMs": 1612
+    },
+    {
+      "name": "hd: section caps stay flat through zoom with full AO and shadows",
+      "status": "passed",
+      "durationMs": 1516
+    },
+    {
+      "name": "legacy AO positive control reproduces cap stripes",
+      "status": "passed",
+      "durationMs": 1198
+    },
+    {
+      "name": "phone: password gate protects assets and restores the shared view",
+      "status": "passed",
+      "durationMs": 1949
+    },
+    {
+      "name": "desktop: password gate protects assets and restores the shared view",
+      "status": "passed",
+      "durationMs": 1662
+    }
+  ],
+  "images": [
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/standard-orbit.png",
+      "sha256": "a9fc2454fd10d1948d933aa0634e3f6c9229518f8d536b128cc7bc471fa228d5",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/standard-orbit.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/standard-top.png",
+      "sha256": "16d72afd743802b74968fd0b8a1bf91e69937271f2216bb95351d94bafd78de0",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/standard-top.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/web-bathroom-standard.png",
+      "sha256": "05777a3b109bb3e6558832752384de2c2689e1d4523ef88ee593c60c24c8088f",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/web-bathroom-standard.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/hd-bathroom-standard.png",
+      "sha256": "92863d338ff179ae428c8052b5476dadd859e6ae1b8cdcce5cb07f4f6c6a6922",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/hd-bathroom-standard.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/hd-top.png",
+      "sha256": "6a19e3a72aa14587a76ede0c01cf86d2f830040b93145a700a1ddd9e4ed22791",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/hd-top.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/hd-orbit.png",
+      "sha256": "018642207c36cde68c15badefbce86177a831eda3a762f0d67ab69dc0ae17259",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/hd-orbit.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/current-design-reference.png",
+      "sha256": "26af7663a075064f402aea631c27c30904169e0ce6247bb4af083407c93e0485",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/current-design-reference.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/desktop-home.png",
+      "sha256": "654f886973d76dcd21182cb923e55aa917a6ec4c452e0963e308736c39dcf922",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/desktop-home.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/desktop-orbit.png",
+      "sha256": "a63c454b285cda8cd1ea8046c194b383913b9b4e600b95f18b4d7d37a66aa9da",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/desktop-orbit.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/desktop-section.png",
+      "sha256": "59b8e90e8301e8962e927cc19c76612f06c0f62ee525f962098b540a18adf3c4",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/desktop-section.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/desktop-bathroom.png",
+      "sha256": "3416c5e189f9669faea3d7df7dfe5c13ab08b12ccf935925ea84e4625749a8e6",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/desktop-bathroom.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/phone-home.png",
+      "sha256": "c3478986a1fc085aaab243507141c2cf3459b52ecdf9936f289eb2345a0d8f5b",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/phone-home.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/phone-orbit.png",
+      "sha256": "e91318cb5e2e8f559d25ad65b43f76390ecf2d3e1269131cc57fd53dd512b599",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/phone-orbit.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/phone-section.png",
+      "sha256": "e835ee890bbf8eda639cef9c8b915be330c5c9c1a1729aa9169a3508e3f7320a",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/phone-section.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/phone-bathroom.png",
+      "sha256": "9a42eb812b163b5af945654da25bd86b8724484ba234bdff2a8a559ba7ccff1b",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/phone-bathroom.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-web-zoom-0_9.png",
+      "sha256": "c7a303a277ecd463d61fca52496b4c0ac85cec5c88771ab81da397bf8390565e",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-web-zoom-0_9.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-web-zoom-1_7.png",
+      "sha256": "f741131eec80e0c5393c5bc64d40f64a85039f583c17146783aab7a8e5ef1bc3",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-web-zoom-1_7.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-web-zoom-2_6.png",
+      "sha256": "babd57e70a56dae067f574976bcbeed9f5c5d43a4b6eb75eb1b77a1c70f357e0",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-web-zoom-2_6.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-web-x-0_04.png",
+      "sha256": "1678da2a9035adb8731f18de04103f6c0bade3f7fb1b9be2e808ed3f54646860",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-web-x-0_04.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-web-y-8_9.png",
+      "sha256": "d714beaf30271bf43efaf1f3c3ae712f63649aa0510ec9f2d2e3c67319d0acd9",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-web-y-8_9.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-web-z-1_4.png",
+      "sha256": "bfae5b9fc4285540beceea1d0a19c2792ac3c2296410db4b791e4305ed74518f",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-web-z-1_4.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-hd-zoom-0_9.png",
+      "sha256": "0d9bd3f16382c1e20b5f46b774a0ee590bd4fa5dadbc37917ea6a7e90494dfec",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-hd-zoom-0_9.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-hd-zoom-1_7.png",
+      "sha256": "9ac3d30fc8ec70ae5ac16b1c4b7bfea21c5f0e97421d056e2ddc904f1ef024f3",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-hd-zoom-1_7.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-hd-zoom-2_6.png",
+      "sha256": "7a7f00b55ed444299a45de2a7bad38a1b6072c1a08dafd616e9d273a0d1b3d18",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-hd-zoom-2_6.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-hd-x-0_04.png",
+      "sha256": "1d50a80f2976347e775c7620e53275adfea05dffb7678857c2a3b29ee2a77971",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-hd-x-0_04.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-hd-y-8_9.png",
+      "sha256": "5e133e5343b7995d96b7a0a42fd4546234d893c6b8af562f626502534f46de95",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-hd-y-8_9.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-hd-z-1_4.png",
+      "sha256": "b512f38b6255d6e00bb32606fa853beea3347f9e1446b2b03a1e464699f71b66",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-hd-z-1_4.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-before-ao-mismatch.png",
+      "sha256": "91f81bb0c6a3595189506d60516b870fb9927bf2c9fd312801e8b2a61b482dd9",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-before-ao-mismatch.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/password-phone.png",
+      "sha256": "ee95de8c395c1141a3b29eb50ec509f3686fbc0c25b84b5613afb5c4fd87c7d2",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/password-phone.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/password-phone-opened.png",
+      "sha256": "372bcecd4c271f88a0ae8ea9386b27e2cb7f4ec788b4098490592870a83b6254",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/password-phone-opened.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/password-desktop.png",
+      "sha256": "d7a25bf515077fe9c0fdcad759954c4cedd09f926afdfe15c09a5f33ddf04b50",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/password-desktop.png"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/password-desktop-opened.png",
+      "sha256": "b9759c4fc1f0a6ff5c35a8d0a0aaa09c36166f101b2cf1a49d06d6e985fb85d3",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/password-desktop-opened.png"
+    }
+  ],
+  "measurements": [
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/HD_phase_timings.json",
+      "sha256": "a481a741f65781a894155120f20abe68e92d58da3d3a8c4e279b97e048c1462a",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/HD_phase_timings.json"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-web-metrics.json",
+      "sha256": "1140b01b14bee11bd04220da1fc9cb88ba2d1521269898820fc64d899680487d",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-web-metrics.json"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-hd-metrics.json",
+      "sha256": "d388c5cda84b696cd25d16c8fcb7db3bf943683b0762c3bfca9708fd54a8fdcb",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-hd-metrics.json"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/section-legacy-metrics.json",
+      "sha256": "4d5b375c681616eeee374a082a30c19d8f5242fb3ec06e4453cf161db83ff495",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12/section-legacy-metrics.json"
+    }
+  ],
+  "build": {
+    "dist/assets/index-BGGrpaBp.css": "1264441d41ca3c4d891c2053471f374af9bbc3c24a5bff4f4445fd57020089f9",
+    "dist/assets/index-zA1BviFW.js": "9e56d40e03994d504e6f7b94b11591121397321065990ec42d14fdf444b91fce",
+    "dist/assets/three-addons-B4rWYbHU.js": "25a66a80f5caf7282871cca27b8c57126891e33e657784f4e953cd875bb90124",
+    "dist/assets/three-core-MA-a2Cmd.js": "92cc45e26428bcc74bcc480c1977752d05dd9e7730813d43121602f847c6bcf4",
+    "dist/assets/three-renderer-BEzRlOVa.js": "f286d6f76733e24e45003e616e9ff8e6889a5aae0c61cc899ddf10584026eea7",
+    "dist/assets/viewer-W3Ko0tUS.js": "209f549bcfd3a1cf5720bab554f4cf9a081385cb7590687f5d12fddd9a7e24dd",
+    "dist/index.html": "82c1a36c4b3ea7ce8df8572d84a9feaedd1181211c27ead936d9e48f929e48a0"
+  },
+  "realPhonePerformance": "not-measured",
+  "visualAcceptance": "pending-user-review",
+  "originalCollectionDirectory": ".asset-work/browser-evidence/tv-cabinet-c-v12/metric-v12",
+  "archiveDirectory": "docs/evidence/metric-v12/tv-cabinet-c"
+}

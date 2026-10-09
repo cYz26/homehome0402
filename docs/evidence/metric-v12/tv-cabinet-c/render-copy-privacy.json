@@ -1,0 +1,29 @@
+{
+  "version": "metric-v12",
+  "copies": [
+    {
+      "id": "living",
+      "original": ".asset-work/renders/metric-v12/living.png",
+      "originalSha256": "57531470959c3de6d65c0b19117903145610858ca9d0568f588b5accd58d42f3",
+      "path": "references/model/metric-v12/living-cycles.png",
+      "sha256": "66b5900de189b30b95ee450dd54fbea3ef6f27ad3b1b3d042ad0f78b9b829500",
+      "pixelsUnchanged": true
+    },
+    {
+      "id": "cabinet",
+      "original": ".asset-work/renders/metric-v12/cabinet.png",
+      "originalSha256": "4d05bd7df7254a16c4213803bb2e51d14c5ac2f30896a314bdc5cc0fae3e9c5c",
+      "path": "references/model/metric-v12/cabinet-cycles.png",
+      "sha256": "b69e65823758c0cfc423011a8e4543a263abe4974a85aee26d75829c6506939f",
+      "pixelsUnchanged": true
+    },
+    {
+      "id": "tv-door",
+      "original": ".asset-work/renders/metric-v12/tv-door.png",
+      "originalSha256": "dedb00ad442493708d7ca27996ca8d893447721af5e9ef847026f13c1ad1087e",
+      "path": "references/model/metric-v12/tv-door-cycles.png",
+      "sha256": "244536ef2e598c70735d5e0ac9eae715b3db70ddbf627e28fb259068b5e42ad1",
+      "pixelsUnchanged": true
+    }
+  ]
+}

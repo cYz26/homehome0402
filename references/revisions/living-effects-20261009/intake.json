@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-09",
+  "copies": [
+    {
+      "original": ".asset-work/tmp/living-effects-r3/intake-original/01-current-gallery.png",
+      "originalSha256": "bbc3936d9a752242a43e3f081dfb6d9b7c242bf6dcf43dab485f87c0537397cf",
+      "path": "references/revisions/living-effects-20261009/01-current-gallery.png",
+      "sha256": "408b649a81f03e498fb2d5f660898b5adb81a28aeb1886eb2bcb8b972ccef986",
+      "width": 1624,
+      "height": 1508,
+      "role": "User-rejected model-like gallery image; issue record only, not generator input",
+      "rgbaUnchanged": true
+    },
+    {
+      "original": ".asset-work/tmp/living-effects-r3/intake-original/02-tv-wall-style.png",
+      "originalSha256": "d43b36065b0c53e785d5b706f0c7729853bc6cb37bccec2006660d7358c77fb9",
+      "path": "references/revisions/living-effects-20261009/02-tv-wall-style.png",
+      "sha256": "29dc2511c5176972fd7ec8a671f66040673e296908bde582f1754118f706c7df",
+      "width": 1448,
+      "height": 1086,
+      "role": "User requested polished TV-wall effect style/composition; old stepped cabinet superseded",
+      "rgbaUnchanged": true
+    },
+    {
+      "original": ".asset-work/tmp/living-effects-r3/intake-original/03-room-style.png",
+      "originalSha256": "db1b77efd6ae06cf1434668542a0832f5d67cf31a8b98fc0f10b51567c7e21ac",
+      "path": "references/revisions/living-effects-20261009/03-room-style.png",
+      "sha256": "3880b5d3e4b41306cff018da9709a1f041daf29b62bec62f6a2d53fee42d029f",
+      "width": 1448,
+      "height": 1086,
+      "role": "User requested warm photoreal interior effect style/composition",
+      "rgbaUnchanged": true
+    }
+  ],
+  "originalsRetainedAt": ".asset-work/tmp/living-effects-r3/intake-original"
+}

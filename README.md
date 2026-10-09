@@ -1,6 +1,6 @@
 # Home 402 · 家的空间档案
 
-当前本机设计为 **metric-v09**：已接入原始 4K PBR 的 Tripo 沙发，加入客餐厅家具、单幅艺术画、暖色洗墙光、透射玻璃与窗外庭院展示。网站同时提供明确区分的 AI 方案效果图、同源模型渲染和实拍；交互平面图、构件查询、三向剖切与漫游沿用。远程已发布状态另见 QA，不能由本机版本推断。
+当前集成设计为 **metric-v14**：C「一字悬空柜」配 85 寸电视，餐学办公桌同侧补齐四把椅子、对侧保持长凳；实拍电视墙侧面、卧室门洞、窗侧石材灯缝及原插座布局沿用。图廊采用按用户图 2 / 图 3 制作的细腻室内效果图，提供整体与电视墙正面两个入口，A / B 保存为备选。书房保留已发布的胡桃木可坐底柜、140 × 70 cm 升降桌、转椅与配柜，提供整体和柜体近景效果图。原始 4K PBR 沙发、灯光、透射玻璃及庭院保持。AI 方案效果、同源模型渲染和实拍分别标注，平面图、查询、剖切与漫游沿用。远程状态另见 QA。
 
 ## 本地查看
 
@@ -44,17 +44,17 @@ npm run preview -- --port 4173
 
 ## 建筑数据与文件
 
-`model/apartment.json` 是可编辑设计源，包括墙体、洞口、门窗、固定设施、家具位置与结构尺寸、材质、灯具、空间多边形及机位。当前客餐厅设计与修订链见[迭代上下文](docs/design/living-v04/DECISION.md)。
+`model/apartment.json` 是可编辑设计源，包括墙体、洞口、门窗、固定设施、家具位置与结构尺寸、材质、灯具、空间多边形及机位。当前客餐厅设计与修订链见[迭代上下文](docs/design/living-v08/DECISION.md)，最新效果见[图片入口](references/generated/living-effects-20261009-r3/REVIEW.md)，保存的 A / B 样式见[参考入口](docs/design/living-v07/REFERENCES.md)。
 
 | 文件 | 用途 |
 | --- | --- |
-| `art_src/apartment-v09.blend` | 当前完整米制源场景，包含原始贴图沙发 |
+| `art_src/apartment-v14.blend` | 当前完整米制源场景，包含原始贴图沙发 |
 | `art_src/furniture/sofa-tripo-r1-ready.blend` | 哈希锁定的外部家具源；完整版、ZIP / FBX 保留归档 |
-| `asset_exchange/apartment-v09.glb` / `living-sofa-v09.glb` | 同版本房屋与沙发两包，合并重导入核对全场景 |
-| `public/releases/metric-v09/apartment-web.glb` / `living-sofa-web.glb` | 共同组成当前网页模型；编码与字节记录见 model-packages.json |
-| `public/releases/metric-v09/architecture.json` | 89 个逻辑构件、11 个空间及估算面积 |
-| `public/releases/metric-v09/navigation.json` | 完整建筑与沙发碰撞、单层可通行网格 |
-| `public/releases/metric-v09/floor-plan.svg` | 当前模型派生平面图 |
+| `asset_exchange/apartment-v14.glb` / `living-sofa-v14.glb` / `study-v14.glb` | 同版本房屋、沙发和书房三包，合并重导入核对全场景 |
+| `public/releases/metric-v14/apartment-web.glb` / `living-sofa-web.glb` / `study-web.glb` | 共同组成当前网页模型；编码与字节记录见 model-packages.json |
+| `public/releases/metric-v14/architecture.json` | 98 个逻辑构件、11 个空间及估算面积 |
+| `public/releases/metric-v14/navigation.json` | 完整建筑与沙发碰撞、单层可通行网格 |
+| `public/releases/metric-v14/floor-plan.svg` | 当前模型派生平面图 |
 | `public/release.json` | 发布资源、版本、大小和 SHA-256 清单 |
 | `docs/QA.md` | 本轮检查、视觉证据及验收边界 |
 
@@ -101,7 +101,7 @@ CI 按“构建 → 四个浏览器分片 → 合并验收 → 部署”运行�
 - `build` 执行图片元数据、模型、Node 测试及发布资源检查，只构建一次；保存 `dist`、模型检查结果和完整浏览器清单，并把同一 `dist` 打包为 Pages artifact。
 - `browser` 在四个独立 runner 上按测试用例分片，每个用例使用独立 Chromium 进程、完整画质和零自动重试。所有分片按同一 artifact ID 下载构建，剖切夹具直接读取这份资源；Linux 在 Xvfb 下使用 ANGLE GL，并记录实际 WebGL 后端。Workers 密码入口用例保留历史，当前套件覆盖公开项目路径、资源、Range 及全部应用行为。
 - `verify` 合并四个 blob 报告，逐项核对测试清单，要求每项恰好执行一次并通过，再收集截图、像素指标及构建哈希。缺片、失败、跳过、重复或缺失附件均不能验收。
-- `deploy` 等待以上作业全部成功，使用官方 configure-pages / deploy-pages 发布已打包产物；按 artifact ID 下载同一份 `dist`，回读全部线上文件 SHA-256、四个模型包的 206 响应及缺失资源 404。PR 不申请 Pages 写权限，也不发布；无需 Cloudflare secrets。
+- `deploy` 等待以上作业全部成功，使用官方 configure-pages / deploy-pages 发布已打包产物；按 artifact ID 下载同一份 `dist`，回读全部线上文件 SHA-256、六个模型包的 206 响应及缺失资源 404。PR 不申请 Pages 写权限，也不发布；无需 Cloudflare secrets。
 
 ### 首次部署配置
 
@@ -118,19 +118,18 @@ CI 按“构建 → 四个浏览器分片 → 合并验收 → 部署”运行�
 
 metric-v09 的正式图形验收使用独立浏览器进程，避免连续用例复用 GPU 状态：先以 `PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/browser-inventory.json npm run test:browser -- --list --reporter=json` 生成完整清单，再运行 `node scripts/run-browser-cases.mjs`。单个正式分片使用 `--shard 1/4`（其余为 2/4、3/4、4/4），所有 blob 合并后仍必须与完整清单逐项匹配、各通过一次。上面的普通命令保留为诊断入口；独立进程与共享进程结果分别记录。采用完整 Chromium 的依据见 [Playwright 新无界面模式说明](https://playwright.dev/docs/browsers#chromium-new-headless-mode)。
 
-首屏关键呈现资源预算 1 MiB，呈现后后台预加载及首次可交互 3D 总资源预算 36 MiB（metric-v09 接入 Tripo 原始 4K PBR，网页模型总预算 34 MiB，实际字节与依据见 `model/resource-budgets.json`），检查包括 JS、模型、属性、导航和解码器。网页纹理保留源图分辨率：房屋使用高质量 KTX2，沙发使用原 4K JPEG / PNG + Meshopt；建筑源 1254 像素图仅按 UASTC 块对齐到 1256 像素。历史资源保留在仓库中，不随 `public` 全量复制。
+首屏关键呈现资源预算 1 MiB，呈现后后台预加载及首次可交互 3D 总资源预算 40 MiB（metric-v14 合并客厅与书房并保留 Tripo 原始 4K PBR，网页模型总预算 38 MiB，实际字节与依据见 `model/resource-budgets.json`），检查包括 JS、模型、属性、导航和解码器。网页纹理保留源图分辨率：房屋使用高质量 KTX2，沙发使用原 4K JPEG / PNG + Meshopt；建筑源 1254 像素图仅按 UASTC 块对齐到 1256 像素。历史资源保留在仓库中，不随 `public` 全量复制。
 
 桌面浏览器和触摸模拟不能证明真机性能；真实手机持续漫游 ≥30 FPS 仍需设备实测。用户视觉确认状态独立保留，技术检查不会自动代表外观接受。图片脱敏范围见 `docs/privacy-review.md`。
 
-当前家具由 `scripts/furniture_geometry.py` 按 `model/apartment.json` 从源生成，最新反馈及选择留在 `docs/design/living-v04/`，v03 / v02 及对应版本记录继续保留。`model/furniture-measurements.json` 保留实际桌面 / 支撑 / 柜墙测量；`scripts/render-furniture-review.py` 可从同一 Blend 生成独立中性形体审查。`src/presentation-environment.js` 从同一规格生成窗外展示几何，由 Three.js 和 Cycles 共用；这部分不属于建筑 GLB、不参与选取 / 碰撞 / 面积，当前只在室内视角显示。
+当前家具由 `scripts/furniture_geometry.py` 按 `model/apartment.json` 从源生成，最新反馈及选择留在 `docs/design/living-v06/`，v04 / v03 / v02 及对应版本记录继续保留。`model/furniture-measurements.json` 保留实际桌面 / 支撑 / 柜墙测量；`scripts/render-furniture-review.py` 可从同一 Blend 生成独立中性形体审查。`src/presentation-environment.js` 从同一规格生成窗外展示几何，由 Three.js 和 Cycles 共用；这部分不属于建筑 GLB、不参与选取 / 碰撞 / 面积，当前只在室内视角显示。
 
 ## 当前家具 / 窗外展示源
 
 外部沙发通过 `external_static` 路线读取已视觉检查的 packed Blend，验证 SHA-256，保留原 UV、PBR 和 4K 图像。家具局部 +X 为正面，+Y 为宽度，Z 为高度；由 JSON 位置与朝向变换到房屋坐标。不要只覆盖输出 GLB，或以原程序沙发材质覆盖导入材质。
 
-`modelPackages` 将完整源划为互斥的实体包，导出、重导入、数据与压缩均检查合并语义覆盖。发布清单的 `additionalModels` 必须同主包一起加载，标准 / 高清各有两包，下载区明确列出。既有同步分包保持；网页总预算随完整纹理记录在 `model/resource-budgets.json`，不通过缩图降低画质。KTX 如超过单文件限额，保留原图编码 + Meshopt，实际编码记录在 `model-packages.json`。
+`modelPackages` 将完整源划为互斥的实体包，导出、重导入、数据与压缩均检查合并语义覆盖。发布清单的 `additionalModels` 必须同主包一起加载，标准 / 高清各有三包，下载区明确列出。既有同步分包保持；网页总预算随完整纹理记录在 `model/resource-budgets.json`，不通过缩图降低画质。KTX 如超过单文件限额，保留原图编码 + Meshopt，实际编码记录在 `model-packages.json`。
 
-窗外庭院使用 `presentationEnvironment` 的确定性展示几何，`src/presentation-environment.js` 同供 Three.js 和 Blender 渲染适配器使用；不加入建筑 GLB、空间面积和碰撞。室内透射玻璃、暖色洗墙和灯光参数来自当前 JSON；AI 氛围图与真实模型始终标明来源。当前设计与历史、尺寸假设、用户要求和验收边界见 [v04 上下文](docs/design/living-v04/DECISION.md)。
-
+窗外庭院使用 `presentationEnvironment` 的确定性展示几何，`src/presentation-environment.js` 同供 Three.js 和 Blender 渲染适配器使用；不加入建筑 GLB、空间面积和碰撞。室内透射玻璃、暖色洗墙和灯光参数来自当前 JSON；AI 氛围图与真实模型始终标明来源。当前设计与历史、尺寸假设、用户要求和验收边界见 [v06 上下文](docs/design/living-v06/DECISION.md)。
 
 书房实际家具与两张确认效果图采用 [study-v04](docs/design/study-v04/DECISION.md)；`scripts/study_geometry.py` 从同一建筑JSON重建，第三个study包随房屋/沙发同步展示。独立源/GLB检查可运行 `scripts/render-study-review.py -- --final` 与 `--final --reimport`；不覆盖源Blend。当前网页/首次交互预算38/40MiB，保留全尺寸贴图，实测值和验收边界见QA。

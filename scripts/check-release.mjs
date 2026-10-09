@@ -87,12 +87,14 @@ check("all geometry outside recorded revisions remains identical to v05", () => 
 });
 if (spec.furnishings?.length) {
   const previous = await json("model/baseline-v06/validation.json");
-  check("Every v06 architectural part outside the explicit study window change remains unchanged", () => {
+  check("Every v06 architectural part outside the recorded photo doorway remains unchanged", () => {
+    const changed=new Set(spec.revisions.filter(r=>r.id==='living-v06-photo-tv-wall').flatMap(r=>r.nodeNames??[]));
     const allowed = new Set(spec.studyDecision ? [
       ...spec.entities.find(e=>e.windowId==='X_north').sourceNodes,
       "wall_north_3_0_lower",
     ] : []);
     for (const [name, old] of Object.entries(previous.objects)) {
+      if(changed.has(name))continue;
       const current = validation.objects[name];
       assert.ok(current, name);
       assert.equal(current.entityId, old.entityId, name);

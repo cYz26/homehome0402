@@ -34,7 +34,8 @@ for c in spec['lighting']['roomLights']:
     if c.get('color'):
         ob.data.color=color(c['color'])
 for c in spec['lighting']['strips']:
-    ob=light(c['id'],'AREA',c['position'],8,max(c['size']),c['target']);ob.data.color=(1,.82,.58);interior.append(ob)
+    ob=light(c['id'],'AREA',c['position'],c.get('renderPower',8),max(c['size']),c['target']);ob.data.color=color(c['color']) if c.get('color') else (1,.82,.58);interior.append(ob)
+    if c.get('shape')=='rectangle':ob.data.shape='RECTANGLE';ob.data.size=c['size'][0];ob.data.size_y=c['size'][1]
 for c in spec['lighting'].get('wallWash',[]):
     ob=light(c['id'],'SPOT',c['position'],c['renderPower'],.04,c['target'])
     ob.data.spot_size=c['angle']*2;ob.data.spot_blend=c['penumbra'];ob.data.shadow_soft_size=.035

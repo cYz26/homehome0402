@@ -1,0 +1,57 @@
+{
+  "source": "references/revisions/tv-wall-20261009/01-existing-wall.png",
+  "sourceSha256": "896f3e9a1b6c18f9601d417de9234a033c054db697185b0560defdcebad76106",
+  "method": "Four-corner planar homography; scales inferred from model panel run, not site dimensions",
+  "photoWallCornersPx": [
+    [
+      249,
+      111
+    ],
+    [
+      772,
+      280
+    ],
+    [
+      750,
+      950
+    ],
+    [
+      280,
+      1175
+    ]
+  ],
+  "plateCenterPixels": [
+    [
+      557,
+      940
+    ],
+    [
+      635,
+      909
+    ]
+  ],
+  "normalizedU": [
+    0.4779767355,
+    0.6603710975
+  ],
+  "normalizedFromTop": [
+    0.8645448778,
+    0.8626298938
+  ],
+  "modelMainPanelRunT": [
+    8.54,
+    12.14
+  ],
+  "roundedModelPlanT": [
+    10.26,
+    10.92
+  ],
+  "roundedModelAbsoluteHeight": 0.355,
+  "positionAuthority": "user real-wall photograph",
+  "uncertainties": [
+    "Photograph is oblique; corner picks approximate",
+    "Physical dimensions are model-based, not certified measurements",
+    "Socket hole patterns interpreted, gang count observed"
+  ],
+  "latestCornerInput": "references/revisions/tv-wall-20261009/04-wall-side-and-door.png"
+}

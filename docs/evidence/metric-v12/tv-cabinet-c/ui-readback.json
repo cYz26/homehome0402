@@ -1,0 +1,148 @@
+{
+  "version": "metric-v12",
+  "environment": "Local Chromium; desktop and phone viewport simulation, not real-device acceptance",
+  "views": [
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 900,
+      "title": "Home 402 · 家的空间档案",
+      "propertyText": "85 英寸壁挂电视\n\nliving-art-panels\n\n关联空间\n客厅\n模型外包尺寸\n0.06 × 1.90 × 1.07 m\n材质\n电视石墨色边框、电视深色屏幕、炭灰木板\n\n用户指定 85 寸 16:9；可视区 1.882 × 1.058 m、8 mm 边框；中心 1.35 m 及厚度为未实测布局假设\n\n用户指定 85 寸 16:9；可视区约 1.882 × 1.058 m；中心距模型地面 1.35 m 为布局假设。原构件 ID 保留查询兼容。",
+      "queries": [
+        {
+          "id": "living-modular-cabinet",
+          "name": "C · 一字胡桃木悬空电视柜",
+          "text": "C · 一字胡桃木悬空电视柜\n\nliving-modular-cabinet\n\n关联空间\n客厅\n模型外包尺寸\n0.40 × 3.56 × 0.30 m\n材质\n胡桃木、深色木框、炭灰木板、电视墙暖色灯缝\n\n用户已选 C 一字悬空柜；长 3.56 m、底距完成面 12 cm / 顶 42 cm、五抽屉与后部 75 mm 服务空腔为模型布局假设；保留原实拍插座\n\n已选 C，长 3.56 m、五个抽屉，柜底距完成面约 12 cm、顶约 42 cm；背后 75 mm 服务空腔保留实拍两组插座，可拆背板检修。柜体和施工尺寸待现场复核。\n\nC 采用一字悬空柜；左端距黑色墙侧面约 3 cm，卧室门洞平面位置及全开门保持。A 单门立柜与 B 组合柜效果图已保存备选参考。"
+        },
+        {
+          "id": "living-tv-wall-finish",
+          "name": "实拍灰米色电视墙与竖向灯缝",
+          "text": "实拍灰米色电视墙与竖向灯缝\n\nliving-tv-wall-finish\n\n关联空间\n客厅\n模型外包尺寸\n0.24 × 3.64 × 2.60 m\n材质\n实拍灰米色电视墙面板、炭灰木板、电视墙暖色灯缝\n\n用户标注实拍：黑长条是电视墙北侧立面；主饰面凸出结构墙约 22 cm，无宽黑正面条；尺寸为照片 / 模型推断\n\n黑色长条是凸出电视墙的北侧转角立面，并非正面黑色装饰带；门洞原宽 / 位置保留，平口到饰面顶 2.62 m。侧立面深度、门高为照片解释。"
+        },
+        {
+          "id": "living-tv-outlets",
+          "name": "实拍电视墙插座组",
+          "text": "实拍电视墙插座组\n\nliving-tv-outlets\n\n关联空间\n客厅\n模型外包尺寸\n0.01 × 0.83 × 0.09 m\n材质\n炭灰木板、深色木框\n\n实拍两组同高插座，透视校正宽度位置约 48% / 66%；电视墙主面板 t=8.54…12.14，插座 t=10.26 / 10.92、z=0.355，为模型尺度推断，保留在柜后\n\n左侧三联长面板 / 右侧单面板基本同高，按实拍透视校正布局约在主面板 48% / 66% 处，留在低柜背后。尺度与插头检修条件仍需现场复核。"
+        }
+      ],
+      "options": [
+        {
+          "key": "c",
+          "id": "scheme-overview",
+          "src": "/releases/metric-v12/images/scheme-overview.webp",
+          "caption": "AI 方案效果图 · living-v07-cabinet-c　已选 C 并同步当前 3D：低位一字悬空柜约 3.56 m，保留 85 寸电视、实拍侧立面 / 卧室门洞和窗侧石材灯缝。AI 图比例近似，实际模型渲染与安装尺寸另行复核。"
+        },
+        {
+          "key": "a",
+          "id": "scheme-tv-a",
+          "src": "/releases/metric-v12/images/scheme-tv-a.webp",
+          "caption": "AI 方案效果图 · living-v06-cabinet-comparison-r2　已保存备选参考：45 cm 窄单门立柜＋低位悬空柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。"
+        },
+        {
+          "key": "b",
+          "id": "scheme-tv-b",
+          "src": "/releases/metric-v12/images/scheme-tv-b.webp",
+          "caption": "AI 方案效果图 · living-v06-cabinet-comparison-r2　已保存备选参考：高低五模块组合柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "label": "phone",
+      "width": 390,
+      "height": 844,
+      "title": "Home 402 · 家的空间档案",
+      "propertyText": "85 英寸壁挂电视\n\nliving-art-panels\n\n关联空间\n客厅\n模型外包尺寸\n0.06 × 1.90 × 1.07 m\n材质\n电视石墨色边框、电视深色屏幕、炭灰木板\n\n用户指定 85 寸 16:9；可视区 1.882 × 1.058 m、8 mm 边框；中心 1.35 m 及厚度为未实测布局假设\n\n用户指定 85 寸 16:9；可视区约 1.882 × 1.058 m；中心距模型地面 1.35 m 为布局假设。原构件 ID 保留查询兼容。",
+      "queries": [
+        {
+          "id": "living-modular-cabinet",
+          "name": "C · 一字胡桃木悬空电视柜",
+          "text": "C · 一字胡桃木悬空电视柜\n\nliving-modular-cabinet\n\n关联空间\n客厅\n模型外包尺寸\n0.40 × 3.56 × 0.30 m\n材质\n胡桃木、深色木框、炭灰木板、电视墙暖色灯缝\n\n用户已选 C 一字悬空柜；长 3.56 m、底距完成面 12 cm / 顶 42 cm、五抽屉与后部 75 mm 服务空腔为模型布局假设；保留原实拍插座\n\n已选 C，长 3.56 m、五个抽屉，柜底距完成面约 12 cm、顶约 42 cm；背后 75 mm 服务空腔保留实拍两组插座，可拆背板检修。柜体和施工尺寸待现场复核。\n\nC 采用一字悬空柜；左端距黑色墙侧面约 3 cm，卧室门洞平面位置及全开门保持。A 单门立柜与 B 组合柜效果图已保存备选参考。"
+        },
+        {
+          "id": "living-tv-wall-finish",
+          "name": "实拍灰米色电视墙与竖向灯缝",
+          "text": "实拍灰米色电视墙与竖向灯缝\n\nliving-tv-wall-finish\n\n关联空间\n客厅\n模型外包尺寸\n0.24 × 3.64 × 2.60 m\n材质\n实拍灰米色电视墙面板、炭灰木板、电视墙暖色灯缝\n\n用户标注实拍：黑长条是电视墙北侧立面；主饰面凸出结构墙约 22 cm，无宽黑正面条；尺寸为照片 / 模型推断\n\n黑色长条是凸出电视墙的北侧转角立面，并非正面黑色装饰带；门洞原宽 / 位置保留，平口到饰面顶 2.62 m。侧立面深度、门高为照片解释。"
+        },
+        {
+          "id": "living-tv-outlets",
+          "name": "实拍电视墙插座组",
+          "text": "实拍电视墙插座组\n\nliving-tv-outlets\n\n关联空间\n客厅\n模型外包尺寸\n0.01 × 0.83 × 0.09 m\n材质\n炭灰木板、深色木框\n\n实拍两组同高插座，透视校正宽度位置约 48% / 66%；电视墙主面板 t=8.54…12.14，插座 t=10.26 / 10.92、z=0.355，为模型尺度推断，保留在柜后\n\n左侧三联长面板 / 右侧单面板基本同高，按实拍透视校正布局约在主面板 48% / 66% 处，留在低柜背后。尺度与插头检修条件仍需现场复核。"
+        }
+      ],
+      "options": [
+        {
+          "key": "c",
+          "id": "scheme-overview",
+          "src": "/releases/metric-v12/images/scheme-overview.webp",
+          "caption": "AI 方案效果图 · living-v07-cabinet-c　已选 C 并同步当前 3D：低位一字悬空柜约 3.56 m，保留 85 寸电视、实拍侧立面 / 卧室门洞和窗侧石材灯缝。AI 图比例近似，实际模型渲染与安装尺寸另行复核。"
+        },
+        {
+          "key": "a",
+          "id": "scheme-tv-a",
+          "src": "/releases/metric-v12/images/scheme-tv-a.webp",
+          "caption": "AI 方案效果图 · living-v06-cabinet-comparison-r2　已保存备选参考：45 cm 窄单门立柜＋低位悬空柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。"
+        },
+        {
+          "key": "b",
+          "id": "scheme-tv-b",
+          "src": "/releases/metric-v12/images/scheme-tv-b.webp",
+          "caption": "AI 方案效果图 · living-v06-cabinet-comparison-r2　已保存备选参考：高低五模块组合柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。"
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "manifestSha256": "123d8b810e86b944bc606c607b2bcbf1259c3628c8fcd3b4a8c4f034bde811e6",
+  "scriptSha256": "da58b38c72ba5d78b754587ee3a3144cd2ce7d7c031dc4fd45200395cb2183bf",
+  "images": [
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-desktop-door-return.png",
+      "sha256": "bb64e56b8898de5a2f50e16a863c55d3030190b2993b9188f40b419f7e29d632"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-desktop-scheme-a.png",
+      "sha256": "864dabe014241a96ea5921b6ff1f5a494ace5b606558a7815e2b07d724ff0a90"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-desktop-scheme-b.png",
+      "sha256": "b41bf6303c1e3eae7cecac69284d55384bfd1f4ff5823443fab30b6bedf05b47"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-desktop-scheme-c.png",
+      "sha256": "26af7663a075064f402aea631c27c30904169e0ce6247bb4af083407c93e0485"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-desktop-tv-properties.png",
+      "sha256": "ae473867dc9e887037a0b41f765ac1298bc8b694ad9ffc8deb6c65dcd02dd106"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-desktop-tv-wall.png",
+      "sha256": "541bdc9a9ab8d95568e3e24db20064ab230be729cc61213bc2b72c49a6fc783a"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-phone-door-return.png",
+      "sha256": "7d2b7cb73828610dedc32978d20bec9b15f5f6ea8a9129c8baf81103a14dc05c"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-phone-scheme-a.png",
+      "sha256": "b54a5a92ac73b7305e516703d64794383e19f6613992de1b8a69af5cad5fe075"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-phone-scheme-b.png",
+      "sha256": "57a170316de60711b3289910c405772656c3471c740259961f343ba223dc0aed"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-phone-scheme-c.png",
+      "sha256": "6f49f70d249426943da9213cd8b71db65a0de1d6699889817f521ef9c3d6de67"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-phone-tv-properties.png",
+      "sha256": "1bc1dcbc6b756f6a3162e3eb5b46339a3fb38c98e604d9baef9bc26dd2421f40"
+    },
+    {
+      "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-phone-tv-wall.png",
+      "sha256": "bf8cc38bce0606a4ade69aaf70a97dff7b0bcb1d66c2cb721e982f46ad55e3cb"
+    }
+  ]
+}

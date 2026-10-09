@@ -1,0 +1,12 @@
+[
+  {
+    "path": "references/model/metric-v10/living-cycles.png",
+    "sha256": "fff621c3c3692a6b5b474d317969230d83f5da490f8fe5bb1c9b52a54147f0e9",
+    "pixelsUnchanged": true
+  },
+  {
+    "path": "references/model/metric-v10/cabinet-cycles.png",
+    "sha256": "542818ee163da7732db443989dab0867fcb3720b1e7d50f3a24b6795f6047d3a",
+    "pixelsUnchanged": true
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "version": "metric-v12",
+  "baseline": "metric-v11",
+  "sourceSha256": "a3a98ba1a66dd2344adcf650205e3e9244574aefc9d4180b7ffa66446f6b6f1e",
+  "specSha256": "e684da1897071a584f4b462b8eb0d2598120dceb3093805aac0c94307dc04882",
+  "unchangedCount": 710,
+  "changedCount": 2,
+  "changedNodes": [
+    "Furniture_living_modular_cabinet",
+    "Furniture_living_table_lamp"
+  ],
+  "removedCount": 2,
+  "removedNodes": [
+    "Furniture_living_tall_cabinet",
+    "Furniture_living_tall_cabinet_upper"
+  ],
+  "addedNodes": [],
+  "unchangedChecks": "bounds, triangles, entity ID and material names",
+  "exactSpecPreservation": "all walls, doors and unchanged furniture entries",
+  "oldResourcesRetained": 35,
+  "referencesPreserved": [
+    {
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-a-single-door-r2.png",
+      "sha256": "36bd85adba67bc279462771c8208530ebc81d65a9408b0178112b96f66ce6266"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-b-combination-door-r2.png",
+      "sha256": "dfbc9d3a9b72170fd3133f248bb5fad6c877fc41b6a1433d78d7855459ba5960"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-c-floating-door-r2.png",
+      "sha256": "297f62b0782e36c93b32ecf4a63696607ed0989fbef72f066ea9a2d169b04323"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009-r2/generation-record.json",
+      "sha256": "2845b9100aa77003d4fb64d3679cd4eda3b0332e1b6d7e491b5e37446e4b298d"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009-r2/REVIEW.md",
+      "sha256": "3128a6120aa3af95098991aed4805d1f799ec92d8fafc54b3ec4f327185fd49e"
+    }
+  ],
+  "originalSofaSourcePreserved": true
+}

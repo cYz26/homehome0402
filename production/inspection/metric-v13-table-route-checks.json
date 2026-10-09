@@ -1,0 +1,67 @@
+{
+  "status": "source_bound",
+  "policy_sha256": "73835a2855c27aa15fff13dc89a485108e4c5f45a39c14ee34dba91f85fe72d2",
+  "decision_path": "production/routes/home402_table_set.json",
+  "decision_sha256": "6df5e8e3b8e63899306de3f68b5b50539e40ccdec9773a680822b3dfc05e9707",
+  "decision": {
+    "schema_version": 1,
+    "asset_id": "home402_table_set",
+    "task_id": "home402-living-v08-to-metric-v13",
+    "intent": "revise_static",
+    "route": "existing_blender",
+    "decision_basis": {
+      "path": "docs/design/living-v08/DECISION.md",
+      "sha256": "96128aa12fc5af1926d6d34363840178d0fb1d531264d21780f291a5141b65e4"
+    },
+    "route_override": null,
+    "allowed_changes": [
+      "Add one same-side chair using inspected existing parametric chair recipe/materials; preserve all previous table/bench/chair meshes and architectural/furniture data. Update AI presentation images as requested."
+    ],
+    "references": [
+      {
+        "path": "references/generated/living-effects-20261009-r3/c-living-overview-four-chairs.png",
+        "sha256": "92d706534007c26784e6b4feaef0189d50b77250c6de4c62a68339bba52b712b"
+      }
+    ],
+    "geometry": {
+      "source": {
+        "path": "art_src/apartment-v12.blend",
+        "sha256": "a3a98ba1a66dd2344adcf650205e3e9244574aefc9d4180b7ffa66446f6b6f1e"
+      },
+      "inspection": {
+        "path": "production/inspection/home402_table_set-metric-v12.json",
+        "sha256": "efe430976422b03a73295befd67eceddbf6b54e3c102933d2c78cba5bd3abf0d"
+      },
+      "basis": "existing",
+      "generation": null
+    },
+    "reuse": []
+  },
+  "inputs": {
+    "art_src/apartment-v12.blend": "a3a98ba1a66dd2344adcf650205e3e9244574aefc9d4180b7ffa66446f6b6f1e",
+    "docs/design/living-v08/DECISION.md": "96128aa12fc5af1926d6d34363840178d0fb1d531264d21780f291a5141b65e4",
+    "production/inspection/home402_table_set-metric-v12.json": "efe430976422b03a73295befd67eceddbf6b54e3c102933d2c78cba5bd3abf0d",
+    "production/inspection/metric-v12-source.json": "e5793466e1e9d5dc755a8c490014c0a25b9abecf25730f9f874add5d640690d0",
+    "references/generated/living-effects-20261009-r3/c-living-overview-four-chairs.png": "92d706534007c26784e6b4feaef0189d50b77250c6de4c62a68339bba52b712b"
+  },
+  "geometry_inventory": {
+    "schema_version": 1,
+    "source": {
+      "path": "art_src/apartment-v12.blend",
+      "sha256": "a3a98ba1a66dd2344adcf650205e3e9244574aefc9d4180b7ffa66446f6b6f1e"
+    },
+    "meshes": [
+      "Furniture_dining_work_table",
+      "Furniture_dining_bench",
+      "Furniture_dining_chair_1",
+      "Furniture_dining_chair_2",
+      "Furniture_dining_chair_3"
+    ],
+    "armatures": [],
+    "actions": [],
+    "evidence": {
+      "path": "production/inspection/metric-v12-source.json",
+      "sha256": "e5793466e1e9d5dc755a8c490014c0a25b9abecf25730f9f874add5d640690d0"
+    }
+  }
+}

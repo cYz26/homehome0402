@@ -1,0 +1,283 @@
+{
+  "version": "metric-v12",
+  "sourceSha256": "a3a98ba1a66dd2344adcf650205e3e9244574aefc9d4180b7ffa66446f6b6f1e",
+  "specSha256": "e684da1897071a584f4b462b8eb0d2598120dceb3093805aac0c94307dc04882",
+  "selectionSha256": "f65f182837f1a9aa54ad2dea29e38ac11b3040751e5af0136b08cb4165375557",
+  "assets": [
+    {
+      "path": "releases/metric-v12/images/hero-640.webp",
+      "role": "hero",
+      "bytes": 13336,
+      "sha256": "56eb3daae3cca4e12a97a0202e5904af06b87fc2760ce220d6e7f9b5d29ac989"
+    },
+    {
+      "path": "releases/metric-v12/images/hero-1000.webp",
+      "role": "hero",
+      "bytes": 23214,
+      "sha256": "f8d9fca81b54dca05fc933bf4fbf4594f331d0ea6ed0fd34913ed651cefdcfae"
+    },
+    {
+      "path": "releases/metric-v12/images/hero-1600.webp",
+      "role": "hero",
+      "bytes": 41932,
+      "sha256": "9c30ba20b1fdce6024fe761e5eaec194a78cb56a511796ddfe9ba9cdbf0acfcc"
+    },
+    {
+      "path": "releases/metric-v12/images/reference.webp",
+      "role": "render",
+      "bytes": 58752,
+      "sha256": "c26c78306829296c9d09344bba5e88650906d3da5dabc4de57c9dfd967e15f1d"
+    },
+    {
+      "path": "releases/metric-v12/images/living.webp",
+      "role": "render",
+      "bytes": 43366,
+      "sha256": "50fbe60f18f9d443b4bf8f908f6285582928efc110c9f6c648cc842da4f5a240"
+    },
+    {
+      "path": "releases/metric-v12/images/kitchen.webp",
+      "role": "render",
+      "bytes": 25196,
+      "sha256": "94c2a698e1a69d87b8e99becd995869e14851d1ec67b583b1a25ebdf78982085"
+    },
+    {
+      "path": "releases/metric-v12/images/master.webp",
+      "role": "render",
+      "bytes": 19560,
+      "sha256": "478af863dce05a9e87c12ba18f1024ac59e1c6d4735c88658da69e4d0cefa2ac"
+    },
+    {
+      "path": "releases/metric-v12/images/masterbath.webp",
+      "role": "render",
+      "bytes": 28268,
+      "sha256": "45e0d1247e1e3cd7885b1cd23c4ee3313670ba7e545ec3ca77de939b9bf53f50"
+    },
+    {
+      "path": "releases/metric-v12/images/scheme-overview.webp",
+      "role": "design-effect",
+      "bytes": 114786,
+      "sha256": "03d98c35ee2ddd6903ed86f4be54c068e993fa32b083e5601d1553b34dd4fb80"
+    },
+    {
+      "path": "releases/metric-v12/images/scheme-tv-a.webp",
+      "role": "design-effect",
+      "bytes": 145014,
+      "sha256": "649fb177f8ea4e8ff3666b217f4769844d140788890840db8a4833d5ed710dff"
+    },
+    {
+      "path": "releases/metric-v12/images/scheme-tv-b.webp",
+      "role": "design-effect",
+      "bytes": 137480,
+      "sha256": "35c7d8a0ecf05080e60e590570a8f31a06171a801f6adb7e399f6d348b4b081e"
+    },
+    {
+      "path": "releases/metric-v12/images/plan.webp",
+      "role": "source-reference",
+      "bytes": 312218,
+      "sha256": "27586ceb40ee6e9d0a8a7d2b2c28f45f1e71b282eb1e011c4a88170e6c5c7459"
+    },
+    {
+      "path": "releases/metric-v12/images/photo-living.webp",
+      "role": "source-reference",
+      "bytes": 86636,
+      "sha256": "eda121943857c7c581217b9162735582a0bbd823814791542534d934ae21fe0a"
+    },
+    {
+      "path": "releases/metric-v12/images/photo-north.webp",
+      "role": "source-reference",
+      "bytes": 75108,
+      "sha256": "ddb941a0a25dc421019554520f9173c89d5d6fc678f07808fede324ac01ef057"
+    },
+    {
+      "path": "releases/metric-v12/images/photo-master.webp",
+      "role": "source-reference",
+      "bytes": 78240,
+      "sha256": "01b701d77020debb4f7f1a22194e43b431d3a14b804b485cc19939d3f4c202e8"
+    },
+    {
+      "path": "releases/metric-v12/images/photo-southeast.webp",
+      "role": "source-reference",
+      "bytes": 84756,
+      "sha256": "8cadad7af73c025307afde8d0cf61944c06592fc75df4d9cf0392482908b379c"
+    },
+    {
+      "path": "releases/metric-v12/images/photo-hall.webp",
+      "role": "source-reference",
+      "bytes": 78226,
+      "sha256": "ac04567939131e7ae3035a49d7c2040264f7442e9f6f9e3492f9a74b76312c0f"
+    },
+    {
+      "path": "releases/metric-v12/images/photo-vanity.webp",
+      "role": "source-reference",
+      "bytes": 68564,
+      "sha256": "696a1c9c9bd1e7b452e7d7d813d54f98c3da9cf39c25913cde0038ce3c251652"
+    },
+    {
+      "path": "releases/metric-v12/images/photo-fridge.webp",
+      "role": "source-reference",
+      "bytes": 79578,
+      "sha256": "1498fbdab347375613a469155a2a1e4e01e3690c210e823c606ece9430da24c5"
+    },
+    {
+      "path": "releases/metric-v12/images/photo-hob.webp",
+      "role": "source-reference",
+      "bytes": 71432,
+      "sha256": "56efa2c4c9580f1dbca212b2542f3a9f8a66f4be176c2117978680a9a81c48da"
+    },
+    {
+      "path": "releases/metric-v12/images/photo-slider.webp",
+      "role": "source-reference",
+      "bytes": 52780,
+      "sha256": "035eb78b6837303e18152cc872d7a18a7812ccd85175b6ccfc6c90990720cc16"
+    },
+    {
+      "path": "releases/metric-v12/images/photo-bathdoor.webp",
+      "role": "source-reference",
+      "bytes": 69238,
+      "sha256": "f8fbc08ba277304684324c4a0873f58a36d0edb3d733bb32f9ad3eb83d0329e2"
+    },
+    {
+      "path": "releases/metric-v12/apartment-web.glb",
+      "role": "model",
+      "bytes": 15465308,
+      "sha256": "3d7628fb6626914757cc84679af8efb455d89540f47dd66fa628f1d8cce17876"
+    },
+    {
+      "path": "releases/metric-v12/apartment-hd.glb",
+      "role": "hd-model",
+      "source": "asset_exchange/apartment-v12.glb",
+      "bytes": 23260440,
+      "sha256": "8b71e51a63d11422a82462a0b8ff882021db91a559464f8e07007ea2ced397a7"
+    },
+    {
+      "path": "releases/metric-v12/living-sofa-web.glb",
+      "role": "model",
+      "bytes": 15929940,
+      "sha256": "8e1f4c042d7419ec1b6964d57741214d9894c088f5086766adeab19d269e1487"
+    },
+    {
+      "path": "releases/metric-v12/living-sofa-hd.glb",
+      "role": "hd-model",
+      "source": "asset_exchange/living-sofa-v12.glb",
+      "bytes": 21232288,
+      "sha256": "6aa1dc600f96c10444c1a2605419e924da1947a29f869a724b83518a4f9edcc2"
+    },
+    {
+      "path": "releases/metric-v12/model-packages.json",
+      "role": "model-report",
+      "bytes": 2425,
+      "sha256": "24c832649d6afc0c21f87bfa79f92950f820e2465d09eede2e1a2970f16ff664"
+    },
+    {
+      "path": "releases/metric-v12/architecture.json",
+      "role": "properties",
+      "bytes": 159663,
+      "sha256": "a4d3cece604a74f70f6540b609a2b875f275c10de20a13417bf5cb1586ac1f8d"
+    },
+    {
+      "path": "releases/metric-v12/navigation.json",
+      "role": "navigation",
+      "bytes": 348685,
+      "sha256": "4cf3cbaa36422c86bc10de8ab1cb1e2b82caecbaf1741e9094a1618b2d93e4f8"
+    },
+    {
+      "path": "releases/metric-v12/floor-plan.svg",
+      "role": "drawing",
+      "bytes": 12999,
+      "sha256": "613871ba313f9b27f1c3e063e2b69972774096116ce81ba37ca5369265413fad"
+    },
+    {
+      "path": "releases/metric-v12/design-spec.json",
+      "role": "design-source",
+      "bytes": 172347,
+      "sha256": "e684da1897071a584f4b462b8eb0d2598120dceb3093805aac0c94307dc04882"
+    },
+    {
+      "path": "releases/metric-v12/release-report.json",
+      "role": "report",
+      "bytes": 20179,
+      "sha256": "d1818d392fa78f5f8ed2cbe9793ca3818d3dcd6fd69fee38f35a32a788e4aa71"
+    },
+    {
+      "path": "decoders/basis/basis_transcoder.js",
+      "role": "decoder",
+      "bytes": 57529,
+      "sha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1"
+    },
+    {
+      "path": "decoders/basis/basis_transcoder.wasm",
+      "role": "decoder",
+      "bytes": 527333,
+      "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a"
+    },
+    {
+      "path": "decoders/THREE-LICENSE.txt",
+      "role": "license",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    }
+  ],
+  "sourceBindings": {
+    "model/apartment.json": "e684da1897071a584f4b462b8eb0d2598120dceb3093805aac0c94307dc04882",
+    "model/resource-budgets.json": "bfc681abaaad20b3a6d03ca8294f42b1aaf491798fda75e174001b24d699ab12",
+    "art_src/apartment-v12.blend": "a3a98ba1a66dd2344adcf650205e3e9244574aefc9d4180b7ffa66446f6b6f1e",
+    "asset_exchange/apartment-v12.glb": "8b71e51a63d11422a82462a0b8ff882021db91a559464f8e07007ea2ced397a7",
+    "asset_exchange/living-sofa-v12.glb": "6aa1dc600f96c10444c1a2605419e924da1947a29f869a724b83518a4f9edcc2",
+    "art_src/furniture/sofa-tripo-r1-ready.blend": "012aaf0d133d13effc1d0a0c3d61ce800d6118c5bdfdd2e438a0d6fb585e2ec7",
+    "production/sofa-tripo-r1/handoff.json": "0103e520f8a742f635bd8ad51fe94c907c3040b5d6003bcb33c1d3f88694cae2",
+    "scripts/model-packages.mjs": "e70a0e51f590b25ac6fe414ce18dc60d7ce134746d6ad67a0899c9f99fcfbc4f",
+    "scripts/model_packages.py": "f7227b33733c985b47c97596e92c65978c5ca96d4317779a015ae0656a3ff777",
+    "scripts/build-apartment.py": "6c232bb9031e809d8da3010c82b3e9d8c1ea8cd2bb86dc198866df34d536c86e",
+    "scripts/architecture_geometry.py": "100923540528a5a077de6d9ae4634278d27ddfd6e13255bf38fb04fc03de3d47",
+    "scripts/furniture_geometry.py": "9d5aa59a768778fecd10d4343ab9925ba1ae95d4810f01682f647700dd3cff41",
+    "scripts/render-apartment.py": "60df457f51f92c8073e0ea42d94c73ff4e51d45bd8e920374d231ddd0524d043",
+    "scripts/render_exterior.py": "8679645a753b780c7c29181261a58e16e77f0eafea016693d4e6db656c554f4b",
+    "scripts/environment-data.mjs": "0226a918f23428b31454ef8f3756e05cafb2ec8ebd83853252660e5cfc0fb3e3",
+    "scripts/export-apartment.py": "0bfed34ff74f2c99594135662ec0492b79027f34e3e28727bf5d801c970fcb5c",
+    "scripts/validate-apartment.py": "c7be117cb8a4cdc98a8060b4edc33afe9b6787d107f79fefee9b8b8f6267e8e6",
+    "scripts/generate-data.mjs": "c8c60db18a9cf67d43f5fb125e707f8562a778cb277957613c1454a7dc8be0b2",
+    "scripts/optimize-web.mjs": "b19096eb220fad02aa5682c83853e4216016cf02d80c3b28e038683d266a9f37",
+    "scripts/prepare-release.mjs": "467ee30afaaf56bca8e6da6be540d632391fd2951365389e4a9a877c315020e1",
+    "scripts/stage-site.mjs": "d50ec3fb8ae5c354b62ed59f167f859beca2b5da3ccfa85228e5b9b6fa21242c",
+    "wrangler.jsonc": "f314e064b3298793daa65f73627131ec801e1a9bf650cb613d028e9f440a8057",
+    "worker/index.mjs": "e46633202fdaecb29426fa491168d48fa26437e183ebf8b3bd070d94f4028f8d",
+    "scripts/deploy-worker.mjs": "16e91d2e94a9ef3dcc665e7cd8d5be1d7e403869d28c06627a6ea5a128759df2",
+    "scripts/worker-secrets.mjs": "5642c3ccc677e63f3f5c6dcd7c96c0e0d351eb17ac4701fdde7037304397cedc",
+    "scripts/check-worker.mjs": "9447a07024d99d583e0515c9eea8031ce63535f39a37af38d3208595310f3025",
+    "scripts/check-deployment.mjs": "893e9a43647c96ad21045c3b634ce36e0905e7496a8d7bf65a9bfe7762f6bd76",
+    "index.html": "ac3834f9521904af94461a2b5b21083dad9dadfe6b8e279877085be9996565b6",
+    "vite.config.js": "451a7a7da2ae957aa8d1bbb9b9391860c87d4dfc281d0fad47f204da58f647eb",
+    "package.json": "2615c29164769e5f0b98e82092d29cfd86464bc540e98399453d6fa6f576a95e",
+    "package-lock.json": "7e5e84f03f6a48d066bf926b8af5e0a9b68fbbca7fce56e5d9a0e3b0d6864736",
+    "docs/design/living-v07/selection.json": "f65f182837f1a9aa54ad2dea29e38ac11b3040751e5af0136b08cb4165375557",
+    "docs/design/living-v07/DECISION.md": "0fa2672d6c383e9e759437ac6337b3cf098cbe5f764a4727b6702d109a908805",
+    "references/generated/living-furniture-20261008/walnut-albedo-r1.png": "121afabfb94e86456e7159985650f9453efd6d433417e6fef536d387f2de2586",
+    "references/generated/tv-wall-20261009-r2/cabinet-a-single-door-r2.png": "36bd85adba67bc279462771c8208530ebc81d65a9408b0178112b96f66ce6266",
+    "references/generated/tv-wall-20261009-r2/cabinet-b-combination-door-r2.png": "dfbc9d3a9b72170fd3133f248bb5fad6c877fc41b6a1433d78d7855459ba5960",
+    "references/generated/tv-wall-20261009-r2/cabinet-c-floating-door-r2.png": "297f62b0782e36c93b32ecf4a63696607ed0989fbef72f066ea9a2d169b04323",
+    "references/generated/living-furniture-20261008/independent/sofa-r1.png": "207695f478249e0cc3c0237bf35495dc5f7329ea32095d8625b551228840f25d",
+    "references/generated/living-furniture-20261008/independent/table-set-r1.png": "4a65f62b4e248e9eaafedbe317f39a0878de9bf1134435e1fe02977b6e367fce",
+    "references/generated/living-furniture-20261008/independent/armchair-r1.png": "43e618e18adcb950c8ac878ecef8d39090282f446a656b7231ff99be470b215d",
+    "references/revisions/living-furniture-20261008/table-r2/02-table-structure.png": "d87e274d3b53df93e09dcf2922895f48a6fcc0bffd725d5ae72a6d182ed868b0",
+    "references/revisions/living-furniture-20261008/table-r2/03-table-dimensions.png": "e3265533252e8c37d1768698ffc93ddc9639d05530656a64f7a73baaea8d3a80",
+    "references/revisions/living-furniture-20261008/table-r2/01-table-photo.png": "662895561aad8eac07a1aed7fd114e2b81401321eb847c59038a0626278844d0",
+    "references/generated/living-furniture-20261008/independent/table-set-r2.png": "1133dab518a9471da066c60b61cbf333c29614d13f71bee59afb6830c0d355d3",
+    "src/camera.js": "d569defab5b8600daa0f893ee3004a9b05b1067178967c05bd50b2ece6357b96",
+    "src/exterior.js": "ef6453af223024c88ab603c078292cf207fd43f04a8a03ec95dfacfa525c2d8f",
+    "src/main.js": "8a16945831fe80345cf3d88c28496b641847c6b6d671d130a0d5347ad6272d5d",
+    "src/model-bundles.js": "cb1e121a19b25280ca6ae53cc0879533b8d131e39ed723cc4c1997f3f8fcd112",
+    "src/model-resource.js": "020ae235eb4396a2084313292e75888acd413abfd8f1e7c428eb0dbf88eaf889",
+    "src/presentation-environment.js": "a784a0f9a8f3c2278f64a311f5fe7a359be19387e35725106144e71f1c91bfdb",
+    "src/resources.js": "514d10e46ba15af394850983fd80f00dc61335581d0702da0131ca1e5f8a2eba",
+    "src/scene.js": "17984f889910e4fd1e622f9940bd34cc8f5198a18276a6159fbd79d736fb79c5",
+    "src/section-ao.js": "f0d3b5367dc5e3426aca4544d49b7e4d4a9fa5ff717e020e3c952ac2ef2b25e6",
+    "src/sections.js": "fe250b510c255c7bd8e0618edbd4432c13738eee4be714c49a6138f95fc22630",
+    "src/spatial.js": "feb4642c1c3b23b1ddcdcfe040a4b200b21ce76e39f72dae60f35f896ddae058",
+    "src/style.css": "91f4d3fec6dacc75ebb5fb0f65ddd56c09d1b5654e07f46a8819f797dfc6178c",
+    "src/view-state.js": "37216a878f2bd00ed0e1f4eb66692bd93b18753d43e7aeb4ec55274b5b701cd6",
+    "src/viewer.js": "87b23b3152058bc14e1d6b008de95372ec62f4c78d30026fa56cf472a8d4896b",
+    "src/walk-input.js": "ee8d951cf113450164de39d7eb16dce662c816b6960b594fbe4cc3533392edc5",
+    ".github/workflows/pages.yml": "8965975cfaa950cd7da7af60409b9ca16c34dc6eecd6e31151f30da6215a4315",
+    "scripts/check-pages-deployment.mjs": "47122be39d044076dac1677aedb676e8e15acee600bd9aafad1c91626aa7ac9d"
+  }
+}

@@ -69,7 +69,7 @@ export class ApartmentScene {
       this.lights.add(light);
     }
     for (const c of data.lighting.strips) {
-      const light = new THREE.RectAreaLight(0xffdcb2, 3.8, ...c.size);
+      const light = new THREE.RectAreaLight(c.color ?? 0xffdcb2, c.intensity ?? 3.8, ...c.size);
       light.position.copy(this.point(c.position));
       light.lookAt(this.point(c.target));
       this.lights.add(light);

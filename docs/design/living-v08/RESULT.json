@@ -1,0 +1,84 @@
+{
+  "design_id": "home402-living-v08",
+  "version": "metric-v13",
+  "status": "Photoreal effects installed in gallery; missing fourth chair restored in image and actual source; local checks passed; no commit/push/deployment",
+  "spec": {
+    "path": "docs/evidence/metric-v14/integration-inputs/living-only-v13/model/apartment.json",
+    "sha256": "9c66e5c9630d4884fc74feb1df28eee3e024744458fafaf0aadfd7b74357b7f5"
+  },
+  "source": {
+    "path": "docs/evidence/metric-v14/integration-inputs/living-only-v13/art_src/apartment-v13.blend",
+    "sha256": "75b885fae30d292c246af44c4c265a54477c9eb47d7a3804b8bfb9fc9d91ebcc"
+  },
+  "release": {
+    "path": "docs/evidence/metric-v14/integration-inputs/living-only-v13/public/release.json",
+    "sha256": "4ddd41ab3b7dd7d988f84e9015d7a970467470e3a411b8fbf045e307b93ca93f"
+  },
+  "selection": {
+    "path": "docs/design/living-v08/selection.json",
+    "sha256": "56d3ae1d51ec48a42eef34033f639770c376989d649801efd10516fda246e4f4"
+  },
+  "geometry": {
+    "sourceMeshes": 713,
+    "logicalIds": 93,
+    "triangles": 219971,
+    "degenerate": 0,
+    "maxBoundsErrorM": 9.5367431640625e-07,
+    "chairCount": 4,
+    "addedEntity": "dining-chair-4",
+    "priorMeshesUnchanged": 712
+  },
+  "validation": {
+    "modelChecks": 29,
+    "nodeBehaviorChecks": 53,
+    "releaseChecks": 16,
+    "resources": 36,
+    "focusedUIContexts": 2,
+    "focusedUIScreenshots": 10,
+    "finalApplicationErrors": 0,
+    "fullBrowserInventoryNotRerun": true
+  },
+  "currentEffects": [
+    {
+      "path": "references/generated/living-effects-20261009-r3/c-living-overview-four-chairs.png",
+      "sha256": "92d706534007c26784e6b4feaef0189d50b77250c6de4c62a68339bba52b712b"
+    },
+    {
+      "path": "references/generated/living-effects-20261009-r3/c-tv-wall.png",
+      "sha256": "ddb8acfdf70b4d3e5bd01fc0761930ac0136d1a93a53c6b7f0c7de595626401e"
+    }
+  ],
+  "generation": {
+    "path": "references/generated/living-effects-20261009-r3/generation-record.json",
+    "sha256": "fc675e8399dceca5759b93d209d012b616bee7fb5bdc8c920de5059265b6f9d9"
+  },
+  "preservation": {
+    "path": "production/inspection/metric-v13-preservation.json",
+    "sha256": "d91f326d1fee76119f5ca2efa319c8208d127b3d12f5115c1ceb1928392c0617"
+  },
+  "sourceRoute": {
+    "path": "production/inspection/metric-v13-table-route-checks.json",
+    "sha256": "7a68e8792fb9f6d2933abdc2148f873322723b091f620954fda84177c65c3724"
+  },
+  "sourceInspection": {
+    "path": "production/inspection/home402_table_set-metric-v13.json",
+    "sha256": "baad0180c36fde5bffde03daac709687dac1bbd9db78de702e36d23169f20ad6"
+  },
+  "browserEvidence": {
+    "path": "docs/evidence/metric-v13/four-chairs-effects/ui-readback.json",
+    "sha256": "0730b893ad059a96a0b4744fbbe2738fc6f26fa201aa0dc030b91c30092d2e74"
+  },
+  "previewRecovery": {
+    "path": "docs/evidence/metric-v13/four-chairs-effects/preview-recovery.json",
+    "sha256": "d0fb0917682c703ab6a5bf8f6c456dde529eb653fd4afe9d75f0b37539ef9176"
+  },
+  "previewURL": "http://127.0.0.1:4173/homehome0402/",
+  "imageTool": "Built-in image_gen, no CLI fallback",
+  "savedAlternatives": [
+    "A",
+    "B"
+  ],
+  "realPhonePerformance": "not measured; viewport simulation only",
+  "visualAcceptance": "pending review of corrected four-chair effect/model",
+  "archiveNote": "This receipt describes the living-only v13 input before integration; colliding source files are archived. Current integrated release is recorded separately under metric-v14."
+}

@@ -1,0 +1,116 @@
+{
+  "design_id": "home402-living-v07",
+  "version": "metric-v12",
+  "status": "C selected by user; local source, model and website verified; A/B references retained; no commit, push or deployment",
+  "source": {
+    "path": "art_src/apartment-v12.blend",
+    "sha256": "a3a98ba1a66dd2344adcf650205e3e9244574aefc9d4180b7ffa66446f6b6f1e"
+  },
+  "spec": {
+    "path": "model/apartment.json",
+    "sha256": "e684da1897071a584f4b462b8eb0d2598120dceb3093805aac0c94307dc04882"
+  },
+  "release": {
+    "path": "public/release.json",
+    "sha256": "123d8b810e86b944bc606c607b2bcbf1259c3628c8fcd3b4a8c4f034bde811e6"
+  },
+  "selection": {
+    "path": "docs/design/living-v07/selection.json",
+    "sha256": "f65f182837f1a9aa54ad2dea29e38ac11b3040751e5af0136b08cb4165375557"
+  },
+  "baseline": "model/baseline-v11",
+  "validation": {
+    "roundtrip_pass": true,
+    "meshes": 712,
+    "logical_ids": 92,
+    "triangles": 218335,
+    "degenerate_triangles": 0,
+    "max_bound_error_m": 9.5367431640625e-7,
+    "model_checks": 28,
+    "node_checks": 53,
+    "release_checks": 16,
+    "selected_resources": 35,
+    "browser_selected_cases": 8,
+    "browser_full_inventory": 20,
+    "browser_failures": 0,
+    "browser_retries": 0,
+    "browser_skips": 0,
+    "browser_images": 32,
+    "targeted_ui_viewports": [
+      "desktop 1280x900",
+      "phone 390x844"
+    ],
+    "targeted_ui_images": 12,
+    "render_views": 9
+  },
+  "geometry": {
+    "cabinet": {
+      "width": 3.56,
+      "depth": 0.4,
+      "height": 0.3,
+      "drawers": 5,
+      "bottomAboveFinish": 0.12,
+      "topAboveFinish": 0.42,
+      "rearServiceDepth": 0.075,
+      "planT": [
+        8.57,
+        12.13
+      ]
+    },
+    "tallCabinet": "removed from current geometry/entities/navigation; preserved in metric-v11 history",
+    "television": "85 inch, original position and dimensions preserved",
+    "wallDoorOutlets": "exact metric-v11 source entries and geometry preserved"
+  },
+  "current_model_variant": "C",
+  "saved_alternatives": [
+    "A",
+    "B"
+  ],
+  "source_route": {
+    "path": "production/inspection/metric-v12-route-checks.json",
+    "sha256": "b0359f66da41e5959d2011b5eb0605eb547ff0be14fd057eda61008e66cc3043"
+  },
+  "source_inspection": {
+    "path": "production/inspection/home402_cabinet_wall-metric-v12.json",
+    "sha256": "e2e17ac2a47c293c42a8ccdfbe66b8f2365546c87e318e3b35bdf0dc08c21843"
+  },
+  "preservation": {
+    "path": "production/inspection/metric-v12-preservation.json",
+    "sha256": "acfc66f741978f35394aedc8f2dec2d4f33549b180be707283ff722108450e37"
+  },
+  "reference_archive": {
+    "path": "docs/design/living-v07/reference-archive.json",
+    "sha256": "453853d34f2ed060e641e807b3c5e619c873321db73a32abda8607235dbf5a10"
+  },
+  "active_image_replacement": {
+    "path": "docs/evidence/metric-v12/tv-cabinet-c/current-display-replacement.json",
+    "sha256": "2e35fffc25c24f3bffad431c84f80f1c649916ed7f86238c1bbd171a5dd2d0a8"
+  },
+  "browser_evidence": {
+    "path": "docs/evidence/metric-v12/tv-cabinet-c/browser-verification.json",
+    "sha256": "326fd9f69eaaf628f6fbb7cc2c3949dcb62181a7a1586bd2208b661e8a8cbac1"
+  },
+  "targeted_ui_evidence": {
+    "path": "docs/evidence/metric-v12/tv-cabinet-c/ui-readback.json",
+    "sha256": "6548aaa7ceeddacb96e6fe3794f502322e1c37b966e5cbec20fe9d1e73501b50"
+  },
+  "same_model_renders": [
+    {
+      "path": "references/model/metric-v12/cabinet-cycles.png",
+      "sha256": "b69e65823758c0cfc423011a8e4543a263abe4974a85aee26d75829c6506939f"
+    },
+    {
+      "path": "references/model/metric-v12/tv-door-cycles.png",
+      "sha256": "244536ef2e598c70735d5e0ac9eae715b3db70ddbf627e28fb259068b5e42ad1"
+    },
+    {
+      "path": "references/model/metric-v12/living-cycles.png",
+      "sha256": "66b5900de189b30b95ee450dd54fbea3ef6f27ad3b1b3d042ad0f78b9b829500"
+    }
+  ],
+  "preview_url": "http://127.0.0.1:4173/",
+  "real_device_performance": "not measured; phone viewport is simulation",
+  "user_visual_acceptance": "Cabinet variant C selected; new actual model image pending review",
+  "remote_release": "No changes to prior metric-v09 remote deployment; local metric-v12 only",
+  "image_generation": "No new AI generation this revision; all three prior PNGs, original outputs and generation records retained unchanged"
+}

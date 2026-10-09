@@ -1,0 +1,356 @@
+{
+  "id": "home402-living-v07",
+  "date": "2026-10-09",
+  "user_acceptance": {
+    "scope": "用户已选 C 一字悬空柜；A/B 样式图保留备选参考",
+    "cabinet_selection": "C",
+    "model_acceptance": "metric-v12 pending user visual review",
+    "presentation": "Latest requested style is photoreal room effects like supplied images 2/3; new images pending visual review"
+  },
+  "user_authorization": {
+    "quotes": [
+      "参考这个照片，将电视墙面的效果保持一致（同步更改3D场景）",
+      "电视设定为85寸的大电视，下方是一个横排悬空柜，旁边放一组立柜",
+      "悬浮柜低一点，并且注意插座的位置要跟实际照片的布局一致",
+      "左侧的柜子应该是凸出墙面的吧",
+      "双门放那显得太大了；需要和旁边的门洞一块展示",
+      "再给一下电视下面是这种组合柜的效果；还有一种是去掉左边的立柜，就下面一长条悬浮柜",
+      "电视墙旁边和旁边连接卧室的门洞参考这个图的效果和布局，黑色长条是电视墙侧面的立面",
+      "先选C，另外两个样式参考图也保存一下",
+      "注意效果图和3D场景同步更新，之前旧的替换一下",
+      "这里需要的是像之前图2，图3这种效果图，而不是3D场景的渲染图"
+    ],
+    "scope": "修改设计源与派生 3D、本机图片和网页预览；不包含提交推送或发布"
+  },
+  "selected_previews": [
+    {
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-a-single-door-r2.png",
+      "sha256": "36bd85adba67bc279462771c8208530ebc81d65a9408b0178112b96f66ce6266",
+      "status": "saved alternative reference; not applied to current model"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-b-combination-door-r2.png",
+      "sha256": "dfbc9d3a9b72170fd3133f248bb5fad6c877fc41b6a1433d78d7855459ba5960",
+      "status": "saved alternative reference; not applied to current model"
+    },
+    {
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-c-floating-door-r2.png",
+      "sha256": "297f62b0782e36c93b32ecf4a63696607ed0989fbef72f066ea9a2d169b04323",
+      "status": "historical C geometry reference; presentation superseded by effects-r3"
+    },
+    {
+      "path": "references/generated/living-effects-20261009-r3/c-living-overview.png",
+      "sha256": "ae95b721bbaf0dc1ad57eb7928543eeea0d247ce2d8e85cb56d8fd1d5782c90c",
+      "status": "current C whole-room AI interior effect"
+    },
+    {
+      "path": "references/generated/living-effects-20261009-r3/c-tv-wall.png",
+      "sha256": "ddb8acfdf70b4d3e5bd01fc0761930ac0136d1a93a53c6b7f0c7de595626401e",
+      "status": "current C front TV-wall AI interior effect"
+    }
+  ],
+  "independent_references": [
+    {
+      "asset": "sofa",
+      "path": "references/generated/living-furniture-20261008/independent/sofa-r1.png",
+      "sha256": "207695f478249e0cc3c0237bf35495dc5f7329ea32095d8625b551228840f25d",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority."
+    },
+    {
+      "asset": "table-set",
+      "path": "references/generated/living-furniture-20261008/independent/table-set-r1.png",
+      "sha256": "4a65f62b4e248e9eaafedbe317f39a0878de9bf1134435e1fe02977b6e367fce",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority.",
+      "role": "historical table legs; chair and bench style reference"
+    },
+    {
+      "asset": "cabinet-wall",
+      "path": "references/generated/tv-wall-20261009-r2/cabinet-c-floating-door-r2.png",
+      "sha256": "297f62b0782e36c93b32ecf4a63696607ed0989fbef72f066ea9a2d169b04323",
+      "role": "用户已选 C，同机位 AI 外观参考；实际墙面 / 门洞以原实拍和 metric-v11 源为准",
+      "selection_authority": "user: 先选C"
+    },
+    {
+      "asset": "armchair",
+      "path": "references/generated/living-furniture-20261008/independent/armchair-r1.png",
+      "sha256": "43e618e18adcb950c8ac878ecef8d39090282f446a656b7231ff99be470b215d",
+      "selection_authority": "agent under user-authorized 3D integration",
+      "assumptions": "Interpreted standalone reference. Hidden structural details inferred; source photos and accepted room preview retain design authority."
+    }
+  ],
+  "baseline": {
+    "version": "metric-v11",
+    "spec": "model/baseline-v11/apartment.json",
+    "source": {
+      "path": "art_src/apartment-v11.blend",
+      "sha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea"
+    },
+    "release": {
+      "path": "model/baseline-v11/release.json",
+      "sha256": "e4bfd1c4b93708996aeb89c2c68c320114e39e5eef53607ebcf15589bc32764e"
+    }
+  },
+  "target_version": "metric-v12",
+  "confirmed": {
+    "noTV": false,
+    "noCoffeeTable": true,
+    "sofaFacesCabinet": true,
+    "steppedCabinet": false,
+    "tableFunctions": [
+      "dining",
+      "study",
+      "work"
+    ],
+    "tableLengthAboveMeters": 2.5,
+    "chairsOnOneSide": true,
+    "oneBenchOnOppositeSide": true,
+    "wallArt": "85-inch television",
+    "cabinet": "C long lower floating cabinet, no tall cabinet",
+    "outlets": "photo-relative placement retained behind service void"
+  },
+  "dimensions": {
+    "tableLengthMeters": 2.8,
+    "basis": "Latest user-provided dimension drawing supersedes visual assumption",
+    "remaining": "bounded inferred sizes recorded in apartment.json"
+  },
+  "route": "revise_static / existing_blender, inspected metric-v11 source",
+  "table_revision": {
+    "supersedes": "2.6m preview assumption and table-set-r1 geometry",
+    "latest_user_request": "多功能桌参考这些图再还原的一致一些",
+    "reference_directory": "references/revisions/living-furniture-20261008/table-r2",
+    "dimensions_from_drawing_m": {
+      "length": 2.8,
+      "width": 0.9,
+      "height": 0.75,
+      "topThickness": 0.07,
+      "endOverhang": 0.26,
+      "storageLength": 0.6,
+      "storageDepth": 0.7,
+      "storageHeight": 0.68,
+      "openKneeSpan": 1.6,
+      "panelThickness": 0.08,
+      "panelDepth": 0.53
+    },
+    "scope": "Use new table structure and dimensions; keep one chair side/opposite bench, sofa/cabinet placement and the approved overall palette.",
+    "standalone_reference": {
+      "path": "references/generated/living-furniture-20261008/independent/table-set-r2.png",
+      "sha256": "1133dab518a9471da066c60b61cbf333c29614d13f71bee59afb6830c0d355d3"
+    },
+    "inferred": "Tray count six and concealed hardware are interpretation; drawing dimensions are not site/manufacturer certification.",
+    "source_files": [
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/02-table-structure.png",
+        "sha256": "d87e274d3b53df93e09dcf2922895f48a6fcc0bffd725d5ae72a6d182ed868b0"
+      },
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/03-table-dimensions.png",
+        "sha256": "e3265533252e8c37d1768698ffc93ddc9639d05530656a64f7a73baaea8d3a80"
+      },
+      {
+        "path": "references/revisions/living-furniture-20261008/table-r2/01-table-photo.png",
+        "sha256": "662895561aad8eac07a1aed7fd114e2b81401321eb847c59038a0626278844d0"
+      }
+    ]
+  },
+  "metadata_cleanup": "All new project PNG copies stripped without pixel re-encoding; decoded RGBA equality verified. Originals retained.",
+  "texture_reference": {
+    "path": "references/generated/living-furniture-20261008/walnut-albedo-r1.png",
+    "sha256": "121afabfb94e86456e7159985650f9453efd6d433417e6fef536d387f2de2586",
+    "role": "AI albedo interpretation for furniture; no manufacturer texture certification"
+  },
+  "previous_context": "docs/design/living-v06/selection.json",
+  "previous_decision": "docs/design/living-v06/DECISION.md",
+  "feedback": [
+    {
+      "path": "references/revisions/living-furniture-20261008/feedback-r3/01-web-cabinet-height.png",
+      "sha256": "873c285fea09c3bcea44783b9b34d7fcbf03aceb096afa296b031a1b147ac7d8"
+    },
+    {
+      "path": "references/revisions/living-furniture-20261008/feedback-r3/02-artwork-request.png",
+      "sha256": "187e20e98e7a7ec163bb8f5369af1f745bf3a3f63215ba88df912def2d87ad66"
+    }
+  ],
+  "calibration": {
+    "television": {
+      "width": 1.898,
+      "height": 1.074,
+      "diagonalInches": 85,
+      "centerHeight": 1.35,
+      "planT": 10.59
+    },
+    "cabinet": {
+      "width": 3.56,
+      "depth": 0.4,
+      "height": 0.3,
+      "drawers": 5,
+      "position": [
+        6.988,
+        10.35
+      ],
+      "planTRange": [
+        8.57,
+        12.13
+      ],
+      "bottomAbsolute": 0.136,
+      "bottomAboveFinish": 0.12,
+      "topAboveFinish": 0.42,
+      "rearServiceDepth": 0.075
+    },
+    "basis": "Bounded metric interpretation of user photo; cabinet sizes and mounting conditions not measured",
+    "wall": {
+      "frontX": 7.198,
+      "mainPanelRunT": [
+        8.54,
+        12.14
+      ],
+      "buildupDepth": 0.222,
+      "black": "north-facing side return, not frontal stripe",
+      "doorOpening": [
+        7.62,
+        8.52,
+        2.62
+      ]
+    }
+  },
+  "display_effects": [
+    {
+      "id": "scheme-overview",
+      "title": "C · 客餐厅整体效果",
+      "source": "references/generated/living-effects-20261009-r3/c-living-overview.png",
+      "kind": "AI 方案效果图",
+      "designVersion": "living-v07-effects-r3",
+      "caption": "已选 C：85 寸电视配低位一字悬空柜，三把椅子与对侧长凳，保留中央活动空地。按最新参考生成的室内效果图，比例与陈设为设计示意。"
+    },
+    {
+      "id": "scheme-tv-c-close",
+      "title": "C · 电视墙正面效果",
+      "source": "references/generated/living-effects-20261009-r3/c-tv-wall.png",
+      "kind": "AI 方案效果图",
+      "designVersion": "living-v07-effects-r3",
+      "caption": "已选 C：85 寸电视与低位长悬空柜，保留左侧卧室门洞、墙侧立面、窗侧石材及竖向暖光。按最新参考生成的室内效果图，比例与陈设为设计示意。"
+    },
+    {
+      "id": "scheme-tv-a",
+      "title": "A · 单门立柜（备选参考）",
+      "source": "references/generated/tv-wall-20261009-r2/cabinet-a-single-door-r2.png",
+      "kind": "AI 方案效果图",
+      "designVersion": "living-v06-cabinet-comparison-r2",
+      "caption": "已保存备选参考：45 cm 窄单门立柜＋低位悬空柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。"
+    },
+    {
+      "id": "scheme-tv-b",
+      "title": "B · 高低组合柜（备选参考）",
+      "source": "references/generated/tv-wall-20261009-r2/cabinet-b-combination-door-r2.png",
+      "kind": "AI 方案效果图",
+      "designVersion": "living-v06-cabinet-comparison-r2",
+      "caption": "已保存备选参考：高低五模块组合柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。"
+    }
+  ],
+  "sofa_revision": {
+    "handoff": "production/sofa-tripo-r1/handoff.json",
+    "source": {
+      "path": "art_src/furniture/sofa-tripo-r1-ready.blend",
+      "sha256": "012aaf0d133d13effc1d0a0c3d61ce800d6118c5bdfdd2e438a0d6fb585e2ec7",
+      "object": "Furniture_living_sofa",
+      "localFront": "+X",
+      "floorElevation": 0.016
+    },
+    "normalization": "Uniform 2.4m width assumption; full original 4K PBR retained",
+    "placement": {
+      "position": [
+        4.17,
+        10.4
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "eastward_clearance_adjustment_m": 0.05
+    },
+    "provider_metadata": "Unknown task id, settings and cost; user supplied ZIP originally contained FBX and 4K images"
+  },
+  "lineage_v03": "docs/design/living-v03/selection.json",
+  "television_revision": {
+    "logical_id": "living-art-panels",
+    "recipe": "television",
+    "dimensions_m": [
+      1.898,
+      0.064,
+      1.074
+    ],
+    "center_height_m": 1.35,
+    "nominal_diagonal_inches": 85,
+    "basis": "User specified diagonal, installation dimensions inferred"
+  },
+  "lineage_v04": "docs/design/living-v04/selection.json",
+  "photo_inputs": {
+    "date": "2026-10-09",
+    "inputs": [
+      {
+        "path": "references/revisions/tv-wall-20261009/01-existing-wall.png",
+        "original": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-85e4f6e7-55cc-4252-ad23-9a3398e1972d.png",
+        "original_local_copy": ".asset-work/tmp/tv-wall-v11/intake-original/01-existing-wall.png",
+        "raw_sha256": "5a1d7500b6477590576d375f4bfa20d6fdd0983c0ccd01333c7d31d74b11d42f",
+        "role": "User wall photograph: panel joints, dark trim, stone side and vertical warm light",
+        "sha256": "896f3e9a1b6c18f9601d417de9234a033c054db697185b0560defdcebad76106",
+        "metadata_cleanup": "PNG non-display metadata removed from project copy; original retained; RGBA unchanged"
+      },
+      {
+        "path": "references/revisions/tv-wall-20261009/02-tv-cabinet-style.png",
+        "original": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-26c57506-e97a-43f0-8299-f1162078d65e.png",
+        "original_local_copy": ".asset-work/tmp/tv-wall-v11/intake-original/02-tv-cabinet-style.png",
+        "raw_sha256": "3d3dfd725cef4b925956a46e5afeb1ed43872a9a583115768ca258a99477e430",
+        "role": "User cabinet style reference: 85 inch television, floating horizontal cabinet and one tall cabinet group; not the Home 402 room",
+        "sha256": "d92a712c75395abbb06b75cc1f8cdae4159ef0fe78fb082a21a72794efab2406",
+        "metadata_cleanup": "PNG non-display metadata removed from project copy; original retained; RGBA unchanged"
+      }
+    ],
+    "followups": [
+      {
+        "original": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-b951959c-f8a0-4118-ac1b-a6adf29cb728.png",
+        "originalSha256": "896caa6ac56f113b2a39aba09346ce171a1b1cdd97934b6fffce23aaa4b8607c",
+        "path": "references/revisions/tv-wall-20261009/03-combination-style.png",
+        "sha256": "dd8a87d62c3074a07c65558c2fd29a06138de3f0b69edf3816198cd53afbb0c0",
+        "pixelsUnchanged": true,
+        "role": "五模块高低组合柜形式"
+      },
+      {
+        "original": "/var/folders/3c/z9wcw8kx66lfmbr02yb5vxd80000gp/T/codex-clipboard-5368dd56-8ed9-4599-a6e0-4e431e6d276a.png",
+        "originalSha256": "046a29033a2347bdd86bd5014cf91a4a1d929be354a2928ac80d5a228d33b479",
+        "path": "references/revisions/tv-wall-20261009/04-wall-side-and-door.png",
+        "sha256": "31e1025876633ff5a35d9e1949e1d3d715021629cf70807dbde51c1f5f5e24aa",
+        "pixelsUnchanged": true,
+        "role": "用户标注：黑条是电视墙侧立面；卧室门洞关系"
+      }
+    ]
+  },
+  "cabinet_options": {
+    "A": "窄单门立柜＋低位悬空柜",
+    "B": "高低五模块组合柜",
+    "C": "一字悬空柜无立柜",
+    "selection": "C",
+    "current_model": "C",
+    "scope": "C 应用当前 3D；A/B 保留备选参考，不建立可切换多方案 3D"
+  },
+  "reference_archive": {
+    "path": "docs/design/living-v07/reference-archive.json",
+    "sha256": "453853d34f2ed060e641e807b3c5e619c873321db73a32abda8607235dbf5a10"
+  },
+  "current_display": "Default C photoreal whole-room effect plus C front TV-wall effect, styled from supplied images 2/3; A/B saved alternatives; metric-v12 geometry preserved.",
+  "presentation_revision": {
+    "id": "effects-r3",
+    "decision": "docs/design/living-v07/effects-r3/DECISION.md",
+    "generation_record": {
+      "path": "references/generated/living-effects-20261009-r3/generation-record.json",
+      "sha256": "58eb98afe2a414f52bad821aea70924033a6cb3b9d31500920c22bd5b23bf074"
+    },
+    "modelVersion": "metric-v12",
+    "modelChanged": false,
+    "priorSelection": {
+      "path": "docs/design/living-v07/effects-r3/previous/selection.json",
+      "sha256": "f65f182837f1a9aa54ad2dea29e38ac11b3040751e5af0136b08cb4165375557"
+    }
+  }
+}

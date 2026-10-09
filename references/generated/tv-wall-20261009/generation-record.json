@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-09",
+  "tool": "built-in image_gen",
+  "role": "AI concept previews, not model renders or site photographs",
+  "edit_target": "references/generated/living-furniture-20261008/cabinet-wall-v03.png",
+  "variants": [
+    {
+      "id": "A",
+      "source": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-41e1dc1c-f8c2-4523-9144-8c17f730c8b9.png",
+      "path": "references/generated/tv-wall-20261009/tv-cabinet-a-v01.png",
+      "sha256": "a5c38106b1fbcb1c50fc632b4c7a51d14099236481be7287e2d4ce25b7e6b11b",
+      "prompt": "references/generated/tv-wall-20261009/prompts/a.txt",
+      "rawSha256": "09b7e1d7c80a98a57464b51f733cac0f47fcb5ed05622c41638425115869f3d6",
+      "metadataCleanup": "PNG non-display chunks stripped; decoded RGBA identical",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": "B",
+      "source": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-001b682d-7fb2-4bc3-8073-a23648c06a36.png",
+      "path": "references/generated/tv-wall-20261009/tv-cabinet-b-v01.png",
+      "sha256": "5b36af1a123bf23ba26f6dc39a1d15a821b9d08fcf6913bbc6008407d3ca2948",
+      "prompt": "references/generated/tv-wall-20261009/prompts/b.txt",
+      "rawSha256": "85ab948c6b1e60e049b68a4f397887ea06b8c109b7aad3d4431b36f582f79f46",
+      "metadataCleanup": "PNG non-display chunks stripped; decoded RGBA identical",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": "C",
+      "source": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-46978f97-31bb-4a7e-9ade-9b5a86557552.png",
+      "path": "references/generated/tv-wall-20261009/tv-cabinet-c-v01.png",
+      "sha256": "77b787b8c2af0b036095e57e743fb25f59f590c4d0922722a73e3b0ec4e64bd7",
+      "prompt": "references/generated/tv-wall-20261009/prompts/c.txt",
+      "rawSha256": "a1f75e0020c8d3ea34954b7351060909900580df9e0776a911991cfd6127ff73",
+      "metadataCleanup": "PNG non-display chunks stripped; decoded RGBA identical",
+      "width": 1448,
+      "height": 1086
+    }
+  ],
+  "user_selection": "pending",
+  "overview": {
+    "source": "/Users/cY/.codex/generated_images/01a11ecf-6b67-7610-acff-f50a9e7ab9b1/exec-2b02d812-1b6b-4b66-87b9-6381495ecd5f.png",
+    "path": "references/generated/tv-wall-20261009/dining-living-tv-v01.png",
+    "sha256": "49f126450edd9e0ac5d749e62f8d373fc6489b0f4943cc0122463a86bdf168f8",
+    "prompt": "references/generated/tv-wall-20261009/prompts/overview.txt",
+    "edit_target": "references/generated/living-furniture-20261008/dining-living-v03.png",
+    "rawSha256": "e39aa45444afc1fe3e8a48cfe66af8f9557649b82f58bd6da545a1ce7d572e73",
+    "metadataCleanup": "PNG non-display chunks stripped; decoded RGBA identical",
+    "width": 1448,
+    "height": 1086
+  }
+}

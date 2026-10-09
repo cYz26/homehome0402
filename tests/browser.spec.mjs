@@ -3,7 +3,7 @@ import sharp from "sharp";
 // Study flow covers its independent package, source-labelled images and stable
 // entity queries through the real UI at desktop and mobile widths.
 for (const [label,width,height] of [["desktop",1280,900],["phone",390,844]]) {
-  test(`study ${label}: confirmed images, complete 3D and furniture properties`, async ({page},testInfo)=>{
+  test(`living and study ${label}: latest images, complete 3D and furniture properties`, async ({page},testInfo)=>{
     test.setTimeout(process.env.CI ? 420000 : 180000);
     await page.setViewportSize({width,height});
     await page.emulateMedia({reducedMotion:"reduce"});
@@ -13,16 +13,20 @@ for (const [label,width,height] of [["desktop",1280,900],["phone",390,844]]) {
     await expect(page).toHaveTitle(/402/);
     await expect(page.locator("#hero-image")).toBeVisible();
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-    for(const [id,file] of [["scheme-study","scheme-study"],["scheme-study-cabinet","scheme-study-cabinet"]]) {
+    for(const [id,file] of [["scheme-overview","scheme-overview"],["scheme-tv-c-close","scheme-tv-c-close"],["scheme-study","scheme-study"],["scheme-study-cabinet","scheme-study-cabinet"]]) {
       await page.locator(`[data-reference="${id}"]`).first().click();
       await expect(page.locator("#reference-dialog")).toBeVisible();
       await expect(page.locator("#reference-image")).toHaveAttribute("src",new RegExp(`/${file}\\.webp$`));
-      await expect(page.locator("#reference-caption")).toContainText("用户已确认");
+      await expect(page.locator("#reference-caption")).toContainText(id.startsWith("scheme-study")?"用户已确认":"已选 C");
+      if(id==="scheme-overview")await expect(page.locator("#reference-caption")).toContainText("四把椅子");
       await expect.poll(()=>page.locator("#reference-image").evaluate(e=>e.complete&&e.naturalWidth>1000)).toBe(true);
+      await testInfo.attach(`${label}-${id}`,{body:await page.screenshot(),contentType:"image/png"});
       await page.locator("#reference-dialog [data-close-dialog]").click();
     }
     await ready(page);
     if(width<700)await panel(page,true);
+    await page.locator('#mini-plan [data-entity-id="dining-chair-4"]').click();
+    await expect(page.locator("#properties")).toContainText("多功能桌东侧座椅 4");
     await page.locator('#rooms [data-room="xroom"]').click({noWaitAfter:true});
     await page.locator('[data-mode="interior"]').click({noWaitAfter:true});
     if(width<700)await panel(page,true);

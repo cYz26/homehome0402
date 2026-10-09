@@ -1,0 +1,186 @@
+{
+  "version": "metric-v13",
+  "environment": "Local Chromium; desktop and phone viewport simulation, not real device",
+  "views": [
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 900,
+      "propertyText": "多功能桌东侧座椅 4\n\ndining-chair-4\n\n关联空间\n入口与走廊、客厅\n模型外包尺寸\n0.53 × 0.47 × 0.83 m\n材质\n深色木框、灰褐皮革\n\n用户补回效果图里靠近镜头的一把椅子；同款同侧第四把，位置为模型布置假设\n\n按用户补椅反馈，同侧四把独立座椅、对侧一张长凳；新椅位与实际坐席 / 膝部空间待现场复核。",
+      "defaultSrc": "/homehome0402/releases/metric-v13/images/scheme-overview.webp",
+      "defaultCaption": "AI 方案效果图 · living-v08-photoreal-effects　已选 C：85 寸电视配低位一字悬空柜，四把椅子与对侧长凳，保留中央活动空地。按最新参考生成的室内效果图，比例与陈设为设计示意。",
+      "tabs": [
+        "scheme-overview",
+        "scheme-tv-c-close",
+        "scheme-tv-a",
+        "scheme-tv-b",
+        "plan",
+        "photo-living",
+        "photo-north",
+        "photo-master",
+        "photo-southeast",
+        "photo-hall",
+        "photo-vanity",
+        "photo-fridge",
+        "photo-hob",
+        "photo-slider",
+        "photo-bathdoor"
+      ],
+      "images": [
+        {
+          "key": "c-overview",
+          "id": "scheme-overview",
+          "src": "/homehome0402/releases/metric-v13/images/scheme-overview.webp",
+          "caption": "AI 方案效果图 · living-v08-photoreal-effects　已选 C：85 寸电视配低位一字悬空柜，四把椅子与对侧长凳，保留中央活动空地。按最新参考生成的室内效果图，比例与陈设为设计示意。",
+          "dimensions": {
+            "width": 1448,
+            "height": 1086
+          }
+        },
+        {
+          "key": "c-front",
+          "id": "scheme-tv-c-close",
+          "src": "/homehome0402/releases/metric-v13/images/scheme-tv-c-close.webp",
+          "caption": "AI 方案效果图 · living-v08-photoreal-effects　已选 C：85 寸电视与低位长悬空柜，保留左侧卧室门洞、墙侧立面、窗侧石材及竖向暖光。按最新参考生成的室内效果图，比例与陈设为设计示意。",
+          "dimensions": {
+            "width": 1448,
+            "height": 1086
+          }
+        },
+        {
+          "key": "a",
+          "id": "scheme-tv-a",
+          "src": "/homehome0402/releases/metric-v13/images/scheme-tv-a.webp",
+          "caption": "AI 方案效果图 · living-v06-cabinet-comparison-r2　已保存备选参考：45 cm 窄单门立柜＋低位悬空柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。",
+          "dimensions": {
+            "width": 1448,
+            "height": 996
+          }
+        },
+        {
+          "key": "b",
+          "id": "scheme-tv-b",
+          "src": "/homehome0402/releases/metric-v13/images/scheme-tv-b.webp",
+          "caption": "AI 方案效果图 · living-v06-cabinet-comparison-r2　已保存备选参考：高低五模块组合柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。",
+          "dimensions": {
+            "width": 1448,
+            "height": 995
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "label": "phone",
+      "width": 390,
+      "height": 844,
+      "propertyText": "多功能桌东侧座椅 4\n\ndining-chair-4\n\n关联空间\n入口与走廊、客厅\n模型外包尺寸\n0.53 × 0.47 × 0.83 m\n材质\n深色木框、灰褐皮革\n\n用户补回效果图里靠近镜头的一把椅子；同款同侧第四把，位置为模型布置假设\n\n按用户补椅反馈，同侧四把独立座椅、对侧一张长凳；新椅位与实际坐席 / 膝部空间待现场复核。",
+      "defaultSrc": "/homehome0402/releases/metric-v13/images/scheme-overview.webp",
+      "defaultCaption": "AI 方案效果图 · living-v08-photoreal-effects　已选 C：85 寸电视配低位一字悬空柜，四把椅子与对侧长凳，保留中央活动空地。按最新参考生成的室内效果图，比例与陈设为设计示意。",
+      "tabs": [
+        "scheme-overview",
+        "scheme-tv-c-close",
+        "scheme-tv-a",
+        "scheme-tv-b",
+        "plan",
+        "photo-living",
+        "photo-north",
+        "photo-master",
+        "photo-southeast",
+        "photo-hall",
+        "photo-vanity",
+        "photo-fridge",
+        "photo-hob",
+        "photo-slider",
+        "photo-bathdoor"
+      ],
+      "images": [
+        {
+          "key": "c-overview",
+          "id": "scheme-overview",
+          "src": "/homehome0402/releases/metric-v13/images/scheme-overview.webp",
+          "caption": "AI 方案效果图 · living-v08-photoreal-effects　已选 C：85 寸电视配低位一字悬空柜，四把椅子与对侧长凳，保留中央活动空地。按最新参考生成的室内效果图，比例与陈设为设计示意。",
+          "dimensions": {
+            "width": 1448,
+            "height": 1086
+          }
+        },
+        {
+          "key": "c-front",
+          "id": "scheme-tv-c-close",
+          "src": "/homehome0402/releases/metric-v13/images/scheme-tv-c-close.webp",
+          "caption": "AI 方案效果图 · living-v08-photoreal-effects　已选 C：85 寸电视与低位长悬空柜，保留左侧卧室门洞、墙侧立面、窗侧石材及竖向暖光。按最新参考生成的室内效果图，比例与陈设为设计示意。",
+          "dimensions": {
+            "width": 1448,
+            "height": 1086
+          }
+        },
+        {
+          "key": "a",
+          "id": "scheme-tv-a",
+          "src": "/homehome0402/releases/metric-v13/images/scheme-tv-a.webp",
+          "caption": "AI 方案效果图 · living-v06-cabinet-comparison-r2　已保存备选参考：45 cm 窄单门立柜＋低位悬空柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。",
+          "dimensions": {
+            "width": 1448,
+            "height": 996
+          }
+        },
+        {
+          "key": "b",
+          "id": "scheme-tv-b",
+          "src": "/homehome0402/releases/metric-v13/images/scheme-tv-b.webp",
+          "caption": "AI 方案效果图 · living-v06-cabinet-comparison-r2　已保存备选参考：高低五模块组合柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。",
+          "dimensions": {
+            "width": 1448,
+            "height": 995
+          }
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "images": [
+    {
+      "path": "docs/evidence/metric-v13/four-chairs-effects/ui-desktop-a.png",
+      "sha256": "ae7fcb2a7220bf7d92cdd583a584008e34a767218fa79fda0f0c92642b316d9d"
+    },
+    {
+      "path": "docs/evidence/metric-v13/four-chairs-effects/ui-desktop-b.png",
+      "sha256": "5beb3d52e5a0dc7ea7722caa3cc07c1048b838405b4bcaa8c453917464923942"
+    },
+    {
+      "path": "docs/evidence/metric-v13/four-chairs-effects/ui-desktop-c-front.png",
+      "sha256": "82d7a7f4a946edde10b56be34a1703f00148f8c27ea84c93a9a7dd4571941edb"
+    },
+    {
+      "path": "docs/evidence/metric-v13/four-chairs-effects/ui-desktop-c-overview.png",
+      "sha256": "5748303b573e3bf41baab4be882ff092eb07e422da513a8571a3769b7bc5c61d"
+    },
+    {
+      "path": "docs/evidence/metric-v13/four-chairs-effects/ui-desktop-fourth-chair.png",
+      "sha256": "a5b4c6342778f6e2baeedf5dc32a711a7b83a7663c06b4518057c299322ac4e4"
+    },
+    {
+      "path": "docs/evidence/metric-v13/four-chairs-effects/ui-phone-a.png",
+      "sha256": "bcf124f2a410f608ad7c0aef4a43835db5ee5464a1d27bddafb7d8be862d724f"
+    },
+    {
+      "path": "docs/evidence/metric-v13/four-chairs-effects/ui-phone-b.png",
+      "sha256": "895c11eb3a053c25bd700ccae2c17c3e8151ba5aa210c89b75d13053fd068c19"
+    },
+    {
+      "path": "docs/evidence/metric-v13/four-chairs-effects/ui-phone-c-front.png",
+      "sha256": "6150d2e2d97f8b7f2fe8e304a207a5df72e7b796b5dccd976174406c7bb2aefa"
+    },
+    {
+      "path": "docs/evidence/metric-v13/four-chairs-effects/ui-phone-c-overview.png",
+      "sha256": "4129c7a28e7c168b7f9623f4eaa4f1176b6fde4f2cda78832237edb78f4d5112"
+    },
+    {
+      "path": "docs/evidence/metric-v13/four-chairs-effects/ui-phone-fourth-chair.png",
+      "sha256": "8acac7112d2cec3da1a7aa44b9fa73348078460ecd3a535262ddef382adb08e9"
+    }
+  ],
+  "manifestSha256": "4ddd41ab3b7dd7d988f84e9015d7a970467470e3a411b8fbf045e307b93ca93f",
+  "scriptSha256": "a12b2323595a5d1a648120514dbf03a7656876ee9566d441bccafbcda61f1ac7"
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_table_set",
+  "task_id": "home402-living-v04-to-metric-v09",
+  "intent": "revise_static",
+  "route": "existing_blender",
+  "decision_basis": {
+    "path": "docs/design/living-v04/DECISION.md",
+    "sha256": "3f926319c1bacef407486a9cde76f7554026f5312e5381d88f907a56fe07fb45"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Rebuild current JSON-controlled furniture and adopt hash-locked prepared Tripo sofa with original PBR; preserve architecture, facing arrangement and other approved furnishing dimensions"
+  ],
+  "references": [
+    {
+      "path": "references/generated/living-furniture-20261008/independent/table-set-r2.png",
+      "sha256": "1133dab518a9471da066c60b61cbf333c29614d13f71bee59afb6830c0d355d3"
+    }
+  ],
+  "geometry": {
+    "source": {
+      "path": "art_src/apartment-v09.blend",
+      "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
+    },
+    "inspection": {
+      "path": "production/inspection/home402_table_set-metric-v09.json",
+      "sha256": "fdc49e7694cbefab978f868f85d194e9b1e71d96b6289cac17e520381bb8da9a"
+    },
+    "basis": "existing",
+    "generation": null
+  },
+  "reuse": []
+}

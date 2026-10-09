@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_cabinet_wall",
+  "task_id": "home402-living-v06-to-metric-v11",
+  "intent": "revise_static",
+  "route": "existing_blender",
+  "decision_basis": {
+    "path": "docs/design/living-v06/DECISION.md",
+    "sha256": "c322e3eb78277c45dbf95d99e2a7520c43d10cd7d65a96088ad8978071881eb6"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Photo-derived greige panels, black left return, right stone and warm seam; 85-inch TV; low floating cabinet with photo sockets retained in rear service void; projecting narrow single-door tall cabinet on corridor side; preserve actual door opening and open leaf; reposition lamps and low media accessories; preserve all original architectural meshes, sofa PBR and table. Latest annotated photo explicitly revises the built-out TV-wall north side and adjacent flush bedroom doorway; only recorded nodes may change, original planar door width/hinge/open direction preserved."
+  ],
+  "references": [
+    {
+      "path": "references/generated/tv-wall-20261009-r2/independent-wall-r3.png",
+      "sha256": "8c26fe63d31062e2b20dfa5ae936ad36084c5ffc587033fe73006fbaac79b60f"
+    },
+    {
+      "path": "references/revisions/tv-wall-20261009/01-existing-wall.png",
+      "sha256": "896f3e9a1b6c18f9601d417de9234a033c054db697185b0560defdcebad76106"
+    },
+    {
+      "path": "references/revisions/tv-wall-20261009/04-wall-side-and-door.png",
+      "sha256": "31e1025876633ff5a35d9e1949e1d3d715021629cf70807dbde51c1f5f5e24aa"
+    }
+  ],
+  "geometry": {
+    "source": {
+      "path": "art_src/apartment-v10.blend",
+      "sha256": "f1c130c3504ffd62d7f712f2e0c016435835d0b4e9d124c9ff953e1560c67c62"
+    },
+    "inspection": {
+      "path": "production/inspection/home402_cabinet_wall-metric-v10.json",
+      "sha256": "5efa948afc8878f7381c183c85fe15e19a5893b52622785d499861afe11c142b"
+    },
+    "basis": "existing",
+    "generation": null
+  },
+  "reuse": []
+}

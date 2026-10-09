@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "art_src/apartment-v10.blend",
+    "sha256": "f1c130c3504ffd62d7f712f2e0c016435835d0b4e9d124c9ff953e1560c67c62"
+  },
+  "meshes": [
+    "Furniture_living_art_panels",
+    "Furniture_living_cabinet_items",
+    "Furniture_living_floor_lamp",
+    "Furniture_living_modular_cabinet",
+    "Furniture_living_table_lamp"
+  ],
+  "armatures": [],
+  "actions": [],
+  "evidence": {
+    "path": "production/inspection/metric-v10-source.json",
+    "sha256": "4f95e8f520c1815a045623ecb258646cbbcc8c202e4a3b24dc94b1243c813588"
+  }
+}

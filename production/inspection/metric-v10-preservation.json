@@ -1,0 +1,11 @@
+{
+  "baseline": "metric-v09",
+  "current": "metric-v10",
+  "sameUnchangedMeshCount": 705,
+  "totalMeshes": 707,
+  "allowedChangedEntities": [
+    "living-art-panels",
+    "living-table-lamp"
+  ],
+  "pass": true
+}

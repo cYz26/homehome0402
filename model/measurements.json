@@ -1,5 +1,5 @@
 {
-  "version": "metric-v13",
+  "version": "metric-v14",
   "height_m": 2.8,
   "cut_height_m": 1.15,
   "coordinate_transform": "Plan x east, t south from north edge; Blender (x,12.9-t,z), GLB (x,z,t-12.9)",
@@ -9,7 +9,7 @@
     "west": 12.9
   },
   "plan_reference_sha256": "d34c2a2641938c7541570063eac16a3d481f84bae4cd4826b2124fadd6186af3",
-  "spec_sha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+  "spec_sha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
   "reference_v05_sha256": "0409b27755131d6ce8794286c464d744bee784484eb9f59f2c734d2deccf39d3",
   "components": [
     {
@@ -437,7 +437,7 @@
           1.32,
           2.22,
           0,
-          2.2
+          2.62
         ]
       ]
     },
@@ -586,7 +586,12 @@
       "leafOffset": [
         0,
         0.04
-      ]
+      ],
+      "finish": {
+        "style": "flush",
+        "openingHeight": 2.62,
+        "leafHeight": 2.6
+      }
     },
     {
       "type": "door",
@@ -704,7 +709,7 @@
       "one_continuous_bowl": true
     }
   ],
-  "object_count": 712,
+  "object_count": 718,
   "room_clear_width_estimates_m": {
     "northwest": 2.62,
     "xroom": 2.64,
@@ -831,22 +836,22 @@
     },
     {
       "id": "living-modular-cabinet",
-      "recipe": "cabinet",
+      "recipe": "floating_cabinet",
       "node": "Furniture_living_modular_cabinet",
       "position": [
-        7.19,
-        10.62
+        6.988,
+        10.35
       ],
       "front": [
         -1,
         0
       ],
       "dimensions": [
-        3.8,
-        0.42,
-        1.16
+        3.56,
+        0.4,
+        0.3
       ],
-      "dimensionBasis": "按用户柜墙图 2 校准高低比例；0.78 / 0.50 / 1.16 m 为未实测的建模假设"
+      "dimensionBasis": "用户已选 C 一字悬空柜；长 3.56 m、底距完成面 12 cm / 顶 42 cm、五抽屉与后部 75 mm 服务空腔为模型布局假设；保留原实拍插座"
     },
     {
       "id": "living-reading-chair",
@@ -910,27 +915,27 @@
       "recipe": "floor_lamp",
       "node": "Furniture_living_floor_lamp",
       "position": [
-        7.01,
-        8.72
+        3.98,
+        12.25
       ],
       "front": [
-        -1,
-        0
+        0,
+        1
       ],
       "dimensions": [
         0.78,
         0.4,
         1.76
       ],
-      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+      "dimensionBasis": "避让新立柜，原落地灯移至窗边阅读椅一侧"
     },
     {
       "id": "living-table-lamp",
       "recipe": "table_lamp",
       "node": "Furniture_living_table_lamp",
       "position": [
-        7.1,
-        11.42
+        6.93,
+        8.85
       ],
       "front": [
         -1,
@@ -941,26 +946,26 @@
         0.3,
         0.76
       ],
-      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+      "dimensionBasis": "已选 C 长柜左端台灯，避开 85 寸屏幕；柜顶高度 0.436 m"
     },
     {
       "id": "living-art-panels",
-      "recipe": "framed_art",
+      "recipe": "television",
       "node": "Furniture_living_art_panels",
       "position": [
-        7.395,
-        10.62
+        7.165,
+        10.59
       ],
       "front": [
         -1,
         0
       ],
       "dimensions": [
-        2,
-        0.035,
-        0.9
+        1.898,
+        0.064,
+        1.074
       ],
-      "dimensionBasis": "用户要求单幅大艺术画；原创生成画面，2.00 × 0.90 m、中心 1.57 m 为方案假设"
+      "dimensionBasis": "用户指定 85 寸 16:9；可视区 1.882 × 1.058 m、8 mm 边框；中心 1.35 m 及厚度为未实测布局假设"
     },
     {
       "id": "living-wall-finish",
@@ -1021,22 +1026,22 @@
     },
     {
       "id": "living-cabinet-items",
-      "recipe": "accessories",
+      "recipe": "media_accessories",
       "node": "Furniture_living_cabinet_items",
       "position": [
-        7.08,
-        9.14
+        6.93,
+        11.2
       ],
       "front": [
         -1,
         0
       ],
       "dimensions": [
-        0.5,
-        0.35,
-        0.35
+        0.52,
+        0.18,
+        0.083
       ],
-      "dimensionBasis": "用户照片 / 已确认 v02 外观，未实测尺寸为建模假设"
+      "dimensionBasis": "低矮书本与播放设备，保留电视及灯缝清晰"
     },
     {
       "id": "study-bookcase",
@@ -1132,6 +1137,120 @@
         0.42
       ],
       "dimensionBasis": "已确认整体图中的笔记本与台灯示意；不计入桌面名义尺寸，不代表采购型号。"
+    },
+    {
+      "id": "living-tv-wall-finish",
+      "recipe": "tv_wall_finish",
+      "node": "Furniture_living_tv_wall_finish",
+      "position": [
+        7.204,
+        10.36
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        3.64,
+        0.012,
+        1.134
+      ],
+      "dimensionBasis": "用户标注实拍：黑长条是电视墙北侧立面；主饰面凸出结构墙约 22 cm，无宽黑正面条；尺寸为照片 / 模型推断"
+    },
+    {
+      "id": "living-tv-wall-finish-upper",
+      "recipe": "tv_wall_finish",
+      "node": "Furniture_living_tv_wall_finish_upper",
+      "position": [
+        7.204,
+        10.36
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        3.64,
+        0.012,
+        1.4700000000000002
+      ],
+      "dimensionBasis": "用户标注实拍：黑长条是电视墙北侧立面；主饰面凸出结构墙约 22 cm，无宽黑正面条；尺寸为照片 / 模型推断"
+    },
+    {
+      "id": "living-tv-stone",
+      "recipe": "tv_stone_finish",
+      "node": "Furniture_living_tv_stone",
+      "position": [
+        7.204,
+        12.42
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.48,
+        0.012,
+        1.134
+      ],
+      "dimensionBasis": "实拍窗侧灰绿石材；宽度及石纹以当前模型近似"
+    },
+    {
+      "id": "living-tv-stone-upper",
+      "recipe": "tv_stone_finish",
+      "node": "Furniture_living_tv_stone_upper",
+      "position": [
+        7.204,
+        12.42
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.48,
+        0.012,
+        1.4700000000000002
+      ],
+      "dimensionBasis": "实拍窗侧灰绿石材；宽度及石纹以当前模型近似"
+    },
+    {
+      "id": "living-tv-outlets",
+      "recipe": "wall_outlets",
+      "node": "Furniture_living_tv_outlets",
+      "position": [
+        7.189,
+        10.36
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.832,
+        0.016,
+        0.086
+      ],
+      "dimensionBasis": "实拍两组同高插座，透视校正宽度位置约 48% / 66%；电视墙主面板 t=8.54…12.14，插座 t=10.26 / 10.92、z=0.355，为模型尺度推断，保留在柜后"
+    },
+    {
+      "id": "dining-chair-4",
+      "recipe": "chair",
+      "node": "Furniture_dining_chair_4",
+      "position": [
+        6.42,
+        4.69
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.49,
+        0.54,
+        0.84
+      ],
+      "dimensionBasis": "用户补回效果图里靠近镜头的一把椅子；同款同侧第四把，位置为模型布置假设"
     }
   ]
 }

@@ -1,0 +1,7 @@
+{
+  "version": "metric-v10",
+  "firstScreenBytes": 1048576,
+  "webModelBytes": 35651584,
+  "interactive3DBytes": 37748736,
+  "basis": "metric-v10 two-package web model measured 31,553,112 bytes / 30.09 MiB. Original 4K sofa PBR, all remaining architecture texture resolutions and standard quality retained. Only the replaced painting texture is omitted. Keep v09 limits: aggregate web 34 MiB, first interaction 36 MiB, first screen 1 MiB and every individual published file below Workers 25 MiB. Architecture uses unchanged-quality KTX2; sofa retains original full-resolution image encoding plus Meshopt."
+}

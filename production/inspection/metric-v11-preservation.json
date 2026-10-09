@@ -1,0 +1,48 @@
+{
+  "version": "metric-v11",
+  "baseline": "metric-v10",
+  "sourceSha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea",
+  "specSha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac",
+  "unchangedCount": 695,
+  "changedCount": 12,
+  "changedNodes": [
+    "door_southeast_upper",
+    "Furniture_living_art_panels",
+    "Furniture_living_cabinet_items",
+    "Furniture_living_floor_lamp",
+    "Furniture_living_modular_cabinet",
+    "Furniture_living_table_lamp",
+    "jamb_far_southeast_lower",
+    "jamb_far_southeast_upper",
+    "jamb_southeast_lower",
+    "jamb_southeast_upper",
+    "lintel_southeast",
+    "wall_living_se_1_1_upper"
+  ],
+  "allowedChanges": [
+    "wall_living_se_1_1_upper",
+    "door_southeast_upper",
+    "jamb_southeast_lower",
+    "jamb_southeast_upper",
+    "jamb_far_southeast_lower",
+    "jamb_far_southeast_upper",
+    "lintel_southeast",
+    "Furniture_living_art_panels",
+    "Furniture_living_modular_cabinet",
+    "Furniture_living_table_lamp",
+    "Furniture_living_floor_lamp",
+    "Furniture_living_cabinet_items"
+  ],
+  "addedNodes": [
+    "Furniture_living_tall_cabinet",
+    "Furniture_living_tall_cabinet_upper",
+    "Furniture_living_tv_outlets",
+    "Furniture_living_tv_stone",
+    "Furniture_living_tv_stone_upper",
+    "Furniture_living_tv_wall_finish",
+    "Furniture_living_tv_wall_finish_upper"
+  ],
+  "unchangedChecks": "bounds, triangles, entity ID and material names",
+  "allPreviousNamesPreserved": true,
+  "originalSofaSourcePreserved": true
+}

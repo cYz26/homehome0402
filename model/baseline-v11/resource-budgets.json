@@ -1,0 +1,10 @@
+{
+  "version": "metric-v11",
+  "firstScreenBytes": 1048576,
+  "webModelBytes": 35651584,
+  "interactive3DBytes": 37748736,
+  "basis": "metric-v11 two-package web model measured 31413068 bytes / 29.96 MiB. Original 4K sofa PBR and all remaining texture resolutions / standard quality retained. Keep aggregate web 34 MiB, first interaction 36 MiB, first screen 1 MiB and every individual published file below Workers 25 MiB. Architecture uses unchanged-quality KTX2; sofa retains previously verified original full-resolution image encoding plus Meshopt.",
+  "originalImagePackages": [
+    "living-sofa"
+  ]
+}

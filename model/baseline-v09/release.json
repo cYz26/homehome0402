@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "version": "metric-v09",
+  "presentationRevision": "2026-10-08-living-v04-tripo-sofa",
+  "applicationRevision": "2026-10-08-living-v04-static-frames",
+  "units": "m",
+  "project": {
+    "name": "Home 402",
+    "title": "把家的每一处，看清楚。",
+    "description": "从整体布局到一处材质，探索这套精装空房的空间、尺度与细节。",
+    "status": "基于图纸与实拍的米制模型 · 部分尺寸暂估",
+    "modelVisualAcceptance": "pending"
+  },
+  "model": "releases/metric-v09/apartment-web.glb",
+  "rawModel": "releases/metric-v09/apartment-hd.glb",
+  "additionalModels": [
+    {
+      "id": "living-sofa",
+      "model": "releases/metric-v09/living-sofa-web.glb",
+      "rawModel": "releases/metric-v09/living-sofa-hd.glb"
+    }
+  ],
+  "architecture": "releases/metric-v09/architecture.json",
+  "navigation": "releases/metric-v09/navigation.json",
+  "floorplan": "releases/metric-v09/floor-plan.svg",
+  "report": "releases/metric-v09/release-report.json",
+  "spec": "releases/metric-v09/design-spec.json",
+  "images": [
+    {
+      "id": "reference",
+      "title": "当前模型",
+      "path": "releases/metric-v09/images/reference.webp",
+      "kind": "模型渲染",
+      "version": "metric-v09",
+      "caption": "由当前 metric-v09 源模型以 Cycles 渲染；家具、空间、门向及构件与交互模型同步。家具外观按用户参考建模，尺寸依据见构件属性。"
+    },
+    {
+      "id": "living",
+      "title": "客厅",
+      "path": "releases/metric-v09/images/living.webp",
+      "kind": "模型渲染",
+      "version": "metric-v09",
+      "caption": "由当前 metric-v09 源模型以 Cycles 渲染；家具、空间、门向及构件与交互模型同步。家具外观按用户参考建模，尺寸依据见构件属性。"
+    },
+    {
+      "id": "kitchen",
+      "title": "厨房",
+      "path": "releases/metric-v09/images/kitchen.webp",
+      "kind": "模型渲染",
+      "version": "metric-v09",
+      "caption": "由当前 metric-v09 源模型以 Cycles 渲染；家具、空间、门向及构件与交互模型同步。家具外观按用户参考建模，尺寸依据见构件属性。"
+    },
+    {
+      "id": "master",
+      "title": "主卧",
+      "path": "releases/metric-v09/images/master.webp",
+      "kind": "模型渲染",
+      "version": "metric-v09",
+      "caption": "由当前 metric-v09 源模型以 Cycles 渲染；家具、空间、门向及构件与交互模型同步。家具外观按用户参考建模，尺寸依据见构件属性。"
+    },
+    {
+      "id": "masterbath",
+      "title": "主卫",
+      "path": "releases/metric-v09/images/masterbath.webp",
+      "kind": "模型渲染",
+      "version": "metric-v09",
+      "caption": "由当前 metric-v09 源模型以 Cycles 渲染；家具、空间、门向及构件与交互模型同步。家具外观按用户参考建模，尺寸依据见构件属性。"
+    },
+    {
+      "id": "scheme-overview",
+      "title": "客餐厅方案 v03",
+      "path": "releases/metric-v09/images/scheme-overview.webp",
+      "kind": "AI 方案效果图",
+      "version": "living-v03",
+      "caption": "单根灯杆、不对称开放托盘桌与单幅艺术画；尺寸以桌 r2 图纸与当前模型属性为准。AI 图仅表达外观，非模型渲染或实拍。"
+    },
+    {
+      "id": "scheme-cabinet",
+      "title": "单幅画 · 柜墙方案",
+      "path": "releases/metric-v09/images/scheme-cabinet.webp",
+      "kind": "AI 方案效果图",
+      "version": "living-v03",
+      "caption": "一幅 2.00 × 0.90 m 灰绿原创艺术画置于低柜上方；新挂画为待讨论方案。画作与柜体比例按 3D 属性记录，照明为效果示意。"
+    },
+    {
+      "id": "plan",
+      "title": "原始户型图",
+      "path": "releases/metric-v09/images/plan.webp",
+      "kind": "原始图纸",
+      "version": "source-reference",
+      "caption": "原始分段尺寸与门洞朝向依据；图中家具、柜体和电梯外部布局不等于当前模型的展示范围。"
+    },
+    {
+      "id": "photo-living",
+      "title": "客厅实景",
+      "path": "releases/metric-v09/images/photo-living.webp",
+      "kind": "实拍",
+      "version": "source-reference",
+      "caption": "入户看向南侧客厅；相邻墙面依据后续修订保留素墙。"
+    },
+    {
+      "id": "photo-north",
+      "title": "北侧实景",
+      "path": "releases/metric-v09/images/photo-north.webp",
+      "kind": "实拍 · 已脱敏",
+      "version": "source-reference",
+      "caption": "已移除人物和倒影，遮挡处经 AI 补绘；X 空间门扇以当前模型的收起状态为准。"
+    },
+    {
+      "id": "photo-master",
+      "title": "主卧实景",
+      "path": "releases/metric-v09/images/photo-master.webp",
+      "kind": "实拍",
+      "version": "source-reference",
+      "caption": "主卧人字拼木地板；柜体按后续修订移除。"
+    },
+    {
+      "id": "photo-southeast",
+      "title": "东南卧室实景",
+      "path": "releases/metric-v09/images/photo-southeast.webp",
+      "kind": "实拍",
+      "version": "source-reference",
+      "caption": "保留直铺木地板，东侧墙面包覆已按后续修订移除。"
+    },
+    {
+      "id": "photo-hall",
+      "title": "客厅柜细节",
+      "path": "releases/metric-v09/images/photo-hall.webp",
+      "kind": "实拍参考",
+      "version": "source-reference",
+      "caption": "灰褐木饰面、灰绿石材、薄分格和暖色灯带。"
+    },
+    {
+      "id": "photo-vanity",
+      "title": "主卫宽槽细节",
+      "path": "releases/metric-v09/images/photo-vanity.webp",
+      "kind": "实拍 · 已脱敏",
+      "version": "source-reference",
+      "caption": "镜中拍摄者及手机已移除并补绘背景；一体连续宽槽配两组墙出龙头。"
+    },
+    {
+      "id": "photo-fridge",
+      "title": "冰箱与水槽",
+      "path": "releases/metric-v09/images/photo-fridge.webp",
+      "kind": "实拍",
+      "version": "source-reference",
+      "caption": "西侧双门冰箱、北窗下水槽与 U 形台面。"
+    },
+    {
+      "id": "photo-hob",
+      "title": "烟机与灶具",
+      "path": "releases/metric-v09/images/photo-hob.webp",
+      "kind": "实拍",
+      "version": "source-reference",
+      "caption": "东侧三眼灶、斜面烟机与嵌入式烤箱。"
+    },
+    {
+      "id": "photo-slider",
+      "title": "北侧推拉门",
+      "path": "releases/metric-v09/images/photo-slider.webp",
+      "kind": "实拍 · 已脱敏",
+      "version": "source-reference",
+      "caption": "已去除人物与倒影；薄深色门扇及外围框。"
+    },
+    {
+      "id": "photo-bathdoor",
+      "title": "主卫推拉门",
+      "path": "releases/metric-v09/images/photo-bathdoor.webp",
+      "kind": "实拍 · 已脱敏",
+      "version": "source-reference",
+      "caption": "已去除人像倒影与视频按钮；门扇收在入口右侧。"
+    }
+  ],
+  "assets": [
+    {
+      "path": "releases/metric-v09/images/hero-640.webp",
+      "role": "hero",
+      "bytes": 13310,
+      "sha256": "e136946cb0ae4133aeaba62dbc366857f9c961868c94c956c9ac29c727cf1b09"
+    },
+    {
+      "path": "releases/metric-v09/images/hero-1000.webp",
+      "role": "hero",
+      "bytes": 23186,
+      "sha256": "c9c4789a7192ef1cd7284230b687ae13719867f19e6a2671f7a6410e822c82d0"
+    },
+    {
+      "path": "releases/metric-v09/images/hero-1600.webp",
+      "role": "hero",
+      "bytes": 41762,
+      "sha256": "00a890d0afab451dfee11ff4c55b542b5a36651d9f77132e5213d6fe3fd91c53"
+    },
+    {
+      "path": "releases/metric-v09/images/reference.webp",
+      "role": "render",
+      "bytes": 59894,
+      "sha256": "f37bef102df3aef67dbdb73354ac91084e4fbdab332a4c07120b87875bbea2ce"
+    },
+    {
+      "path": "releases/metric-v09/images/living.webp",
+      "role": "render",
+      "bytes": 42042,
+      "sha256": "ecd17792c21714b85b46ee16cf275ad7b2f03ca1c13de186c3cf2180b8a97c41"
+    },
+    {
+      "path": "releases/metric-v09/images/kitchen.webp",
+      "role": "render",
+      "bytes": 25618,
+      "sha256": "75fc492917d92f38a649beb059bf78e0cbdc6a4471fbee347d000f2e06d1cb2b"
+    },
+    {
+      "path": "releases/metric-v09/images/master.webp",
+      "role": "render",
+      "bytes": 19648,
+      "sha256": "391ef7deda977ab9f97f08458460172373b0fe2cb90aff1af80334c154fbae26"
+    },
+    {
+      "path": "releases/metric-v09/images/masterbath.webp",
+      "role": "render",
+      "bytes": 28240,
+      "sha256": "d8ff95c84b47d82cefdaa7a2dad69ca35bd94d1899a14d5da021e825e017eccc"
+    },
+    {
+      "path": "releases/metric-v09/images/scheme-overview.webp",
+      "role": "design-effect",
+      "bytes": 234026,
+      "sha256": "5dfc6c68e4cca5ba47e9a6bfe8fca065e1538dbd4fb0141032e2a10d986edcc3"
+    },
+    {
+      "path": "releases/metric-v09/images/scheme-cabinet.webp",
+      "role": "design-effect",
+      "bytes": 163850,
+      "sha256": "6d8114058c2b251647b9a78d98afd1575a792352ef433e619a691f10c5df62c9"
+    },
+    {
+      "path": "releases/metric-v09/images/plan.webp",
+      "role": "source-reference",
+      "bytes": 312218,
+      "sha256": "27586ceb40ee6e9d0a8a7d2b2c28f45f1e71b282eb1e011c4a88170e6c5c7459"
+    },
+    {
+      "path": "releases/metric-v09/images/photo-living.webp",
+      "role": "source-reference",
+      "bytes": 86636,
+      "sha256": "eda121943857c7c581217b9162735582a0bbd823814791542534d934ae21fe0a"
+    },
+    {
+      "path": "releases/metric-v09/images/photo-north.webp",
+      "role": "source-reference",
+      "bytes": 75108,
+      "sha256": "ddb941a0a25dc421019554520f9173c89d5d6fc678f07808fede324ac01ef057"
+    },
+    {
+      "path": "releases/metric-v09/images/photo-master.webp",
+      "role": "source-reference",
+      "bytes": 78240,
+      "sha256": "01b701d77020debb4f7f1a22194e43b431d3a14b804b485cc19939d3f4c202e8"
+    },
+    {
+      "path": "releases/metric-v09/images/photo-southeast.webp",
+      "role": "source-reference",
+      "bytes": 84756,
+      "sha256": "8cadad7af73c025307afde8d0cf61944c06592fc75df4d9cf0392482908b379c"
+    },
+    {
+      "path": "releases/metric-v09/images/photo-hall.webp",
+      "role": "source-reference",
+      "bytes": 78226,
+      "sha256": "ac04567939131e7ae3035a49d7c2040264f7442e9f6f9e3492f9a74b76312c0f"
+    },
+    {
+      "path": "releases/metric-v09/images/photo-vanity.webp",
+      "role": "source-reference",
+      "bytes": 68564,
+      "sha256": "696a1c9c9bd1e7b452e7d7d813d54f98c3da9cf39c25913cde0038ce3c251652"
+    },
+    {
+      "path": "releases/metric-v09/images/photo-fridge.webp",
+      "role": "source-reference",
+      "bytes": 79578,
+      "sha256": "1498fbdab347375613a469155a2a1e4e01e3690c210e823c606ece9430da24c5"
+    },
+    {
+      "path": "releases/metric-v09/images/photo-hob.webp",
+      "role": "source-reference",
+      "bytes": 71432,
+      "sha256": "56efa2c4c9580f1dbca212b2542f3a9f8a66f4be176c2117978680a9a81c48da"
+    },
+    {
+      "path": "releases/metric-v09/images/photo-slider.webp",
+      "role": "source-reference",
+      "bytes": 52780,
+      "sha256": "035eb78b6837303e18152cc872d7a18a7812ccd85175b6ccfc6c90990720cc16"
+    },
+    {
+      "path": "releases/metric-v09/images/photo-bathdoor.webp",
+      "role": "source-reference",
+      "bytes": 69238,
+      "sha256": "f8fbc08ba277304684324c4a0873f58a36d0edb3d733bb32f9ad3eb83d0329e2"
+    },
+    {
+      "path": "releases/metric-v09/apartment-web.glb",
+      "role": "model",
+      "bytes": 17508036,
+      "sha256": "af9946a1f66c2b2f6a16ebb49c4100b5bc9364a2abea994ae97dad64c2aab482"
+    },
+    {
+      "path": "releases/metric-v09/apartment-hd.glb",
+      "role": "hd-model",
+      "source": "asset_exchange/apartment-v09.glb",
+      "bytes": 24601864,
+      "sha256": "bec95e41d32e2b8a0ede7f5e4875fa38b786bf496b6c3b31858444b05539b21f"
+    },
+    {
+      "path": "releases/metric-v09/living-sofa-web.glb",
+      "role": "model",
+      "bytes": 15929940,
+      "sha256": "729de36db7d0693dd609acb301d296bbd612f61bee1715ed5383b7e938cebf62"
+    },
+    {
+      "path": "releases/metric-v09/living-sofa-hd.glb",
+      "role": "hd-model",
+      "source": "asset_exchange/living-sofa-v09.glb",
+      "bytes": 21232288,
+      "sha256": "65017cdccc06a93b0a26a51faa4579aff5d0655691e7872827395c58314bacd2"
+    },
+    {
+      "path": "releases/metric-v09/model-packages.json",
+      "role": "model-report",
+      "bytes": 2589,
+      "sha256": "e03e09ad220cd67c3df4c5bd780a751e03189e7cd18325c88a38d7e98904fabb"
+    },
+    {
+      "path": "releases/metric-v09/architecture.json",
+      "role": "properties",
+      "bytes": 155039,
+      "sha256": "ac84665bb87b33beed3e5978ed175df020e3f6935579b6b6f458f5f98baaacf2"
+    },
+    {
+      "path": "releases/metric-v09/navigation.json",
+      "role": "navigation",
+      "bytes": 350482,
+      "sha256": "1878d4f44bfcbc7fca5047bdcefa44ef99616a5dbef163f556773d4ff43eaee6"
+    },
+    {
+      "path": "releases/metric-v09/floor-plan.svg",
+      "role": "drawing",
+      "bytes": 12898,
+      "sha256": "a9e45bd992431171401d3f938c85863cde1d359662d7a462b7333a32e667e12c"
+    },
+    {
+      "path": "releases/metric-v09/design-spec.json",
+      "role": "design-source",
+      "bytes": 160924,
+      "sha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9"
+    },
+    {
+      "path": "releases/metric-v09/release-report.json",
+      "role": "report",
+      "bytes": 16029,
+      "sha256": "9ef20da1c63b239b4c7f5b09d402e58b1f01178efbfec1d0f6695446fe134c21"
+    },
+    {
+      "path": "decoders/basis/basis_transcoder.js",
+      "role": "decoder",
+      "bytes": 57529,
+      "sha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1"
+    },
+    {
+      "path": "decoders/basis/basis_transcoder.wasm",
+      "role": "decoder",
+      "bytes": 527333,
+      "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a"
+    },
+    {
+      "path": "decoders/THREE-LICENSE.txt",
+      "role": "license",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    }
+  ],
+  "sources": {
+    "model/apartment.json": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
+    "model/resource-budgets.json": "02786b9ae157fc3262cfa3f9a6f0733ad494d9912eb82f3ba7714eeeb55fe9c5",
+    "art_src/apartment-v09.blend": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
+    "asset_exchange/apartment-v09.glb": "bec95e41d32e2b8a0ede7f5e4875fa38b786bf496b6c3b31858444b05539b21f",
+    "asset_exchange/living-sofa-v09.glb": "65017cdccc06a93b0a26a51faa4579aff5d0655691e7872827395c58314bacd2",
+    "art_src/furniture/sofa-tripo-r1-ready.blend": "012aaf0d133d13effc1d0a0c3d61ce800d6118c5bdfdd2e438a0d6fb585e2ec7",
+    "production/sofa-tripo-r1/handoff.json": "0103e520f8a742f635bd8ad51fe94c907c3040b5d6003bcb33c1d3f88694cae2",
+    "scripts/model-packages.mjs": "e70a0e51f590b25ac6fe414ce18dc60d7ce134746d6ad67a0899c9f99fcfbc4f",
+    "scripts/model_packages.py": "f7227b33733c985b47c97596e92c65978c5ca96d4317779a015ae0656a3ff777",
+    "scripts/build-apartment.py": "854f8e85e888e4755587de8e35eef81311e588d865882044028b80707998e2a0",
+    "scripts/architecture_geometry.py": "3acc739516719acb4b9b0238435026804c810f14867cd619f03308714501f572",
+    "scripts/furniture_geometry.py": "deac4176b9471761487ad19cd582e24db83055686e498ae14fed2a7eb33b55c6",
+    "scripts/render-apartment.py": "d74ff320fd6581d6b25aed5a39ce3793e128f0a59cb3e6cff3d252b1c4703144",
+    "scripts/render_exterior.py": "8679645a753b780c7c29181261a58e16e77f0eafea016693d4e6db656c554f4b",
+    "scripts/environment-data.mjs": "0226a918f23428b31454ef8f3756e05cafb2ec8ebd83853252660e5cfc0fb3e3",
+    "scripts/export-apartment.py": "0bfed34ff74f2c99594135662ec0492b79027f34e3e28727bf5d801c970fcb5c",
+    "scripts/validate-apartment.py": "c7be117cb8a4cdc98a8060b4edc33afe9b6787d107f79fefee9b8b8f6267e8e6",
+    "scripts/generate-data.mjs": "c8c60db18a9cf67d43f5fb125e707f8562a778cb277957613c1454a7dc8be0b2",
+    "scripts/optimize-web.mjs": "c1cc156ad5bda525f7a7fb2fa8474efce93e65e2f3c1d283b99d1b51270196c5",
+    "scripts/prepare-release.mjs": "8e06feca673c89fb4f64f9a20c44e56e34b403c67525c2e3d43d0219c75a0bc5",
+    "scripts/stage-site.mjs": "d50ec3fb8ae5c354b62ed59f167f859beca2b5da3ccfa85228e5b9b6fa21242c",
+    "wrangler.jsonc": "f314e064b3298793daa65f73627131ec801e1a9bf650cb613d028e9f440a8057",
+    "worker/index.mjs": "e46633202fdaecb29426fa491168d48fa26437e183ebf8b3bd070d94f4028f8d",
+    "scripts/deploy-worker.mjs": "16e91d2e94a9ef3dcc665e7cd8d5be1d7e403869d28c06627a6ea5a128759df2",
+    "scripts/worker-secrets.mjs": "5642c3ccc677e63f3f5c6dcd7c96c0e0d351eb17ac4701fdde7037304397cedc",
+    "scripts/check-worker.mjs": "9447a07024d99d583e0515c9eea8031ce63535f39a37af38d3208595310f3025",
+    "scripts/check-deployment.mjs": "893e9a43647c96ad21045c3b634ce36e0905e7496a8d7bf65a9bfe7762f6bd76",
+    "index.html": "ac3834f9521904af94461a2b5b21083dad9dadfe6b8e279877085be9996565b6",
+    "vite.config.js": "2657784b4e4dcec646578fe1b89ba9d5d143846a2623686a05a035729e3eea6f",
+    "package.json": "2615c29164769e5f0b98e82092d29cfd86464bc540e98399453d6fa6f576a95e",
+    "package-lock.json": "7e5e84f03f6a48d066bf926b8af5e0a9b68fbbca7fce56e5d9a0e3b0d6864736",
+    "docs/design/living-v04/selection.json": "453add2bd5e71122dfe2ee949ab229e2e4d17763f1eb2408fdc9c852326a781e",
+    "docs/design/living-v04/DECISION.md": "3f926319c1bacef407486a9cde76f7554026f5312e5381d88f907a56fe07fb45",
+    "references/generated/living-furniture-20261008/walnut-albedo-r1.png": "121afabfb94e86456e7159985650f9453efd6d433417e6fef536d387f2de2586",
+    "references/generated/living-furniture-20261008/art-landscape-r1-albedo.jpg": "f263abeec2e000a7d9a7e31983f220e867b35f28be8f89f5c3ca20a653a44042",
+    "references/generated/living-furniture-20261008/dining-living-v03.png": "328c4f0fa31ead4aead61a889500ca3709c12e2adaa01beb9fd07e534516c160",
+    "references/generated/living-furniture-20261008/cabinet-wall-v03.png": "4060cc6b61632059661f9cde4b1493910f20a1d77a51267f12a2bc1d11942b75",
+    "references/generated/living-furniture-20261008/generation-record-v03.json": "4e3b60494652e6e9792cce60077d8e5d09765265eb24e0c6be1bf1c423693ec1",
+    "references/generated/living-furniture-20261008/independent/sofa-r1.png": "207695f478249e0cc3c0237bf35495dc5f7329ea32095d8625b551228840f25d",
+    "references/generated/living-furniture-20261008/independent/table-set-r1.png": "4a65f62b4e248e9eaafedbe317f39a0878de9bf1134435e1fe02977b6e367fce",
+    "references/generated/living-furniture-20261008/independent/cabinet-wall-r1.png": "aa13e2a456bf13bd343234b845e447586e89a64e3f9cdca6e2fc5f445ff431d7",
+    "references/generated/living-furniture-20261008/independent/armchair-r1.png": "43e618e18adcb950c8ac878ecef8d39090282f446a656b7231ff99be470b215d",
+    "references/generated/living-furniture-20261008/art-landscape-r1.png": "d40f07bb1521a36c61c605494a0056712bd62c88aec6923cf4c460d4317dafb9",
+    "references/revisions/living-furniture-20261008/table-r2/02-table-structure.png": "d87e274d3b53df93e09dcf2922895f48a6fcc0bffd725d5ae72a6d182ed868b0",
+    "references/revisions/living-furniture-20261008/table-r2/03-table-dimensions.png": "e3265533252e8c37d1768698ffc93ddc9639d05530656a64f7a73baaea8d3a80",
+    "references/revisions/living-furniture-20261008/table-r2/01-table-photo.png": "662895561aad8eac07a1aed7fd114e2b81401321eb847c59038a0626278844d0",
+    "references/generated/living-furniture-20261008/independent/table-set-r2.png": "1133dab518a9471da066c60b61cbf333c29614d13f71bee59afb6830c0d355d3",
+    "references/generated/living-furniture-20261008/cabinet-wall-v02.png": "6d0201f448425a1043b3b5968a893478b1efc89f5c9d61e1a24ad4cb06f6d9bb",
+    "src/camera.js": "d569defab5b8600daa0f893ee3004a9b05b1067178967c05bd50b2ece6357b96",
+    "src/exterior.js": "ef6453af223024c88ab603c078292cf207fd43f04a8a03ec95dfacfa525c2d8f",
+    "src/main.js": "eb8eba4dc248ae0750436b132fe3c1db0a025b982f62bd4e4097918e85b16e27",
+    "src/model-bundles.js": "cb1e121a19b25280ca6ae53cc0879533b8d131e39ed723cc4c1997f3f8fcd112",
+    "src/model-resource.js": "020ae235eb4396a2084313292e75888acd413abfd8f1e7c428eb0dbf88eaf889",
+    "src/presentation-environment.js": "a784a0f9a8f3c2278f64a311f5fe7a359be19387e35725106144e71f1c91bfdb",
+    "src/resources.js": "514d10e46ba15af394850983fd80f00dc61335581d0702da0131ca1e5f8a2eba",
+    "src/scene.js": "80c3abe90d4fd22bd9b92386fe4cd99ab49b47f18e3d11d78169a0e26c920e44",
+    "src/section-ao.js": "f0d3b5367dc5e3426aca4544d49b7e4d4a9fa5ff717e020e3c952ac2ef2b25e6",
+    "src/sections.js": "fe250b510c255c7bd8e0618edbd4432c13738eee4be714c49a6138f95fc22630",
+    "src/spatial.js": "feb4642c1c3b23b1ddcdcfe040a4b200b21ce76e39f72dae60f35f896ddae058",
+    "src/style.css": "91f4d3fec6dacc75ebb5fb0f65ddd56c09d1b5654e07f46a8819f797dfc6178c",
+    "src/view-state.js": "37216a878f2bd00ed0e1f4eb66692bd93b18753d43e7aeb4ec55274b5b701cd6",
+    "src/viewer.js": "87b23b3152058bc14e1d6b008de95372ec62f4c78d30026fa56cf472a8d4896b",
+    "src/walk-input.js": "ee8d951cf113450164de39d7eb16dce662c816b6960b594fbe4cc3533392edc5"
+  },
+  "budgets": {
+    "firstScreenBytes": 1048576,
+    "interactive3DBytes": 37748736,
+    "webModelBytes": 35651584
+  },
+  "visualPolicy": "Preserve source texture resolution; native display pixel ratio by default. Smooth mode is opt-in. Resource budgets follow visual quality."
+}

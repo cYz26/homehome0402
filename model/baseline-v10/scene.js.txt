@@ -1,0 +1,260 @@
+import * as THREE from "three";
+import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+import { SectionSSAOPass } from "./section-ao.js";
+import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+import { SMAAPass } from "three/addons/postprocessing/SMAAPass.js";
+import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { RectAreaLightUniformsLib } from "three/addons/lights/RectAreaLightUniformsLib.js";
+import { Reflector } from "three/addons/objects/Reflector.js";
+import { createExterior } from "./exterior.js";
+
+export class ApartmentScene {
+  constructor(container, data) {
+    this.container = container;
+    this.data = data;
+    this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color("#edeee7");
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    this.renderer.localClippingEnabled = true;
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    this.renderer.info.autoReset = false;
+    this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    this.renderer.toneMappingExposure = data.lighting.exposure;
+    this.canvas = this.renderer.domElement;
+    this.canvas.tabIndex = 0;
+    this.canvas.setAttribute(
+      "aria-label",
+      "房屋三维模型；可选择构件与自由漫游",
+    );
+    container.append(this.canvas);
+    const pmrem = new THREE.PMREMGenerator(this.renderer),
+      room = new RoomEnvironment();
+    this.environment = pmrem.fromScene(room, 0.04);
+    this.scene.environment = this.environment.texture;
+    this.scene.environmentIntensity = data.lighting.environmentIntensity;
+    room.dispose();
+    pmrem.dispose();
+    this.ambient = new THREE.HemisphereLight(0xfff4e4, 0xa8ac9d, 1.3);
+    this.scene.add(this.ambient);
+    const l = data.lighting.sun;
+    this.sun = new THREE.DirectionalLight(l.color, l.intensity);
+    this.sun.position.copy(this.point(l.position));
+    this.sun.target.position.copy(this.point(l.target));
+    this.sun.castShadow = true;
+    this.sun.shadow.mapSize.set(4096, 4096);
+    Object.assign(this.sun.shadow.camera, {
+      left: -12,
+      right: 12,
+      top: 12,
+      bottom: -12,
+      near: 0.1,
+      far: 45,
+    });
+    this.sun.shadow.normalBias = 0.025;
+    this.sun.shadow.bias = -0.0001;
+    this.scene.add(this.sun, this.sun.target);
+    this.lights = new THREE.Group();
+    this.scene.add(this.lights);
+    this.exterior=createExterior(data.presentationEnvironment,(p)=>this.point(p));
+    this.scene.add(this.exterior);
+    RectAreaLightUniformsLib.init();
+    for (const c of data.lighting.roomLights) {
+      const light = c.type==='spot'
+        ? new THREE.SpotLight(c.color,c.intensity,c.distance,c.angle,c.penumbra,2)
+        : new THREE.PointLight(c.color ?? 0xffe7ca, c.intensity, c.distance, 2);
+      light.position.copy(this.point(c.position));
+      if(c.type==='spot'){light.target.position.copy(this.point(c.target));this.lights.add(light.target);}
+      this.lights.add(light);
+    }
+    for (const c of data.lighting.strips) {
+      const light = new THREE.RectAreaLight(0xffdcb2, 3.8, ...c.size);
+      light.position.copy(this.point(c.position));
+      light.lookAt(this.point(c.target));
+      this.lights.add(light);
+    }
+    for(const c of data.lighting.wallWash ?? []) {
+      const light=new THREE.SpotLight(c.color,c.intensity,c.distance,c.angle,c.penumbra,2);
+      light.position.copy(this.point(c.position));light.target.position.copy(this.point(c.target));
+      light.castShadow=!!c.castShadow;light.userData.castsStandardShadow=!!c.castShadow;
+      light.shadow.mapSize.set(c.shadowMapSize,c.shadowMapSize);
+      light.shadow.bias=-.0002;light.shadow.normalBias=.012;
+      this.lights.add(light,light.target);
+    }
+    const daylight=data.lighting.windowDaylight;
+    if(daylight) {
+      const light=new THREE.RectAreaLight(daylight.color,daylight.intensity,...daylight.size);
+      light.position.copy(this.point(daylight.position));light.lookAt(this.point(daylight.target));this.lights.add(light);
+    }
+    this.ground = new THREE.Mesh(
+      new THREE.PlaneGeometry(70, 70),
+      new THREE.MeshStandardMaterial({ color: "#edeee7", roughness: 1 }),
+    );
+    this.ground.rotation.x = -Math.PI / 2;
+    this.ground.position.y = -0.205;
+    this.ground.receiveShadow = true;
+    this.scene.add(this.ground);
+    const renderTarget = new THREE.WebGLRenderTarget(1, 1, {
+      type: THREE.HalfFloatType,
+      samples: Math.min(4, this.renderer.capabilities.maxSamples),
+    });
+    this.composer = new EffectComposer(this.renderer, renderTarget);
+    this.pass = new RenderPass(this.scene, new THREE.PerspectiveCamera());
+    this.composer.addPass(this.pass);
+    this.ao = new SectionSSAOPass(this.scene, this.pass.camera, 1, 1, 32);
+    this.ao.kernelRadius = 0.3;
+    this.ao.minDistance = 0.001;
+    this.ao.maxDistance = 0.035;
+    this.composer.addPass(this.ao);
+    this.smaa = new SMAAPass();
+    this.composer.addPass(this.smaa);
+    this.composer.addPass(new OutputPass());
+    this.quality = "standard";
+  }
+  point(p) {
+    return new THREE.Vector3(
+      p[0],
+      p[2],
+      p[1] - this.data.coordinateSystem.planSouthExtent,
+    );
+  }
+  addModel(model) {
+    this.model = model;
+    this.scene.add(model);
+    model.traverse((ob) => {
+      if (!ob.isMesh) return;
+      ob.receiveShadow = true;
+      ob.castShadow = true;
+      const materials = Array.isArray(ob.material)
+        ? ob.material
+        : [ob.material];
+      for (const m of materials) {
+        if (m.map)
+          m.map.anisotropy = this.renderer.capabilities.getMaxAnisotropy();
+        m.clipShadows = true;
+        if (m.transparent) {
+          m.depthWrite = false;
+          ob.castShadow = false;
+        }
+        if(m.transmission>0) ob.castShadow=false;
+      }
+      if (ob.userData.part === "mirror" || ob.name === "Master_double_mirror")
+        this.mirrorProxy = ob;
+    });
+    this.createMirror();
+  }
+  createMirror() {
+    if (!this.mirrorProxy) return;
+    if (this.mirror) {
+      this.scene.remove(this.mirror);
+      this.mirror.geometry.dispose();
+      this.mirror.dispose();
+    }
+    const b = new THREE.Box3().setFromObject(this.mirrorProxy),
+      size = b.getSize(new THREE.Vector3());
+    this.mirror = new Reflector(
+      new THREE.PlaneGeometry(size.x - 0.012, size.y - 0.012),
+      {
+        textureWidth: this.quality === "smooth" ? 256 : 1024,
+        textureHeight: this.quality === "smooth" ? 256 : 1024,
+        clipBias: 0.002,
+        color: 0x96938d,
+      },
+    );
+    this.mirror.position.copy(b.getCenter(new THREE.Vector3()));
+    this.mirror.position.z = b.max.z + 0.003;
+    const reflect = this.mirror.onBeforeRender;
+    this.mirror.onBeforeRender = function (renderer, scene, camera, ...args) {
+      if (!scene.overrideMaterial)
+        reflect.call(this, renderer, scene, camera, ...args);
+    };
+    this.scene.add(this.mirror);
+    this.mirror.visible = false;
+  }
+  setCamera(camera, interior) {
+    this.pass.camera = camera;
+    this.ao.camera = camera;
+    this.ao.ssaoMaterial.defines.PERSPECTIVE_CAMERA = camera.isPerspectiveCamera
+      ? 1
+      : 0;
+    this.ao.ssaoMaterial.needsUpdate = true;
+    this.lights.visible = interior;
+    this.exterior.visible = interior;
+    const settings=this.data.lighting.interior ?? {};
+    this.ambient.intensity = interior ? settings.ambientIntensity ?? .95 : 1.3;
+    this.sun.intensity = interior ? settings.sunIntensity ?? 1 : this.data.lighting.sun.intensity;
+    this.scene.environmentIntensity=interior ? settings.environmentIntensity ?? this.data.lighting.environmentIntensity : this.data.lighting.environmentIntensity;
+    this.renderer.toneMappingExposure=interior ? settings.exposure ?? this.data.lighting.exposure : this.data.lighting.exposure;
+    this.scene.background.set(interior ? settings.background ?? '#edeee7' : '#edeee7');
+  }
+  setQuality(quality) {
+    if (this.quality !== quality) {
+      this.quality = quality;
+      this.createMirror();
+    }
+    this.renderer.setPixelRatio(quality === "smooth" ? 1 : devicePixelRatio);
+    this.composer.setPixelRatio(this.renderer.getPixelRatio());
+    this.ao.enabled = quality !== "smooth";
+    this.smaa.enabled = quality !== "smooth";
+    this.sun.castShadow = quality !== "smooth";
+    this.lights.traverse(light=>{if(light.userData.castsStandardShadow)light.castShadow=quality!=="smooth";});
+    const samples =
+      quality === "smooth"
+        ? 0
+        : Math.min(4, this.renderer.capabilities.maxSamples);
+    for (const target of [
+      this.composer.renderTarget1,
+      this.composer.renderTarget2,
+    ]) {
+      if (target.samples !== samples) {
+        target.samples = samples;
+        target.dispose();
+      }
+    }
+    this.resize();
+  }
+  resize() {
+    const w = this.container.clientWidth,
+      h = this.container.clientHeight;
+    if (w && h) {
+      this.renderer.setSize(w, h);
+      this.composer.setSize(w, h);
+    }
+  }
+  render(camera) {
+    const u = this.ao.ssaoMaterial.uniforms;
+    u.cameraNear.value = camera.near;
+    u.cameraFar.value = camera.far;
+    u.cameraProjectionMatrix.value.copy(camera.projectionMatrix);
+    u.cameraInverseProjectionMatrix.value.copy(camera.projectionMatrixInverse);
+    this.pass.camera = camera;
+    this.renderer.info.reset();
+    this.composer.render();
+  }
+  dispose() {
+    this.scene.traverse((ob) => {
+      ob.geometry?.dispose();
+      for (const m of ob.material
+        ? Array.isArray(ob.material)
+          ? ob.material
+          : [ob.material]
+        : []) {
+        for (const value of Object.values(m))
+          if (value?.isTexture) value.dispose();
+        m.dispose();
+      }
+      ob.shadow?.dispose();
+    });
+    this.mirror?.dispose();
+    this.ao.dispose();
+    this.composer.passes.forEach((p) => {
+      if (p !== this.ao) p.dispose?.();
+    });
+    this.composer.dispose();
+    this.environment.dispose();
+    this.renderer.dispose();
+    this.renderer.forceContextLoss();
+    this.canvas.remove();
+  }
+}

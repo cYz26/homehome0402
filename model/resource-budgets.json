@@ -1,7 +1,10 @@
 {
-  "version": "metric-v13",
+  "version": "metric-v14",
   "firstScreenBytes": 1048576,
   "webModelBytes": 39845888,
   "interactive3DBytes": 41943040,
-  "basis": "Study adds a full-resolution walnut/stone/glass/mesh package. Measured first candidate aggregate37,644,964 bytes /35.90MiB; keep all textures and original sofa PBR. Aggregate web budget38MiB, interactive40MiB; first-screen1MiB and each-file25MiB unchanged. Final bytes checked in release receipt."
+  "basis": "Integrated living-v08 and published study-v04 preserve full-resolution textures,38MiB web /40MiB interaction budget; actual final bytes checked before publication.",
+  "originalImagePackages": [
+    "living-sofa"
+  ]
 }

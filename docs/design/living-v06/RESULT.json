@@ -1,0 +1,134 @@
+{
+  "design_id": "home402-living-v06",
+  "version": "metric-v11",
+  "status": "local source, model and website preview verified; cabinet options pending user selection; not committed, pushed or deployed",
+  "source": {
+    "path": "art_src/apartment-v11.blend",
+    "sha256": "ebe7ac38a73cb4876972b5d85171bf08bce40fd445f276eca8e1117277f738ea"
+  },
+  "spec": {
+    "path": "model/apartment.json",
+    "sha256": "bc0d25460c0350b88ea183e7bb8336acb08de2a13321e56631cc5a74f5eec6ac"
+  },
+  "release": {
+    "path": "public/release.json",
+    "sha256": "e4bfd1c4b93708996aeb89c2c68c320114e39e5eef53607ebcf15589bc32764e"
+  },
+  "selection": {
+    "path": "docs/design/living-v06/selection.json",
+    "sha256": "999e70b7bde09a50b7fa428566e92d830f6ab4528cfdc4bb93e3c31dc297f2bd"
+  },
+  "validation": {
+    "roundtrip_pass": true,
+    "meshes": 714,
+    "logical_ids": 93,
+    "triangles": 219007,
+    "degenerate_triangles": 0,
+    "max_bound_error_m": 9.5367431640625e-7,
+    "model_checks": 28,
+    "node_checks": 53,
+    "release_checks": 16,
+    "browser_selected_cases": 8,
+    "browser_full_inventory": 20,
+    "browser_retries": 0,
+    "browser_failures": 0,
+    "browser_images": 32,
+    "targeted_ui_viewports": [
+      "desktop 1280x900",
+      "phone 390x844"
+    ],
+    "targeted_ui_images": 12,
+    "render_views": 9
+  },
+  "source_route": "production/inspection/metric-v11-route-checks.json",
+  "source_inspection": {
+    "path": "production/inspection/home402_cabinet_wall-metric-v11.json",
+    "sha256": "57f17f824206e3d2ba3949318456dd510df1ab63261802d8c2147c721b69f901"
+  },
+  "preservation": {
+    "path": "production/inspection/metric-v11-preservation.json",
+    "sha256": "6b464e69a6ce2be992f5ba89819b6382fc30cf5488f4783230c15a25baffe3a2"
+  },
+  "browser_evidence": {
+    "path": "docs/evidence/metric-v11/tv-wall/browser-verification.json",
+    "sha256": "3f2bc0d15bbb3c0c4de2331b24f62650b911319274acf0463035b28f71b234b5"
+  },
+  "targeted_ui_evidence": {
+    "path": "docs/evidence/metric-v11/tv-wall/ui-readback.json",
+    "sha256": "1b3a625c1649884a66d09b419c68ebe9ee41f6b5c6a12630b71712a550d0030c"
+  },
+  "preview_url": "http://127.0.0.1:4173/",
+  "cad_reference": "references/revisions/living-furniture-20261008/table-r2",
+  "current_model_variant": "A",
+  "cabinet_options": {
+    "A": "窄单门立柜＋低位悬空柜",
+    "B": "高低五模块组合柜（AI 对照）",
+    "C": "一字悬空柜，无立柜（AI 对照）",
+    "selection": null
+  },
+  "geometry": {
+    "television": {
+      "diagonalInches": 85,
+      "dimensions": [
+        1.898,
+        0.064,
+        1.074
+      ],
+      "centerHeight": 1.35,
+      "productSelected": false
+    },
+    "cabinet": {
+      "width": 3.08,
+      "depth": 0.4,
+      "height": 0.3,
+      "bottomAboveFinish": 0.12,
+      "topAboveFinish": 0.42,
+      "rearServiceDepth": 0.075
+    },
+    "tallCabinet": {
+      "width": 0.45,
+      "depth": 0.4,
+      "height": 2.56,
+      "doors": 1
+    },
+    "wall": {
+      "greigeFaceX": 7.198,
+      "buildupDepth": 0.222,
+      "blackSurface": "north-facing wall side return, not frontal stripe"
+    },
+    "doorway": {
+      "planT": [
+        7.62,
+        8.52
+      ],
+      "width": 0.9,
+      "openingHeight": 2.62,
+      "finish": "flush",
+      "heightBasis": "photo / model interpretation, not measured"
+    },
+    "outlets": {
+      "planT": [
+        10.26,
+        10.92
+      ],
+      "centerHeight": 0.355,
+      "normalizedMainWallU": [
+        0.48,
+        0.66
+      ],
+      "gangs": [
+        3,
+        1
+      ],
+      "authority": "user bare-wall photo; model-scaled estimate; retained behind service cavity"
+    }
+  },
+  "real_device_performance": "not_measured",
+  "user_visual_acceptance": "pending",
+  "remote_release": "unchanged metric-v09 evidence; no current push/deploy authorization",
+  "image_generation": "built-in image_gen; final prompt set and originals under references/generated/tv-wall-20261009-r2",
+  "review": {
+    "path": "references/generated/tv-wall-20261009-r2/REVIEW.md",
+    "sha256": "3128a6120aa3af95098991aed4805d1f799ec92d8fafc54b3ec4f327185fd49e"
+  }
+}

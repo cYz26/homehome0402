@@ -1,0 +1,363 @@
+"""Reference-authored static furnishings. Dimensions/placements live in apartment.json.
+Existing architectural template meshes are never edited by this module.
+"""
+import bpy, bmesh, math, pathlib, hashlib
+from mathutils import Vector
+
+def configure(spec, collection, root):
+    global SPEC, COLL, ROOT, EXT, FRAME, PARTS, COUNT, RECORDS
+    SPEC, COLL, ROOT, EXT = spec, collection, root, spec['coordinateSystem']['planSouthExtent']
+    RECORDS=[]
+    for c in spec.get('furnitureMaterials', []):
+        m = bpy.data.materials.new(c['id']); m.use_nodes = True
+        bs = m.node_tree.nodes.get('Principled BSDF')
+        bs.inputs['Base Color'].default_value = c.get('baseColor', [.3,.3,.3,1])
+        bs.inputs['Roughness'].default_value = c.get('roughness', .4)
+        bs.inputs['Metallic'].default_value = c.get('metallic', 0)
+        bs.inputs['Alpha'].default_value = c.get('alpha', 1)
+        if c.get('alpha',1)<1:m.surface_render_method='DITHERED'
+        if c.get('emission'):
+            bs.inputs['Emission Color'].default_value = c['baseColor']
+            bs.inputs['Emission Strength'].default_value = c['emission']
+        if c.get('texture'):
+            tex = m.node_tree.nodes.new('ShaderNodeTexImage')
+            tex.image = bpy.data.images.load(str(root/c['texture']), check_existing=True)
+            tex.image.pack(); m.node_tree.links.new(tex.outputs['Color'], bs.inputs['Base Color'])
+        # Fine leather grain is a procedural Blender surface cue, not painted light.
+        if c.get('grain'):
+            noise=m.node_tree.nodes.new('ShaderNodeTexNoise'); noise.inputs['Scale'].default_value=180
+            bump=m.node_tree.nodes.new('ShaderNodeBump'); bump.inputs['Strength'].default_value=.12
+            bump.inputs['Distance'].default_value=.0008
+            m.node_tree.links.new(noise.outputs['Fac'],bump.inputs['Height'])
+            m.node_tree.links.new(bump.outputs['Normal'],bs.inputs['Normal'])
+    for item in spec.get('furnishings', []):
+        FRAME=item; PARTS=[]; COUNT=0
+        globals()['FRAME'], globals()['PARTS'], globals()['COUNT'] = FRAME, PARTS, COUNT
+        globals()[item['recipe']](item)
+        finish(item['node'], item.get('layer','fixed'))
+
+def world(p):
+    x,t=FRAME['position']; fx,ft=FRAME.get('front',[0,1]); length=math.hypot(fx,ft);fx/=length;ft/=length
+    # u along width, v toward the front, z up. Facing east => width runs N/S.
+    u,v,z=p;u*=FRAME.get('widthSign',1)
+    return Vector((x+ft*u+fx*v, EXT-(t-fx*u+ft*v), z))
+
+def mat(name): return bpy.data.materials[name]
+
+def external_static(c):
+    """Adopt a hash-locked, visually inspected packed source without repainting it."""
+    source=c['source']; path=ROOT/source['path']
+    if hashlib.sha256(path.read_bytes()).hexdigest()!=source['sha256']:
+        raise RuntimeError('External furniture source changed: '+str(path))
+    if source['localFront']!='+X':raise RuntimeError('Unsupported source front axis')
+    with bpy.data.libraries.load(str(path),link=False) as (available,loaded):
+        if source['object'] not in available.objects:raise RuntimeError('Missing external mesh')
+        loaded.objects=[source['object']]
+    ob=loaded.objects[0]
+    if ob.type!='MESH' or ob.parent or ob.animation_data or any(m.type=='ARMATURE' for m in ob.modifiers):
+        raise RuntimeError('External source must be independent static mesh')
+    COLL.objects.link(ob)
+    fx,ft=c['front'];ob.rotation_euler.z+=math.atan2(-ft,fx)
+    ob.location=Vector((c['position'][0],EXT-c['position'][1],source.get('floorElevation',.016)))
+    bpy.context.view_layer.update()
+    PARTS.append(ob)
+
+def mesh(name, verts, faces, material, uv=None):
+    global COUNT
+    COUNT+=1; name=FRAME['node']+'_'+name+'_'+str(COUNT)
+    me=bpy.data.meshes.new(name); me.from_pydata([world(v) for v in verts], [], faces); me.update()
+    bm=bmesh.new();bm.from_mesh(me);bmesh.ops.recalc_face_normals(bm,faces=bm.faces);bm.to_mesh(me);bm.free()
+    ob=bpy.data.objects.new(name,me);COLL.objects.link(ob);me.materials.append(mat(material));PARTS.append(ob)
+    layer=me.uv_layers.new(name='UVMap')
+    for poly in me.polygons:
+        for li in poly.loop_indices:
+            vi=me.loops[li].vertex_index; p=verts[vi]
+            layer.data[li].uv=uv[vi] if uv else ((p[0]/1.2,p[1]/1.2) if abs(poly.normal.z)>.5 else (p[0]+p[1],p[2]))
+    return ob
+
+def box(label, center, size, material, bevel=.005):
+    a,b,c=size;u,v,z=center
+    vs=[(u+sx*a/2,v+sy*b/2,z+sz*c/2) for sz in [-1,1] for sy in [-1,1] for sx in [-1,1]]
+    ob=mesh(label,vs,[(0,2,3,1),(4,5,7,6),(0,1,5,4),(1,3,7,5),(3,2,6,7),(2,0,4,6)],material)
+    if bevel:
+        mod=ob.modifiers.new('Rounded_edges','BEVEL');mod.width=min(bevel,min(size)/3);mod.segments=2 if min(size)<.026 else 3
+        ob.modifiers.new('Weighted_normals','WEIGHTED_NORMAL')
+    return ob
+
+def tube(label, points, radius, material, sides=8):
+    pts=[Vector(p) for p in points];vs=[]
+    for i,p in enumerate(pts):
+        tangent=(pts[min(i+1,len(pts)-1)]-pts[max(i-1,0)]).normalized()
+        ref=Vector((0,0,1)) if abs(tangent.z)<.95 else Vector((1,0,0))
+        a=tangent.cross(ref).normalized();b=tangent.cross(a).normalized()
+        vs.extend(tuple(p+radius*(a*math.cos(j*2*math.pi/sides)+b*math.sin(j*2*math.pi/sides))) for j in range(sides))
+    faces=[tuple(range(sides-1,-1,-1))]
+    for i in range(len(pts)-1):
+        for j in range(sides):faces.append((i*sides+j,i*sides+(j+1)%sides,(i+1)*sides+(j+1)%sides,(i+1)*sides+j))
+    faces.append(tuple((len(pts)-1)*sides+j for j in range(sides)))
+    ob=mesh(label,vs,faces,material)
+    for p in ob.data.polygons:p.use_smooth=True
+    return ob
+
+def signed(n,power):return math.copysign(abs(n)**power,n)
+
+def cushion(label, center, size, material, tilt=0, wrinkles=.002, segments=40, rings=12):
+    # Lofted superellipse rings create true padded volumes, not scaled boxes.
+    n=segments;vs=[];uv=[]
+    for k in range(rings):
+        s=-.97+1.94*k/(rings-1);rad=(1-abs(s)**3.4)**(1/3.4)
+        for j in range(n):
+            a=2*math.pi*j/n;u=size[0]/2*rad*signed(math.cos(a),.42);v=size[1]/2*rad*signed(math.sin(a),.42)
+            z=size[2]/2*s+wrinkles*math.sin(17*a+3*s)*(1-abs(s))
+            v,z=v*math.cos(tilt)-z*math.sin(tilt),v*math.sin(tilt)+z*math.cos(tilt)
+            vs.append((center[0]+u,center[1]+v,center[2]+z));uv.append((j/n,(s+1)/2))
+    faces=[]
+    for k in range(rings-1):
+        for j in range(n):faces.append((k*n+j,k*n+(j+1)%n,(k+1)*n+(j+1)%n,(k+1)*n+j))
+    for k,sign in [(0,-1),(rings-1,1)]:
+        v=-sign*size[2]/2*math.sin(tilt);z=sign*size[2]/2*math.cos(tilt)
+        idx=len(vs);vs.append((center[0],center[1]+v,center[2]+z));uv.append((.5,.5))
+        for j in range(n):faces.append((idx,k*n+j,k*n+(j+1)%n))
+    ob=mesh(label,vs,faces,material,uv)
+    for p in ob.data.polygons:p.use_smooth=True
+    return ob
+
+def finish(name, layer):
+    # Apply part bevels before one logical mesh; preserve UVs/material slots in GLB.
+    bpy.ops.object.select_all(action='DESELECT')
+    measured=[]
+    for ob in PARTS:
+        bpy.context.view_layer.objects.active=ob;ob.select_set(True)
+        for mod in list(ob.modifiers):bpy.ops.object.modifier_apply(modifier=mod.name)
+        points=[ob.matrix_world@v.co for v in ob.data.vertices]
+        measured.append({'name':ob.name,'bounds':[[min(p[a] for p in points) for a in range(3)],[max(p[a] for p in points) for a in range(3)]]})
+        ob.select_set(False)
+    for ob in PARTS:ob.select_set(True)
+    bpy.context.view_layer.objects.active=PARTS[0];bpy.ops.object.join()
+    ob=bpy.context.object;ob.name=name;ob['layer']=layer;ob['furnitureRecipe']=FRAME['recipe']
+    ob['frontPlan']=FRAME.get('front',[0,1]);ob['designDecision']=SPEC.get('furnitureDecision','home402-living-v02')
+    RECORDS.append({'id':FRAME['id'],'node':name,'recipe':FRAME['recipe'],'parts':measured})
+    return ob
+
+def sofa(c):
+    L,D,H=c['dimensions'];wood='Furniture_walnut';leather='Furniture_olive_leather'
+    box('front_rail',(0,D/2-.04,.235),(L-.12,.065,.105),wood)
+    box('rear_frame',(0,-D/2+.045,.475),(L-.08,.055,.50),wood)
+    for side in [-1,1]:
+        box('wood_end',(side*(L/2-.033),0,.47),(.052,D-.07,.49),wood,.012)
+        cushion('padded_arm',(side*(L/2-.13),0,.585),(.18,D-.08,.32),leather,wrinkles=.0018)
+        for end in [-1,1]:tube('wood_leg',[(side*(L/2-.105),end*(D/2-.14),.235),(side*(L/2-.075),end*(D/2-.10),.018)],.033,wood,4)
+    seat=(L-.46)/3
+    for i in range(3):
+        u=(i-1)*(seat+.008)
+        cushion('seat_'+str(i),(u,.06,.365),(seat,.65,.19),leather)
+        cushion('back_'+str(i),(u,-.285,.67),(seat,.175,.45),leather,tilt=.17)
+        cushion('headrest_'+str(i),(u,-.383,.94),(seat,.14,.20),leather,tilt=.10,wrinkles=.0008)
+        tube('seat_seam',[(u-seat*.47,.338,.40),(u,.348,.397),(u+seat*.47,.338,.40)],.0018,'Furniture_stitch',6)
+
+def table(c):
+    L,D,H=c['dimensions'];p=c['structure'];wood='Furniture_table_wood';black='Furniture_charcoal'
+    thick=p['topThickness'];box('tabletop',(0,0,H-thick/2),(L,D,thick),wood,.005)
+    a=-L/2+p['endOverhang']+p['storageLength']/2
+    sd=p['storageDepth'];sh=H-thick;sl=p['storageLength'];wall=.05
+    for u in [a-sl/2+wall/2,a+sl/2-wall/2]:box('storage_side',(u,0,sh/2),(wall,sd,sh),black)
+    box('storage_back',(a,-sd/2+.014,sh/2),(sl-2*wall,.024,sh),black)
+    box('storage_floor',(a,0,.025),(sl,sd,.05),black)
+    for i in range(p['trayCount']):
+        z=.078+i*.099
+        box('pullout_tray_'+str(i),(a,.012,z),(sl-2*wall-.008,sd-.035,.018),black,.002)
+        box('tray_lip_'+str(i),(a,sd/2-.014,z+.014),(sl-2*wall-.008,.022,.038),black,.002)
+        for side in [-1,1]:box('tray_runner',(a+side*(sl/2-wall-.010),0,z+.017),(.012,sd-.04,.011),'Furniture_metal',.001)
+    u=L/2-p['endOverhang']-p['panelThickness']/2
+    box('panel_support',(u,0,sh/2),(p['panelThickness'],p['panelDepth'],sh),black,.004)
+    # Rear upper stretcher, leaving the complete lower knee bay open.
+    box('rear_stretcher',((a+sl/2+u-p['panelThickness']/2)/2,-D/2+.08,sh-.025),(p['openKneeSpan'],.045,.05),black,.002)
+
+def bench(c):
+    L,D,H=c['dimensions'];wood='Furniture_walnut'
+    box('bench_seat',(0,0,H-.055),(L,D,.07),wood)
+    cushion('bench_pad',(0,0,H-.012),(L-.03,D-.025,.05),'Furniture_taupe_leather',wrinkles=0)
+    for side in [-1,1]:box('bench_panel',(side*(L/2-.09),0,(H-.075)/2),(.09,D-.015,H-.075),wood)
+
+def chair(c):
+    wood='Furniture_dark_wood';leather='Furniture_taupe_leather'
+    for u in [-.21,.21]:
+        tube('front_leg',[(u,.215,.018),(u*.95,.185,.455)],.018,wood,6)
+        tube('rear_post',[(u,-.245,.018),(u,-.20,.43),(u*1.03,-.27,.84)],.019,wood,6)
+        tube('side_rail',[(u,-.215,.38),(u,.21,.38)],.018,wood,6)
+        tube('stretcher',[(u,-.225,.21),(u,.225,.21)],.013,wood,6)
+    tube('front_rail',[(-.21,.20,.39),(.21,.20,.39)],.018,wood,6)
+    cushion('leather_seat',(0,.013,.447),(.46,.435,.046),leather,wrinkles=.0004)
+    # Curved thin sling back between the uprights, visually distinct from thick cushions.
+    vs=[];faces=[]
+    for side in [-1,1]:
+        for iz in range(7):
+            z=.48+.34*iz/6
+            for ix in range(17):
+                u=-.226+.452*ix/16;v=-.235-.05*(1-(u/.24)**2)-.022*(z-.48)+side*.004
+                vs.append((u,v,z))
+    count=7*17
+    for s in range(2):
+        for iz in range(6):
+            for ix in range(16):
+                k=s*count+iz*17+ix;faces.append((k,k+1,k+18,k+17))
+    for ix in range(16):faces.extend([(ix,ix+1,count+ix+1,count+ix),(102+ix,103+ix,count+103+ix,count+102+ix)])
+    for iz in range(6):
+        for ix in [0,16]:k=iz*17+ix;faces.append((k,k+17,k+17+count,k+count))
+    ob=mesh('sling_back',vs,faces,leather)
+    for f in ob.data.polygons:f.use_smooth=True
+
+def cabinet(c):
+    L,D,H=c['dimensions'];wood='Furniture_walnut';dark='Furniture_dark_wood'
+    widths=c['moduleWidths']; cursor=-L/2; board=.022
+    heights=c.get('moduleHeights',[.95,*([.58]*(len(widths)-2)),1.28]);scale=1
+    def part(name,center,size,material,bevel=0):
+        return box(name,(center[0],center[1],center[2]*scale),(size[0],size[1],size[2]*scale),material,bevel)
+    def shell(u,w,z0,h):
+        for side in [-1,1]:part('module_side',(u+side*(w/2-board/2),0,z0+h/2),(board,D,h),wood,.003)
+        for z in [z0+board/2,z0+h-board/2]:part('module_horizontal',(u,0,z),(w-.04,D,board),wood,.003)
+        part('module_back',(u,-D/2+.008,z0+h/2),(w-.04,.016,h-.03),dark,.001)
+    def glass_front(u,w,z0,h):
+        for side in [-1,1]:part('glass_stile',(u+side*(w/2-.035),D/2-.012,z0+h/2),(.028,.025,h-.045),wood,.002)
+        for z in [z0+.025,z0+h-.025]:part('glass_rail',(u,D/2-.012,z),(w-.055,.025,.03),wood,.002)
+        part('smoked_glass',(u,D/2-.020,z0+h/2),(w-.09,.007,h-.095),'Furniture_smoked_glass',0)
+        part('interior_shelf',(u,-.012,z0+h*.46),(w-.055,D-.045,.014),wood,.002)
+        for j in range(3):part('display_book',(u-.16+j*.12,.025,z0+.035+j*.025),(.19,.14,.035),'Furniture_book',.002)
+    for i,w in enumerate(widths):
+        u=cursor+w/2;cursor+=w
+        scale=heights[i]/(.95 if i==0 else 1.28 if i==len(widths)-1 else .58)
+        part('plinth',(u,0,.03),(w-.012,D-.02,.06),wood,.002)
+        if i==0:
+            shell(u,w-.008,.06,.43);glass_front(u,w-.008,.06,.43)
+            shell(u,w-.008,.49,.46)
+            for j in [-1,0,1]:part('open_cubby_divider',(u+j*w/4,0,.72),(.018,D-.035,.42),wood,.002)
+        elif i==len(widths)-1:
+            shell(u,w-.008,.06,.32)
+            part('base_drawer',(u,D/2-.014,.22),(w-.065,.03,.25),wood,.002)
+            for z in [.38,.83]:shell(u,w-.008,z,.45);glass_front(u,w-.008,z,.45)
+        else:
+            shell(u,w-.008,.06,.52)
+            for z in [.155,.325]:part('drawer_face',(u,D/2-.014,z),(w-.065,.035,.153),wood,.002)
+            part('open_slot_floor',(u,0,.413),(w-.055,D-.04,.014),wood,.001)
+            part('slot_shadow',(u,-D/2+.022,.47),(w-.065,.018,.10),dark,0)
+
+def armchair(c):
+    wood='Furniture_walnut';leather='Furniture_cognac_leather'
+    for u in [-.285,.285]:
+        for v in [-.26,.255]:tube('tapered_leg',[(u*.91,v*.91,.24),(u,v,.018)],.027,wood,5)
+    box('wood_apron',(0,0,.245),(.69,.62,.09),wood,.025)
+    cushion('seat',(0,.042,.414),(.59,.53,.135),leather,wrinkles=.001)
+    # Annular U-profile shell: lower arms, higher curved back, thick leather edge.
+    n=48;vs=[];faces=[]
+    for side in [0,1]:
+        for iz in range(7):
+            q=iz/6
+            for j in range(n):
+                theta=math.radians(-122+244*j/(n-1));r=.36-side*.065
+                top=.755-.17*(abs(theta)/math.radians(122))**1.6
+                vs.append((r*math.sin(theta),-.06-r*.84*math.cos(theta),.30+(top-.30)*q))
+    block=7*n
+    for side in range(2):
+        for k in range(6):
+            for j in range(n-1):a=side*block+k*n+j;faces.append((a,a+1,a+n+1,a+n))
+    for j in range(n-1):faces.extend([(j,j+1,block+j+1,block+j),(6*n+j,6*n+j+1,block+6*n+j+1,block+6*n+j)])
+    for k in range(6):
+        for j in [0,n-1]:a=k*n+j;faces.append((a,a+n,block+a+n,block+a))
+    ob=mesh('barrel_shell',vs,faces,leather)
+    mod=ob.modifiers.new('Soft_leather_edge','BEVEL');mod.width=.013;mod.segments=3
+    for f in ob.data.polygons:f.use_smooth=True
+
+def rug(c):
+    L,D,H=c['dimensions'];box('flat_woven_rug',(0,0,.018+H/2),(L,D,H),'Furniture_rug',.003)
+    # Physical hem retains edge readability at grazing angles.
+    for u in [-L/2+.012,L/2-.012]:box('hem',(u,0,.025),(.015,D-.02,.004),'Furniture_rug_edge',.001)
+
+def shade(center, scale):
+    u,v,z=center;n=48;rings=10;vs=[];faces=[]
+    for k in range(rings):
+        theta=.03+(math.pi/2-.03)*k/(rings-1)
+        for j in range(n):
+            a=2*math.pi*j/n;r=scale*.5*math.sin(theta)*(1+.045*math.cos(a*8))
+            zz=z+scale*.59*math.cos(theta)+scale*.026*math.cos(a*8)*(k/(rings-1))**8
+            vs.append((u+r*math.cos(a),v+r*math.sin(a),zz))
+    for k in range(rings-1):
+        for j in range(n):a=k*n+j;faces.append((a,k*n+(j+1)%n,(k+1)*n+(j+1)%n,a+n))
+    ob=mesh('petal_shade',vs,faces,'Furniture_lampshade')
+    solid=ob.modifiers.new('Shade_thickness','SOLIDIFY');solid.thickness=.0015
+    for f in ob.data.polygons:f.use_smooth=True
+    for j in range(8):
+        a=2*math.pi*j/8
+        pts=[(u+scale*.522*math.sin(t)*math.cos(a),v+scale*.522*math.sin(t)*math.sin(a),z+scale*.59*math.cos(t)+scale*.026*(t/(math.pi/2))**8) for t in [.03,.25,.5,.75,1.0,1.25,math.pi/2]]
+        tube('shade_rib',pts,.0012,'Furniture_brass',6)
+
+def floor_lamp(c):
+    tube('lamp_base',[(0,0,.002),(0,0,.032)],.145,'Furniture_charcoal',32)
+    tube('arc_stem',[(0,0,.03),(0,0,1.20)]+[(.52*(1-math.cos(a)),.015,1.20+.52*math.sin(a)) for a in [0,.2,.4,.6,.8,1.0,1.2,1.4,1.57]],.011,'Furniture_charcoal',10)
+    shade((.52,.015,1.40),.36)
+    tube('shade_drop',[(.52,.015,1.72),(.52,.015,1.607)],.011,'Furniture_charcoal',10)
+
+def table_lamp(c):
+    z=c['baseHeight'];tube('lamp_base',[(0,0,z+.002),(0,0,z+.025)],.085,'Furniture_brass',28)
+    tube('lamp_stem',[(0,0,z+.025),(0,0,z+.42)],.009,'Furniture_brass',10)
+    shade((0,0,z+.30),.27)
+
+def art_panels(c):
+    atlas=c['atlas'];ranges=c['uvRanges'];L=c['dimensions'][0];w=c['panelWidth'];h=c['panelHeight'];z=c['centerHeight']
+    for i,(a,b,y0,y1) in enumerate(ranges):
+        u=-L/2+w/2+i*(L-w)/5
+        box('panel_board',(u,0,z),(w,.016,h),'Furniture_walnut',.002)
+        verts=[(u-w/2,.009,z-h/2),(u+w/2,.009,z-h/2),(u+w/2,.009,z+h/2),(u-w/2,.009,z+h/2)]
+        mesh('printed_face',verts,[(0,1,2,3)],'Furniture_art_atlas',[(a,y0),(b,y0),(b,y1),(a,y1)])
+        for du in [-w/2+.012,w/2-.012]:
+            for dz in [-h/2+.012,h/2-.012]:box('panel_pin',(u+du,.011,z+dz),(.006,.004,.006),'Furniture_metal',0)
+
+def framed_art(c):
+    w,d,h=c['dimensions'];z=c['centerHeight'];f=c['frameWidth']
+    box('canvas_back',(0,0,z),(w-.014,d-.010,h-.014),'Furniture_paper',.002)
+    for u in [-w/2+f/2,w/2-f/2]:box('frame_vertical',(u,.005,z),(f,d,h),'Furniture_dark_wood',.002)
+    for zz in [z-h/2+f/2,z+h/2-f/2]:box('frame_horizontal',(0,.005,zz),(w-2*f,d,f),'Furniture_dark_wood',.002)
+    mesh('original_artwork',[(-w/2+f,d/2+.001,z-h/2+f),(w/2-f,d/2+.001,z-h/2+f),(w/2-f,d/2+.001,z+h/2-f),(-w/2+f,d/2+.001,z+h/2-f)],[(0,1,2,3)],'Furniture_art_atlas',[(0,0),(1,0),(1,1),(0,1)])
+
+def television(c):
+    # One stable wall-display entity: actual chassis, dark screen and rear mount.
+    # No painting texture or screen emission; preserve the room's warm lighting.
+    w,d,h=c['dimensions'];z=c['centerHeight'];b=c['bezelWidth']
+    box('tv_chassis',(0,.005,z),(w,d-.014,h),'Furniture_tv_frame',.004)
+    box('tv_rear_mount',(0,-d/2+.008,z),(.44,.016,.25),'Furniture_charcoal',.002)
+    box('tv_screen',(0,d/2-.002,z),(w-2*b,.004,h-2*b),'Furniture_tv_screen',.001)
+
+def wall_finish(c):
+    L,D,H=c['dimensions'];z0=c['bottom'];w=L/c['panels']
+    for i in range(c['panels']):box('veneer_panel',(-L/2+(i+.5)*w,0,z0+H/2),(w-.003,D,H),'Furniture_wall_veneer',.001)
+    for z in [z0+.005,z0+H-.005]:box('thin_border',(0,.006,z),(L,.008,.008),'Furniture_charcoal',.001)
+
+def accessories(c):
+    z=c['baseHeight'];typ=c['variant']
+    if typ=='desk':
+        for j in range(3):box('book',(-.20+j*.013,0,z+.026+j*.035),(.25,.19,.031),'Furniture_book',.001)
+        box('notebook',(.18,.10,z+.008),(.26,.19,.012),'Furniture_paper',.001)
+        box('computer_base',(.36,-.15,z+.008),(.28,.18,.012),'Furniture_charcoal',.004)
+        box('computer_screen',(.36,-.235,z+.11),(.28,.012,.20),'Furniture_charcoal',.004)
+    else:
+        for j in range(3):box('book',(.12,0,z+.018+j*.032),(.19,.15,.025),'Furniture_book',.001)
+        # Lathed vase and thin leaves keep the small floral forms distinct from cushions.
+        profile=[(.0,.052),(.035,.07),(.09,.067),(.16,.043),(.20,.027)]
+        vs=[(r*math.cos(a*2*math.pi/24),r*math.sin(a*2*math.pi/24),z+h) for h,r in profile for a in range(24)]
+        faces=[tuple(range(23,-1,-1))]
+        for k in range(4):
+            for j in range(24):faces.append((k*24+j,k*24+(j+1)%24,(k+1)*24+(j+1)%24,(k+1)*24+j))
+        vase=mesh('ceramic_vase',vs,faces,'Furniture_ceramic')
+        for f in vase.data.polygons:f.use_smooth=True
+        for i in range(9):
+            a=i*2.4;end=(.15*math.cos(a),.13*math.sin(a),z+.36+.025*(i%3))
+            tube('stem',[(0,0,z+.17),end],.0018,'Furniture_leaf',5)
+            for j in range(3):
+                u=end[0]*(.5+.15*j);v=end[1]*(.5+.15*j);h=z+.22+.045*j
+                tip=(u+.055*math.cos(a+.5),v+.055*math.sin(a+.5),h+.027)
+                dx,dy=tip[0]-u,tip[1]-v;vs=[(u,v,h),(u+dx*.45-dy*.22,v+dy*.45+dx*.22,h+.016),tip,(u+dx*.45+dy*.22,v+dy*.45-dx*.22,h+.016),(u+dx*.5,v+dy*.5,h+.027)]
+                leaf=mesh('leaf',vs,[(0,1,4),(1,2,4),(2,3,4),(3,0,4)],'Furniture_leaf')
+                solid=leaf.modifiers.new('Leaf_surface','SOLIDIFY');solid.thickness=.0006
+            cushion('flower_center',end,(.032,.032,.026),'Furniture_flower',wrinkles=0,segments=12,rings=6)
+            for j in range(5):
+                b=j*2*math.pi/5
+                cushion('flower_petal',(end[0]+.020*math.cos(b),end[1]+.020*math.sin(b),end[2]),(.03,.025,.014),'Furniture_flower',wrinkles=0,segments=10,rings=5)

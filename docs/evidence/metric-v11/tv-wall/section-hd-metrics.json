@@ -1,0 +1,65 @@
+[
+  {
+    "asset": "hd",
+    "zoom": 0.9,
+    "range": 0.6666666666666572,
+    "sampleCount": 120,
+    "quality": {
+      "pixelRatio": 2,
+      "nativePixelRatio": 2,
+      "samples": 4,
+      "ao": true,
+      "shadow": true,
+      "mirror": 1024
+    }
+  },
+  {
+    "asset": "hd",
+    "zoom": 1.7,
+    "range": 0.6666666666666572,
+    "sampleCount": 120,
+    "quality": {
+      "pixelRatio": 2,
+      "nativePixelRatio": 2,
+      "samples": 4,
+      "ao": true,
+      "shadow": true,
+      "mirror": 1024
+    }
+  },
+  {
+    "asset": "hd",
+    "zoom": 2.6,
+    "range": 0,
+    "sampleCount": 104,
+    "quality": {
+      "pixelRatio": 2,
+      "nativePixelRatio": 2,
+      "samples": 4,
+      "ao": true,
+      "shadow": true,
+      "mirror": 1024
+    }
+  },
+  {
+    "asset": "hd",
+    "axis": "x",
+    "value": 0.04,
+    "range": 0,
+    "sampleCount": 120
+  },
+  {
+    "asset": "hd",
+    "axis": "y",
+    "value": 8.9,
+    "range": 0,
+    "sampleCount": 120
+  },
+  {
+    "asset": "hd",
+    "axis": "z",
+    "value": 1.4,
+    "range": 0,
+    "sampleCount": 120
+  }
+]

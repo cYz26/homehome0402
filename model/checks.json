@@ -85,15 +85,39 @@
       "pass": true
     },
     {
-      "name": "Furnishing preserves every v06 architectural part and no-TV no-coffee-table layout",
+      "name": "Furnishing preserves v06 architecture outside the explicitly revised photo doorway, facing arrangement and open center",
       "pass": true
     },
     {
-      "name": "Measured cabinet tiers and single artwork follow the revised hanging layout",
+      "name": "Fourth dining chair matches the existing chair and remains distinct in actual geometry",
       "pass": true
     },
     {
-      "name": "Study change preserves all other published architecture and furniture parts",
+      "name": "Television replaces the painting with a clear screen and stable query identity",
+      "pass": true
+    },
+    {
+      "name": "Low floating cabinet has a real floor gap, closed drawers and socket service clearance",
+      "pass": true
+    },
+    {
+      "name": "Photographed socket groups retain their common height and middle-wall placement",
+      "pass": true
+    },
+    {
+      "name": "Selected C extends the low cabinet and exposes the wall side and bedroom doorway",
+      "pass": true
+    },
+    {
+      "name": "Photo wall retains four vertical panel bays, continuous stone and warm light across cut height",
+      "pass": true
+    },
+    {
+      "name": "Black return is the built-out wall side beside a tall flush bedroom doorway",
+      "pass": true
+    },
+    {
+      "name": "Recorded living and study changes preserve every other v09 part",
       "pass": true
     },
     {
@@ -103,8 +127,16 @@
     {
       "name": "Actual study clears static walls/slider; drawer-use limitation stays explicit",
       "pass": true
+    },
+    {
+      "name": "Integrated source preserves every published study part and all other unmodified published parts",
+      "pass": true
+    },
+    {
+      "name": "Integrated source preserves the complete latest living model outside the published study window change",
+      "pass": true
     }
   ],
-  "passed": 26,
-  "total": 26
+  "passed": 34,
+  "total": 34
 }

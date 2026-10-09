@@ -1,0 +1,64 @@
+{
+  "version": "metric-v10",
+  "environment": "Local Chromium; desktop and phone viewport simulation, not real-device acceptance",
+  "views": [
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 900,
+      "title": "Home 402 · 家的空间档案",
+      "propertyText": "75 英寸壁挂电视\n\nliving-art-panels\n\n关联空间\n客厅\n模型外包尺寸\n0.06 × 1.66 × 0.93 m\n材质\n电视石墨色边框、电视深色屏幕、炭灰木板\n\n用户要求恢复电视墙；75 英寸 / 1.66 × 0.934 m、中心 1.35 m 为方案假设，非已选产品或现场安装尺寸\n\n按 2026-10-09 最新要求由壁画改为电视；75 英寸和中心距地 1.35 m 为方案假设，构件 ID 为兼容旧查询保留。",
+      "options": [
+        {
+          "id": "a",
+          "src": "/releases/metric-v10/images/scheme-tv-a.webp",
+          "caption": "AI 方案效果图 · living-v05　一字悬浮柜、浅木抽屉及底部留空，视觉轻盈。 新柜方案待用户选择，图中尺寸与细节不证明当前 3D；75 英寸为方案假设。"
+        },
+        {
+          "id": "b",
+          "src": "/releases/metric-v10/images/scheme-tv-b.webp",
+          "caption": "AI 方案效果图 · living-v05　连续低柜、封闭收纳及设备开放格，材质呼应餐桌。 新柜方案待用户选择，图中尺寸与细节不证明当前 3D；75 英寸为方案假设。"
+        },
+        {
+          "id": "c",
+          "src": "/releases/metric-v10/images/scheme-tv-c.webp",
+          "caption": "AI 方案效果图 · living-v05　延续胡桃木高低模块、开放格与玻璃柜组合。 新柜方案待用户选择，图中尺寸与细节不证明当前 3D；75 英寸为方案假设。"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "ui-desktop-tv-wall.png",
+        "ui-desktop-tv-properties.png"
+      ]
+    },
+    {
+      "label": "phone",
+      "width": 390,
+      "height": 844,
+      "title": "Home 402 · 家的空间档案",
+      "propertyText": "75 英寸壁挂电视\n\nliving-art-panels\n\n关联空间\n客厅\n模型外包尺寸\n0.06 × 1.66 × 0.93 m\n材质\n电视石墨色边框、电视深色屏幕、炭灰木板\n\n用户要求恢复电视墙；75 英寸 / 1.66 × 0.934 m、中心 1.35 m 为方案假设，非已选产品或现场安装尺寸\n\n按 2026-10-09 最新要求由壁画改为电视；75 英寸和中心距地 1.35 m 为方案假设，构件 ID 为兼容旧查询保留。",
+      "options": [
+        {
+          "id": "a",
+          "src": "/releases/metric-v10/images/scheme-tv-a.webp",
+          "caption": "AI 方案效果图 · living-v05　一字悬浮柜、浅木抽屉及底部留空，视觉轻盈。 新柜方案待用户选择，图中尺寸与细节不证明当前 3D；75 英寸为方案假设。"
+        },
+        {
+          "id": "b",
+          "src": "/releases/metric-v10/images/scheme-tv-b.webp",
+          "caption": "AI 方案效果图 · living-v05　连续低柜、封闭收纳及设备开放格，材质呼应餐桌。 新柜方案待用户选择，图中尺寸与细节不证明当前 3D；75 英寸为方案假设。"
+        },
+        {
+          "id": "c",
+          "src": "/releases/metric-v10/images/scheme-tv-c.webp",
+          "caption": "AI 方案效果图 · living-v05　延续胡桃木高低模块、开放格与玻璃柜组合。 新柜方案待用户选择，图中尺寸与细节不证明当前 3D；75 英寸为方案假设。"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "ui-phone-tv-wall.png",
+        "ui-phone-tv-properties.png"
+      ]
+    }
+  ]
+}

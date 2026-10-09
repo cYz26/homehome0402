@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_cabinet_wall",
+  "task_id": "home402-living-v05-to-metric-v10",
+  "intent": "revise_static",
+  "route": "existing_blender",
+  "decision_basis": {
+    "path": "docs/design/living-v05/DECISION.md",
+    "sha256": "6373951ee89ea017173467a204e40f4bd39444cf928014e68513916d5eeb62bf"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Replace the selected wall painting entity with a dimension-controlled television while preserving its logical id; move existing table lamp and its light to the high cabinet end to avoid screen overlap; cabinet geometry unchanged until user selection; all architecture, sofa PBR, table and other furnishing dimensions preserved"
+  ],
+  "references": [
+    {
+      "path": "references/generated/living-furniture-20261008/independent/cabinet-wall-r1.png",
+      "sha256": "aa13e2a456bf13bd343234b845e447586e89a64e3f9cdca6e2fc5f445ff431d7"
+    }
+  ],
+  "geometry": {
+    "source": {
+      "path": "art_src/apartment-v09.blend",
+      "sha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0"
+    },
+    "inspection": {
+      "path": "production/inspection/home402_cabinet_wall-metric-v09.json",
+      "sha256": "63a1087add5b135d29a28bc2d551a44ee6e57fb1080a3becd463907b86ba8b79"
+    },
+    "basis": "existing",
+    "generation": null
+  },
+  "reuse": []
+}

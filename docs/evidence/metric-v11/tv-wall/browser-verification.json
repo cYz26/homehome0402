@@ -1,0 +1,307 @@
+{
+  "version": "metric-v11",
+  "executedAt": "2026-10-09T05:33:41.993Z",
+  "browser": "Playwright bundled Chromium 153.0.8010.12",
+  "host": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "release": "25.6.0"
+  },
+  "responsiveViewports": [
+    [
+      1280,
+      900
+    ],
+    [
+      820,
+      1180
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "touch": "Chromium CDP simulation; no physical mobile device",
+  "manifestSha256": "e4bfd1c4b93708996aeb89c2c68c320114e39e5eef53607ebcf15589bc32764e",
+  "rawModelSha256": "f268949be9c3e9ab3cd11b92ae437afbeefb8128a0c14df26880148191e79014",
+  "modelPackages": [
+    {
+      "path": "releases/metric-v11/apartment-web.glb",
+      "role": "model",
+      "bytes": 15483128,
+      "sha256": "0066776b16c1f9313828ec8cd8768aec987b57056b481b0e9ab6c084ebda49ae"
+    },
+    {
+      "path": "releases/metric-v11/apartment-hd.glb",
+      "role": "hd-model",
+      "bytes": 23293448,
+      "sha256": "f268949be9c3e9ab3cd11b92ae437afbeefb8128a0c14df26880148191e79014"
+    },
+    {
+      "path": "releases/metric-v11/living-sofa-web.glb",
+      "role": "model",
+      "bytes": 15929940,
+      "sha256": "2cfd49a807c8aabcb39c2260626d6c57cc2491f23903fd5d6ea4b6844252bfa4"
+    },
+    {
+      "path": "releases/metric-v11/living-sofa-hd.glb",
+      "role": "hd-model",
+      "bytes": 21232288,
+      "sha256": "4ae9576be7e47972482b2a9dbcf176cc9e2800ea2c3edb1414762a0c4c584ce4"
+    }
+  ],
+  "testSourceSha256": "91abbe6662b060e327d0eb89fcdf991f244df7c61eec29b41e84d2f6a4311e18",
+  "renderingTestSources": {
+    "tests/section-render.spec.mjs": "25d10a4b581509cb5dde1d3d3066b8c76e6a190271277b1605a00138cdda19ae",
+    "tests/fixtures/section-probe.js": "3af1c19c75e06a4302d9ca638830c282f6805bcbd7d9eac9dd7725252cbebc7d",
+    "tests/fixtures/section-probe.html": "7bc6e915de01e926099f5b0afe0add25165eb221ca981accaf7d2f63643a3ac2",
+    "playwright.config.mjs": "15823bd945236a5353f548b5546c8f2fc89e50f140884a21a596cd66470bf4a0"
+  },
+  "collectorSha256": "8961a05823eb7eeba38c255c123224cc9c67eff90f03e060313b4ff03a9b0542",
+  "deploymentSources": {
+    "wrangler.jsonc": "f314e064b3298793daa65f73627131ec801e1a9bf650cb613d028e9f440a8057",
+    "worker/index.mjs": "e46633202fdaecb29426fa491168d48fa26437e183ebf8b3bd070d94f4028f8d",
+    "tests/worker-auth.spec.mjs": "db44071023cb91df25bf3ea1a413bd640420f030cf8b01600c342e2ecfb0e0e6"
+  },
+  "reportSha256": "784fcc95619e4cbf5a226556b3f9de6e98fe1c0d5f08fa3a24f2d5fa395c8fd1",
+  "inventorySha256": "646f6647fe4ea7c2d37104036d20ca2c9ed0ecb545206fcdb5e358ac5c57ff46",
+  "tests": [
+    {
+      "name": "standard rendering, north-up plan, current reference and on-demand HD retain the selected view",
+      "status": "passed",
+      "durationMs": 30825
+    },
+    {
+      "name": "desktop: homepage preload, model, linked rooms, section, view restore, screenshot",
+      "status": "passed",
+      "durationMs": 5654
+    },
+    {
+      "name": "phone: homepage preload, model, linked rooms, section, view restore, screenshot",
+      "status": "passed",
+      "durationMs": 5674
+    },
+    {
+      "name": "web: section caps stay flat through zoom with full AO and shadows",
+      "status": "passed",
+      "durationMs": 1628
+    },
+    {
+      "name": "hd: section caps stay flat through zoom with full AO and shadows",
+      "status": "passed",
+      "durationMs": 1533
+    },
+    {
+      "name": "legacy AO positive control reproduces cap stripes",
+      "status": "passed",
+      "durationMs": 1179
+    },
+    {
+      "name": "phone: password gate protects assets and restores the shared view",
+      "status": "passed",
+      "durationMs": 1928
+    },
+    {
+      "name": "desktop: password gate protects assets and restores the shared view",
+      "status": "passed",
+      "durationMs": 1700
+    }
+  ],
+  "images": [
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/standard-orbit.png",
+      "sha256": "e0ce85318243ba7dd380d2e97b25a95373638f27b7ee19ff90c056a0ceff0313",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/standard-orbit.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/standard-top.png",
+      "sha256": "fea329d467c067fee49ff7111aeb49e1a11a9d88a48e6c79aff3500a48c14305",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/standard-top.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/web-bathroom-standard.png",
+      "sha256": "e8814598d97463bbc65539e64fab485624cec96e7a46ace991c3880b294c09cc",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/web-bathroom-standard.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/hd-bathroom-standard.png",
+      "sha256": "772ea60bedd1dc7ec6f5f755ef8c835cd186b3ab10cf30f44f972e6c019becb2",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/hd-bathroom-standard.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/hd-top.png",
+      "sha256": "ecb865ec281a2bdd9699b64ad2d4513733ffa89a29385dd323c6bb5f62f12fc1",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/hd-top.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/hd-orbit.png",
+      "sha256": "961f78e79c50ed93d26f9c007f551c1dee254ef019cad1f5ba9618d655453545",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/hd-orbit.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/current-design-reference.png",
+      "sha256": "5e0f913cc8554bb485dc3b16de26969fdafbd7fde0978c668390248cc396700f",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/current-design-reference.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/desktop-home.png",
+      "sha256": "d08046be4107f12116278c1b12952c9be3504514fcdf88a33d3925cf04990f9d",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/desktop-home.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/desktop-orbit.png",
+      "sha256": "655dcf17db1f53542d41502fe6c3e1dfdec225f2a58ee9e80bfc5f6e2d4a4698",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/desktop-orbit.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/desktop-section.png",
+      "sha256": "274813ecd203827bd11c4a1e18b7204b26328296422283a619eb319d21264d15",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/desktop-section.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/desktop-bathroom.png",
+      "sha256": "ca081a06b5c920f1da80cc55b690eec933fded3c338094a63fef55dcf7702d2d",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/desktop-bathroom.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/phone-home.png",
+      "sha256": "f760283f5883b0d22e970075adb35ce7e7ea67a2992274bfce84f7aa15385a30",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/phone-home.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/phone-orbit.png",
+      "sha256": "5e06c68cebfeb2350ca05a5312bd519ffe2de87019fc9d7e8a6760cde3984d56",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/phone-orbit.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/phone-section.png",
+      "sha256": "b35def625def2b4bf0aebd273a74b2d13c7bfe310e03d85b8aa877162219346d",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/phone-section.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/phone-bathroom.png",
+      "sha256": "5f30927b18fd2a3a2816380403c0f0726f1584bf3fee55f967ce92478c25da0c",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/phone-bathroom.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-web-zoom-0_9.png",
+      "sha256": "62bfc1ead4a2a3e324b0d71f1465af0bf23cb15ca549b2b882fb11f8fd5924b9",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-web-zoom-0_9.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-web-zoom-1_7.png",
+      "sha256": "f741131eec80e0c5393c5bc64d40f64a85039f583c17146783aab7a8e5ef1bc3",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-web-zoom-1_7.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-web-zoom-2_6.png",
+      "sha256": "babd57e70a56dae067f574976bcbeed9f5c5d43a4b6eb75eb1b77a1c70f357e0",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-web-zoom-2_6.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-web-x-0_04.png",
+      "sha256": "1678da2a9035adb8731f18de04103f6c0bade3f7fb1b9be2e808ed3f54646860",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-web-x-0_04.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-web-y-8_9.png",
+      "sha256": "d714beaf30271bf43efaf1f3c3ae712f63649aa0510ec9f2d2e3c67319d0acd9",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-web-y-8_9.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-web-z-1_4.png",
+      "sha256": "bfae5b9fc4285540beceea1d0a19c2792ac3c2296410db4b791e4305ed74518f",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-web-z-1_4.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-hd-zoom-0_9.png",
+      "sha256": "0adf912772daa3b32acefb6861f299dfeb97e2dd5bd627aed83588df2a65b378",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-hd-zoom-0_9.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-hd-zoom-1_7.png",
+      "sha256": "9ac3d30fc8ec70ae5ac16b1c4b7bfea21c5f0e97421d056e2ddc904f1ef024f3",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-hd-zoom-1_7.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-hd-zoom-2_6.png",
+      "sha256": "7a7f00b55ed444299a45de2a7bad38a1b6072c1a08dafd616e9d273a0d1b3d18",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-hd-zoom-2_6.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-hd-x-0_04.png",
+      "sha256": "1d50a80f2976347e775c7620e53275adfea05dffb7678857c2a3b29ee2a77971",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-hd-x-0_04.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-hd-y-8_9.png",
+      "sha256": "5e133e5343b7995d96b7a0a42fd4546234d893c6b8af562f626502534f46de95",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-hd-y-8_9.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-hd-z-1_4.png",
+      "sha256": "b512f38b6255d6e00bb32606fa853beea3347f9e1446b2b03a1e464699f71b66",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-hd-z-1_4.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-before-ao-mismatch.png",
+      "sha256": "91f81bb0c6a3595189506d60516b870fb9927bf2c9fd312801e8b2a61b482dd9",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-before-ao-mismatch.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/password-phone.png",
+      "sha256": "ee95de8c395c1141a3b29eb50ec509f3686fbc0c25b84b5613afb5c4fd87c7d2",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/password-phone.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/password-phone-opened.png",
+      "sha256": "fdf4c6b9bf84214c5aaa54e821e2722f0fc5f3649519987ecca9d6dc9adeae4c",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/password-phone-opened.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/password-desktop.png",
+      "sha256": "d7a25bf515077fe9c0fdcad759954c4cedd09f926afdfe15c09a5f33ddf04b50",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/password-desktop.png"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/password-desktop-opened.png",
+      "sha256": "a63097ebf4c493809e2f2c88ce93c65577777ed54f7c86304bb0ccbfba84363f",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/password-desktop-opened.png"
+    }
+  ],
+  "measurements": [
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/HD_phase_timings.json",
+      "sha256": "ffefa71d0d9f5ce4f3de91643d1e7d2ee232d7b87c70bc13ee6ae40ab0482c76",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/HD_phase_timings.json"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-web-metrics.json",
+      "sha256": "1140b01b14bee11bd04220da1fc9cb88ba2d1521269898820fc64d899680487d",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-web-metrics.json"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-hd-metrics.json",
+      "sha256": "d388c5cda84b696cd25d16c8fcb7db3bf943683b0762c3bfca9708fd54a8fdcb",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-hd-metrics.json"
+    },
+    {
+      "path": "docs/evidence/metric-v11/tv-wall/section-legacy-metrics.json",
+      "sha256": "4d5b375c681616eeee374a082a30c19d8f5242fb3ec06e4453cf161db83ff495",
+      "originalCollectionPath": ".asset-work/browser-evidence/tv-wall-v11/metric-v11/section-legacy-metrics.json"
+    }
+  ],
+  "build": {
+    "dist/assets/index-BGGrpaBp.css": "1264441d41ca3c4d891c2053471f374af9bbc3c24a5bff4f4445fd57020089f9",
+    "dist/assets/index-DPXMagTk.js": "a91c27ca2f40d8e38ca9f1b4edb4c2872772b13c36a510b59dd27a0635a80615",
+    "dist/assets/three-addons-B4rWYbHU.js": "25a66a80f5caf7282871cca27b8c57126891e33e657784f4e953cd875bb90124",
+    "dist/assets/three-core-MA-a2Cmd.js": "92cc45e26428bcc74bcc480c1977752d05dd9e7730813d43121602f847c6bcf4",
+    "dist/assets/three-renderer-BEzRlOVa.js": "f286d6f76733e24e45003e616e9ff8e6889a5aae0c61cc899ddf10584026eea7",
+    "dist/assets/viewer-Cj_UDxcE.js": "26f0bf9b0a48c20a239958c0e9f463b121548c299d598e8ca06fd88ec6c33dcb",
+    "dist/index.html": "6655ea6d3b0cc58d684180ac6da34d1f3fe502550e532c998f96b8ef357729c6"
+  },
+  "realPhonePerformance": "not-measured",
+  "visualAcceptance": "pending-user-review",
+  "originalCollectionDirectory": ".asset-work/browser-evidence/tv-wall-v11/metric-v11",
+  "archiveDirectory": "docs/evidence/metric-v11/tv-wall"
+}

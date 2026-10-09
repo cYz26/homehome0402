@@ -1,0 +1,5 @@
+{
+  "initialFailure": "Model readiness timeout caused by script 404 under /homehome0402/assets with old root-base preview server; no canvas created",
+  "resolution": "Restart own Vite preview with existing config.base and inspect URL at /homehome0402/; no timeout increase or configured-base change",
+  "final": "Desktop and phone viewport query/gallery passed, zero app errors"
+}

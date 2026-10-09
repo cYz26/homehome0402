@@ -1,0 +1,11 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForFunction: Timeout 120000ms exceeded.
+    at /Users/cY/dev/homehome402/.asset-work/tmp/living-effects-r3/ui-review.mjs:8:74 {
+  log: [],
+  name: 'TimeoutError'
+}
+
+Node.js v24.13.0

@@ -1,0 +1,73 @@
+{
+  "version": "metric-v14",
+  "url": "http://127.0.0.1:4183/homehome0402/",
+  "manifestSha256": "86b800359c9d58f7208f2e51be34e5993030ac981e8b7d9431752882ac0abb1b",
+  "flows": [
+    {
+      "viewport": [
+        1280,
+        900
+      ],
+      "title": "living and study desktop: latest images, complete 3D and furniture properties",
+      "status": "passed",
+      "durationMs": 5811,
+      "screenshots": [
+        {
+          "path": "docs/evidence/metric-v14/local-browser/desktop-scheme-overview.png",
+          "sha256": "cc1bd4b4c6580941a275adf9adf9b778be2d40dea0332ef389c17b30d5e8962c"
+        },
+        {
+          "path": "docs/evidence/metric-v14/local-browser/desktop-scheme-tv-c-close.png",
+          "sha256": "7e7196d8cff83b668dadc18c0fc350d1ef260dbc85f8ee4d1c220b2d9110be21"
+        },
+        {
+          "path": "docs/evidence/metric-v14/local-browser/desktop-scheme-study.png",
+          "sha256": "edf5555803ec8eb4634fa9a78de3ef043a11838d513615a40080fb6ba7180a09"
+        },
+        {
+          "path": "docs/evidence/metric-v14/local-browser/desktop-scheme-study-cabinet.png",
+          "sha256": "7606524b4dc1c6c2d6d37aaec91ce011d857305a349a34217685b96935a24946"
+        },
+        {
+          "path": "docs/evidence/metric-v14/local-browser/study-desktop-interior.png",
+          "sha256": "208d1c994e8d2f2703827ab403e044538ebe63192800ebb82bdcd1578224fb3a"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "title": "living and study phone: latest images, complete 3D and furniture properties",
+      "status": "passed",
+      "durationMs": 2455,
+      "screenshots": [
+        {
+          "path": "docs/evidence/metric-v14/local-browser/phone-scheme-overview.png",
+          "sha256": "cff5262cdb3b63272a2d02665dadd385ae1251eddd57a866d9642bed2aa36a7c"
+        },
+        {
+          "path": "docs/evidence/metric-v14/local-browser/phone-scheme-tv-c-close.png",
+          "sha256": "cd017b7b76d835beb41db0b873d6ef351771e4d6866f573c9d6b521363c6a3b8"
+        },
+        {
+          "path": "docs/evidence/metric-v14/local-browser/phone-scheme-study.png",
+          "sha256": "085016f5e46cc2f7ad866f3301d0fe43e820b07d94b5736a9523178c376a7cb9"
+        },
+        {
+          "path": "docs/evidence/metric-v14/local-browser/phone-scheme-study-cabinet.png",
+          "sha256": "c917785849990658af9aad3a555dc32437406d6ef8dae3766e14e25963861285"
+        },
+        {
+          "path": "docs/evidence/metric-v14/local-browser/study-phone-interior.png",
+          "sha256": "ecc1a3d5ad64e0073f6efc5a8142a1ee01285ff36e59a00623560116a3e2b3ee"
+        }
+      ]
+    }
+  ],
+  "completeCIInventory": 21,
+  "applicationErrors": 0,
+  "noFrameworkOverlay": true,
+  "realPhonePerformance": "not measured; Chromium viewport simulation"
+}

@@ -1,0 +1,68 @@
+{
+  "version": "metric-v12",
+  "currentModel": "C",
+  "previousModel": "A",
+  "activeResourcesUseCurrentVersion": true,
+  "changedResources": [
+    {
+      "asset": "images/hero-640.webp",
+      "oldPath": "releases/metric-v11/images/hero-640.webp",
+      "newPath": "releases/metric-v12/images/hero-640.webp",
+      "oldSha256": "4a0bb3eb817a609fdd28f90ae422d4ad718be0c8e76077dc9a6873958b5d0e20",
+      "newSha256": "56eb3daae3cca4e12a97a0202e5904af06b87fc2760ce220d6e7f9b5d29ac989"
+    },
+    {
+      "asset": "images/hero-1000.webp",
+      "oldPath": "releases/metric-v11/images/hero-1000.webp",
+      "newPath": "releases/metric-v12/images/hero-1000.webp",
+      "oldSha256": "9d1173dbc8043f53bb2dd3ad66536d85d683b7ea23c29adc61cefae46030028c",
+      "newSha256": "f8d9fca81b54dca05fc933bf4fbf4594f331d0ea6ed0fd34913ed651cefdcfae"
+    },
+    {
+      "asset": "images/hero-1600.webp",
+      "oldPath": "releases/metric-v11/images/hero-1600.webp",
+      "newPath": "releases/metric-v12/images/hero-1600.webp",
+      "oldSha256": "f725cd5ead4a6b9bc650e66fdf48173fcb745dee22d9c4242556dd775bde71fa",
+      "newSha256": "9c30ba20b1fdce6024fe761e5eaec194a78cb56a511796ddfe9ba9cdbf0acfcc"
+    },
+    {
+      "asset": "images/living.webp",
+      "oldPath": "releases/metric-v11/images/living.webp",
+      "newPath": "releases/metric-v12/images/living.webp",
+      "oldSha256": "98cea32411e5c0ca4ab718d061825854ba8a3991b96bbdc4127478cd209c9d7a",
+      "newSha256": "50fbe60f18f9d443b4bf8f908f6285582928efc110c9f6c648cc842da4f5a240"
+    },
+    {
+      "asset": "images/scheme-overview.webp",
+      "oldPath": "releases/metric-v11/images/scheme-overview.webp",
+      "newPath": "releases/metric-v12/images/scheme-overview.webp",
+      "oldSha256": "649fb177f8ea4e8ff3666b217f4769844d140788890840db8a4833d5ed710dff",
+      "newSha256": "03d98c35ee2ddd6903ed86f4be54c068e993fa32b083e5601d1553b34dd4fb80"
+    },
+    {
+      "asset": "apartment-web.glb",
+      "oldPath": "releases/metric-v11/apartment-web.glb",
+      "newPath": "releases/metric-v12/apartment-web.glb",
+      "oldSha256": "0066776b16c1f9313828ec8cd8768aec987b57056b481b0e9ab6c084ebda49ae",
+      "newSha256": "3d7628fb6626914757cc84679af8efb455d89540f47dd66fa628f1d8cce17876"
+    }
+  ],
+  "savedAlternatives": [
+    {
+      "id": "scheme-tv-a",
+      "title": "A · 单门立柜（备选参考）",
+      "path": "releases/metric-v12/images/scheme-tv-a.webp",
+      "kind": "AI 方案效果图",
+      "version": "living-v06-cabinet-comparison-r2",
+      "caption": "已保存备选参考：45 cm 窄单门立柜＋低位悬空柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。"
+    },
+    {
+      "id": "scheme-tv-b",
+      "title": "B · 高低组合柜（备选参考）",
+      "path": "releases/metric-v12/images/scheme-tv-b.webp",
+      "kind": "AI 方案效果图",
+      "version": "living-v06-cabinet-comparison-r2",
+      "caption": "已保存备选参考：高低五模块组合柜，85 寸电视及同一墙面 / 门洞关系。当前 3D 采用 C。AI 图比例近似，安装尺寸待复核。"
+    }
+  ]
+}
