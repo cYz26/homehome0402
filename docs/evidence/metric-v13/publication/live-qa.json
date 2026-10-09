@@ -1,0 +1,61 @@
+{
+  "url": "https://cyz26.github.io/homehome0402/",
+  "checkedAt": "2026-10-09T08:39:56.821Z",
+  "checks": [
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 900,
+      "version": "metric-v13",
+      "images": "both confirmed previews decoded",
+      "model": "full study / four queries",
+      "consoleErrors": 0,
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Max, Unspecified Version)"
+    },
+    {
+      "label": "phone",
+      "width": 390,
+      "height": 844,
+      "version": "metric-v13",
+      "images": "both confirmed previews decoded",
+      "model": "full study / four queries",
+      "consoleErrors": 0,
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Max, Unspecified Version)"
+    }
+  ],
+  "errors": [],
+  "shareUrl": "https://cyz26.github.io/homehome0402/#view=%7B%22v%22%3A1%2C%22mode%22%3A%22interior%22%2C%22roomId%22%3A%22xroom%22%2C%22entityId%22%3Anull%2C%22section%22%3A%7B%22axis%22%3A%22off%22%2C%22value%22%3A2.8%7D%2C%22quality%22%3A%22standard%22%2C%22eyeHeight%22%3A1.65%2C%22camera%22%3A%7B%22position%22%3A%5B5.22%2C1.58%2C-8.4%5D%2C%22target%22%3A%5B5.1781%2C1.407%2C-10.3921%5D%2C%22zoom%22%3A1%2C%22fov%22%3A72%7D%7D",
+  "originalReceiptSha256": "68d059b4de1cd3668dfc8b00c4a59e255675fe6ea0dbcaf7443e61d7e8b92386",
+  "screenshots": [
+    {
+      "path": "/Users/cY/.codex/visualizations/2026/10/09/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/study-site/live-desktop-gallery.png",
+      "sha256": "579e1c5a33bf1726a1d252f4264287af7fa49a30e1aba2eafc0f312823889b53",
+      "reviewedByAgent": true
+    },
+    {
+      "path": "/Users/cY/.codex/visualizations/2026/10/09/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/study-site/live-desktop-home.png",
+      "sha256": "e76ee4eb171fffd5ffbb71bcf6bd20039a23c28a39302b2e6a6087e934644fda",
+      "reviewedByAgent": false
+    },
+    {
+      "path": "/Users/cY/.codex/visualizations/2026/10/09/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/study-site/live-desktop-study.png",
+      "sha256": "c22127b28124b6977e6573a030b233d3c509f8229b1ad6001da8ab48b83b9e90",
+      "reviewedByAgent": true
+    },
+    {
+      "path": "/Users/cY/.codex/visualizations/2026/10/09/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/study-site/live-phone-gallery.png",
+      "sha256": "2dea035bd2ec547092bb220b3eb7328524bd1a3b37c7c617c8c6c7877b64d13d",
+      "reviewedByAgent": true
+    },
+    {
+      "path": "/Users/cY/.codex/visualizations/2026/10/09/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/study-site/live-phone-home.png",
+      "sha256": "8f8561a76edd0742ce07c073e4ea349c08580c049376bc174c2245006e351cc5",
+      "reviewedByAgent": false
+    },
+    {
+      "path": "/Users/cY/.codex/visualizations/2026/10/09/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/study-site/live-phone-study.png",
+      "sha256": "d78b9bae5aac1a4894eb5f051c8ea4c9963ea04bdb5f384a63fc2bc00ec7ef6b",
+      "reviewedByAgent": true
+    }
+  ]
+}

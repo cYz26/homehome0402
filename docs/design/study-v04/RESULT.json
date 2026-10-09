@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "version": "metric-v13",
+  "applicationRevision": "2026-10-09-study-v04-pages",
+  "deploymentSource": "4279e2dc4697b5c35920a7d7231cf198153caebc",
+  "url": "https://cyz26.github.io/homehome0402/",
+  "publicationReceipt": "../../evidence/metric-v13/publication/RESULT.json",
+  "sourceBoundSelection": "selection.json",
+  "sourceBoundModelReview": "model-review.json",
+  "userAccepted": "study-v03 AI overall and cabinet images",
+  "actualModelVisualAcceptance": "pending-user-review",
+  "note": "Sealed source input files retain their pre-publication fields; this result records completed implementation, CI and online readback."
+}

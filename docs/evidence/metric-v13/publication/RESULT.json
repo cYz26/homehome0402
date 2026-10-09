@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "checkedAt": "2026-10-09T08:57:33.901183+00:00",
+  "repository": {
+    "name": "cYz26/homehome0402",
+    "visibility": "PUBLIC",
+    "branch": "main"
+  },
+  "provider": "github-pages",
+  "url": "https://cyz26.github.io/homehome0402/",
+  "studyShareUrl": "https://cyz26.github.io/homehome0402/#view=%7B%22v%22%3A1%2C%22mode%22%3A%22interior%22%2C%22roomId%22%3A%22xroom%22%2C%22entityId%22%3Anull%2C%22section%22%3A%7B%22axis%22%3A%22off%22%2C%22value%22%3A2.8%7D%2C%22quality%22%3A%22standard%22%2C%22eyeHeight%22%3A1.65%2C%22camera%22%3A%7B%22position%22%3A%5B5.22%2C1.58%2C-8.4%5D%2C%22target%22%3A%5B5.1781%2C1.407%2C-10.3921%5D%2C%22zoom%22%3A1%2C%22fov%22%3A72%7D%7D",
+  "version": "metric-v13",
+  "applicationRevision": "2026-10-09-study-v04-pages",
+  "deploymentSource": "4279e2dc4697b5c35920a7d7231cf198153caebc",
+  "manifestSha256": "96b518adff92ba261d261c345e5894bf49d86685d143233de788cacd649349ed",
+  "actions": {
+    "runId": 37904837123,
+    "url": "https://github.com/cYz26/homehome0402/actions/runs/37904837123",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "build",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T08:25:16Z",
+        "completedAt": "2026-10-09T08:26:13Z"
+      },
+      {
+        "name": "browser (2)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T08:26:16Z",
+        "completedAt": "2026-10-09T08:29:24Z"
+      },
+      {
+        "name": "browser (4)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T08:26:16Z",
+        "completedAt": "2026-10-09T08:30:14Z"
+      },
+      {
+        "name": "browser (3)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T08:26:15Z",
+        "completedAt": "2026-10-09T08:32:01Z"
+      },
+      {
+        "name": "browser (1)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T08:26:16Z",
+        "completedAt": "2026-10-09T08:31:32Z"
+      },
+      {
+        "name": "verify",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T08:32:03Z",
+        "completedAt": "2026-10-09T08:32:38Z"
+      },
+      {
+        "name": "deploy",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T08:32:42Z",
+        "completedAt": "2026-10-09T08:33:59Z"
+      }
+    ],
+    "buildArtifactId": "11603714073",
+    "pagesArtifactId": 11603384833,
+    "artifacts": [
+      {
+        "id": 11604630989,
+        "name": "home402-browser-evidence",
+        "sizeInBytes": 55822645
+      },
+      {
+        "id": 11604068868,
+        "name": "home402-browser-renderer-1",
+        "sizeInBytes": 318
+      },
+      {
+        "id": 11604033079,
+        "name": "home402-deployment-evidence",
+        "sizeInBytes": 3098
+      },
+      {
+        "id": 11603714073,
+        "name": "home402-build",
+        "sizeInBytes": 84028536
+      },
+      {
+        "id": 11603384833,
+        "name": "github-pages",
+        "sizeInBytes": 84021606
+      }
+    ]
+  },
+  "localChecks": {
+    "nodeTests": 53,
+    "modelChecks": 26,
+    "releaseChecks": 16,
+    "trackedImagesWithoutPrivacyMetadata": 310,
+    "sourceAndReimportParts": 712,
+    "sourceTriangles": 287019,
+    "degenerateTriangles": 0,
+    "maxBoundsErrorMeters": 9.5367431640625e-07
+  },
+  "browser": {
+    "passed": 21,
+    "skipped": 0,
+    "retries": 0,
+    "flaky": 0,
+    "screenshots": 37,
+    "durationMs": 280785.70703125,
+    "summary": "ci-browser-summary.json",
+    "renderer": "remote-renderer.json",
+    "reportSha256": "c9a122df4fc3de28e4300803cf4b579e529e5a673ac58dc55159cdb635e5b1fd",
+    "inventorySha256": "4857ecc3199516c5e04670a853b56b4c8dd7e0ee577d99e93ad48d58506fac97"
+  },
+  "publicReadback": {
+    "files": 48,
+    "modelRanges": 6,
+    "anonymousAccess": "public",
+    "missingAssetStatus": 404,
+    "receipt": "deployment-verification.json",
+    "localDistMatchesAllRemoteDigests": true,
+    "localDistReceipt": "local-dist-match.json"
+  },
+  "liveBrowser": {
+    "receipt": "live-qa.json",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 900
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "flow": "homepage → both confirmed study images → actual study interior → four furniture property queries",
+    "consoleErrors": 0,
+    "nonblank": true,
+    "horizontalOverflow": false,
+    "frameworkErrorOverlay": false,
+    "physicalPhone": false,
+    "studyAndGalleryScreenshotsReviewedByAgent": true
+  },
+  "source": {
+    "blend": {
+      "path": "art_src/apartment-v13.blend",
+      "sha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38"
+    },
+    "rawStudyGLB": {
+      "path": "asset_exchange/study-v13.glb",
+      "sha256": "00bd96447f389d1b4288f0f38a8d4d24e854b84f7bea808a46d7759271dc1868"
+    },
+    "selection": "../../../design/study-v04/selection.json",
+    "modelReview": "../../../design/study-v04/model-review.json"
+  },
+  "approvedImages": [
+    {
+      "id": "scheme-study",
+      "title": "书房整体方案",
+      "source": "references/generated/study-20261009/study-concept-v06.png",
+      "sha256": "1bbcd5761ec89792913e4d568812c83652ed313f7cf3a3ee5d906a426d8f2bc7",
+      "kind": "AI 生成方案 · 用户已确认",
+      "designVersion": "study-v03",
+      "caption": "用户已确认的书房整体外观；西侧整墙胡桃木书柜与可坐深底柜，东侧140×70cm升降桌、深色转椅和配柜。AI 方案示意；几何尺寸以同版本真实模型及属性为准。"
+    },
+    {
+      "id": "scheme-study-cabinet",
+      "title": "书房柜体近景",
+      "source": "references/generated/study-20261009/study-cabinet-r2-front.png",
+      "sha256": "47160ee27288a7c26cf674ebad7ba08ad827d96768e4d5956079361b56260847",
+      "kind": "AI 生成方案 · 用户已确认",
+      "designVersion": "study-v03",
+      "caption": "用户已确认的柜体外观：双实木门、三段浅色嵌板、开放书格、木框玻璃门及下部暖光展示格；单排深底柜与薄坐垫。AI 合成近景，非实拍或模型渲染。"
+    }
+  ],
+  "preservation": {
+    "baselineCommit": "0b6d31e8be52f6a14124beba2e770a7b2c57a53a",
+    "unchangedOldParts": 698,
+    "changedXWindowAndWallParts": 9,
+    "newFurnitureEntities": 5,
+    "southSlidingDoor": "preserved",
+    "publishedLivingAndSofa": "preserved",
+    "concurrentPrimaryCheckoutDesign": "metric-v10–v12 WIP retained outside publication"
+  },
+  "remaining": {
+    "actualModelVisualAcceptance": "pending-user-review",
+    "cabinetManufacturerDimensionsAndSeatLoad": "not-certified",
+    "siteDimensions": "not-measured",
+    "dynamicHumanClearance": "not-certified",
+    "realPhonePerformance": "not-measured",
+    "mainlandNetworkAccess": "not-measured"
+  },
+  "resources": {
+    "initialBytes": 673353,
+    "firstViewportCoreBytes": 307169,
+    "interactiveBytes": 39842334,
+    "webGLBBytes": 37645472,
+    "receipt": "remote-release-checks.json"
+  }
+}
