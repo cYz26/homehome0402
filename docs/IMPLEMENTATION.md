@@ -199,3 +199,6 @@ Web / HD 组合流程 trace 已证明本机原 90 秒整项预算在 Web 检查�
 恢复 `.github/workflows/pages.yml`，停止 Workers 自动发布，保留单次构建、四个独立浏览器分片、完整清单守卫和同产物部署。Vite base 改为 `/homehome0402/`，同步应用、剖切 / 输入夹具和手机浏览器检查；公开资源新增路径及 Range 回归。既有模型、纹理、图纸与效果图字节保留，仅从 code-only 入口刷新应用修订和源码摘要。
 
 GitHub Pages 公开、免密码，历史 Worker 代码和发布证据保留。实际本机检查、远程 Actions、部署回读及访问边界见 [QA](QA.md#github-pages-恢复--2026-10-09)。大陆网络及真机性能须分别实测。
+
+
+本轮已完成：迁移提交 `fdfc9b54` 推送到 `main`，Actions `37899320386` 的构建、四个分片、完整清单合并及部署全部成功。公开站点为 [Home 402](https://cyz26.github.io/homehome0402/)，沿用 metric-v09 的 34 个原始发布资产；19 项浏览器检查、42 文件哈希及四个模型 Range 通过。实际线上桌面 / 手机尺寸及 3D / 分享已查看，本机 v12 WIP 在同步主分支时逐项保留。独立收据见 [Pages 发布结果](evidence/metric-v09/pages-publication-20261009/RESULT.json)；中国大陆网络及真机性能仍待实测。
