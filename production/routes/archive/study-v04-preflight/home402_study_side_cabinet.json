@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "asset_id": "home402_study_side_cabinet",
+  "task_id": "home402-study-v04-to-metric-v13",
+  "intent": "new_static",
+  "route": "reference_blender",
+  "decision_basis": {
+    "path": "docs/design/study-v04/DECISION.md",
+    "sha256": "bda4916cc0ca18e73fffcade99d623b07d507854ece5ee470ca5933d8ae93f0c"
+  },
+  "route_override": null,
+  "allowed_changes": [
+    "Author this regular rigid furniture locally from its selected independent reference; dimensions/placement/materials follow approved study layout. Keep other spaces unchanged; static presentation only."
+  ],
+  "references": [
+    {
+      "path": "references/generated/study-20261009/independent/side-cabinet-r1.png",
+      "sha256": "71e56ec1aa68043accd95ef34390d129e2ab73f228500a86c9aa414c3a77465d"
+    }
+  ],
+  "geometry": null,
+  "reuse": []
+}

@@ -1,0 +1,24 @@
+{
+  "baseline": "metric-v09",
+  "version": "metric-v13",
+  "actualChangedOldNodes": [
+    "wall_north_3_0_lower",
+    "X_north_glass_lower",
+    "X_north_glass_lower.001",
+    "X_north_handle",
+    "X_north_mullion_lower",
+    "X_north_mullion_lower.001",
+    "X_north_mullion_lower.002",
+    "X_north_rail",
+    "X_north_stone_sill"
+  ],
+  "unchangedOldNodes": 698,
+  "newNodes": [
+    "Furniture_study_bookcase",
+    "Furniture_study_desktop_items",
+    "Furniture_study_side_cabinet",
+    "Furniture_study_standing_desk",
+    "Furniture_study_task_chair"
+  ],
+  "comparison": "Bounds, triangle counts and semantic IDs; window/one wall opening are allowed. Other geometry checks passed."
+}

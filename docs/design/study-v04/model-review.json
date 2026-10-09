@@ -1,0 +1,37 @@
+{
+  "reviewer": "Codex agent",
+  "status": "pass-for-integration",
+  "source": {
+    "path": "art_src/apartment-v13.blend",
+    "sha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38"
+  },
+  "studyGLB": {
+    "path": "asset_exchange/study-v13.glb",
+    "sha256": "00bd96447f389d1b4288f0f38a8d4d24e854b84f7bea808a46d7759271dc1868"
+  },
+  "sourceAndReimportViews": {
+    "source": {
+      "path": "references/model/metric-v13/study-final-source/provenance.json",
+      "sha256": "c4bfb7a4920f8f75c6c8d6b94ffee549f5ab15002bb3e663786c23d1308bd7b1"
+    },
+    "glb": {
+      "path": "references/model/metric-v13/study-final-glb/provenance.json",
+      "sha256": "aff8100d77cfc2d9439dc0131e7fbe672458a3e22d039f39850e149e0fb1f4c0"
+    }
+  },
+  "observations": [
+    "Viewed source and independently reimported GLB bookcase quarter, chair quarter, desk quarter and side-cabinet quarter; same silhouette, vertical door grain / horizontal drawers, stone inserts and transparent glass contents retained.",
+    "Four-module cabinet is3m long with one low drawer row and deep seat step. Detailed book covers/ceramics are simplified constituent display props.",
+    "Chair mesh back now uses smooth curved quads plus physical weave; no triangle fan star crease, five-spoke chrome base and split back remain.",
+    "Viewed both actual room Cycles views; wide overview includes desk/chair/east cabinet, high sill and projecting seat; frontal room view is partially occluded by the actual chair.",
+    "Outside north tree is deterministic display context only; no site/scenery measurement claim."
+  ],
+  "userVisualAcceptance": "AI study-v03 confirmed; actual model user acceptance not inferred",
+  "limits": [
+    "Manufacturer/site dimensions",
+    "Seat load",
+    "Human/drawer/chair dynamic use",
+    "Actual model aesthetic confirmation",
+    "Real-device performance"
+  ]
+}

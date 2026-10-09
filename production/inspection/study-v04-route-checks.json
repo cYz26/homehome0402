@@ -1,0 +1,38 @@
+[
+  {
+    "asset": "bookcase",
+    "status": "source_bound",
+    "decision_sha256": "d7618195082a6108e6039de3437e841a97a3ef5b12e558fcc94cea884a8fd63d",
+    "source": {
+      "path": "art_src/apartment-v13.blend",
+      "sha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38"
+    }
+  },
+  {
+    "asset": "desk",
+    "status": "source_bound",
+    "decision_sha256": "c796853d954e17f3911531dfabab30f754af167c465550fed1b35c9753c6abf0",
+    "source": {
+      "path": "art_src/apartment-v13.blend",
+      "sha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38"
+    }
+  },
+  {
+    "asset": "chair",
+    "status": "source_bound",
+    "decision_sha256": "6f97a20089987737513463f9e147b09cfa2c78c51892d801fc2c1f467e845926",
+    "source": {
+      "path": "art_src/apartment-v13.blend",
+      "sha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38"
+    }
+  },
+  {
+    "asset": "side_cabinet",
+    "status": "source_bound",
+    "decision_sha256": "4ffb9ccc56508aa8a408cdb22620603ed5d90dda58a2232db5df365ec53913b5",
+    "source": {
+      "path": "art_src/apartment-v13.blend",
+      "sha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38"
+    }
+  }
+]

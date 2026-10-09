@@ -64,7 +64,8 @@
       },
       "sourceSha256": "31f66d22bfa021bba1ea96ad08bd6f720ce301498ec9e69d5d99610a87eebc51",
       "specSha256": "c96b6453e5badc614a5bdca00c459dd923be8808ff1548a4639e9137be4a0aea",
-      "sha256": "91377e0b20e551ca26b55cf7b5e3b9972b4404c8ec4a93bd563cde7cba80addd"
+      "sha256": "09a941412b0bf28d51ea35e22508e2656284f3b1c55851d91e7e179aee0b45cd",
+      "originalToolSha256": "91377e0b20e551ca26b55cf7b5e3b9972b4404c8ec4a93bd563cde7cba80addd"
     },
     "study-cabinet": {
       "view": {
@@ -87,8 +88,10 @@
       },
       "sourceSha256": "31f66d22bfa021bba1ea96ad08bd6f720ce301498ec9e69d5d99610a87eebc51",
       "specSha256": "c96b6453e5badc614a5bdca00c459dd923be8808ff1548a4639e9137be4a0aea",
-      "sha256": "2753b5d818a75d01abc9270e5c0716f2ffd58764f5106d60ef01c645dd73050f"
+      "sha256": "88ea8e5bc96e0209e159c67e7887b68919b280d4dea6e5e28c7513250c44db68",
+      "originalToolSha256": "2753b5d818a75d01abc9270e5c0716f2ffd58764f5106d60ef01c645dd73050f"
     }
   },
-  "role": "Same-model Cycles renders; not site photographs"
+  "role": "Same-model Cycles renders; not site photographs",
+  "copyRole": "Metadata-sanitized source/GLB review copy, decoded pixels unchanged"
 }

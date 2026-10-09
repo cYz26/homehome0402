@@ -7,74 +7,87 @@
     {
       "asset": "bookcase",
       "view": "front",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/bookcase-front.png",
-      "sha256": "036fa9ed1285c19bf3558091c257984f044e9d551af6a91e3966a6c88bd3adf7"
+      "path": "references/model/metric-v13/study-final-glb/bookcase-front.png",
+      "sha256": "84ce105b9ec02edcb86bd002edcf74d4253e1f257d6d7a5634bfab0cbf84c417",
+      "originalToolSha256": "036fa9ed1285c19bf3558091c257984f044e9d551af6a91e3966a6c88bd3adf7"
     },
     {
       "asset": "bookcase",
       "view": "side",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/bookcase-side.png",
-      "sha256": "ad7c801ac7c97900d153f47cb067ef0e19959234d6718abd6585d02d3738363e"
+      "path": "references/model/metric-v13/study-final-glb/bookcase-side.png",
+      "sha256": "d5e3931ffa53ae4cf840e9d072d7001399f3158870351199dfb1b5008e2a2f66",
+      "originalToolSha256": "ad7c801ac7c97900d153f47cb067ef0e19959234d6718abd6585d02d3738363e"
     },
     {
       "asset": "bookcase",
       "view": "quarter",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/bookcase-quarter.png",
-      "sha256": "af9aec5d1b543cb6fee3334d02b0e02649de33728cf08fe4c6d8789ddda58154"
+      "path": "references/model/metric-v13/study-final-glb/bookcase-quarter.png",
+      "sha256": "e60ea7b0415396a10f5a3e05de560072e61830f350439ad9c3b72bc37183b404",
+      "originalToolSha256": "af9aec5d1b543cb6fee3334d02b0e02649de33728cf08fe4c6d8789ddda58154"
     },
     {
       "asset": "desk",
       "view": "front",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/desk-front.png",
-      "sha256": "d4326fe53942b3c255de51d0295159bed64ddb123a91cc3e280579fd084c483f"
+      "path": "references/model/metric-v13/study-final-glb/desk-front.png",
+      "sha256": "5126b21d69518dfa65ca9bbe42e34e6a583769d92ed3562a5e0beeed610e459e",
+      "originalToolSha256": "d4326fe53942b3c255de51d0295159bed64ddb123a91cc3e280579fd084c483f"
     },
     {
       "asset": "desk",
       "view": "side",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/desk-side.png",
-      "sha256": "6303daf78dede2d1f86fb645e50f395ca5a24499d56171186b284c3aea448c76"
+      "path": "references/model/metric-v13/study-final-glb/desk-side.png",
+      "sha256": "a94d2ac99cf765dc573ca44c24df005437e483d30648b2c8990ceee9f8744d33",
+      "originalToolSha256": "6303daf78dede2d1f86fb645e50f395ca5a24499d56171186b284c3aea448c76"
     },
     {
       "asset": "desk",
       "view": "quarter",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/desk-quarter.png",
-      "sha256": "e3073b93af27725c8e113727edd8249837595a1ad5d7b37a3e6de7f75489adee"
+      "path": "references/model/metric-v13/study-final-glb/desk-quarter.png",
+      "sha256": "6b00d1906e3efebc9cf90d996b829733f05bc1a42374b53f2bdef20d1e870040",
+      "originalToolSha256": "e3073b93af27725c8e113727edd8249837595a1ad5d7b37a3e6de7f75489adee"
     },
     {
       "asset": "chair",
       "view": "front",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/chair-front.png",
-      "sha256": "d45e360ce3f558fcb15968032d8edecc9555c0b05e98f8af19483f88d6b8b5fb"
+      "path": "references/model/metric-v13/study-final-glb/chair-front.png",
+      "sha256": "bf749e9a43f0676e56204014ee6e9073741a7e40201add103f124e771f73f8ca",
+      "originalToolSha256": "d45e360ce3f558fcb15968032d8edecc9555c0b05e98f8af19483f88d6b8b5fb"
     },
     {
       "asset": "chair",
       "view": "side",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/chair-side.png",
-      "sha256": "ab4993a7cd499aa9b7f36f62f1d5382cab0abe8abe8a5fe8d37e553358366c3f"
+      "path": "references/model/metric-v13/study-final-glb/chair-side.png",
+      "sha256": "048cb59765d0bfcc4eeb93d3bcf4f6f8e7e97a8e3683229b4327eee4806fdd68",
+      "originalToolSha256": "ab4993a7cd499aa9b7f36f62f1d5382cab0abe8abe8a5fe8d37e553358366c3f"
     },
     {
       "asset": "chair",
       "view": "quarter",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/chair-quarter.png",
-      "sha256": "9e9d56eabe31cc3aab9d1916d3c2a685d6a77e4d139c614fee325a7cb39f185f"
+      "path": "references/model/metric-v13/study-final-glb/chair-quarter.png",
+      "sha256": "e30b6f3f24cf586d72952acc6e0ab2b02c4de6991bc8eabb313414cb2ebf259a",
+      "originalToolSha256": "9e9d56eabe31cc3aab9d1916d3c2a685d6a77e4d139c614fee325a7cb39f185f"
     },
     {
       "asset": "side-cabinet",
       "view": "front",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/side-cabinet-front.png",
-      "sha256": "4ab7cff5f50cb5ba3cff612038da7a69bd72c1981771e31773345b70bbb92b3b"
+      "path": "references/model/metric-v13/study-final-glb/side-cabinet-front.png",
+      "sha256": "c7537a3418b2763b7706ba9c89a750dccb8ec7fcd0a3429ab654f0b2d2147e0c",
+      "originalToolSha256": "4ab7cff5f50cb5ba3cff612038da7a69bd72c1981771e31773345b70bbb92b3b"
     },
     {
       "asset": "side-cabinet",
       "view": "side",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/side-cabinet-side.png",
-      "sha256": "45e0a4b2392a41d03ff85c5bb3857af44e9fbdbd36656d1ceee73e8a6cbc7212"
+      "path": "references/model/metric-v13/study-final-glb/side-cabinet-side.png",
+      "sha256": "00974cebaad11b1d0f4006a9ed6efaeb0e98ecf5299f26494df8a4a5474ea138",
+      "originalToolSha256": "45e0a4b2392a41d03ff85c5bb3857af44e9fbdbd36656d1ceee73e8a6cbc7212"
     },
     {
       "asset": "side-cabinet",
       "view": "quarter",
-      "path": ".asset-work/visual-review/metric-v13/study-final-reimport/side-cabinet-quarter.png",
-      "sha256": "4c8a35aeb5f6d21684f7eac0142cb235e9785835674f9b40546f0e6036dfcae5"
+      "path": "references/model/metric-v13/study-final-glb/side-cabinet-quarter.png",
+      "sha256": "2e54d04d4be15870ba8ef7b21120b2728f7d1d064a6e410e4584517fc3a29ebd",
+      "originalToolSha256": "4c8a35aeb5f6d21684f7eac0142cb235e9785835674f9b40546f0e6036dfcae5"
     }
-  ]
+  ],
+  "copyRole": "Metadata-sanitized source/GLB review copy, decoded pixels unchanged"
 }

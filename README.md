@@ -131,3 +131,6 @@ metric-v09 的正式图形验收使用独立浏览器进程，避免连续用例
 `modelPackages` 将完整源划为互斥的实体包，导出、重导入、数据与压缩均检查合并语义覆盖。发布清单的 `additionalModels` 必须同主包一起加载，标准 / 高清各有两包，下载区明确列出。既有同步分包保持；网页总预算随完整纹理记录在 `model/resource-budgets.json`，不通过缩图降低画质。KTX 如超过单文件限额，保留原图编码 + Meshopt，实际编码记录在 `model-packages.json`。
 
 窗外庭院使用 `presentationEnvironment` 的确定性展示几何，`src/presentation-environment.js` 同供 Three.js 和 Blender 渲染适配器使用；不加入建筑 GLB、空间面积和碰撞。室内透射玻璃、暖色洗墙和灯光参数来自当前 JSON；AI 氛围图与真实模型始终标明来源。当前设计与历史、尺寸假设、用户要求和验收边界见 [v04 上下文](docs/design/living-v04/DECISION.md)。
+
+
+书房实际家具与两张确认效果图采用 [study-v04](docs/design/study-v04/DECISION.md)；`scripts/study_geometry.py` 从同一建筑JSON重建，第三个study包随房屋/沙发同步展示。独立源/GLB检查可运行 `scripts/render-study-review.py -- --final` 与 `--final --reimport`；不覆盖源Blend。当前网页/首次交互预算38/40MiB，保留全尺寸贴图，实测值和验收边界见QA。

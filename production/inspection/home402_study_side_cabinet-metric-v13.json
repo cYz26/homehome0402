@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "art_src/apartment-v13.blend",
+    "sha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38"
+  },
+  "meshes": [
+    "Furniture_study_side_cabinet"
+  ],
+  "armatures": [],
+  "actions": [],
+  "evidence": {
+    "path": "production/inspection/study-v04-source.json",
+    "sha256": "98a88946950c02ca5d97e1cabda1fe91ab03a687daf1087356ef3b4e9eb0bcc2"
+  }
+}

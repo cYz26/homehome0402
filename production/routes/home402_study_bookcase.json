@@ -6,7 +6,7 @@
   "route": "reference_blender",
   "decision_basis": {
     "path": "docs/design/study-v04/DECISION.md",
-    "sha256": "bda4916cc0ca18e73fffcade99d623b07d507854ece5ee470ca5933d8ae93f0c"
+    "sha256": "8f30fde4a26a9eba2516dfb8972f1854abc1f7469b8455ff97403f08529f9739"
   },
   "route_override": null,
   "allowed_changes": [
@@ -18,6 +18,17 @@
       "sha256": "4a6ceacc929d4e5c6b93eef9bd1edb7d36b44e5a817217fb9112b13f3f0557c2"
     }
   ],
-  "geometry": null,
+  "geometry": {
+    "source": {
+      "path": "art_src/apartment-v13.blend",
+      "sha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38"
+    },
+    "inspection": {
+      "path": "production/inspection/home402_study_bookcase-metric-v13.json",
+      "sha256": "45db9cc6569666d8303b4df720114c3ad6539da14526a676aa24f2249c228b0d"
+    },
+    "basis": "blender_authored",
+    "generation": null
+  },
   "reuse": []
 }

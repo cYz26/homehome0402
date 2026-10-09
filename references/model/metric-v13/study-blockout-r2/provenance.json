@@ -7,74 +7,87 @@
     {
       "asset": "bookcase",
       "view": "front",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/bookcase-front.png",
-      "sha256": "8724fd91df96a84ab48d2737e7e62f0a8ec32fbc1cd4e48494781c78202b53db"
+      "path": "references/model/metric-v13/study-blockout-r2/bookcase-front.png",
+      "sha256": "480b26f7fda9d008e12432de9f6fa424e757b6964f496382b0a84440378c1841",
+      "originalToolSha256": "8724fd91df96a84ab48d2737e7e62f0a8ec32fbc1cd4e48494781c78202b53db"
     },
     {
       "asset": "bookcase",
       "view": "side",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/bookcase-side.png",
-      "sha256": "2bb3bb1bf7aa073fea80456ca3255ae276becbe5533c23519091511bae229add"
+      "path": "references/model/metric-v13/study-blockout-r2/bookcase-side.png",
+      "sha256": "c4aae56a0b7d3e645e6f11ee7f2e609d4b989ba29c4f7fd7863640fdd45633c4",
+      "originalToolSha256": "2bb3bb1bf7aa073fea80456ca3255ae276becbe5533c23519091511bae229add"
     },
     {
       "asset": "bookcase",
       "view": "quarter",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/bookcase-quarter.png",
-      "sha256": "da218d7d3bd73aaac6ba39d0b14fe6e2123d27b15b1f5c961edd3434918cff9c"
+      "path": "references/model/metric-v13/study-blockout-r2/bookcase-quarter.png",
+      "sha256": "1a61c8e376ab4b81651ec95a65a03828b89a3d41f6848b96aab265449a87cd3e",
+      "originalToolSha256": "da218d7d3bd73aaac6ba39d0b14fe6e2123d27b15b1f5c961edd3434918cff9c"
     },
     {
       "asset": "desk",
       "view": "front",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/desk-front.png",
-      "sha256": "17b926d510de8ae121c571f0054d50d44b4e3a04db8069bf3c4f97c39c2a5f55"
+      "path": "references/model/metric-v13/study-blockout-r2/desk-front.png",
+      "sha256": "1fefd5ab48834a7c01a228c803301feb8d3035553ba87219efec1b81384f40a1",
+      "originalToolSha256": "17b926d510de8ae121c571f0054d50d44b4e3a04db8069bf3c4f97c39c2a5f55"
     },
     {
       "asset": "desk",
       "view": "side",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/desk-side.png",
-      "sha256": "a304a3c0538640c268e1b56b1119840a638018b7cecbdd6ba18daa751b174e8c"
+      "path": "references/model/metric-v13/study-blockout-r2/desk-side.png",
+      "sha256": "44fc1450f72d89ced38b17e28588c663ab27884bd3e3f0cc3564b443758adc54",
+      "originalToolSha256": "a304a3c0538640c268e1b56b1119840a638018b7cecbdd6ba18daa751b174e8c"
     },
     {
       "asset": "desk",
       "view": "quarter",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/desk-quarter.png",
-      "sha256": "3bb0085917e35a985ccedab7c23bef6c18915572a5dfa3c39bff009febf24f24"
+      "path": "references/model/metric-v13/study-blockout-r2/desk-quarter.png",
+      "sha256": "71af7d2493e934b6120f3a8a136fee8fa4fed9ec07c46ecf69bfb32cc4598ae1",
+      "originalToolSha256": "3bb0085917e35a985ccedab7c23bef6c18915572a5dfa3c39bff009febf24f24"
     },
     {
       "asset": "chair",
       "view": "front",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/chair-front.png",
-      "sha256": "97c49ac66d2f8c88a463418ce608adbe58ed172532d16ba78a84f4c7597dcd53"
+      "path": "references/model/metric-v13/study-blockout-r2/chair-front.png",
+      "sha256": "4fae11cf3e22cea85f70a6bd59e2c6fed0a66b7ace30546600aa241c412646b7",
+      "originalToolSha256": "97c49ac66d2f8c88a463418ce608adbe58ed172532d16ba78a84f4c7597dcd53"
     },
     {
       "asset": "chair",
       "view": "side",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/chair-side.png",
-      "sha256": "07439c8a1138f662a20b06658b4a7fb67c71c9e2785ff6617d2a5c0adf7fe8d3"
+      "path": "references/model/metric-v13/study-blockout-r2/chair-side.png",
+      "sha256": "1a32b6551e0deecc25966d43e978351d71210ba9bf25834721b00256beadad75",
+      "originalToolSha256": "07439c8a1138f662a20b06658b4a7fb67c71c9e2785ff6617d2a5c0adf7fe8d3"
     },
     {
       "asset": "chair",
       "view": "quarter",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/chair-quarter.png",
-      "sha256": "8c0b167b75d4c04842b0e47cc3ce3e52ddb8a2f96bd50e75358b9c76071bdce2"
+      "path": "references/model/metric-v13/study-blockout-r2/chair-quarter.png",
+      "sha256": "10f0731aca3f864b3ea58c3176fd9aff972a9c71a38873be123ace8108964646",
+      "originalToolSha256": "8c0b167b75d4c04842b0e47cc3ce3e52ddb8a2f96bd50e75358b9c76071bdce2"
     },
     {
       "asset": "side-cabinet",
       "view": "front",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/side-cabinet-front.png",
-      "sha256": "e37b0094a1f43bdd6b8df335a9f84b89f2f581262f56e8c4768b80997396024a"
+      "path": "references/model/metric-v13/study-blockout-r2/side-cabinet-front.png",
+      "sha256": "6a9dae43e33343400d0fb471ce4bf3d995d3a226fd7a780f27283c0c05f1d088",
+      "originalToolSha256": "e37b0094a1f43bdd6b8df335a9f84b89f2f581262f56e8c4768b80997396024a"
     },
     {
       "asset": "side-cabinet",
       "view": "side",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/side-cabinet-side.png",
-      "sha256": "2a078a8eedc632a2658cc9b7219ed621d83faef31bd0d7bb1d892a047477934e"
+      "path": "references/model/metric-v13/study-blockout-r2/side-cabinet-side.png",
+      "sha256": "98cb1a075ec3967283bfd436f1340a5be3b7e55a8cbc13227aad56ef2dec3eae",
+      "originalToolSha256": "2a078a8eedc632a2658cc9b7219ed621d83faef31bd0d7bb1d892a047477934e"
     },
     {
       "asset": "side-cabinet",
       "view": "quarter",
-      "path": ".asset-work/visual-review/metric-v13/study-blockout/side-cabinet-quarter.png",
-      "sha256": "2b7b6f680998652cdeee7a03874c593a5cd5db3055ab88e3d4bde24adf7b8650"
+      "path": "references/model/metric-v13/study-blockout-r2/side-cabinet-quarter.png",
+      "sha256": "9d2e80a62b79b0064d52bb0f83d25de513ea731059d4f575833993b53ee510d5",
+      "originalToolSha256": "2b7b6f680998652cdeee7a03874c593a5cd5db3055ab88e3d4bde24adf7b8650"
     }
-  ]
+  ],
+  "copyRole": "Metadata-sanitized source/GLB review copy, decoded pixels unchanged"
 }

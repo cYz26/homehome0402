@@ -1,0 +1,51 @@
+{
+  "version": "metric-v13",
+  "flow": "Page -> two user-confirmed images -> complete study package -> interior/detail -> four furniture properties",
+  "browser": "Playwright Chromium / Metal; Browser plugin not available",
+  "viewports": [
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 900,
+      "stats": {
+        "startTime": "2026-10-09T08:12:29.587Z",
+        "duration": 7699.161,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "label": "phone",
+      "width": 390,
+      "height": 844,
+      "stats": {
+        "startTime": "2026-10-09T08:18:12.990Z",
+        "duration": 3738.698,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "checks": {
+    "identity": "pass",
+    "nonblank": "pass",
+    "frameworkOverlay": "none",
+    "relevantConsoleErrors": 0,
+    "confirmedImageLabelsAndDecode": "pass",
+    "studyPackageAndProperties": "pass",
+    "screenshotInspected": "desktop and phone"
+  },
+  "screenshots": [
+    "/Users/cY/.codex/visualizations/2026/10/09/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/study-site/study-desktop-interior.png",
+    "/Users/cY/.codex/visualizations/2026/10/09/01a11ef8-fc0f-7f80-bd46-9270d91e9e81/study-site/study-phone-interior.png"
+  ],
+  "remaining": [
+    "Full CI inventory and remote publication/readback",
+    "Physical phone performance",
+    "Site/manufacturer/seat load / actual 3D user acceptance"
+  ]
+}

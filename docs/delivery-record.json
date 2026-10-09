@@ -1,27 +1,33 @@
 {
-  "version": "metric-v09",
-  "sourceSha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
-  "rawModelSha256": "bec95e41d32e2b8a0ede7f5e4875fa38b786bf496b6c3b31858444b05539b21f",
+  "version": "metric-v13",
+  "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+  "rawModelSha256": "3715a9e3de8e4a963b07bc6090e345d1ec130d60566faf05172ab9c053922813",
   "modelPackages": [
     {
       "id": "apartment",
-      "path": "asset_exchange/apartment-v09.glb",
-      "sha256": "bec95e41d32e2b8a0ede7f5e4875fa38b786bf496b6c3b31858444b05539b21f",
-      "bytes": 24601864
+      "path": "asset_exchange/apartment-v13.glb",
+      "sha256": "3715a9e3de8e4a963b07bc6090e345d1ec130d60566faf05172ab9c053922813",
+      "bytes": 24601768
     },
     {
       "id": "living-sofa",
-      "path": "asset_exchange/living-sofa-v09.glb",
-      "sha256": "65017cdccc06a93b0a26a51faa4579aff5d0655691e7872827395c58314bacd2",
+      "path": "asset_exchange/living-sofa-v13.glb",
+      "sha256": "0095d2d3a150c88a06b117a0e2ec01e4c621aec7f3ddc5ad9af88811bed885c6",
       "bytes": 21232288
+    },
+    {
+      "id": "study",
+      "path": "asset_exchange/study-v13.glb",
+      "sha256": "00bd96447f389d1b4288f0f38a8d4d24e854b84f7bea808a46d7759271dc1868",
+      "bytes": 6746256
     }
   ],
-  "specSha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
+  "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
   "roundtrip": {
     "passed": true,
-    "sourceObjects": 707,
-    "importedObjects": 707,
-    "triangles": 233175,
+    "sourceObjects": 712,
+    "importedObjects": 712,
+    "triangles": 287019,
     "maximumBoundsErrorMeters": 9.5367431640625e-7
   },
   "checks": {
@@ -117,10 +123,22 @@
       {
         "name": "Measured cabinet tiers and single artwork follow the revised hanging layout",
         "pass": true
+      },
+      {
+        "name": "Study change preserves all other published architecture and furniture parts",
+        "pass": true
+      },
+      {
+        "name": "Actual study has the specified desk, one deep seat-base row and four facade modules",
+        "pass": true
+      },
+      {
+        "name": "Actual study clears static walls/slider; drawer-use limitation stays explicit",
+        "pass": true
       }
     ],
-    "passed": 23,
-    "total": 23
+    "passed": 26,
+    "total": 26
   },
   "revisions": [
     {
@@ -185,6 +203,21 @@
         "living-sofa"
       ],
       "changes": "接入用户授权 Tripo 沙发，保留原始 4K PBR 与稳定语义 ID；实际深度对应碰撞，背墙避让东移 5 cm。完整 Blend 派生房屋 / 沙发两个同版本 GLB 包，均低于 Workers 25 MiB 单文件限制。"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "study-v04",
+      "basis": "用户确认study-v03后明确要求效果图和书房3D一起更新",
+      "changes": "增加规则书房家具、仅提升X北窗台，保留推拉门；从发布v09隔离实施，不包含客厅未提交v10-v12。",
+      "entityIds": [
+        "study-bookcase",
+        "study-standing-desk",
+        "study-task-chair",
+        "study-side-cabinet",
+        "study-desktop-items",
+        "window_X_north",
+        "wall_north"
+      ]
     }
   ],
   "designContext": {
@@ -234,13 +267,67 @@
       ]
     }
   },
+  "studyContext": {
+    "id": "home402-study-v04-implementation",
+    "selectionSha256": "8ca9029212fdba901f24b31d7095890b0d7f8a958eeea429257f407a6e0393be",
+    "userAcceptance": {
+      "status": "confirmed-design-preview",
+      "quote": "这个版本OK",
+      "implementationRequest": "效果图和书房 3D 一起更新",
+      "actualModelAcceptance": "separate; not inferred from AI image approval"
+    },
+    "layout": {
+      "path": "docs/design/study-v03/layout.json",
+      "sha256": "7302f7dc45284cdb15b000f0a23c02ad41cedc4171b0e20e3f8b4f2124a40ef9"
+    },
+    "alignment": {
+      "path": "docs/design/study-v04/alignment.json",
+      "sha256": "6c0532943106862b055c9a961ad022c913a7e8dad32b407c3f6735e93b3b4b76"
+    }
+  },
   "renders": {
-    "modelVersion": "metric-v09",
-    "sourceSha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
-    "specSha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
+    "modelVersion": "metric-v13",
+    "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+    "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
     "engine": "Cycles",
     "blender": "5.2.1 LTS",
     "views": [
+      {
+        "id": "study",
+        "name": "书房 / 确认设计的实际模型",
+        "mode": "interior",
+        "camera": [
+          5.22,
+          4.5,
+          1.58
+        ],
+        "target": [
+          5.14,
+          0.7,
+          1.25
+        ],
+        "fov": 72,
+        "width": 1448,
+        "height": 1086
+      },
+      {
+        "id": "study-cabinet",
+        "name": "书房柜体实际模型",
+        "mode": "interior",
+        "camera": [
+          6.39,
+          1.78,
+          1.4
+        ],
+        "target": [
+          4.1,
+          1.78,
+          1.18
+        ],
+        "fov": 78,
+        "width": 1448,
+        "height": 1086
+      },
       {
         "id": "hero",
         "name": "全屋轴测",
@@ -373,6 +460,52 @@
       }
     ],
     "images": {
+      "study": {
+        "view": {
+          "id": "study",
+          "name": "书房 / 确认设计的实际模型",
+          "mode": "interior",
+          "camera": [
+            5.22,
+            4.5,
+            1.58
+          ],
+          "target": [
+            5.14,
+            0.7,
+            1.25
+          ],
+          "fov": 72,
+          "width": 1448,
+          "height": 1086
+        },
+        "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+        "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+        "sha256": "57af69da67825f633396f30522a53afd78e0e47df87543ff561b6d747e357a4b"
+      },
+      "study-cabinet": {
+        "view": {
+          "id": "study-cabinet",
+          "name": "书房柜体实际模型",
+          "mode": "interior",
+          "camera": [
+            6.39,
+            1.78,
+            1.4
+          ],
+          "target": [
+            4.1,
+            1.78,
+            1.18
+          ],
+          "fov": 78,
+          "width": 1448,
+          "height": 1086
+        },
+        "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+        "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+        "sha256": "a21e6406f9e9edb16d8b8b800e0f89694a0cf0f1f7ce4694b92c15cc8ec40ebc"
+      },
       "hero": {
         "view": {
           "id": "hero",
@@ -390,9 +523,9 @@
           ],
           "orthoScale": 21
         },
-        "sourceSha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
-        "specSha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
-        "sha256": "4ad3feb07fd81eed3fd6d1fa5e9aaf43a0bc96a9e790860b8fc41aa1223024ee"
+        "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+        "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+        "sha256": "f514b32e8e7a41f8c6712076be72c8a7bb5bc4b2fc69c8e2551531a34f1f20fb"
       },
       "reference": {
         "view": {
@@ -413,9 +546,9 @@
           "width": 1400,
           "height": 1600
         },
-        "sourceSha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
-        "specSha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
-        "sha256": "d9afe822d3f7166bfac4507f2d3f412d4b1f98ae1d4e086cc3a3ae01a16a32d4"
+        "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+        "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+        "sha256": "b483ffad51a8e231a79d6c1a34d2b42af533029bc3e8a896fe05465139e2c1f8"
       },
       "living": {
         "view": {
@@ -434,9 +567,9 @@
           ],
           "fov": 57
         },
-        "sourceSha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
-        "specSha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
-        "sha256": "a65f63686459750075eed3fd006d395de36ab072229c3c00c11a8a5b4684ad1e"
+        "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+        "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+        "sha256": "3a3a2f4c5213004c136329ae9d0b654c64da1b5487300446cb053796e4c35728"
       },
       "master": {
         "view": {
@@ -455,9 +588,9 @@
           ],
           "fov": 72
         },
-        "sourceSha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
-        "specSha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
-        "sha256": "f0c5d8e12114986cdd17c421fbe0363827851cb631bf984295475cc8147bec12"
+        "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+        "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+        "sha256": "6c8168ea8f3d5a207dd0524d979a5b09317e31f98fae7a3baecd6ca3856486ef"
       },
       "kitchen": {
         "view": {
@@ -476,9 +609,9 @@
           ],
           "fov": 72
         },
-        "sourceSha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
-        "specSha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
-        "sha256": "36ec78ec700972df35733e45819fb0a756b0fe749944f20e8a0e4dcf45bdd310"
+        "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+        "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+        "sha256": "5c0550e3781f6bde31f8e8892219597287b45c376faad45712c02e5eeb4b6e66"
       },
       "masterbath": {
         "view": {
@@ -497,9 +630,9 @@
           ],
           "fov": 90
         },
-        "sourceSha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
-        "specSha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
-        "sha256": "5fc1bd863f69665b705ce8dc2214a627d36391a77c6302830e61e4f451785129"
+        "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+        "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+        "sha256": "ec74a84c1ebe3cf19bb48138d5f9e11fcb4586a3c629616956386ed0e738de78"
       },
       "cabinet": {
         "view": {
@@ -518,9 +651,9 @@
           ],
           "fov": 68
         },
-        "sourceSha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
-        "specSha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
-        "sha256": "727d1a26ce1c1b038c7b4bb49a3f5b4c03f3ec121fc17387a3f2dc860de58469"
+        "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+        "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+        "sha256": "41e256784e380d82d6e9e208103ac671d797f92c69a7777f1dd000016cb46498"
       },
       "table": {
         "view": {
@@ -539,9 +672,9 @@
           ],
           "fov": 62
         },
-        "sourceSha256": "e57adb38ef4b430055d944615c377bc40ca7078599085c7dadd24a00cf03a3f0",
-        "specSha256": "db3e031a82f3b2ab847645148917a638072c307e43bac90d9c84189461d08bc9",
-        "sha256": "ab71ed4e11823aedf2cf34543ba7b5055a52be1b15f922adefa5eb9c54fc9e2c"
+        "sourceSha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+        "specSha256": "a83e0cbe4732a3db731fa5f1abfdb30cc7742dd8709964d63f48484723654ec2",
+        "sha256": "72ec30901cebc93c1aa3f6af7d5d16e59884cd76ddfc448ea34a519d39e3b78c"
       }
     },
     "role": "Same-model Cycles renders; not site photographs"
@@ -551,5 +684,5 @@
     "realPhonePerformance": "not-measured"
   },
   "releaseManifest": "public/release.json",
-  "manifestSha256": "3d742ccd316a21b0e5b94410bdd20ab099e8c2b1989324584b579874373a58dc"
+  "manifestSha256": "96b518adff92ba261d261c345e5894bf49d86685d143233de788cacd649349ed"
 }

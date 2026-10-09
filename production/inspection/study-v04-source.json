@@ -1,0 +1,71 @@
+{
+  "version": "metric-v13",
+  "source": "art_src/apartment-v13.blend",
+  "sha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38",
+  "study_meshes": [
+    {
+      "name": "Furniture_study_bookcase",
+      "entityId": "study-bookcase",
+      "vertices": 19066,
+      "materials": [
+        "Furniture_dark_wood",
+        "Furniture_walnut",
+        "Study_seat_linen",
+        "Ivory_stone_counter",
+        "Study_warm_strip",
+        "Study_book_sage",
+        "Furniture_paper",
+        "Study_book_rust",
+        "Study_book_cream",
+        "Study_book_charcoal",
+        "Furniture_ceramic",
+        "Study_clear_glass",
+        "Furniture_brass"
+      ]
+    },
+    {
+      "name": "Furniture_study_standing_desk",
+      "entityId": "study-standing-desk",
+      "vertices": 1200,
+      "materials": [
+        "Furniture_table_wood",
+        "Furniture_charcoal",
+        "Furniture_dark_wood",
+        "Study_controller"
+      ]
+    },
+    {
+      "name": "Furniture_study_task_chair",
+      "entityId": "study-task-chair",
+      "vertices": 6613,
+      "materials": [
+        "Study_chrome",
+        "Furniture_charcoal",
+        "Study_seat_dark",
+        "Study_chair_mesh",
+        "Study_mesh_thread"
+      ]
+    },
+    {
+      "name": "Furniture_study_side_cabinet",
+      "entityId": "study-side-cabinet",
+      "vertices": 808,
+      "materials": [
+        "Furniture_dark_wood",
+        "Furniture_walnut"
+      ]
+    },
+    {
+      "name": "Furniture_study_desktop_items",
+      "entityId": "study-desktop-items",
+      "vertices": 248,
+      "materials": [
+        "Study_chrome",
+        "Furniture_charcoal",
+        "Study_warm_strip"
+      ]
+    }
+  ],
+  "armatures": [],
+  "actions": []
+}

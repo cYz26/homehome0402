@@ -22,8 +22,10 @@ for (const [label,width,height] of [["desktop",1280,900],["phone",390,844]]) {
       await page.locator("#reference-dialog [data-close-dialog]").click();
     }
     await ready(page);
+    if(width<700)await panel(page,true);
     await page.locator('#rooms [data-room="xroom"]').click({noWaitAfter:true});
     await page.locator('[data-mode="interior"]').click({noWaitAfter:true});
+    if(width<700)await panel(page,true);
     await page.locator('[data-detail="study"]').click({noWaitAfter:true});
     await nonblank(page,testInfo,`study-${label}-interior`);
     if(width<700)await panel(page,true);

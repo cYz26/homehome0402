@@ -80,7 +80,7 @@
   "support_inputs": [
     {
       "path": "docs/design/study-v04/DECISION.md",
-      "sha256": "bda4916cc0ca18e73fffcade99d623b07d507854ece5ee470ca5933d8ae93f0c"
+      "sha256": "8f30fde4a26a9eba2516dfb8972f1854abc1f7469b8455ff97403f08529f9739"
     },
     {
       "path": "docs/design/study-v04/alignment.json",
@@ -93,6 +93,38 @@
     {
       "path": "docs/design/study-v03/selection.json",
       "sha256": "76f8964112d65501429ef2664f7347fc98b147c9951c2cd89b5ebdfd97afdf55"
+    },
+    {
+      "path": "docs/design/study-v04/model-review.json",
+      "sha256": "cdde7ed496f40b8b94560a072b84f3191a4497b7cd7f09ef60790e4d9520721b"
+    },
+    {
+      "path": "production/inspection/study-v04-source.json",
+      "sha256": "98a88946950c02ca5d97e1cabda1fe91ab03a687daf1087356ef3b4e9eb0bcc2"
+    },
+    {
+      "path": "production/inspection/study-v04-preservation.json",
+      "sha256": "54f635fc6072e81f2bb56435b8b00d3ee2e0f2b86d55d1da5085704c9056b7a5"
+    },
+    {
+      "path": "production/inspection/study-v04-route-checks.json",
+      "sha256": "e18f3edffaec28ad36b4d0673cde51b9fee49f08393d03fb5c5692558416b8b1"
+    },
+    {
+      "path": "production/routes/home402_study_bookcase.json",
+      "sha256": "c010b56643dcd08eb1ea090559dcd4bdb5a8e88913a56309d5b8abff76393c5a"
+    },
+    {
+      "path": "production/routes/home402_study_desk.json",
+      "sha256": "04853adbae750e3a027b420f3dee548cdbcee5c556ca89169578248d24423970"
+    },
+    {
+      "path": "production/routes/home402_study_chair.json",
+      "sha256": "d3fc28e6482fd8e1c91b9f7417c3669b5da6289eaedbfc56dfd3dd91cbe30579"
+    },
+    {
+      "path": "production/routes/home402_study_side_cabinet.json",
+      "sha256": "bcfdcdbb233a8e27eb85b3a75c42892103a2fba45e974db0db62c29f337044b6"
     }
   ],
   "pending": [
@@ -100,5 +132,19 @@
     "Seat load verification",
     "Real-device performance",
     "Actual 3D visual acceptance"
-  ]
+  ],
+  "implementation": {
+    "version": "metric-v13",
+    "appliedToApartmentModel": true,
+    "localWebsite": true,
+    "remotePublication": "pending-full-CI-and-live-readback",
+    "source": {
+      "path": "art_src/apartment-v13.blend",
+      "sha256": "0f35d0c83c7a41232ef90634eda5358a761717fc0e5496b0d206c39df1615d38"
+    },
+    "studyGLB": {
+      "path": "asset_exchange/study-v13.glb",
+      "sha256": "00bd96447f389d1b4288f0f38a8d4d24e854b84f7bea808a46d7759271dc1868"
+    }
+  }
 }

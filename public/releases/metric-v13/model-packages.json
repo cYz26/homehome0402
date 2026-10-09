@@ -1,0 +1,148 @@
+{
+  "version": "metric-v13",
+  "bytes": 37645472,
+  "packages": [
+    {
+      "id": "apartment",
+      "model": "public/releases/metric-v13/apartment-web.glb",
+      "bytes": 17507980,
+      "textureCodec": "KTX2 UASTC level 4, RDO disabled",
+      "entities": 88,
+      "meshes": 265,
+      "textures": [
+        {
+          "name": "material-counter-v03",
+          "mime": "image/ktx2",
+          "size": [
+            1256,
+            1256
+          ]
+        },
+        {
+          "name": "material-stone-v03",
+          "mime": "image/ktx2",
+          "size": [
+            1256,
+            1256
+          ]
+        },
+        {
+          "name": "material-veneer-v03",
+          "mime": "image/ktx2",
+          "size": [
+            1256,
+            1256
+          ]
+        },
+        {
+          "name": "material-oak",
+          "mime": "image/ktx2",
+          "size": [
+            1256,
+            1256
+          ]
+        },
+        {
+          "name": "walnut-albedo-r1",
+          "mime": "image/ktx2",
+          "size": [
+            1256,
+            1256
+          ]
+        },
+        {
+          "name": "art-landscape-r1-albedo",
+          "mime": "image/ktx2",
+          "size": [
+            1872,
+            844
+          ]
+        },
+        {
+          "name": "material-hallwood-v04",
+          "mime": "image/ktx2",
+          "size": [
+            1256,
+            1256
+          ]
+        },
+        {
+          "name": "material-crystal-v04",
+          "mime": "image/ktx2",
+          "size": [
+            1256,
+            1256
+          ]
+        },
+        {
+          "name": "material-stone",
+          "mime": "image/ktx2",
+          "size": [
+            1256,
+            1256
+          ]
+        }
+      ]
+    },
+    {
+      "id": "living-sofa",
+      "model": "public/releases/metric-v13/living-sofa-web.glb",
+      "bytes": 15929940,
+      "textureCodec": "Original image encoding at full resolution; Meshopt geometry",
+      "entities": 1,
+      "meshes": 1,
+      "textures": [
+        {
+          "name": "modern_sofa_3d_model_normal",
+          "mime": "image/png",
+          "size": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "name": "modern_sofa_3d_model_basecolor",
+          "mime": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "name": "modern_sofa_3d_model_metallic-modern_sofa_3d_model_roughness",
+          "mime": "image/png",
+          "size": [
+            4096,
+            4096
+          ]
+        }
+      ]
+    },
+    {
+      "id": "study",
+      "model": "public/releases/metric-v13/study-web.glb",
+      "bytes": 4207552,
+      "textureCodec": "KTX2 UASTC level 4, RDO disabled",
+      "entities": 5,
+      "meshes": 5,
+      "textures": [
+        {
+          "name": "walnut-albedo-r1",
+          "mime": "image/ktx2",
+          "size": [
+            1256,
+            1256
+          ]
+        },
+        {
+          "name": "material-counter-v03",
+          "mime": "image/ktx2",
+          "size": [
+            1256,
+            1256
+          ]
+        }
+      ]
+    }
+  ]
+}
