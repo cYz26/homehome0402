@@ -1,0 +1,134 @@
+{
+  "status": "passed",
+  "scope": "5 targeted local browser cases; full 25-case CI pending",
+  "applicationRevision": "2026-10-09-homepage-carousel-refinement",
+  "manifestSha256": "b8e3eead1f546b8637fdd1c731ad28d7d300969d1d1fb1a3a6b6c6c747311a4e",
+  "stats": {
+    "startTime": "2026-10-09T12:04:58.317Z",
+    "duration": 8259.273,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "name": "homepage carousel desktop: current effects and interior scenes, controls and labels",
+      "status": "passed",
+      "durationMs": 1448,
+      "retry": 0,
+      "errors": [],
+      "images": [
+        {
+          "path": "local/carousel-desktop-scheme-overview.png",
+          "bytes": 512168,
+          "sha256": "5b734b27d2111e3982ccfa9c1e2ab9624945d29bb0c27d42cbfc63c5ac9f45aa"
+        },
+        {
+          "path": "local/carousel-desktop-scheme-study.png",
+          "bytes": 423924,
+          "sha256": "a39e69d51c41c94648ed45e7ce3a178ea64089d0e3b35132aeebc9dcf3836a37"
+        },
+        {
+          "path": "local/carousel-desktop-study-cabinet.png",
+          "bytes": 381733,
+          "sha256": "60221ab3492cb7bc55f4fb32b015309507a1f7b81a9997c01da37212bb8d3cf5"
+        }
+      ]
+    },
+    {
+      "name": "homepage carousel phone: current effects and interior scenes, controls and labels",
+      "status": "passed",
+      "durationMs": 1547,
+      "retry": 0,
+      "errors": [],
+      "images": [
+        {
+          "path": "local/carousel-phone-scheme-overview.png",
+          "bytes": 185041,
+          "sha256": "031467af1138aeff385fca08a678572423247cb49d97ae925d14656bf179d6e6"
+        },
+        {
+          "path": "local/carousel-phone-scheme-study.png",
+          "bytes": 160555,
+          "sha256": "b85f004e88613f03e724968302457f3a4080233e06c13e49a17dd150495fd622"
+        },
+        {
+          "path": "local/carousel-phone-study-cabinet.png",
+          "bytes": 150326,
+          "sha256": "a7cd1112ddb8d6008480285a2ab5b6f3eac2b91fcf14bce1905639941c5b476c"
+        }
+      ]
+    },
+    {
+      "name": "homepage carousel: autoplay pauses on hover or focus and respects reduced motion",
+      "status": "passed",
+      "durationMs": 666,
+      "retry": 0,
+      "errors": [],
+      "images": []
+    },
+    {
+      "name": "homepage carousel: delayed selection cannot overwrite a newer choice and failures can retry",
+      "status": "passed",
+      "durationMs": 741,
+      "retry": 0,
+      "errors": [],
+      "images": []
+    },
+    {
+      "name": "background resources wait for a delayed homepage hero",
+      "status": "passed",
+      "durationMs": 2399,
+      "retry": 0,
+      "errors": [],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "path": "local/carousel-desktop-scheme-overview.png",
+      "bytes": 512168,
+      "sha256": "5b734b27d2111e3982ccfa9c1e2ab9624945d29bb0c27d42cbfc63c5ac9f45aa"
+    },
+    {
+      "path": "local/carousel-desktop-scheme-study.png",
+      "bytes": 423924,
+      "sha256": "a39e69d51c41c94648ed45e7ce3a178ea64089d0e3b35132aeebc9dcf3836a37"
+    },
+    {
+      "path": "local/carousel-desktop-study-cabinet.png",
+      "bytes": 381733,
+      "sha256": "60221ab3492cb7bc55f4fb32b015309507a1f7b81a9997c01da37212bb8d3cf5"
+    },
+    {
+      "path": "local/carousel-phone-scheme-overview.png",
+      "bytes": 185041,
+      "sha256": "031467af1138aeff385fca08a678572423247cb49d97ae925d14656bf179d6e6"
+    },
+    {
+      "path": "local/carousel-phone-scheme-study.png",
+      "bytes": 160555,
+      "sha256": "b85f004e88613f03e724968302457f3a4080233e06c13e49a17dd150495fd622"
+    },
+    {
+      "path": "local/carousel-phone-study-cabinet.png",
+      "bytes": 150326,
+      "sha256": "a7cd1112ddb8d6008480285a2ab5b6f3eac2b91fcf14bce1905639941c5b476c"
+    }
+  ],
+  "node": {
+    "tests": 53,
+    "pass": 53,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "resourceChecks": 16,
+  "unchangedAssets": 42,
+  "unchangedImageRecords": 24,
+  "initialBytes": 897155,
+  "firstLocalFailure": "A test locator matched both header and footer brand links; corrected to the named header link. Original trace/report retained at .asset-work/tmp/carousel-refinement-first-failure.",
+  "mobile": "Playwright viewport and CDP touch simulation; not physical device"
+}

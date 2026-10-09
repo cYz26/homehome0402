@@ -476,3 +476,12 @@ Linux 对照仅覆盖原失败的标准 / 高清流程，不冒充整个 GitHub 
 本机结果在 [轮播专项记录](evidence/metric-v14/homepage-carousel/local-browser.json)及 [资源检查](evidence/metric-v14/homepage-carousel/release-checks.json)。应用修订 `2026-10-09-homepage-carousel` 已发布：源 `2ab16276`，完整 25 项各一次通过、51 张 CI 图，零跳过 / 重试 / flaky；Chromium 153 / Linux Mesa llvmpipe 的四组后端身份另存。验收与发布绑定构建 `11611417184`，50 文件与本机完全一致。实际线上 Chrome 154 在 1280×900、390×844 完整切换 10 张，320×740 复核首图及书柜场景；自动进入下一张、暂停超过一轮、手机横滑、来源及无溢出均通过，零应用错误、8 张稳定截图。手机是视口 / CDP 模拟。
 
 [最终收据](evidence/metric-v14/homepage-carousel/RESULT.json)、[完整 CI 守卫](evidence/metric-v14/homepage-carousel/browser-verification.json)、[线上文件回读](evidence/metric-v14/homepage-carousel/deployment-verification.json)、[本机 / CI 构建对照](evidence/metric-v14/homepage-carousel/local-dist-match.json)及[实际线上 UI](evidence/metric-v14/homepage-carousel/live-qa.json)各自保留。CI 原图在同一 Actions artifact，守卫 / 清单 JSON 按 ZIP CRC 校验的原字节提取，摘要保留；本机及线上截图已归档。原 v14 集成发布收据不改写，真实手机、大陆网络与模型人审边界继续独立。
+
+
+## 首页轮播视觉精简 · metric-v14 / 2026-10-09
+
+按用户反馈移除左右箭头及播放 / 暂停按钮，将 10 个指示点居中叠在图片底部，以细小白点、短条和轻微半透明底色呈现。移除图片下方的独立操作栏；标题、图片来源和当前序号仍保留在图片外。错误提示改放图片顶部，避免遮住指示点；图片失败时暂停自动切换，重试或另选图片成功后恢复原生命周期。自动每 6 秒、点击指示点、左右方向键与手机横滑保留；悬停 / 焦点 / 隐藏 / 离屏及减少动态效果仍控制自动轮播。
+
+本机 53 / 53 Node、16 / 16 资源与 5 / 25 专项浏览器检查通过，6 张截图；桌面 / 手机的指示点均位于图片范围内、底部区域，未出现箭头、暂停按钮或横向溢出。原 42 个清单资源和 23 条图片记录逐项一致，图片 / 模型字节未变；首屏上界 897155 B，低于 1 MiB。首轮一项测试因定位器同时命中页头 / 页尾 logo 失败，改用具名页头链接后完整复测通过，原失败 trace / 报告保留在忽略的本机缓存。记录见 [本机复核](evidence/metric-v14/homepage-carousel-refinement/local-browser.json)及 [资源检查](evidence/metric-v14/homepage-carousel-refinement/release-checks.json)。
+
+应用修订 `2026-10-09-homepage-carousel-refinement`，完整 CI、远程部署和线上复核待发布后单独记录；原轮播收据保持历史。

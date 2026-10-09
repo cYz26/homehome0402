@@ -7,13 +7,12 @@ export function mountHeroCarousel(manifest, url) {
   const image = root.querySelector("#hero-image");
   const slide = root.querySelector("#hero-slide");
   const dots = root.querySelector("#hero-dots");
-  const play = root.querySelector("#hero-play");
   const error = root.querySelector("#hero-error");
   const live = root.querySelector("#hero-live");
   const motion = matchMedia("(prefers-reduced-motion: reduce)");
   const events = new AbortController();
   let index = 0, requested = 0, sequence = 0, timer, failed, pointer;
-  let paused = motion.matches, hovering = false, focused = false;
+  let hovering = false, focused = false;
   let visible = true, ready = false, busy = false, disposed = false;
 
   const listen = (target, type, handler) =>
@@ -22,14 +21,9 @@ export function mountHeroCarousel(manifest, url) {
   const stop = () => clearTimeout(timer);
   function schedule() {
     stop();
-    if (ready && !disposed && !paused && !hovering && !focused &&
+    if (ready && !disposed && !motion.matches && failed === undefined && !hovering && !focused &&
         !busy && visible && !document.hidden && slides.length > 1)
       timer = setTimeout(() => show(index + 1), 6000);
-  }
-  function syncPlay() {
-    play.textContent = paused ? "播放" : "暂停";
-    play.setAttribute("aria-label", paused ? "播放轮播" : "暂停轮播");
-    play.setAttribute("aria-pressed", String(!paused));
   }
   function caption(manual = false) {
     const current = slides[index];
@@ -68,8 +62,6 @@ export function mountHeroCarousel(manifest, url) {
     } catch {
       if (operation !== sequence || disposed) return;
       failed = next;
-      paused = true;
-      syncPlay();
       error.hidden = false;
       live.textContent = "这张图片暂时无法载入，当前图片已保留。可重试或选择其他图片。";
     } finally {
@@ -92,16 +84,7 @@ export function mountHeroCarousel(manifest, url) {
   root.querySelectorAll("[data-carousel-controls]").forEach((element) =>
     element.hidden = slides.length < 2);
   caption();
-  syncPlay();
-  listen(root.querySelector("#hero-prev"), "click", () => show(requested - 1, true));
-  listen(root.querySelector("#hero-next"), "click", () => show(requested + 1, true));
   listen(root.querySelector("#hero-retry"), "click", () => show(failed ?? requested, true, true));
-  listen(play, "click", () => {
-    paused = !paused;
-    if (!paused) focused = false; // Explicit playback also works while this button has focus.
-    syncPlay();
-    schedule();
-  });
   listen(root, "keydown", (event) => {
     if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
     event.preventDefault();
@@ -130,7 +113,7 @@ export function mountHeroCarousel(manifest, url) {
   });
   listen(slide, "pointercancel", () => { pointer = undefined; });
   listen(motion, "change", () => {
-    if (motion.matches) { paused = true; syncPlay(); }
+    if (motion.matches) image.getAnimations().forEach((animation) => animation.cancel());
     schedule();
   });
   listen(document, "visibilitychange", schedule);

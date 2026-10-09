@@ -17,7 +17,13 @@ for (const [label, width, height] of [["desktop", 1280, 900], ["phone", 390, 844
     const errors = [];
     page.on("pageerror", (error) => errors.push(error.message));
     await ready(page);
-    await expect(page.locator("#hero-play")).toHaveAccessibleName("播放轮播");
+    await expect(page.locator("#hero-prev, #hero-next, #hero-play")).toHaveCount(0);
+    const photo = await page.locator("#hero-image").boundingBox();
+    const dots = await page.locator("#hero-dots").boundingBox();
+    expect(dots.x).toBeGreaterThanOrEqual(photo.x);
+    expect(dots.x + dots.width).toBeLessThanOrEqual(photo.x + photo.width);
+    expect(dots.y).toBeGreaterThan(photo.y + photo.height * 0.75);
+    expect(dots.y + dots.height).toBeLessThan(photo.y + photo.height);
     const ids = await page.locator("#hero-dots button").evaluateAll((buttons) => buttons.map((button) => button.dataset.heroSlide));
     expect(ids).toEqual(selected);
     const manifest = await page.request.get("release.json").then((response) => response.json());
@@ -36,9 +42,9 @@ for (const [label, width, height] of [["desktop", 1280, 900], ["phone", 390, 844
       if (["scheme-overview", "scheme-study", "study-cabinet"].includes(image.id))
         await testInfo.attach(`carousel-${label}-${image.id}`, { body: await page.screenshot(), contentType: "image/png" });
     }
-    await page.locator("#hero-next").click();
+    await page.keyboard.press("ArrowRight");
     await current(page, selected[0]);
-    await page.locator("#hero-prev").click();
+    await page.keyboard.press("ArrowLeft");
     await current(page, selected.at(-1));
     await page.keyboard.press("ArrowRight");
     await current(page, selected[0]);
@@ -66,23 +72,23 @@ for (const [label, width, height] of [["desktop", 1280, 900], ["phone", 390, 844
   });
 }
 
-test("homepage carousel: autoplay, pause and reduced motion", async ({ page }) => {
+test("homepage carousel: autoplay pauses on hover or focus and respects reduced motion", async ({ page }) => {
   await page.clock.install();
   await ready(page);
   await page.mouse.move(1, 1);
   await page.clock.fastForward(6500);
   await current(page, "living");
-  await page.locator("#hero-play").click();
-  await expect(page.locator("#hero-play")).toHaveAccessibleName("播放轮播");
-  await page.mouse.move(1, 1);
+  await page.locator("#hero-image").hover();
   await page.clock.fastForward(7000);
   await current(page, "living");
-  await page.locator("#hero-play").click();
   await page.mouse.move(1, 1);
   await page.clock.fastForward(6500);
   await current(page, "scheme-tv-c-close");
+  await page.locator('[data-hero-slide="scheme-tv-c-close"]').focus();
+  await page.clock.fastForward(7000);
+  await current(page, "scheme-tv-c-close");
+  await page.getByRole("link", { name: "Home 402 首页", exact: true }).focus();
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await expect(page.locator("#hero-play")).toHaveAccessibleName("播放轮播");
   await page.clock.fastForward(7000);
   await current(page, "scheme-tv-c-close");
 });

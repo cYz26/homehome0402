@@ -269,29 +269,6 @@ select {
   object-fit: contain;
   display: block;
 }
-.hero-arrows {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 16px;
-  pointer-events: none;
-}
-.hero-arrows button {
-  pointer-events: auto;
-  width: 44px;
-  height: 44px;
-  min-height: 44px;
-  padding: 0;
-  border: 1px solid #ffffff65;
-  border-radius: 50%;
-  background: #f5f4eded;
-  color: var(--ink);
-  font-size: 21px;
-  box-shadow: 0 2px 12px #303b3114;
-}
-.hero-arrows button:hover { background: var(--paper); }
 .hero-visual figcaption {
   display: flex;
   justify-content: space-between;
@@ -306,20 +283,29 @@ select {
 .hero-caption { display: flex; gap: 14px; }
 #hero-count { font-variant-numeric: tabular-nums; white-space: nowrap; }
 #hero-kind { text-align: right; }
-.hero-controls {
+.hero-dots {
+  position: absolute;
+  z-index: 2;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
+  gap: 2px;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  border-top: 1px solid var(--line);
+  padding: 0 8px;
+  max-width: calc(100% - 32px);
+  border: 1px solid #ffffff1f;
+  border-radius: 24px;
+  background: #1c231e52;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
-.hero-dots { display: flex; gap: 3px; min-width: 0; }
 .hero-dots button {
   display: grid;
   place-items: center;
-  width: 26px;
-  height: 40px;
-  min-height: 40px;
+  width: 24px;
+  height: 32px;
+  min-height: 32px;
   padding: 0;
   border: none;
   background: transparent;
@@ -329,12 +315,13 @@ select {
   width: 5px;
   height: 5px;
   border-radius: 4px;
-  background: #a6ad9d;
+  background: #ffffff99;
+  box-shadow: 0 1px 3px #00000024;
   transition: width 180ms ease, background 180ms ease;
 }
-.hero-dots button[aria-pressed="true"]::after { width: 20px; background: var(--sage); }
-#hero-play { border: none; background: transparent; font-size: 11px; padding: 8px 4px; min-width: 48px; }
-#hero-error { position: absolute; bottom: 12px; left: 12px; right: 12px; margin: 0; padding: 8px 12px; background: var(--paper); font-size: 12px; }
+.hero-dots button[aria-pressed="true"]::after { width: 18px; background: #fff; }
+.hero-dots button:focus-visible { outline: 2px solid white; outline-offset: -2px; border-radius: 6px; }
+#hero-error { position: absolute; z-index: 3; top: 12px; left: 12px; right: 12px; margin: 0; padding: 8px 12px; background: var(--paper); font-size: 12px; }
 #hero-retry { border: none; background: transparent; text-decoration: underline; font-size: inherit; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) {
@@ -1133,10 +1120,7 @@ dialog::backdrop {
     padding: 12px 22px;
   }
   .hero-caption { gap: 9px; }
-  .hero-controls { margin: 0 22px; }
-  .hero-dots { gap: 2px; }
-  .hero-dots button { width: 24px; }
-  .hero-arrows { padding: 0 12px; }
+  .hero-dots { bottom: 12px; }
   .section {
     padding: 50px 22px;
   }

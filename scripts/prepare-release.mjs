@@ -25,7 +25,7 @@ await fs.mkdir(`${out}/images`, { recursive: true });
 const assets = [],
   images = [];
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
-const applicationRevision = "2026-10-09-homepage-carousel";
+const applicationRevision = "2026-10-09-homepage-carousel-refinement";
 const deploymentSources = [
   "wrangler.jsonc", "worker/index.mjs", "scripts/deploy-worker.mjs",
   "scripts/worker-secrets.mjs", "scripts/check-worker.mjs",
