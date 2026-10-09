@@ -11,7 +11,7 @@
 用户反馈原 Cloudflare `workers.dev` 地址在国内网络无法访问，因此要求恢复 GitHub Pages，并已将仓库改为 Public。本轮继续使用 GitHub 默认项目域名，网站公开、免密码；这项决定取代 2026-10-08 的私有仓库 / Workers 密码方案，旧代码和收据保留为历史。
 
 - **访问与配置**：网站地址及操作见 [README 发布与验收](../README.md#发布与验收)，现行入口为 [Pages 工作流](../.github/workflows/pages.yml)和 [Vite 站点路径](../vite.config.js)。当前项目路径是 `/homehome0402/`。
-- **本次已验证发布**：metric-v14，部署源 `9d0a2773`；[客厅与书房集成发布结果](evidence/metric-v14/publication/RESULT.json)绑定成功 Actions、构建产物、资源回读和实际线上浏览器检查。完整 21 项、50 文件摘要及六个模型 Range 通过；技术结果及待验项维护在 [QA](QA.md#最新客厅与书房集成发布--metric-v14--2026-10-09)。此前 metric-v09 的 [Pages 恢复结果](evidence/metric-v09/pages-publication-20261009/RESULT.json)保留为历史。
+- **本次已验证发布**：metric-v14，首页轮播部署源 `2ab16276`；[轮播发布结果](evidence/metric-v14/homepage-carousel/RESULT.json)绑定成功 Actions、唯一构建、资源回读和实际线上浏览器检查。完整 25 项、50 文件摘要及六个模型 Range 通过；技术结果及待验项维护在 [QA](QA.md#首页效果与室内场景轮播--metric-v14--2026-10-09)。此前[客厅与书房集成发布](evidence/metric-v14/publication/RESULT.json)及[Pages 恢复结果](evidence/metric-v09/pages-publication-20261009/RESULT.json)保留历史。
 - **开发与发布边界**：本机设计、派生资源和讨论可继续迭代；根据建筑规格、清单及实际检查核对重建状态，独立确认提交、推送和发布。较新的文件名或本机版本不代表已在线发布；并行工作按明确范围保留。
 - **验收边界**：国内网络可达性、真实手机持续性能及模型审美接受继续分别记录。宿主浏览器、触摸模拟和 CI 通过不替代这些验收。
 
@@ -302,4 +302,4 @@ GitHub Pages 公开、免密码，历史 Worker 代码和发布证据保留。�
 
 用户在已发布 v14 首页指出书柜高出剖面墙体，并要求效果图与场景图轮播，排除实景照片。源头核对为 1.15 m 墙体剖面与 2.50 m 全高家具的展示差异；实际建筑 / 书柜方案保留，首页换成完整室内效果与场景机位。
 
-本轮仍绑定 metric-v14，应用修订为 `2026-10-09-homepage-carousel`，以同一选图模块生成 HTML 首图和浏览器的 10 张轮播。自动 / 手动切换、手机滑动、暂停、可访问标签及失败重试见 [查看器设计](viewer-design.md#页面与内容)；资源与来源保持原字节，并保留并行工作。53 / 53 Node、16 / 16 发布和 7 项本机浏览器回归通过，远程完整 25 项与发布回读在 [QA](QA.md#首页效果与室内场景轮播--metric-v14--2026-10-09)分别记录，当前尚未将本轮本机结果标为远程完成。
+本轮仍绑定 metric-v14，应用修订为 `2026-10-09-homepage-carousel`，以同一选图模块生成 HTML 首图和浏览器的 10 张轮播。自动 / 手动切换、手机滑动、暂停、可访问标签及失败重试见 [查看器设计](viewer-design.md#页面与内容)；资源与来源保持原字节，并保留并行工作。53 / 53 Node、16 / 16 发布和 7 项本机浏览器回归通过；源 `2ab16276` 的远程完整 25 项、51 张 CI 图、50 文件及六个 Range 均通过并已部署。线上 Chrome 的 1280 / 390 / 320 三种宽度、自动播放 / 暂停、来源与触摸模拟复核通过，8 张稳定截图、零应用错误。发布与待验边界在 [QA](QA.md#首页效果与室内场景轮播--metric-v14--2026-10-09)和[最终收据](evidence/metric-v14/homepage-carousel/RESULT.json)分别记录。

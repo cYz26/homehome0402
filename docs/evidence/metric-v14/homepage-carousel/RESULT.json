@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "checkedAt": "2026-10-09T11:13:52.149598+00:00",
+  "version": "metric-v14",
+  "applicationRevision": "2026-10-09-homepage-carousel",
+  "provider": "github-pages",
+  "repository": {
+    "name": "cYz26/homehome0402",
+    "visibility": "PUBLIC",
+    "branch": "main"
+  },
+  "url": "https://cyz26.github.io/homehome0402/",
+  "deploymentSource": "2ab1627607b344dc5a7a890892c206897b935e82",
+  "manifestSha256": "ac19c1bac91de3488b339e167838eb8c971c9c79332f27c47d65bc8b3818e937",
+  "homepage": {
+    "images": 10,
+    "effects": 4,
+    "interiorModelRenders": 6,
+    "firstImage": "scheme-overview",
+    "excluded": [
+      "site photographs",
+      "drawings",
+      "saved A/B alternatives",
+      "cutaway renders"
+    ],
+    "autoplayIntervalMs": 6000,
+    "cabinetHeightExplanation": {
+      "cutWallHeightM": 1.15,
+      "bookcaseDesignHeightM": 2.5,
+      "cause": "Static cutaway hides architectural upper/ceiling layers and retains full-height furniture. Homepage now uses full interior views.",
+      "modelChanged": false
+    }
+  },
+  "checks": {
+    "nodeTests": 53,
+    "resourceChecks": 16,
+    "localBrowserCases": 7,
+    "completeCIBrowserCases": 25,
+    "CIBrowserImages": 51,
+    "localBrowserImages": 16,
+    "liveBrowserImages": 8,
+    "boundDistFiles": 50,
+    "modelRangeResponses": 6,
+    "missingAssetStatus": 404,
+    "retainedReleaseAssets": 42
+  },
+  "actions": {
+    "runId": 37920099847,
+    "url": "https://github.com/cYz26/homehome0402/actions/runs/37920099847",
+    "conclusion": "success",
+    "buildArtifactId": 11611417184,
+    "browserEvidenceArtifactId": 11611766881,
+    "deploymentEvidenceArtifactId": 11611498506,
+    "jobs": [
+      {
+        "name": "build",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T10:50:58Z",
+        "completedAt": "2026-10-09T10:52:42Z"
+      },
+      {
+        "name": "browser (2)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T10:52:44Z",
+        "completedAt": "2026-10-09T10:57:59Z"
+      },
+      {
+        "name": "browser (3)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T10:52:44Z",
+        "completedAt": "2026-10-09T10:57:07Z"
+      },
+      {
+        "name": "browser (1)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T10:52:44Z",
+        "completedAt": "2026-10-09T10:56:14Z"
+      },
+      {
+        "name": "browser (4)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T10:52:44Z",
+        "completedAt": "2026-10-09T10:56:40Z"
+      },
+      {
+        "name": "verify",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T10:58:01Z",
+        "completedAt": "2026-10-09T10:59:15Z"
+      },
+      {
+        "name": "deploy",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T10:59:18Z",
+        "completedAt": "2026-10-09T11:00:37Z"
+      }
+    ],
+    "artifacts": [
+      {
+        "id": 11612580608,
+        "name": "home402-browser-renderer-2",
+        "sizeInBytes": 318
+      },
+      {
+        "id": 11611766881,
+        "name": "home402-browser-evidence",
+        "sizeInBytes": 68222660
+      },
+      {
+        "id": 11611736427,
+        "name": "home402-browser-renderer-3",
+        "sizeInBytes": 318
+      },
+      {
+        "id": 11611611601,
+        "name": "home402-browser-renderer-4",
+        "sizeInBytes": 318
+      },
+      {
+        "id": 11611601504,
+        "name": "home402-browser-blob-3",
+        "sizeInBytes": 18371472
+      },
+      {
+        "id": 11611596643,
+        "name": "home402-browser-blob-1",
+        "sizeInBytes": 2580975
+      },
+      {
+        "id": 11611526713,
+        "name": "home402-browser-renderer-1",
+        "sizeInBytes": 318
+      },
+      {
+        "id": 11611498506,
+        "name": "home402-deployment-evidence",
+        "sizeInBytes": 3206
+      },
+      {
+        "id": 11611417184,
+        "name": "home402-build",
+        "sizeInBytes": 81358330
+      },
+      {
+        "id": 11611382928,
+        "name": "home402-browser-blob-4",
+        "sizeInBytes": 595167
+      },
+      {
+        "id": 11611352412,
+        "name": "github-pages",
+        "sizeInBytes": 81349683
+      },
+      {
+        "id": 11611289182,
+        "name": "home402-browser-blob-2",
+        "sizeInBytes": 12834460
+      }
+    ]
+  },
+  "evidence": {
+    "fullCIGuard": "browser-verification.json",
+    "CIInventory": "browser-inventory.json",
+    "CIDeployment": "deployment-verification.json",
+    "localDistMatch": "local-dist-match.json",
+    "assetPreservation": "asset-preservation.json",
+    "localBrowser": "local-browser.json",
+    "liveBrowser": "live-qa.json",
+    "CIReleaseChecks": "ci-release-checks.json",
+    "CIImages": "Full originals remain in the bound home402-browser-evidence Actions artifact. The exact guard/inventory JSON and renderer identities are archived here."
+  },
+  "rendererIdentities": [
+    {
+      "path": "renderers/home402-browser-renderer-1.json",
+      "sha256": "8e11115f1465cfc1ec67f6f5a0464b5ddf82be08fc129a91750c26316eb959e5",
+      "identity": {
+        "browser": "153.0.8010.12",
+        "channel": "chromium",
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL 4.5)",
+        "vendor": "Google Inc. (Mesa)",
+        "maxSamples": 4,
+        "nativePixelRatio": 1
+      }
+    },
+    {
+      "path": "renderers/home402-browser-renderer-2.json",
+      "sha256": "8e11115f1465cfc1ec67f6f5a0464b5ddf82be08fc129a91750c26316eb959e5",
+      "identity": {
+        "browser": "153.0.8010.12",
+        "channel": "chromium",
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL 4.5)",
+        "vendor": "Google Inc. (Mesa)",
+        "maxSamples": 4,
+        "nativePixelRatio": 1
+      }
+    },
+    {
+      "path": "renderers/home402-browser-renderer-3.json",
+      "sha256": "8e11115f1465cfc1ec67f6f5a0464b5ddf82be08fc129a91750c26316eb959e5",
+      "identity": {
+        "browser": "153.0.8010.12",
+        "channel": "chromium",
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL 4.5)",
+        "vendor": "Google Inc. (Mesa)",
+        "maxSamples": 4,
+        "nativePixelRatio": 1
+      }
+    },
+    {
+      "path": "renderers/home402-browser-renderer-4.json",
+      "sha256": "8e11115f1465cfc1ec67f6f5a0464b5ddf82be08fc129a91750c26316eb959e5",
+      "identity": {
+        "browser": "153.0.8010.12",
+        "channel": "chromium",
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL 4.5)",
+        "vendor": "Google Inc. (Mesa)",
+        "maxSamples": 4,
+        "nativePixelRatio": 1
+      }
+    }
+  ],
+  "boundaries": {
+    "mobile": "390 and 320 px Chrome viewports plus CDP touch simulation",
+    "realPhonePerformance": "not-measured",
+    "humanModelVisualAcceptance": "pending-user-review",
+    "mainlandNetworkAccess": "not-measured"
+  }
+}

@@ -2,7 +2,7 @@
 
 当前已发布最新客厅 living-v08 与书房 study-v04：C 悬空电视柜、85 寸电视、四把餐椅与深座柜书房、升降桌和转椅同属 metric-v14。最新客厅与已确认书房 AI 效果分别标注；实际模型渲染、3D、尺寸假设及用户视觉接受保持独立。候选重建、验证和远程状态见本文末尾。
 
-最新 [GitHub Pages](https://cyz26.github.io/homehome0402/)公开、免密码，部署源 `9d0a2773`，应用修订 `2026-10-09-living-study-integrated`。[Actions 37913326201](https://github.com/cYz26/homehome0402/actions/runs/37913326201)全部成功；完整 21 项各通过一次，零跳过 / 重试 / flaky，45 张截图，验收构建 artifact `11607577217` 与部署绑定。50 个线上文件摘要、六个模型 Range 和缺失资源 404 全部通过，本机 dist 与回读字节摘要一致。实际线上桌面 / 手机尺寸的四张最新效果图、客厅 / 书房 3D、第四把餐椅和书房家具属性均检查，应用错误为零；[集成发布收据](evidence/metric-v14/publication/RESULT.json)保存 CI、实际线上浏览器和本机逐文件对照。中国大陆网络与真机性能尚未实测。
+最新 [GitHub Pages](https://cyz26.github.io/homehome0402/)公开、免密码，首页已更新为 10 张效果 / 室内场景图轮播，排除实拍。部署源 `2ab16276`，应用修订 `2026-10-09-homepage-carousel`；[Actions 37920099847](https://github.com/cYz26/homehome0402/actions/runs/37920099847)全部成功，完整 25 项各通过一次、51 张 CI 图，唯一构建 artifact `11611417184` 的 50 文件与本机 dist 字节完全一致。线上文件哈希、六个模型 Range 206 及缺失资源 404 全部通过。实际 Chrome 154 复核 1280×900、390×844、320×740 的图片来源、轮播 / 暂停、触摸模拟和无横向溢出，8 张线上截图、零应用错误；[轮播发布收据](evidence/metric-v14/homepage-carousel/RESULT.json)绑定本机、CI 与线上结果。此前[客厅 / 书房集成发布](evidence/metric-v14/publication/RESULT.json)保留历史；真机性能与中国大陆网络仍未实测。
 
 此前 Workers 发布已完成：[历史站点](https://home402.cyz26.workers.dev)，部署源 `8900deaa`，[完整成功流水线](https://github.com/cYz26/homehome0402/actions/runs/37820857670)。远程 20 / 20、零重试 / 跳过，39 张截图，42 个线上文件全部哈希及四个模型 Range 通过；同一 artifact `11568992910` 用于验收和部署。已有密码保持，匿名拒绝。实际线上桌面 / 手机尺寸的两张最新 AI 图和客厅 / 柜墙 3D 均检查通过，画廊 13 项、应用错误为零；[发布收据](evidence/metric-v09/publication/RESULT.json)、[线上截图与记录](evidence/metric-v09/publication-live/readback.json)及代表性的 Linux 高清 / 切面截图已归档。
 
@@ -473,4 +473,6 @@ Linux 对照仅覆盖原失败的标准 / 高清流程，不冒充整个 GitHub 
 
 本机 53 / 53 Node、16 / 16 发布检查和 7 / 25 专项浏览器用例通过，零失败 / 重试 / 跳过，16 张截图。实际查看桌面 / 手机首图与完整书柜场景，画面完整、来源清楚且无横向溢出；客厅与书房 3D、四椅 / 家具查询及延迟首图的预加载约束同时回归。新用例触摸为 Chromium CDP 模拟，减动态效果与定时器为受控浏览器验证，不能视为真机测量。首屏预算上界 898287 B、关键资源 487309 B，均低于 1 MiB；当前 42 个清单资源、23 项图像记录及模型 / 图片字节全部与原发布一致，见 [保留检查](evidence/metric-v14/homepage-carousel/asset-preservation.json)。
 
-本机结果在 [轮播专项记录](evidence/metric-v14/homepage-carousel/local-browser.json)及 [资源检查](evidence/metric-v14/homepage-carousel/release-checks.json)。应用修订 `2026-10-09-homepage-carousel`；完整 25 项 CI、部署及线上回读待本轮发布完成后单独补记，原 v14 集成发布收据不改写。
+本机结果在 [轮播专项记录](evidence/metric-v14/homepage-carousel/local-browser.json)及 [资源检查](evidence/metric-v14/homepage-carousel/release-checks.json)。应用修订 `2026-10-09-homepage-carousel` 已发布：源 `2ab16276`，完整 25 项各一次通过、51 张 CI 图，零跳过 / 重试 / flaky；Chromium 153 / Linux Mesa llvmpipe 的四组后端身份另存。验收与发布绑定构建 `11611417184`，50 文件与本机完全一致。实际线上 Chrome 154 在 1280×900、390×844 完整切换 10 张，320×740 复核首图及书柜场景；自动进入下一张、暂停超过一轮、手机横滑、来源及无溢出均通过，零应用错误、8 张稳定截图。手机是视口 / CDP 模拟。
+
+[最终收据](evidence/metric-v14/homepage-carousel/RESULT.json)、[完整 CI 守卫](evidence/metric-v14/homepage-carousel/browser-verification.json)、[线上文件回读](evidence/metric-v14/homepage-carousel/deployment-verification.json)、[本机 / CI 构建对照](evidence/metric-v14/homepage-carousel/local-dist-match.json)及[实际线上 UI](evidence/metric-v14/homepage-carousel/live-qa.json)各自保留。CI 原图在同一 Actions artifact，守卫 / 清单 JSON 按 ZIP CRC 校验的原字节提取，摘要保留；本机及线上截图已归档。原 v14 集成发布收据不改写，真实手机、大陆网络与模型人审边界继续独立。

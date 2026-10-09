@@ -1,0 +1,626 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/22.23.3/x64/bin/node",
+      "/home/runner/work/homehome0402/homehome0402/node_modules/.bin/playwright",
+      "test",
+      "--list",
+      "--reporter=json"
+    ],
+    "configFile": "/home/runner/work/homehome0402/homehome0402/playwright.config.mjs",
+    "rootDir": "/home/runner/work/homehome0402/homehome0402/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 1200000,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/homehome0402/homehome0402/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "",
+        "name": "",
+        "testDir": "/home/runner/work/homehome0402/homehome0402/tests",
+        "testIgnore": [
+          "worker-auth.spec.mjs"
+        ],
+        "testMatch": [
+          "*.spec.mjs"
+        ],
+        "timeout": 300000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "browser.spec.mjs",
+      "file": "browser.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "living and study desktop: latest images, complete 3D and furniture properties",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-5b084d411f1fb93782cb",
+          "file": "browser.spec.mjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "living and study phone: latest images, complete 3D and furniture properties",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-fb9c8039a0ee3a133555",
+          "file": "browser.spec.mjs",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "desktop: homepage preload, model, linked rooms, section, view restore, screenshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-8cd04fcbc9907410b673",
+          "file": "browser.spec.mjs",
+          "line": 121,
+          "column": 3
+        },
+        {
+          "title": "tablet: homepage preload, model, linked rooms, section, view restore, screenshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-698a641a9769944a516f",
+          "file": "browser.spec.mjs",
+          "line": 121,
+          "column": 3
+        },
+        {
+          "title": "phone: homepage preload, model, linked rooms, section, view restore, screenshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-98c8af1a4653ddbb5195",
+          "file": "browser.spec.mjs",
+          "line": 121,
+          "column": 3
+        },
+        {
+          "title": "mobile touch: immediate two-axis look, stationary hold, two-finger height and release safety",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-4c07cba727d7e5cd7b61",
+          "file": "browser.spec.mjs",
+          "line": 247,
+          "column": 1
+        },
+        {
+          "title": "configuration failure and explicit retry recover without a reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-11358f5a28e56f65af76",
+          "file": "browser.spec.mjs",
+          "line": 319,
+          "column": 1
+        },
+        {
+          "title": "model failure, retry, cancellation and re-entry keep a single canvas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-7ba5cb316959b4eb466f",
+          "file": "browser.spec.mjs",
+          "line": 332,
+          "column": 1
+        },
+        {
+          "title": "secondary furniture package failure retries with complete semantic ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-6935866ddcab17991d51",
+          "file": "browser.spec.mjs",
+          "line": 352,
+          "column": 1
+        },
+        {
+          "title": "standard rendering, north-up plan, current reference and on-demand HD retain the selected view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aed1748819d3efb96fac-4f6eb49cee3088492d60",
+          "file": "browser.spec.mjs",
+          "line": 367,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "hero-carousel.spec.mjs",
+      "file": "hero-carousel.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "homepage carousel desktop: current effects and interior scenes, controls and labels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "d7be272abab519d580a0-ce15a620545653fe44b8",
+          "file": "hero-carousel.spec.mjs",
+          "line": 14,
+          "column": 3
+        },
+        {
+          "title": "homepage carousel phone: current effects and interior scenes, controls and labels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "d7be272abab519d580a0-c2f1c497977e21909655",
+          "file": "hero-carousel.spec.mjs",
+          "line": 14,
+          "column": 3
+        },
+        {
+          "title": "homepage carousel: autoplay, pause and reduced motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "d7be272abab519d580a0-6a020df394938c804bfd",
+          "file": "hero-carousel.spec.mjs",
+          "line": 69,
+          "column": 1
+        },
+        {
+          "title": "homepage carousel: delayed selection cannot overwrite a newer choice and failures can retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "d7be272abab519d580a0-07710ab28d0e1491a0fe",
+          "file": "hero-carousel.spec.mjs",
+          "line": 90,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "loading.spec.mjs",
+      "file": "loading.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "model download overlaps viewer code and cancellation stays responsive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "8846761104401fa70e55-70181ad31a43e4ef3644",
+          "file": "loading.spec.mjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pages-routing.spec.mjs",
+      "file": "pages-routing.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "public project page keeps images, downloads and model ranges under its repository base",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "32ab764747bb71acb345-ce721d4d430f5f126686",
+          "file": "pages-routing.spec.mjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "preload.spec.mjs",
+      "file": "preload.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "background resources wait for a delayed homepage hero",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee6a5fc7d7a3259f369f-092e20d854104b130ca7",
+          "file": "preload.spec.mjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "homepage 1280: preloads after the hero and reuses the pending model",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee6a5fc7d7a3259f369f-784143109fedfe1d18b9",
+          "file": "preload.spec.mjs",
+          "line": 29,
+          "column": 3
+        },
+        {
+          "title": "homepage 390: preloads after the hero and reuses the pending model",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee6a5fc7d7a3259f369f-d14141451c1bc634dd69",
+          "file": "preload.spec.mjs",
+          "line": 29,
+          "column": 3
+        },
+        {
+          "title": "completed homepage preload is reused and does not create a renderer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee6a5fc7d7a3259f369f-3033afbbd01c160fd0e7",
+          "file": "preload.spec.mjs",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "background preload failure leaves the homepage usable and explicit entry retries",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee6a5fc7d7a3259f369f-de7b97595db26fa15d6d",
+          "file": "preload.spec.mjs",
+          "line": 86,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "section-render.spec.mjs",
+      "file": "section-render.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "legacy AO positive control reproduces cap stripes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c90fc3a24022a12031de-5c9be17c9e094970987c",
+          "file": "section-render.spec.mjs",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "web: section caps stay flat through zoom with full AO and shadows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c90fc3a24022a12031de-4d4eafc4f707a88f4af1",
+          "file": "section-render.spec.mjs",
+          "line": 32,
+          "column": 3
+        },
+        {
+          "title": "hd: section caps stay flat through zoom with full AO and shadows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c90fc3a24022a12031de-5f17d329da95e95bea8b",
+          "file": "section-render.spec.mjs",
+          "line": 32,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "walk-input.spec.mjs",
+      "file": "walk-input.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "walk canvas owns long-press defaults and releases input on interruption",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "4ca4fa4e6b43f9422ec5-dbb62ca9abfbe9264267",
+          "file": "walk-input.spec.mjs",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-09T10:52:29.981Z",
+    "duration": 277.16600000000005,
+    "expected": 0,
+    "skipped": 25,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
