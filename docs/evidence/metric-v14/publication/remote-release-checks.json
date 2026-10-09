@@ -1,0 +1,117 @@
+{
+  "version": "metric-v14",
+  "checks": [
+    {
+      "name": "spec, data, navigation and manifest are one version",
+      "pass": true
+    },
+    {
+      "name": "Every source and published resource matches its SHA-256",
+      "pass": true
+    },
+    {
+      "name": "Published images contain no EXIF, XMP or IPTC metadata",
+      "pass": true
+    },
+    {
+      "name": "All source parts have unique semantic owners and all IDs resolve",
+      "pass": true
+    },
+    {
+      "name": "all geometry outside recorded revisions remains identical to v05",
+      "pass": true
+    },
+    {
+      "name": "Every v06 architectural part outside the recorded photo doorway remains unchanged",
+      "pass": true
+    },
+    {
+      "name": "door hinge sides and fully open directions follow the redlined plan",
+      "pass": true
+    },
+    {
+      "name": "space areas derive from polygons after subtracting walls",
+      "pass": true
+    },
+    {
+      "name": "All model packages bind the same source, preserve ownership and retain the original sofa PBR",
+      "pass": true
+    },
+    {
+      "name": "web textures preserve source resolution with only KTX block alignment",
+      "pass": true
+    },
+    {
+      "name": "KTX2 and Meshopt are present and all component bounds survive compression",
+      "pass": true
+    },
+    {
+      "name": "Static homepage images, drawing and version labels bind the current release",
+      "pass": true
+    },
+    {
+      "name": "first-screen, web model and interactive resources fit the versioned visual-first budgets",
+      "pass": true
+    },
+    {
+      "name": "Three.js is not preloaded by the initial HTML",
+      "pass": true
+    },
+    {
+      "name": "Build contains only current selected resources and application code",
+      "pass": true
+    },
+    {
+      "name": "SVG includes rooms, entities, doors, north and metre scale without invalid coordinates",
+      "pass": true
+    }
+  ],
+  "passed": 16,
+  "initialBytes": 682179,
+  "firstViewportCoreBytes": 314559,
+  "interactiveBytes": 37809352,
+  "webGLBBytes": 35609620,
+  "modelPackages": [
+    {
+      "path": "releases/metric-v14/apartment-web.glb",
+      "role": "model",
+      "bytes": 15472132,
+      "sha256": "28c9234526e998bf77c5dfaa12aecf37ba644f57880d890bbc906ba8b60cd2bf"
+    },
+    {
+      "path": "releases/metric-v14/apartment-hd.glb",
+      "role": "hd-model",
+      "source": "asset_exchange/apartment-v14.glb",
+      "bytes": 23295384,
+      "sha256": "8b3873d4fc12136f33ec2ad1eaec4aa9c167d55deb790423078e2824d3fda907"
+    },
+    {
+      "path": "releases/metric-v14/living-sofa-web.glb",
+      "role": "model",
+      "bytes": 15929940,
+      "sha256": "6bcfd6db5d9800206e02bf7ee93e5b9a2b24ac9d79d46aca7128cbb640a195a0"
+    },
+    {
+      "path": "releases/metric-v14/living-sofa-hd.glb",
+      "role": "hd-model",
+      "source": "asset_exchange/living-sofa-v14.glb",
+      "bytes": 21232288,
+      "sha256": "705de2fd18c0ca6e7fb0a3c74f0dce33ce0086b3b3fb4a741f948454666cf0d2"
+    },
+    {
+      "path": "releases/metric-v14/study-web.glb",
+      "role": "model",
+      "bytes": 4207548,
+      "sha256": "092337c4ef1e4010dfe2a69a931d29672083f63979be751bb5c4d058a37622af"
+    },
+    {
+      "path": "releases/metric-v14/study-hd.glb",
+      "role": "hd-model",
+      "source": "asset_exchange/study-v14.glb",
+      "bytes": 6746256,
+      "sha256": "f9f7319e606aa119d9e2c34fce4e162a7305a4d2119eff72259be5af447e5fee"
+    }
+  ],
+  "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
+  "rawModelSha256": "8b3873d4fc12136f33ec2ad1eaec4aa9c167d55deb790423078e2824d3fda907"
+}

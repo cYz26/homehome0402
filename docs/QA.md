@@ -1,6 +1,6 @@
-# 交付核对 · 当前候选 metric-v14 / 已发布 metric-v13
+# 交付核对 · 已发布 metric-v14
 
-当前合并最新客厅 living-v08 与已发布书房 study-v04：C 悬空电视柜、85 寸电视、四把餐椅与深座柜书房、升降桌和转椅同属 metric-v14。最新客厅与已确认书房 AI 效果分别标注；实际模型渲染、3D、尺寸假设及用户视觉接受保持独立。候选重建、验证和远程状态见本文末尾。
+当前已发布最新客厅 living-v08 与书房 study-v04：C 悬空电视柜、85 寸电视、四把餐椅与深座柜书房、升降桌和转椅同属 metric-v14。最新客厅与已确认书房 AI 效果分别标注；实际模型渲染、3D、尺寸假设及用户视觉接受保持独立。候选重建、验证和远程状态见本文末尾。
 
 最新 [GitHub Pages](https://cyz26.github.io/homehome0402/)公开、免密码，部署源 `4279e2dc`，应用修订 `2026-10-09-study-v04-pages`。[Actions 37904837123](https://github.com/cYz26/homehome0402/actions/runs/37904837123)全部成功；完整 21 项各通过一次，零跳过 / 重试 / flaky，37 张截图，验收构建 artifact `11603714073` 与 Pages artifact `11603384833` 绑定同一构建。48 个线上文件摘要、六个模型 Range 和缺失资源 404 全部通过，本机 dist 与回读字节摘要一致。实际线上桌面 / 手机尺寸的两张已确认效果图、完整书房 3D 与家具属性均检查，应用错误为零；[书房发布收据](evidence/metric-v13/publication/RESULT.json)保存 CI、真实线上浏览器和本机逐文件对照。中国大陆网络与真机性能尚未实测。
 
@@ -458,3 +458,8 @@ Linux 对照仅覆盖原失败的标准 / 高清流程，不冒充整个 GitHub 
 
 
 本机最终构建与 16 / 16 发布资源检查通过，42 个清单资源、网页三包共 35,609,620 字节 / 33.96 MiB，完整交互资源仍低于40MiB预算。桌面1280×900与手机390×844的两条专门流程分别使用独立Chromium进程通过，四个最新AI效果入口、第四把餐椅及四组书房家具的实际查询均覆盖，10张界面截图、零应用错误 / 框架错误层；[本机回读](evidence/metric-v14/local-browser/RESULT.json)绑定当前清单。当前完整远程清单为21项，本机本轮执行2项，远程完整验收及部署另记。
+
+
+本轮远程与线上完成：源 `9d0a2773`，[Actions 37913326201](https://github.com/cYz26/homehome0402/actions/runs/37913326201) 全部成功，完整21项各通过一次、45张证据图，artifact `11607577217` 与清单SHA-256 `86b80035…` 绑定。本机dist与该唯一远程dist的50文件完全一致。CI发布回读和本机独立回读均核对50公开文件、六个64KiB模型Range206、缺失资源404。线上Chrome在1280×900 /390×844实际打开四图、查询第四椅及书房家具，并查看C电视墙与书房真实模型；12截图、零应用错误，实际后端记录在 [线上UI](evidence/metric-v14/publication/live-qa.json)。
+
+[最终收据](evidence/metric-v14/publication/RESULT.json)记录已发布状态；[完整浏览器守卫](evidence/metric-v14/publication/browser-verification.json)、[CI回读](evidence/metric-v14/publication/deployment-verification.json)与[本机独立回读](evidence/metric-v14/live-deployment-verification.json)分别保留。当前技术验收与AI外观确认、真实模型人审、施工 / 承重、真机和大陆网络证据分开；没有新增后者的接受声明。

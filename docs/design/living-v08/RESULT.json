@@ -80,5 +80,12 @@
   ],
   "realPhonePerformance": "not measured; viewport simulation only",
   "visualAcceptance": "pending review of corrected four-chair effect/model",
-  "archiveNote": "This receipt describes the living-only v13 input before integration; colliding source files are archived. Current integrated release is recorded separately under metric-v14."
+  "archiveNote": "This receipt describes the living-only v13 input before integration; colliding source files are archived. Current integrated release is recorded separately under metric-v14.",
+  "integratedPublication": {
+    "version": "metric-v14",
+    "status": "published",
+    "sourceCommit": "9d0a27733d5b13a98cc68b9055b2eb02c39ebb7c",
+    "url": "https://cyz26.github.io/homehome0402/",
+    "receipt": "../../evidence/metric-v14/publication/RESULT.json"
+  }
 }

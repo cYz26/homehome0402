@@ -1,0 +1,80 @@
+{
+  "url": "https://cyz26.github.io/homehome0402/",
+  "checkedAt": "2026-10-09T10:00:08.729Z",
+  "sourceCommit": "9d0a27733d5b13a98cc68b9055b2eb02c39ebb7c",
+  "version": "metric-v14",
+  "checks": [
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 900,
+      "version": "metric-v14",
+      "galleryImages": 4,
+      "furnitureQueries": 5,
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Max, Unspecified Version)",
+      "screenshots": [
+        {
+          "path": "docs/evidence/metric-v14/publication/live/desktop-scheme-overview.png",
+          "sha256": "8f7bba78ff2d60b2189e855ca4a9b2cc86ad57e42c293b5c2c14ad00b2daef2f"
+        },
+        {
+          "path": "docs/evidence/metric-v14/publication/live/desktop-scheme-tv-c-close.png",
+          "sha256": "adc21e3c1f369b86f7112fb0e4f994eea87013b49245c487a4ff8de8b9cce2f4"
+        },
+        {
+          "path": "docs/evidence/metric-v14/publication/live/desktop-scheme-study.png",
+          "sha256": "753966fd0ad137719424919624c046b7db8cd2541b7dd35087ea6ba9bf902bea"
+        },
+        {
+          "path": "docs/evidence/metric-v14/publication/live/desktop-scheme-study-cabinet.png",
+          "sha256": "5b99ec02bf5518bfdac8d127f09b50c5d6c9d25cde053b407e1f9480878fdf6f"
+        },
+        {
+          "path": "docs/evidence/metric-v14/publication/live/desktop-living-model.png",
+          "sha256": "5b49a53242388251044fe27991f000c58f001d603f0a29c973119da29a63cb59"
+        },
+        {
+          "path": "docs/evidence/metric-v14/publication/live/desktop-study-model.png",
+          "sha256": "9236fd121293fa23e5d5487a83abe315107b27ebe2c401700e2a2afed5ba044e"
+        }
+      ]
+    },
+    {
+      "label": "phone",
+      "width": 390,
+      "height": 844,
+      "version": "metric-v14",
+      "galleryImages": 4,
+      "furnitureQueries": 5,
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Max, Unspecified Version)",
+      "screenshots": [
+        {
+          "path": "docs/evidence/metric-v14/publication/live/phone-scheme-overview.png",
+          "sha256": "424b36b33a56d83a68a77958effa08a83c4db7bc6f4de5b88d22830615fa5097"
+        },
+        {
+          "path": "docs/evidence/metric-v14/publication/live/phone-scheme-tv-c-close.png",
+          "sha256": "287f42f39c0467fc901e0c1834049f6f886a6811616d6e2df6eb2b1b7d706aa1"
+        },
+        {
+          "path": "docs/evidence/metric-v14/publication/live/phone-scheme-study.png",
+          "sha256": "71951cedcaee0e7b8077aec7c3127912468ab62d570b891d71f89b4a7335879e"
+        },
+        {
+          "path": "docs/evidence/metric-v14/publication/live/phone-scheme-study-cabinet.png",
+          "sha256": "0822d38240aa7c8368e65849bc8c90837f37bbda92584d8af3db4024c58ac4e3"
+        },
+        {
+          "path": "docs/evidence/metric-v14/publication/live/phone-living-model.png",
+          "sha256": "67d873b35653afe874df3ec2c03360b0f4f1287c428a20d4461c65d25997557e"
+        },
+        {
+          "path": "docs/evidence/metric-v14/publication/live/phone-study-model.png",
+          "sha256": "fe2331c233a1e3f5745952448adf7bca2d2b640a96eda9394d1b42963940e3b4"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "realPhonePerformance": "not measured; Chromium viewport simulation"
+}

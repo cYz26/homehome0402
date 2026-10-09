@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "checkedAt": "2026-10-09T10:00:08.729Z",
+  "version": "metric-v14",
+  "applicationRevision": "2026-10-09-living-study-integrated",
+  "provider": "github-pages",
+  "repository": {
+    "name": "cYz26/homehome0402",
+    "visibility": "PUBLIC",
+    "branch": "main"
+  },
+  "url": "https://cyz26.github.io/homehome0402/",
+  "deploymentSource": "9d0a27733d5b13a98cc68b9055b2eb02c39ebb7c",
+  "manifestSha256": "86b800359c9d58f7208f2e51be34e5993030ac981e8b7d9431752882ac0abb1b",
+  "designs": {
+    "living": "living-v08",
+    "study": "study-v04"
+  },
+  "currentGallery": [
+    "scheme-overview",
+    "scheme-tv-c-close",
+    "scheme-study",
+    "scheme-study-cabinet"
+  ],
+  "savedAlternatives": [
+    "scheme-tv-a",
+    "scheme-tv-b"
+  ],
+  "actions": {
+    "runId": 37913326201,
+    "url": "https://github.com/cYz26/homehome0402/actions/runs/37913326201",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "build",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T09:45:34Z",
+        "completedAt": "2026-10-09T09:46:45Z"
+      },
+      {
+        "name": "browser (1)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T09:46:48Z",
+        "completedAt": "2026-10-09T09:52:02Z"
+      },
+      {
+        "name": "browser (2)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T09:46:47Z",
+        "completedAt": "2026-10-09T09:51:11Z"
+      },
+      {
+        "name": "browser (4)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T09:46:47Z",
+        "completedAt": "2026-10-09T09:50:41Z"
+      },
+      {
+        "name": "browser (3)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T09:46:47Z",
+        "completedAt": "2026-10-09T09:52:48Z"
+      },
+      {
+        "name": "verify",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T09:52:50Z",
+        "completedAt": "2026-10-09T09:53:55Z"
+      },
+      {
+        "name": "deploy",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T09:53:58Z",
+        "completedAt": "2026-10-09T09:55:05Z"
+      }
+    ],
+    "buildArtifactId": "11607577217",
+    "artifacts": [
+      {
+        "id": 11609775131,
+        "name": "home402-deployment-evidence",
+        "sizeInBytes": 3201
+      },
+      {
+        "id": 11608755799,
+        "name": "home402-browser-blob-4",
+        "sizeInBytes": 505873
+      },
+      {
+        "id": 11608626383,
+        "name": "home402-browser-evidence",
+        "sizeInBytes": 62995727
+      },
+      {
+        "id": 11608605963,
+        "name": "home402-browser-renderer-4",
+        "sizeInBytes": 318
+      },
+      {
+        "id": 11608335667,
+        "name": "home402-browser-blob-3",
+        "sizeInBytes": 16718395
+      },
+      {
+        "id": 11608255659,
+        "name": "home402-browser-renderer-2",
+        "sizeInBytes": 318
+      },
+      {
+        "id": 11608156135,
+        "name": "home402-browser-renderer-3",
+        "sizeInBytes": 318
+      },
+      {
+        "id": 11608026293,
+        "name": "home402-browser-renderer-1",
+        "sizeInBytes": 318
+      },
+      {
+        "id": 11608026159,
+        "name": "home402-browser-blob-2",
+        "sizeInBytes": 11934987
+      },
+      {
+        "id": 11607687688,
+        "name": "home402-browser-blob-1",
+        "sizeInBytes": 2578171
+      },
+      {
+        "id": 11607587361,
+        "name": "github-pages",
+        "sizeInBytes": 81349983
+      },
+      {
+        "id": 11607577217,
+        "name": "home402-build",
+        "sizeInBytes": 81355728
+      }
+    ]
+  },
+  "validation": {
+    "modelChecks": 34,
+    "nodeChecks": 53,
+    "releaseChecks": 16,
+    "completeBrowserCases": 21,
+    "boundBrowserImages": 45,
+    "publicFiles": 50,
+    "modelRanges": 6,
+    "localAndCIFileHashesEqual": true,
+    "liveUIContexts": 2,
+    "applicationErrors": 0
+  },
+  "geometry": {
+    "sourceMeshes": 718,
+    "logicalIds": 98,
+    "triangles": 273815,
+    "maxBoundsErrorM": 9.5367431640625e-07,
+    "packages": [
+      "apartment",
+      "living-sofa",
+      "study"
+    ]
+  },
+  "webModelBytes": 35609620,
+  "evidence": {
+    "browserGuard": "browser-verification.json",
+    "CIdeployment": "deployment-verification.json",
+    "liveUI": "live-qa.json",
+    "sourcePreservation": "../source-preservation.json",
+    "localBuildMatch": "../local-dist-match.json",
+    "independentHostReadback": "../live-deployment-verification.json"
+  },
+  "acceptance": {
+    "AIStudyAppearance": "user-confirmed",
+    "actualModelAppearance": "pending-user-review",
+    "manufacturerAndSiteDimensions": "pending",
+    "studySeatLoad": "pending",
+    "realPhonePerformance": "not-measured",
+    "mainlandNetworkAccess": "not-measured"
+  },
+  "primaryWorkspace": "Original uncommitted files preserved; integration and publication performed in attached managed worktree."
+}
