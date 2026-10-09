@@ -11,7 +11,7 @@
 用户反馈原 Cloudflare `workers.dev` 地址在国内网络无法访问，因此要求恢复 GitHub Pages，并已将仓库改为 Public。本轮继续使用 GitHub 默认项目域名，网站公开、免密码；这项决定取代 2026-10-08 的私有仓库 / Workers 密码方案，旧代码和收据保留为历史。
 
 - **访问与配置**：网站地址及操作见 [README 发布与验收](../README.md#发布与验收)，现行入口为 [Pages 工作流](../.github/workflows/pages.yml)和 [Vite 站点路径](../vite.config.js)。当前项目路径是 `/homehome0402/`。
-- **本次已验证发布**：metric-v14，首页轮播部署源 `2ab16276`；[轮播发布结果](evidence/metric-v14/homepage-carousel/RESULT.json)绑定成功 Actions、唯一构建、资源回读和实际线上浏览器检查。完整 25 项、50 文件摘要及六个模型 Range 通过；技术结果及待验项维护在 [QA](QA.md#首页效果与室内场景轮播--metric-v14--2026-10-09)。此前[客厅与书房集成发布](evidence/metric-v14/publication/RESULT.json)及[Pages 恢复结果](evidence/metric-v09/pages-publication-20261009/RESULT.json)保留历史。
+- **本次已验证发布**：metric-v14，轮播精简部署源 `b066fe01`；[精简发布结果](evidence/metric-v14/homepage-carousel-refinement/RESULT.json)绑定完整 25 项、51 张 CI 图、50 文件摘要及六个模型 Range。图片内指示点及旧控件移除在桌面 / 手机尺寸实际线上复核通过；待验边界维护在 [QA](QA.md#首页轮播视觉精简--metric-v14--2026-10-09)。此前[首版轮播](evidence/metric-v14/homepage-carousel/RESULT.json)、[客厅与书房集成](evidence/metric-v14/publication/RESULT.json)及[Pages 恢复结果](evidence/metric-v09/pages-publication-20261009/RESULT.json)保留历史。
 - **开发与发布边界**：本机设计、派生资源和讨论可继续迭代；根据建筑规格、清单及实际检查核对重建状态，独立确认提交、推送和发布。较新的文件名或本机版本不代表已在线发布；并行工作按明确范围保留。
 - **验收边界**：国内网络可达性、真实手机持续性能及模型审美接受继续分别记录。宿主浏览器、触摸模拟和 CI 通过不替代这些验收。
 
@@ -309,4 +309,4 @@ GitHub Pages 公开、免密码，历史 Worker 代码和发布证据保留。�
 
 用户要求去掉明显的左右箭头与暂停按钮，并将指示点叠在图片底部。本轮按该要求精简轮播，仅在图片底部居中显示轻量白点 / 当前短条，保留自动轮播、点选、键盘和手机滑动；来源与标题在图外。当前源决策见 [查看器设计](viewer-design.md#页面与内容)。
 
-沿用 metric-v14 的同一图片 / 模型资源，应用修订 `2026-10-09-homepage-carousel-refinement`；53 / 53 Node、16 / 16 资源及 5 项本机浏览器复核通过。完整 25 项与发布 / 线上状态见 [QA](QA.md#首页轮播视觉精简--metric-v14--2026-10-09)，本机截图和旧发布收据分开保留。
+沿用 metric-v14 的同一图片 / 模型资源，应用修订 `2026-10-09-homepage-carousel-refinement`；53 / 53 Node、16 / 16 资源及 5 项本机浏览器复核通过。源 `b066fe01` 的完整 25 项、51 张 CI 图、50 文件摘要和六个模型 Range 均通过并已部署；线上三种宽度复核指示点在图片底部，旧控件为 0，自动轮播 / 手动 / 横滑正常，9 张截图、零应用错误。完整结果见 [QA](QA.md#首页轮播视觉精简--metric-v14--2026-10-09)及[发布收据](evidence/metric-v14/homepage-carousel-refinement/RESULT.json)，本机、CI、线上和旧发布证据分开保留。

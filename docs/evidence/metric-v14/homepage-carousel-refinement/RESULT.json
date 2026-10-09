@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "checkedAt": "2026-10-09T12:31:03.587591+00:00",
+  "version": "metric-v14",
+  "applicationRevision": "2026-10-09-homepage-carousel-refinement",
+  "url": "https://cyz26.github.io/homehome0402/",
+  "provider": "github-pages",
+  "deploymentSource": "b066fe0137b8b0badb0d34f7ef277f5c84e23d52",
+  "manifestSha256": "b8e3eead1f546b8637fdd1c731ad28d7d300969d1d1fb1a3a6b6c6c747311a4e",
+  "change": {
+    "visibleArrowsRemoved": true,
+    "playPauseButtonRemoved": true,
+    "indicators": "Centered over the image bottom, with compact white dots and a subtle translucent background.",
+    "sourceCaptions": "Retained outside the image.",
+    "navigation": [
+      "autoplay every 6 seconds",
+      "indicator selection",
+      "left/right keyboard keys",
+      "horizontal touch swipe"
+    ],
+    "automaticPause": [
+      "hover",
+      "focus",
+      "hidden/offscreen page",
+      "reduced motion",
+      "image failure"
+    ],
+    "assetsRetained": 42,
+    "imageRecordsRetained": 23
+  },
+  "checks": {
+    "node": 53,
+    "resources": 16,
+    "localBrowserCases": 5,
+    "localImages": 6,
+    "completeCIBrowserCases": 25,
+    "CIImages": 51,
+    "liveImages": 9,
+    "distFilesMatched": 50,
+    "modelRanges": 6,
+    "missingResourceStatus": 404
+  },
+  "actions": {
+    "runId": 37928565589,
+    "url": "https://github.com/cYz26/homehome0402/actions/runs/37928565589",
+    "conclusion": "success",
+    "buildArtifactId": 11615890068,
+    "browserEvidenceArtifactId": 11615776339,
+    "deploymentEvidenceArtifactId": 11615123164,
+    "jobs": [
+      {
+        "name": "build",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T12:12:54Z",
+        "completedAt": "2026-10-09T12:14:02Z"
+      },
+      {
+        "name": "browser (3)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T12:14:04Z",
+        "completedAt": "2026-10-09T12:19:21Z"
+      },
+      {
+        "name": "browser (1)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T12:14:05Z",
+        "completedAt": "2026-10-09T12:19:21Z"
+      },
+      {
+        "name": "browser (2)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T12:14:05Z",
+        "completedAt": "2026-10-09T12:17:57Z"
+      },
+      {
+        "name": "browser (4)",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T12:14:04Z",
+        "completedAt": "2026-10-09T12:18:16Z"
+      },
+      {
+        "name": "verify",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T12:19:23Z",
+        "completedAt": "2026-10-09T12:20:26Z"
+      },
+      {
+        "name": "deploy",
+        "conclusion": "success",
+        "startedAt": "2026-10-09T12:20:30Z",
+        "completedAt": "2026-10-09T12:21:56Z"
+      }
+    ]
+  },
+  "rendererIdentities": [
+    {
+      "path": "renderers/home402-browser-renderer-1.json",
+      "sha256": "8e11115f1465cfc1ec67f6f5a0464b5ddf82be08fc129a91750c26316eb959e5",
+      "identity": {
+        "browser": "153.0.8010.12",
+        "channel": "chromium",
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL 4.5)",
+        "vendor": "Google Inc. (Mesa)",
+        "maxSamples": 4,
+        "nativePixelRatio": 1
+      }
+    },
+    {
+      "path": "renderers/home402-browser-renderer-2.json",
+      "sha256": "8e11115f1465cfc1ec67f6f5a0464b5ddf82be08fc129a91750c26316eb959e5",
+      "identity": {
+        "browser": "153.0.8010.12",
+        "channel": "chromium",
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL 4.5)",
+        "vendor": "Google Inc. (Mesa)",
+        "maxSamples": 4,
+        "nativePixelRatio": 1
+      }
+    },
+    {
+      "path": "renderers/home402-browser-renderer-3.json",
+      "sha256": "8e11115f1465cfc1ec67f6f5a0464b5ddf82be08fc129a91750c26316eb959e5",
+      "identity": {
+        "browser": "153.0.8010.12",
+        "channel": "chromium",
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL 4.5)",
+        "vendor": "Google Inc. (Mesa)",
+        "maxSamples": 4,
+        "nativePixelRatio": 1
+      }
+    },
+    {
+      "path": "renderers/home402-browser-renderer-4.json",
+      "sha256": "8e11115f1465cfc1ec67f6f5a0464b5ddf82be08fc129a91750c26316eb959e5",
+      "identity": {
+        "browser": "153.0.8010.12",
+        "channel": "chromium",
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL 4.5)",
+        "vendor": "Google Inc. (Mesa)",
+        "maxSamples": 4,
+        "nativePixelRatio": 1
+      }
+    }
+  ],
+  "evidence": {
+    "completeCIGuard": "browser-verification.json",
+    "CIInventory": "browser-inventory.json",
+    "CIDeployment": "deployment-verification.json",
+    "buildComparison": "local-dist-match.json",
+    "localBrowser": "local-browser.json",
+    "liveBrowser": "live-qa.json",
+    "CIOriginalImages": "Full originals remain in the bound home402-browser-evidence Actions artifact. Exact guard/inventory bytes are archived here."
+  },
+  "boundaries": {
+    "mobile": "390 and 320 px Chrome viewport / CDP touch simulation",
+    "realPhonePerformance": "not-measured",
+    "humanModelVisualAcceptance": "pending-user-review",
+    "mainlandNetworkAccess": "not-measured"
+  }
+}

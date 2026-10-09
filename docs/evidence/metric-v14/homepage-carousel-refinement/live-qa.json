@@ -1,0 +1,307 @@
+{
+  "checkedAt": "2026-10-09T12:25:13.234Z",
+  "url": "https://cyz26.github.io/homehome0402/",
+  "sourceCommit": "b066fe0137b8b0badb0d34f7ef277f5c84e23d52",
+  "applicationRevision": "2026-10-09-homepage-carousel-refinement",
+  "version": "metric-v14",
+  "browserVersion": "154.0.8037.99",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+  "autoplay": {
+    "automaticNext": "living",
+    "hoverHeldImage": "living",
+    "hoverHeldForMs": 6500
+  },
+  "checks": [
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 900,
+      "images": [
+        {
+          "id": "scheme-overview",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/scheme-overview.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "客餐厅 · 整体效果（AI 效果图 · 方案示意）",
+          "kind": "AI 效果图 · 方案示意"
+        },
+        {
+          "id": "living",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/living.webp",
+          "width": 1100,
+          "height": 756,
+          "alt": "客厅 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        },
+        {
+          "id": "scheme-tv-c-close",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/scheme-tv-c-close.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "电视墙 · 正面效果（AI 效果图 · 方案示意）",
+          "kind": "AI 效果图 · 方案示意"
+        },
+        {
+          "id": "scheme-study",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/scheme-study.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "书房 · 整体效果（AI 效果图 · 方案示意）",
+          "kind": "AI 效果图 · 方案示意"
+        },
+        {
+          "id": "study",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/study.webp",
+          "width": 1100,
+          "height": 825,
+          "alt": "书房 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        },
+        {
+          "id": "scheme-study-cabinet",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/scheme-study-cabinet.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "书房 · 柜体近景（AI 效果图 · 方案示意）",
+          "kind": "AI 效果图 · 方案示意"
+        },
+        {
+          "id": "study-cabinet",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/study-cabinet.webp",
+          "width": 1100,
+          "height": 825,
+          "alt": "书柜 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        },
+        {
+          "id": "kitchen",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/kitchen.webp",
+          "width": 1100,
+          "height": 756,
+          "alt": "厨房 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        },
+        {
+          "id": "master",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/master.webp",
+          "width": 1100,
+          "height": 756,
+          "alt": "主卧 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        },
+        {
+          "id": "masterbath",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/masterbath.webp",
+          "width": 1100,
+          "height": 756,
+          "alt": "主卫 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        }
+      ],
+      "canvases": 0,
+      "overflow": false,
+      "indicator": {
+        "x": 732.296875,
+        "y": 580.046875,
+        "width": 276,
+        "height": 34
+      },
+      "photo": {
+        "x": 518.21875,
+        "y": 147.9375,
+        "width": 704.171875,
+        "height": 484.109375
+      },
+      "removedControls": 0
+    },
+    {
+      "label": "phone",
+      "width": 390,
+      "height": 844,
+      "images": [
+        {
+          "id": "scheme-overview",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/scheme-overview.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "客餐厅 · 整体效果（AI 效果图 · 方案示意）",
+          "kind": "AI 效果图 · 方案示意"
+        },
+        {
+          "id": "living",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/living.webp",
+          "width": 1100,
+          "height": 756,
+          "alt": "客厅 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        },
+        {
+          "id": "scheme-tv-c-close",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/scheme-tv-c-close.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "电视墙 · 正面效果（AI 效果图 · 方案示意）",
+          "kind": "AI 效果图 · 方案示意"
+        },
+        {
+          "id": "scheme-study",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/scheme-study.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "书房 · 整体效果（AI 效果图 · 方案示意）",
+          "kind": "AI 效果图 · 方案示意"
+        },
+        {
+          "id": "study",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/study.webp",
+          "width": 1100,
+          "height": 825,
+          "alt": "书房 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        },
+        {
+          "id": "scheme-study-cabinet",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/scheme-study-cabinet.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "书房 · 柜体近景（AI 效果图 · 方案示意）",
+          "kind": "AI 效果图 · 方案示意"
+        },
+        {
+          "id": "study-cabinet",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/study-cabinet.webp",
+          "width": 1100,
+          "height": 825,
+          "alt": "书柜 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        },
+        {
+          "id": "kitchen",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/kitchen.webp",
+          "width": 1100,
+          "height": 756,
+          "alt": "厨房 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        },
+        {
+          "id": "master",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/master.webp",
+          "width": 1100,
+          "height": 756,
+          "alt": "主卧 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        },
+        {
+          "id": "masterbath",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/masterbath.webp",
+          "width": 1100,
+          "height": 756,
+          "alt": "主卫 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        }
+      ],
+      "canvases": 0,
+      "overflow": false,
+      "indicator": {
+        "x": 57,
+        "y": 662.546875,
+        "width": 276,
+        "height": 34
+      },
+      "photo": {
+        "x": 0,
+        "y": 440.421875,
+        "width": 390,
+        "height": 268.125
+      },
+      "removedControls": 0
+    },
+    {
+      "label": "small-phone",
+      "width": 320,
+      "height": 740,
+      "images": [
+        {
+          "id": "scheme-overview",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/scheme-overview.webp",
+          "width": 1448,
+          "height": 1086,
+          "alt": "客餐厅 · 整体效果（AI 效果图 · 方案示意）",
+          "kind": "AI 效果图 · 方案示意"
+        },
+        {
+          "id": "study-cabinet",
+          "src": "https://cyz26.github.io/homehome0402/releases/metric-v14/images/study-cabinet.webp",
+          "width": 1100,
+          "height": 825,
+          "alt": "书柜 · 场景图（模型渲染 · Cycles）",
+          "kind": "模型渲染 · Cycles"
+        }
+      ],
+      "canvases": 0,
+      "overflow": false,
+      "indicator": {
+        "x": 22,
+        "y": 614.421875,
+        "width": 276,
+        "height": 34
+      },
+      "photo": {
+        "x": 0,
+        "y": 440.421875,
+        "width": 320,
+        "height": 220
+      },
+      "removedControls": 0
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "live/desktop-scheme-overview.png",
+      "bytes": 512168,
+      "sha256": "5b734b27d2111e3982ccfa9c1e2ab9624945d29bb0c27d42cbfc63c5ac9f45aa"
+    },
+    {
+      "path": "live/desktop-component.png",
+      "bytes": 434267,
+      "sha256": "a3a30aaa54c596ceeee01cb4e82a9b0acae234b8a3a477212b6f1dc7a5f35f9c"
+    },
+    {
+      "path": "live/desktop-scheme-study.png",
+      "bytes": 423924,
+      "sha256": "a39e69d51c41c94648ed45e7ce3a178ea64089d0e3b35132aeebc9dcf3836a37"
+    },
+    {
+      "path": "live/desktop-study-cabinet.png",
+      "bytes": 380381,
+      "sha256": "145b239fd557434aaedff48594600daf5793f3fe6501a78787e52731bcbe86f7"
+    },
+    {
+      "path": "live/phone-scheme-overview.png",
+      "bytes": 186037,
+      "sha256": "f74f10119ac6bde089dad36092d760dbe2cc5449fd078bc4ab997c7bd9a3bad3"
+    },
+    {
+      "path": "live/phone-scheme-study.png",
+      "bytes": 160555,
+      "sha256": "b85f004e88613f03e724968302457f3a4080233e06c13e49a17dd150495fd622"
+    },
+    {
+      "path": "live/phone-study-cabinet.png",
+      "bytes": 150326,
+      "sha256": "a7cd1112ddb8d6008480285a2ab5b6f3eac2b91fcf14bce1905639941c5b476c"
+    },
+    {
+      "path": "live/small-phone-scheme-overview.png",
+      "bytes": 137331,
+      "sha256": "427f33dab1de7a901e2c2300452f5f099f081c5e3a1e7c8e329c67d51f1966eb"
+    },
+    {
+      "path": "live/small-phone-study-cabinet.png",
+      "bytes": 112266,
+      "sha256": "9f2d47f34473fc414898520b3d34e96739aad581eeb5796db4e087056967997f"
+    }
+  ],
+  "errors": [],
+  "realPhonePerformance": "not measured; Chromium viewport and CDP touch simulation"
+}
