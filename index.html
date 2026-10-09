@@ -42,30 +42,38 @@
             >
           </div>
           <p class="hero-meta">
-            <span class="status-dot"></span> 客餐厅家具方案 · 单层住宅 · 米制模型
+            <span class="status-dot"></span> 客厅与书房方案 · 单层住宅 · 米制模型
           </p>
         </div>
-        <figure class="hero-visual">
-          <picture
-            ><source
-              media="(max-width: 700px)"
-              srcset="/__RELEASE_PREFIX__/images/hero-640.webp" />
+        <figure class="hero-visual" id="home-gallery" role="region"
+          aria-roledescription="轮播" aria-label="效果图与室内场景图">
+          <div class="hero-frame">
+            <div id="hero-slide" role="group" aria-roledescription="幻灯片">
             <img
               id="hero-image"
-              src="/__RELEASE_PREFIX__/images/hero-1600.webp"
-              srcset="
-                /__RELEASE_PREFIX__/images/hero-1000.webp 1000w,
-                /__RELEASE_PREFIX__/images/hero-1600.webp 1600w
-              "
-              sizes="(max-width:700px) 100vw, 65vw"
-              width="1600"
-              height="1100"
+              src="/__HERO_IMAGE_PATH__"
+              width="1448"
+              height="996"
               fetchpriority="high"
-              alt="当前家具方案的整屋剖面；房门全开靠墙"
-          /></picture>
+              decoding="async"
+              alt="客餐厅整体效果（AI 效果图 · 方案示意）"
+            />
+            </div>
+            <div class="hero-arrows" data-carousel-controls hidden>
+              <button id="hero-prev" type="button" aria-label="上一张图片" aria-controls="hero-slide">←</button>
+              <button id="hero-next" type="button" aria-label="下一张图片" aria-controls="hero-slide">→</button>
+            </div>
+            <p id="hero-error" role="status" hidden>图片暂时无法载入。<button id="hero-retry" type="button">重新加载图片</button></p>
+          </div>
           <figcaption>
-            <span>01 / 全屋视角</span><span>模型渲染 · Cycles · __MODEL_SHORT_VERSION__</span>
+            <span class="hero-caption"><span id="hero-count">01 / 10</span><span id="hero-title">客餐厅 · 整体效果</span></span>
+            <span id="hero-kind">AI 效果图 · 方案示意</span>
           </figcaption>
+          <div class="hero-controls" data-carousel-controls hidden>
+            <div id="hero-dots" class="hero-dots" role="group" aria-label="选择图片"></div>
+            <button id="hero-play" type="button" aria-label="暂停轮播" aria-controls="hero-slide">暂停</button>
+          </div>
+          <p id="hero-live" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
         </figure>
         <div id="site-status" class="notice" role="status" hidden>
           <p></p>

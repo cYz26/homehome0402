@@ -3,6 +3,7 @@ import { fetchResource, abortable } from "./resources.js";
 import { fetchModel } from "./model-resource.js";
 import { modelBundles, highDefinitionManifest } from "./model-bundles.js";
 import { decodeView, encodeView } from "./view-state.js";
+import { mountHeroCarousel } from "./hero-carousel.js";
 const $ = (selector) => document.querySelector(selector);
 const escape = (value) =>
   String(value ?? "").replace(
@@ -14,6 +15,7 @@ const escape = (value) =>
   );
 const url = (path) => import.meta.env.BASE_URL + path;
 let manifest,
+  heroCarousel,
   data,
   viewer,
   preparation,
@@ -76,6 +78,8 @@ const formatSize = (bytes) =>
     ? `${(bytes / 1024 ** 2).toFixed(1)} MiB`
     : `${Math.ceil(bytes / 1024)} KiB`;
 function populate() {
+  heroCarousel?.();
+  heroCarousel = mountHeroCarousel(manifest, url);
   $("#rooms").innerHTML = data.rooms
     .map(
       (r) =>

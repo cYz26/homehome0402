@@ -1,0 +1,345 @@
+{
+  "checkedAt": "2026-10-09T10:46:01.894967+00:00",
+  "status": "passed",
+  "scope": "7 targeted local cases; the complete 25-case inventory is pending CI",
+  "version": "metric-v14",
+  "applicationRevision": "2026-10-09-homepage-carousel",
+  "manifestSha256": "ac19c1bac91de3488b339e167838eb8c971c9c79332f27c47d65bc8b3818e937",
+  "runner": "Playwright 1.63.0 / configured Chromium on macOS; mobile viewport and CDP touch simulation",
+  "stats": {
+    "startTime": "2026-10-09T10:44:12.846Z",
+    "duration": 14682.275,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "living and study desktop: latest images, complete 3D and furniture properties",
+      "file": "browser.spec.mjs",
+      "ok": true,
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2979,
+          "errors": [],
+          "retry": 0,
+          "startTime": "2026-10-09T10:44:13.867Z",
+          "attachments": [
+            {
+              "name": "desktop-scheme-overview",
+              "path": "local/desktop-scheme-overview.png",
+              "sha256": "990187ebeff56c8d7bbfc5fab890c595530381bb0d5b2c4337694d35e6f6b255",
+              "bytes": 749447
+            },
+            {
+              "name": "desktop-scheme-tv-c-close",
+              "path": "local/desktop-scheme-tv-c-close.png",
+              "sha256": "ca6c805bc53dd111ce0a950689a4e2ce8f49c44f3a1854c46f407d4a2534dac1",
+              "bytes": 634600
+            },
+            {
+              "name": "desktop-scheme-study",
+              "path": "local/desktop-scheme-study.png",
+              "sha256": "57f56fbff58fd8984442ef586051015acc96e3529c96c5bf2d2c69dff98066f0",
+              "bytes": 617294
+            },
+            {
+              "name": "desktop-scheme-study-cabinet",
+              "path": "local/desktop-scheme-study-cabinet.png",
+              "sha256": "cb52a59a5a0d03efbccb4d81d006ef4c54fc52e035db3a9569ce6441372d5842",
+              "bytes": 674319
+            },
+            {
+              "name": "study-desktop-interior",
+              "path": "local/study-desktop-interior.png",
+              "sha256": "3959e89a8083fde397018e69ea12c43ce498515341eeb914b1e3e5af70513682",
+              "bytes": 531790
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "living and study phone: latest images, complete 3D and furniture properties",
+      "file": "browser.spec.mjs",
+      "ok": true,
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3185,
+          "errors": [],
+          "retry": 0,
+          "startTime": "2026-10-09T10:44:17.168Z",
+          "attachments": [
+            {
+              "name": "phone-scheme-overview",
+              "path": "local/phone-scheme-overview.png",
+              "sha256": "3865841c55449974aaf4659617696305f00ca829884e2f780e2e886851e21418",
+              "bytes": 208272
+            },
+            {
+              "name": "phone-scheme-tv-c-close",
+              "path": "local/phone-scheme-tv-c-close.png",
+              "sha256": "a4be7675d2920165e9bb76c3f5e88ed153495dab1987c45e1b1874e0b73342cc",
+              "bytes": 180889
+            },
+            {
+              "name": "phone-scheme-study",
+              "path": "local/phone-scheme-study.png",
+              "sha256": "766e30e8dcc7c626758ddc067c1c1ead31b5455d04191f4abd70cbdfb4ee144f",
+              "bytes": 182783
+            },
+            {
+              "name": "phone-scheme-study-cabinet",
+              "path": "local/phone-scheme-study-cabinet.png",
+              "sha256": "4ad5b2c6b59d238420bdd84343ee0c00ac98170363909dcbbb70ab296d514c8f",
+              "bytes": 182754
+            },
+            {
+              "name": "study-phone-interior",
+              "path": "local/study-phone-interior.png",
+              "sha256": "1c1bee29c32f43b86c2c35be3108ef4bde15c6c8dc33c887093583b90035c5cc",
+              "bytes": 181060
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "homepage carousel desktop: current effects and interior scenes, controls and labels",
+      "file": "hero-carousel.spec.mjs",
+      "ok": true,
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1520,
+          "errors": [],
+          "retry": 0,
+          "startTime": "2026-10-09T10:44:20.364Z",
+          "attachments": [
+            {
+              "name": "carousel-desktop-scheme-overview",
+              "path": "local/carousel-desktop-scheme-overview.png",
+              "sha256": "2abcb81ea421995e4e997b7d07f8d109ee160b805a5583e319c0f4599e937447",
+              "bytes": 519982
+            },
+            {
+              "name": "carousel-desktop-scheme-study",
+              "path": "local/carousel-desktop-scheme-study.png",
+              "sha256": "7cd12b96180925b3bf9bb75ce86ded0b2430860211a7e2c547cbd158ff96f230",
+              "bytes": 432840
+            },
+            {
+              "name": "carousel-desktop-study-cabinet",
+              "path": "local/carousel-desktop-study-cabinet.png",
+              "sha256": "381af0d46231aefb05d8465f9e0c6f22c9ca8257367e6cd5818e6a468955c351",
+              "bytes": 387090
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "homepage carousel phone: current effects and interior scenes, controls and labels",
+      "file": "hero-carousel.spec.mjs",
+      "ok": true,
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1711,
+          "errors": [],
+          "retry": 0,
+          "startTime": "2026-10-09T10:44:21.889Z",
+          "attachments": [
+            {
+              "name": "carousel-phone-scheme-overview",
+              "path": "local/carousel-phone-scheme-overview.png",
+              "sha256": "6c4647812f95dde9c87db2d1280952c6835387d94820861b9821dc502d9855d1",
+              "bytes": 192381
+            },
+            {
+              "name": "carousel-phone-scheme-study",
+              "path": "local/carousel-phone-scheme-study.png",
+              "sha256": "0946be6339a74f3aff9715ceca368d08efeb2fcacb10cf2801aac281e02e599f",
+              "bytes": 166848
+            },
+            {
+              "name": "carousel-phone-study-cabinet",
+              "path": "local/carousel-phone-study-cabinet.png",
+              "sha256": "f0b2a9cca925852471e803e2533e8d3ba172c82c9c3dd7996a60c0102fa3553d",
+              "bytes": 154159
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "homepage carousel: autoplay, pause and reduced motion",
+      "file": "hero-carousel.spec.mjs",
+      "ok": true,
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 673,
+          "errors": [],
+          "retry": 0,
+          "startTime": "2026-10-09T10:44:23.605Z",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "homepage carousel: delayed selection cannot overwrite a newer choice and failures can retry",
+      "file": "hero-carousel.spec.mjs",
+      "ok": true,
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 722,
+          "errors": [],
+          "retry": 0,
+          "startTime": "2026-10-09T10:44:24.284Z",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "background resources wait for a delayed homepage hero",
+      "file": "preload.spec.mjs",
+      "ok": true,
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2372,
+          "errors": [],
+          "retry": 0,
+          "startTime": "2026-10-09T10:44:25.014Z",
+          "attachments": []
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "desktop-scheme-overview",
+      "path": "local/desktop-scheme-overview.png",
+      "sha256": "990187ebeff56c8d7bbfc5fab890c595530381bb0d5b2c4337694d35e6f6b255",
+      "bytes": 749447
+    },
+    {
+      "name": "desktop-scheme-tv-c-close",
+      "path": "local/desktop-scheme-tv-c-close.png",
+      "sha256": "ca6c805bc53dd111ce0a950689a4e2ce8f49c44f3a1854c46f407d4a2534dac1",
+      "bytes": 634600
+    },
+    {
+      "name": "desktop-scheme-study",
+      "path": "local/desktop-scheme-study.png",
+      "sha256": "57f56fbff58fd8984442ef586051015acc96e3529c96c5bf2d2c69dff98066f0",
+      "bytes": 617294
+    },
+    {
+      "name": "desktop-scheme-study-cabinet",
+      "path": "local/desktop-scheme-study-cabinet.png",
+      "sha256": "cb52a59a5a0d03efbccb4d81d006ef4c54fc52e035db3a9569ce6441372d5842",
+      "bytes": 674319
+    },
+    {
+      "name": "study-desktop-interior",
+      "path": "local/study-desktop-interior.png",
+      "sha256": "3959e89a8083fde397018e69ea12c43ce498515341eeb914b1e3e5af70513682",
+      "bytes": 531790
+    },
+    {
+      "name": "phone-scheme-overview",
+      "path": "local/phone-scheme-overview.png",
+      "sha256": "3865841c55449974aaf4659617696305f00ca829884e2f780e2e886851e21418",
+      "bytes": 208272
+    },
+    {
+      "name": "phone-scheme-tv-c-close",
+      "path": "local/phone-scheme-tv-c-close.png",
+      "sha256": "a4be7675d2920165e9bb76c3f5e88ed153495dab1987c45e1b1874e0b73342cc",
+      "bytes": 180889
+    },
+    {
+      "name": "phone-scheme-study",
+      "path": "local/phone-scheme-study.png",
+      "sha256": "766e30e8dcc7c626758ddc067c1c1ead31b5455d04191f4abd70cbdfb4ee144f",
+      "bytes": 182783
+    },
+    {
+      "name": "phone-scheme-study-cabinet",
+      "path": "local/phone-scheme-study-cabinet.png",
+      "sha256": "4ad5b2c6b59d238420bdd84343ee0c00ac98170363909dcbbb70ab296d514c8f",
+      "bytes": 182754
+    },
+    {
+      "name": "study-phone-interior",
+      "path": "local/study-phone-interior.png",
+      "sha256": "1c1bee29c32f43b86c2c35be3108ef4bde15c6c8dc33c887093583b90035c5cc",
+      "bytes": 181060
+    },
+    {
+      "name": "carousel-desktop-scheme-overview",
+      "path": "local/carousel-desktop-scheme-overview.png",
+      "sha256": "2abcb81ea421995e4e997b7d07f8d109ee160b805a5583e319c0f4599e937447",
+      "bytes": 519982
+    },
+    {
+      "name": "carousel-desktop-scheme-study",
+      "path": "local/carousel-desktop-scheme-study.png",
+      "sha256": "7cd12b96180925b3bf9bb75ce86ded0b2430860211a7e2c547cbd158ff96f230",
+      "bytes": 432840
+    },
+    {
+      "name": "carousel-desktop-study-cabinet",
+      "path": "local/carousel-desktop-study-cabinet.png",
+      "sha256": "381af0d46231aefb05d8465f9e0c6f22c9ca8257367e6cd5818e6a468955c351",
+      "bytes": 387090
+    },
+    {
+      "name": "carousel-phone-scheme-overview",
+      "path": "local/carousel-phone-scheme-overview.png",
+      "sha256": "6c4647812f95dde9c87db2d1280952c6835387d94820861b9821dc502d9855d1",
+      "bytes": 192381
+    },
+    {
+      "name": "carousel-phone-scheme-study",
+      "path": "local/carousel-phone-scheme-study.png",
+      "sha256": "0946be6339a74f3aff9715ceca368d08efeb2fcacb10cf2801aac281e02e599f",
+      "bytes": 166848
+    },
+    {
+      "name": "carousel-phone-study-cabinet",
+      "path": "local/carousel-phone-study-cabinet.png",
+      "sha256": "f0b2a9cca925852471e803e2533e8d3ba172c82c9c3dd7996a60c0102fa3553d",
+      "bytes": 154159
+    }
+  ],
+  "humanModelAcceptance": "not-measured",
+  "realPhonePerformance": "not-measured",
+  "nodeTests": {
+    "tests": 53,
+    "pass": 53,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "resourceChecks": {
+    "passed": 16,
+    "initialBytes": 898287,
+    "firstViewportCoreBytes": 487309,
+    "interactiveBytes": 37813629
+  }
+}

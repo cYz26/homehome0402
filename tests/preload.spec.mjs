@@ -7,7 +7,7 @@ test("background resources wait for a delayed homepage hero", async ({ page }) =
   page.on("request", (r) => {
     if (/three-|apartment-web\.glb/.test(r.url())) requests.push(r.url());
   });
-  await page.route("**/hero-*.webp", async (route) => {
+  await page.route("**/scheme-overview.webp", async (route) => {
     await gate;
     await route.continue();
   });

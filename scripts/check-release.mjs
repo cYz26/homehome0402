@@ -9,6 +9,7 @@ import { MeshoptDecoder } from "meshoptimizer";
 import { getBounds } from "@gltf-transform/functions";
 import { modelPackages } from "./model-packages.mjs";
 import { polygonArea } from "../src/spatial.js";
+import { homepageImages } from "../src/hero-images.js";
 const json = async (p) => JSON.parse(await fs.readFile(p));
 const spec = await json("model/apartment.json"),
   manifest = await json("public/release.json"),
@@ -235,12 +236,13 @@ initialBytes +=
     .filter((a) => a.role === "properties" || a.role === "drawing")
     .reduce((s, a) => s + a.bytes, 0) +
   (await fs.stat("public/release.json")).size +
-  manifest.assets.find((a) => a.path.endsWith("hero-1600.webp")).bytes;
+  manifest.assets.find((a) => a.path === homepageImages(manifest)[0].path).bytes;
 const firstViewportCoreBytes = initialBytes;
 // Browsers may prefetch native lazy images beyond the fold. Budget every image
 // embedded in the document, including the model placeholder, as an upper bound.
 const documentImageIds = [
   "living",
+  "study",
   "kitchen",
   "master",
   "masterbath",
