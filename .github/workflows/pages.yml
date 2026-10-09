@@ -1,4 +1,4 @@
-name: Validate and deploy to Cloudflare Workers
+name: Validate and deploy to GitHub Pages
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: home402-workers
+  group: home402-pages
   cancel-in-progress: false
 
 jobs:
@@ -32,8 +32,6 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: npm run check:release
-      - run: npm run check:worker
-      - run: npm run worker:dry-run
       - name: Record complete browser test inventory
         run: npm run test:browser -- --list --reporter=json
         env:
@@ -48,6 +46,11 @@ jobs:
             model/release-checks.json
             test-results/browser-inventory.json
           if-no-files-found: error
+      - name: Package the same checked build for Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
 
   browser:
     needs: build
@@ -148,35 +151,33 @@ jobs:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
-      name: cloudflare
-      url: ${{ vars.HOME402_WORKER_URL }}
-    env:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      SITE_PASSWORD_SHA256: ${{ secrets.SITE_PASSWORD_SHA256 }}
-      SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
-      HOME402_WORKER_URL: ${{ vars.HOME402_WORKER_URL }}
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
           cache: npm
-      - name: Require deployment credentials
-        run: |
-          node --input-type=module -e '
-          for (const name of ["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "SITE_PASSWORD_SHA256", "SESSION_SECRET", "HOME402_WORKER_URL"])
-            if (!process.env[name]) throw Error(`Missing deployment setting: ${name}`);'
       - run: npm ci
       - uses: actions/download-artifact@v7
         with:
           artifact-ids: ${{ needs.build.outputs.artifact-id }}
           merge-multiple: true
-      - name: Deploy the checked build with password protection
-        run: node scripts/deploy-worker.mjs
-      - name: Verify deployed hashes, private assets and model ranges
-        run: node scripts/check-deployment.mjs --output test-results/deployment-verification.json
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+      - name: Deploy the tested Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v5
+      - name: Verify public files, deployed hashes and model ranges
+        run: node scripts/check-pages-deployment.mjs --output test-results/deployment-verification.json
+        env:
+          HOME402_PAGES_URL: ${{ steps.deployment.outputs.page_url }}
       - name: Preserve deployment readback
         if: always()
         uses: actions/upload-artifact@v6

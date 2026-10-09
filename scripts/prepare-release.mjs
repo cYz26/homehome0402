@@ -22,11 +22,12 @@ await fs.mkdir(`${out}/images`, { recursive: true });
 const assets = [],
   images = [];
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
-const applicationRevision = "2026-10-08-living-v04-static-frames";
+const applicationRevision = "2026-10-09-github-pages";
 const deploymentSources = [
   "wrangler.jsonc", "worker/index.mjs", "scripts/deploy-worker.mjs",
   "scripts/worker-secrets.mjs", "scripts/check-worker.mjs",
   "scripts/check-deployment.mjs",
+  ".github/workflows/pages.yml", "scripts/check-pages-deployment.mjs",
 ];
 
 // Frontend-only work can reuse the already verified render/model assets. Reject

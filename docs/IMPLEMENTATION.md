@@ -4,7 +4,7 @@
 
 授权：2026-09-15 用户要求实现已确认的 P0–P3 计划，包含完整展示网站、自由漫游及参考图同步；后续要求将红框内四处门修正朝向并全部打开靠墙。
 
-迁移基线为 metric-v05；现有精装空房及历史源资产保留。工作在同一仓库完成；用户已确认当前显示效果并授权提交推送。2026-10-08 起采用私有仓库、GitHub Actions 验证和 Cloudflare Workers Static Assets 密码发布；远程检查、部署与资源回读分别记录。
+迁移基线为 metric-v05；现有精装空房及历史源资产保留。工作在同一仓库完成；用户已确认当前显示效果并授权提交推送。2026-10-09 用户要求改回 GitHub Pages，仓库已改为 Public；当前采用 GitHub Actions 验证和公开、免密码的 Pages 发布。此前 Workers 密码发布及其证据保留历史；远程检查、部署与资源回读分别记录。
 
 ## 已实施
 
@@ -45,7 +45,7 @@
 | 主题 | 当前生效方式 |
 | --- | --- |
 | 完整网站与同源数据 | 采用六段展示、语义构件和版本清单；当前设计源为 `model/apartment.json`，保留上述模板边界 |
-| 技术栈与范围 | Blender + Three.js + Vite，私有 GitHub + Actions + Cloudflare Workers Static Assets 密码站点；单户型、单楼层，原文提到的 React / Next.js 等不构成迁移要求 |
+| 技术栈与范围 | Blender + Three.js + Vite，公开 GitHub + Actions + GitHub Pages；单户型、单楼层，原文提到的 React / Next.js 等不构成迁移要求 |
 | 漫游 | 采用用户后续确认的 1.65 m 眼高、PC Q/E 和手机无摇杆手势；详细行为统一维护在查看器设计中 |
 | 资源优化 | 视觉优先；采用当前 KTX2 / Meshopt 管线、首屏 1 MiB 与分版本的 3D 预算（见 `model/resource-budgets.json`），修改预算须同步记录依据及验证 |
 | 展示与证据 | 当前模型派生图、实拍及生成参考标明来源；原文中的示例图与示例尺寸不作为住宅实测依据 |
@@ -190,3 +190,12 @@ Web / HD 组合流程 trace 已证明本机原 90 秒整项预算在 Web 检查�
 最新站点为 [Home 402](https://home402.cyz26.workers.dev)，沿用现有共享密码。部署源为 `8900deaa`；[Actions 37820857670](https://github.com/cYz26/homehome0402/actions/runs/37820857670)的构建、四个分片、完整清单合并及部署全部成功。完整 20 项各通过一次，零跳过 / 重试；39 张截图绑定清单 `fdd2f405…` 与唯一构建 artifact `11568992910`。部署回读全部 42 个文件及四个模型 Range，匿名访问被拒绝；本机 dist 与这些文件的字节摘要全部相符。
 
 实际密码登录后，桌面 / 手机尺寸均确认最新两张 AI 效果图、13 项画廊、原 PBR 沙发属性、实际客厅及单幅大画柜墙，应用错误为零。最新原图、模型、来源链及历史方案均保留；后续迭代从 [v04 结果](design/living-v04/RESULT.json)和[发布收据](evidence/metric-v09/publication/RESULT.json)继续。网页实时光照仍为近似，当前模型审美确认及真机性能继续单独待验。
+
+
+## GitHub Pages 恢复 · 2026-10-09
+
+用户反馈 Cloudflare 地址在国内网络无法访问，要求改回 GitHub Pages，并已将仓库可见性改为 Public。GitHub API 已核实 `cYz26/homehome0402` 为公开仓库，原 Pages 尚未启用。迁移以已提交并发布的 metric-v09 为基线；主工作区 v10–v12 设计和书房讨论保留，未纳入本轮发布候选。
+
+恢复 `.github/workflows/pages.yml`，停止 Workers 自动发布，保留单次构建、四个独立浏览器分片、完整清单守卫和同产物部署。Vite base 改为 `/homehome0402/`，同步应用、剖切 / 输入夹具和手机浏览器检查；公开资源新增路径及 Range 回归。既有模型、纹理、图纸与效果图字节保留，仅从 code-only 入口刷新应用修订和源码摘要。
+
+GitHub Pages 公开、免密码，历史 Worker 代码和发布证据保留。实际本机检查、远程 Actions、部署回读及访问边界见 [QA](QA.md#github-pages-恢复--2026-10-09)。大陆网络及真机性能须分别实测。

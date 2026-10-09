@@ -1,4 +1,6 @@
 import { test, expect } from "@playwright/test";
+import config from "../playwright.config.mjs";
+const basePath = new URL(config.webServer[1].url).pathname;
 
 test("walk canvas owns long-press defaults and releases input on interruption", async ({ browser }) => {
   const context = await browser.newContext({
@@ -11,11 +13,11 @@ test("walk canvas owns long-press defaults and releases input on interruption", 
   await page.route("**/walk-input-fixture", (route) => route.fulfill({
     contentType: "text/html",
     body: `<!doctype html><meta name="viewport" content="width=device-width">
-      <link rel="stylesheet" href="/src/style.css">
+      <link rel="stylesheet" href="${basePath}src/style.css">
       <div class="stage"><canvas tabindex="0"></canvas><span class="compass">North</span></div>
       <p id="outside">House description remains selectable</p>
       <script type="module">
-        import { WalkInput } from '/src/walk-input.js';
+        import { WalkInput } from '${basePath}src/walk-input.js';
         const canvas = document.querySelector('canvas');
         window.active = true;
         window.defaults = [];
@@ -31,7 +33,7 @@ test("walk canvas owns long-press defaults and releases input on interruption", 
       </script>`,
   }));
   try {
-    await page.goto("http://127.0.0.1:4174/walk-input-fixture");
+    await page.goto(new URL("walk-input-fixture", config.webServer[1].url).href);
     await page.waitForFunction(() => window.input);
     const cdp = await context.newCDPSession(page);
     const touch = (type, points = []) => cdp.send("Input.dispatchTouchEvent", {

@@ -67,9 +67,9 @@
     }
   ],
   "passed": 16,
-  "initialBytes": 658353,
-  "firstViewportCoreBytes": 293251,
-  "interactiveBytes": 35644295,
+  "initialBytes": 658684,
+  "firstViewportCoreBytes": 293582,
+  "interactiveBytes": 35644334,
   "webGLBBytes": 33437976,
   "modelPackages": [
     {

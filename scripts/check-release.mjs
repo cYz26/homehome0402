@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import assert from "node:assert/strict";
+import viteConfig from "../vite.config.js";
 import crypto from "node:crypto";
 import sharp from "sharp";
 import { NodeIO } from "@gltf-transform/core";
@@ -208,7 +209,8 @@ check("Static homepage images, drawing and version labels bind the current relea
     for (const source of match[1].split(",")) {
       const url=source.trim().split(/\s+/)[0];
       if (!url.includes("/releases/")) continue;
-      const path=url.replace(/^\//, "");
+      assert.ok(url.startsWith(viteConfig.base), `Homepage resource escapes the site base: ${url}`);
+      const path=url.slice(viteConfig.base.length);
       assert.ok(manifest.assets.some(a => a.path === path), `Homepage resource is stale: ${url}`);
     }
   }
