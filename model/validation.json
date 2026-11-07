@@ -1,33 +1,33 @@
 {
-  "version": "metric-v16",
-  "spec_sha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
-  "source_sha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
-  "glb_sha256": "29751fdd5ba3055253ebe035acf5cc811b2355fc2719762aad72d2fff328ccd0",
+  "version": "metric-v17",
+  "spec_sha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
+  "source_sha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
+  "glb_sha256": "8a39fb8b080d92c52a647f8c967b7beacdbce4e1c9163ceb56db4b7b4601c6c0",
   "model_packages": [
     {
       "id": "apartment",
-      "path": "asset_exchange/apartment-v16.glb",
-      "sha256": "29751fdd5ba3055253ebe035acf5cc811b2355fc2719762aad72d2fff328ccd0",
-      "bytes": 24666964
+      "path": "asset_exchange/apartment-v17.glb",
+      "sha256": "8a39fb8b080d92c52a647f8c967b7beacdbce4e1c9163ceb56db4b7b4601c6c0",
+      "bytes": 24690340
     },
     {
       "id": "living-sofa",
-      "path": "asset_exchange/living-sofa-v16.glb",
-      "sha256": "d5be7cf5a09de95f144a9762333634c6f0a202e205e4fc69b99df2cefdecbc8b",
+      "path": "asset_exchange/living-sofa-v17.glb",
+      "sha256": "0eada7a8326a9dfdb145a7a4de2c43c2efe6925dea8f4752c41b36dfd1306ce2",
       "bytes": 21232288
     },
     {
       "id": "study",
-      "path": "asset_exchange/study-v16.glb",
-      "sha256": "c3981b82a3f6b1e939879b2ce6c233151cb5c9a0a6087ee29382be88cfef6dd4",
+      "path": "asset_exchange/study-v17.glb",
+      "sha256": "b4165dcce7d85025bc5dea71a6f75cb87ae3e4df8c2c680724070dc2ec06403e",
       "bytes": 6746256
     }
   ],
   "source_objects": 729,
   "reimport_objects": 729,
   "max_bound_error_m": 9.5367431640625e-07,
-  "source_triangles": 309275,
-  "reimport_triangles": 309275,
+  "source_triangles": 309951,
+  "reimport_triangles": 309951,
   "source_degenerate_triangles": 0,
   "reimport_degenerate_triangles": 0,
   "roundtrip_errors": [],
@@ -56,11 +56,11 @@
   "childroom_step_samples": [
     {
       "object": "Furniture_childroom_stairs",
-      "height": 0.3240000009536743
+      "height": 0.35733333230018616
     },
     {
       "object": "Furniture_childroom_stairs",
-      "height": 0.6240000128746033
+      "height": 0.690666675567627
     }
   ],
   "childroom_boarding_clear": true,
@@ -2469,17 +2469,17 @@
     "Furniture_childroom_bed": {
       "bounds": [
         [
-          1.035512924194336,
-          10.135513305664062,
+          1.0149999856948853,
+          9.59000015258789,
           0.024000000208616257
         ],
         [
-          2.16448712348938,
-          12.2244873046875,
-          1.3220000267028809
+          2.515000104904175,
+          11.59000015258789,
+          1.4220000505447388
         ]
       ],
-      "triangles": 10952,
+      "triangles": 11788,
       "degenerate": 0,
       "layer": "fixed",
       "entityId": "childroom-bed",
@@ -2495,13 +2495,13 @@
       "bounds": [
         [
           1.0069999694824219,
-          10.294500350952148,
-          1.6339999437332153
+          9.724499702453613,
+          1.7339999675750732
         ],
         [
           1.180999994277954,
-          12.025500297546387,
-          2.1040000915527344
+          11.455499649047852,
+          2.2039999961853027
         ]
       ],
       "triangles": 4516,
@@ -2520,14 +2520,14 @@
     "Furniture_childroom_caddy": {
       "bounds": [
         [
-          2.087174892425537,
-          10.17650032043457,
-          0.9110000133514404
+          2.4801747798919678,
+          9.621500015258789,
+          1.0110000371932983
         ],
         [
-          2.255000114440918,
-          10.543499946594238,
-          1.2658109664916992
+          2.6480000019073486,
+          9.988499641418457,
+          1.3658108711242676
         ]
       ],
       "triangles": 1412,
@@ -2545,13 +2545,13 @@
     "Furniture_childroom_chair": {
       "bounds": [
         [
-          2.585278034210205,
-          11.654999732971191,
+          2.8752782344818115,
+          11.895000457763672,
           0.026000000536441803
         ],
         [
-          3.034721851348877,
-          12.104999542236328,
+          3.3247218132019043,
+          12.345000267028809,
           0.8833132386207581
         ]
       ],
@@ -2570,14 +2570,14 @@
     "Furniture_childroom_curtains": {
       "bounds": [
         [
-          2.095139980316162,
-          10.199999809265137,
-          0.04199301078915596
+          2.4941399097442627,
+          9.652000427246094,
+          0.041993800550699234
         ],
         [
-          2.1323599815368652,
-          12.15999984741211,
-          0.833010196685791
+          2.531359910964966,
+          11.527999877929688,
+          0.9330087304115295
         ]
       ],
       "triangles": 9304,
@@ -2618,13 +2618,13 @@
     "Furniture_childroom_nook": {
       "bounds": [
         [
-          1.0850000381469727,
-          10.274999618530273,
+          1.065000057220459,
+          9.699999809265137,
           0.024000000208616257
         ],
         [
-          2.0290000438690186,
-          12.104999542236328,
+          2.375,
+          11.5,
           0.22556482255458832
         ]
       ],
@@ -2643,17 +2643,17 @@
     "Furniture_childroom_stairs": {
       "bounds": [
         [
-          1.7000000476837158,
-          12.220000267028809,
+          1.6150000095367432,
+          11.59000015258789,
           0.024000000208616257
         ],
         [
-          2.4865000247955322,
-          12.770000457763672,
-          0.6240000128746033
+          2.515000104904175,
+          12.140000343322754,
+          0.690666675567627
         ]
       ],
-      "triangles": 1212,
+      "triangles": 1052,
       "degenerate": 0,
       "layer": "fixed",
       "entityId": "childroom-stairs",
@@ -2711,13 +2711,13 @@
     "Furniture_childroom_wardrobe": {
       "bounds": [
         [
-          1.0299999713897705,
-          12.185093879699707,
+          1.0149999856948853,
+          11.59000015258789,
           0.024000000208616257
         ],
         [
-          1.7000000476837158,
-          12.77299976348877,
+          1.662906527519226,
+          12.789999961853027,
           2.5739998817443848
         ]
       ],

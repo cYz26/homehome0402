@@ -62,6 +62,14 @@ test("selected furniture blocks walking while both table-side passages stay clea
   for (const p of [[4.20,6.15],[7.10,6.15],[5.4,10.1]])
     assert.equal(nav.clear(p),true,p.join(","));
 });
+test("northwest childroom aisle reaches the two-step cabinet and respects furniture collision", () => {
+  const approach = [2.76, 1.17];
+  const route = nav.route(nav.settings.start, approach);
+  assert.ok(route?.length);
+  assert.ok(distance(route.at(-1), approach) < 0.05);
+  for (const point of [[2.15, .95], [1.77, 2.31], [3.10, .78]])
+    assert.equal(nav.clear(point), false, point.join(","));
+});
 test("a disconnected destination returns no route", () => {
   const original = nav.outline;
   nav.outline = [

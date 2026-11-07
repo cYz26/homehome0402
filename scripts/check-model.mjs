@@ -373,7 +373,7 @@ if (childroom) {
     assert.equal(treads.length, 2);
     assert.equal(stairs.filter(p => /_drawer_[12]_/.test(p.name)).length, 2);
     const deck = component('bed').parts.find(p => /_deck_\d+$/.test(p.name)).bounds;
-    const wardrobe = nodes.Furniture_childroom_wardrobe.bounds;
+    const wardrobe = component('wardrobe').parts.find(p => /_carcass_/.test(p.name)).bounds;
     const floor = nodes.floor_northwest.bounds[1][2];
     const rise = spec.furnishings.find(f => f.id === 'childroom-stairs').rise;
     approx(treads[0].bounds[1][2] - floor, rise);
@@ -381,13 +381,53 @@ if (childroom) {
     approx(treads[1].bounds[0][1], deck[1][1]);
     approx(treads[1].bounds[0][0], wardrobe[1][0]);
     approx(deck[1][2] - treads[1].bounds[1][2], rise);
-    assert.ok(treads[1].bounds[1][2] < nodes.NW_north_stone_sill.bounds[0][2]);
+    assert.ok(treads[1].bounds[1][1] < nodes.NW_north_stone_sill.bounds[0][1]);
     for (const [i, sample] of validation.childroom_step_samples.entries()) {
       assert.equal(sample.object, 'Furniture_childroom_stairs');
       approx(sample.height, treads[i].bounds[1][2]);
     }
     assert.equal(validation.childroom_step_samples.length, 2);
     assert.equal(validation.childroom_boarding_clear, true);
+  });
+  check('Fitted bed, east-facing wardrobe and stair envelope follow the user dimensions', () => {
+    const fit = spec.revisions.find(r => r.id === 'northwest-childroom-fitted-joinery');
+    const prior = json(fit.baseline);
+    for (const [name, original] of Object.entries(prior.objects)) {
+      if (fit.entityIds.includes(original.entityId)) continue;
+      const current = nodes[name];
+      assert.equal(current.entityId, original.entityId, name);
+      assert.equal(current.triangles, original.triangles, name);
+      assert.deepEqual(current.materials.map(m => m.replace(/\.\d{3}$/, '')),
+        original.materials.map(m => m.replace(/\.\d{3}$/, '')), name);
+      for (let side = 0; side < 2; side++)
+        for (let axis = 0; axis < 3; axis++)
+          approx(current.bounds[side][axis], original.bounds[side][axis]);
+    }
+    assert.deepEqual(Object.keys(nodes).sort(), Object.keys(prior.objects).sort());
+    const bed = nodes.Furniture_childroom_bed.bounds;
+    const deck = component('bed').parts.find(p => /_deck_\d+$/.test(p.name)).bounds;
+    const wardrobe = component('wardrobe').parts;
+    const carcass = wardrobe.find(p => /_carcass_/.test(p.name)).bounds;
+    const doors = wardrobe.filter(p => /_tall_door_/.test(p.name));
+    const stairs = nodes.Furniture_childroom_stairs.bounds;
+    approx(bed[1][1] - bed[0][1], 2);
+    approx(bed[1][0] - bed[0][0], 1.5);
+    approx(deck[1][2] - nodes.floor_northwest.bounds[1][2], 1);
+    assert.equal(doors.length, 2);
+    assert.deepEqual(spec.furnishings.find(f => f.id === 'childroom-wardrobe').front, [1, 0]);
+    for (const door of doors) {
+      assert.ok(door.bounds[1][0] > carcass[1][0]);
+      assert.ok(door.bounds[1][1] - door.bounds[0][1] > .50);
+    }
+    assert.ok(stairs[0][0] >= bed[0][0]);
+    approx(stairs[1][0], bed[1][0]);
+    approx(carcass[0][0], bed[0][0]);
+    approx(carcass[0][1], bed[1][1]);
+    const north = spec.walls.find(w => w.id === 'north');
+    const south = spec.walls.find(w => w.id === 'northwest_south');
+    const extent = spec.coordinateSystem.planSouthExtent;
+    approx(extent - carcass[1][1] - north.thickness / 2, .01);
+    approx(south.a[1] - south.thickness / 2 - (extent - bed[0][1]), .01);
   });
   check('Northwest opening follows the local annotation without moving its center', () => {
     const window = spec.windowDefinitions.find(w => w.id === 'NW_north');

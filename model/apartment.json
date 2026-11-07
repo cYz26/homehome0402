@@ -1,6 +1,6 @@
 {
-  "version": "metric-v16",
-  "assetStem": "apartment-v16",
+  "version": "metric-v17",
+  "assetStem": "apartment-v17",
   "units": "m",
   "coordinates": "Plan x east, t south from north edge; Blender (x,12.9-t,z), GLB (x,z,t-12.9)",
   "height": 2.8,
@@ -230,12 +230,12 @@
         1.65
       ],
       "camera": [
-        3.42,
-        3.26
+        3.43,
+        3.22
       ],
       "look": [
-        1.98,
-        1.16
+        1.9,
+        1.34
       ],
       "drawing": "北侧分段 2.80 × 3.40 m",
       "finish": "浅粉西墙、豆沙粉帘与浅木地板",
@@ -259,12 +259,12 @@
       ],
       "areaBasis": "model-estimate",
       "walkEntry": [
-        2.86,
-        2.59
+        3.03,
+        2.63
       ],
-      "eye": 1.53,
-      "targetHeight": 1.09,
-      "fov": 78
+      "eye": 1.56,
+      "targetHeight": 1.08,
+      "fov": 79
     },
     {
       "id": "xroom",
@@ -639,7 +639,7 @@
     "书房高窗台约0.90m，3m书柜/80cm深座柜及配柜尺寸为方案假设；坐人承重需核验，桌前底柜抽屉打开需先移转椅。",
     "窗外庭院及绿植为实拍启发的展示环境，位置/种类未测绘，不计入面积、建筑构件或碰撞。电视尺寸、安装高度及柜体高度为可调整方案假设；实时光照接近照片气氛，不是实测照度或烘焙 GI。",
     "电视墙依据 2026-10-09 用户实拍解释外观；85 寸及 C 一字悬空柜为用户选择，柜长 3.56 m / 深 40 cm / 底 12 cm / 顶 42 cm、插座中心高度和饰面尺寸为模型假设。",
-    "儿童房床、两级储物踏步、衣柜、挂盒与书桌按用户确认的 AI 外观建模；家具尺寸为方案取值。北窗三项标注已局部应用，开启净空、板件五金及承重待复尺与厂家确认。"
+    "儿童房床外包2.00×1.50m，床板高1.00m。床与朝东衣柜沿西墙连成一排，两级踏步纳入床宽。其余家具和柜内分配为方案取值，开扇净空、五金和承重待现场核对。"
   ],
   "windows": {
     "bedroomSill": 0.28,
@@ -829,19 +829,19 @@
     },
     {
       "id": "childroom-stairs",
-      "name": "儿童房 · 两级储物踏步",
+      "name": "儿童房 · 床柜与两级踏步",
       "room": "northwest",
       "camera": [
-        2.76,
-        1.83
+        3.45,
+        0.44
       ],
       "look": [
-        1.91,
-        0.45
+        1.7,
+        1.3
       ],
-      "eye": 1.47,
-      "targetHeight": 0.68,
-      "fov": 68
+      "eye": 1.61,
+      "targetHeight": 0.91,
+      "fov": 74
     }
   ],
   "schemaVersion": 2,
@@ -6376,7 +6376,7 @@
         "Childroom_quilt",
         "Childroom_rose"
       ],
-      "basis": "西墙半高床，长边拱形镂空护栏，北短边留上床口。床板离完成地板0.90m为建模假设。",
+      "basis": "用户确认床外包沿西墙长2.00m、向东宽1.50m。床板离完成地面1.00m，床垫与护栏另计。北短边留通往第二级踏步的开口。",
       "furnitureId": "childroom-bed"
     },
     {
@@ -6394,7 +6394,7 @@
         "Oak_plank_05",
         "Childroom_recess"
       ],
-      "basis": "连接北端床口与衣柜底部，两个等高抽屉踏步，每级0.30m为建模假设。第二级直接转入床端，窗侧无挡板。",
+      "basis": "两级等高抽屉踏步收在床的1.50m宽度投影内。紧贴衣柜底部，第二级贴合床北端。靠窗侧无挡板。",
       "furnitureId": "childroom-stairs"
     },
     {
@@ -6413,7 +6413,7 @@
         "Childroom_quilt",
         "Furniture_brass"
       ],
-      "basis": "床北端、北窗西侧；上部双拱门、下部柜体侧面接踏步。柜宽、门板开合与收口按方案估配。",
+      "basis": "柜体沿西墙占用床以北余段。双拱门与可用底抽屉朝东向过道，底部与两级楼梯柜相接。",
       "furnitureId": "childroom-wardrobe"
     },
     {
@@ -6526,7 +6526,7 @@
         "Childroom_ivory",
         "Childroom_recess"
       ],
-      "basis": "豆沙粉软垫学习椅，靠书桌布置。静态姿态为效果示意。",
+      "basis": "豆沙粉软垫学习椅在桌下略收，给两级踏步前保留通路。静态姿态为效果示意。",
       "furnitureId": "childroom-chair"
     },
     {
@@ -7528,16 +7528,16 @@
       "name": "西北儿童房",
       "mode": "interior",
       "camera": [
-        3.42,
-        3.26,
-        1.53
+        3.43,
+        3.22,
+        1.56
       ],
       "target": [
-        1.98,
-        1.16,
-        1.09
+        1.9,
+        1.34,
+        1.08
       ],
-      "fov": 78,
+      "fov": 79,
       "width": 1448,
       "height": 1086
     }
@@ -7762,6 +7762,23 @@
         "childroom-desk",
         "childroom-chair",
         "childroom-wall"
+      ]
+    },
+    {
+      "id": "northwest-childroom-fitted-joinery",
+      "date": "2026-11-07",
+      "version": "metric-v17",
+      "basis": "User specified 2.00 m north–south by 1.50 m east–west bed, 1.00 m high platform, east-facing wardrobe, and flush stairs within the bed width.",
+      "baseline": "model/baseline-v16/validation.json",
+      "entityIds": [
+        "childroom-bed",
+        "childroom-stairs",
+        "childroom-wardrobe",
+        "childroom-curtains",
+        "childroom-caddy",
+        "childroom-book-rack",
+        "childroom-nook",
+        "childroom-chair"
       ]
     }
   ],
@@ -9113,34 +9130,35 @@
       "recipe": "childroom_bed",
       "node": "Furniture_childroom_bed",
       "position": [
-        1.6,
-        1.72
+        1.765,
+        2.31
       ],
       "front": [
         1,
         0
       ],
       "dimensions": [
-        2.08,
-        1.12,
-        1.3
+        2,
+        1.5,
+        1.4
       ],
-      "basis": "西墙半高床，长边拱形镂空护栏，北短边留上床口。床板离完成地板0.90m为建模假设。",
+      "basis": "用户确认床外包沿西墙长2.00m、向东宽1.50m。床板离完成地面1.00m，床垫与护栏另计。北短边留通往第二级踏步的开口。",
       "floorElevation": 0.024,
       "designDecision": "docs/design/childroom-pink/selection.json",
-      "deckHeight": 0.9,
+      "deckHeight": 1,
       "mattressHeight": 0.1,
-      "entryStart": 0.1,
-      "caddyEnd": -0.635,
-      "scallops": 5
+      "entryStart": -0.08,
+      "caddyEnd": -0.595,
+      "scallops": 5,
+      "entryEnd": 0.38
     },
     {
       "id": "childroom-stairs",
       "recipe": "childroom_stairs",
       "node": "Furniture_childroom_stairs",
       "position": [
-        2.09,
-        0.405
+        2.065,
+        1.035
       ],
       "front": [
         1,
@@ -9148,14 +9166,14 @@
       ],
       "dimensions": [
         0.55,
-        0.78,
-        0.6
+        0.9,
+        0.6666666666666666
       ],
-      "basis": "连接北端床口与衣柜底部，两个等高抽屉踏步，每级0.30m为建模假设。第二级直接转入床端，窗侧无挡板。",
+      "basis": "两级等高抽屉踏步收在床的1.50m宽度投影内。紧贴衣柜底部，第二级贴合床北端。靠窗侧无挡板。",
       "floorElevation": 0.024,
       "designDecision": "docs/design/childroom-pink/selection.json",
-      "rise": 0.3,
-      "lowerTreadDepth": 0.34,
+      "rise": 0.3333333333333333,
+      "lowerTreadDepth": 0.36,
       "treadThickness": 0.025
     },
     {
@@ -9163,39 +9181,40 @@
       "recipe": "childroom_wardrobe",
       "node": "Furniture_childroom_wardrobe",
       "position": [
-        1.365,
-        0.397
-      ],
-      "front": [
-        0,
-        1
-      ],
-      "dimensions": [
-        0.67,
-        0.54,
-        2.55
-      ],
-      "basis": "床北端、北窗西侧；上部双拱门、下部柜体侧面接踏步。柜宽、门板开合与收口按方案估配。",
-      "floorElevation": 0.024,
-      "designDecision": "docs/design/childroom-pink/selection.json",
-      "upperDoorsBottom": 0.91
-    },
-    {
-      "id": "childroom-curtains",
-      "recipe": "childroom_curtains",
-      "node": "Furniture_childroom_curtains",
-      "position": [
-        2.113,
-        1.72
+        1.315,
+        0.71
       ],
       "front": [
         1,
         0
       ],
       "dimensions": [
-        1.96,
+        1.2,
+        0.6,
+        2.55
+      ],
+      "basis": "柜体沿西墙占用床以北余段。双拱门与可用底抽屉朝东向过道，底部与两级楼梯柜相接。",
+      "floorElevation": 0.024,
+      "designDecision": "docs/design/childroom-pink/selection.json",
+      "upperDoorsBottom": 0.94,
+      "baseFrontWidth": 0.65
+    },
+    {
+      "id": "childroom-curtains",
+      "recipe": "childroom_curtains",
+      "node": "Furniture_childroom_curtains",
+      "position": [
+        2.512,
+        2.31
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        1.876,
         0.047,
-        0.787
+        0.887
       ],
       "basis": "床沿下两片落地褶帘，中部留开放入口。布帘按打开状态建模。",
       "floorElevation": 0.024,
@@ -9208,8 +9227,8 @@
       "recipe": "childroom_caddy",
       "node": "Furniture_childroom_caddy",
       "position": [
-        2.194,
-        2.54
+        2.587,
+        3.095
       ],
       "front": [
         1,
@@ -9223,7 +9242,7 @@
       "basis": "挂钩式置物盒以背板封住南侧预留段，可放绘本，预留后续拆换爬梯的方案。当前为静态件。",
       "floorElevation": 0.024,
       "designDecision": "docs/design/childroom-pink/selection.json",
-      "bottom": 0.887
+      "bottom": 0.987
     },
     {
       "id": "childroom-book-rack",
@@ -9231,7 +9250,7 @@
       "node": "Furniture_childroom_book_rack",
       "position": [
         1.094,
-        1.74
+        2.31
       ],
       "front": [
         1,
@@ -9245,23 +9264,23 @@
       "basis": "浅粉绘本架沿西墙设两层，深度与标高为方案估配。",
       "floorElevation": 0.024,
       "designDecision": "docs/design/childroom-pink/selection.json",
-      "bottom": 1.61
+      "bottom": 1.71
     },
     {
       "id": "childroom-nook",
       "recipe": "childroom_nook",
       "node": "Furniture_childroom_nook",
       "position": [
-        1.557,
-        1.71
+        1.72,
+        2.3
       ],
       "front": [
         1,
         0
       ],
       "dimensions": [
-        1.83,
-        0.944,
+        1.8,
+        1.31,
         0.21
       ],
       "basis": "地垫与靠垫示意床下阅读角，材质颜色按确认图解释。",
@@ -9294,8 +9313,8 @@
       "recipe": "childroom_chair",
       "node": "Furniture_childroom_chair",
       "position": [
-        2.81,
-        1.02
+        3.1,
+        0.78
       ],
       "front": [
         1,
@@ -9306,7 +9325,7 @@
         0.5,
         0.86
       ],
-      "basis": "豆沙粉软垫学习椅，靠书桌布置。静态姿态为效果示意。",
+      "basis": "豆沙粉软垫学习椅在桌下略收，给两级踏步前保留通路。静态姿态为效果示意。",
       "floorElevation": 0.024,
       "designDecision": "docs/design/childroom-pink/selection.json",
       "seatHeight": 0.405
@@ -9358,7 +9377,7 @@
       "bottom": 1.15
     }
   ],
-  "presentationRevision": "2026-11-07-northwest-childroom-pink",
+  "presentationRevision": "2026-11-07-childroom-fitted-joinery",
   "windowAppearance": {
     "material": "Window_clear_glass",
     "basis": "Physical transmission and reflection; frame/division/sill geometry retained"
@@ -9433,7 +9452,7 @@
   "modelPackages": [
     {
       "id": "apartment",
-      "assetStem": "apartment-v16",
+      "assetStem": "apartment-v17",
       "webFile": "apartment-web.glb",
       "hdFile": "apartment-hd.glb",
       "excludeEntityIds": [
@@ -9447,7 +9466,7 @@
     },
     {
       "id": "living-sofa",
-      "assetStem": "living-sofa-v16",
+      "assetStem": "living-sofa-v17",
       "webFile": "living-sofa-web.glb",
       "hdFile": "living-sofa-hd.glb",
       "entityIds": [
@@ -9456,7 +9475,7 @@
     },
     {
       "id": "study",
-      "assetStem": "study-v16",
+      "assetStem": "study-v17",
       "webFile": "study-web.glb",
       "hdFile": "study-hd.glb",
       "entityIds": [

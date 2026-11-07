@@ -145,10 +145,14 @@
       "pass": true
     },
     {
+      "name": "Fitted bed, east-facing wardrobe and stair envelope follow the user dimensions",
+      "pass": true
+    },
+    {
       "name": "Northwest opening follows the local annotation without moving its center",
       "pass": true
     }
   ],
-  "passed": 37,
-  "total": 37
+  "passed": 38,
+  "total": 38
 }

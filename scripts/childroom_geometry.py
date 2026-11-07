@@ -63,7 +63,7 @@ def bed(api, item):
         for v in (-v_end, v_end):
             api.box('post', (u, v, (high - .028) / 2),
                     (post, post, high - .028), PINK, .009)
-            api.cushion('post_cap', (u, v, high - .027), (.073, .073, .050),
+            api.cushion('post_cap', (u, v, high - .027), (post, post, .050),
                         PINK, wrinkles=0, segments=16, rings=8)
     for v in (-v_end, v_end):
         api.box('deck_rail', (0, v, deck - .047), (length - .045, .045, .094), PINK)
@@ -75,9 +75,10 @@ def bed(api, item):
     api.cushion('rose_pillow', (-.70, -.06, deck + mattress + .048),
                 (.31, .54, .095), ROSE, tilt=.11)
 
-    # End slats stop at the north boarding opening beside the wardrobe.
+    # The opening at the north end is directly over the second tread.
     for u, left, right in ((-u_end, -v_end, v_end),
-                           (u_end, -v_end, item['entryStart'])):
+                           (u_end, -v_end, item['entryStart']),
+                           (u_end, item['entryEnd'], v_end)):
         api.box('end_top_rail', (u, (left + right) / 2, high - .055),
                 (.032, right - left, .045), PINK)
         count = round((right - left) / .104)
@@ -107,14 +108,23 @@ def stairs(api, item):
                                           (depth / 2 - lower, depth / 2))):
         low = rise if index == 0 else 0
         high = low + rise
-        api.box(f'riser_{2 - index}', (0, (back + front) / 2, (low + high - thickness) / 2),
-                (width, front - back, rise - thickness), IVORY, .004)
+        drawer_thickness = .013
+        api.box(f'riser_{2 - index}',
+                (0, (back + front - drawer_thickness) / 2, (low + high - thickness) / 2),
+                (width, front - back - drawer_thickness, rise - thickness), IVORY, .004)
         api.box(f'tread_{2 - index}', (0, (back + front) / 2, high - thickness / 2),
                 (width, front - back, thickness), OAK, .004)
-        api.box(f'drawer_{2 - index}', (0, front + .001, (low + high - thickness) / 2),
-                (width - .012, .005, rise - thickness - .012), IVORY, .002)
-        api.box('finger_pull', (0, front + .004, high - thickness - .022),
-                (.087, .005, .026), 'Childroom_recess', .007)
+        # A recessed pull leaves the entire cabinet behind the bed's east edge.
+        edge = width / 2 - .006
+        top, bottom = high - thickness - .004, low + .005
+        pull_half, notch = .0435, .024
+        outline = [(-edge, bottom), (edge, bottom), (edge, top),
+                   (pull_half, top), (pull_half, top - notch),
+                   (-pull_half, top - notch), (-pull_half, top), (-edge, top)]
+        profile(api, f'drawer_{2 - index}', outline, front - drawer_thickness / 2,
+                drawer_thickness, IVORY)
+        api.box('pull_recess', (0, front - drawer_thickness + .001, top - notch / 2),
+                (.087, .003, notch), 'Childroom_recess', .001)
         if index == 0:
             api.box('base_at_wardrobe', (0, (back + front) / 2, low / 2),
                     (width, front - back, low), IVORY, .003)
@@ -123,11 +133,12 @@ def stairs(api, item):
 def wardrobe(api, item):
     width, depth, height = item['dimensions']
     lower = item['upperDoorsBottom']
-    api.box('carcass', (0, -.009, height / 2), (width, depth - .018, height), IVORY, .006)
+    api.box('carcass', (0, 0, height / 2), (width, depth, height), IVORY, .004)
+    base_width = item['baseFrontWidth']
     for index in range(3):
         z = lower * (index + .5) / 3
-        api.box('base_drawer', (0, depth / 2, z),
-                (width - .016, .018, lower / 3 - .009), IVORY)
+        api.box('base_drawer', ((width - base_width) / 2, depth / 2, z),
+                (base_width - .016, .018, lower / 3 - .009), IVORY)
     for side in (-1, 1):
         u = side * width / 4
         api.box('tall_door', (u, depth / 2, (lower + height) / 2),

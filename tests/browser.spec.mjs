@@ -73,7 +73,12 @@ test("northwest childroom: approved image, room view and two-step cabinet query"
   await nonblank(page, testInfo, "childroom-two-steps");
   await page.locator('#mini-plan [data-entity-id="childroom-stairs"]').click();
   await expect(page.locator("#properties")).toContainText("两级等高抽屉楼梯柜");
-  await expect(page.locator("#properties")).toContainText("第二级直接转入床端");
+  await expect(page.locator("#properties")).toContainText("收在床的1.50m宽度");
+  await expect(page.locator("#properties")).toContainText("第二级贴合床北端");
+  await page.locator('#mini-plan [data-entity-id="childroom-wardrobe"]').click();
+  await expect(page.locator("#properties")).toContainText("双拱门与可用底抽屉朝东向过道");
+  await page.locator('#mini-plan [data-entity-id="childroom-bed"]').click();
+  await expect(page.locator("#properties")).toContainText("床板离完成地面1.00m");
   expect(errors).toEqual([]);
 });
 

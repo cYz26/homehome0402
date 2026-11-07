@@ -7,8 +7,8 @@
     "quote": "这个效果OK，更新到3D空间和网站上"
   },
   "layout": {
-    "west": "浅粉半高床、双片豆沙粉帘、床下阅读角、两层绘本架",
-    "north": "两级等高抽屉踏步接衣柜底部，第二级直达床北端。窗侧无挡板",
+    "west": "半高床长2.00m沿西墙，宽1.50m向东，床板高1.00m。与北段衣柜共同占满西墙，保留安装收口。",
+    "north": "衣柜双拱门朝东。两级等高抽屉踏步接柜体底部与床北端，完全在床宽内。",
     "rail": "可拆挂式绘本盒，后续可拆换爬梯",
     "east": "靠窗学习桌、桌上书架、豆沙粉椅",
     "windowBasis": "model/site-measurements/2026-10-25.json#NW_north"
@@ -23,7 +23,15 @@
       "generatedBy": "内置 image_gen",
       "kind": "AI 方案效果图",
       "designVersion": "childroom-pink",
-      "caption": "用户已确认。浅粉半高床、豆沙粉床帘、两级等高抽屉踏步和窗边学习桌。家具尺寸以模型属性及现场复尺为准。"
+      "caption": "用户已确认的粉色外观参考。床柜尺寸、衣柜门朝向及楼梯柜与床的衔接见当前 3D。"
     }
-  ]
+  ],
+  "model_revision": {
+    "version": "metric-v17",
+    "bed_length_along_west_wall_m": 2,
+    "bed_width_to_east_m": 1.5,
+    "deck_height_above_finished_floor_m": 1,
+    "wardrobe_front": "east",
+    "stairs": "two equal rises, within the bed width, touching the wardrobe base and bed entry"
+  }
 }
