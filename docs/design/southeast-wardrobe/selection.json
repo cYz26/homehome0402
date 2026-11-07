@@ -1,0 +1,47 @@
+{
+  "id": "southeast-wardrobe",
+  "room": "southeast",
+  "date": "2026-11-07",
+  "user_acceptance": {
+    "scope": "AI 图所示外观与摆位，随后同步 3D 和网站",
+    "quote": "确认"
+  },
+  "layout": {
+    "wallId": "east_notch",
+    "front": "南",
+    "widthMm": 1400,
+    "heightMm": 2400,
+    "assumedDepthMm": 600,
+    "left": "双高门及两层抽屉",
+    "right": "上下各两扇分段平开门",
+    "wallMeasurementBasis": "model/site-measurements/2026-10-25.json",
+    "modelWallFaceMm": 1300,
+    "modelLeftOverhangMm": 120
+  },
+  "generation": {
+    "inputs": [
+      {
+        "role": "current metric-v14 room geometry and camera",
+        "sha256": "d01dfd7d42b80e39e323ec599ed234dc50c33db81bf0136ee9ddc2f7706c9e6f"
+      },
+      {
+        "role": "user-supplied wardrobe finish and door construction",
+        "sha256": "23c3d82178fdc5d51a8fcedc2d9ef26daeac9f4238122f845ae6e75131405f64"
+      }
+    ],
+    "prompt": "Use case: precise-object-edit / compositing\nAsset type: a single photorealistic interior-design review image for the southeast bedroom of an actual apartment, landscape 4:3.\nImage 1 is the primary room and camera reference, a render of the existing empty bedroom looking north from the south-window side. Preserve its exact perspective, warm off-white walls, ceiling, light oak plank floor, dark narrow baseboards, and the existing open pale-wood bedroom door in the recessed entry at far left. The target wall is the short white forward step on the right half of Image 1, bounded by the narrow step at its left and the plain east wall at its right. The recessed entry and its door stay clearly visible and usable to the left.\nAdd ONE slim, freestanding-looking wardrobe directly against that short wall with its front facing the camera (south) and its right end very close to the east wall. The real exterior dimensions in the proposal are 1400 mm overall width by 2400 mm overall height by about 600 mm depth. The width-to-height ratio is only 0.583; this is a tall narrow unit. The body starts on the oak floor and has a visible off-white gap above it, preserving the same ceiling and north wall. The left edge of its back slightly overhangs the left edge of the short wall toward the entry by about 100 mm. Show just a slim slice of the cabinet's left side panel and plausible depth/shadows. Its front is about 600 mm forward of the short wall. Match the room perspective rather than flattening the cabinet into the wall. As a framing guide for 1152x864 input image 1, the approximate front-face outline runs from top left (533,156), top right (873,176), bottom right (872,764), to bottom left (533,792). Its back left is near x=514, the front left x=533, and the plain wall behind meets the east wall at x=809. Retain breathing room between the existing door and the new cabinet.\nImage 2 is exclusively the furniture finish and joinery reference. Translate its richer mid-brown warm walnut, natural fine vertical wood figure, very thin shadow gaps, discreet handle-free flat fronts, and characteristic independent upper and lower doors into two approximately equal 700 mm bays. The cabinet is a single object with a continuous walnut outer frame and low recessed plinth. Left bay: exactly two tall vertically grained hinged doors above exactly two wide stacked flush walnut drawers, with discreet dark horizontal recessed finger reveals. Right bay: exactly two taller upper doors above two shorter lower doors, with the horizontal split about 900 mm above the floor. Doors are all CLOSED for an unobstructed reading of the cabinet front. A quiet vertical grain is dominant, with restrained variation across panels. Compact realistic scale. Slightly softer warm daylight from the south window behind the camera, natural contact shadows, believable timber and preserved actual room colors.\nOnly insert this cabinet and its natural cast/contact shadow. Keep the left entrance recess, open bedroom door and plaster wall positions of Image 1. Show the full wardrobe, floor contact and ceiling gap in one image. No extra room decor, beds, lamps, carpeting, indoor plants, people, advertising, captions, annotations, dimension arrows, visible lettering, watermarks or HVAC grill from Image 2."
+  },
+  "display_effects": [
+    {
+      "id": "scheme-southeast-wardrobe",
+      "title": "东南卧室 · 北墙衣柜效果图",
+      "source": "references/generated/southeast-wardrobe-20261107/approved.png",
+      "originalSha256": "b5b8f2f73c2645ad71d6123ca054dfbff5371574b19a708ae2702d7d36240915",
+      "sha256": "1a4796b9bc42009f7e3e3d1c8c48a2b09b8b04efb4f3a79978e7b1ffad46ab77",
+      "generatedBy": "内置 image_gen",
+      "kind": "AI 方案效果图",
+      "designVersion": "southeast-wardrobe",
+      "caption": "用户已确认。北墙暖胡桃木衣柜宽 1.40 m、高 2.40 m，预览深度 0.60 m。现场净宽、柜顶和五金余量待复尺。"
+    }
+  ]
+}

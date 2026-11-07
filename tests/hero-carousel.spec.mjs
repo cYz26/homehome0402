@@ -1,7 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 const selected = ["scheme-overview", "living", "scheme-tv-c-close", "scheme-study-cabinet",
-  "study", "study-cabinet", "scheme-childroom-pink", "northwest", "kitchen", "master", "masterbath"];
+  "study", "study-cabinet", "scheme-childroom-pink", "northwest",
+  "scheme-southeast-wardrobe", "southeast", "kitchen", "master", "masterbath"];
 const current = (page, id) => expect(page.locator("#hero-image")).toHaveAttribute("data-image-id", id);
 async function ready(page) {
   await page.goto("./", { waitUntil: "domcontentloaded" });

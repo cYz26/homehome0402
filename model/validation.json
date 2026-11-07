@@ -1,33 +1,33 @@
 {
-  "version": "metric-v18",
-  "spec_sha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
-  "source_sha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
-  "glb_sha256": "6909965a159b2a2b07af36ecc653039bd9a91f2cd00ea4fc599f1c17694ea9b6",
+  "version": "metric-v19",
+  "spec_sha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
+  "source_sha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
+  "glb_sha256": "0eb11952a5b25d3c9385fd6730192d482be66719404f615007ae43efa7164233",
   "model_packages": [
     {
       "id": "apartment",
-      "path": "asset_exchange/apartment-v18.glb",
-      "sha256": "6909965a159b2a2b07af36ecc653039bd9a91f2cd00ea4fc599f1c17694ea9b6",
-      "bytes": 24690340
+      "path": "asset_exchange/apartment-v19.glb",
+      "sha256": "0eb11952a5b25d3c9385fd6730192d482be66719404f615007ae43efa7164233",
+      "bytes": 24805368
     },
     {
       "id": "living-sofa",
-      "path": "asset_exchange/living-sofa-v18.glb",
-      "sha256": "35a72c7c8e31c93f65f150df8b62d0d1063d3c06df046dbba475b59413c2f794",
+      "path": "asset_exchange/living-sofa-v19.glb",
+      "sha256": "6904b82a00f6311b2363d927f2d6410c108f088100a7bc72335af0cdb74ddf29",
       "bytes": 21232288
     },
     {
       "id": "study",
-      "path": "asset_exchange/study-v18.glb",
-      "sha256": "e365b4abf6c6547582c87e55f4ca10ea0d08390d90ccf9a0bc75b9d04ce16260",
+      "path": "asset_exchange/study-v19.glb",
+      "sha256": "d5749ed6e1a31ea9bc45dcd832ba91df228649a32e0f538ee8db41ce997409da",
       "bytes": 5808524
     }
   ],
-  "source_objects": 729,
-  "reimport_objects": 729,
+  "source_objects": 730,
+  "reimport_objects": 730,
   "max_bound_error_m": 9.5367431640625e-07,
-  "source_triangles": 304499,
-  "reimport_triangles": 304499,
+  "source_triangles": 306795,
+  "reimport_triangles": 306795,
   "source_degenerate_triangles": 0,
   "reimport_degenerate_triangles": 0,
   "roundtrip_errors": [],
@@ -3223,6 +3223,29 @@
       "materials": [
         "Furniture_wall_veneer",
         "Furniture_charcoal"
+      ]
+    },
+    "Furniture_southeast_wardrobe": {
+      "bounds": [
+        [
+          8.979999542236328,
+          3.5799999237060547,
+          0.024000000208616257
+        ],
+        [
+          10.380000114440918,
+          4.179999828338623,
+          2.4240000247955322
+        ]
+      ],
+      "triangles": 2296,
+      "degenerate": 0,
+      "layer": "fixed",
+      "entityId": "southeast-wardrobe",
+      "uv": true,
+      "materials": [
+        "Furniture_southeast_walnut",
+        "Furniture_dark_wood"
       ]
     },
     "Furniture_table_desktop_items": {

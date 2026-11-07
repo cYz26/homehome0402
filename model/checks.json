@@ -159,8 +159,16 @@
     {
       "name": "Northwest opening follows the local annotation without moving its center",
       "pass": true
+    },
+    {
+      "name": "Southeast wardrobe bounds fit the approved placement and clear the room door",
+      "pass": true
+    },
+    {
+      "name": "Southeast wardrobe has six individual door fronts and two drawers",
+      "pass": true
     }
   ],
-  "passed": 40,
-  "total": 40
+  "passed": 42,
+  "total": 42
 }

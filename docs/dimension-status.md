@@ -4,6 +4,8 @@
 
 **儿童房本轮应用**：北窗宽 1.69 m、高 1.79 m、窗台 0.70 m，洞口与窗框共同更新，靠东中心沿原模型。房间标注、左右窗垛、开扇净空和家具安装尺寸继续分开核对。[儿童房设计](design/childroom-pink/DECISION.md)
 
+**东南卧室衣柜**。柜体外包按 1.40 m 宽、2.40 m 高、0.60 m 深。红字北折横为 1.40 m，现有模型的平直墙面约 1.30 m。靠东墙摆放时，左端比短墙多出约 120 mm。完成面净宽、柜顶和门铰余量待复尺。[衣柜设计](design/southeast-wardrobe/DECISION.md)
+
 **资料入档时的模型状态**：原建模依据用户图1仍保留于 `references/01-floor-plan.png`。全屋源、验证及发布清单仍为 **metric-v14**，完整米制源为 `art_src/apartment-v14.blend`；`asset_exchange/apartment-v14.glb`、`asset_exchange/living-sofa-v14.glb` 与 `asset_exchange/study-v14.glb` 同版本三包共同组成完整场景。此次仅整理独立尺寸资料，**未将新红字应用到共享整屋几何，也未重建或发布三包**；当前网格尺寸仍以 `model/apartment.json`、`model/validation.json` 及 `public/release.json` 核实，不能把新账本等同于模型已同步。
 
 版本沿革：v04 继承此前的空房结构、窗户尺度与厨房设备，更新推拉门、主卫宽槽及局部柜墙材质。当前沿用原平面参考线；metric-v11 依用户实拍将邻接电视墙的东南卧室门洞顶暂调到 2.62 m，后续 C 柜与 v14 集成继承这一解释，平面位置、0.90 m 宽、铰链和全开方向保持。书房高窗台与家具尺寸见[书房尺寸与高窗台](#书房尺寸与高窗台--metric-v13)，当前设计入口见[实施记录](IMPLEMENTATION.md#当前项目上下文)。模型中的标注尺寸链与原图一致，实际 GLB 的墙参考线间距已检查。图纸未说明轴线或完成面，所以不把尺寸链等同于现场净尺寸。

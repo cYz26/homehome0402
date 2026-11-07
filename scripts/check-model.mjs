@@ -10,6 +10,8 @@ check('North and south dimension chains close at 10.50 m',()=>{for(const key of 
 check('West dimension chain closes at 12.90 m',()=>approx(spec.chains.west.reduce((a,b)=>a+b,0),12.9));
 check('Specified main ceiling height is 2.80 m',()=>approx(spec.height,2.8));
 const nodes=validation.objects;
+const southeastWardrobe = spec.furnishings?.find(item => item.id === 'southeast-wardrobe');
+const priorNodeNames = Object.keys(nodes).filter(name => name !== southeastWardrobe?.node);
 const childroom = spec.revisions.find(r => r.id === 'northwest-childroom-pink');
 const childroomWindowParts = new Set(childroom?.windowChangedNodes);
 const childroomEntities = new Set(childroom?.entityIds);
@@ -73,7 +75,7 @@ check('Kitchen equipment occupies west / north / east positions and sink is rece
   assert.ok(bowl[0][1]>12.2 && bowl[1][2]<.78);
 });
 check('Earlier removed elevator shell and unused wardrobes remain absent',()=>{
-  assert.ok(!Object.keys(nodes).some(n => !n.startsWith('Furniture_childroom_') && /Elevator_(slab|core)|wardrobe|wall_elevator_(north|south|east)/i.test(n)));
+  assert.ok(!priorNodeNames.some(n => !n.startsWith('Furniture_childroom_') && /Elevator_(slab|core)|wardrobe|wall_elevator_(north|south|east)/i.test(n)));
   assert.ok(nodes.wall_east_elevator_0_0_lower && nodes.wall_east_notch_0_0_lower);
 });
 check('North parked door frames are thin and the full stack is under 10 cm',()=>{
@@ -382,13 +384,13 @@ if(integration) {
     const studyChanges=new Set([...spec.entities.find(e=>e.windowId==='X_north').sourceNodes,'wall_north_3_0_lower']);
     for(const [name,part] of Object.entries(baseline.objects))if(!studyChanges.has(name) && !childroomWindowParts.has(name))assertPart(name,part);
     const expectedNames=new Set([...Object.keys(baseline.objects),...spec.modelPackages.find(p=>p.id==='study').entityIds.flatMap(id=>spec.entities.find(e=>e.id===id).sourceNodes)]);
-    assert.deepEqual(Object.keys(nodes).filter(name => !childroomEntities.has(nodes[name].entityId)).sort(), [...expectedNames].sort());
+    assert.deepEqual(priorNodeNames.filter(name => !childroomEntities.has(nodes[name].entityId)).sort(), [...expectedNames].sort());
   });
 }
 if(studyBookcaseRevision) {
   check('Only the bookcase changes against the preceding model',()=>{
     const previous=json(studyBookcaseRevision.baseline);
-    assert.deepEqual(Object.keys(nodes).sort(),Object.keys(previous.objects).sort());
+    assert.deepEqual([...priorNodeNames].sort(),Object.keys(previous.objects).sort());
     for(const [name,part] of Object.entries(previous.objects))
       if(!studyChangedEntities.has(part.entityId))assertPart(name,part);
   });
@@ -410,7 +412,7 @@ if (childroom) {
         for (let axis = 0; axis < 3; axis++)
           approx(current.bounds[side][axis], prior.bounds[side][axis]);
     }
-    const added = Object.keys(nodes).filter(name => !previous.objects[name]);
+    const added = priorNodeNames.filter(name => !previous.objects[name]);
     assert.deepEqual(new Set(added.map(name => nodes[name].entityId)), childroomEntities);
     for (const id of childroomEntities)
       assert.deepEqual(spec.entities.find(e => e.id === id).roomIds, ['northwest']);
@@ -452,7 +454,7 @@ if (childroom) {
         for (let axis = 0; axis < 3; axis++)
           approx(current.bounds[side][axis], original.bounds[side][axis]);
     }
-    assert.deepEqual(Object.keys(nodes).sort(), Object.keys(prior.objects).sort());
+    assert.deepEqual([...priorNodeNames].sort(), Object.keys(prior.objects).sort());
     const bed = nodes.Furniture_childroom_bed.bounds;
     const deck = component('bed').parts.find(p => /_deck_\d+$/.test(p.name)).bounds;
     const wardrobe = component('wardrobe').parts;
@@ -489,6 +491,33 @@ if (childroom) {
     approx(to - from, window.width);
     approx(sill, window.sill);
     approx(head, window.head);
+  });
+}
+if (southeastWardrobe) {
+  check('Southeast wardrobe bounds fit the approved placement and clear the room door', () => {
+    const actual = nodes[southeastWardrobe.node];
+    assert.equal(actual.entityId, southeastWardrobe.id);
+    const [min, max] = actual.bounds;
+    approx(max[0] - min[0], 1.40);
+    approx(max[1] - min[1], .60);
+    approx(max[2] - min[2], 2.40);
+    approx(min[2], nodes.floor_southeast.bounds[1][2]);
+    const [shortWallMin] = nodes.wall_east_notch_0_0_lower.bounds;
+    const [eastWallMin] = nodes.wall_east_south_0_0_lower.bounds;
+    approx(shortWallMin[0] - min[0], .12);
+    approx(shortWallMin[1] - max[1], .02);
+    approx(eastWallMin[0] - max[0], .02);
+    const door = spec.doors.find(item => item.id === 'southeast');
+    const [hingeX, hingeT] = door.hinge.map((value, i) => value + door.leafOffset[i]);
+    const backT = spec.coordinateSystem.planSouthExtent - max[1];
+    assert.ok(min[0] > hingeX && backT > hingeT);
+    assert.ok(Math.hypot(min[0] - hingeX, backT - hingeT) > door.width);
+  });
+  check('Southeast wardrobe has six individual door fronts and two drawers', () => {
+    const { components } = json('model/furniture-measurements.json');
+    const { parts } = components.find(component => component.id === southeastWardrobe.id);
+    for (const label of ['left_upper_door', 'right_upper_door', 'right_lower_door', 'left_drawer_front'])
+      assert.equal(parts.filter(part => part.name.includes('_' + label + '_')).length, 2, label);
   });
 }
 const result={checks,passed:checks.filter(c=>c.pass).length,total:checks.length};

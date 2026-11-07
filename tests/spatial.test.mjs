@@ -70,6 +70,12 @@ test("northwest childroom aisle reaches the two-step cabinet and respects furnit
   for (const point of [[2.15, .95], [1.77, 2.31], [3.10, .78]])
     assert.equal(nav.clear(point), false, point.join(","));
 });
+test("southeast wardrobe blocks its footprint while preserving the entrance passage", () => {
+  const cabinet = navData.colliders.find(c => c.entityId === "southeast-wardrobe");
+  assert.ok(cabinet);
+  assert.equal(nav.clear([9.66, 9.01]), false);
+  assert.equal(nav.segmentClear([8.45, 8.26], [8.45, 9.65]), true);
+});
 test("a disconnected destination returns no route", () => {
   const original = nav.outline;
   nav.outline = [

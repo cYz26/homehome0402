@@ -95,13 +95,15 @@ function populate() {
   const descriptions = {
     living: "已选 C：85 寸电视搭配低位一字悬空柜，墙侧面、卧室门洞和窗侧石材灯缝完整露出；连接餐学办公长桌。",
     northwest: "浅粉半高床沿西墙长 2 米、宽 1.5 米。两级抽屉踏步收在床宽内，接朝东开门的衣柜。",
+    southeast: "北侧短墙放置 1.40 米宽、2.40 米高的暖胡桃木衣柜。柜门朝南，左侧双门配双抽，右侧为上下分段门。",
     master: "人字拼橡木与温和墙面，保留空房的完整尺度。",
     kitchen: "西侧冰箱、北侧水槽、东侧烟机灶具，让 U 形动线清晰可见。",
     masterbath: "连续一体宽槽、双组墙出龙头与镜柜，细节对应实拍修订。",
     xroom: "西墙 3.19 米满墙书柜，配哑光黑门、暖光石纹格、双排木抽屉和茶灰玻璃。窗边黑柜与玻璃柜齐平，东侧是 140 × 70 cm 升降桌。",
   };
-  const approvedEffects = { xroom: "scheme-study-cabinet", northwest: "scheme-childroom-pink" };
-  $("#space-cards").innerHTML = ["living", "xroom", "northwest", "kitchen", "master", "masterbath"]
+  const approvedEffects = { xroom: "scheme-study-cabinet", northwest: "scheme-childroom-pink", southeast: "scheme-southeast-wardrobe" };
+  const wardrobeRoom = imageById("southeast") ? ["southeast"] : [];
+  $("#space-cards").innerHTML = ["living", "xroom", "northwest", ...wardrobeRoom, "kitchen", "master", "masterbath"]
     .map((id, i) => {
       const image = imageById(id === "xroom" ? "study" : id),
         room = data.rooms.find((r) => r.id === id);
@@ -382,6 +384,7 @@ function sync(state) {
       Warm_ivory_cabinet: "暖白柜体",
       Warm_light: "暖色灯带",
       Furniture_walnut: "胡桃木",
+      Furniture_southeast_walnut: "暖胡桃木",
       Furniture_table_wood: "红褐胡桃木桌面",
       Furniture_olive_leather: "灰橄榄皮革",
       Furniture_taupe_leather: "灰褐皮革",

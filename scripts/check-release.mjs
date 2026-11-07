@@ -247,6 +247,7 @@ const documentImageIds = [
   "living",
   "study",
   ...(spec.childroomDecision ? ["northwest"] : []),
+  ...(spec.wardrobeDecision ? ["southeast"] : []),
   "kitchen",
   "master",
   "masterbath",

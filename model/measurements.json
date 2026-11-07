@@ -1,5 +1,5 @@
 {
-  "version": "metric-v18",
+  "version": "metric-v19",
   "height_m": 2.8,
   "cut_height_m": 1.15,
   "coordinate_transform": "Plan x east, t south from north edge; Blender (x,12.9-t,z), GLB (x,z,t-12.9)",
@@ -9,7 +9,7 @@
     "west": 12.9
   },
   "plan_reference_sha256": "d34c2a2641938c7541570063eac16a3d481f84bae4cd4826b2124fadd6186af3",
-  "spec_sha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+  "spec_sha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
   "reference_v05_sha256": "0409b27755131d6ce8794286c464d744bee784484eb9f59f2c734d2deccf39d3",
   "components": [
     {
@@ -709,7 +709,7 @@
       "one_continuous_bowl": true
     }
   ],
-  "object_count": 729,
+  "object_count": 730,
   "room_clear_width_estimates_m": {
     "northwest": 2.62,
     "xroom": 2.64,
@@ -1460,6 +1460,25 @@
         1.65
       ],
       "dimensionBasis": "与下段同一饰面。"
+    },
+    {
+      "id": "southeast-wardrobe",
+      "recipe": "southeast_wardrobe",
+      "node": "Furniture_southeast_wardrobe",
+      "position": [
+        9.68,
+        9.02
+      ],
+      "front": [
+        0,
+        1
+      ],
+      "dimensions": [
+        1.4,
+        0.6,
+        2.4
+      ],
+      "dimensionBasis": "用户确认北侧短墙摆位与胡桃木外观。柜宽 1.40 m、柜高 2.40 m，柜深按 0.60 m。现场墙面净宽、吊顶和五金余量待复尺。"
     }
   ]
 }

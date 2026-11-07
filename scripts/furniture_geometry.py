@@ -22,7 +22,17 @@ def configure(spec, collection, root):
         if c.get('texture'):
             tex = m.node_tree.nodes.new('ShaderNodeTexImage')
             tex.image = bpy.data.images.load(str(root/c['texture']), check_existing=True)
-            tex.image.pack(); m.node_tree.links.new(tex.outputs['Color'], bs.inputs['Base Color'])
+            tex.image.pack()
+            color = tex.outputs['Color']
+            if c.get('tint'):
+                tint = m.node_tree.nodes.new('ShaderNodeMix')
+                tint.data_type = 'RGBA'
+                tint.blend_type = 'MULTIPLY'
+                tint.inputs[0].default_value = 1
+                tint.inputs[7].default_value = c['tint']
+                m.node_tree.links.new(color, tint.inputs[6])
+                color = tint.outputs[2]
+            m.node_tree.links.new(color, bs.inputs['Base Color'])
         # Fine leather grain is a procedural Blender surface cue, not painted light.
         if c.get('grain'):
             noise=m.node_tree.nodes.new('ShaderNodeTexNoise'); noise.inputs['Scale'].default_value=180
@@ -213,6 +223,71 @@ def chair(c):
         for ix in [0,16]:k=iz*17+ix;faces.append((k,k+17,k+17+count,k+count))
     ob=mesh('sling_back',vs,faces,leather)
     for f in ob.data.polygons:f.use_smooth=True
+
+def southeast_wardrobe(c):
+    width, depth, height = c['dimensions']
+    layout = c['structure']
+    board = layout['panelThickness']
+    door = layout['doorThickness']
+    plinth = layout['plinthHeight']
+    drawer_top = layout['drawerTop']
+    lower_door_top = layout['lowerDoorTop']
+    gap = layout['reveal']
+    walnut = 'Furniture_southeast_walnut'
+    dark = 'Furniture_dark_wood'
+
+    def upright(label, center, size):
+        panel = box(label, center, size, walnut, .0012)
+        # The reused walnut image runs horizontally. Rotate its UVs on vertical faces.
+        uv = panel.data.uv_layers.active.data
+        for face in panel.data.polygons:
+            if abs(face.normal.z) < .5:
+                for index in face.loop_indices:
+                    across, up = uv[index].uv
+                    uv[index].uv = (up / height, .5 + across * .7)
+
+    for side in (-1, 1):
+        upright('end_panel', (side * (width - board) / 2, 0, height / 2), (board, depth, height))
+    inner_width = width - 2 * board
+    box('top', (0, 0, height - board / 2), (inner_width, depth, board), walnut, .0012)
+    box('plinth', (0, -.022, plinth / 2), (inner_width, depth - .09, plinth), dark, .0012)
+    box('back', (0, (board - depth) / 2, (plinth + height - board) / 2),
+        (inner_width, board, height - board - plinth), walnut, .0012)
+
+    inner_depth = depth - board - door - .004
+    bay_width = (inner_width - board) / 2
+    bay_center = (bay_width + board) / 2
+    inner_v = (board - door - .004) / 2
+    upright('divider', (0, inner_v, (plinth + height - board) / 2),
+            (board, inner_depth, height - board - plinth))
+    for side, split in ((-1, drawer_top), (1, lower_door_top)):
+        center = side * bay_center
+        for shelf in (plinth - board / 2, split, height - .34):
+            box('shelf', (center, inner_v, shelf), (bay_width, inner_depth, board), walnut, .0012)
+        rail_x = bay_width / 2 - .025
+        tube('rail', [(center - rail_x, .01, height - .40), (center + rail_x, .01, height - .40)],
+             .011, dark)
+
+    face_v = (depth - door) / 2 - .001
+    face_top = height - board - gap
+    face_bottom = plinth + gap
+    front_width = inner_width / 2 - 1.5 * gap
+    leaf_width = (front_width - gap) / 2
+
+    def doors(label, center, bottom, top):
+        for side in (-1, 1):
+            u = center + side * (leaf_width + gap) / 2
+            upright(label, (u, face_v, (top + bottom) / 2), (leaf_width, door, top - bottom))
+
+    front_center = (front_width + gap) / 2
+    doors('left_upper_door', -front_center, drawer_top + gap / 2, face_top)
+    doors('right_upper_door', front_center, lower_door_top + gap / 2, face_top)
+    doors('right_lower_door', front_center, face_bottom, lower_door_top - gap / 2)
+    drawer_gap = .006
+    drawer_height = (drawer_top - gap / 2 - face_bottom - drawer_gap) / 2
+    for i in range(2):
+        z = face_bottom + drawer_height / 2 + i * (drawer_height + drawer_gap)
+        box('left_drawer_front', (-front_center, face_v, z), (front_width, door, drawer_height), walnut, .0012)
 
 def cabinet(c):
     L,D,H=c['dimensions'];wood='Furniture_walnut';dark='Furniture_dark_wood'

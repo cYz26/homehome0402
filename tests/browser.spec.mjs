@@ -86,6 +86,37 @@ test("northwest childroom: approved image, room view and two-step cabinet query"
   expect(errors).toEqual([]);
 });
 
+test("southeast wardrobe: approved image, 3D placement and linked dimensions", async ({ page }, testInfo) => {
+  test.setTimeout(process.env.CI ? 420000 : 180000);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  const errors = [];
+  page.on("pageerror", error => errors.push(error.message));
+  await page.goto("./");
+  const card = page.locator(".space-card").filter({ has: page.getByRole("heading", { name: "东南卧室", exact: true }) });
+  await expect(card.locator("img")).toHaveAttribute("src", /\/southeast\.webp$/);
+  await card.getByRole("button", { name: /查看已确认效果图/ }).click();
+  await expect(page.locator("#reference-caption")).toContainText("AI 方案效果图");
+  await expect(page.locator("#reference-image")).toHaveAttribute("src", /\/scheme-southeast-wardrobe\.webp$/);
+  await expect.poll(() => page.locator("#reference-image").evaluate(image => image.complete && image.naturalWidth > 1000)).toBe(true);
+  await page.locator("#reference-dialog [data-close-dialog]").click();
+
+  await card.getByRole("link", { name: /进入这个空间/ }).click();
+  await modelReady(page);
+  await expect(page.locator('#rooms [data-room="southeast"]')).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator('button[data-mode="interior"]')).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator('[data-detail="southeast-wardrobe"]')).toBeVisible();
+  await nonblank(page, testInfo, "southeast-wardrobe-interior");
+
+  const canvas = page.locator("canvas");
+  const { width, height } = await canvas.boundingBox();
+  await canvas.click({ position: { x: width * .64, y: height * .5 } });
+  await expect(page.locator("#viewer-shell")).toHaveAttribute("data-entity", "southeast-wardrobe");
+  await panel(page, true);
+  await expect(page.locator('#mini-plan [data-entity-id="southeast-wardrobe"]')).toHaveClass(/selected/);
+  await expect(page.locator("#properties")).toContainText("1.40 × 0.60 × 2.40 m");
+  expect(errors).toEqual([]);
+});
+
 // Downloading, decoding and the first full-quality render are one loading
 // phase. A request event only marks its start; ordinary UI assertions stay 20s.
 async function modelReady(page, timeout = 120000, name = "model") {

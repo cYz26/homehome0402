@@ -1,6 +1,6 @@
 # Home 402 · 家的空间档案
 
-当前集成设计为 **metric-v18**。西北儿童房的 2.00 × 1.50 m 半高床与朝东的双拱门衣柜沿西墙连成一排，两级等高抽屉踏步收在床宽内。网站展示用户确认的 AI 效果和同源 3D 场景，[设计依据](docs/design/childroom-pink/DECISION.md)保留尺寸口径。客餐厅继续采用 C「一字悬空柜」配 85 寸电视，餐学办公桌同侧补齐四把椅子、对侧保持长凳；实拍电视墙侧面、卧室门洞、窗侧石材灯缝及原插座布局沿用。图廊采用按用户图 2 / 图 3 制作的细腻室内效果图，提供整体与电视墙正面两个入口，A / B 保存为备选。书房西墙为 3.19 m 满墙书柜，窗端黑柜与玻璃柜齐平。书柜采用暖光石纹格和双排木抽屉，东侧仍为 140 × 70 cm 升降桌、转椅与配柜。[满墙书柜方案](docs/design/study-full-wall/DECISION.md)。原始 4K PBR 沙发、灯光、透射玻璃及庭院保持。AI 方案效果、同源模型渲染和实拍分别标注，平面图、查询、剖切与漫游沿用。发布入口为[公开网站](https://cyz26.github.io/homehome0402/)，本轮检查与发布状态见 [QA](docs/QA.md#书房满墙书柜--metric-v18)。
+当前集成设计为 **metric-v19**。东南卧室北侧短墙加入宽 1.40 m、高 2.40 m 的胡桃木衣柜，左侧双门配双抽，右侧采用上下分段门。[衣柜设计](docs/design/southeast-wardrobe/DECISION.md)。西北儿童房的 2.00 × 1.50 m 半高床与朝东的双拱门衣柜沿西墙连成一排，两级等高抽屉踏步收在床宽内。网站展示用户确认的 AI 效果和同源 3D 场景，[设计依据](docs/design/childroom-pink/DECISION.md)保留尺寸口径。客餐厅继续采用 C「一字悬空柜」配 85 寸电视，餐学办公桌同侧补齐四把椅子、对侧保持长凳；实拍电视墙侧面、卧室门洞、窗侧石材灯缝及原插座布局沿用。图廊采用按用户图 2 / 图 3 制作的细腻室内效果图，提供整体与电视墙正面两个入口，A / B 保存为备选。书房西墙为 3.19 m 满墙书柜，窗端黑柜与玻璃柜齐平。书柜采用暖光石纹格和双排木抽屉，东侧仍为 140 × 70 cm 升降桌、转椅与配柜。[满墙书柜方案](docs/design/study-full-wall/DECISION.md)。原始 4K PBR 沙发、灯光、透射玻璃及庭院保持。AI 方案效果、同源模型渲染和实拍分别标注，平面图、查询、剖切与漫游沿用。发布入口为[公开网站](https://cyz26.github.io/homehome0402/)，本轮检查与发布状态见 [QA](docs/QA.md#东南卧室北墙衣柜--metric-v19)。
 
 ## 本地查看
 
@@ -48,13 +48,13 @@ npm run preview -- --port 4173
 
 | 文件 | 用途 |
 | --- | --- |
-| `art_src/apartment-v18.blend` | 当前完整米制源场景，包含原始贴图沙发 |
+| `art_src/apartment-v19.blend` | 当前完整米制源场景，包含原始贴图沙发 |
 | `art_src/furniture/sofa-tripo-r1-ready.blend` | 哈希锁定的外部家具源；完整版、ZIP / FBX 保留归档 |
-| `asset_exchange/apartment-v18.glb` / `living-sofa-v18.glb` / `study-v18.glb` | 同版本房屋、沙发和书房三包，合并重导入核对全场景 |
-| `public/releases/metric-v18/apartment-web.glb` / `living-sofa-web.glb` / `study-web.glb` | 共同组成当前网页模型；编码与字节记录见 model-packages.json |
-| `public/releases/metric-v18/architecture.json` | 108 个逻辑构件、11 个空间及估算面积 |
-| `public/releases/metric-v18/navigation.json` | 完整建筑与家具碰撞、单层可通行网格 |
-| `public/releases/metric-v18/floor-plan.svg` | 当前模型派生平面图 |
+| `asset_exchange/apartment-v19.glb` / `living-sofa-v19.glb` / `study-v19.glb` | 同版本房屋、沙发和书房三包，合并重导入核对全场景 |
+| `public/releases/metric-v19/apartment-web.glb` / `living-sofa-web.glb` / `study-web.glb` | 共同组成当前网页模型；编码与字节记录见 model-packages.json |
+| `public/releases/metric-v19/architecture.json` | 109 个逻辑构件、11 个空间及估算面积 |
+| `public/releases/metric-v19/navigation.json` | 完整建筑与家具碰撞、单层可通行网格 |
+| `public/releases/metric-v19/floor-plan.svg` | 当前模型派生平面图 |
 | `public/release.json` | 发布资源、版本、大小和 SHA-256 清单 |
 | `docs/QA.md` | 本轮检查、视觉证据及验收边界 |
 

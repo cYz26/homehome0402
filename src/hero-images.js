@@ -9,6 +9,8 @@ const selections = [
   ["study-cabinet", "书柜 · 场景图"],
   ["scheme-childroom-pink", "儿童房 · 粉色效果"],
   ["northwest", "儿童房 · 场景图"],
+  ["scheme-southeast-wardrobe", "东南卧室 · 衣柜效果"],
+  ["southeast", "东南卧室 · 场景图"],
   ["kitchen", "厨房 · 场景图"],
   ["master", "主卧 · 场景图"],
   ["masterbath", "主卫 · 场景图"],

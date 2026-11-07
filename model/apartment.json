@@ -1,6 +1,6 @@
 {
-  "version": "metric-v18",
-  "assetStem": "apartment-v18",
+  "version": "metric-v19",
+  "assetStem": "apartment-v19",
   "units": "m",
   "coordinates": "Plan x east, t south from north edge; Blender (x,12.9-t,z), GLB (x,z,t-12.9)",
   "height": 2.8,
@@ -175,15 +175,15 @@
         10.65
       ],
       "camera": [
-        7.95,
-        8.75
+        8.52,
+        12.56
       ],
       "look": [
-        9.1,
-        12.5
+        9.26,
+        8.73
       ],
       "drawing": "南侧横向分段 3.00 m · 含北侧入口凹角",
-      "finish": "直铺橡木 · 北侧空置 · 东侧素墙",
+      "finish": "直铺橡木 · 北侧胡桃木分段门衣柜 · 东侧素墙",
       "polygon": [
         [
           7.5,
@@ -214,7 +214,10 @@
       "walkEntry": [
         8.8,
         10.2
-      ]
+      ],
+      "eye": 1.4,
+      "targetHeight": 1.38,
+      "fov": 53
     },
     {
       "id": "northwest",
@@ -842,6 +845,22 @@
       "eye": 1.61,
       "targetHeight": 0.91,
       "fov": 74
+    },
+    {
+      "id": "southeast-wardrobe",
+      "name": "东南卧室 · 北墙衣柜",
+      "room": "southeast",
+      "camera": [
+        8.52,
+        12.56
+      ],
+      "look": [
+        9.26,
+        8.73
+      ],
+      "eye": 1.4,
+      "targetHeight": 1.38,
+      "fov": 53
     }
   ],
   "schemaVersion": 2,
@@ -2013,7 +2032,7 @@
           0.024
         ],
         "size": [
-          3.0,
+          3,
           0.01
         ],
         "shape": "rectangle",
@@ -2550,6 +2569,25 @@
         "intensity": 2.1,
         "color": "#fff3ed",
         "renderPower": 128
+      },
+      {
+        "position": [
+          8.95,
+          12.64,
+          1.53
+        ],
+        "target": [
+          9.1,
+          8.8,
+          1.21
+        ],
+        "size": [
+          1.74,
+          1.78
+        ],
+        "intensity": 2.4,
+        "color": "#fff7ee",
+        "renderPower": 155
       }
     ]
   },
@@ -3768,7 +3806,7 @@
       "placement": {
         "center": [
           7.75,
-          4e-07,
+          4e-7,
           1.3200001
         ],
         "size": [
@@ -3780,7 +3818,7 @@
       "templatePlacement": {
         "center": [
           7.75,
-          4e-07,
+          4e-7,
           1.3200001
         ],
         "size": [
@@ -5776,7 +5814,7 @@
       "placement": {
         "center": [
           5.0000002,
-          4e-07,
+          4e-7,
           1.4000001
         ],
         "size": [
@@ -5788,7 +5826,7 @@
       "templatePlacement": {
         "center": [
           5.0000002,
-          4e-07,
+          4e-7,
           1.4000001
         ],
         "size": [
@@ -6854,6 +6892,23 @@
       ],
       "basis": "浅粉墙面仅用于儿童房内侧，沿现有建筑墙边界布置。",
       "furnitureId": "childroom-wall"
+    },
+    {
+      "id": "southeast-wardrobe",
+      "type": "cabinet",
+      "name": "东南卧室胡桃木衣柜",
+      "sourceNodes": [
+        "Furniture_southeast_wardrobe"
+      ],
+      "roomIds": [
+        "southeast"
+      ],
+      "materials": [
+        "Furniture_southeast_walnut",
+        "Furniture_dark_wood"
+      ],
+      "basis": "用户确认北侧短墙摆位与胡桃木外观。柜宽 1.40 m、柜高 2.40 m，柜深按 0.60 m。现场墙面净宽、吊顶和五金余量待复尺。",
+      "furnitureId": "southeast-wardrobe"
     }
   ],
   "materials": [
@@ -7647,9 +7702,32 @@
       "id": "note-dining-four-chairs",
       "entityId": "dining-chair-4",
       "content": "按用户补椅反馈，同侧四把独立座椅、对侧一张长凳；新椅位与实际坐席 / 膝部空间待现场复核。"
+    },
+    {
+      "id": "note-southeast-wardrobe",
+      "entityId": "southeast-wardrobe",
+      "content": "左侧双门加双抽，右侧上下分段门。柜门朝南，柜体靠东，按现有模型左端比短墙多出约 12 cm。门和抽屉采用闭合展示。"
     }
   ],
   "renderViews": [
+    {
+      "id": "southeast",
+      "name": "东南卧室 · 北墙衣柜",
+      "mode": "interior",
+      "camera": [
+        8.52,
+        12.56,
+        1.4
+      ],
+      "target": [
+        9.26,
+        8.73,
+        1.38
+      ],
+      "fov": 53,
+      "width": 1448,
+      "height": 1086
+    },
     {
       "id": "hero",
       "name": "全屋轴测",
@@ -8108,6 +8186,15 @@
       ],
       "baseline": "model/baseline-v17/validation.json",
       "changes": "书柜改成哑光黑柜门、暖灯石纹开放格、三列两排木抽屉及茶灰双玻璃门。窗端末柜同深，窄板绕现有窗台。"
+    },
+    {
+      "id": "southeast-wardrobe",
+      "version": "metric-v19",
+      "date": "2026-11-07",
+      "basis": "将用户确认的暖胡桃木衣柜加入东南卧室北侧短墙。保持现有建筑边界、房门及窗。",
+      "entityIds": [
+        "southeast-wardrobe"
+      ]
     }
   ],
   "furnitureDecision": "docs/design/living-v08/selection.json",
@@ -8843,6 +8930,32 @@
       "roughness": 0.12,
       "metallic": 0.2,
       "alpha": 0.23
+    },
+    {
+      "id": "Furniture_southeast_walnut",
+      "baseColor": [
+        0.2,
+        0.085,
+        0.04,
+        1
+      ],
+      "roughness": 0.43,
+      "metallic": 0,
+      "alpha": 1,
+      "emissionStrength": 0,
+      "emissionColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "texture": "references/generated/living-furniture-20261008/walnut-albedo-r1.png",
+      "tint": [
+        0.72,
+        0.58,
+        0.39,
+        1
+      ]
     }
   ],
   "furnishings": [
@@ -9785,9 +9898,38 @@
       "designDecision": "docs/design/childroom-pink/selection.json",
       "layer": "upper",
       "bottom": 1.15
+    },
+    {
+      "id": "southeast-wardrobe",
+      "recipe": "southeast_wardrobe",
+      "node": "Furniture_southeast_wardrobe",
+      "position": [
+        9.68,
+        9.02
+      ],
+      "front": [
+        0,
+        1
+      ],
+      "dimensions": [
+        1.4,
+        0.6,
+        2.4
+      ],
+      "floorElevation": 0.024,
+      "structure": {
+        "panelThickness": 0.018,
+        "doorThickness": 0.02,
+        "plinthHeight": 0.065,
+        "drawerTop": 0.71,
+        "lowerDoorTop": 0.9,
+        "reveal": 0.003
+      },
+      "basis": "用户确认北侧短墙摆位与胡桃木外观。柜宽 1.40 m、柜高 2.40 m，柜深按 0.60 m。现场墙面净宽、吊顶和五金余量待复尺。",
+      "designDecision": "docs/design/southeast-wardrobe/selection.json"
     }
   ],
-  "presentationRevision": "2026-11-07-study-full-wall",
+  "presentationRevision": "2026-11-07-southeast-wardrobe",
   "windowAppearance": {
     "material": "Window_clear_glass",
     "basis": "Physical transmission and reflection; frame/division/sill geometry retained"
@@ -9862,7 +10004,7 @@
   "modelPackages": [
     {
       "id": "apartment",
-      "assetStem": "apartment-v18",
+      "assetStem": "apartment-v19",
       "webFile": "apartment-web.glb",
       "hdFile": "apartment-hd.glb",
       "excludeEntityIds": [
@@ -9876,7 +10018,7 @@
     },
     {
       "id": "living-sofa",
-      "assetStem": "living-sofa-v18",
+      "assetStem": "living-sofa-v19",
       "webFile": "living-sofa-web.glb",
       "hdFile": "living-sofa-hd.glb",
       "entityIds": [
@@ -9885,7 +10027,7 @@
     },
     {
       "id": "study",
-      "assetStem": "study-v18",
+      "assetStem": "study-v19",
       "webFile": "study-web.glb",
       "hdFile": "study-hd.glb",
       "entityIds": [
@@ -9916,5 +10058,6 @@
     }
   ],
   "studyDecision": "docs/design/study-full-wall/selection.json",
-  "childroomDecision": "docs/design/childroom-pink/selection.json"
+  "childroomDecision": "docs/design/childroom-pink/selection.json",
+  "wardrobeDecision": "docs/design/southeast-wardrobe/selection.json"
 }
