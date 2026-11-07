@@ -1,0 +1,46 @@
+{
+  "version": "metric-v19",
+  "applicationRevision": "2026-11-07-southeast-wardrobe",
+  "deploymentSource": "384568ae87db88bc0bf8f19acf994d4a1799c8e7",
+  "workflow": {
+    "id": "42385628366",
+    "url": "https://github.com/cYz26/homehome0402/actions/runs/42385628366",
+    "outcome": "success",
+    "browserCases": 27,
+    "buildArtifactId": 13579830961,
+    "browserEvidenceArtifactId": 13579284533,
+    "deploymentEvidenceArtifactId": 13579977342
+  },
+  "public": {
+    "url": "https://cyz26.github.io/homehome0402/",
+    "manifestSha256": "b3d551e88feacd2d5a3e0959ba7bc666286c3850d48e395f4c18be6a029485c4",
+    "fileCount": 53,
+    "modelRangeCount": 6,
+    "missingAssetStatus": 404
+  },
+  "liveBrowser": {
+    "directView": "https://cyz26.github.io/homehome0402/#view=%7B%22v%22%3A1%2C%22mode%22%3A%22interior%22%2C%22roomId%22%3A%22southeast%22%2C%22section%22%3A%7B%22axis%22%3A%22off%22%2C%22value%22%3A2.8%7D%7D",
+    "views": [
+      {
+        "label": "desktop",
+        "viewport": [
+          1280,
+          900
+        ],
+        "selected": "southeast-wardrobe",
+        "errors": []
+      },
+      {
+        "label": "phone",
+        "viewport": [
+          390,
+          844
+        ],
+        "selected": "southeast-wardrobe",
+        "errors": []
+      }
+    ],
+    "realPhonePerformance": "not-measured"
+  },
+  "checkedAt": "2026-11-07T15:33:10.142Z"
+}

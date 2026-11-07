@@ -576,3 +576,7 @@ metric-v16 已部署。部署源 `989d02346b543ea49c55e4b544ff550936efc91f`，[A
 | 浏览器 | 本机 6 项专项 Chromium 用例通过。查看了实际桌面与手机宽度的衣柜画面，核对 AI 来源、房间跳转、3D 点选、平面图与尺寸属性。 |
 
 墙面净宽、柜顶收口、踢脚和门铰余量以现场复尺为准。手机结果来自 Chromium 模拟视口。整站浏览器与线上回读以本次发布流水线为准。
+
+metric-v19 已发布，部署源为 `384568ae`。完整 27 项 Chromium 用例通过，线上 53 个文件摘要一致，六个模型 Range 返回 206，缺失资源返回 404。另从公开站点在桌面及手机模拟宽度打开房间，点选衣柜并核对模型尺寸。
+
+[衣柜 3D 机位](https://cyz26.github.io/homehome0402/#view=%7B%22v%22%3A1%2C%22mode%22%3A%22interior%22%2C%22roomId%22%3A%22southeast%22%2C%22section%22%3A%7B%22axis%22%3A%22off%22%2C%22value%22%3A2.8%7D%7D) · [发布流水线](https://github.com/cYz26/homehome0402/actions/runs/42385628366) · [发布收据](evidence/metric-v19/southeast-wardrobe/RESULT.json)
