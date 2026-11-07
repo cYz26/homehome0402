@@ -1,0 +1,302 @@
+{
+  "checkedAt": "2026-11-07T14:47:56.232328+00:00",
+  "url": "https://cyz26.github.io/homehome0402/",
+  "version": "metric-v17",
+  "applicationRevision": "2026-11-07-childroom-fitted-joinery",
+  "manifestSha256": "c5f30027ac28564c918edc99f8f87d466acc845146582c5faeab734bbf48a376",
+  "assets": [
+    {
+      "path": "assets/index-DrAvYBSI.js",
+      "bytes": 33808,
+      "sha256": "47fd0632ce0f299c89aa2b226eb4f263cf7a2e180dc069ed14f42a9c440bfd69"
+    },
+    {
+      "path": "assets/index-ZYp_9Lv7.css",
+      "bytes": 19243,
+      "sha256": "bb07e8bb6776bac01552dd0371a8102eed2c19230e0a54e9702fe5f1de8a2cca"
+    },
+    {
+      "path": "assets/three-addons-B4rWYbHU.js",
+      "bytes": 488848,
+      "sha256": "25a66a80f5caf7282871cca27b8c57126891e33e657784f4e953cd875bb90124"
+    },
+    {
+      "path": "assets/three-core-MA-a2Cmd.js",
+      "bytes": 238786,
+      "sha256": "92cc45e26428bcc74bcc480c1977752d05dd9e7730813d43121602f847c6bcf4"
+    },
+    {
+      "path": "assets/three-renderer-BEzRlOVa.js",
+      "bytes": 324309,
+      "sha256": "f286d6f76733e24e45003e616e9ff8e6889a5aae0c61cc899ddf10584026eea7"
+    },
+    {
+      "path": "assets/viewer-C6rLQNPy.js",
+      "bytes": 35182,
+      "sha256": "04d6f8144fb82c3881b41e525f8732faaa7bfaf9ec677b6570b3c5b04ce925a4"
+    },
+    {
+      "path": "decoders/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "decoders/basis/basis_transcoder.js",
+      "bytes": 57529,
+      "sha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1"
+    },
+    {
+      "path": "decoders/basis/basis_transcoder.wasm",
+      "bytes": 527333,
+      "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a"
+    },
+    {
+      "path": "index.html",
+      "bytes": 16324,
+      "sha256": "78bda942cd98e0468b92792b46ac167b41ce0bc10e0049f0dbfd691fe96c0f79"
+    },
+    {
+      "path": "release.json",
+      "bytes": 30427,
+      "sha256": "c5f30027ac28564c918edc99f8f87d466acc845146582c5faeab734bbf48a376"
+    },
+    {
+      "path": "releases/metric-v17/apartment-hd.glb",
+      "bytes": 24690340,
+      "sha256": "8a39fb8b080d92c52a647f8c967b7beacdbce4e1c9163ceb56db4b7b4601c6c0"
+    },
+    {
+      "path": "releases/metric-v17/apartment-web.glb",
+      "bytes": 15964620,
+      "sha256": "9bb12ae4a06d21aec01b723f41d81f73593331b08884145072662d69300ab601"
+    },
+    {
+      "path": "releases/metric-v17/architecture.json",
+      "bytes": 172954,
+      "sha256": "69a45adeadd6b179c157a0b9bb8654e9a2a30ffd4b00f5e4e265157b02f24a71"
+    },
+    {
+      "path": "releases/metric-v17/design-spec.json",
+      "bytes": 203865,
+      "sha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3"
+    },
+    {
+      "path": "releases/metric-v17/floor-plan.svg",
+      "bytes": 14517,
+      "sha256": "8abf6bd760afeccf5642dd4da737ae3ce5de359d894f035e49c0f3ad796e00a9"
+    },
+    {
+      "path": "releases/metric-v17/images/hero-1000.webp",
+      "bytes": 26610,
+      "sha256": "f31839860d4db9b80a6b1f254a0eb095de7f9a3fa489cae445492e70970bb481"
+    },
+    {
+      "path": "releases/metric-v17/images/hero-1600.webp",
+      "bytes": 47464,
+      "sha256": "d460741a8f5e78f0e5e454343eddeb119a3898b28a5fe7f42e5df580a6fd51b1"
+    },
+    {
+      "path": "releases/metric-v17/images/hero-640.webp",
+      "bytes": 14604,
+      "sha256": "4d82000a4cde9b79fe32c681fd11ca38ad739816e8487726f47f203aff3b565c"
+    },
+    {
+      "path": "releases/metric-v17/images/kitchen.webp",
+      "bytes": 25286,
+      "sha256": "34208895282d780b2fd0a7bc78e285288de762f14b16454eb421808c9aa89ed1"
+    },
+    {
+      "path": "releases/metric-v17/images/living.webp",
+      "bytes": 43326,
+      "sha256": "8b43401138f4a23b47e018d0022e4ede22ecb061844ab97d4984a40512a36e8d"
+    },
+    {
+      "path": "releases/metric-v17/images/master.webp",
+      "bytes": 19506,
+      "sha256": "627efe55e5ae8d8a2916d145a96cbfabd71e2ca47d4a99a138eb1aa8678946d0"
+    },
+    {
+      "path": "releases/metric-v17/images/masterbath.webp",
+      "bytes": 28112,
+      "sha256": "1f7c916b5ea0ba24095d6854f08a8a162db5161eb033f2a31cd14c3d3bb19b49"
+    },
+    {
+      "path": "releases/metric-v17/images/northwest.webp",
+      "bytes": 45582,
+      "sha256": "3db346a6aac2dcaf9eee3cc10d9796e9a88f81702ba6b5e1afe7b77e00edc9f9"
+    },
+    {
+      "path": "releases/metric-v17/images/photo-bathdoor.webp",
+      "bytes": 69238,
+      "sha256": "f8fbc08ba277304684324c4a0873f58a36d0edb3d733bb32f9ad3eb83d0329e2"
+    },
+    {
+      "path": "releases/metric-v17/images/photo-fridge.webp",
+      "bytes": 79578,
+      "sha256": "1498fbdab347375613a469155a2a1e4e01e3690c210e823c606ece9430da24c5"
+    },
+    {
+      "path": "releases/metric-v17/images/photo-hall.webp",
+      "bytes": 78226,
+      "sha256": "ac04567939131e7ae3035a49d7c2040264f7442e9f6f9e3492f9a74b76312c0f"
+    },
+    {
+      "path": "releases/metric-v17/images/photo-hob.webp",
+      "bytes": 71432,
+      "sha256": "56efa2c4c9580f1dbca212b2542f3a9f8a66f4be176c2117978680a9a81c48da"
+    },
+    {
+      "path": "releases/metric-v17/images/photo-living.webp",
+      "bytes": 86636,
+      "sha256": "eda121943857c7c581217b9162735582a0bbd823814791542534d934ae21fe0a"
+    },
+    {
+      "path": "releases/metric-v17/images/photo-master.webp",
+      "bytes": 78240,
+      "sha256": "01b701d77020debb4f7f1a22194e43b431d3a14b804b485cc19939d3f4c202e8"
+    },
+    {
+      "path": "releases/metric-v17/images/photo-north.webp",
+      "bytes": 75108,
+      "sha256": "ddb941a0a25dc421019554520f9173c89d5d6fc678f07808fede324ac01ef057"
+    },
+    {
+      "path": "releases/metric-v17/images/photo-slider.webp",
+      "bytes": 52780,
+      "sha256": "035eb78b6837303e18152cc872d7a18a7812ccd85175b6ccfc6c90990720cc16"
+    },
+    {
+      "path": "releases/metric-v17/images/photo-southeast.webp",
+      "bytes": 84756,
+      "sha256": "8cadad7af73c025307afde8d0cf61944c06592fc75df4d9cf0392482908b379c"
+    },
+    {
+      "path": "releases/metric-v17/images/photo-vanity.webp",
+      "bytes": 68564,
+      "sha256": "696a1c9c9bd1e7b452e7d7d813d54f98c3da9cf39c25913cde0038ce3c251652"
+    },
+    {
+      "path": "releases/metric-v17/images/plan.webp",
+      "bytes": 312218,
+      "sha256": "27586ceb40ee6e9d0a8a7d2b2c28f45f1e71b282eb1e011c4a88170e6c5c7459"
+    },
+    {
+      "path": "releases/metric-v17/images/reference.webp",
+      "bytes": 64406,
+      "sha256": "c088398aa63ca365bab931030a23f136b8fe615233c6e2860cab13b21ea6ba05"
+    },
+    {
+      "path": "releases/metric-v17/images/scheme-childroom-pink.webp",
+      "bytes": 126334,
+      "sha256": "1433dbf25dcf65779d01cb27ef0052f910ac51931093951f36f2aef3943f884b"
+    },
+    {
+      "path": "releases/metric-v17/images/scheme-overview.webp",
+      "bytes": 209094,
+      "sha256": "820211577093d86b9eb8a003578105fb98033afc5e2b03f9ec369e62635807d4"
+    },
+    {
+      "path": "releases/metric-v17/images/scheme-study-cabinet.webp",
+      "bytes": 194168,
+      "sha256": "2f993b2c99f3bc4f9d5d42561830ec259396e1868c71e0e28d864d61d576624d"
+    },
+    {
+      "path": "releases/metric-v17/images/scheme-study.webp",
+      "bytes": 149142,
+      "sha256": "4014686985635eb287dac6fca5e798830ce4e457f87c824d1270491941d68f1a"
+    },
+    {
+      "path": "releases/metric-v17/images/scheme-tv-a.webp",
+      "bytes": 145014,
+      "sha256": "649fb177f8ea4e8ff3666b217f4769844d140788890840db8a4833d5ed710dff"
+    },
+    {
+      "path": "releases/metric-v17/images/scheme-tv-b.webp",
+      "bytes": 137480,
+      "sha256": "35c7d8a0ecf05080e60e590570a8f31a06171a801f6adb7e399f6d348b4b081e"
+    },
+    {
+      "path": "releases/metric-v17/images/scheme-tv-c-close.webp",
+      "bytes": 164912,
+      "sha256": "a96be3377c5fde65afad7343a89939ba177d029675fa9e7c23ef23ab78c6a6ae"
+    },
+    {
+      "path": "releases/metric-v17/images/study-cabinet.webp",
+      "bytes": 67732,
+      "sha256": "981c4cab86bfaf85e86aa0df52c018f9cb53516273e7e3287f5c1ca72ea15b85"
+    },
+    {
+      "path": "releases/metric-v17/images/study.webp",
+      "bytes": 43540,
+      "sha256": "0a3cbb37c4b0ac44e33641313cec1af82c3ec0ed1a83cbc7b62e6994d42650a0"
+    },
+    {
+      "path": "releases/metric-v17/living-sofa-hd.glb",
+      "bytes": 21232288,
+      "sha256": "0eada7a8326a9dfdb145a7a4de2c43c2efe6925dea8f4752c41b36dfd1306ce2"
+    },
+    {
+      "path": "releases/metric-v17/living-sofa-web.glb",
+      "bytes": 15929940,
+      "sha256": "0b4f8df01f276c9795a18b74fcd005572a89191acc35218d7f49e31ae029be30"
+    },
+    {
+      "path": "releases/metric-v17/model-packages.json",
+      "bytes": 2988,
+      "sha256": "78616cf68ac9ed601631a2ee0997c7db996f108b1c70b6fec16b198fcf3f0bb5"
+    },
+    {
+      "path": "releases/metric-v17/navigation.json",
+      "bytes": 320442,
+      "sha256": "b1e5996ae72fcddc7af54515afd1c48d8df991b37a950b7b4e33992853a6691d"
+    },
+    {
+      "path": "releases/metric-v17/release-report.json",
+      "bytes": 30464,
+      "sha256": "4c2a15c167768cf1f01413396f765b25d6b688201b090848994e45a5e4602924"
+    },
+    {
+      "path": "releases/metric-v17/study-hd.glb",
+      "bytes": 6746256,
+      "sha256": "b4165dcce7d85025bc5dea71a6f75cb87ae3e4df8c2c680724070dc2ec06403e"
+    },
+    {
+      "path": "releases/metric-v17/study-web.glb",
+      "bytes": 4207548,
+      "sha256": "55448bf08a2eb2ccb1d3692de390717513ea400300d4b63fc895a6580a348e99"
+    }
+  ],
+  "ranges": [
+    {
+      "path": "releases/metric-v17/apartment-web.glb",
+      "status": 206,
+      "bytes": 65536
+    },
+    {
+      "path": "releases/metric-v17/apartment-hd.glb",
+      "status": 206,
+      "bytes": 65536
+    },
+    {
+      "path": "releases/metric-v17/living-sofa-web.glb",
+      "status": 206,
+      "bytes": 65536
+    },
+    {
+      "path": "releases/metric-v17/living-sofa-hd.glb",
+      "status": 206,
+      "bytes": 65536
+    },
+    {
+      "path": "releases/metric-v17/study-web.glb",
+      "status": 206,
+      "bytes": 65536
+    },
+    {
+      "path": "releases/metric-v17/study-hd.glb",
+      "status": 206,
+      "bytes": 65536
+    }
+  ],
+  "missingAssetStatus": 404
+}

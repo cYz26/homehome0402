@@ -1,0 +1,129 @@
+{
+  "version": "metric-v17",
+  "applicationRevision": "2026-11-07-childroom-fitted-joinery",
+  "status": "published",
+  "deployedCommit": "f9e1c1a514820fdda7c83f29d6b1496ce982f1b6",
+  "publicUrl": "https://cyz26.github.io/homehome0402/",
+  "manifestSha256": "c5f30027ac28564c918edc99f8f87d466acc845146582c5faeab734bbf48a376",
+  "ci": {
+    "runId": 42382456137,
+    "jobs": [
+      {
+        "name": "build",
+        "id": 128432752319,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "browser (3)",
+        "id": 128432978228,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "browser (1)",
+        "id": 128432978233,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "browser (4)",
+        "id": 128432978234,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "browser (2)",
+        "id": 128432978257,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "verify",
+        "id": 128434657167,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "deploy",
+        "id": 128434874993,
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "artifacts": [
+      {
+        "name": "home402-deployment-evidence",
+        "id": 13578636586
+      },
+      {
+        "name": "home402-build",
+        "id": 13578425905
+      },
+      {
+        "name": "github-pages",
+        "id": 13578038017
+      },
+      {
+        "name": "home402-browser-evidence",
+        "id": 13577994497
+      }
+    ],
+    "verifiedBrowserInventory": 26
+  },
+  "localChecks": {
+    "model": 38,
+    "node": 54,
+    "release": 16,
+    "focusedBrowser": 3,
+    "sourceRenderViews": 12
+  },
+  "live": {
+    "publicReadback": "public-readback.json",
+    "matchedFiles": 52,
+    "verifiedRanges": 6,
+    "desktop": {
+      "channel": "Chrome",
+      "viewport": [
+        1280,
+        900
+      ],
+      "passed": 1,
+      "screenshots": [
+        {
+          "name": "childroom-approved",
+          "sha256": "24490d0834ba297514700043739555716c056993e47edbe849316a5f4a06b160"
+        },
+        {
+          "name": "childroom-interior",
+          "sha256": "690c0acfc0e018dcbd5103b958b7d9ae21878d0e8b6c1008479016cc43599f22"
+        },
+        {
+          "name": "childroom-two-steps",
+          "sha256": "e3d778fcc66e5af81c467209c906481006301391a24d42b968bbd99ef50d1440"
+        }
+      ]
+    },
+    "mobile": {
+      "site": "https://cyz26.github.io/homehome0402/",
+      "version": "metric-v17",
+      "viewport": [
+        390,
+        844
+      ],
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M5, Unspecified Version)",
+      "errors": [],
+      "checked": [
+        "approved-image",
+        "space-card",
+        "room-render",
+        "horizontal-overflow"
+      ]
+    },
+    "retries": "Initial Chromium desktop attempts received image headers but the gallery image did not complete within 20 seconds. Direct image decode, desktop Chrome and mobile Chromium passed."
+  },
+  "limits": {
+    "dimensionBasis": "User-supplied bed dimensions; platform height measured from finished floor. Cabinet fit and door/window motion require site recheck.",
+    "realPhonePerformance": "not-measured"
+  }
+}
