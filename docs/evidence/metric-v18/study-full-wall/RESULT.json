@@ -1,0 +1,78 @@
+{
+  "version": "metric-v18",
+  "applicationRevision": "2026-11-07-study-full-wall",
+  "deploymentSource": "42d116136fbd36ee2f218d2cfc98550bdf1d101d",
+  "pages": "https://cyz26.github.io/homehome0402/",
+  "manifestSha256": "a186cb4f9df7a3981de6ee237409229ead6a8567010efa27c8a8de5e792e0366",
+  "workflow": {
+    "id": 42384820662,
+    "url": "https://github.com/cYz26/homehome0402/actions/runs/42384820662",
+    "jobs": [
+      {
+        "id": 128439874030,
+        "name": "build",
+        "conclusion": "success"
+      },
+      {
+        "id": 128440163173,
+        "name": "browser (4)",
+        "conclusion": "success"
+      },
+      {
+        "id": 128440163178,
+        "name": "browser (3)",
+        "conclusion": "success"
+      },
+      {
+        "id": 128440163180,
+        "name": "browser (2)",
+        "conclusion": "success"
+      },
+      {
+        "id": 128440163245,
+        "name": "browser (1)",
+        "conclusion": "success"
+      },
+      {
+        "id": 128442092712,
+        "name": "verify",
+        "conclusion": "success"
+      },
+      {
+        "id": 128442306827,
+        "name": "deploy",
+        "conclusion": "success"
+      }
+    ],
+    "passingBrowserFlows": 26,
+    "boundImages": 56,
+    "deploymentArtifactId": 13579019849,
+    "deploymentArtifactSha256": "fffe1e49114e20b94611262ebec914af1bd9815cac7831c8a749bdec3ac9f25e"
+  },
+  "publicReadback": {
+    "path": "public-readback.json",
+    "checkedAt": "2026-11-07T15:18:26.378Z",
+    "fileDigests": 51,
+    "modelRanges": 6,
+    "missingAssetStatus": 404
+  },
+  "independentOnlineInspection": {
+    "checkedAt": "2026-11-07T15:18:31.566Z",
+    "browser": "desktop Chrome",
+    "confirmedEffect": true,
+    "interactiveCabinet": true,
+    "cabinetProperties": "满墙书柜与玻璃展示柜  study-bookcase  关联空间 书房 模型外包尺寸 0.40 × 3.19 × 2.50 m 材质 哑光黑柜板、深灰纹石、暖木饰面、茶灰展示玻璃、暖色灯带  用户确认摄影风格效果图。西墙 3190 mm 含 25 / 50 mm 同色收口，柜深 400 mm，柜高暂定 2500 mm，窗端门板与玻璃柜齐平。窗台凸出与窗扇开启待现场复尺。  满墙宽 3.19 m，主体深 0.40 m。窗侧黑柜齐平收至 50 mm 同色收口板，板边在窗台处局部让位。",
+    "cabinetView": "https://cyz26.github.io/homehome0402/#view=%7B%22v%22%3A1%2C%22mode%22%3A%22interior%22%2C%22roomId%22%3A%22xroom%22%2C%22entityId%22%3Anull%2C%22section%22%3A%7B%22axis%22%3A%22off%22%2C%22value%22%3A2.8%7D%2C%22quality%22%3A%22standard%22%2C%22eyeHeight%22%3A1.65%2C%22camera%22%3A%7B%22position%22%3A%5B6.39%2C1.4%2C-11.12%5D%2C%22target%22%3A%5B4.3992%2C1.2087%2C-11.12%5D%2C%22zoom%22%3A1%2C%22fov%22%3A78%7D%7D"
+  },
+  "localChecks": {
+    "model": 40,
+    "node": 54,
+    "release": 16,
+    "targetedBrowser": 7,
+    "sourceCameras": 12
+  },
+  "limits": {
+    "onsiteSillAndSash": "not-measured",
+    "realPhonePerformance": "not-measured"
+  }
+}
