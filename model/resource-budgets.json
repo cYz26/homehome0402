@@ -1,10 +1,11 @@
 {
-  "version": "metric-v17",
+  "version": "metric-v18",
   "firstScreenBytes": 1048576,
   "webModelBytes": 39845888,
   "interactive3DBytes": 41943040,
-  "basis": "沿用已发布画质预算与原始纹理策略。儿童房参数化家具随房屋包导出，保留完整模型包并实测字节。",
+  "basis": "沿用已发布画质预算与原始纹理策略。保留三个完整模型包。书房随 Meshopt 网格保留原尺寸 JPEG / PNG，避免对石纹和木纹再次有损编码。",
   "originalImagePackages": [
-    "living-sofa"
+    "living-sofa",
+    "study"
   ]
 }

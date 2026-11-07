@@ -1,0 +1,78 @@
+{
+  "id": "study-full-wall-20261107",
+  "date": "2026-11-07",
+  "user_acceptance": {
+    "status": "confirmed-design-preview",
+    "quote": "这版效果可以，按这张图放到书房的3D空间里吧。西墙3.19米做满，最右边黑柜和玻璃柜齐平，不要退深或留空。然后更新到网站上"
+  },
+  "reference": {
+    "kind": "用户提供的柜型参考",
+    "sha256": "b5a5eea7d1818d9d7c7d7c1a3801ddd1d9e95dd2e8aa2993d696999d10c14e55"
+  },
+  "imageGeneration": {
+    "tool": "imagegen",
+    "originalSha256": "9af5eeaae66751386c3afb50da7d21a98e6eb1be5c352b460ad8173970111081",
+    "decodedRgbaPreserved": true
+  },
+  "layout": {
+    "wallWidthMeters": 3.19,
+    "carcassWidthMeters": 3.115,
+    "depthMeters": 0.4,
+    "heightMeters": 2.5,
+    "scribeWidthsMeters": [
+      0.025,
+      0.05
+    ],
+    "modulesMeters": [
+      0.35,
+      0.215,
+      0.61,
+      0.88,
+      0.275,
+      0.525,
+      0.26
+    ]
+  },
+  "alignment": {
+    "frontPlanX": 4.2,
+    "flush": ["window-side black door", "glass door frames", "window scribe"],
+    "windowEnd": "The cabinet reaches the wall. The 50 mm scribe is locally notched around the existing sill.",
+    "onSiteVerification": "Measure the wall, sill and operable sash before fabrication."
+  },
+  "materials": [
+    {
+      "path": "art_src/design/study-full-wall/graphite-stone.jpg",
+      "sha256": "8c332c5641198bcf753c7647d7b014f7a31816c83a2c69f359b458263b917402",
+      "derivedFrom": "references/generated/material-stone-v03.png",
+      "sourceSha256": "d325315c6ef8d0019857c1cab10824359ad81dbeab2ad143186dff0c4c67a294"
+    },
+    {
+      "path": "art_src/design/study-full-wall/honey-wood.jpg",
+      "sha256": "b177f561bc934e79d32525e8663ae89694fdefd7c146eb610b3059295149e945",
+      "derivedFrom": "references/generated/living-furniture-20261008/walnut-albedo-r1.png",
+      "sourceSha256": "121afabfb94e86456e7159985650f9453efd6d433417e6fef536d387f2de2586"
+    }
+  ],
+  "selected_previews": [
+    {
+      "id": "scheme-study-cabinet",
+      "title": "书房满墙书柜效果图",
+      "source": "references/generated/study-full-wall-20261107/approved.png",
+      "sha256": "8954c0115bf6d859fcd957ac8eee3921775640bb3bc28847e7f193eda8a399fe",
+      "kind": "AI 生成方案 · 用户已确认",
+      "designVersion": "study-full-wall-20261107",
+      "caption": "用户已确认的书房满墙书柜。西墙按 3.19 m 排柜，窗端黑柜与玻璃柜齐平。图为 AI 效果，模型尺寸见构件属性。"
+    }
+  ],
+  "display_effects": [
+    {
+      "id": "scheme-study-cabinet",
+      "title": "书房满墙书柜效果图",
+      "source": "references/generated/study-full-wall-20261107/approved.png",
+      "sha256": "8954c0115bf6d859fcd957ac8eee3921775640bb3bc28847e7f193eda8a399fe",
+      "kind": "AI 生成方案 · 用户已确认",
+      "designVersion": "study-full-wall-20261107",
+      "caption": "用户已确认的书房满墙书柜。西墙按 3.19 m 排柜，窗端黑柜与玻璃柜齐平。图为 AI 效果，模型尺寸见构件属性。"
+    }
+  ]
+}

@@ -77,8 +77,10 @@ views=[v for v in spec['renderViews'] if not args or v['id'] in args]
 if args and set(args)-{v['id'] for v in views}:raise ValueError('Unknown render view')
 for view in views:
     cut=view['mode']=='cutaway'
+    hidden=set(view.get('hideEntities', []))
     for ob in scene.objects:
-        if 'entityId' in ob:ob.hide_render=cut and ob.get('layer') in ['upper','ceiling']
+        if 'entityId' in ob:
+            ob.hide_render=ob['entityId'] in hidden or (cut and ob.get('layer') in ['upper','ceiling'])
     for ob in interior:ob.hide_render=cut
     for ob in exterior:ob.hide_render=cut
     cam.location=point(view['camera']);cam.rotation_euler=(point(view['target'])-cam.location).to_track_quat('-Z','Y').to_euler()

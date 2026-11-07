@@ -1,5 +1,5 @@
 {
-  "version": "metric-v17",
+  "version": "metric-v18",
   "height_m": 2.8,
   "cut_height_m": 1.15,
   "coordinate_transform": "Plan x east, t south from north edge; Blender (x,12.9-t,z), GLB (x,z,t-12.9)",
@@ -9,7 +9,7 @@
     "west": 12.9
   },
   "plan_reference_sha256": "d34c2a2641938c7541570063eac16a3d481f84bae4cd4826b2124fadd6186af3",
-  "spec_sha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
+  "spec_sha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
   "reference_v05_sha256": "0409b27755131d6ce8794286c464d744bee784484eb9f59f2c734d2deccf39d3",
   "components": [
     {
@@ -1045,22 +1045,22 @@
     },
     {
       "id": "study-bookcase",
-      "recipe": "study_bookcase",
+      "recipe": "study_display_bookcase",
       "node": "Furniture_study_bookcase",
       "position": [
-        4.2,
-        1.78
+        4,
+        1.7075
       ],
       "front": [
         1,
         0
       ],
       "dimensions": [
-        3,
-        0.8,
+        3.115,
+        0.4,
         2.5
       ],
-      "dimensionBasis": "已确认柜体外观；3.00m长/上柜35cm/底柜80cm与坐高45cm为方案假设。座柜承重待厂家/施工核验。椅前抽屉开启需先移椅。"
+      "dimensionBasis": "用户确认摄影风格效果图。西墙 3190 mm 含 25 / 50 mm 同色收口，柜深 400 mm，柜高暂定 2500 mm，窗端门板与玻璃柜齐平。窗台凸出与窗扇开启待现场复尺。"
     },
     {
       "id": "study-standing-desk",

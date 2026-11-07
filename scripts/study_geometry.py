@@ -8,7 +8,8 @@ import math, random
 
 def build(api, item):
     handlers = {
-        'study_bookcase': bookcase, 'study_standing_desk': standing_desk,
+        'study_bookcase': bookcase, 'study_display_bookcase': display_bookcase,
+        'study_standing_desk': standing_desk,
         'study_task_chair': task_chair, 'study_side_cabinet': side_cabinet,
         'study_desktop_items': desktop_items,
     }
@@ -128,6 +129,139 @@ def bookcase(a,c):
             else:
                 a.box('display_box',(u-.07,back+U*.53,.563),(.27,.21,.22),'Ivory_stone_counter',.009)
                 a.box('display_lid',(u-.07,back+U*.53,.679),(.29,.23,.025),wood,.006)
+
+
+def display_bookcase(a, c):
+    length, depth, height = c['dimensions']
+    edges = [-length / 2]
+    for width in c['moduleWidths']:
+        edges.append(edges[-1] + width)
+    back, front = -depth / 2, depth / 2
+    drawer_bottom, drawer_top = c['drawerBand']
+    base, crown = .065, height - .026
+    black, wood = 'Study_matte_black', 'Study_honey_wood'
+    stone, glass = 'Study_graphite_stone', 'Study_smoked_glass'
+    shelf_front = front - .035
+    origin = a.world((0, 0, 0))
+    width_axis = a.world((1, 0, 0)) - origin
+    front_axis = a.world((0, 1, 0)) - origin
+    lit_bays = {'narrow': (1, c['narrowShelves'], wood),
+                'open': (3, c['openShelves'], stone),
+                'glass': (5, c['glassShelves'], stone)}
+
+    def panel(label, left, right, rear, face, bottom, top, material, bevel=.002):
+        ob = a.box(label, ((left + right) / 2, (rear + face) / 2, (bottom + top) / 2),
+                   (right - left, face - rear, top - bottom), material, bevel)
+        if material in (wood, stone):
+            mesh = ob.data
+            for face in mesh.polygons:
+                for loop in face.loop_indices:
+                    point = mesh.vertices[mesh.loops[loop].vertex_index].co - origin
+                    u, v, z = point.dot(width_axis), point.dot(front_axis), point.z
+                    if label == 'floating_drawer':
+                        # Match the grain across the six faces with a single cut from the veneer.
+                        uv = (.05 + (u - edges[3]) / (drawer_right - drawer_left + .1), .22 + z - drawer_bottom)
+                    elif abs(face.normal.z) > .5:
+                        uv = (.05 + (u + length / 2) / (length + .16), .08 + (v + depth / 2) / .55)
+                    else:
+                        uv = (.05 + (u + length / 2) / (length + .16), .04 + z / 2.72)
+                    mesh.uv_layers.active.data[loop].uv = uv
+        return ob
+
+    def door(label, left, right, bottom, top):
+        panel(label, left + .002, right - .002, front - .023, front,
+              bottom + .003, top - .003, black)
+
+    panel('shadow_plinth', edges[0], edges[-1], back + .015,
+          front - .042, 0, base - .022, black)
+    panel('wood_base', edges[0], edges[-1], back, front - .008, base - .022, base, wood)
+    panel('case_top', edges[0], edges[-1], back, front, crown, height, black)
+    if c.get('details'):
+        panel('toe_kick_strip', edges[0] + .024, edges[-1] - .024, front - .041,
+              front - .031, base - .027, base - .023, 'Study_warm_strip', .001)
+    entry_filler, window_filler = c['sideFillers']
+    panel('entry_scribe', edges[0] - entry_filler, edges[0],
+          back, front, 0, height, black, .001)
+    # Scribe the wall edge around the sill while keeping the door and filler flush.
+    sill_bottom, sill_top, sill_trim = c['sillRelief']
+    for bottom, top, trim in [(0, sill_bottom, 0), (sill_bottom, sill_top, sill_trim),
+                              (sill_top, height, 0)]:
+        panel('window_scribe', edges[-1], edges[-1] + window_filler - trim,
+              front - .018, front, bottom, top, black, 0)
+    for edge in edges:
+        left = max(edges[0], min(edge - .009, edges[-1] - .018))
+        panel('case_partition', left, left + .018, back, shelf_front, base, crown, black)
+    panel('case_back', edges[0], edges[-1], back, back + .012, base, crown, black)
+
+    door('south_solid_door', edges[0], edges[1], base, crown)
+    mid = (edges[2] + edges[3]) / 2
+    door('solid_pair_door', edges[2], mid, base, crown)
+    door('solid_pair_door', mid, edges[3], base, crown)
+    door('upper_solid_door', edges[4], edges[5], drawer_top, crown)
+    door('lower_solid_door', edges[4], edges[5], base, drawer_bottom)
+    door('north_solid_door', edges[6], edges[7], base, crown)
+
+    drawer_left, drawer_right = edges[3], edges[5]
+    panel('drawer_case', drawer_left, drawer_right, back + .015, front - .025,
+          drawer_bottom, drawer_top, black)
+    drawer_width = (drawer_right - drawer_left) / 3
+    drawer_height = (drawer_top - drawer_bottom) / 2
+    for row in range(2):
+        bottom = drawer_bottom + row * drawer_height
+        for col in range(3):
+            left = drawer_left + col * drawer_width
+            panel('floating_drawer', left + .0025, left + drawer_width - .0025,
+                  front - .023, front, bottom + .003, bottom + drawer_height - .003, wood)
+    panel('lower_stone_recess', edges[3] + .01, edges[4] - .01,
+          back + .012, back + .03, base, drawer_bottom, stone)
+
+    for name, (index, shelves, backing) in lit_bays.items():
+        left, right = edges[index] + .01, edges[index + 1] - .01
+        center = (left + right) / 2
+        panel(name + '_back', left, right, back + .012, back + .03,
+              shelves[0], crown, backing)
+        for tier, z in enumerate(shelves):
+            panel(name + '_shelf', left, right, back + .03, shelf_front, z - .023, z, wood)
+            if c.get('details'):
+                # Recess the diffuser under the next shelf so its light grazes the stone.
+                soffit = shelves[tier + 1] - .023 if tier + 1 < len(shelves) else crown
+                panel(name + '_strip', left + .02, right - .02,
+                      back + .13, back + .14, soffit - .004, soffit, 'Study_warm_strip', .001)
+                if name == 'open':
+                    if tier % 2 == 0:
+                        books(a, 'open_books', left + .055, back + .15, z, count=4, seed=24 + tier)
+                    if tier != 2:
+                        lathe(a, 'open_vase', (right - .15, back + .165, z),
+                              [(0, .039), (.012, .047), (.036, .061), (.075, .065), (.113, .054), (.147, .039), (.172, .034), (.185, .036), (.185, .028), (.173, .027)],
+                              'Furniture_ceramic' if tier == 0 else 'Study_book_charcoal')
+                elif tier % 2 == 0:
+                    books(a, name + '_books', left + .018, back + .15, z,
+                          count=3 if name == 'narrow' else 4, seed=30 + tier)
+                else:
+                    lathe(a, name + '_vase', (center, back + .15, z),
+                          [(0, .029), (.012, .042), (.027, .052), (.055, .060), (.077, .060), (.10, .050), (.123, .035), (.14, .034), (.14, .026), (.128, .025)],
+                          'Furniture_ceramic' if name == 'glass' else 'Study_book_charcoal')
+                    if name == 'glass':
+                        books(a, 'glass_books', center + .055, back + .15, z, count=4, seed=43 + tier)
+
+    for offset in c['openDividers']:
+        u = edges[3] + offset
+        panel('open_vertical_mullion', u - .007, u + .007, shelf_front - .026,
+              shelf_front, drawer_top, crown, black, .001)
+
+    glass_mid = (edges[5] + edges[6]) / 2
+    for left, right in ((edges[5] + .003, glass_mid - .002), (glass_mid + .002, edges[6] - .003)):
+        stile = .015
+        bottom, top = base + .003, crown - .003
+        panel('glass_leaf', left + stile, right - stile, front - .021, front - .015,
+              bottom + stile, top - stile, glass, 0)
+        for edge in (left, right - stile):
+            panel('glass_stile', edge, edge + stile, front - .029, front, bottom, top, black, .001)
+        for z in (bottom, top - stile):
+            panel('glass_rail', left + stile, right - stile, front - .029, front, z, z + stile, black, .001)
+        pull = right - stile / 2 if right < glass_mid else left + stile / 2
+        panel('glass_pull', pull - .004, pull + .004, front - .014, front,
+              1.02, 1.23, 'Furniture_brass', .002)
 
 
 def standing_desk(a,c):

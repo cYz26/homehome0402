@@ -1,33 +1,33 @@
 {
-  "version": "metric-v17",
-  "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-  "rawModelSha256": "8a39fb8b080d92c52a647f8c967b7beacdbce4e1c9163ceb56db4b7b4601c6c0",
+  "version": "metric-v18",
+  "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+  "rawModelSha256": "6909965a159b2a2b07af36ecc653039bd9a91f2cd00ea4fc599f1c17694ea9b6",
   "modelPackages": [
     {
       "id": "apartment",
-      "path": "asset_exchange/apartment-v17.glb",
-      "sha256": "8a39fb8b080d92c52a647f8c967b7beacdbce4e1c9163ceb56db4b7b4601c6c0",
+      "path": "asset_exchange/apartment-v18.glb",
+      "sha256": "6909965a159b2a2b07af36ecc653039bd9a91f2cd00ea4fc599f1c17694ea9b6",
       "bytes": 24690340
     },
     {
       "id": "living-sofa",
-      "path": "asset_exchange/living-sofa-v17.glb",
-      "sha256": "0eada7a8326a9dfdb145a7a4de2c43c2efe6925dea8f4752c41b36dfd1306ce2",
+      "path": "asset_exchange/living-sofa-v18.glb",
+      "sha256": "35a72c7c8e31c93f65f150df8b62d0d1063d3c06df046dbba475b59413c2f794",
       "bytes": 21232288
     },
     {
       "id": "study",
-      "path": "asset_exchange/study-v17.glb",
-      "sha256": "b4165dcce7d85025bc5dea71a6f75cb87ae3e4df8c2c680724070dc2ec06403e",
-      "bytes": 6746256
+      "path": "asset_exchange/study-v18.glb",
+      "sha256": "e365b4abf6c6547582c87e55f4ca10ea0d08390d90ccf9a0bc75b9d04ce16260",
+      "bytes": 5808524
     }
   ],
-  "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
+  "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
   "roundtrip": {
     "passed": true,
     "sourceObjects": 729,
     "importedObjects": 729,
-    "triangles": 309951,
+    "triangles": 304499,
     "maximumBoundsErrorMeters": 9.5367431640625e-7
   },
   "checks": {
@@ -153,15 +153,19 @@
         "pass": true
       },
       {
-        "name": "Actual study has the specified desk, one deep seat-base row and four facade modules",
+        "name": "Actual study retains its specified desk dimensions",
         "pass": true
       },
       {
-        "name": "Actual study clears static walls/slider; drawer-use limitation stays explicit",
+        "name": "Full-wall bookcase spans 3.19 m with flush window-side doors and sill clearance",
         "pass": true
       },
       {
-        "name": "Integrated source preserves every published study part and all other unmodified published parts",
+        "name": "Actual study furniture clears the fixed walls and slider",
+        "pass": true
+      },
+      {
+        "name": "Integrated source preserves published parts outside recorded revisions",
         "pass": true
       },
       {
@@ -169,7 +173,11 @@
         "pass": true
       },
       {
-        "name": "Northwest room and its window are the only additions or revisions to the prior model",
+        "name": "Only the bookcase changes against the preceding model",
+        "pass": true
+      },
+      {
+        "name": "Northwest room integration preserves the prior model outside recorded revisions",
         "pass": true
       },
       {
@@ -185,8 +193,8 @@
         "pass": true
       }
     ],
-    "passed": 38,
-    "total": 38
+    "passed": 40,
+    "total": 40
   },
   "revisions": [
     {
@@ -426,6 +434,18 @@
         "childroom-nook",
         "childroom-chair"
       ]
+    },
+    {
+      "id": "study-full-wall-20261107",
+      "date": "2026-11-07",
+      "previousVersion": "metric-v17",
+      "version": "metric-v18",
+      "basis": "用户确认摄影风格效果图并要求书房 3D 和网站同步。西墙 3.19 m 做满，窗端齐平。",
+      "entityIds": [
+        "study-bookcase"
+      ],
+      "baseline": "model/baseline-v17/validation.json",
+      "changes": "书柜改成哑光黑柜门、暖灯石纹开放格、三列两排木抽屉及茶灰双玻璃门。窗端末柜同深，窄板绕现有窗台。"
     }
   ],
   "designContext": {
@@ -477,21 +497,40 @@
     }
   },
   "studyContext": {
-    "id": "home402-study-v04-implementation",
-    "selectionSha256": "8ca9029212fdba901f24b31d7095890b0d7f8a958eeea429257f407a6e0393be",
+    "id": "study-full-wall-20261107",
+    "selectionSha256": "8e9e4dfdd92cdd97935c03552f2dd02a00358b6b67b829cf631256b76642a732",
     "userAcceptance": {
       "status": "confirmed-design-preview",
-      "quote": "这个版本OK",
-      "implementationRequest": "效果图和书房 3D 一起更新",
-      "actualModelAcceptance": "separate; not inferred from AI image approval"
+      "quote": "这版效果可以，按这张图放到书房的3D空间里吧。西墙3.19米做满，最右边黑柜和玻璃柜齐平，不要退深或留空。然后更新到网站上"
     },
     "layout": {
-      "path": "docs/design/study-v03/layout.json",
-      "sha256": "7302f7dc45284cdb15b000f0a23c02ad41cedc4171b0e20e3f8b4f2124a40ef9"
+      "wallWidthMeters": 3.19,
+      "carcassWidthMeters": 3.115,
+      "depthMeters": 0.4,
+      "heightMeters": 2.5,
+      "scribeWidthsMeters": [
+        0.025,
+        0.05
+      ],
+      "modulesMeters": [
+        0.35,
+        0.215,
+        0.61,
+        0.88,
+        0.275,
+        0.525,
+        0.26
+      ]
     },
     "alignment": {
-      "path": "docs/design/study-v04/alignment.json",
-      "sha256": "6c0532943106862b055c9a961ad022c913a7e8dad32b407c3f6735e93b3b4b76"
+      "frontPlanX": 4.2,
+      "flush": [
+        "window-side black door",
+        "glass door frames",
+        "window scribe"
+      ],
+      "windowEnd": "The cabinet reaches the wall. The 50 mm scribe is locally notched around the existing sill.",
+      "onSiteVerification": "Measure the wall, sill and operable sash before fabrication."
     }
   },
   "childroomContext": {
@@ -510,30 +549,12 @@
     }
   },
   "renders": {
-    "modelVersion": "metric-v17",
-    "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-    "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
+    "modelVersion": "metric-v18",
+    "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+    "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
     "engine": "Cycles",
     "blender": "5.2.1 LTS",
     "views": [
-      {
-        "id": "northwest",
-        "name": "西北儿童房",
-        "mode": "interior",
-        "camera": [
-          3.43,
-          3.22,
-          1.56
-        ],
-        "target": [
-          1.9,
-          1.34,
-          1.08
-        ],
-        "fov": 79,
-        "width": 1448,
-        "height": 1086
-      },
       {
         "id": "hero",
         "name": "全屋轴测",
@@ -666,7 +687,7 @@
       },
       {
         "id": "study",
-        "name": "书房 / 确认设计的实际模型",
+        "name": "书房整体实际模型",
         "mode": "interior",
         "camera": [
           5.22,
@@ -684,21 +705,28 @@
       },
       {
         "id": "study-cabinet",
-        "name": "书房柜体实际模型",
+        "name": "满墙书柜正面实际模型",
         "mode": "interior",
         "camera": [
-          6.39,
-          1.78,
-          1.4
+          6.383,
+          1.705,
+          1.3
         ],
         "target": [
-          4.1,
-          1.78,
-          1.18
+          4.2,
+          1.695,
+          1.3
         ],
-        "fov": 78,
+        "fov": 69,
         "width": 1448,
-        "height": 1086
+        "height": 1086,
+        "hideEntities": [
+          "study-standing-desk",
+          "study-task-chair",
+          "study-side-cabinet",
+          "study-desktop-items"
+        ],
+        "caption": "当前书房模型的柜体正面。完整桌椅布置见书房整体及交互模型。"
       },
       {
         "id": "tv-door",
@@ -715,32 +743,27 @@
           1.3
         ],
         "fov": 68
+      },
+      {
+        "id": "northwest",
+        "name": "西北儿童房",
+        "mode": "interior",
+        "camera": [
+          3.43,
+          3.22,
+          1.56
+        ],
+        "target": [
+          1.9,
+          1.34,
+          1.08
+        ],
+        "fov": 79,
+        "width": 1448,
+        "height": 1086
       }
     ],
     "images": {
-      "northwest": {
-        "view": {
-          "id": "northwest",
-          "name": "西北儿童房",
-          "mode": "interior",
-          "camera": [
-            3.43,
-            3.22,
-            1.56
-          ],
-          "target": [
-            1.9,
-            1.34,
-            1.08
-          ],
-          "fov": 79,
-          "width": 1448,
-          "height": 1086
-        },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "2d947c6098ebde0af5b1b55a6d8191f67f2bf6a3e596c69dc7149181cc76d905"
-      },
       "hero": {
         "view": {
           "id": "hero",
@@ -758,9 +781,9 @@
           ],
           "orthoScale": 21
         },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "649fdc78345a35ae57bcfe872d5b8a854933749833a72d808d64a9a2f6dd1199"
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "0fdf7ac471b1d774602d66aa62f1d31b584304d46659d69c08f36390bdcda430"
       },
       "reference": {
         "view": {
@@ -781,9 +804,9 @@
           "width": 1400,
           "height": 1600
         },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "9a444a3d55ee13057175481dbdf2a9ad1af9573536154430ecbd24809eedc33b"
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "268ca04b5647ab17cd67700a0f0786be2f241ff74e4ec2dd727d620175e61a16"
       },
       "living": {
         "view": {
@@ -802,9 +825,9 @@
           ],
           "fov": 65
         },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "ec09d0c1c1e84dc29feb227663b011a653da45b83134a081f3338ea8dcd5ffa6"
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "47b23cbfa58e04e5e57686ebde71c459e68ff4c1813818c6416021c8ea98660f"
       },
       "master": {
         "view": {
@@ -823,9 +846,9 @@
           ],
           "fov": 72
         },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "a39395f0bf89ad5844eb702a8aade0a3238a6b69eaf2834977851b91b2112f03"
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "031d5847c1ab3c01e67a03bf9c007dbf96f5ba00c2390e2c40abb985247b5349"
       },
       "kitchen": {
         "view": {
@@ -844,9 +867,9 @@
           ],
           "fov": 72
         },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "9953c470593d0f6f374c94bcee97be2e0d33ba55480bdd21cbf335433eed4ab0"
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "bf88c76df2eb6ea2c0fd1b36a1e0275ba1ef638d87c7679a2237be8637548dcf"
       },
       "masterbath": {
         "view": {
@@ -865,9 +888,9 @@
           ],
           "fov": 90
         },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "6557125e997c70443b3a580303e908c9bff14868f61400a307a4007edb8a135b"
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "8bcedbcf265e798f97e0e22fb91cdfef0f33b691fce59f6b82556b6a7c03416a"
       },
       "cabinet": {
         "view": {
@@ -886,9 +909,9 @@
           ],
           "fov": 68
         },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "25c5e1fac08c46f35475e383a481ae987ce75f1fb2dbffb724fb207ed8eed798"
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "60aee608649e2bfabf30d78149af67a308f7b313928207356854c754f88d0736"
       },
       "table": {
         "view": {
@@ -907,14 +930,14 @@
           ],
           "fov": 62
         },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "28fc25cde92b1c2a1b4e78f3f8441345d5d92af1e80e0660e5105d4398b2a863"
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "9b8c96cdc9a4597a29bcd3ba096591c53a55960644a2e77d051828c1b029dae8"
       },
       "study": {
         "view": {
           "id": "study",
-          "name": "书房 / 确认设计的实际模型",
+          "name": "书房整体实际模型",
           "mode": "interior",
           "camera": [
             5.22,
@@ -930,32 +953,39 @@
           "width": 1448,
           "height": 1086
         },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "69569b942cc83db57a75aaf0d8e027c1c7bae2c5630698b853eca6cd31b2c47b"
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "1781c0838dd3f3f7c9a0d89a35a4e7fe92785ef563957e7ae24acfe5124da0f6"
       },
       "study-cabinet": {
         "view": {
           "id": "study-cabinet",
-          "name": "书房柜体实际模型",
+          "name": "满墙书柜正面实际模型",
           "mode": "interior",
           "camera": [
-            6.39,
-            1.78,
-            1.4
+            6.383,
+            1.705,
+            1.3
           ],
           "target": [
-            4.1,
-            1.78,
-            1.18
+            4.2,
+            1.695,
+            1.3
           ],
-          "fov": 78,
+          "fov": 69,
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "hideEntities": [
+            "study-standing-desk",
+            "study-task-chair",
+            "study-side-cabinet",
+            "study-desktop-items"
+          ],
+          "caption": "当前书房模型的柜体正面。完整桌椅布置见书房整体及交互模型。"
         },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "39f9ba29024f74bd1d3eeb2eb63a79e37d22a7661d256b8dbea278789da1981a"
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "135d2755d29bdd0d889276367e0a252770612093dfa2502b0b4c264890278e7e"
       },
       "tv-door": {
         "view": {
@@ -974,9 +1004,32 @@
           ],
           "fov": 68
         },
-        "sourceSha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-        "specSha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-        "sha256": "6284683c490ca571ed9351eb5d1d3c76cf2a71dc5d20308f10b456e987c59ab8"
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "1099fe65e80599985283419e0c269a0059eece8ada957519a68996a5c0c89d86"
+      },
+      "northwest": {
+        "view": {
+          "id": "northwest",
+          "name": "西北儿童房",
+          "mode": "interior",
+          "camera": [
+            3.43,
+            3.22,
+            1.56
+          ],
+          "target": [
+            1.9,
+            1.34,
+            1.08
+          ],
+          "fov": 79,
+          "width": 1448,
+          "height": 1086
+        },
+        "sourceSha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+        "specSha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+        "sha256": "d50468e6e25db0e0a3c12dca3dcc6ea6338ecd4c56df430da2a9c68505b3d5d5"
       }
     },
     "role": "Same-model Cycles renders; not site photographs"
@@ -986,5 +1039,5 @@
     "realPhonePerformance": "not-measured"
   },
   "releaseManifest": "public/release.json",
-  "manifestSha256": "c5f30027ac28564c918edc99f8f87d466acc845146582c5faeab734bbf48a376"
+  "manifestSha256": "a186cb4f9df7a3981de6ee237409229ead6a8567010efa27c8a8de5e792e0366"
 }

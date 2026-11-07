@@ -124,7 +124,10 @@ const data = {
   materials: [...spec.materials, ...(spec.furnitureMaterials ?? []), ...(spec.externalMaterials ?? [])],
   nodes: nodeRows,
   detailViews: spec.detailViews,
-  lighting: spec.lighting,
+  lighting: {
+    ...spec.lighting,
+    strips: spec.lighting.strips.filter(light => !light.renderOnly),
+  },
   presentationEnvironment: spec.presentationEnvironment,
   assumptions: spec.assumptions,
 };

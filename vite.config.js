@@ -10,10 +10,12 @@ export default defineConfig({
       order: 'pre',
       handler(html) {
         const manifest = JSON.parse(readFileSync(new URL('./public/release.json', import.meta.url), 'utf8'));
-        const hero = homepageImages(manifest)[0];
+        const images = homepageImages(manifest);
+        const [hero] = images;
         if (!hero) throw Error('No current effect or scene image for the homepage.');
         return html
           .replaceAll('__HERO_IMAGE_PATH__', hero.path)
+          .replaceAll('__HERO_IMAGE_COUNT__', String(images.length).padStart(2, '0'))
           .replaceAll('__RELEASE_PREFIX__', `releases/${manifest.version}`)
           .replaceAll('__MODEL_VERSION__', manifest.version)
           .replaceAll('__MODEL_SHORT_VERSION__', manifest.version.replace(/^metric-/, ''));

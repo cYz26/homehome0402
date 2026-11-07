@@ -1,33 +1,33 @@
 {
-  "version": "metric-v17",
-  "spec_sha256": "ad3100515bf3122131dd9f4fd1b687449b8fd8a57de66af9c3114175ad61bad3",
-  "source_sha256": "160f794c8270f193c106eb802ba076ac7741f0c6f6a4f25937cfe813678e3dcc",
-  "glb_sha256": "8a39fb8b080d92c52a647f8c967b7beacdbce4e1c9163ceb56db4b7b4601c6c0",
+  "version": "metric-v18",
+  "spec_sha256": "0dd8ea2e63a94fd4eeeb98289f8741bad6f321a42af0b92afc114cbf84a6250a",
+  "source_sha256": "7fb1afbaacc15d9dd4345836abe28443515e3fff31d78d9d342b25a331d8593b",
+  "glb_sha256": "6909965a159b2a2b07af36ecc653039bd9a91f2cd00ea4fc599f1c17694ea9b6",
   "model_packages": [
     {
       "id": "apartment",
-      "path": "asset_exchange/apartment-v17.glb",
-      "sha256": "8a39fb8b080d92c52a647f8c967b7beacdbce4e1c9163ceb56db4b7b4601c6c0",
+      "path": "asset_exchange/apartment-v18.glb",
+      "sha256": "6909965a159b2a2b07af36ecc653039bd9a91f2cd00ea4fc599f1c17694ea9b6",
       "bytes": 24690340
     },
     {
       "id": "living-sofa",
-      "path": "asset_exchange/living-sofa-v17.glb",
-      "sha256": "0eada7a8326a9dfdb145a7a4de2c43c2efe6925dea8f4752c41b36dfd1306ce2",
+      "path": "asset_exchange/living-sofa-v18.glb",
+      "sha256": "35a72c7c8e31c93f65f150df8b62d0d1063d3c06df046dbba475b59413c2f794",
       "bytes": 21232288
     },
     {
       "id": "study",
-      "path": "asset_exchange/study-v17.glb",
-      "sha256": "b4165dcce7d85025bc5dea71a6f75cb87ae3e4df8c2c680724070dc2ec06403e",
-      "bytes": 6746256
+      "path": "asset_exchange/study-v18.glb",
+      "sha256": "e365b4abf6c6547582c87e55f4ca10ea0d08390d90ccf9a0bc75b9d04ce16260",
+      "bytes": 5808524
     }
   ],
   "source_objects": 729,
   "reimport_objects": 729,
   "max_bound_error_m": 9.5367431640625e-07,
-  "source_triangles": 309951,
-  "reimport_triangles": 309951,
+  "source_triangles": 304499,
+  "reimport_triangles": 304499,
   "source_degenerate_triangles": 0,
   "reimport_degenerate_triangles": 0,
   "roundtrip_errors": [],
@@ -16122,33 +16122,32 @@
       "bounds": [
         [
           3.799999952316284,
-          9.619999885559082,
+          9.609999656677246,
           0.024000000208616257
         ],
         [
-          4.599999904632568,
-          12.619999885559082,
+          4.199999809265137,
+          12.800000190734863,
           2.5239999294281006
         ]
       ],
-      "triangles": 37100,
+      "triangles": 31648,
       "degenerate": 0,
       "layer": "fixed",
       "entityId": "study-bookcase",
       "uv": true,
       "materials": [
-        "Furniture_dark_wood.001",
-        "Furniture_walnut.001",
-        "Study_seat_linen",
-        "Ivory_stone_counter.001",
+        "Study_matte_black",
+        "Study_honey_wood",
         "Study_warm_strip",
+        "Study_graphite_stone",
         "Study_book_sage",
         "Furniture_paper.001",
         "Study_book_rust",
         "Study_book_cream",
         "Study_book_charcoal",
         "Furniture_ceramic",
-        "Study_clear_glass",
+        "Study_smoked_glass",
         "Furniture_brass.001"
       ]
     },

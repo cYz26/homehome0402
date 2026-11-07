@@ -106,3 +106,7 @@ v02 增加两张生成修订图和一张代码绘制的相对布局示意。三�
 ## 西北儿童房确认图 · 2026-11-07
 
 新增[粉色儿童房确认图](../references/generated/childroom-pink-20261107/approved.png)。项目 PNG 副本移除非显示元数据，1448 × 1086 解码像素与原输出一致。目视检查无人物、个人资料、原软件界面或标注。站点发布转换后的 WebP，标为 AI 方案效果。真实模型渲染单独标注为 Cycles。来源摘要见[选择记录](design/childroom-pink/selection.json)。
+
+## 书房满墙书柜 · 2026-11-07
+
+网站采用用户确认的 imagegen 摄影风格效果图。项目副本移除非显示元数据，解码 RGBA 与原输出一致。效果图和同源模型图分别标记来源。原参考图仅用于本地构图参考。[图片来源及摘要](design/study-full-wall/selection.json)

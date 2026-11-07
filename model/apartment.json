@@ -1,6 +1,6 @@
 {
-  "version": "metric-v17",
-  "assetStem": "apartment-v17",
+  "version": "metric-v18",
+  "assetStem": "apartment-v18",
   "units": "m",
   "coordinates": "Plan x east, t south from north edge; Blender (x,12.9-t,z), GLB (x,z,t-12.9)",
   "height": 2.8,
@@ -288,7 +288,7 @@
         0.7
       ],
       "drawing": "北侧分段 2.80 × 3.40 m",
-      "finish": "整墙胡桃木书柜与可坐深底柜 · 140×70cm升降桌 · 深色转椅 · 东侧配柜",
+      "finish": "西墙 3.19 m 满墙书柜 · 哑光黑门板、暖光石纹开放格、双排木抽屉及茶灰玻璃门 · 东侧升降桌与配柜",
       "polygon": [
         [
           3.7,
@@ -781,7 +781,7 @@
     },
     {
       "id": "study",
-      "name": "书房整体与深底柜",
+      "name": "书房整体",
       "room": "xroom",
       "camera": [
         5.22,
@@ -1634,89 +1634,392 @@
         ]
       },
       {
-        "id": "study-display-0",
+        "id": "study-bookcase-narrow-0",
         "position": [
-          4.1,
-          2.83,
-          1.003
+          3.935,
+          2.8075,
+          0.463
         ],
         "target": [
-          3.93,
-          2.83,
-          0.7
+          3.831,
+          2.8075,
+          0.234
         ],
         "size": [
-          0.045,
-          0.8400000000000001
-        ]
+          0.15,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 1.6,
+        "renderOnly": true
       },
       {
-        "id": "study-display-1",
+        "id": "study-bookcase-narrow-1",
         "position": [
-          4.1,
-          2.1550000000000002,
-          1.003
+          3.935,
+          2.8075,
+          0.863
         ],
         "target": [
-          3.93,
-          2.1550000000000002,
-          0.7
+          3.831,
+          2.8075,
+          0.614
         ],
         "size": [
-          0.045,
-          0.39
-        ]
+          0.15,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 1.6,
+        "renderOnly": true
       },
       {
-        "id": "study-display-2",
+        "id": "study-bookcase-narrow-2",
         "position": [
-          4.1,
-          1.505,
-          1.003
+          3.935,
+          2.8075,
+          1.393
         ],
         "target": [
-          3.93,
-          1.505,
-          0.7
+          3.831,
+          2.8075,
+          1.014
         ],
         "size": [
-          0.045,
-          0.79
-        ]
+          0.15,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 1.6
       },
       {
-        "id": "study-display-3",
+        "id": "study-bookcase-narrow-3",
         "position": [
-          4.1,
-          0.6799999999999999,
-          1.003
+          3.935,
+          2.8075,
+          1.903
         ],
         "target": [
-          3.93,
-          0.6799999999999999,
-          0.7
+          3.831,
+          2.8075,
+          1.544
         ],
         "size": [
-          0.045,
-          0.74
-        ]
+          0.15,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 1.6,
+        "renderOnly": true
       },
       {
-        "id": "study-open-shelves",
+        "id": "study-bookcase-narrow-4",
         "position": [
-          4.1,
-          1.505,
-          2.45
+          3.935,
+          2.8075,
+          2.233
         ],
         "target": [
-          3.93,
-          1.505,
-          1.7
+          3.831,
+          2.8075,
+          2.054
         ],
         "size": [
-          0.045,
-          0.77
-        ]
+          0.15,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 1.6,
+        "renderOnly": true
+      },
+      {
+        "id": "study-bookcase-narrow-5",
+        "position": [
+          3.935,
+          2.8075,
+          2.49
+        ],
+        "target": [
+          3.831,
+          2.8075,
+          2.384
+        ],
+        "size": [
+          0.15,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 1.6,
+        "renderOnly": true
+      },
+      {
+        "id": "study-bookcase-open-0",
+        "position": [
+          3.935,
+          1.65,
+          1.293
+        ],
+        "target": [
+          3.831,
+          1.65,
+          1.054
+        ],
+        "size": [
+          0.815,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 4.5
+      },
+      {
+        "id": "study-bookcase-open-1",
+        "position": [
+          3.935,
+          1.65,
+          1.683
+        ],
+        "target": [
+          3.831,
+          1.65,
+          1.444
+        ],
+        "size": [
+          0.815,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 4.5
+      },
+      {
+        "id": "study-bookcase-open-2",
+        "position": [
+          3.935,
+          1.65,
+          2.073
+        ],
+        "target": [
+          3.831,
+          1.65,
+          1.834
+        ],
+        "size": [
+          0.815,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 4.5
+      },
+      {
+        "id": "study-bookcase-open-3",
+        "position": [
+          3.935,
+          1.65,
+          2.49
+        ],
+        "target": [
+          3.831,
+          1.65,
+          2.224
+        ],
+        "size": [
+          0.815,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 4.5
+      },
+      {
+        "id": "study-bookcase-glass-0",
+        "position": [
+          3.935,
+          0.6725,
+          0.463
+        ],
+        "target": [
+          3.831,
+          0.6725,
+          0.234
+        ],
+        "size": [
+          0.46,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 2.65,
+        "renderOnly": true
+      },
+      {
+        "id": "study-bookcase-glass-1",
+        "position": [
+          3.935,
+          0.6725,
+          0.863
+        ],
+        "target": [
+          3.831,
+          0.6725,
+          0.614
+        ],
+        "size": [
+          0.46,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 2.65,
+        "renderOnly": true
+      },
+      {
+        "id": "study-bookcase-glass-2",
+        "position": [
+          3.935,
+          0.6725,
+          1.263
+        ],
+        "target": [
+          3.831,
+          0.6725,
+          1.014
+        ],
+        "size": [
+          0.46,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 2.65
+      },
+      {
+        "id": "study-bookcase-glass-3",
+        "position": [
+          3.935,
+          0.6725,
+          1.663
+        ],
+        "target": [
+          3.831,
+          0.6725,
+          1.414
+        ],
+        "size": [
+          0.46,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 2.65,
+        "renderOnly": true
+      },
+      {
+        "id": "study-bookcase-glass-4",
+        "position": [
+          3.935,
+          0.6725,
+          2.063
+        ],
+        "target": [
+          3.831,
+          0.6725,
+          1.814
+        ],
+        "size": [
+          0.46,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 2.65,
+        "renderOnly": true
+      },
+      {
+        "id": "study-bookcase-glass-5",
+        "position": [
+          3.935,
+          0.6725,
+          2.49
+        ],
+        "target": [
+          3.831,
+          0.6725,
+          2.214
+        ],
+        "size": [
+          0.46,
+          0.014
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 3.1,
+        "renderPower": 2.65
+      },
+      {
+        "id": "study-bookcase-lower-wash",
+        "position": [
+          4.03,
+          1.65,
+          0.455
+        ],
+        "target": [
+          3.83,
+          1.65,
+          0.12
+        ],
+        "size": [
+          0.8,
+          0.02
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 2.3,
+        "renderPower": 2.5,
+        "renderOnly": true
+      },
+      {
+        "id": "study-bookcase-toe-wash",
+        "position": [
+          4.16,
+          1.7075,
+          0.062
+        ],
+        "target": [
+          4.33,
+          1.7075,
+          0.024
+        ],
+        "size": [
+          3.0,
+          0.01
+        ],
+        "shape": "rectangle",
+        "color": "#ffdaaa",
+        "intensity": 1.1,
+        "renderPower": 4.2
       },
       {
         "id": "living-tv-vertical",
@@ -3465,7 +3768,7 @@
       "placement": {
         "center": [
           7.75,
-          4e-7,
+          4e-07,
           1.3200001
         ],
         "size": [
@@ -3477,7 +3780,7 @@
       "templatePlacement": {
         "center": [
           7.75,
-          4e-7,
+          4e-07,
           1.3200001
         ],
         "size": [
@@ -5473,7 +5776,7 @@
       "placement": {
         "center": [
           5.0000002,
-          4e-7,
+          4e-07,
           1.4000001
         ],
         "size": [
@@ -5485,7 +5788,7 @@
       "templatePlacement": {
         "center": [
           5.0000002,
-          4e-7,
+          4e-07,
           1.4000001
         ],
         "size": [
@@ -6221,15 +6524,21 @@
     {
       "id": "study-bookcase",
       "type": "furniture",
-      "name": "胡桃木书柜与可坐深底柜",
+      "name": "满墙书柜与玻璃展示柜",
       "sourceNodes": [
         "Furniture_study_bookcase"
       ],
       "roomIds": [
         "xroom"
       ],
-      "materials": [],
-      "basis": "已确认柜体外观；3.00m长/上柜35cm/底柜80cm与坐高45cm为方案假设。座柜承重待厂家/施工核验。椅前抽屉开启需先移椅。",
+      "materials": [
+        "Study_matte_black",
+        "Study_graphite_stone",
+        "Study_honey_wood",
+        "Study_smoked_glass",
+        "Study_warm_strip"
+      ],
+      "basis": "用户确认摄影风格效果图。西墙 3190 mm 含 25 / 50 mm 同色收口，柜深 400 mm，柜高暂定 2500 mm，窗端门板与玻璃柜齐平。窗台凸出与窗扇开启待现场复尺。",
       "furnitureId": "study-bookcase"
     },
     {
@@ -7310,9 +7619,9 @@
       "content": "按已确认效果增添薄木饰面；原结构墙、主卧门洞和门扇保持原尺寸与位置。"
     },
     {
-      "id": "note-study-seat",
+      "id": "note-study-bookcase",
       "entityId": "study-bookcase",
-      "content": "可坐深底柜的尺寸与固定/承重为设计表达；厂家/施工核验待完成。桌前抽屉开启需先移转椅。"
+      "content": "满墙宽 3.19 m，主体深 0.40 m。窗侧黑柜齐平收至 50 mm 同色收口板，板边在窗台处局部让位。"
     },
     {
       "id": "note-living-television",
@@ -7473,7 +7782,7 @@
     },
     {
       "id": "study",
-      "name": "书房 / 确认设计的实际模型",
+      "name": "书房整体实际模型",
       "mode": "interior",
       "camera": [
         5.22,
@@ -7491,21 +7800,28 @@
     },
     {
       "id": "study-cabinet",
-      "name": "书房柜体实际模型",
+      "name": "满墙书柜正面实际模型",
       "mode": "interior",
       "camera": [
-        6.39,
-        1.78,
-        1.4
+        6.383,
+        1.705,
+        1.3
       ],
       "target": [
-        4.1,
-        1.78,
-        1.18
+        4.2,
+        1.695,
+        1.3
       ],
-      "fov": 78,
+      "fov": 69,
       "width": 1448,
-      "height": 1086
+      "height": 1086,
+      "hideEntities": [
+        "study-standing-desk",
+        "study-task-chair",
+        "study-side-cabinet",
+        "study-desktop-items"
+      ],
+      "caption": "当前书房模型的柜体正面。完整桌椅布置见书房整体及交互模型。"
     },
     {
       "id": "tv-door",
@@ -7780,6 +8096,18 @@
         "childroom-nook",
         "childroom-chair"
       ]
+    },
+    {
+      "id": "study-full-wall-20261107",
+      "date": "2026-11-07",
+      "previousVersion": "metric-v17",
+      "version": "metric-v18",
+      "basis": "用户确认摄影风格效果图并要求书房 3D 和网站同步。西墙 3.19 m 做满，窗端齐平。",
+      "entityIds": [
+        "study-bookcase"
+      ],
+      "baseline": "model/baseline-v17/validation.json",
+      "changes": "书柜改成哑光黑柜门、暖灯石纹开放格、三列两排木抽屉及茶灰双玻璃门。窗端末柜同深，窄板绕现有窗台。"
     }
   ],
   "furnitureDecision": "docs/design/living-v08/selection.json",
@@ -8471,6 +8799,50 @@
         1
       ],
       "roughness": 0.71
+    },
+    {
+      "id": "Study_matte_black",
+      "baseColor": [
+        0.009,
+        0.009,
+        0.01,
+        1
+      ],
+      "roughness": 0.48
+    },
+    {
+      "id": "Study_graphite_stone",
+      "baseColor": [
+        0.07,
+        0.063,
+        0.055,
+        1
+      ],
+      "roughness": 0.35,
+      "texture": "art_src/design/study-full-wall/graphite-stone.jpg"
+    },
+    {
+      "id": "Study_honey_wood",
+      "baseColor": [
+        0.33,
+        0.21,
+        0.11,
+        1
+      ],
+      "roughness": 0.42,
+      "texture": "art_src/design/study-full-wall/honey-wood.jpg"
+    },
+    {
+      "id": "Study_smoked_glass",
+      "baseColor": [
+        0.125,
+        0.102,
+        0.078,
+        1
+      ],
+      "roughness": 0.12,
+      "metallic": 0.2,
+      "alpha": 0.23
     }
   ],
   "furnishings": [
@@ -8834,35 +9206,73 @@
     },
     {
       "id": "study-bookcase",
-      "recipe": "study_bookcase",
+      "recipe": "study_display_bookcase",
       "node": "Furniture_study_bookcase",
       "position": [
-        4.2,
-        1.78
+        4,
+        1.7075
       ],
       "front": [
         1,
         0
       ],
       "dimensions": [
-        3,
-        0.8,
+        3.115,
+        0.4,
         2.5
       ],
-      "upperDepth": 0.35,
-      "baseHeight": 0.42,
-      "seatLength": 1.18,
-      "seatDepth": 0.45,
       "moduleWidths": [
-        0.9,
-        0.45,
-        0.85,
-        0.8
+        0.35,
+        0.215,
+        0.61,
+        0.88,
+        0.275,
+        0.525,
+        0.26
       ],
-      "basis": "已确认柜体外观；3.00m长/上柜35cm/底柜80cm与坐高45cm为方案假设。座柜承重待厂家/施工核验。椅前抽屉开启需先移椅。",
+      "basis": "用户确认摄影风格效果图。西墙 3190 mm 含 25 / 50 mm 同色收口，柜深 400 mm，柜高暂定 2500 mm，窗端门板与玻璃柜齐平。窗台凸出与窗扇开启待现场复尺。",
       "floorElevation": 0.024,
       "details": true,
-      "designDecision": "docs/design/study-v04/selection.json"
+      "designDecision": "docs/design/study-full-wall/selection.json",
+      "sideFillers": [
+        0.025,
+        0.05
+      ],
+      "openDividers": [
+        0.26,
+        0.43
+      ],
+      "sillRelief": [
+        0.829,
+        0.873,
+        0.027
+      ],
+      "drawerBand": [
+        0.44,
+        0.91
+      ],
+      "narrowShelves": [
+        0.09,
+        0.47,
+        0.87,
+        1.4,
+        1.91,
+        2.24
+      ],
+      "openShelves": [
+        0.91,
+        1.3,
+        1.69,
+        2.08
+      ],
+      "glassShelves": [
+        0.09,
+        0.47,
+        0.87,
+        1.27,
+        1.67,
+        2.07
+      ]
     },
     {
       "id": "study-standing-desk",
@@ -9377,7 +9787,7 @@
       "bottom": 1.15
     }
   ],
-  "presentationRevision": "2026-11-07-childroom-fitted-joinery",
+  "presentationRevision": "2026-11-07-study-full-wall",
   "windowAppearance": {
     "material": "Window_clear_glass",
     "basis": "Physical transmission and reflection; frame/division/sill geometry retained"
@@ -9452,7 +9862,7 @@
   "modelPackages": [
     {
       "id": "apartment",
-      "assetStem": "apartment-v17",
+      "assetStem": "apartment-v18",
       "webFile": "apartment-web.glb",
       "hdFile": "apartment-hd.glb",
       "excludeEntityIds": [
@@ -9466,7 +9876,7 @@
     },
     {
       "id": "living-sofa",
-      "assetStem": "living-sofa-v17",
+      "assetStem": "living-sofa-v18",
       "webFile": "living-sofa-web.glb",
       "hdFile": "living-sofa-hd.glb",
       "entityIds": [
@@ -9475,7 +9885,7 @@
     },
     {
       "id": "study",
-      "assetStem": "study-v17",
+      "assetStem": "study-v18",
       "webFile": "study-web.glb",
       "hdFile": "study-hd.glb",
       "entityIds": [
@@ -9505,6 +9915,6 @@
       "basis": "Imported original material, never replaced with procedural furniture shader"
     }
   ],
-  "studyDecision": "docs/design/study-v04/selection.json",
+  "studyDecision": "docs/design/study-full-wall/selection.json",
   "childroomDecision": "docs/design/childroom-pink/selection.json"
 }

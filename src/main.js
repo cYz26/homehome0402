@@ -98,15 +98,16 @@ function populate() {
     master: "人字拼橡木与温和墙面，保留空房的完整尺度。",
     kitchen: "西侧冰箱、北侧水槽、东侧烟机灶具，让 U 形动线清晰可见。",
     masterbath: "连续一体宽槽、双组墙出龙头与镜柜，细节对应实拍修订。",
-    xroom: "整墙胡桃木书柜配可坐深底柜；东侧140×70cm升降桌、深色转椅与配柜，入口为推拉门。底柜尺寸与承重待现场核对，桌前抽屉开启需先移椅。",
+    xroom: "西墙 3.19 米满墙书柜，配哑光黑门、暖光石纹格、双排木抽屉和茶灰玻璃。窗边黑柜与玻璃柜齐平，东侧是 140 × 70 cm 升降桌。",
   };
+  const approvedEffects = { xroom: "scheme-study-cabinet", northwest: "scheme-childroom-pink" };
   $("#space-cards").innerHTML = ["living", "xroom", "northwest", "kitchen", "master", "masterbath"]
     .map((id, i) => {
       const image = imageById(id === "xroom" ? "study" : id),
         room = data.rooms.find((r) => r.id === id);
       const roomLink = `<a class="text-link" href="#explore" data-room-jump="${id}">进入这个空间 ↗</a>`;
-      const links = id === "northwest"
-        ? `<div class="space-card__links">${roomLink}<button type="button" class="text-link" data-reference="scheme-childroom-pink">查看已确认效果图 ↗</button></div>`
+      const links = approvedEffects[id]
+        ? `<div class="space-card__links">${roomLink}<button type="button" class="text-link" data-reference="${approvedEffects[id]}">查看已确认效果图 ↗</button></div>`
         : roomLink;
       return `<article class="space-card"><a href="#explore" data-room-jump="${id}"><figure><img src="${url(image.path)}" width="1100" height="756" loading="lazy" decoding="async" alt="${escape(room.name)}的当前模型渲染"><span class="image-badge">模型渲染 · Cycles · ${escape(manifest.version)}</span></figure></a><header><h3>${escape(room.name)}</h3><small>0${i + 1} / ${room.area.toFixed(2)} m² · 模型估算</small></header><p>${descriptions[id]}</p>${links}</article>`;
     })
@@ -387,6 +388,11 @@ function sync(state) {
       Furniture_cognac_leather: "棕色皮革",
       Furniture_dark_wood: "深色木框",
       Furniture_charcoal: "炭灰木板",
+      Study_matte_black: "哑光黑柜板",
+      Study_graphite_stone: "深灰纹石",
+      Study_honey_wood: "暖木饰面",
+      Study_smoked_glass: "茶灰展示玻璃",
+      Study_warm_strip: "暖色灯带",
       Furniture_smoked_glass: "烟灰玻璃",
       Furniture_art_atlas: "艺术画布",
       Furniture_tv_frame: "电视石墨色边框",

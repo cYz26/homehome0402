@@ -121,15 +121,19 @@
       "pass": true
     },
     {
-      "name": "Actual study has the specified desk, one deep seat-base row and four facade modules",
+      "name": "Actual study retains its specified desk dimensions",
       "pass": true
     },
     {
-      "name": "Actual study clears static walls/slider; drawer-use limitation stays explicit",
+      "name": "Full-wall bookcase spans 3.19 m with flush window-side doors and sill clearance",
       "pass": true
     },
     {
-      "name": "Integrated source preserves every published study part and all other unmodified published parts",
+      "name": "Actual study furniture clears the fixed walls and slider",
+      "pass": true
+    },
+    {
+      "name": "Integrated source preserves published parts outside recorded revisions",
       "pass": true
     },
     {
@@ -137,7 +141,11 @@
       "pass": true
     },
     {
-      "name": "Northwest room and its window are the only additions or revisions to the prior model",
+      "name": "Only the bookcase changes against the preceding model",
+      "pass": true
+    },
+    {
+      "name": "Northwest room integration preserves the prior model outside recorded revisions",
       "pass": true
     },
     {
@@ -153,6 +161,6 @@
       "pass": true
     }
   ],
-  "passed": 38,
-  "total": 38
+  "passed": 40,
+  "total": 40
 }

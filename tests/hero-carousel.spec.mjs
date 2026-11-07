@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-const selected = ["scheme-overview", "living", "scheme-tv-c-close", "scheme-study",
-  "study", "scheme-study-cabinet", "study-cabinet", "scheme-childroom-pink", "northwest", "kitchen", "master", "masterbath"];
+const selected = ["scheme-overview", "living", "scheme-tv-c-close", "scheme-study-cabinet",
+  "study", "study-cabinet", "scheme-childroom-pink", "northwest", "kitchen", "master", "masterbath"];
 const current = (page, id) => expect(page.locator("#hero-image")).toHaveAttribute("data-image-id", id);
 async function ready(page) {
   await page.goto("./", { waitUntil: "domcontentloaded" });
@@ -39,7 +39,7 @@ for (const [label, width, height] of [["desktop", 1280, 900], ["phone", 390, 844
       await expect(page.locator(`[data-hero-slide="${image.id}"]`)).toHaveAttribute("aria-pressed", "true");
       expect(await page.locator("#hero-image").evaluate((image) => image.complete && image.naturalWidth > 1000)).toBe(true);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-      if (["scheme-overview", "scheme-study", "study-cabinet", "scheme-childroom-pink"].includes(image.id))
+      if (["scheme-overview", "scheme-study-cabinet", "study-cabinet", "scheme-childroom-pink"].includes(image.id))
         await testInfo.attach(`carousel-${label}-${image.id}`, { body: await page.screenshot(), contentType: "image/png" });
     }
     await page.keyboard.press("ArrowRight");
@@ -97,15 +97,15 @@ test("homepage carousel: delayed selection cannot overwrite a newer choice and f
   await page.emulateMedia({ reducedMotion: "reduce" });
   let release;
   const gate = new Promise((resolve) => { release = resolve; });
-  await page.route("**/scheme-study.webp", async (route) => { await gate; await route.continue(); });
+  await page.route("**/study-cabinet.webp", async (route) => { await gate; await route.continue(); });
   try {
     await ready(page);
-    await page.locator('[data-hero-slide="scheme-study"]').click();
+    await page.locator('[data-hero-slide="study-cabinet"]').click();
     await expect(page.locator("#home-gallery")).toHaveAttribute("aria-busy", "true");
     await current(page, "scheme-overview");
     await page.locator('[data-hero-slide="scheme-tv-c-close"]').click();
     await current(page, "scheme-tv-c-close");
-    const completed = page.waitForResponse("**/scheme-study.webp");
+    const completed = page.waitForResponse("**/study-cabinet.webp");
     release();
     await completed;
     await expect(page.locator("#home-gallery")).toHaveAttribute("aria-busy", "false");

@@ -26,7 +26,7 @@ await fs.mkdir(`${out}/images`, { recursive: true });
 const assets = [],
   images = [];
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
-const applicationRevision = "2026-11-07-childroom-fitted-joinery";
+const applicationRevision = "2026-11-07-study-full-wall";
 const deploymentSources = [
   "wrangler.jsonc", "worker/index.mjs", "scripts/deploy-worker.mjs",
   "scripts/worker-secrets.mjs", "scripts/check-worker.mjs",
@@ -132,7 +132,7 @@ const renderTitles = {
   master: "主卧",
   masterbath: "主卫",
   study: "书房",
-  "study-cabinet": "书房柜体",
+  "study-cabinet": "满墙书柜正面",
   northwest: "西北儿童房",
 };
 for (const id of ["reference", "living", "kitchen", "master", "masterbath", "study", "study-cabinet", "northwest"].filter(id => spec.renderViews.some(v => v.id === id))) {
@@ -147,7 +147,8 @@ for (const id of ["reference", "living", "kitchen", "master", "masterbath", "stu
     path,
     kind: "模型渲染",
     version,
-    caption: `由当前 ${version} 源模型以 Cycles 渲染；家具、空间、门向及构件与交互模型同步。家具外观按用户参考建模，尺寸依据见构件属性。`,
+    caption: spec.renderViews.find(view => view.id === id)?.caption ??
+      `由当前 ${version} 源模型以 Cycles 渲染；家具、空间、门向及构件与交互模型同步。家具外观按用户参考建模，尺寸依据见构件属性。`,
   });
   await asset(path, "render");
 }
