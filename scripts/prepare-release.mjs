@@ -8,7 +8,8 @@ const resourceBudgets = JSON.parse(await fs.readFile("model/resource-budgets.jso
 if (resourceBudgets.version !== spec.version) throw Error("Resource budget and model versions differ");
 const designSelection = spec.furnitureDecision ? JSON.parse(await fs.readFile(spec.furnitureDecision)) : null;
 const studySelection = spec.studyDecision ? JSON.parse(await fs.readFile(spec.studyDecision)) : null;
-const designSelections = [designSelection, studySelection].filter(Boolean);
+const childroomSelection = spec.childroomDecision ? JSON.parse(await fs.readFile(spec.childroomDecision)) : null;
+const designSelections = [designSelection, studySelection, childroomSelection].filter(Boolean);
 const designInputs = designSelections.flatMap(selection => [
   ...(selection.selected_previews ?? []).map(r => r.path ?? r.source),
   ...(selection.independent_references ?? []).map(r => r.path),
@@ -25,7 +26,7 @@ await fs.mkdir(`${out}/images`, { recursive: true });
 const assets = [],
   images = [];
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
-const applicationRevision = "2026-10-09-homepage-carousel-refinement";
+const applicationRevision = "2026-11-07-northwest-childroom-pink";
 const deploymentSources = [
   "wrangler.jsonc", "worker/index.mjs", "scripts/deploy-worker.mjs",
   "scripts/worker-secrets.mjs", "scripts/check-worker.mjs",
@@ -132,8 +133,9 @@ const renderTitles = {
   masterbath: "主卫",
   study: "书房",
   "study-cabinet": "书房柜体",
+  northwest: "西北儿童房",
 };
-for (const id of ["reference", "living", "kitchen", "master", "masterbath", "study", "study-cabinet"].filter(id => spec.renderViews.some(v => v.id === id))) {
+for (const id of ["reference", "living", "kitchen", "master", "masterbath", "study", "study-cabinet", "northwest"].filter(id => spec.renderViews.some(v => v.id === id))) {
   const path = `${prefix}/images/${id}.webp`;
   await sharp(`.asset-work/renders/${version}/${id}.png`)
     .resize({ width: id === "reference" ? 1400 : 1100 })
@@ -151,7 +153,10 @@ for (const id of ["reference", "living", "kitchen", "master", "masterbath", "stu
 }
 for(const effect of designSelections.flatMap(s=>s.display_effects ?? []).filter(effect => !effect.kind.startsWith("历史"))) {
   const imagePath=`${prefix}/images/${effect.id}.webp`;
-  await sharp(effect.source).resize({width:1448,withoutEnlargement:true}).webp({quality:90}).toFile(`public/${imagePath}`);
+  const input = await fs.readFile(effect.source);
+  if (effect.sha256 && hash(input) !== effect.sha256)
+    throw Error(`Approved image source changed: ${effect.source}`);
+  await sharp(input).resize({width:1448,withoutEnlargement:true}).webp({quality:90}).toFile(`public/${imagePath}`);
   images.push({id:effect.id,title:effect.title,path:imagePath,kind:effect.kind,version:effect.designVersion,caption:effect.caption});
   await asset(imagePath, 'design-effect');
 }
@@ -313,6 +318,12 @@ const report = {
     layout: studySelection.layout,
     alignment: studySelection.alignment,
   } : null,
+  childroomContext: childroomSelection ? {
+    id: childroomSelection.id,
+    selectionSha256: hash(await fs.readFile(spec.childroomDecision)),
+    userAcceptance: childroomSelection.user_acceptance,
+    layout: childroomSelection.layout,
+  } : null,
   renders: provenance,
   acceptance: {
     visual: "pending-user-review",
@@ -348,6 +359,7 @@ for (const path of [
   "scripts/architecture_geometry.py",
   "scripts/furniture_geometry.py",
   ...(spec.studyDecision ? ["scripts/study_geometry.py", "scripts/render-study-review.py"] : []),
+  ...(spec.childroomDecision ? ["scripts/childroom_geometry.py", spec.childroomDecision, nodePath.posix.join(nodePath.posix.dirname(spec.childroomDecision), "DECISION.md")] : []),
   "scripts/render-apartment.py",
   "scripts/render_exterior.py",
   "scripts/environment-data.mjs",

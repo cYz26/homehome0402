@@ -1,8 +1,10 @@
 # 尺寸核对状态
 
-**最新尺寸依据**：2026-10-25 用户附件3的红字户型图，项目副本为 [标注原图](../references/revisions/measurements-20261025/annotated-floor-plan.png)，逐项原值、图面位置与疑问见 [独立标注账本](../model/site-measurements/2026-10-25.json)。后续尺寸核对优先使用对应红字原值；未标部位继续留空，不从旧模型补为实测。2026-11-07已按用户要求丢弃儿童房设计方案，独立尺寸依据继续保留。
+**最新尺寸依据**：2026-10-25 用户附件3的红字户型图，项目副本为 [标注原图](../references/revisions/measurements-20261025/annotated-floor-plan.png)，逐项原值、图面位置与疑问见 [独立标注账本](../model/site-measurements/2026-10-25.json)。后续尺寸核对优先使用对应红字原值，未标部位继续留空。新确认的儿童房已在 metric-v16 局部采用北窗三项标注。
 
-**模型应用状态**：原建模依据用户图1仍保留于 `references/01-floor-plan.png`。全屋源、验证及发布清单仍为 **metric-v14**，完整米制源为 `art_src/apartment-v14.blend`；`asset_exchange/apartment-v14.glb`、`asset_exchange/living-sofa-v14.glb` 与 `asset_exchange/study-v14.glb` 同版本三包共同组成完整场景。此次仅整理独立尺寸资料，**未将新红字应用到共享整屋几何，也未重建或发布三包**；当前网格尺寸仍以 `model/apartment.json`、`model/validation.json` 及 `public/release.json` 核实，不能把新账本等同于模型已同步。
+**儿童房本轮应用**：北窗宽 1.69 m、高 1.79 m、窗台 0.70 m，洞口与窗框共同更新，靠东中心沿原模型。房间标注、左右窗垛、开扇净空和家具安装尺寸继续分开核对。[儿童房设计](design/childroom-pink/DECISION.md)
+
+**资料入档时的模型状态**：原建模依据用户图1仍保留于 `references/01-floor-plan.png`。全屋源、验证及发布清单仍为 **metric-v14**，完整米制源为 `art_src/apartment-v14.blend`；`asset_exchange/apartment-v14.glb`、`asset_exchange/living-sofa-v14.glb` 与 `asset_exchange/study-v14.glb` 同版本三包共同组成完整场景。此次仅整理独立尺寸资料，**未将新红字应用到共享整屋几何，也未重建或发布三包**；当前网格尺寸仍以 `model/apartment.json`、`model/validation.json` 及 `public/release.json` 核实，不能把新账本等同于模型已同步。
 
 版本沿革：v04 继承此前的空房结构、窗户尺度与厨房设备，更新推拉门、主卫宽槽及局部柜墙材质。当前沿用原平面参考线；metric-v11 依用户实拍将邻接电视墙的东南卧室门洞顶暂调到 2.62 m，后续 C 柜与 v14 集成继承这一解释，平面位置、0.90 m 宽、铰链和全开方向保持。书房高窗台与家具尺寸见[书房尺寸与高窗台](#书房尺寸与高窗台--metric-v13)，当前设计入口见[实施记录](IMPLEMENTATION.md#当前项目上下文)。模型中的标注尺寸链与原图一致，实际 GLB 的墙参考线间距已检查。图纸未说明轴线或完成面，所以不把尺寸链等同于现场净尺寸。
 

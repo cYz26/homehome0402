@@ -41,7 +41,7 @@
       "pass": true
     },
     {
-      "name": "Living glazing reaches the floor; bedroom glazing has lowered sills and no guards",
+      "name": "Living glazing reaches the floor and room-specific windows retain their specified sills",
       "pass": true
     },
     {
@@ -49,7 +49,7 @@
       "pass": true
     },
     {
-      "name": "Earlier removed elevator shell and bedroom wardrobes remain absent",
+      "name": "Earlier removed elevator shell and unused wardrobes remain absent",
       "pass": true
     },
     {
@@ -135,8 +135,20 @@
     {
       "name": "Integrated source preserves the complete latest living model outside the published study window change",
       "pass": true
+    },
+    {
+      "name": "Northwest room and its window are the only additions or revisions to the prior model",
+      "pass": true
+    },
+    {
+      "name": "Actual childroom stairs have two equal rises, two drawers and a direct boarding edge",
+      "pass": true
+    },
+    {
+      "name": "Northwest opening follows the local annotation without moving its center",
+      "pass": true
     }
   ],
-  "passed": 34,
-  "total": 34
+  "passed": 37,
+  "total": 37
 }

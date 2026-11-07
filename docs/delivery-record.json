@@ -1,33 +1,33 @@
 {
-  "version": "metric-v14",
-  "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-  "rawModelSha256": "8b3873d4fc12136f33ec2ad1eaec4aa9c167d55deb790423078e2824d3fda907",
+  "version": "metric-v16",
+  "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+  "rawModelSha256": "29751fdd5ba3055253ebe035acf5cc811b2355fc2719762aad72d2fff328ccd0",
   "modelPackages": [
     {
       "id": "apartment",
-      "path": "asset_exchange/apartment-v14.glb",
-      "sha256": "8b3873d4fc12136f33ec2ad1eaec4aa9c167d55deb790423078e2824d3fda907",
-      "bytes": 23295384
+      "path": "asset_exchange/apartment-v16.glb",
+      "sha256": "29751fdd5ba3055253ebe035acf5cc811b2355fc2719762aad72d2fff328ccd0",
+      "bytes": 24666964
     },
     {
       "id": "living-sofa",
-      "path": "asset_exchange/living-sofa-v14.glb",
-      "sha256": "705de2fd18c0ca6e7fb0a3c74f0dce33ce0086b3b3fb4a741f948454666cf0d2",
+      "path": "asset_exchange/living-sofa-v16.glb",
+      "sha256": "d5be7cf5a09de95f144a9762333634c6f0a202e205e4fc69b99df2cefdecbc8b",
       "bytes": 21232288
     },
     {
       "id": "study",
-      "path": "asset_exchange/study-v14.glb",
-      "sha256": "f9f7319e606aa119d9e2c34fce4e162a7305a4d2119eff72259be5af447e5fee",
+      "path": "asset_exchange/study-v16.glb",
+      "sha256": "c3981b82a3f6b1e939879b2ce6c233151cb5c9a0a6087ee29382be88cfef6dd4",
       "bytes": 6746256
     }
   ],
-  "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
+  "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
   "roundtrip": {
     "passed": true,
-    "sourceObjects": 718,
-    "importedObjects": 718,
-    "triangles": 273815,
+    "sourceObjects": 729,
+    "importedObjects": 729,
+    "triangles": 309275,
     "maximumBoundsErrorMeters": 9.5367431640625e-7
   },
   "checks": {
@@ -73,7 +73,7 @@
         "pass": true
       },
       {
-        "name": "Living glazing reaches the floor; bedroom glazing has lowered sills and no guards",
+        "name": "Living glazing reaches the floor and room-specific windows retain their specified sills",
         "pass": true
       },
       {
@@ -81,7 +81,7 @@
         "pass": true
       },
       {
-        "name": "Earlier removed elevator shell and bedroom wardrobes remain absent",
+        "name": "Earlier removed elevator shell and unused wardrobes remain absent",
         "pass": true
       },
       {
@@ -167,10 +167,22 @@
       {
         "name": "Integrated source preserves the complete latest living model outside the published study window change",
         "pass": true
+      },
+      {
+        "name": "Northwest room and its window are the only additions or revisions to the prior model",
+        "pass": true
+      },
+      {
+        "name": "Actual childroom stairs have two equal rises, two drawers and a direct boarding edge",
+        "pass": true
+      },
+      {
+        "name": "Northwest opening follows the local annotation without moving its center",
+        "pass": true
       }
     ],
-    "passed": 34,
-    "total": 34
+    "passed": 37,
+    "total": 37
   },
   "revisions": [
     {
@@ -349,6 +361,50 @@
       ],
       "livingBaseline": "docs/evidence/metric-v14/integration-inputs/living-only-v13/model/validation.json",
       "studyBaseline": "model/baseline-v13/validation.json"
+    },
+    {
+      "id": "northwest-childroom-pink",
+      "version": "metric-v16",
+      "date": "2026-11-07",
+      "basis": "Apply the user-approved pink room with equal two-step storage cabinet and removable rail caddy.",
+      "baseline": "model/baseline-v14/validation.json",
+      "windowChangedNodes": [
+        "NW_north_glass_lower",
+        "NW_north_glass_lower.001",
+        "NW_north_glass_upper",
+        "NW_north_glass_upper.001",
+        "NW_north_handle",
+        "NW_north_mullion_lower",
+        "NW_north_mullion_lower.001",
+        "NW_north_mullion_lower.002",
+        "NW_north_mullion_upper",
+        "NW_north_mullion_upper.001",
+        "NW_north_mullion_upper.002",
+        "NW_north_rail",
+        "NW_north_rail.001",
+        "NW_north_stone_sill",
+        "wall_north_0_0_lower",
+        "wall_north_0_0_upper",
+        "wall_north_1_0_lower",
+        "wall_north_1_1_upper",
+        "wall_north_2_0_lower",
+        "wall_north_2_0_upper",
+        "skirting_north_0",
+        "skirting_north_1",
+        "skirting_north_2"
+      ],
+      "entityIds": [
+        "childroom-bed",
+        "childroom-stairs",
+        "childroom-wardrobe",
+        "childroom-curtains",
+        "childroom-caddy",
+        "childroom-book-rack",
+        "childroom-nook",
+        "childroom-desk",
+        "childroom-chair",
+        "childroom-wall"
+      ]
     }
   ],
   "designContext": {
@@ -417,13 +473,46 @@
       "sha256": "6c0532943106862b055c9a961ad022c913a7e8dad32b407c3f6735e93b3b4b76"
     }
   },
+  "childroomContext": {
+    "id": "childroom-pink",
+    "selectionSha256": "bdd54111c98522b18ecd2f0ebaaada1636c107786fa7662a490f5f11b7e6cfe2",
+    "userAcceptance": {
+      "scope": "AI 外观及两级等高踏步方案",
+      "quote": "这个效果OK，更新到3D空间和网站上"
+    },
+    "layout": {
+      "west": "浅粉半高床、双片豆沙粉帘、床下阅读角、两层绘本架",
+      "north": "两级等高抽屉踏步接衣柜底部，第二级直达床北端。窗侧无挡板",
+      "rail": "可拆挂式绘本盒，后续可拆换爬梯",
+      "east": "靠窗学习桌、桌上书架、豆沙粉椅",
+      "windowBasis": "model/site-measurements/2026-10-25.json#NW_north"
+    }
+  },
   "renders": {
-    "modelVersion": "metric-v14",
-    "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-    "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
+    "modelVersion": "metric-v16",
+    "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+    "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
     "engine": "Cycles",
     "blender": "5.2.1 LTS",
     "views": [
+      {
+        "id": "northwest",
+        "name": "西北儿童房",
+        "mode": "interior",
+        "camera": [
+          3.42,
+          3.26,
+          1.53
+        ],
+        "target": [
+          1.98,
+          1.16,
+          1.09
+        ],
+        "fov": 78,
+        "width": 1448,
+        "height": 1086
+      },
       {
         "id": "hero",
         "name": "全屋轴测",
@@ -608,6 +697,29 @@
       }
     ],
     "images": {
+      "northwest": {
+        "view": {
+          "id": "northwest",
+          "name": "西北儿童房",
+          "mode": "interior",
+          "camera": [
+            3.42,
+            3.26,
+            1.53
+          ],
+          "target": [
+            1.98,
+            1.16,
+            1.09
+          ],
+          "fov": 78,
+          "width": 1448,
+          "height": 1086
+        },
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "7cf32b4c30db06fb6309f1991eba4cf38aea16639c5d16cee8e9809ada70e521"
+      },
       "hero": {
         "view": {
           "id": "hero",
@@ -625,9 +737,9 @@
           ],
           "orthoScale": 21
         },
-        "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-        "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
-        "sha256": "26c654e616b73bb0948ad3334976f0e4e335b9a1fa3b5d23af4845e2fa2461da"
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "1e62f35569fa40bc3d793d1694f59842c62f350e13b43d8c32eb95517966fb5b"
       },
       "reference": {
         "view": {
@@ -648,9 +760,9 @@
           "width": 1400,
           "height": 1600
         },
-        "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-        "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
-        "sha256": "f4c30434cc54c07b251f88f27488d8d3e8f9d89dbf71a27af11447ec78a419ca"
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "7234164a68366affb1f0983a2f0f23b1b6ddbc10d5aeb4528d3c73fa53d8ef06"
       },
       "living": {
         "view": {
@@ -669,9 +781,9 @@
           ],
           "fov": 65
         },
-        "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-        "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
-        "sha256": "7c89382890452d0e398e3f1e1acc9a1405b93cd247adab92d2da5a748f9a2747"
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "cf1059f0bde4eebeeecbfd87ce577dc56c52caadc0ccb1edace1343edf1b27f2"
       },
       "master": {
         "view": {
@@ -690,9 +802,9 @@
           ],
           "fov": 72
         },
-        "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-        "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
-        "sha256": "1608704fa32fd58111bafa19bbf2c0e46487b746d1e563d060dbb03c798ff349"
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "e07a59bb0068f5b7ab426b2e22adb2dcad3b5e1e285bf41b1f29ae49f69057b0"
       },
       "kitchen": {
         "view": {
@@ -711,9 +823,9 @@
           ],
           "fov": 72
         },
-        "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-        "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
-        "sha256": "cef97452de7a561505bda0e712f25051062039d7221cc8c0b032e10f56ae0d10"
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "7920ebdf4d2489beda13fa17ffa95496e8d52c286dada2b2dd6364f7bfff62c0"
       },
       "masterbath": {
         "view": {
@@ -732,9 +844,9 @@
           ],
           "fov": 90
         },
-        "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-        "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
-        "sha256": "dbf49575df906e98fa31c9e72426c41859f6848a243625bd6fb4dc6b560d5281"
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "63891ca2ef32721883ae9c2c04d92d667366bda6c5cb12c0ea603d222bffd283"
       },
       "cabinet": {
         "view": {
@@ -753,9 +865,9 @@
           ],
           "fov": 68
         },
-        "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-        "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
-        "sha256": "b17852d1e6d8275ae9421eb0bc03f3eec0e7948544c7afcd5ddfc26c128e9568"
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "baa7a8d1af85dd9b9b80e7ad957c57e344864cb9f1ba2be23026d628cd15582f"
       },
       "table": {
         "view": {
@@ -774,9 +886,9 @@
           ],
           "fov": 62
         },
-        "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-        "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
-        "sha256": "0676dec97b410f76e888d5f354b8ce7cd682ef022878e8caa15bf384befa878d"
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "af61a16f548bf490dc72c25916e985ac91ee8cb88b0ccb3fb38e9a71eef3108b"
       },
       "study": {
         "view": {
@@ -797,9 +909,9 @@
           "width": 1448,
           "height": 1086
         },
-        "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-        "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
-        "sha256": "2267e9531aff0c8fc29e5fe9cb103239943204ae831bac8455dee88b8dc5b9f1"
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "ef96ae8a8199a6fd7a175fa1edd2cecf4fac0b817f6b4f2a7045f67d60f82b0c"
       },
       "study-cabinet": {
         "view": {
@@ -820,9 +932,9 @@
           "width": 1448,
           "height": 1086
         },
-        "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-        "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
-        "sha256": "c7173bdc5971f4fd85a7121044d813debb3ae2cf3ccb0850f706de90c9012b79"
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "d36e7a35053153f686ac74fb36cb6e93e859a6fbd9fe1a499907ba7dd22b9845"
       },
       "tv-door": {
         "view": {
@@ -841,9 +953,9 @@
           ],
           "fov": 68
         },
-        "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-        "specSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
-        "sha256": "dc18206c7a0ea10c6413371d8241c909d41a1f8a841851353c9b827581d3d2c4"
+        "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+        "specSha256": "32ee159642bb6e06b4cfff00b82a56bf394dcab8aeeddea7a0fdadf655ea3de4",
+        "sha256": "2020c20f136ee37790353f6b70bb41d95cbf8020b8c2a43f49c686afbd4e362a"
       }
     },
     "role": "Same-model Cycles renders; not site photographs"
@@ -853,5 +965,5 @@
     "realPhonePerformance": "not-measured"
   },
   "releaseManifest": "public/release.json",
-  "manifestSha256": "b8e3eead1f546b8637fdd1c731ad28d7d300969d1d1fb1a3a6b6c6c747311a4e"
+  "manifestSha256": "c40470ac020aecf6ba63967647e6ab6ed584198a790c05bb4ee2913adf5cee6c"
 }

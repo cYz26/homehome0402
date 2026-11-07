@@ -1,11 +1,11 @@
 import { test, expect } from "@playwright/test";
 
 const selected = ["scheme-overview", "living", "scheme-tv-c-close", "scheme-study",
-  "study", "scheme-study-cabinet", "study-cabinet", "kitchen", "master", "masterbath"];
+  "study", "scheme-study-cabinet", "study-cabinet", "scheme-childroom-pink", "northwest", "kitchen", "master", "masterbath"];
 const current = (page, id) => expect(page.locator("#hero-image")).toHaveAttribute("data-image-id", id);
 async function ready(page) {
   await page.goto("./", { waitUntil: "domcontentloaded" });
-  await expect(page.locator("#hero-dots button")).toHaveCount(10);
+  await expect(page.locator("#hero-dots button")).toHaveCount(selected.length);
   await expect.poll(() => page.locator("#hero-image").evaluate((image) =>
     image.complete && image.naturalWidth > 1000)).toBe(true);
 }
@@ -34,12 +34,12 @@ for (const [label, width, height] of [["desktop", 1280, 900], ["phone", 390, 844
       await page.locator(`[data-hero-slide="${image.id}"]`).click();
       await current(page, image.id);
       await expect(page.locator("#hero-image")).toHaveAttribute("src", new RegExp(`/${image.id}\\.webp$`));
-      await expect(page.locator("#hero-count")).toHaveText(`${String(i + 1).padStart(2, "0")} / 10`);
+      await expect(page.locator("#hero-count")).toHaveText(`${String(i + 1).padStart(2, "0")} / ${selected.length}`);
       await expect(page.locator("#hero-kind")).toContainText(image.kind === "模型渲染" ? "模型渲染" : "AI 效果图");
       await expect(page.locator(`[data-hero-slide="${image.id}"]`)).toHaveAttribute("aria-pressed", "true");
       expect(await page.locator("#hero-image").evaluate((image) => image.complete && image.naturalWidth > 1000)).toBe(true);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-      if (["scheme-overview", "scheme-study", "study-cabinet"].includes(image.id))
+      if (["scheme-overview", "scheme-study", "study-cabinet", "scheme-childroom-pink"].includes(image.id))
         await testInfo.attach(`carousel-${label}-${image.id}`, { body: await page.screenshot(), contentType: "image/png" });
     }
     await page.keyboard.press("ArrowRight");

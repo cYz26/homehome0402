@@ -45,6 +45,38 @@ for (const [label,width,height] of [["desktop",1280,900],["phone",390,844]]) {
     expect(await page.locator("vite-error-overlay").count()).toBe(0);
   });
 }
+test("northwest childroom: approved image, room view and two-step cabinet query", async ({ page }, testInfo) => {
+  test.setTimeout(process.env.CI ? 420000 : 180000);
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  const errors = [];
+  page.on("pageerror", error => errors.push(error.message));
+  page.on("console", message => { if (message.type() === "error") errors.push(message.text()); });
+  await page.goto("./");
+  const card = page.locator(".space-card").filter({ has: page.getByRole("heading", { name: "西北儿童房", exact: true }) });
+  await expect(card.locator("img")).toHaveAttribute("src", /\/northwest\.webp$/);
+  await card.getByRole("button", { name: /查看已确认效果图/ }).click();
+  await expect(page.locator("#reference-caption")).toContainText("AI 方案效果图");
+  await expect(page.locator("#reference-image")).toHaveAttribute("src", /\/scheme-childroom-pink\.webp$/);
+  await expect.poll(() => page.locator("#reference-image").evaluate(image => image.complete && image.naturalWidth === 1448)).toBe(true);
+  await testInfo.attach("childroom-approved", { body: await page.screenshot(), contentType: "image/png" });
+  await page.locator("#reference-dialog [data-close-dialog]").click();
+
+  await card.getByRole("link", { name: /进入这个空间/ }).click();
+  await modelReady(page);
+  await expect(page.locator('#rooms [data-room="northwest"]')).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator('button[data-mode="interior"]')).toHaveAttribute("aria-pressed", "true");
+  await nonblank(page, testInfo, "childroom-interior");
+
+  await panel(page, true);
+  await page.locator('[data-detail="childroom-stairs"]').click();
+  await nonblank(page, testInfo, "childroom-two-steps");
+  await page.locator('#mini-plan [data-entity-id="childroom-stairs"]').click();
+  await expect(page.locator("#properties")).toContainText("两级等高抽屉楼梯柜");
+  await expect(page.locator("#properties")).toContainText("第二级直接转入床端");
+  expect(errors).toEqual([]);
+});
+
 // Downloading, decoding and the first full-quality render are one loading
 // phase. A request event only marks its start; ordinary UI assertions stay 20s.
 async function modelReady(page, timeout = 120000, name = "model") {

@@ -39,6 +39,30 @@ if 'Master_double_stone_trough' in imported:
     for x in [1.40,1.90,2.40]:
         hit,location,normal,index,ob,matrix=bpy.context.scene.ray_cast(deps,Vector((x,12.9-5.92,1.02)),Vector((0,0,-1)))
         trough_samples.append({'x':x,'hit':bool(hit),'object':ob.name if hit else None,'height':location.z if hit else None})
+childroom = {}
+if SPEC.get('childroomDecision'):
+    depsgraph = bpy.context.evaluated_depsgraph_get()
+    extent = SPEC['coordinateSystem']['planSouthExtent']
+    stairs = next(item for item in SPEC['furnishings'] if item['id'] == 'childroom-stairs')
+    x, t = stairs['position']
+    depth = stairs['dimensions'][1]
+    lower_depth = stairs['lowerTreadDepth']
+    lower_x = x + (depth - lower_depth) / 2
+    upper_x = x - lower_depth / 2
+    step_samples = []
+    for step_x in (lower_x, upper_x):
+        hit, location, _, _, ob, _ = bpy.context.scene.ray_cast(
+            depsgraph, Vector((step_x, extent - t, stairs['floorElevation'] + stairs['dimensions'][2] + .03)),
+            Vector((0, 0, -1)))
+        step_samples.append({'object': ob.name if hit else None, 'height': location.z if hit else None})
+    bed = next(item for item in SPEC['furnishings'] if item['id'] == 'childroom-bed')
+    entry_t = bed['position'][1] - bed['dimensions'][0] / 2
+    entry_z = bed['floorElevation'] + bed['deckHeight'] + bed['mattressHeight'] + .04
+    hit, *_ = bpy.context.scene.ray_cast(
+        depsgraph, Vector((upper_x, extent - entry_t + .12, entry_z)),
+        Vector((0, -1, 0)), distance=.23)
+    childroom = {'childroom_step_samples': step_samples, 'childroom_boarding_clear': not hit}
+
 # Material primitives may be imported as one object or as child pieces; names are
 # compared at the original object prefix and per-object bounds, not vertex ordering.
 errors=[];max_error=0
@@ -60,7 +84,7 @@ report={'version':SPEC['version'],'spec_sha256':hashlib.sha256((ROOT/'model/apar
  'reimport_degenerate_triangles':sum(o['degenerate'] for o in imported.values()),
  'roundtrip_errors':errors,'roundtrip_pass':not errors,
  'acceptance':'Technical roundtrip only; original drawing dimensions partly estimated, user visual review pending.',
- 'trough_downward_ray_samples':trough_samples,'objects':imported}
+ 'trough_downward_ray_samples':trough_samples,**childroom,'objects':imported}
 (ROOT/'model/validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({k:v for k,v in report.items() if k!='objects'},indent=2))
 if errors:raise RuntimeError('Roundtrip errors; see model/validation.json')

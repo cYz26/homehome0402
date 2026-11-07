@@ -1,9 +1,9 @@
 {
-  "version": "metric-v14",
+  "version": "metric-v16",
   "firstScreenBytes": 1048576,
   "webModelBytes": 39845888,
   "interactive3DBytes": 41943040,
-  "basis": "Integrated living-v08 and published study-v04 preserve full-resolution textures,38MiB web /40MiB interaction budget; actual final bytes checked before publication.",
+  "basis": "沿用已发布画质预算与原始纹理策略。儿童房参数化家具随房屋包导出，保留完整模型包并实测字节。",
   "originalImagePackages": [
     "living-sofa"
   ]

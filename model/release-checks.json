@@ -1,5 +1,5 @@
 {
-  "version": "metric-v14",
+  "version": "metric-v16",
   "checks": [
     {
       "name": "spec, data, navigation and manifest are one version",
@@ -67,51 +67,51 @@
     }
   ],
   "passed": 16,
-  "initialBytes": 897155,
-  "firstViewportCoreBytes": 486177,
-  "interactiveBytes": 37813310,
-  "webGLBBytes": 35609620,
+  "initialBytes": 954280,
+  "firstViewportCoreBytes": 496450,
+  "interactiveBytes": 38297091,
+  "webGLBBytes": 36095880,
   "modelPackages": [
     {
-      "path": "releases/metric-v14/apartment-web.glb",
+      "path": "releases/metric-v16/apartment-web.glb",
       "role": "model",
-      "bytes": 15472132,
-      "sha256": "28c9234526e998bf77c5dfaa12aecf37ba644f57880d890bbc906ba8b60cd2bf"
+      "bytes": 15958392,
+      "sha256": "a43d9ae4b32bea3e0c77207bc5688730befb1eaab520a5e2f56eed9e8d0924d8"
     },
     {
-      "path": "releases/metric-v14/apartment-hd.glb",
+      "path": "releases/metric-v16/apartment-hd.glb",
       "role": "hd-model",
-      "source": "asset_exchange/apartment-v14.glb",
-      "bytes": 23295384,
-      "sha256": "8b3873d4fc12136f33ec2ad1eaec4aa9c167d55deb790423078e2824d3fda907"
+      "source": "asset_exchange/apartment-v16.glb",
+      "bytes": 24666964,
+      "sha256": "29751fdd5ba3055253ebe035acf5cc811b2355fc2719762aad72d2fff328ccd0"
     },
     {
-      "path": "releases/metric-v14/living-sofa-web.glb",
+      "path": "releases/metric-v16/living-sofa-web.glb",
       "role": "model",
       "bytes": 15929940,
-      "sha256": "6bcfd6db5d9800206e02bf7ee93e5b9a2b24ac9d79d46aca7128cbb640a195a0"
+      "sha256": "3de277d9565e4a7a6e2ab20481f7818ba9e49a42d86017d7b94c451e008417e2"
     },
     {
-      "path": "releases/metric-v14/living-sofa-hd.glb",
+      "path": "releases/metric-v16/living-sofa-hd.glb",
       "role": "hd-model",
-      "source": "asset_exchange/living-sofa-v14.glb",
+      "source": "asset_exchange/living-sofa-v16.glb",
       "bytes": 21232288,
-      "sha256": "705de2fd18c0ca6e7fb0a3c74f0dce33ce0086b3b3fb4a741f948454666cf0d2"
+      "sha256": "d5be7cf5a09de95f144a9762333634c6f0a202e205e4fc69b99df2cefdecbc8b"
     },
     {
-      "path": "releases/metric-v14/study-web.glb",
+      "path": "releases/metric-v16/study-web.glb",
       "role": "model",
       "bytes": 4207548,
-      "sha256": "092337c4ef1e4010dfe2a69a931d29672083f63979be751bb5c4d058a37622af"
+      "sha256": "b8140618839d8c59b9656b8c5985dee126cfbf74fce4eb36e22cb906f5851d40"
     },
     {
-      "path": "releases/metric-v14/study-hd.glb",
+      "path": "releases/metric-v16/study-hd.glb",
       "role": "hd-model",
-      "source": "asset_exchange/study-v14.glb",
+      "source": "asset_exchange/study-v16.glb",
       "bytes": 6746256,
-      "sha256": "f9f7319e606aa119d9e2c34fce4e162a7305a4d2119eff72259be5af447e5fee"
+      "sha256": "c3981b82a3f6b1e939879b2ce6c233151cb5c9a0a6087ee29382be88cfef6dd4"
     }
   ],
-  "sourceSha256": "857382e07cd5e378afb63474f4a30e1cb19387556263b179c996cf4ae13f3c0b",
-  "rawModelSha256": "8b3873d4fc12136f33ec2ad1eaec4aa9c167d55deb790423078e2824d3fda907"
+  "sourceSha256": "92062d22e5714e0112ce604648c86f225bf2e1c659d8ad07071519fafe517a15",
+  "rawModelSha256": "29751fdd5ba3055253ebe035acf5cc811b2355fc2719762aad72d2fff328ccd0"
 }

@@ -8,6 +8,8 @@ const selections = [
   ["study", "书房 · 场景图"],
   ["scheme-study-cabinet", "书房 · 柜体近景"],
   ["study-cabinet", "书柜 · 场景图"],
+  ["scheme-childroom-pink", "儿童房 · 粉色效果"],
+  ["northwest", "儿童房 · 场景图"],
   ["kitchen", "厨房 · 场景图"],
   ["master", "主卧 · 场景图"],
   ["masterbath", "主卫 · 场景图"],

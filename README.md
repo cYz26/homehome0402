@@ -1,6 +1,6 @@
 # Home 402 · 家的空间档案
 
-当前集成设计为 **metric-v14**：C「一字悬空柜」配 85 寸电视，餐学办公桌同侧补齐四把椅子、对侧保持长凳；实拍电视墙侧面、卧室门洞、窗侧石材灯缝及原插座布局沿用。图廊采用按用户图 2 / 图 3 制作的细腻室内效果图，提供整体与电视墙正面两个入口，A / B 保存为备选。书房保留已发布的胡桃木可坐底柜、140 × 70 cm 升降桌、转椅与配柜，提供整体和柜体近景效果图。原始 4K PBR 沙发、灯光、透射玻璃及庭院保持。AI 方案效果、同源模型渲染和实拍分别标注，平面图、查询、剖切与漫游沿用。已发布到[公开网站](https://cyz26.github.io/homehome0402/)，本轮收据见[QA](docs/QA.md)。
+当前集成设计为 **metric-v16**。西北儿童房加入浅粉半高床、双片豆沙粉床帘、两级等高抽屉踏步、双拱门衣柜与窗边学习桌。网站展示用户确认的 AI 效果和同源 3D 场景，[设计依据](docs/design/childroom-pink/DECISION.md)保留尺寸口径。客餐厅继续采用 C「一字悬空柜」配 85 寸电视，餐学办公桌同侧补齐四把椅子、对侧保持长凳；实拍电视墙侧面、卧室门洞、窗侧石材灯缝及原插座布局沿用。图廊采用按用户图 2 / 图 3 制作的细腻室内效果图，提供整体与电视墙正面两个入口，A / B 保存为备选。书房保留已发布的胡桃木可坐底柜、140 × 70 cm 升降桌、转椅与配柜，提供整体和柜体近景效果图。原始 4K PBR 沙发、灯光、透射玻璃及庭院保持。AI 方案效果、同源模型渲染和实拍分别标注，平面图、查询、剖切与漫游沿用。发布入口为[公开网站](https://cyz26.github.io/homehome0402/)，本轮检查与发布状态见 [QA](docs/QA.md#西北儿童房粉色方案--metric-v16)。
 
 ## 本地查看
 
@@ -48,13 +48,13 @@ npm run preview -- --port 4173
 
 | 文件 | 用途 |
 | --- | --- |
-| `art_src/apartment-v14.blend` | 当前完整米制源场景，包含原始贴图沙发 |
+| `art_src/apartment-v16.blend` | 当前完整米制源场景，包含原始贴图沙发 |
 | `art_src/furniture/sofa-tripo-r1-ready.blend` | 哈希锁定的外部家具源；完整版、ZIP / FBX 保留归档 |
-| `asset_exchange/apartment-v14.glb` / `living-sofa-v14.glb` / `study-v14.glb` | 同版本房屋、沙发和书房三包，合并重导入核对全场景 |
-| `public/releases/metric-v14/apartment-web.glb` / `living-sofa-web.glb` / `study-web.glb` | 共同组成当前网页模型；编码与字节记录见 model-packages.json |
-| `public/releases/metric-v14/architecture.json` | 98 个逻辑构件、11 个空间及估算面积 |
-| `public/releases/metric-v14/navigation.json` | 完整建筑与沙发碰撞、单层可通行网格 |
-| `public/releases/metric-v14/floor-plan.svg` | 当前模型派生平面图 |
+| `asset_exchange/apartment-v16.glb` / `living-sofa-v16.glb` / `study-v16.glb` | 同版本房屋、沙发和书房三包，合并重导入核对全场景 |
+| `public/releases/metric-v16/apartment-web.glb` / `living-sofa-web.glb` / `study-web.glb` | 共同组成当前网页模型；编码与字节记录见 model-packages.json |
+| `public/releases/metric-v16/architecture.json` | 108 个逻辑构件、11 个空间及估算面积 |
+| `public/releases/metric-v16/navigation.json` | 完整建筑与家具碰撞、单层可通行网格 |
+| `public/releases/metric-v16/floor-plan.svg` | 当前模型派生平面图 |
 | `public/release.json` | 发布资源、版本、大小和 SHA-256 清单 |
 | `docs/QA.md` | 本轮检查、视觉证据及验收边界 |
 
@@ -101,7 +101,7 @@ CI 按“构建 → 四个浏览器分片 → 合并验收 → 部署”运行�
 - `build` 执行图片元数据、模型、Node 测试及发布资源检查，只构建一次；保存 `dist`、模型检查结果和完整浏览器清单，并把同一 `dist` 打包为 Pages artifact。
 - `browser` 在四个独立 runner 上按测试用例分片，每个用例使用独立 Chromium 进程、完整画质和零自动重试。所有分片按同一 artifact ID 下载构建，剖切夹具直接读取这份资源；Linux 在 Xvfb 下使用 ANGLE GL，并记录实际 WebGL 后端。Workers 密码入口用例保留历史，当前套件覆盖公开项目路径、资源、Range 及全部应用行为。
 - `verify` 合并四个 blob 报告，逐项核对测试清单，要求每项恰好执行一次并通过，再收集截图、像素指标及构建哈希。缺片、失败、跳过、重复或缺失附件均不能验收。
-- `deploy` 等待以上作业全部成功，使用官方 configure-pages / deploy-pages 发布已打包产物；按 artifact ID 下载同一份 `dist`，回读全部线上文件 SHA-256、六个模型包的 206 响应及缺失资源 404。PR 不申请 Pages 写权限，也不发布；无需 Cloudflare secrets。
+- `deploy` 等待以上作业全部成功，使用官方 configure-pages / deploy-pages 发布已打包产物；按 artifact ID 下载同一份 `dist`，回读全部线上文件 SHA-256、六个网页 / 高清模型资源的 206 响应及缺失资源 404。PR 不申请 Pages 写权限，也不发布；无需 Cloudflare secrets。
 
 ### 首次部署配置
 

@@ -17,6 +17,9 @@ const spec = await json("model/apartment.json"),
   navigation = await json(`public/${manifest.navigation}`),
   validation = await json("model/validation.json"),
   baseline = await json("model/baseline-v05/validation.json");
+const childroomWindowParts = new Set(spec.revisions.find(
+  r => r.id === 'northwest-childroom-pink'
+)?.windowChangedNodes);
 const checks = [];
 const check = (name, fn) => {
   fn();
@@ -73,7 +76,7 @@ check(
 check("all geometry outside recorded revisions remains identical to v05", () => {
   const exceptions = new Set(spec.revisions.flatMap((r) => r.entityIds));
   for (const [name, current] of Object.entries(validation.objects)) {
-    if (exceptions.has(current.entityId)) continue;
+    if (exceptions.has(current.entityId) || childroomWindowParts.has(name)) continue;
     const old = baseline.objects[name];
     assert.ok(old, name);
     assert.equal(current.triangles, old.triangles, name);
@@ -100,7 +103,7 @@ if (spec.furnishings?.length) {
       assert.ok(current, name);
       assert.equal(current.entityId, old.entityId, name);
       assert.equal(current.triangles, old.triangles, name);
-      if(allowed.has(name)) continue;
+      if(allowed.has(name) || childroomWindowParts.has(name)) continue;
       for (let side=0; side<2; side++) for (let axis=0; axis<3; axis++)
         assert.ok(Math.abs(current.bounds[side][axis]-old.bounds[side][axis])<0.0001, name);
     }
@@ -243,6 +246,7 @@ const firstViewportCoreBytes = initialBytes;
 const documentImageIds = [
   "living",
   "study",
+  ...(spec.childroomDecision ? ["northwest"] : []),
   "kitchen",
   "master",
   "masterbath",

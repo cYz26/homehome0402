@@ -217,7 +217,7 @@ const svg =
     )
     .join("") +
   entities
-    .filter((e) => ["cabinet", "fixture", "furniture"].includes(e.type) && !/rug|art-panels|lamp|items/.test(e.id))
+    .filter((e) => ["cabinet", "fixture", "furniture"].includes(e.type) && !/rug|art-panels|lamp|items/.test(e.id) && e.id !== "childroom-nook")
     .map(
       (e) =>
         `<rect class="entity" data-entity-id="${e.id}" x="${e.min[0]}" y="${e.min[2] + extent}" width="${e.size[0]}" height="${e.size[2]}"/>`,

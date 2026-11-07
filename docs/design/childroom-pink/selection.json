@@ -1,0 +1,29 @@
+{
+  "id": "childroom-pink",
+  "room": "northwest",
+  "date": "2026-11-07",
+  "user_acceptance": {
+    "scope": "AI 外观及两级等高踏步方案",
+    "quote": "这个效果OK，更新到3D空间和网站上"
+  },
+  "layout": {
+    "west": "浅粉半高床、双片豆沙粉帘、床下阅读角、两层绘本架",
+    "north": "两级等高抽屉踏步接衣柜底部，第二级直达床北端。窗侧无挡板",
+    "rail": "可拆挂式绘本盒，后续可拆换爬梯",
+    "east": "靠窗学习桌、桌上书架、豆沙粉椅",
+    "windowBasis": "model/site-measurements/2026-10-25.json#NW_north"
+  },
+  "display_effects": [
+    {
+      "id": "scheme-childroom-pink",
+      "title": "西北儿童房 · 粉色效果图",
+      "source": "references/generated/childroom-pink-20261107/approved.png",
+      "originalSha256": "8e92ed333644480118216f9e2092e3bd64fd54489815449a848b540c8045aace",
+      "sha256": "cc8bf38245fea680eccf40851dff796e98b64c26f3c37509ea20a8b9ddfb4ebe",
+      "generatedBy": "内置 image_gen",
+      "kind": "AI 方案效果图",
+      "designVersion": "childroom-pink",
+      "caption": "用户已确认。浅粉半高床、豆沙粉床帘、两级等高抽屉踏步和窗边学习桌。家具尺寸以模型属性及现场复尺为准。"
+    }
+  ]
+}

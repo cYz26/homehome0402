@@ -36,6 +36,9 @@ def configure(spec, collection, root):
         if item['recipe'].startswith('study_'):
             import study_geometry
             study_geometry.build(sys.modules[__name__], item)
+        elif item['recipe'].startswith('childroom_'):
+            import childroom_geometry
+            childroom_geometry.build(sys.modules[__name__], item)
         else:
             globals()[item['recipe']](item)
         finish(item['node'], item.get('layer','fixed'))

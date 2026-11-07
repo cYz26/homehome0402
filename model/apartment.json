@@ -1,6 +1,6 @@
 {
-  "version": "metric-v14",
-  "assetStem": "apartment-v14",
+  "version": "metric-v16",
+  "assetStem": "apartment-v16",
   "units": "m",
   "coordinates": "Plan x east, t south from north edge; Blender (x,12.9-t,z), GLB (x,z,t-12.9)",
   "height": 2.8,
@@ -218,7 +218,7 @@
     },
     {
       "id": "northwest",
-      "name": "西北次卧",
+      "name": "西北儿童房",
       "bounds": [
         0.9,
         0,
@@ -230,15 +230,15 @@
         1.65
       ],
       "camera": [
-        3.2,
-        2.85
+        3.42,
+        3.26
       ],
       "look": [
-        1.6,
-        0.5
+        1.98,
+        1.16
       ],
       "drawing": "北侧分段 2.80 × 3.40 m",
-      "finish": "直铺木地板 · 未拍区域暂定",
+      "finish": "浅粉西墙、豆沙粉帘与浅木地板",
       "polygon": [
         [
           0.9,
@@ -259,9 +259,12 @@
       ],
       "areaBasis": "model-estimate",
       "walkEntry": [
-        2.4,
-        2.2
-      ]
+        2.86,
+        2.59
+      ],
+      "eye": 1.53,
+      "targetHeight": 1.09,
+      "fov": 78
     },
     {
       "id": "xroom",
@@ -635,7 +638,8 @@
     "客餐厅家具依用户实拍和已确认 v02 外观建模；最新桌子尺寸图采用2800×900×750mm。其余家具尺度、木纹、装饰图案及隐蔽五金为有界建模推断，不是厂家或现场认证。",
     "书房高窗台约0.90m，3m书柜/80cm深座柜及配柜尺寸为方案假设；坐人承重需核验，桌前底柜抽屉打开需先移转椅。",
     "窗外庭院及绿植为实拍启发的展示环境，位置/种类未测绘，不计入面积、建筑构件或碰撞。电视尺寸、安装高度及柜体高度为可调整方案假设；实时光照接近照片气氛，不是实测照度或烘焙 GI。",
-    "电视墙依据 2026-10-09 用户实拍解释外观；85 寸及 C 一字悬空柜为用户选择，柜长 3.56 m / 深 40 cm / 底 12 cm / 顶 42 cm、插座中心高度和饰面尺寸为模型假设。"
+    "电视墙依据 2026-10-09 用户实拍解释外观；85 寸及 C 一字悬空柜为用户选择，柜长 3.56 m / 深 40 cm / 底 12 cm / 顶 42 cm、插座中心高度和饰面尺寸为模型假设。",
+    "儿童房床、两级储物踏步、衣柜、挂盒与书桌按用户确认的 AI 外观建模；家具尺寸为方案取值。北窗三项标注已局部应用，开启净空、板件五金及承重待复尺与厂家确认。"
   ],
   "windows": {
     "bedroomSill": 0.28,
@@ -643,7 +647,8 @@
     "livingSill": 0.035,
     "livingHead": 2.6,
     "guards": false,
-    "studySill": 0.9
+    "studySill": 0.9,
+    "childroomSill": 0.7
   },
   "detailViews": [
     {
@@ -821,6 +826,22 @@
       "eye": 1.52,
       "targetHeight": 1.3,
       "fov": 68
+    },
+    {
+      "id": "childroom-stairs",
+      "name": "儿童房 · 两级储物踏步",
+      "room": "northwest",
+      "camera": [
+        2.76,
+        1.83
+      ],
+      "look": [
+        1.91,
+        0.45
+      ],
+      "eye": 1.47,
+      "targetHeight": 0.68,
+      "fov": 68
     }
   ],
   "schemaVersion": 2,
@@ -872,10 +893,10 @@
       "thickness": 0.2,
       "openings": [
         [
-          0.85,
-          2.55,
-          0.28,
-          2.55
+          0.855,
+          2.545,
+          0.7,
+          2.49
         ],
         [
           3.12,
@@ -1391,9 +1412,9 @@
       "id": "NW_north",
       "x": 2.6,
       "t": 0,
-      "width": 1.7,
-      "sill": 0.28,
-      "head": 2.55,
+      "width": 1.69,
+      "sill": 0.7,
+      "head": 2.49,
       "count": 2,
       "orientation": 0,
       "room": "northwest"
@@ -2076,6 +2097,18 @@
         "distance": 1.1,
         "renderPower": 2.5,
         "color": "#ffe3b4"
+      },
+      {
+        "id": "Childroom_ceiling_fill",
+        "position": [
+          2.54,
+          1.89,
+          2.734
+        ],
+        "intensity": 0.64,
+        "distance": 3.4,
+        "color": "#fff2e9",
+        "renderPower": 13
       }
     ],
     "render": {
@@ -2186,7 +2219,7 @@
         "target": [
           5.2,
           2.4,
-          1.0
+          1
         ],
         "size": [
           1.5,
@@ -2195,6 +2228,25 @@
         "intensity": 2,
         "color": "#e7f3ff",
         "renderPower": 75
+      },
+      {
+        "position": [
+          2.6,
+          0.108,
+          1.6
+        ],
+        "target": [
+          1.69,
+          2.37,
+          0.66
+        ],
+        "size": [
+          1.5,
+          1.53
+        ],
+        "intensity": 2.1,
+        "color": "#fff3ed",
+        "renderPower": 128
       }
     ]
   },
@@ -3413,7 +3465,7 @@
       "placement": {
         "center": [
           7.75,
-          4e-07,
+          4e-7,
           1.3200001
         ],
         "size": [
@@ -3425,7 +3477,7 @@
       "templatePlacement": {
         "center": [
           7.75,
-          4e-07,
+          4e-7,
           1.3200001
         ],
         "size": [
@@ -3883,7 +3935,7 @@
     {
       "id": "window_NW_north",
       "type": "window",
-      "name": "西北次卧北窗",
+      "name": "西北儿童房北窗",
       "sourceNodes": [
         "NW_north_glass_lower",
         "NW_north_glass_lower.001",
@@ -3908,7 +3960,7 @@
         "Graphite_frame",
         "Ivory_stone_counter"
       ],
-      "basis": "图纸定位 / 照片估读，非现场实测",
+      "basis": "红字标注宽1.69m、高1.79m、离地0.70m。窗整体靠东并向内开启；中心沿原模型，窗垛、扇形与净空待复尺。静态模型显示关闭。",
       "placement": {
         "center": [
           2.6,
@@ -4520,7 +4572,7 @@
     {
       "id": "floor_floor_northwest",
       "type": "slab",
-      "name": "西北次卧木地板",
+      "name": "西北儿童房木地板",
       "sourceNodes": [
         "floor_northwest"
       ],
@@ -5421,7 +5473,7 @@
       "placement": {
         "center": [
           5.0000002,
-          4e-07,
+          4e-7,
           1.4000001
         ],
         "size": [
@@ -5433,7 +5485,7 @@
       "templatePlacement": {
         "center": [
           5.0000002,
-          4e-07,
+          4e-7,
           1.4000001
         ],
         "size": [
@@ -6307,6 +6359,192 @@
       ],
       "basis": "用户补回效果图里靠近镜头的一把椅子；同款同侧第四把，位置为模型布置假设",
       "furnitureId": "dining-chair-4"
+    },
+    {
+      "id": "childroom-bed",
+      "type": "furniture",
+      "name": "浅粉半高床",
+      "sourceNodes": [
+        "Furniture_childroom_bed"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Childroom_blush",
+        "Childroom_ivory",
+        "Childroom_quilt",
+        "Childroom_rose"
+      ],
+      "basis": "西墙半高床，长边拱形镂空护栏，北短边留上床口。床板离完成地板0.90m为建模假设。",
+      "furnitureId": "childroom-bed"
+    },
+    {
+      "id": "childroom-stairs",
+      "type": "furniture",
+      "name": "两级等高抽屉楼梯柜",
+      "sourceNodes": [
+        "Furniture_childroom_stairs"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Childroom_ivory",
+        "Oak_plank_05",
+        "Childroom_recess"
+      ],
+      "basis": "连接北端床口与衣柜底部，两个等高抽屉踏步，每级0.30m为建模假设。第二级直接转入床端，窗侧无挡板。",
+      "furnitureId": "childroom-stairs"
+    },
+    {
+      "id": "childroom-wardrobe",
+      "type": "furniture",
+      "name": "双拱门衣柜",
+      "sourceNodes": [
+        "Furniture_childroom_wardrobe"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Childroom_ivory",
+        "Childroom_blush",
+        "Childroom_quilt",
+        "Furniture_brass"
+      ],
+      "basis": "床北端、北窗西侧；上部双拱门、下部柜体侧面接踏步。柜宽、门板开合与收口按方案估配。",
+      "furnitureId": "childroom-wardrobe"
+    },
+    {
+      "id": "childroom-curtains",
+      "type": "furniture",
+      "name": "双片豆沙粉床帘",
+      "sourceNodes": [
+        "Furniture_childroom_curtains"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Childroom_rose"
+      ],
+      "basis": "床沿下两片落地褶帘，中部留开放入口。布帘按打开状态建模。",
+      "furnitureId": "childroom-curtains"
+    },
+    {
+      "id": "childroom-caddy",
+      "type": "furniture",
+      "name": "护栏可拆置物盒",
+      "sourceNodes": [
+        "Furniture_childroom_caddy"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Childroom_blush",
+        "Childroom_ivory",
+        "Childroom_quilt",
+        "Childroom_sage"
+      ],
+      "basis": "挂钩式置物盒以背板封住南侧预留段，可放绘本，预留后续拆换爬梯的方案。当前为静态件。",
+      "furnitureId": "childroom-caddy"
+    },
+    {
+      "id": "childroom-book-rack",
+      "type": "furniture",
+      "name": "床侧两层绘本架",
+      "sourceNodes": [
+        "Furniture_childroom_book_rack"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Childroom_blush",
+        "Childroom_ivory",
+        "Childroom_rose",
+        "Childroom_quilt",
+        "Childroom_sage"
+      ],
+      "basis": "浅粉绘本架沿西墙设两层，深度与标高为方案估配。",
+      "furnitureId": "childroom-book-rack"
+    },
+    {
+      "id": "childroom-nook",
+      "type": "furniture",
+      "name": "床下阅读角",
+      "sourceNodes": [
+        "Furniture_childroom_nook"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Childroom_blush",
+        "Childroom_ivory",
+        "Childroom_quilt",
+        "Childroom_rose"
+      ],
+      "basis": "地垫与靠垫示意床下阅读角，材质颜色按确认图解释。",
+      "furnitureId": "childroom-nook"
+    },
+    {
+      "id": "childroom-desk",
+      "type": "furniture",
+      "name": "窗边学习桌",
+      "sourceNodes": [
+        "Furniture_childroom_desk"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Oak_plank_05",
+        "Childroom_ivory",
+        "Childroom_rose",
+        "Childroom_quilt",
+        "Childroom_sage"
+      ],
+      "basis": "书桌侧向北窗、沿东墙放置，保留浅木桌面与桌上书架，产品规格和窗扇开启净空待核。",
+      "furnitureId": "childroom-desk"
+    },
+    {
+      "id": "childroom-chair",
+      "type": "furniture",
+      "name": "豆沙粉学习椅",
+      "sourceNodes": [
+        "Furniture_childroom_chair"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Childroom_blush",
+        "Childroom_rose",
+        "Childroom_ivory",
+        "Childroom_recess"
+      ],
+      "basis": "豆沙粉软垫学习椅，靠书桌布置。静态姿态为效果示意。",
+      "furnitureId": "childroom-chair"
+    },
+    {
+      "id": "childroom-wall",
+      "type": "finish",
+      "name": "西墙浅粉饰面",
+      "sourceNodes": [
+        "Furniture_childroom_wall",
+        "Furniture_childroom_wall_upper"
+      ],
+      "roomIds": [
+        "northwest"
+      ],
+      "materials": [
+        "Childroom_wall"
+      ],
+      "basis": "浅粉墙面仅用于儿童房内侧，沿现有建筑墙边界布置。",
+      "furnitureId": "childroom-wall"
     }
   ],
   "materials": [
@@ -7284,6 +7522,24 @@
         1.3
       ],
       "fov": 68
+    },
+    {
+      "id": "northwest",
+      "name": "西北儿童房",
+      "mode": "interior",
+      "camera": [
+        3.42,
+        3.26,
+        1.53
+      ],
+      "target": [
+        1.98,
+        1.16,
+        1.09
+      ],
+      "fov": 78,
+      "width": 1448,
+      "height": 1086
     }
   ],
   "revisions": [
@@ -7463,6 +7719,50 @@
       ],
       "livingBaseline": "docs/evidence/metric-v14/integration-inputs/living-only-v13/model/validation.json",
       "studyBaseline": "model/baseline-v13/validation.json"
+    },
+    {
+      "id": "northwest-childroom-pink",
+      "version": "metric-v16",
+      "date": "2026-11-07",
+      "basis": "Apply the user-approved pink room with equal two-step storage cabinet and removable rail caddy.",
+      "baseline": "model/baseline-v14/validation.json",
+      "windowChangedNodes": [
+        "NW_north_glass_lower",
+        "NW_north_glass_lower.001",
+        "NW_north_glass_upper",
+        "NW_north_glass_upper.001",
+        "NW_north_handle",
+        "NW_north_mullion_lower",
+        "NW_north_mullion_lower.001",
+        "NW_north_mullion_lower.002",
+        "NW_north_mullion_upper",
+        "NW_north_mullion_upper.001",
+        "NW_north_mullion_upper.002",
+        "NW_north_rail",
+        "NW_north_rail.001",
+        "NW_north_stone_sill",
+        "wall_north_0_0_lower",
+        "wall_north_0_0_upper",
+        "wall_north_1_0_lower",
+        "wall_north_1_1_upper",
+        "wall_north_2_0_lower",
+        "wall_north_2_0_upper",
+        "skirting_north_0",
+        "skirting_north_1",
+        "skirting_north_2"
+      ],
+      "entityIds": [
+        "childroom-bed",
+        "childroom-stairs",
+        "childroom-wardrobe",
+        "childroom-curtains",
+        "childroom-caddy",
+        "childroom-book-rack",
+        "childroom-nook",
+        "childroom-desk",
+        "childroom-chair",
+        "childroom-wall"
+      ]
     }
   ],
   "furnitureDecision": "docs/design/living-v08/selection.json",
@@ -8082,6 +8382,78 @@
       "metallic": 0,
       "alpha": 1,
       "emission": 3
+    },
+    {
+      "id": "Childroom_blush",
+      "baseColor": [
+        0.730461,
+        0.376262,
+        0.332452,
+        1
+      ],
+      "roughness": 0.43
+    },
+    {
+      "id": "Childroom_rose",
+      "baseColor": [
+        0.47932,
+        0.181164,
+        0.168269,
+        1
+      ],
+      "roughness": 0.82,
+      "grain": true
+    },
+    {
+      "id": "Childroom_ivory",
+      "baseColor": [
+        0.879622,
+        0.775822,
+        0.64448,
+        1
+      ],
+      "roughness": 0.57
+    },
+    {
+      "id": "Childroom_wall",
+      "baseColor": [
+        0.814847,
+        0.520996,
+        0.473531,
+        1
+      ],
+      "roughness": 0.77
+    },
+    {
+      "id": "Childroom_recess",
+      "baseColor": [
+        0.270498,
+        0.177888,
+        0.152926,
+        1
+      ],
+      "roughness": 0.64
+    },
+    {
+      "id": "Childroom_quilt",
+      "baseColor": [
+        0.879622,
+        0.701102,
+        0.590619,
+        1
+      ],
+      "roughness": 0.83,
+      "grain": true
+    },
+    {
+      "id": "Childroom_sage",
+      "baseColor": [
+        0.48515,
+        0.527115,
+        0.309469,
+        1
+      ],
+      "roughness": 0.71
     }
   ],
   "furnishings": [
@@ -8735,9 +9107,258 @@
         0.84
       ],
       "basis": "用户补回效果图里靠近镜头的一把椅子；同款同侧第四把，位置为模型布置假设"
+    },
+    {
+      "id": "childroom-bed",
+      "recipe": "childroom_bed",
+      "node": "Furniture_childroom_bed",
+      "position": [
+        1.6,
+        1.72
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        2.08,
+        1.12,
+        1.3
+      ],
+      "basis": "西墙半高床，长边拱形镂空护栏，北短边留上床口。床板离完成地板0.90m为建模假设。",
+      "floorElevation": 0.024,
+      "designDecision": "docs/design/childroom-pink/selection.json",
+      "deckHeight": 0.9,
+      "mattressHeight": 0.1,
+      "entryStart": 0.1,
+      "caddyEnd": -0.635,
+      "scallops": 5
+    },
+    {
+      "id": "childroom-stairs",
+      "recipe": "childroom_stairs",
+      "node": "Furniture_childroom_stairs",
+      "position": [
+        2.09,
+        0.405
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        0.55,
+        0.78,
+        0.6
+      ],
+      "basis": "连接北端床口与衣柜底部，两个等高抽屉踏步，每级0.30m为建模假设。第二级直接转入床端，窗侧无挡板。",
+      "floorElevation": 0.024,
+      "designDecision": "docs/design/childroom-pink/selection.json",
+      "rise": 0.3,
+      "lowerTreadDepth": 0.34,
+      "treadThickness": 0.025
+    },
+    {
+      "id": "childroom-wardrobe",
+      "recipe": "childroom_wardrobe",
+      "node": "Furniture_childroom_wardrobe",
+      "position": [
+        1.365,
+        0.397
+      ],
+      "front": [
+        0,
+        1
+      ],
+      "dimensions": [
+        0.67,
+        0.54,
+        2.55
+      ],
+      "basis": "床北端、北窗西侧；上部双拱门、下部柜体侧面接踏步。柜宽、门板开合与收口按方案估配。",
+      "floorElevation": 0.024,
+      "designDecision": "docs/design/childroom-pink/selection.json",
+      "upperDoorsBottom": 0.91
+    },
+    {
+      "id": "childroom-curtains",
+      "recipe": "childroom_curtains",
+      "node": "Furniture_childroom_curtains",
+      "position": [
+        2.113,
+        1.72
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        1.96,
+        0.047,
+        0.787
+      ],
+      "basis": "床沿下两片落地褶帘，中部留开放入口。布帘按打开状态建模。",
+      "floorElevation": 0.024,
+      "designDecision": "docs/design/childroom-pink/selection.json",
+      "centerOpening": 0.48,
+      "hem": 0.022
+    },
+    {
+      "id": "childroom-caddy",
+      "recipe": "childroom_caddy",
+      "node": "Furniture_childroom_caddy",
+      "position": [
+        2.194,
+        2.54
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        0.367,
+        0.104,
+        0.34
+      ],
+      "basis": "挂钩式置物盒以背板封住南侧预留段，可放绘本，预留后续拆换爬梯的方案。当前为静态件。",
+      "floorElevation": 0.024,
+      "designDecision": "docs/design/childroom-pink/selection.json",
+      "bottom": 0.887
+    },
+    {
+      "id": "childroom-book-rack",
+      "recipe": "childroom_bookshelves",
+      "node": "Furniture_childroom_book_rack",
+      "position": [
+        1.094,
+        1.74
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        1.73,
+        0.174,
+        0.47
+      ],
+      "basis": "浅粉绘本架沿西墙设两层，深度与标高为方案估配。",
+      "floorElevation": 0.024,
+      "designDecision": "docs/design/childroom-pink/selection.json",
+      "bottom": 1.61
+    },
+    {
+      "id": "childroom-nook",
+      "recipe": "childroom_nook",
+      "node": "Furniture_childroom_nook",
+      "position": [
+        1.557,
+        1.71
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        1.83,
+        0.944,
+        0.21
+      ],
+      "basis": "地垫与靠垫示意床下阅读角，材质颜色按确认图解释。",
+      "floorElevation": 0.024,
+      "designDecision": "docs/design/childroom-pink/selection.json"
+    },
+    {
+      "id": "childroom-desk",
+      "recipe": "childroom_desk",
+      "node": "Furniture_childroom_desk",
+      "position": [
+        3.31,
+        0.84
+      ],
+      "front": [
+        -1,
+        0
+      ],
+      "dimensions": [
+        0.94,
+        0.54,
+        0.7
+      ],
+      "basis": "书桌侧向北窗、沿东墙放置，保留浅木桌面与桌上书架，产品规格和窗扇开启净空待核。",
+      "floorElevation": 0.024,
+      "designDecision": "docs/design/childroom-pink/selection.json"
+    },
+    {
+      "id": "childroom-chair",
+      "recipe": "childroom_chair",
+      "node": "Furniture_childroom_chair",
+      "position": [
+        2.81,
+        1.02
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        0.46,
+        0.5,
+        0.86
+      ],
+      "basis": "豆沙粉软垫学习椅，靠书桌布置。静态姿态为效果示意。",
+      "floorElevation": 0.024,
+      "designDecision": "docs/design/childroom-pink/selection.json",
+      "seatHeight": 0.405
+    },
+    {
+      "id": "childroom-wall",
+      "recipe": "childroom_wall_finish",
+      "node": "Furniture_childroom_wall",
+      "position": [
+        1.0025,
+        1.71
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        3.21,
+        0.003,
+        1.15
+      ],
+      "basis": "浅粉墙面仅用于儿童房内侧，沿现有建筑墙边界布置。",
+      "floorElevation": 0,
+      "designDecision": "docs/design/childroom-pink/selection.json",
+      "layer": "lower",
+      "bottom": 0
+    },
+    {
+      "id": "childroom-wall-upper",
+      "recipe": "childroom_wall_finish",
+      "node": "Furniture_childroom_wall_upper",
+      "position": [
+        1.0025,
+        1.71
+      ],
+      "front": [
+        1,
+        0
+      ],
+      "dimensions": [
+        3.21,
+        0.003,
+        1.65
+      ],
+      "basis": "与下段同一饰面。",
+      "floorElevation": 0,
+      "designDecision": "docs/design/childroom-pink/selection.json",
+      "layer": "upper",
+      "bottom": 1.15
     }
   ],
-  "presentationRevision": "2026-10-09-living-study-integrated",
+  "presentationRevision": "2026-11-07-northwest-childroom-pink",
   "windowAppearance": {
     "material": "Window_clear_glass",
     "basis": "Physical transmission and reflection; frame/division/sill geometry retained"
@@ -8750,7 +9371,7 @@
     "visibleModes": [
       "interior"
     ],
-    "basis": "根据实拍估读的窗外浅色光井、近景绿植和建筑层次；展示环境，无现场测绘与结构/碰撞/面积含义；北窗树为已确认书房图的展示背景解释，非现场窗外测绘",
+    "basis": "根据实拍估读的窗外浅色光井、近景绿植和建筑层次；展示环境，无现场测绘与结构/碰撞/面积含义；北窗树为已确认书房图的展示背景解释，非现场窗外测绘；儿童房北窗加入示意树景。",
     "courtyard": {
       "bounds": [
         0,
@@ -8797,13 +9418,22 @@
         ],
         "height": 3.1,
         "crownRadius": 1.15
+      },
+      {
+        "position": [
+          1.95,
+          -2.5,
+          0.02
+        ],
+        "height": 3.65,
+        "crownRadius": 1.19
       }
     ]
   },
   "modelPackages": [
     {
       "id": "apartment",
-      "assetStem": "apartment-v14",
+      "assetStem": "apartment-v16",
       "webFile": "apartment-web.glb",
       "hdFile": "apartment-hd.glb",
       "excludeEntityIds": [
@@ -8817,7 +9447,7 @@
     },
     {
       "id": "living-sofa",
-      "assetStem": "living-sofa-v14",
+      "assetStem": "living-sofa-v16",
       "webFile": "living-sofa-web.glb",
       "hdFile": "living-sofa-hd.glb",
       "entityIds": [
@@ -8826,7 +9456,7 @@
     },
     {
       "id": "study",
-      "assetStem": "study-v14",
+      "assetStem": "study-v16",
       "webFile": "study-web.glb",
       "hdFile": "study-hd.glb",
       "entityIds": [
@@ -8856,5 +9486,6 @@
       "basis": "Imported original material, never replaced with procedural furniture shader"
     }
   ],
-  "studyDecision": "docs/design/study-v04/selection.json"
+  "studyDecision": "docs/design/study-v04/selection.json",
+  "childroomDecision": "docs/design/childroom-pink/selection.json"
 }
