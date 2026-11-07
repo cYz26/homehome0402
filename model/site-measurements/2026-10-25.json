@@ -1,0 +1,206 @@
+{
+  "id": "home402-user-annotations-20261025",
+  "date": "2026-10-25",
+  "units": "m",
+  "kind": "user-provided-red-annotations",
+  "status": "transcribed-not-site-certified",
+  "source": {
+    "path": "references/revisions/measurements-20261025/annotated-floor-plan.png",
+    "sha256": "96bb938aa6ae33a342612b8089ae75b24937e8a2aba351ddf2506dd354977934",
+    "originalSha256": "dba06cb7ca11f62f1d68b16d6c157854f5858340e0ac03106ba252313ee252f4",
+    "pixelSize": [1179, 661],
+    "attachment": 3,
+    "scope": "红字及对应红线；灰色开发商外尺寸链仍为历史参考，不与红字强制闭合。",
+    "regionCoordinates": "原图像素 [left, top, right, bottom]，不是房屋米制坐标。"
+  },
+  "geometryApplication": {
+    "baseModelVersion": "metric-v14",
+    "baseApartmentSpecSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
+    "appliedToPublishedGeometry": false,
+    "appliedToSharedApartmentSpec": false,
+    "reason": "新增局部尺寸缺少全屋闭合联系、墙厚、门窗距角及统一测量端点；不能据此整体缩放或任意移动共享墙。",
+    "releaseManifestChanged": false
+  },
+  "interpretationRules": [
+    "数值原文优先，方向按图面上北下南解释，测量端点和完成面口径未说明。",
+    "3.17/3.19等不同边值分别保留，不平均、拉直或通过改墙厚闭合。",
+    "断口和局部实墙尺寸不等于门洞宽度；西北次卧2.66减1.65所得不能登记为实测门宽。",
+    "原标层高2.86不能直接当室内净高；到吊顶2.53的测量位置/地面基准待核。",
+    "入户门2.59*1.41的顺序、洞口/门框/门扇口径待核；两户间3.19*1.59保留原文且不计入室内面积。",
+    "南卧室窗的下和离地分别保留，不互相替换；深不等于墙厚。",
+    "空缺值继续为空，不能继承旧模型值再标记为实测。"
+  ],
+  "roomAnnotations": [
+    {
+      "id": "northwest-room",
+      "roomId": "northwest",
+      "name": "西北次卧",
+      "sourceRegion": [710, 123, 808, 240],
+      "readings": [
+        {"position": "北横", "raw": "2.66", "value": 2.66},
+        {"position": "西竖", "raw": "3.17", "value": 3.17},
+        {"position": "东竖", "raw": "3.19", "value": 3.19},
+        {"position": "南侧局部实墙", "raw": "1.65", "value": 1.65}
+      ],
+      "uncertainty": "南侧未闭合；1.65不是整间南宽，门净宽/门套/左右窗垛未标。"
+    },
+    {
+      "id": "xroom-room",
+      "roomId": "xroom",
+      "name": "正北 X 空间／书房",
+      "sourceRegion": [797, 123, 886, 242],
+      "readings": [
+        {"position": "北横", "raw": "2.57", "value": 2.57},
+        {"position": "西竖", "raw": "3.19", "value": 3.19},
+        {"position": "东竖", "raw": "3.12", "value": 3.12}
+      ],
+      "uncertainty": "两侧测量端点不一定同起止；南侧推拉门与入口链缺失。"
+    },
+    {
+      "id": "kitchen-room",
+      "roomId": "kitchen",
+      "name": "东北厨房及南侧凹位",
+      "sourceRegion": [881, 123, 975, 282],
+      "readings": [
+        {"position": "北横", "raw": "2.49", "value": 2.49},
+        {"position": "东竖", "raw": "3.2", "value": 3.2},
+        {"position": "东南短横", "raw": "0.7", "value": 0.7},
+        {"position": "东南折竖", "raw": "1.0", "value": 1.0}
+      ],
+      "uncertainty": "0.7/1.0为局部折线，不是厨房完整南边或单独确认的门净尺寸。"
+    },
+    {
+      "id": "commonbath-room",
+      "roomId": "commonbath",
+      "name": "西北次卧南侧次卫",
+      "sourceRegion": [710, 233, 774, 301],
+      "readings": [
+        {"position": "上横", "raw": "1.47", "value": 1.47},
+        {"position": "左竖", "raw": "1.91", "value": 1.91},
+        {"position": "下横", "raw": "1.28", "value": 1.28},
+        {"position": "右侧竖线附近", "raw": "0.94", "value": 0.94}
+      ],
+      "uncertainty": "0.94端点待核；轮廓不是完整矩形。"
+    },
+    {
+      "id": "commonbath-basin-recess",
+      "roomId": "commonbath",
+      "name": "次卫东侧台盆／凹位",
+      "sourceRegion": [760, 259, 811, 303],
+      "readings": [
+        {"position": "下横", "raw": "1.3", "value": 1.3},
+        {"position": "右竖", "raw": "0.7", "value": 0.7}
+      ],
+      "uncertainty": "用途和房间归属按底图位置解释，未独立测绘。"
+    },
+    {
+      "id": "masterbath-room",
+      "roomId": "masterbath",
+      "name": "主卫折线",
+      "sourceRegion": [679, 297, 787, 368],
+      "readings": [
+        {"position": "上横", "raw": "2.75", "value": 2.75},
+        {"position": "左上竖", "raw": "1.44", "value": 1.44},
+        {"position": "左折横", "raw": "0.92", "value": 0.92},
+        {"position": "左折竖", "raw": "0.4", "value": 0.4},
+        {"position": "右竖", "raw": "1.79", "value": 1.79},
+        {"position": "下右横", "raw": "0.84", "value": 0.84}
+      ],
+      "uncertainty": "门口与折角链缺段，不能简化为2.75乘1.79的实测面积。"
+    },
+    {
+      "id": "masterbath-east-recess",
+      "roomId": "masterbath",
+      "name": "主卫东侧狭长凹位／连接处",
+      "sourceRegion": [778, 296, 834, 372],
+      "readings": [
+        {"position": "上部短横附近", "raw": "0.54", "value": 0.54},
+        {"position": "中间纵向", "raw": "1.84", "value": 1.84},
+        {"position": "下部短横附近", "raw": "0.54", "value": 0.54}
+      ],
+      "uncertainty": "两处0.54分别保留，空间归属及精确端点待核，不解释为墙厚。"
+    },
+    {
+      "id": "master-room",
+      "roomId": "master",
+      "name": "西南主卧",
+      "sourceRegion": [678, 353, 800, 528],
+      "readings": [
+        {"position": "西侧", "raw": "5.17", "value": 5.17},
+        {"position": "东侧", "raw": "4.05", "value": 4.05},
+        {"position": "南横", "raw": "3.28", "value": 3.28},
+        {"position": "北侧局部左段", "raw": "1.0", "value": 1.0},
+        {"position": "北侧局部右段", "raw": "1.37", "value": 1.37}
+      ],
+      "uncertainty": "5.17与4.05的起点不同，不作为同一矩形两条净深。"
+    },
+    {
+      "id": "living-room",
+      "roomId": "living",
+      "name": "客厅南部",
+      "sourceRegion": [791, 392, 921, 528],
+      "readings": [
+        {"position": "西侧竖段", "raw": "3.9", "value": 3.9},
+        {"position": "东侧竖段", "raw": "3.7", "value": 3.7},
+        {"position": "南横", "raw": "3.7", "value": 3.7}
+      ],
+      "uncertainty": "北侧开放通餐厅；未标客餐厅总进深或客厅南窗宽高。"
+    },
+    {
+      "id": "storage-room",
+      "roomId": "storage",
+      "name": "入户旁小间／玄关库位置",
+      "sourceRegion": [886, 318, 978, 389],
+      "readings": [
+        {"position": "左外侧竖向", "raw": "1.44", "value": 1.44},
+        {"position": "左内侧附近", "raw": "1.31", "value": 1.31},
+        {"position": "右上短横", "raw": "0.5", "value": 0.5},
+        {"position": "右竖", "raw": "1.08", "value": 1.08},
+        {"position": "下部内横", "raw": "1.6", "value": 1.6},
+        {"position": "下部外侧短横", "raw": "1.37", "value": 1.37}
+      ],
+      "uncertainty": "内外线的端点和门口未完整闭合；不取差推断墙厚。"
+    },
+    {
+      "id": "southeast-room",
+      "roomId": "southeast",
+      "name": "东南卧室",
+      "sourceRegion": [917, 376, 1016, 528],
+      "readings": [
+        {"position": "西侧", "raw": "3.95", "value": 3.95},
+        {"position": "东侧", "raw": "3.67", "value": 3.67},
+        {"position": "南横", "raw": "2.79", "value": 2.79},
+        {"position": "北折竖", "raw": "1.19", "value": 1.19},
+        {"position": "北折横", "raw": "1.4", "value": 1.4}
+      ],
+      "uncertainty": "入口折角和门口缺段；3.95/3.67不自动视为斜墙。"
+    }
+  ],
+  "windowAnnotations": [
+    {"id": "NW_north", "roomId": "northwest", "sourceRegion": [680, 54, 771, 126], "height": {"raw": "高：1.79", "value": 1.79}, "width": {"raw": "宽：1.69", "value": 1.69}, "sill": {"raw": "离地：0.7", "value": 0.7}, "missing": ["左右窗垛", "框内/框外口径"]},
+    {"id": "X_north", "roomId": "xroom", "sourceRegion": [776, 43, 862, 126], "height": {"raw": "高：1.8", "value": 1.8}, "width": {"raw": "宽：1.68", "value": 1.68}, "sill": {"raw": "离地：0.71", "value": 0.71}, "missing": ["左右窗垛", "框内/框外口径"]},
+    {"id": "Kitchen_north", "roomId": "kitchen", "sourceRegion": [894, 48, 990, 128], "height": {"raw": "高：1.54", "value": 1.54}, "width": {"raw": "宽：1.19", "value": 1.19}, "sill": null, "missing": ["离地", "左右窗垛", "框内/框外口径"]},
+    {"id": "Bath_west", "roomId": "commonbath", "sourceRegion": [650, 182, 723, 282], "height": {"raw": "高：1.8", "value": 1.8}, "width": {"raw": "宽：0.6", "value": 0.6}, "sill": {"raw": "离地：0.9", "value": 0.9}, "missing": ["距墙角", "箭头所指洞口端点"]},
+    {"id": "Master_south", "roomId": "master", "sourceRegion": [719, 517, 817, 621], "height": {"raw": "高：1.74", "value": 1.74}, "width": {"raw": "宽：2.23", "value": 2.23}, "sill": {"raw": "离地：0.36", "value": 0.36}, "otherReadings": [{"raw": "下：0.43", "value": 0.43, "meaning": "下的构造含义待确认，不当作窗台高"}, {"raw": "深：0.5", "value": 0.5, "meaning": "具体量取范围待确认，不当作墙厚"}], "missing": ["左右窗垛", "下的定义", "深的端点"]},
+    {"id": "SE_south", "roomId": "southeast", "sourceRegion": [957, 516, 1065, 620], "height": {"raw": "高：1.7", "value": 1.7}, "width": {"raw": "宽：1.9", "value": 1.9}, "sill": {"raw": "离地：0.37", "value": 0.37}, "otherReadings": [{"raw": "下：0.45", "value": 0.45, "meaning": "下的构造含义待确认，不当作窗台高"}, {"raw": "深：0.5", "value": 0.5, "meaning": "具体量取范围待确认，不当作墙厚"}], "missing": ["左右窗垛", "下的定义", "深的端点"]}
+  ],
+  "userClarifications": [
+    {"date": "2026-10-26", "windowId": "NW_north", "position": "整体靠东，左右距角未测", "opening": "内开，可侧开及上部开启", "notMeasured": ["左右窗垛", "单扇宽", "铰链与分格"]}
+  ],
+  "generalAnnotations": {
+    "sourceRegion": [984, 153, 1147, 277],
+    "storyHeight": {"raw": "层高：2.86", "value": 2.86, "meaning": "保留层高原词，不能确认是结构层高或室内净高"},
+    "toCeiling": {"raw": "到吊顶：2.53", "value": 2.53, "meaning": "量取位置及地面基准待核，不代表全屋各处统一"},
+    "entryDoor": {"raw": "入户门：2.59*1.41", "valuesInOriginalOrder": [2.59, 1.41], "meaning": "顺序及门洞/门框/门扇口径未明"},
+    "betweenHouseholds": {"raw": "两户间：3.19*1.59", "valuesInOriginalOrder": [3.19, 1.59], "meaning": "按原词保留；方向和边界未明，不计入套内面积"}
+  },
+  "missingForCoordinatedWholeHouseGeometry": [
+    "墙厚及完成面/结构面口径",
+    "室内门洞净宽高、门套和距墙角偏距",
+    "窗户左右窗垛和统一高度基准",
+    "客厅南窗独立尺寸、主卫其他窗未标参数",
+    "餐厅/过道/厨房和书房入口的闭合联系尺寸",
+    "相邻房间共享墙的全局坐标约束",
+    "层高、到吊顶、南窗下/深及两户间的定义"
+  ]
+}

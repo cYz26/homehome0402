@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-07",
+  "scope": "retain project context and independent dimensions; discard uncommitted childroom designs",
+  "measurementGroups": {
+    "rooms": 11,
+    "windows": 6,
+    "general": 4
+  },
+  "allOriginalNumericAnnotationsAndPixelRegionsPreserved": true,
+  "retainedImage": {
+    "path": "references/revisions/measurements-20261025/annotated-floor-plan.png",
+    "sha256": "96bb938aa6ae33a342612b8089ae75b24937e8a2aba351ddf2506dd354977934",
+    "bytes": 471127,
+    "originalAttachmentCurrentlyAccessible": false
+  },
+  "localFileLinksChecked": 175,
+  "missingLocalLinks": [],
+  "remainingChildroomCandidatePaths": [],
+  "publishedSourcesChanged": [],
+  "releaseManifestSha256": "b8e3eead1f546b8637fdd1c731ad28d7d300969d1d1fb1a3a6b6c6c747311a4e",
+  "apartmentSha256": "1ebeb0488992daa426d0f1bc028a114d006620278f22b5bbdfbd5fade1ce575b",
+  "candidateFiles": {
+    "AGENTS.md": "dc15476af80cb7f58ae21008275ca476d03560962a2450749ee56b557a5fecec",
+    "IDEA.md": "f2791747c93d2d91fdd708ccedc49e3dbba7b9c840072f3b11e944056b94e3a2",
+    "docs/IMPLEMENTATION.md": "b8db600cf4eedf1e6b2d1ad4a6225fb8bab30572f1fa05ef8c40a9bf9c2cee14",
+    "docs/QA.md": "0235f7e6f9ad872cf0b9d1d667cdb49e3746a6e554eb8cf88f2898611482b27a",
+    "docs/dimension-status.md": "119afb22ebd2bb6435927be79c839a2a5fd5cc54089f0add6c07fff741124e9a",
+    "docs/privacy-review.md": "e7bac28c4e75ff1954b9cb09eac19a2070434bb91d3de82477b3cdcd654c669d",
+    "model/site-measurements/2026-10-25.json": "087d669ebaaf312665a3769f5ebd3e28ea8c099fb586ca10d67bd5de61fa9fed",
+    "references/revisions/measurements-20261025/annotated-floor-plan.png": "96bb938aa6ae33a342612b8089ae75b24937e8a2aba351ddf2506dd354977934",
+    "references/revisions/measurements-20261025/intake.json": "b725a8aa80206d93558ce5421485781ca64f5a557598516c0396c86efa8517df"
+  },
+  "checks": {
+    "unitTests": {
+      "passed": 53,
+      "total": 53
+    },
+    "existingModelChecks": {
+      "passed": 34,
+      "total": 34
+    },
+    "releaseChecks": {
+      "passed": 16,
+      "total": 16
+    },
+    "build": {
+      "passed": true,
+      "stagedVersionedResources": 42,
+      "transformedModules": 48
+    },
+    "retainedImage": {
+      "decoded": true,
+      "width": 1179,
+      "height": 661,
+      "nonDisplayPngChunks": []
+    },
+    "diffWhitespace": true,
+    "localAnchors": {
+      "checked": 37,
+      "missing": 0
+    }
+  },
+  "discardedUntrackedFiles": 97,
+  "plan": "Archive only; commit with [skip ci] and synchronize main without a website deployment.",
+  "notRun": [
+    "whole-site browser suite",
+    "Blender rebuild",
+    "device performance",
+    "live deployment verification",
+    "optional plugin evaluation"
+  ],
+  "temporaryDesignCopiesRemoved": true
+}

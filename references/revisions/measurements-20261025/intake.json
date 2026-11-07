@@ -1,0 +1,28 @@
+{
+  "id": "home402-measurement-intake-20261025",
+  "date": "2026-10-25",
+  "request": "按照附件3图片更新房屋尺寸信息",
+  "retainedAfterCleanup": "2026-11-07",
+  "inputs": [
+    {
+      "attachment": 3,
+      "role": "red-annotated-dimension-evidence",
+      "originalPath": "/Users/cy/.hermes/cache/documents/native-inputs/dba06cb7ca11f62f1d68b16d6c157854f5858340e0ac03106ba252313ee252f4/dashboard_20261025_231025_c587e994_7c2085ab16f6a59defcdb03107e50e3b_271f5b.png",
+      "originalSha256": "dba06cb7ca11f62f1d68b16d6c157854f5858340e0ac03106ba252313ee252f4",
+      "path": "references/revisions/measurements-20261025/annotated-floor-plan.png",
+      "sha256": "96bb938aa6ae33a342612b8089ae75b24937e8a2aba351ddf2506dd354977934",
+      "pixels": [
+        1179,
+        661
+      ],
+      "decodedRgbaUnchanged": true
+    }
+  ],
+  "privacy": {
+    "nonDisplayMetadataRemovedFromProjectCopy": true,
+    "originalPreserved": false,
+    "sourceBrandingAndQrPreserved": true,
+    "includedInWebsiteRelease": false
+  },
+  "appliedToApartmentGeometry": false
+}
