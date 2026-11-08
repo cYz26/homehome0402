@@ -1,0 +1,65 @@
+{
+  "version": "metric-v20",
+  "applicationRevision": "2026-11-08-residential-archive-layout",
+  "deploymentSource": "13e72fad4a859194f81968e437559806e0bcebd1",
+  "workflow": {
+    "id": 42435976155,
+    "url": "https://github.com/cYz26/homehome0402/actions/runs/42435976155",
+    "outcome": "success",
+    "browserCases": 28,
+    "buildArtifactId": 13599995080,
+    "browserEvidenceArtifactId": 13599009006,
+    "deploymentEvidenceArtifactId": 13600120616
+  },
+  "public": {
+    "url": "https://cyz26.github.io/homehome0402/",
+    "manifestSha256": "17856fbcdf133aa635ec43ac34964a58cfe345acf3e22fcfd308ed83e4a9898d",
+    "fileCount": 53,
+    "modelRangeCount": 6,
+    "missingAssetStatus": 404,
+    "readback": "docs/evidence/metric-v20/publication/public-readback.json"
+  },
+  "liveBrowser": {
+    "url": "https://cyz26.github.io/homehome0402/",
+    "version": "metric-v20",
+    "manifestSha256": "17856fbcdf133aa635ec43ac34964a58cfe345acf3e22fcfd308ed83e4a9898d",
+    "views": [
+      {
+        "label": "desktop",
+        "viewport": [
+          1440,
+          900
+        ],
+        "facts": [
+          "10.29",
+          "12.90",
+          "2.86",
+          "2.53"
+        ],
+        "slides": 13,
+        "referenceImage": "scheme-study-cabinet",
+        "selected": "study-bookcase",
+        "errors": []
+      },
+      {
+        "label": "phone",
+        "viewport": [
+          390,
+          844
+        ],
+        "facts": [
+          "10.29",
+          "12.90",
+          "2.86",
+          "2.53"
+        ],
+        "slides": 13,
+        "referenceImage": "scheme-study-cabinet",
+        "errors": []
+      }
+    ],
+    "realPhonePerformance": "not-measured",
+    "checkedAt": "2026-11-08T02:03:59.100Z"
+  },
+  "checkedAt": "2026-11-08T02:04:15.457Z"
+}
