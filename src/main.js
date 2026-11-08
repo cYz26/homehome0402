@@ -89,74 +89,104 @@ function populate() {
   $("#assumptions").innerHTML = data.assumptions
     .map((s) => `<li>${escape(s)}</li>`)
     .join("");
+  $("#layout-width").textContent = Math.max(...data.outline.map(([x]) => x)).toFixed(2);
+  $("#layout-depth").textContent = Math.max(...data.outline.map(([, t]) => t)).toFixed(2);
+  $("#layout-story-height").textContent = data.dimensionReference?.storyHeight.toFixed(2) ?? "—";
+  $("#layout-ceiling-height").textContent = data.dimensionReference?.toCeiling.toFixed(2) ?? "—";
   $("#reference-tabs").innerHTML = referenceImages()
     .map((i) => `<button data-reference="${i.id}">${escape(i.title)}</button>`)
     .join("");
   const descriptions = {
-    living: "已选 C：85 寸电视搭配低位一字悬空柜，墙侧面、卧室门洞和窗侧石材灯缝完整露出；连接餐学办公长桌。",
+    living: "85 寸电视与一字悬空柜对着沙发。2.8 m 长桌兼作餐桌与工作桌。",
     northwest: "浅粉半高床沿西墙长 2 米、宽 1.5 米。两级抽屉踏步收在床宽内，接朝东开门的衣柜。",
-    southeast: "北侧短墙放置 1.40 米宽、2.40 米高的暖胡桃木衣柜。柜门朝南，左侧双门配双抽，右侧为上下分段门。",
-    master: "人字拼橡木与温和墙面，保留空房的完整尺度。",
-    kitchen: "西侧冰箱、北侧水槽、东侧烟机灶具，让 U 形动线清晰可见。",
-    masterbath: "连续一体宽槽、双组墙出龙头与镜柜，细节对应实拍修订。",
-    xroom: "西墙 3.19 米满墙书柜，配哑光黑门、暖光石纹格、双排木抽屉和茶灰玻璃。窗边黑柜与玻璃柜齐平，东侧是 140 × 70 cm 升降桌。",
+    southeast: "北侧短墙布置 1.40 米宽的暖胡桃木衣柜，左侧双门配双抽，右侧为上下分段门。",
+    master: "人字拼橡木地板从入口铺到窗边，空房视角便于查看墙面与窗台。",
+    kitchen: "冰箱、水槽和灶具分布在西、北、东三侧，台面呈 U 形。",
+    masterbath: "一体宽槽、两组墙出龙头与镜柜按实拍修订。",
+    xroom: "西墙是 3.19 米满墙书柜，窗端黑柜与玻璃柜齐平。东侧为 140 × 70 cm 升降桌。",
   };
   const approvedEffects = { xroom: "scheme-study-cabinet", northwest: "scheme-childroom-pink", southeast: "scheme-southeast-wardrobe" };
-  const wardrobeRoom = imageById("southeast") ? ["southeast"] : [];
-  $("#space-cards").innerHTML = ["living", "xroom", "northwest", ...wardrobeRoom, "kitchen", "master", "masterbath"]
-    .map((id, i) => {
+  const spaceOrder = ["living", "xroom", "northwest", "southeast", "kitchen", "master", "masterbath"];
+  $("#space-cards").innerHTML = spaceOrder
+    .filter((id) => imageById(id === "xroom" ? "study" : id))
+    .map((id) => {
       const image = imageById(id === "xroom" ? "study" : id),
-        room = data.rooms.find((r) => r.id === id);
-      const roomLink = `<a class="text-link" href="#explore" data-room-jump="${id}">进入这个空间 ↗</a>`;
-      const links = approvedEffects[id]
-        ? `<div class="space-card__links">${roomLink}<button type="button" class="text-link" data-reference="${approvedEffects[id]}">查看已确认效果图 ↗</button></div>`
-        : roomLink;
-      return `<article class="space-card"><a href="#explore" data-room-jump="${id}"><figure><img src="${url(image.path)}" width="1100" height="756" loading="lazy" decoding="async" alt="${escape(room.name)}的当前模型渲染"><span class="image-badge">模型渲染 · Cycles · ${escape(manifest.version)}</span></figure></a><header><h3>${escape(room.name)}</h3><small>0${i + 1} / ${room.area.toFixed(2)} m² · 模型估算</small></header><p>${descriptions[id]}</p>${links}</article>`;
+        room = data.rooms.find((r) => r.id === id),
+        name = escape(room.name);
+      const effect = imageById(approvedEffects[id]);
+      const effectButton = effect
+        ? `<button type="button" class="text-link space-effect" data-reference="${effect.id}">查看已确认效果图 <span aria-hidden="true">↗</span></button>`
+        : "";
+      return `<article class="space-card">
+        <header class="card-heading">
+          <h3>${name}</h3>
+          <small>${room.area.toFixed(2)} m² · 模型估算</small>
+        </header>
+        <figure><img src="${url(image.path)}" width="1100" height="${id === "xroom" ? 825 : 756}" loading="lazy" decoding="async" alt="${name}的当前模型渲染"></figure>
+        <p>${descriptions[id]}</p>
+        <div class="space-card__links">
+          <a class="text-link space-open" href="#explore" data-room-jump="${id}" aria-label="在 3D 中查看${name}">在 3D 中查看 <span aria-hidden="true">↗</span></a>
+          ${effectButton}
+        </div>
+      </article>`;
     })
     .join("");
   $("#material-cards").innerHTML = [
     [
       "photo-hall",
-      "灰褐木饰面，温润的层次",
+      "玄关灰褐木饰面",
       "壁龛展示柜以细分格、灰绿石材与暖色灯带组合，相邻长墙保持素面。",
       "hall",
     ],
     [
       "photo-vanity",
-      "一体宽槽，连贯的线条",
+      "主卫一体宽槽",
       "连续石材长槽配两组墙出龙头，悬空抽屉柜与镜柜共同收纳。",
       "double-basin",
     ],
     [
       "photo-fridge",
-      "三面台面，顺手的动线",
+      "厨房 U 形台面",
       "冰箱与高柜嵌在西侧，水槽落在北窗下，台面沿三面墙连续布置。",
       "fridge",
     ],
   ]
     .map(([id, title, description, detail]) => {
       const image = imageById(id);
-      return `<article class="material-card"><figure><img src="${url(image.path)}" width="700" height="540" loading="lazy" alt="${escape(image.title)}"><figcaption>${escape(image.kind)} · 材质与细节依据</figcaption></figure><h3>${title}</h3><p>${description}</p><button class="text-link" data-detail-jump="${detail}">查看三维细节 ↗</button></article>`;
+      return `<article class="material-card">
+        <header class="card-heading">
+          <h3>${title}</h3>
+          <small>${escape(image.kind)}</small>
+        </header>
+        <figure><img src="${url(image.path)}" width="640" height="480" loading="lazy" decoding="async" alt="${escape(image.title)}"></figure>
+        <p>${description}</p>
+        <button class="text-link" type="button" data-detail-jump="${detail}" aria-label="查看${title}的三维细节">查看三维细节 <span aria-hidden="true">↗</span></button>
+      </article>`;
     })
     .join("");
   const downloads = [
-    [manifest.floorplan, "模型派生平面图", "SVG · 房间 / 门窗 / 尺寸 / 比例尺"],
-    [manifest.rawModel, manifest.additionalModels?.length ? "房屋高清模型" : "高清原始模型", "GLB · 原始纹理 · 按需下载"],
-    ...(manifest.additionalModels ?? []).map(p => [p.rawModel, p.id === "living-sofa" ? "沙发高清模型" : p.id === "study" ? "书房家具高清模型" : `${p.id} 高清模型`, "GLB · 与房屋包共同组成完整场景 · 原始纹理"]),
-    [manifest.spec, "可编辑建筑规格", "JSON · 尺寸、构件、材质与机位"],
-    [
-      manifest.architecture,
-      "空间与构件属性",
-      "JSON · 稳定构件 ID 与模型估算面积",
-    ],
-    [manifest.report, "交付验证记录", "JSON · 版本、摘要、重导入与保留检查"],
-    ["release.json", "当前发布清单", "JSON · 文件路径、大小与 SHA-256"],
+    [manifest.floorplan, "模型派生平面图", "SVG", "房间、门窗、尺寸与比例尺"],
+    [manifest.rawModel, manifest.additionalModels?.length ? "房屋高清模型" : "高清原始模型", "GLB", "原始纹理"],
+    ...(manifest.additionalModels ?? []).map(p => [
+      p.rawModel,
+      p.id === "living-sofa" ? "沙发高清模型" : p.id === "study" ? "书房家具高清模型" : `${p.id} 高清模型`,
+      "GLB", "与房屋包组成完整场景",
+    ]),
+    [manifest.spec, "可编辑建筑规格", "JSON", "尺寸、构件、材质与机位"],
+    [manifest.architecture, "空间与构件属性", "JSON", "构件 ID 与模型估算面积"],
+    [manifest.report, "交付验证记录", "JSON", "版本、摘要与重导入检查"],
+    ["release.json", "当前发布清单", "JSON", "文件路径、大小与 SHA-256"],
   ];
   $("#downloads").innerHTML = downloads
-    .map(
-      ([path, title, description]) =>
-        `<a class="download" href="${url(path)}" download><div><h3>${title}</h3><p>${description}${manifest.assets.find((a) => a.path === path) ? " · " + formatSize(manifest.assets.find((a) => a.path === path).bytes) : ""}</p></div><span aria-hidden="true">↓</span></a>`,
-    )
+    .map(([path, title, type, description]) => {
+      const asset = manifest.assets.find((a) => a.path === path);
+      return `<li><a class="download" href="${url(path)}" download>
+        <span class="file-type">${type}</span>
+        <span class="file-info"><strong>${escape(title)}</strong><span>${description}</span></span>
+        <span class="file-size">${asset ? formatSize(asset.bytes) : ""}</span>
+        <span class="file-arrow" aria-hidden="true">↓</span>
+      </a></li>`;
+    })
     .join("");
   $("#inspector-panel").open = !matchMedia("(max-width:700px)").matches;
 }
@@ -298,7 +328,7 @@ function sync(state) {
   $("#viewer-shell").dataset.room = state.roomId ?? "";
   $("#viewer-shell").dataset.entity = state.entityId ?? "";
   document
-    .querySelectorAll("[data-mode]")
+    .querySelectorAll("button[data-mode]")
     .forEach((b) =>
       b.setAttribute("aria-pressed", String(b.dataset.mode === state.mode)),
     );
@@ -428,10 +458,17 @@ function sync(state) {
           ),
         ].join("、")
       : "";
-    if (entity)
+    if (entity) {
+      const { window, door } = entity;
+      const doorSize = door?.id === "entry" && data.dimensionReference
+        ? `<div><dt>建模洞口高 × 宽</dt><dd>${door.finish.openingHeight.toFixed(2)} × ${door.width.toFixed(2)} m</dd></div>`
+        : door ? `<div><dt>门扇宽度</dt><dd>${door.width.toFixed(2)} m · 全开</dd></div>` : "";
+      const windowSize = window
+        ? `<div><dt>窗宽 × 窗高</dt><dd>${window.width.toFixed(2)} × ${(window.head - window.sill).toFixed(2)} m</dd></div><div><dt>窗台离地</dt><dd>${window.sill.toFixed(2)} m</dd></div>`
+        : "";
       $("#properties").innerHTML =
-        `<h3>${escape(entity.name)}</h3><p class="component-id">${escape(entity.id)}</p><dl><div><dt>关联空间</dt><dd>${escape(entity.roomIds.map(roomName).join("、"))}</dd></div><div><dt>模型外包尺寸</dt><dd>${entity.size[0].toFixed(2)} × ${entity.size[2].toFixed(2)} × ${entity.size[1].toFixed(2)} m</dd></div>${entity.wall ? `<div><dt>墙厚</dt><dd>${entity.wall.thickness.toFixed(2)} m</dd></div>` : ""}${entity.door ? `<div><dt>门扇宽度</dt><dd>${entity.door.width.toFixed(2)} m · 全开</dd></div>` : ""}${entity.window ? `<div><dt>窗宽 / 窗台高</dt><dd>${entity.window.width.toFixed(2)} / ${entity.window.sill.toFixed(2)} m</dd></div>` : ""}<div><dt>材质</dt><dd>${escape(materialNames)}</dd></div></dl><p>${escape(entity.basis)}</p>${entity.annotations.map((a) => `<p>${escape(a.content)}</p>`).join("")}`;
-    else if (room)
+        `<h3>${escape(entity.name)}</h3><p class="component-id">${escape(entity.id)}</p><dl><div><dt>关联空间</dt><dd>${escape(entity.roomIds.map(roomName).join("、"))}</dd></div><div><dt>模型外包尺寸</dt><dd>${entity.size[0].toFixed(2)} × ${entity.size[2].toFixed(2)} × ${entity.size[1].toFixed(2)} m</dd></div>${entity.wall ? `<div><dt>墙厚</dt><dd>${entity.wall.thickness.toFixed(2)} m</dd></div>` : ""}${doorSize}${windowSize}<div><dt>材质</dt><dd>${escape(materialNames)}</dd></div></dl><p>${escape(entity.basis)}</p>${entity.annotations.map((a) => `<p>${escape(a.content)}</p>`).join("")}`;
+    } else if (room)
       $("#properties").innerHTML =
         `<h3>${escape(room.name)}</h3><dl><div><dt>空间面积</dt><dd>${room.area.toFixed(2)} m² · 模型估算</dd></div></dl><p>${escape(room.finish)}</p><p>${escape(room.drawing)}</p><p>${escape(room.areaLabel)}</p>`;
     else
@@ -638,6 +675,11 @@ $("#performance-report").addEventListener("click", () => {
     "home402-frame-times.json",
   );
 });
+document.addEventListener("focusin", ({ target }) => {
+  if (target.matches(":focus-visible") && target.closest("main, footer") &&
+      target.getBoundingClientRect().top < $(".site-header").getBoundingClientRect().bottom)
+    target.scrollIntoView({ block: "center" });
+});
 document.addEventListener("click", async (event) => {
   const button = event.target.closest("button,a");
   if (!button) return;
@@ -654,23 +696,19 @@ document.addEventListener("click", async (event) => {
     v?.selectRoom(button.dataset.room || null);
   }
   if (button.dataset.detail) viewer?.detail(button.dataset.detail);
-  if (button.hasAttribute("data-explore")) {
+  if (button.matches("[data-explore], [data-room-jump], [data-detail-jump]")) {
     event.preventDefault();
-    $("#explore").scrollIntoView();
-    loadModel();
-  }
-  if (button.dataset.roomJump || button.dataset.detailJump) {
-    event.preventDefault();
-    $("#explore").scrollIntoView();
+    const shell = $("#viewer-shell");
+    shell.focus({ preventScroll: true });
+    shell.scrollIntoView();
     const v = await loadModel();
-    if (v) {
-      if (button.dataset.detailJump) v.detail(button.dataset.detailJump);
-      else {
-        v.selectRoom(button.dataset.roomJump, false);
-        v.setMode("interior");
-      }
-      if (innerWidth < 700) $("#inspector-panel").open = false;
+    if (!v || button.hasAttribute("data-explore")) return;
+    if (button.dataset.detailJump) v.detail(button.dataset.detailJump);
+    else {
+      v.selectRoom(button.dataset.roomJump, false);
+      v.setMode("interior");
     }
+    if (innerWidth < 700) $("#inspector-panel").open = false;
   }
 });
 function planAction(event) {

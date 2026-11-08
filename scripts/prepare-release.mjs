@@ -27,7 +27,7 @@ await fs.mkdir(`${out}/images`, { recursive: true });
 const assets = [],
   images = [];
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
-const applicationRevision = "2026-11-07-southeast-wardrobe";
+const applicationRevision = "2026-11-08-residential-archive-layout";
 const deploymentSources = [
   "wrangler.jsonc", "worker/index.mjs", "scripts/deploy-worker.mjs",
   "scripts/worker-secrets.mjs", "scripts/check-worker.mjs",
@@ -358,6 +358,7 @@ const sources = {};
 for (const path of [
   "model/apartment.json",
   "model/resource-budgets.json",
+  ...(spec.dimensionSource ? [spec.dimensionSource] : []),
   `art_src/${spec.assetStem}.blend`,
   ...packages.map(p => `asset_exchange/${p.assetStem}.glb`),
   ...spec.furnishings.filter(f => f.source).map(f => f.source.path),

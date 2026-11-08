@@ -36,10 +36,30 @@ for w in spec['windowDefinitions']:geometry.window(w['id'],w['x'],w['t'],w['widt
 for d in spec['doors']:geometry.door(d['id'],d['hinge'],d['width'],d['openAngle'],d['closedDirection'],d['room'],d.get('leafOffset',(0,0)),d.get('finish'))
 furniture.configure(spec,collection,ROOT)
 def blender_point(p):return Vector((p[0],extent-p[1],p[2]))
+
+def remap_axis(value, anchors):
+    for (a, start), (b, end) in zip(anchors, anchors[1:]):
+        if value <= b or b == anchors[-1][0]:
+            return start + (value - a) * (end - start) / (b - a)
+
+def remap_template_plan(ob, axes):
+    # A single scale would move the slab's return corners off the shared walls.
+    # Change only plan coordinates, retaining the template's topology and UVs.
+    ob.data = ob.data.copy()
+    matrix = ob.matrix_world.copy()
+    inverse = matrix.inverted()
+    for vertex in ob.data.vertices:
+        point = matrix @ vertex.co
+        point.x = remap_axis(point.x, axes['x'])
+        point.y = extent - remap_axis(extent - point.y, axes['t'])
+        vertex.co = inverse @ point
+    ob.data.update()
+
 assigned=set()
 for entity in spec['entities']:
     template_entity=entity not in parametric and not entity.get('furnitureId')
-    if template_entity:
+    plan_remap=entity.get('templatePlanRemap')
+    if template_entity and not plan_remap:
         old=entity['templatePlacement'];new=entity['placement']
         scale=[b/a if abs(a)>1e-8 else 1 for a,b in zip(old['size'],new['size'])]
         transform=Matrix.Translation(blender_point(new['center'])) @ Matrix.Diagonal((*scale,1)) @ Matrix.Translation(-blender_point(old['center']))
@@ -48,7 +68,9 @@ for entity in spec['entities']:
         if ob is None:raise RuntimeError('Missing semantic part '+name)
         if name in assigned:raise RuntimeError('Part assigned twice '+name)
         assigned.add(name)
-        if template_entity:ob.matrix_world=transform @ ob.matrix_world
+        if template_entity:
+            if plan_remap:remap_template_plan(ob,spec['templatePlanRemaps'][plan_remap])
+            else:ob.matrix_world=transform @ ob.matrix_world
         ob['entityId']=entity['id'];ob['kind']=entity['type'];ob['roomIds']=entity['roomIds']
         ob['room']=entity['roomIds'][0] if len(entity['roomIds'])==1 else ''
         ob['modelVersion']=spec['version'];ob.hide_render=False;ob.hide_viewport=False
@@ -79,7 +101,16 @@ furniture_record={'version':spec['version'],'specSha256':hashlib.sha256((ROOT/'m
 (ROOT/'model/furniture-measurements.json').write_text(json.dumps(furniture_record,ensure_ascii=False,indent=2)+'\n')
 baseline=json.loads((ROOT/'model/baseline-v05/measurements.json').read_text())
 baseline.update(version=spec['version'],spec_sha256=hashlib.sha256((ROOT/'model/apartment.json').read_bytes()).hexdigest(),object_count=len(assigned))
-baseline['components']=[*geometry.RECORDS,*[c for c in baseline['components'] if c['type'] not in ['wall','window','door']]]
+if spec.get('dimensionSource'):
+    baseline['dimension_source']=spec['dimensionSource']
+    baseline['room_clear_width_estimates_m']={
+        room['id']:round(room['planSpan'][1][0]-room['planSpan'][0][0],3)
+        for room in spec['rooms'] if 'planSpan' in room
+    }
+    baseline['components']=geometry.RECORDS
+    baseline['template_measurements']='Actual template-part bounds are recorded in model/validation.json.'
+else:
+    baseline['components']=[*geometry.RECORDS,*[c for c in baseline['components'] if c['type'] not in ['wall','window','door']]]
 baseline['furnishings']=[{'id':c['id'],'recipe':c['recipe'],'node':c['node'],'position':c['position'],'front':c['front'],'dimensions':c.get('dimensions'),'dimensionBasis':c['basis']} for c in spec.get('furnishings',[])]
 (ROOT/'model/measurements.json').write_text(json.dumps(baseline,ensure_ascii=False,indent=2)+'\n')
 print('SEMANTIC_SOURCE_READY',spec['version'],len(assigned),'parts')

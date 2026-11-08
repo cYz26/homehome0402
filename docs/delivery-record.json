@@ -1,28 +1,28 @@
 {
-  "version": "metric-v19",
-  "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-  "rawModelSha256": "0eb11952a5b25d3c9385fd6730192d482be66719404f615007ae43efa7164233",
+  "version": "metric-v20",
+  "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+  "rawModelSha256": "7e264a40894251c54fab911fadf2be800dbe5aa115203704b682b42e4137cd53",
   "modelPackages": [
     {
       "id": "apartment",
-      "path": "asset_exchange/apartment-v19.glb",
-      "sha256": "0eb11952a5b25d3c9385fd6730192d482be66719404f615007ae43efa7164233",
-      "bytes": 24805368
+      "path": "asset_exchange/apartment-v20.glb",
+      "sha256": "7e264a40894251c54fab911fadf2be800dbe5aa115203704b682b42e4137cd53",
+      "bytes": 24845148
     },
     {
       "id": "living-sofa",
-      "path": "asset_exchange/living-sofa-v19.glb",
-      "sha256": "6904b82a00f6311b2363d927f2d6410c108f088100a7bc72335af0cdb74ddf29",
+      "path": "asset_exchange/living-sofa-v20.glb",
+      "sha256": "8080c14c3425e3b101077ac48c4409aca0fb1b019c2b42572c486148c39acdbe",
       "bytes": 21232288
     },
     {
       "id": "study",
-      "path": "asset_exchange/study-v19.glb",
-      "sha256": "d5749ed6e1a31ea9bc45dcd832ba91df228649a32e0f538ee8db41ce997409da",
-      "bytes": 5808524
+      "path": "asset_exchange/study-v20.glb",
+      "sha256": "fb49a7dace86868122317598dc4addb2fcf3f2ae42c210354abf2510dc33f22a",
+      "bytes": 5806936
     }
   ],
-  "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
+  "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
   "roundtrip": {
     "passed": true,
     "sourceObjects": 730,
@@ -33,23 +33,27 @@
   "checks": {
     "checks": [
       {
-        "name": "North and south dimension chains close at 10.50 m",
+        "name": "Original drawing chains retain their recorded totals",
         "pass": true
       },
       {
-        "name": "West dimension chain closes at 12.90 m",
+        "name": "Layout input and its archived metric-v14 baseline match the recorded digests",
         "pass": true
       },
       {
-        "name": "Specified main ceiling height is 2.80 m",
+        "name": "Reimported walls match the applied red plan spans and the SVG width anchors",
         "pass": true
       },
       {
-        "name": "Actual GLB southern wall references match 3.50 / 4.00 / 3.00",
+        "name": "Six actual window frames and masonry openings match the annotated sizes",
         "pass": true
       },
       {
-        "name": "Actual GLB north partitions match 2.80 / 2.80 / 2.60",
+        "name": "Entry height and width are applied to the actual masonry opening",
+        "pass": true
+      },
+      {
+        "name": "Actual main ceiling matches the model elevation",
         "pass": true
       },
       {
@@ -73,7 +77,7 @@
         "pass": true
       },
       {
-        "name": "Living glazing reaches the floor and room-specific windows retain their specified sills",
+        "name": "Living glazing reaches the floor and window glass aligns with the specified sills",
         "pass": true
       },
       {
@@ -117,7 +121,7 @@
         "pass": true
       },
       {
-        "name": "Furnishing preserves v06 architecture outside the explicitly revised photo doorway, facing arrangement and open center",
+        "name": "Furnishing retains the confirmed facing arrangement, open center and four chairs",
         "pass": true
       },
       {
@@ -149,7 +153,7 @@
         "pass": true
       },
       {
-        "name": "Recorded living and study changes preserve every other v09 part",
+        "name": "The complete study retains its five logical entities",
         "pass": true
       },
       {
@@ -165,22 +169,6 @@
         "pass": true
       },
       {
-        "name": "Integrated source preserves published parts outside recorded revisions",
-        "pass": true
-      },
-      {
-        "name": "Integrated source preserves the complete latest living model outside the published study window change",
-        "pass": true
-      },
-      {
-        "name": "Only the bookcase changes against the preceding model",
-        "pass": true
-      },
-      {
-        "name": "Northwest room integration preserves the prior model outside recorded revisions",
-        "pass": true
-      },
-      {
         "name": "Actual childroom stairs have two equal rises, two drawers and a direct boarding edge",
         "pass": true
       },
@@ -189,7 +177,7 @@
         "pass": true
       },
       {
-        "name": "Northwest opening follows the local annotation without moving its center",
+        "name": "Northwest opening and center align with the window specification",
         "pass": true
       },
       {
@@ -201,8 +189,8 @@
         "pass": true
       }
     ],
-    "passed": 42,
-    "total": 42
+    "passed": 39,
+    "total": 39
   },
   "revisions": [
     {
@@ -463,6 +451,14 @@
       "entityIds": [
         "southeast-wardrobe"
       ]
+    },
+    {
+      "id": "annotated-layout",
+      "baseVersion": "metric-v14",
+      "dimensionSource": "model/site-measurements/2026-10-25.json",
+      "basis": "2026-11-07 用户要求按红字标注更新整屋布局；正交闭合与构件定位详见尺寸依据。",
+      "integratedBaseline": "model/baseline-v19/validation.json",
+      "integration": "保留 v19 的构件与分包身份，按尺寸源重新定位儿童房床柜、书房满墙书柜及东南卧室衣柜。"
     }
   ],
   "designContext": {
@@ -586,9 +582,9 @@
     }
   },
   "renders": {
-    "modelVersion": "metric-v19",
-    "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-    "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
+    "modelVersion": "metric-v20",
+    "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+    "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
     "engine": "Cycles",
     "blender": "5.2.1 LTS",
     "views": [
@@ -597,13 +593,13 @@
         "name": "东南卧室 · 北墙衣柜",
         "mode": "interior",
         "camera": [
-          8.52,
+          8.31,
           12.56,
           1.4
         ],
         "target": [
-          9.26,
-          8.73,
+          9.05,
+          9.16,
           1.38
         ],
         "fov": 53,
@@ -649,13 +645,13 @@
         "name": "客餐厅 v08 / C 悬空柜与四把座椅",
         "mode": "interior",
         "camera": [
-          3.92,
+          4.15,
           5.15,
           1.62
         ],
         "target": [
-          5.75,
-          10.55,
+          5.58,
+          10.63,
           1.06
         ],
         "fov": 65
@@ -665,8 +661,8 @@
         "name": "主卧",
         "mode": "interior",
         "camera": [
-          3,
-          8.45,
+          2.93,
+          8.61,
           1.58
         ],
         "target": [
@@ -681,12 +677,12 @@
         "name": "厨房",
         "mode": "interior",
         "camera": [
-          7.63,
-          3.75,
+          7.6,
+          3.74,
           1.58
         ],
         "target": [
-          7.85,
+          7.84,
           1,
           1.3
         ],
@@ -697,13 +693,13 @@
         "name": "主卫",
         "mode": "interior",
         "camera": [
-          1.79,
-          7.28,
+          1.82,
+          7.43,
           1.33
         ],
         "target": [
           1.9,
-          5.83,
+          5.75,
           1.18
         ],
         "fov": 90
@@ -714,12 +710,12 @@
         "mode": "interior",
         "camera": [
           4,
-          10.65,
+          10.97,
           1.45
         ],
         "target": [
-          7.25,
-          10.65,
+          7.07,
+          10.97,
           1.32
         ],
         "fov": 68
@@ -763,12 +759,12 @@
         "name": "满墙书柜正面实际模型",
         "mode": "interior",
         "camera": [
-          6.383,
+          6.333,
           1.705,
           1.3
         ],
         "target": [
-          4.2,
+          4.24,
           1.695,
           1.3
         ],
@@ -793,8 +789,8 @@
           1.52
         ],
         "target": [
-          7.1,
-          10.15,
+          6.92,
+          10.49,
           1.3
         ],
         "fov": 68
@@ -804,13 +800,13 @@
         "name": "西北儿童房",
         "mode": "interior",
         "camera": [
-          3.43,
-          3.22,
+          3.47,
+          3.17,
           1.56
         ],
         "target": [
-          1.9,
-          1.34,
+          1.94,
+          1.29,
           1.08
         ],
         "fov": 79,
@@ -825,22 +821,22 @@
           "name": "东南卧室 · 北墙衣柜",
           "mode": "interior",
           "camera": [
-            8.52,
+            8.31,
             12.56,
             1.4
           ],
           "target": [
-            9.26,
-            8.73,
+            9.05,
+            9.16,
             1.38
           ],
           "fov": 53,
           "width": 1448,
           "height": 1086
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "4ac0a05d52c1b7bd37cf0b981acaa171c26d3f74c9348c04d87d7f34d7bf4c5d"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "aa782a3c90d026b4e1896332a896979cceb776307167dba15831c9a1794bb45c"
       },
       "hero": {
         "view": {
@@ -859,9 +855,9 @@
           ],
           "orthoScale": 21
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "915c5f3167d1a1d02a00f4efaefe689af349b5db502be1f14f7ca7cbf1f920fe"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "6fbfbdf4eb6e21f66c651ca1f5771cdccd32fe0450a269d1e669a4e08ee7f6b0"
       },
       "reference": {
         "view": {
@@ -882,9 +878,9 @@
           "width": 1400,
           "height": 1600
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "0b32f1b0f2bae4d346ff34d2f7e2dc6c8d80e1e4dbda345f9e31003db0e27d77"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "c414d237d8c8adbe3b532d7e27d07073595a42b9e4e27665f71b8de6d491892f"
       },
       "living": {
         "view": {
@@ -892,20 +888,20 @@
           "name": "客餐厅 v08 / C 悬空柜与四把座椅",
           "mode": "interior",
           "camera": [
-            3.92,
+            4.15,
             5.15,
             1.62
           ],
           "target": [
-            5.75,
-            10.55,
+            5.58,
+            10.63,
             1.06
           ],
           "fov": 65
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "2b0f448a1432ba9fc0a58bc4c8ae363ee9b6750a1034678d5ff726a1e3e4e59f"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "c64f777750c4483769bca0d1930068df20735eccf8e29d4f031107449602afc3"
       },
       "master": {
         "view": {
@@ -913,8 +909,8 @@
           "name": "主卧",
           "mode": "interior",
           "camera": [
-            3,
-            8.45,
+            2.93,
+            8.61,
             1.58
           ],
           "target": [
@@ -924,9 +920,9 @@
           ],
           "fov": 72
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "9d41e777f63633b506dcdb655edaacb3c5d631c230bdad523999ccd025af107e"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "88e2b5413ad4224042ce3b6c531020ec9cd32c41ae1964efb207af7eaacefd39"
       },
       "kitchen": {
         "view": {
@@ -934,20 +930,20 @@
           "name": "厨房",
           "mode": "interior",
           "camera": [
-            7.63,
-            3.75,
+            7.6,
+            3.74,
             1.58
           ],
           "target": [
-            7.85,
+            7.84,
             1,
             1.3
           ],
           "fov": 72
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "b5787b59ddd26fd1df1746bef9b00fd2da4848e1c530ee2ed8933c64fbf16a45"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "0bdaf7e1f8ee9c58bd62dd6774f8ff3a42b88cb496ec82409182b439fcf454c1"
       },
       "masterbath": {
         "view": {
@@ -955,20 +951,20 @@
           "name": "主卫",
           "mode": "interior",
           "camera": [
-            1.79,
-            7.28,
+            1.82,
+            7.43,
             1.33
           ],
           "target": [
             1.9,
-            5.83,
+            5.75,
             1.18
           ],
           "fov": 90
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "c02e784adc7dd861d3bb8990d47d3ac90e26fe791b93edf6fa128f6620b0403c"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "0d3dc77f878b86a9fd3c1732be1e37ce83126f31eb41d9debe65cb45700c8d69"
       },
       "cabinet": {
         "view": {
@@ -977,19 +973,19 @@
           "mode": "interior",
           "camera": [
             4,
-            10.65,
+            10.97,
             1.45
           ],
           "target": [
-            7.25,
-            10.65,
+            7.07,
+            10.97,
             1.32
           ],
           "fov": 68
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "238761b9c922ed034e0c1d3139857d1134d0bbb16feaf9dabc687fe304ef89fd"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "f8bf0fe56bdaa58b2e37ea427a9580b49c1eceae80609389d7c4310a1dc59384"
       },
       "table": {
         "view": {
@@ -1008,9 +1004,9 @@
           ],
           "fov": 62
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "5dcf686265000387516694a7af247c175e384a0f705f8e77f412e867666ca72a"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "c0a214181aaca13bd38d27e49e9f0a9d4a85db28521f9279e4e7539286d57405"
       },
       "study": {
         "view": {
@@ -1031,9 +1027,9 @@
           "width": 1448,
           "height": 1086
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "5c36e76e126b1ab6e04d90b8a272e1d04546a2be2e6ae85d54ec369fcd1b2120"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "1dbabaf007ca4d72e02e0911d94a6f9beada175576fb0fd1381c707c98f4bfeb"
       },
       "study-cabinet": {
         "view": {
@@ -1041,12 +1037,12 @@
           "name": "满墙书柜正面实际模型",
           "mode": "interior",
           "camera": [
-            6.383,
+            6.333,
             1.705,
             1.3
           ],
           "target": [
-            4.2,
+            4.24,
             1.695,
             1.3
           ],
@@ -1061,9 +1057,9 @@
           ],
           "caption": "当前书房模型的柜体正面。完整桌椅布置见书房整体及交互模型。"
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "0ba3ceb5b831a9151bc69bb8f783f9bd0117db99494bbbaddca18b33500948dc"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "586bb9ac54c85941991573bded87c0fafd8609408ba6b78eb20a2bb0b3f5008f"
       },
       "tv-door": {
         "view": {
@@ -1076,15 +1072,15 @@
             1.52
           ],
           "target": [
-            7.1,
-            10.15,
+            6.92,
+            10.49,
             1.3
           ],
           "fov": 68
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "f13941ef58a8feb4511630d4003274d2102b5a01e7b780621f1aa53bbaa41650"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "7b0249caa136a6893b93b30819883041aa3d7972e3a44d4bced0a48934823f69"
       },
       "northwest": {
         "view": {
@@ -1092,22 +1088,22 @@
           "name": "西北儿童房",
           "mode": "interior",
           "camera": [
-            3.43,
-            3.22,
+            3.47,
+            3.17,
             1.56
           ],
           "target": [
-            1.9,
-            1.34,
+            1.94,
+            1.29,
             1.08
           ],
           "fov": 79,
           "width": 1448,
           "height": 1086
         },
-        "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-        "specSha256": "32549ebe383623c751a18fb95e7d7a18daa56b553eeb515dd9ac64e56afeb312",
-        "sha256": "d71d0b839599964a42b80b1d1b8a3b5c2b39144426076e45eaa1dcf08841f71a"
+        "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+        "specSha256": "bcdcad7078200f1a7c8034bddad1da614d152bb3474ee93eb94a3c8b2731ea8d",
+        "sha256": "0ebdb65bdcf0055775f2843b5e79be9ee0ed9dfd6dd75dac77b38c0bfea56d88"
       }
     },
     "role": "Same-model Cycles renders; not site photographs"
@@ -1117,5 +1113,5 @@
     "realPhonePerformance": "not-measured"
   },
   "releaseManifest": "public/release.json",
-  "manifestSha256": "b3d551e88feacd2d5a3e0959ba7bc666286c3850d48e395f4c18be6a029485c4"
+  "manifestSha256": "17856fbcdf133aa635ec43ac34964a58cfe345acf3e22fcfd308ed83e4a9898d"
 }

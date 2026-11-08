@@ -11,6 +11,14 @@ await fs.mkdir(out, { recursive: true });
 const io = new NodeIO().registerExtensions(ALL_EXTENSIONS);
 const docs = await Promise.all(modelPackages(spec).map(pack => io.read(`asset_exchange/${pack.assetStem}.glb`)));
 const extent = spec.coordinateSystem.planSouthExtent;
+const outlineWidth = Math.max(...spec.outline.map(([x]) => x));
+const outlineDepth = Math.max(...spec.outline.map(([, t]) => t));
+const ledger = spec.dimensionSource && JSON.parse(await fs.readFile(spec.dimensionSource));
+const dimensionReference = ledger && {
+  date: ledger.date,
+  storyHeight: ledger.generalAnnotations.storyHeight.value,
+  toCeiling: ledger.generalAnnotations.toCeiling.value,
+};
 const round = (n) => Math.round(n * 1e5) / 1e5;
 const nodeRows = [],
   colliders = [];
@@ -119,6 +127,7 @@ const data = {
   height: spec.height,
   outline: spec.outline,
   chains: spec.chains,
+  dimensionReference,
   rooms,
   entities,
   materials: [...spec.materials, ...(spec.furnitureMaterials ?? []), ...(spec.externalMaterials ?? [])],
@@ -132,8 +141,8 @@ const data = {
   assumptions: spec.assumptions,
 };
 const size = spec.navigation.gridSize,
-  width = Math.ceil(10.5 / size),
-  height = Math.ceil(extent / size);
+  width = Math.ceil(outlineWidth / size),
+  height = Math.ceil(outlineDepth / size);
 const navigation = {
   version,
   outline: spec.outline,
@@ -193,12 +202,20 @@ const path = (polygons) =>
         .join(""),
     )
     .join("");
+const viewBoxWidth = outlineWidth + 2.1;
+const viewBoxHeight = outlineDepth + 2.5;
+const northArrowX = outlineWidth + .35;
+const southLabelY = outlineDepth + .52;
+const westLabelY = outlineDepth / 2;
+const dimensionBasis = ledger ? "模型墙线跨度 · 暂估" : "图纸分段合计";
+const dimensionSource = ledger ? "红字标注与建模假设" : "原始图纸及照片估读";
+const hallFootprint = nodeRows.find((node) => node.name === "Hall_sideboard_counter");
 const svg =
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1.1 12.6 15.4" role="img" aria-labelledby="title desc"><title id="title">Home 402 平面图 · ${version}</title><desc id="desc">由当前米制模型派生。面积为模型估算，尺寸依据原始图纸及照片估读。</desc><style>text{font-family:system-ui,sans-serif;fill:#39433a}.room{fill:#e9e9dd;stroke:#fcfbf7;stroke-width:.025;cursor:pointer}.room:hover,.room.selected{fill:#b9c3a5}.wall{fill:#5c6258}.opening{stroke:#d9e5de;stroke-width:.13}.window{stroke:#6e8c91;stroke-width:.04}.door{stroke:#ae9270;stroke-width:.035;fill:none}.label{font-size:.23px;text-anchor:middle;pointer-events:none}.small{font-size:.16px}.dim{stroke:#a5a895;stroke-width:.015;fill:none}.entity{stroke:#b6aa98;stroke-width:.02;fill:#e3ded3}.entity.selected{stroke:#bd713d;stroke-width:.07;fill:#e8c6a5}.wall.selected{fill:#bd713d}.window.selected,.door.selected{stroke:#bd713d;stroke-width:.07}[data-entity-id]{cursor:pointer}[role=button]:focus-visible{outline:.035px solid #bd713d}</style><rect x="-1" y="-1.1" width="12.6" height="15.4" fill="#faf9f4"/>` +
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1.1 ${viewBoxWidth} ${viewBoxHeight}" role="img" aria-labelledby="title desc"><title id="title">Home 402 平面图 · ${version}</title><desc id="desc">由当前米制模型派生。面积为模型估算，尺寸依据${dimensionSource}。</desc><style>text{font-family:system-ui,sans-serif;fill:#39433a}.room{fill:#e9e9dd;stroke:#fcfbf7;stroke-width:.025;cursor:pointer}.room:hover,.room.selected{fill:#b9c3a5}.wall{fill:#5c6258}.opening{stroke:#d9e5de;stroke-width:.13}.window{stroke:#6e8c91;stroke-width:.04}.door{stroke:#ae9270;stroke-width:.035;fill:none}.label{font-size:.23px;text-anchor:middle;pointer-events:none}.small{font-size:.16px}.dim{stroke:#a5a895;stroke-width:.015;fill:none}.room-dim{pointer-events:none}.room-dim path{stroke:#716450;stroke-width:.014;fill:none}.room-dim text{font-size:.19px;fill:#584b39;stroke:#faf9f4;stroke-width:.055;paint-order:stroke;text-anchor:middle}.entity{stroke:#b6aa98;stroke-width:.02;fill:#e3ded3}.entity.selected{stroke:#bd713d;stroke-width:.07;fill:#e8c6a5}.wall.selected{fill:#bd713d}.window.selected,.door.selected{stroke:#bd713d;stroke-width:.07}[data-entity-id]{cursor:pointer}[role=button]:focus-visible{outline:.035px solid #bd713d}</style><rect x="-1" y="-1.1" width="${viewBoxWidth}" height="${viewBoxHeight}" fill="#faf9f4"/>` +
   rooms
     .map(
       (r) =>
-        `<g data-room-id="${r.id}" tabindex="0" role="button" aria-label="${escape(r.name)}"><path class="room" fill-rule="evenodd" d="${path(r.polygons)}"/><text class="label" x="${r.label[0]}" y="${r.label[1]}">${escape(r.name)}<tspan x="${r.label[0]}" dy=".29" class="small">${r.area.toFixed(2)} m² · 估算</tspan></text></g>`,
+        `<g data-room-id="${r.id}" tabindex="0" role="button" aria-label="${escape(r.name)}"><path class="room" fill-rule="evenodd" d="${path(r.polygons)}"/></g>`,
     )
     .join("") +
   spec.walls
@@ -221,10 +238,11 @@ const svg =
     .join("") +
   entities
     .filter((e) => ["cabinet", "fixture", "furniture"].includes(e.type) && !/rug|art-panels|lamp|items/.test(e.id) && e.id !== "childroom-nook")
-    .map(
-      (e) =>
-        `<rect class="entity" data-entity-id="${e.id}" x="${e.min[0]}" y="${e.min[2] + extent}" width="${e.size[0]}" height="${e.size[2]}"/>`,
-    )
+    .map((e) => {
+      // The hall entity also owns trim around the bedroom door.
+      const {min, max} = e.id === "hall-joinery" && hallFootprint ? hallFootprint : e;
+      return `<rect class="entity" data-entity-id="${e.id}" x="${min[0]}" y="${round(min[2] + extent)}" width="${round(max[0] - min[0])}" height="${round(max[2] - min[2])}"/>`;
+    })
     .join("") +
   spec.windowDefinitions
     .map((w) => {
@@ -253,7 +271,14 @@ const svg =
       return `<g class="door" data-entity-id="door_${d.id}"><path d="M${leafStart.join(",")}L${leafEnd.join(",")}M${a.join(",")}A${d.width},${d.width} 0 0 ${sweep} ${b.join(",")}"/><path d="M${x},${y}L${a.join(",")}A${d.width},${d.width} 0 0 ${sweep} ${b.join(",")}Z" style="fill:transparent;stroke:transparent;stroke-width:.12"/></g>`;
     })
     .join("") +
-  `<path class="dim" d="M0,13.15V13.65M10.5,13.15V13.65M0,13.5H10.5M-.25,0H-.65M-.25,12.9H-.65M-.5,0V12.9"/><text class="label" x="5.25" y="13.42">10.50 m · 图纸分段合计</text><text class="small" x="-.65" y="6.6" transform="rotate(-90,-.65,6.6)">12.90 m · 图纸分段合计</text><path d="M10.85,.5V-.35M10.65,-.05L10.85,-.45L11.05,-.05" fill="none" stroke="#4a5946" stroke-width=".04"/><text class="label" x="10.85" y="-.6">N</text><path d="M.2,-.5H2.2M.2,-.6V-.4M1.2,-.6V-.4M2.2,-.6V-.4" class="dim"/><text class="small" x=".2" y="-.72">0　　　 1　　　 2 m</text><text class="small" x=".2" y="14">模型派生图 · ${version} · 面积为模型估算，非测绘净面积 · 打印缩放会改变比例</text></svg>`;
+  rooms.map(({ id, label: [x, t], name, area }) => {
+    const compact = id === "utility";
+    return `<text aria-hidden="true" class="label" x="${x}" y="${t}" style="font-size:${compact ? .145 : .23}px;paint-order:stroke;stroke:#faf9f4;stroke-width:.035">${escape(name)}<tspan x="${x}" dy="${compact ? .19 : .29}" style="font-size:${compact ? .115 : .16}px">${area.toFixed(2)} m² · 估算</tspan></text>`;
+  }).join("") +
+  rooms.filter((room) => room.planSpan).map(({ planSpan: [[left, t], [right]] }) =>
+    `<g class="room-dim"><path d="M${left},${t - .06}v.12M${right},${t - .06}v.12M${left},${t}H${right}"/><text x="${(left + right) / 2}" y="${t - .055}">${(right - left).toFixed(2)} m</text></g>`
+  ).join("") +
+  `<path class="dim" d="M0,${outlineDepth + .25}v.5M${outlineWidth},${outlineDepth + .25}v.5M0,${outlineDepth + .6}H${outlineWidth}M-.25,0H-.65M-.25,${outlineDepth}H-.65M-.5,0V${outlineDepth}"/><text class="label" x="${outlineWidth / 2}" y="${southLabelY}">${outlineWidth.toFixed(2)} m · ${dimensionBasis}</text><text class="small" x="-.65" y="${westLabelY}" transform="rotate(-90,-.65,${westLabelY})" text-anchor="middle">${outlineDepth.toFixed(2)} m · ${dimensionBasis}</text><path d="M${northArrowX},.5V-.35M${northArrowX - .2},-.05L${northArrowX},-.45L${northArrowX + .2},-.05" fill="none" stroke="#4a5946" stroke-width=".04"/><text class="label" x="${northArrowX}" y="-.6">N</text><path d="M.2,-.5H2.2M.2,-.6V-.4M1.2,-.6V-.4M2.2,-.6V-.4" class="dim"/><text class="small" x=".2" y="-.72">0　　　 1　　　 2 m</text><text class="small" x=".2" y="${outlineDepth + 1.1}">模型派生图 · ${version} · 面积为模型估算 · 打印缩放会改变比例</text></svg>`;
 await fs.writeFile(`${out}/floor-plan.svg`, svg);
 console.log(
   JSON.stringify({

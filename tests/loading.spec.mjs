@@ -28,3 +28,30 @@ test("model download overlaps viewer code and cancellation stays responsive", as
   await expect(page.locator("#quality")).toHaveValue("standard");
   expect(errors).toEqual([]);
 });
+
+test("a rejected first frame keeps the model preview and allows retry", async ({ page }) => {
+  await page.addInitScript(() => {
+    const context = WebGL2RenderingContext.prototype;
+    const shaderSource = context.shaderSource;
+    context.shaderSource = function (shader) {
+      shaderSource.call(this, shader, "#version 300 es\n#error test shader rejection\n");
+    };
+    window.addEventListener("restore-shaders", () => {
+      context.shaderSource = shaderSource;
+    }, { once: true });
+  });
+  await page.goto("./");
+  await page.locator("[data-explore]").click();
+  const placeholder = page.locator("#model-placeholder");
+  await expect(page.locator("#loading-text")).toContainText(
+    "当前浏览器无法完成三维绘制",
+    { timeout: 120000 },
+  );
+  await expect(placeholder.locator("img")).toBeVisible();
+  await expect(page.locator("#canvas-container canvas")).toHaveCount(0);
+
+  await page.evaluate(() => window.dispatchEvent(new Event("restore-shaders")));
+  await page.locator("#load-model").click();
+  await expect(placeholder).toBeHidden({ timeout: 120000 });
+  await expect(page.locator("#canvas-container canvas")).toHaveCount(1);
+});

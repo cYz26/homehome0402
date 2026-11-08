@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import viteConfig from "../vite.config.js";
 import crypto from "node:crypto";
 import sharp from "sharp";
+import polygonClipping from "polygon-clipping";
 import { NodeIO } from "@gltf-transform/core";
 import { ALL_EXTENSIONS } from "@gltf-transform/extensions";
 import { MeshoptDecoder } from "meshoptimizer";
@@ -73,7 +74,35 @@ check(
         );
   },
 );
-check("all geometry outside recorded revisions remains identical to v05", () => {
+if (spec.dimensionSource) {
+  const revision = spec.revisions.find(r => r.dimensionSource === spec.dimensionSource);
+  const priorGeometry = await json(revision.integratedBaseline);
+  const prior = await json(`public/releases/${priorGeometry.version}/design-spec.json`);
+  check("Layout retains the prior release's rooms, components and source mesh topology", () => {
+    assert.deepEqual(spec.rooms.map(r => r.id), prior.rooms.map(r => r.id));
+    assert.deepEqual(
+      spec.entities.map(({id, roomIds, sourceNodes}) => ({id, roomIds, sourceNodes})),
+      prior.entities.map(({id, roomIds, sourceNodes}) => ({id, roomIds, sourceNodes})),
+    );
+    assert.deepEqual(Object.keys(validation.objects).sort(), Object.keys(priorGeometry.objects).sort());
+    for (const [name, old] of Object.entries(priorGeometry.objects)) {
+      const part = validation.objects[name];
+      assert.equal(part.entityId, old.entityId, name);
+      assert.equal(part.triangles, old.triangles, name);
+      assert.equal(part.degenerate, 0, name);
+      assert.deepEqual(part.materials.map(m => m.replace(/\.\d{3}$/, "")),
+        old.materials.map(m => m.replace(/\.\d{3}$/, "")), name);
+    }
+  });
+  check("Room polygons partition the full footprint without overlaps or gaps", () => {
+    const outlines = spec.rooms.map(r => [r.polygon]);
+    const union = polygonClipping.union(...outlines);
+    assert.deepEqual(polygonClipping.xor(union, [spec.outline]), []);
+    const summedArea = spec.rooms.reduce((area, r) => area + polygonArea(r.polygon), 0);
+    assert.ok(Math.abs(summedArea - polygonArea(spec.outline)) < 1e-5);
+  });
+}
+if (!spec.dimensionSource) check("all geometry outside recorded revisions remains identical to v05", () => {
   const exceptions = new Set(spec.revisions.flatMap((r) => r.entityIds));
   for (const [name, current] of Object.entries(validation.objects)) {
     if (exceptions.has(current.entityId) || childroomWindowParts.has(name)) continue;
@@ -89,7 +118,7 @@ check("all geometry outside recorded revisions remains identical to v05", () => 
         );
   }
 });
-if (spec.furnishings?.length) {
+if (spec.furnishings?.length && !spec.dimensionSource) {
   const previous = await json("model/baseline-v06/validation.json");
   check("Every v06 architectural part outside the recorded photo doorway remains unchanged", () => {
     const changed=new Set(spec.revisions.filter(r=>r.id==='living-v06-photo-tv-wall').flatMap(r=>r.nodeNames??[]));
@@ -113,8 +142,12 @@ check(
   "door hinge sides and fully open directions follow the redlined plan",
   () => {
     const doors = Object.fromEntries(spec.doors.map((d) => [d.id, d]));
-    assert.deepEqual(doors.master.hinge, [3.5, 7.55]);
-    assert.deepEqual(doors.southeast.hinge, [7.5, 7.62]);
+    for (const [id, wallId] of [["master","master_living"],["southeast","living_se"]]) {
+      const wall = spec.walls.find(w => w.id === wallId);
+      const opening = wall.openings.at(-1);
+      assert.equal(doors[id].hinge[0], wall.a[0]);
+      assert.ok(Math.abs(doors[id].hinge[1] - wall.a[1] - opening[0]) < 1e-5);
+    }
     assert.equal(doors.master.openAngle, Math.PI);
     assert.equal(doors.southeast.openAngle, 0);
     assert.equal(doors.northwest.openAngle, -Math.PI / 2);
@@ -312,6 +345,11 @@ check(
     assert.ok(svg.includes('data-entity-id="door_master"'));
     assert.ok(svg.includes(">N<"));
     assert.ok(svg.includes("2 m"));
+    if (data.dimensionReference) {
+      assert.equal(data.rooms.filter(r => r.planSpan).length, 6);
+      for (const {planSpan: [[left], [right]]} of data.rooms.filter(r => r.planSpan))
+        assert.ok(svg.includes(`>${(right - left).toFixed(2)} m</text>`));
+    }
   },
 );
 const result = {

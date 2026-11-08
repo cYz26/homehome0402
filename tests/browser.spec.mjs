@@ -66,7 +66,7 @@ test("northwest childroom: approved image, room view and two-step cabinet query"
   await testInfo.attach("childroom-approved", { body: await page.screenshot(), contentType: "image/png" });
   await page.locator("#reference-dialog [data-close-dialog]").click();
 
-  await card.getByRole("link", { name: /进入这个空间/ }).click();
+  await card.getByRole("link", { name: /在 3D 中查看/ }).click();
   await modelReady(page);
   await expect(page.locator('#rooms [data-room="northwest"]')).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator('button[data-mode="interior"]')).toHaveAttribute("aria-pressed", "true");
@@ -100,7 +100,7 @@ test("southeast wardrobe: approved image, 3D placement and linked dimensions", a
   await expect.poll(() => page.locator("#reference-image").evaluate(image => image.complete && image.naturalWidth > 1000)).toBe(true);
   await page.locator("#reference-dialog [data-close-dialog]").click();
 
-  await card.getByRole("link", { name: /进入这个空间/ }).click();
+  await card.getByRole("link", { name: /在 3D 中查看/ }).click();
   await modelReady(page);
   await expect(page.locator('#rooms [data-room="southeast"]')).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator('button[data-mode="interior"]')).toHaveAttribute("aria-pressed", "true");

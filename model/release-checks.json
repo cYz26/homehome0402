@@ -1,5 +1,5 @@
 {
-  "version": "metric-v19",
+  "version": "metric-v20",
   "checks": [
     {
       "name": "spec, data, navigation and manifest are one version",
@@ -18,11 +18,11 @@
       "pass": true
     },
     {
-      "name": "all geometry outside recorded revisions remains identical to v05",
+      "name": "Layout retains the prior release's rooms, components and source mesh topology",
       "pass": true
     },
     {
-      "name": "Every v06 architectural part outside the recorded photo doorway remains unchanged",
+      "name": "Room polygons partition the full footprint without overlaps or gaps",
       "pass": true
     },
     {
@@ -67,51 +67,51 @@
     }
   ],
   "passed": 16,
-  "initialBytes": 965307,
-  "firstViewportCoreBytes": 498971,
-  "interactiveBytes": 38589054,
-  "webGLBBytes": 36385856,
+  "initialBytes": 979259,
+  "firstViewportCoreBytes": 512461,
+  "interactiveBytes": 38609301,
+  "webGLBBytes": 36402588,
   "modelPackages": [
     {
-      "path": "releases/metric-v19/apartment-web.glb",
+      "path": "releases/metric-v20/apartment-web.glb",
       "role": "model",
-      "bytes": 16007328,
-      "sha256": "57206b091a02e44e20ea20f23be1245f0c5cb9f3118cea032ee716f68584e569"
+      "bytes": 16025164,
+      "sha256": "9ac0af41e1d8d93dbd4ff91a6c66bd95bed4088d264866a1dcb1a8ca988e64d1"
     },
     {
-      "path": "releases/metric-v19/apartment-hd.glb",
+      "path": "releases/metric-v20/apartment-hd.glb",
       "role": "hd-model",
-      "source": "asset_exchange/apartment-v19.glb",
-      "bytes": 24805368,
-      "sha256": "0eb11952a5b25d3c9385fd6730192d482be66719404f615007ae43efa7164233"
+      "source": "asset_exchange/apartment-v20.glb",
+      "bytes": 24845148,
+      "sha256": "7e264a40894251c54fab911fadf2be800dbe5aa115203704b682b42e4137cd53"
     },
     {
-      "path": "releases/metric-v19/living-sofa-web.glb",
+      "path": "releases/metric-v20/living-sofa-web.glb",
       "role": "model",
       "bytes": 15929940,
-      "sha256": "ec2b40398af9ac5632bb0008a87e4803fad856361b2eb273a0e925e99d3f946c"
+      "sha256": "effde59a2f11c401536edf24cae160c46c3fb8c9710ae22257a09fcf31383a46"
     },
     {
-      "path": "releases/metric-v19/living-sofa-hd.glb",
+      "path": "releases/metric-v20/living-sofa-hd.glb",
       "role": "hd-model",
-      "source": "asset_exchange/living-sofa-v19.glb",
+      "source": "asset_exchange/living-sofa-v20.glb",
       "bytes": 21232288,
-      "sha256": "6904b82a00f6311b2363d927f2d6410c108f088100a7bc72335af0cdb74ddf29"
+      "sha256": "8080c14c3425e3b101077ac48c4409aca0fb1b019c2b42572c486148c39acdbe"
     },
     {
-      "path": "releases/metric-v19/study-web.glb",
+      "path": "releases/metric-v20/study-web.glb",
       "role": "model",
-      "bytes": 4448588,
-      "sha256": "21e921428d3fa071ad0a9836e43de25e25d2511b5af76ce6647c441e8be10f85"
+      "bytes": 4447484,
+      "sha256": "6044f80993968ad309228f3d1d8cb72e7d9fd685599343d5a0b3ee298e5567f5"
     },
     {
-      "path": "releases/metric-v19/study-hd.glb",
+      "path": "releases/metric-v20/study-hd.glb",
       "role": "hd-model",
-      "source": "asset_exchange/study-v19.glb",
-      "bytes": 5808524,
-      "sha256": "d5749ed6e1a31ea9bc45dcd832ba91df228649a32e0f538ee8db41ce997409da"
+      "source": "asset_exchange/study-v20.glb",
+      "bytes": 5806936,
+      "sha256": "fb49a7dace86868122317598dc4addb2fcf3f2ae42c210354abf2510dc33f22a"
     }
   ],
-  "sourceSha256": "5299852024eab7fbab340f4462ba3eb3437bb802552ba3ff0983631bdb031a47",
-  "rawModelSha256": "0eb11952a5b25d3c9385fd6730192d482be66719404f615007ae43efa7164233"
+  "sourceSha256": "d16f33f3085b70fac953982f1bb7eee3faa7b3e258c9a194651712ede504e7bb",
+  "rawModelSha256": "7e264a40894251c54fab911fadf2be800dbe5aa115203704b682b42e4137cd53"
 }

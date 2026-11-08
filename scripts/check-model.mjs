@@ -6,24 +6,110 @@ const spec=json('model/apartment.json'), measure=json('model/measurements.json')
 const checks=[];
 function check(name,fn){try{fn();checks.push({name,pass:true});}catch(error){checks.push({name,pass:false,error:error.message});}}
 const approx=(a,b)=>assert.ok(Math.abs(a-b)<1e-5,`${a} differs from ${b}`);
-check('North and south dimension chains close at 10.50 m',()=>{for(const key of ['north','south'])approx(spec.chains[key].reduce((a,b)=>a+b,0),10.5);});
-check('West dimension chain closes at 12.90 m',()=>approx(spec.chains.west.reduce((a,b)=>a+b,0),12.9));
-check('Specified main ceiling height is 2.80 m',()=>approx(spec.height,2.8));
+check('Original drawing chains retain their recorded totals',()=>{
+  for(const key of ['north','south'])approx(spec.chains[key].reduce((a,b)=>a+b,0),10.5);
+  approx(spec.chains.west.reduce((a,b)=>a+b,0),12.9);
+});
 const nodes=validation.objects;
 const southeastWardrobe = spec.furnishings?.find(item => item.id === 'southeast-wardrobe');
 const priorNodeNames = Object.keys(nodes).filter(name => name !== southeastWardrobe?.node);
 const childroom = spec.revisions.find(r => r.id === 'northwest-childroom-pink');
 const childroomWindowParts = new Set(childroom?.windowChangedNodes);
 const childroomEntities = new Set(childroom?.entityIds);
+const extent=spec.coordinateSystem.planSouthExtent;
+const wallById=id=>spec.walls.find(w=>w.id===id);
+function faces(id, part='0_0_lower') {
+  const [min,max]=nodes[`wall_${id}_${part}`].bounds;
+  return {west:min[0],east:max[0],north:extent-max[1],south:extent-min[1]};
+}
 function wallCenter(name){const o=nodes[name];assert.ok(o,'missing actual GLB object '+name);return(o.bounds[0][0]+o.bounds[1][0])/2;}
-check('Actual GLB southern wall references match 3.50 / 4.00 / 3.00',()=>{
+if (!spec.dimensionSource) check('Actual GLB southern wall references match 3.50 / 4.00 / 3.00',()=>{
   const a=wallCenter('wall_master_living_0_0_lower');const b=wallCenter('wall_living_se_0_0_lower');
   approx(a,3.5);approx(b-a,4);approx(10.5-b,3);
 });
-check('Actual GLB north partitions match 2.80 / 2.80 / 2.60',()=>{
+if (!spec.dimensionSource) check('Actual GLB north partitions match 2.80 / 2.80 / 2.60',()=>{
   const a=wallCenter('wall_northwest_x_0_0_lower'),b=wallCenter('wall_x_kitchen_0_0_lower');
   approx(a-.9,2.8);approx(b-a,2.8);approx(9.1-b,2.6);
 });
+if (spec.dimensionSource) {
+  const ledger=json(spec.dimensionSource);
+  check('Layout input and its archived metric-v14 baseline match the recorded digests',()=>{
+    for(const [path,digest] of [
+      [ledger.source.path,ledger.source.sha256],
+      [`public/releases/${ledger.geometryApplication.baseModelVersion}/design-spec.json`,ledger.geometryApplication.baseApartmentSpecSha256],
+    ])assert.equal(createHash('sha256').update(readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),digest);
+    assert.equal(ledger.geometryApplication.modelVersion,spec.version);
+  });
+  const reading=(id,position)=>ledger.roomAnnotations.find(r=>r.id===id).readings.find(r=>r.position===position).value;
+  check('Reimported walls match the applied red plan spans and the SVG width anchors',()=>{
+    const spans=[
+      ['northwest','北横',faces('west_north').east,faces('northwest_x').west],
+      ['xroom','北横',faces('northwest_x').east,faces('x_kitchen').west],
+      ['kitchen','北横',faces('x_kitchen').east,faces('east_north').west],
+      ['master','南横',faces('west_south').east,faces('master_living','4_0_lower').west],
+      ['living','南横',faces('master_living','4_0_lower').east,faces('living_se','2_0_lower').west],
+      ['southeast','南横',faces('living_se','2_0_lower').east,faces('east_south').west],
+    ];
+    for(const [id,position,start,end] of spans){
+      approx(end-start,reading(id+'-room',position));
+      approx(measure.room_clear_width_estimates_m[id],end-start);
+      const [[x0],[x1]]=spec.rooms.find(r=>r.id===id).planSpan;
+      approx(x0,start);approx(x1,end);
+    }
+    const north=faces('north').south, south=faces('south').north;
+    const masterbathSouth=faces('masterbath_south');
+    approx(faces('northwest_south').north-north,reading('northwest-room','西竖'));
+    approx(faces('northwest_south').east-faces('west_north').east,reading('northwest-room','南侧局部实墙'));
+    approx(faces('kitchen_east_return').north-north,reading('kitchen-room','东竖'));
+    approx(faces('east_north').west-faces('utility_west').east,reading('kitchen-room','东南短横'));
+    approx(faces('utility_south').north-faces('kitchen_east_return').south,reading('kitchen-room','东南折竖'));
+    approx(faces('common_bath_east').west-faces('west_north').east,reading('commonbath-room','上横'));
+    approx(faces('common_bath_south').north-faces('northwest_south').south,reading('commonbath-room','左竖'));
+    approx(faces('masterbath_east').west-faces('west_south').east,reading('masterbath-room','上横'));
+    approx(masterbathSouth.east-faces('west_south').east,reading('master-room','北侧局部左段'));
+    approx(faces('masterbath_east').west-faces('masterbath_south','2_0_lower').west,reading('masterbath-room','下右横'));
+    approx(faces('master_living','4_0_lower').west-faces('masterbath_south','2_0_lower').west,reading('master-room','北侧局部右段'));
+    approx(south-masterbathSouth.south,reading('master-room','西侧'));
+    approx(south-faces('master_living','4_0_lower').north,reading('master-room','东侧'));
+    approx(south-faces('living_se','2_0_lower').north,reading('southeast-room','西侧'));
+    approx(south-faces('east_notch').south,reading('southeast-room','东侧'));
+    approx(faces('east_notch').south-faces('closet_south').south,reading('southeast-room','北折竖'));
+    approx(faces('closet_south').north-faces('closet_north').south,reading('storage-room','右竖'));
+  });
+  check('Six actual window frames and masonry openings match the annotated sizes',()=>{
+    for(const item of ledger.windowAnnotations){
+      const window=spec.windowDefinitions.find(w=>w.id===item.id);
+      const vertical=window.orientation!==0;
+      const host=wallById(vertical?'west_north':window.t===0?'north':'south');
+      const offset=vertical?window.t-host.a[1]:window.x-host.a[0];
+      const openingIndex=host.openings.findIndex(([left,right])=>Math.abs((left+right)/2-offset)<1e-5);
+      assert.ok(openingIndex>=0,item.id);
+      const segment=2*openingIndex+1;
+      const below=nodes[`wall_${host.id}_${segment}_0_lower`].bounds;
+      const above=nodes[`wall_${host.id}_${segment}_1_upper`].bounds;
+      const axis=vertical?1:0;
+      approx(below[1][axis]-below[0][axis],item.width.value);
+      approx(above[0][2]-below[1][2],item.height.value);
+      approx(below[1][2],item.sill?.value??window.sill);
+      const entity=spec.entities.find(e=>e.windowId===window.id);
+      const rails=entity.sourceNodes.filter(n=>n.startsWith(window.id+'_rail')).map(n=>nodes[n].bounds);
+      assert.equal(rails.length,2);
+      for(const rail of rails)approx(rail[1][axis]-rail[0][axis],item.width.value);
+      const centers=rails.map(([a,b])=>(a[2]+b[2])/2).sort((a,b)=>a-b);
+      approx(centers[0],below[1][2]);approx(centers[1],above[0][2]);
+    }
+  });
+  check('Entry height and width are applied to the actual masonry opening',()=>{
+    const [height,width]=ledger.generalAnnotations.entryDoor.valuesInOriginalOrder;
+    const entry=spec.doors.find(d=>d.id==='entry');
+    approx(entry.width,width);approx(entry.finish.openingHeight,height);
+    approx(nodes.wall_east_north_1_1_upper.bounds[0][2],height);
+    approx(faces('east_north','2_0_lower').north-faces('east_north').south,width);
+    approx(entry.hinge[1],faces('east_north','2_0_lower').north);
+    approx(entry.hinge[0],wallById('east_north').a[0]);
+  });
+}
+check('Actual main ceiling matches the model elevation',()=>approx(nodes.Ceiling_main.bounds[0][2],spec.height));
 check('NW door hinge and real opening endpoint coincide',()=>{
   const door=measure.components.find(o=>o.type==='door'&&o.id==='northwest');
   const wall=measure.components.find(o=>o.type==='wall'&&o.id==='northwest_south');
@@ -40,30 +126,30 @@ check('Common bathroom privacy door is independent of shower glass',()=>{
   assert.ok(nodes.Common_bath_sliding_privacy_panel_lower);assert.ok(nodes.Common_shower_glass_lower);
   const panel=nodes.Common_bath_sliding_privacy_panel_lower.bounds;
   // Panel is east of the wall, in its south storage position; one metre entry stays clear.
-  assert.ok(panel[0][0]>2.45);assert.ok(panel[1][1]<12.9-4.45+.01);
+  const wall=wallById('common_bath_east');
+  assert.ok(panel[0][0]>wall.a[0]+.05);
+  assert.ok(extent-panel[1][1]>wall.a[1]+wall.openings[0][1]-.04);
 });
 check('Common vanity mixer stands on the south wall side of the actual bowl',()=>{
   const tap=nodes.Common_basin_tap.bounds,bowl=nodes.Common_basin_bowl_floor.bounds;
   assert.ok(tap[1][1]<bowl[0][1],'Mixer should sit behind the bowl toward the south wall');
-  assert.ok(tap[0][1]>12.9-5.50,'Mixer should remain inside the bathroom wall');
+  assert.ok(tap[0][1]>extent-wallById('common_bath_south').a[1],'Mixer should remain inside the bathroom wall');
 });
 check('All parked north sliding leaves lie east-west, not perpendicular to the facade',()=>{
   const leaves=Object.entries(nodes).filter(([name])=>/^(X|Kitchen)_retracted_leaf_\d+_glass_lower$/.test(name));
   assert.ok(leaves.length>=2);
   for(const [name,{bounds:b}] of leaves)assert.ok(b[1][0]-b[0][0]>(b[1][1]-b[0][1])*10,name);
 });
-check('Living glazing reaches the floor and room-specific windows retain their specified sills',()=>{
-  assert.ok(!Object.keys(nodes).some(n => /^(Living_south|Master_south|SE_south|NW_north|X_north).*guard/i.test(n)));
+check('Living glazing reaches the floor and window glass aligns with the specified sills',()=>{
+  assert.ok(!Object.keys(nodes).some(n=>/guard/i.test(n)));
   const living=nodes.Living_south_glass_lower.bounds;
   assert.ok(living[0][2]<.08);
-  for (const id of ['Master_south', 'SE_south', 'NW_north']) {
-    const window = spec.windowDefinitions.find(w => w.id === id);
-    approx(nodes[id + '_glass_lower'].bounds[0][2], window.sill + .025);
-    approx(nodes[id + '_glass_upper'].bounds[1][2], window.head - .025);
+  for(const {id,sill,head} of spec.windowDefinitions) {
+    const low=nodes[id+'_glass_lower'] ?? nodes[id+'_glass_upper'];
+    approx(low.bounds[0][2],sill+.025);
+    const high=nodes[id+'_glass_upper'] ?? low;
+    approx(high.bounds[1][2],head-.025);
   }
-  const study=nodes.X_north_glass_lower.bounds;
-  approx(study[0][2],spec.windowDefinitions.find(w=>w.id==='X_north').sill+.025);
-  assert.ok(nodes.X_north_glass_upper.bounds[1][2]>2.50);
 });
 check('Kitchen equipment occupies west / north / east positions and sink is recessed',()=>{
   const fridge=nodes.Fridge_door_0_lower.bounds,oven=nodes.Oven_glass.bounds;
@@ -103,7 +189,9 @@ check('Both bathrooms have thin dark privacy leaves and master entry remains cle
   for(const node of [common,master])assert.ok(node.materials.includes('Charcoal_bath_privacy_glass'));
   assert.ok(common.bounds[1][0]-common.bounds[0][0]<.020);
   assert.ok(master.bounds[1][1]-master.bounds[0][1]<.012);
-  assert.ok(master.bounds[0][0]>1.91 && master.bounds[1][0]<2.91);
+  const bathDoorWall=wallById('masterbath_south');
+  assert.ok(master.bounds[0][0]>bathDoorWall.a[0]+bathDoorWall.openings[0][1]+.01);
+  assert.ok(master.bounds[1][0]<faces('masterbath_east').east);
   assert.ok(nodes.Master_bath_sliding_track&&nodes.Master_bath_entry_head);
 });
 check('Actual Blender source and independently reimported GLB match',()=>{
@@ -126,7 +214,8 @@ if(spec.furnishings?.length) {
     approx(current.bounds[1][1]-current.bounds[0][1],sofa.dimensions[0]);
     approx(current.bounds[1][2]-current.bounds[0][2],sofa.dimensions[2]);
     approx(current.bounds[0][2],sofa.source.floorElevation);
-    assert.ok(current.bounds[0][0]>3.60,'sofa penetrates west finish');
+    const west=faces('master_living','4_0_lower').east;
+    assert.ok(current.bounds[0][0]>west+spec.construction.skirtingProjection,'sofa penetrates west finish');
     assert.equal(current.triangles,149999);
     assert.equal(validation.model_packages.length,spec.modelPackages.length);
     for(const p of validation.model_packages) assert.equal(hash(p.path),p.sha256);
@@ -147,14 +236,16 @@ if(spec.furnishings?.length) {
     approx(panel[0][1]-high,1.6);approx(low-top[0][1],.26);approx(top[1][1]-panel[1][1],.26);
     assert.equal(parts.filter(c=>c.name.includes('_pullout_tray_')).length,6);
   });
-  check('Furnishing preserves v06 architecture outside the explicitly revised photo doorway, facing arrangement and open center',()=>{
+  check(spec.dimensionSource
+    ? 'Furnishing retains the confirmed facing arrangement, open center and four chairs'
+    : 'Furnishing preserves v06 architecture outside the explicitly revised photo doorway, facing arrangement and open center',()=>{
     const old=json('model/baseline-v06/validation.json');
     const photoDoorNodes=new Set(spec.revisions.filter(r=>r.id==='living-v06-photo-tv-wall').flatMap(r=>r.nodeNames??[]));
     const allowedStudy=new Set(spec.studyDecision ? [
       ...spec.entities.find(e=>e.windowId==='X_north').sourceNodes,
       'wall_north_3_0_lower',
     ] : []);
-    for(const [name,o] of Object.entries(old.objects)){
+    if(!spec.dimensionSource) for(const [name,o] of Object.entries(old.objects)){
       if(photoDoorNodes.has(name))continue;
       assert.ok(nodes[name],name);assert.equal(nodes[name].entityId,o.entityId,name);assert.equal(nodes[name].triangles,o.triangles,name);
       if(allowedStudy.has(name) || childroomWindowParts.has(name))continue;
@@ -234,9 +325,10 @@ if(spec.furnishings?.length) {
     check('Photographed socket groups retain their common height and middle-wall placement',()=>{
       const parts=component('living-tv-outlets').parts.filter(p=>p.name.includes('_plate_'));
       assert.equal(parts.length,2);
-      for(const [label,t,width] of [['triple',10.26,.258],['single',10.92,.086]]){
+      const outlets=spec.furnishings.find(f=>f.id==='living-tv-outlets');
+      for(const {id:label,planT:t,size:[width]} of outlets.groups){
         const b=parts.find(p=>p.name.includes('_outlet_'+label+'_')).bounds;
-        approx(12.9-(b[0][1]+b[1][1])/2,t);approx((b[0][2]+b[1][2])/2,.355);approx(b[1][1]-b[0][1],width);
+        approx(extent-(b[0][1]+b[1][1])/2,t);approx((b[0][2]+b[1][2])/2,.355);approx(b[1][1]-b[0][1],width);
       }
       const cab=nodes[cabinet.node].bounds;
       for(const p of parts)assert.ok(p.bounds[0][1]>cab[0][1]&&p.bounds[1][1]<cab[1][1]);
@@ -247,7 +339,7 @@ if(spec.furnishings?.length) {
       assert.ok(!furniture.components.some(c=>c.id.startsWith('living-tall-cabinet')));
       const cab=nodes[cabinet.node].bounds;
       approx(cab[1][1]-cab[0][1],3.56);approx(cab[1][0]-cab[0][0],.40);
-      approx(12.9-cab[1][1],8.57);approx(12.9-cab[0][1],12.13);
+      approx(extent-(cab[0][1]+cab[1][1])/2,cabinet.position[1]);
       const parts=component('living-tv-wall-finish').parts;
       const side=parts.find(p=>p.name.includes('_left_black_return_')).bounds;
       const light=parts.find(p=>/_vertical_light_\d+$/.test(p.name)).bounds;
@@ -274,8 +366,10 @@ if(spec.furnishings?.length) {
       const side=parts.find(p=>p.name.includes('_left_black_return_')).bounds;
       assert.ok(side[1][0]-side[0][0]>.22);assert.ok(side[1][1]-side[0][1]<.009);
       const grey=parts.find(p=>p.name.includes('_greige_panel_0_')).bounds;
-      approx(grey[0][0],7.198);
-      const doorway=spec.doors.find(c=>c.id==='southeast');assert.deepEqual(doorway.hinge,[7.5,7.62]);approx(doorway.width,.90);
+      const wall=wallById('living_se');
+      approx(grey[0][0],wall.a[0]-.302);
+      const doorway=spec.doors.find(c=>c.id==='southeast');
+      approx(doorway.hinge[0],wall.a[0]);approx(doorway.hinge[1],wall.a[1]+wall.openings[0][0]);approx(doorway.width,.90);
       assert.equal(doorway.finish.style,'flush');approx(doorway.finish.openingHeight,2.62);
       const jamb=nodes.jamb_far_southeast_upper.bounds;approx(jamb[1][1]-jamb[0][1],.010);approx(jamb[1][2],2.62);
       assert.ok(nodes.jamb_southeast_upper.materials.includes('Warm_white_plaster'));
@@ -287,7 +381,7 @@ const studyBookcaseRevision=spec.revisions.find(r=>r.id==='study-full-wall-20261
 const studyChangedEntities=new Set(studyBookcaseRevision?.entityIds);
 if(spec.studyDecision) {
   const old=json('model/baseline-v09/validation.json'), furniture=json('model/furniture-measurements.json');
-  check('Recorded living and study changes preserve every other v09 part',()=>{
+  if(!spec.dimensionSource) check('Recorded living and study changes preserve every other v09 part',()=>{
     const allowed=new Set([...spec.entities.find(e=>e.windowId==='X_north').sourceNodes,'wall_north_3_0_lower']);
     const livingChanges=new Set(spec.revisions.find(r=>r.id==='living-study-integrated')?.livingChangedNodesFromV09 ?? []);
     for(const [name,o] of Object.entries(old.objects)) {
@@ -297,6 +391,8 @@ if(spec.studyDecision) {
       assert.equal(current.triangles,o.triangles,name);
       for(let side=0;side<2;side++)for(let axis=0;axis<3;axis++)approx(current.bounds[side][axis],o.bounds[side][axis]);
     }
+  });
+  check('The complete study retains its five logical entities',()=>{
     const ids=spec.modelPackages.find(p=>p.id==='study').entityIds;
     assert.equal(ids.length,5);
     for(const id of ids)assert.deepEqual(spec.entities.find(e=>e.id===id).roomIds,['xroom']);
@@ -354,11 +450,21 @@ if(spec.studyDecision) {
   }
   check('Actual study furniture clears the fixed walls and slider',()=>{
     const desk=nodes.Furniture_study_standing_desk.bounds, side=nodes.Furniture_study_side_cabinet.bounds;
-    approx(desk[0][0]-bookcase[1][0],studyBookcaseRevision ? 1.47 : 1.07);
-    assert.ok(bookcase[0][0]>=3.788 && side[1][0]<6.412,'furniture crosses wall/skirting');
-    assert.ok(12.9-bookcase[0][1]<3.30,'bookcase crosses southern door frame');
-    assert.ok(12.9-side[0][1]<3.10,'cabinet reaches southern sliding door');
-    assert.deepEqual(spec.rooms.find(r=>r.id==='xroom').walkEntry,[5.30,2.97]);
+    if (spec.dimensionSource) {
+      const west=faces('northwest_x').east, east=faces('x_kitchen').west;
+      const skirting=spec.construction.skirtingProjection;
+      assert.ok(desk[0][0]-bookcase[1][0]>=.99,'desk narrows the gap to the bookcase');
+      assert.ok(bookcase[0][0]>=west+skirting-1e-5 && side[1][0]<east-skirting,'furniture crosses wall/skirting');
+      const threshold=nodes.North_surround_X_threshold.bounds;
+      assert.ok(bookcase[0][1]>threshold[1][1],'bookcase crosses southern door frame');
+      assert.ok(side[0][1]>threshold[1][1],'cabinet reaches southern sliding door');
+    } else {
+      approx(desk[0][0]-bookcase[1][0],studyBookcaseRevision ? 1.47 : 1.07);
+      assert.ok(bookcase[0][0]>=3.788 && side[1][0]<6.412,'furniture crosses wall/skirting');
+      assert.ok(12.9-bookcase[0][1]<3.30,'bookcase crosses southern door frame');
+      assert.ok(12.9-side[0][1]<3.10,'cabinet reaches southern sliding door');
+      assert.deepEqual(spec.rooms.find(r=>r.id==='xroom').walkEntry,[5.30,2.97]);
+    }
     if(!studyBookcaseRevision)assert.match(spec.entities.find(e=>e.id==='study-bookcase').basis,/移椅/);
   });
 }
@@ -370,7 +476,7 @@ function assertPart(name,original) {
     for(let side=0;side<2;side++)for(let axis=0;axis<3;axis++)approx(actual.bounds[side][axis],original.bounds[side][axis]);
 }
 const integration=spec.revisions.find(r=>r.id==='living-study-integrated');
-if(integration) {
+if(integration && !spec.dimensionSource) {
   check('Integrated source preserves published parts outside recorded revisions',()=>{
     const baseline=json(integration.studyBaseline),livingChanges=new Set(integration.livingChangedNodesFromV09);
     const priorSpec=json('model/baseline-v13/apartment.json');
@@ -387,7 +493,7 @@ if(integration) {
     assert.deepEqual(priorNodeNames.filter(name => !childroomEntities.has(nodes[name].entityId)).sort(), [...expectedNames].sort());
   });
 }
-if(studyBookcaseRevision) {
+if(studyBookcaseRevision && !spec.dimensionSource) {
   check('Only the bookcase changes against the preceding model',()=>{
     const previous=json(studyBookcaseRevision.baseline);
     assert.deepEqual([...priorNodeNames].sort(),Object.keys(previous.objects).sort());
@@ -399,7 +505,7 @@ if (childroom) {
   const previous = json(childroom.baseline);
   const furniture = json('model/furniture-measurements.json');
   const component = id => furniture.components.find(c => c.id === 'childroom-' + id);
-  check('Northwest room integration preserves the prior model outside recorded revisions', () => {
+  if (!spec.dimensionSource) check('Northwest room integration preserves the prior model outside recorded revisions', () => {
     for (const [name, prior] of Object.entries(previous.objects)) {
       const current = nodes[name];
       assert.ok(current, name);
@@ -441,20 +547,22 @@ if (childroom) {
     assert.equal(validation.childroom_boarding_clear, true);
   });
   check('Fitted bed, east-facing wardrobe and stair envelope follow the user dimensions', () => {
-    const fit = spec.revisions.find(r => r.id === 'northwest-childroom-fitted-joinery');
-    const prior = json(fit.baseline);
-    for (const [name, original] of Object.entries(prior.objects)) {
-      if (fit.entityIds.includes(original.entityId) || studyChangedEntities.has(original.entityId)) continue;
-      const current = nodes[name];
-      assert.equal(current.entityId, original.entityId, name);
-      assert.equal(current.triangles, original.triangles, name);
-      assert.deepEqual(current.materials.map(m => m.replace(/\.\d{3}$/, '')),
-        original.materials.map(m => m.replace(/\.\d{3}$/, '')), name);
-      for (let side = 0; side < 2; side++)
-        for (let axis = 0; axis < 3; axis++)
-          approx(current.bounds[side][axis], original.bounds[side][axis]);
+    if (!spec.dimensionSource) {
+      const fit = spec.revisions.find(r => r.id === 'northwest-childroom-fitted-joinery');
+      const prior = json(fit.baseline);
+      for (const [name, original] of Object.entries(prior.objects)) {
+        if (fit.entityIds.includes(original.entityId) || studyChangedEntities.has(original.entityId)) continue;
+        const current = nodes[name];
+        assert.equal(current.entityId, original.entityId, name);
+        assert.equal(current.triangles, original.triangles, name);
+        assert.deepEqual(current.materials.map(m => m.replace(/\.\d{3}$/, '')),
+          original.materials.map(m => m.replace(/\.\d{3}$/, '')), name);
+        for (let side = 0; side < 2; side++)
+          for (let axis = 0; axis < 3; axis++)
+            approx(current.bounds[side][axis], original.bounds[side][axis]);
+      }
+      assert.deepEqual([...priorNodeNames].sort(), Object.keys(prior.objects).sort());
     }
-    assert.deepEqual([...priorNodeNames].sort(), Object.keys(prior.objects).sort());
     const bed = nodes.Furniture_childroom_bed.bounds;
     const deck = component('bed').parts.find(p => /_deck_\d+$/.test(p.name)).bounds;
     const wardrobe = component('wardrobe').parts;
@@ -480,7 +588,7 @@ if (childroom) {
     approx(extent - carcass[1][1] - north.thickness / 2, .01);
     approx(south.a[1] - south.thickness / 2 - (extent - bed[0][1]), .01);
   });
-  check('Northwest opening follows the local annotation without moving its center', () => {
+  check('Northwest opening and center align with the window specification', () => {
     const window = spec.windowDefinitions.find(w => w.id === 'NW_north');
     const north = measure.components.find(c => c.type === 'wall' && c.id === 'north');
     const [from, to, sill, head] = north.openings[0];
@@ -504,7 +612,8 @@ if (southeastWardrobe) {
     approx(min[2], nodes.floor_southeast.bounds[1][2]);
     const [shortWallMin] = nodes.wall_east_notch_0_0_lower.bounds;
     const [eastWallMin] = nodes.wall_east_south_0_0_lower.bounds;
-    approx(shortWallMin[0] - min[0], .12);
+    const overhang = spec.dimensionSource ? .37 : .12;
+    approx(shortWallMin[0] - min[0], overhang);
     approx(shortWallMin[1] - max[1], .02);
     approx(eastWallMin[0] - max[0], .02);
     const door = spec.doors.find(item => item.id === 'southeast');

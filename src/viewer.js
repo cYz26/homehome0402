@@ -20,7 +20,10 @@ export class ApartmentViewer {
     this.abort = new AbortController();
     this.nav = new Navigation(navigation);
     this.extent = data.coordinateSystem.planSouthExtent;
-    this.rendering = new ApartmentScene(container, data);
+    this.initialShaderFailed = false;
+    this.rendering = new ApartmentScene(container, data, () => {
+      this.initialShaderFailed = true;
+    });
     this.canvas = this.rendering.canvas;
     this.cameras = new Cameras(this.canvas, this.extent, () =>
       this.invalidate(),
@@ -197,6 +200,10 @@ export class ApartmentViewer {
     // Render one complete model frame before dismissing the loading image, even
     // when the intersection observer has paused the offscreen animation loop.
     this.rendering.render(this.cameras.active);
+    const renderer = this.rendering.renderer;
+    renderer.debug.onShaderError = null;
+    if (this.initialShaderFailed || renderer.getContext().isContextLost())
+      throw new Error("当前浏览器无法完成三维绘制。");
   }
   get room() {
     return this.data.rooms.find((r) => r.id === this.state.roomId);

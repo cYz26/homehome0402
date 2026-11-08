@@ -36,8 +36,11 @@ imported=inspect()
 trough_samples=[]
 if 'Master_double_stone_trough' in imported:
     deps=bpy.context.evaluated_depsgraph_get()
-    for x in [1.40,1.90,2.40]:
-        hit,location,normal,index,ob,matrix=bpy.context.scene.ray_cast(deps,Vector((x,12.9-5.92,1.02)),Vector((0,0,-1)))
+    lower,upper=imported['Master_double_stone_trough']['bounds']
+    y=(lower[1]+upper[1])/2-.02
+    for fraction in [2/9,1/2,7/9]:
+        x=lower[0]+fraction*(upper[0]-lower[0])
+        hit,location,normal,index,ob,matrix=bpy.context.scene.ray_cast(deps,Vector((x,y,upper[2]+.11)),Vector((0,0,-1)))
         trough_samples.append({'x':x,'hit':bool(hit),'object':ob.name if hit else None,'height':location.z if hit else None})
 childroom = {}
 if SPEC.get('childroomDecision'):

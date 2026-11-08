@@ -1,23 +1,27 @@
 {
   "checks": [
     {
-      "name": "North and south dimension chains close at 10.50 m",
+      "name": "Original drawing chains retain their recorded totals",
       "pass": true
     },
     {
-      "name": "West dimension chain closes at 12.90 m",
+      "name": "Layout input and its archived metric-v14 baseline match the recorded digests",
       "pass": true
     },
     {
-      "name": "Specified main ceiling height is 2.80 m",
+      "name": "Reimported walls match the applied red plan spans and the SVG width anchors",
       "pass": true
     },
     {
-      "name": "Actual GLB southern wall references match 3.50 / 4.00 / 3.00",
+      "name": "Six actual window frames and masonry openings match the annotated sizes",
       "pass": true
     },
     {
-      "name": "Actual GLB north partitions match 2.80 / 2.80 / 2.60",
+      "name": "Entry height and width are applied to the actual masonry opening",
+      "pass": true
+    },
+    {
+      "name": "Actual main ceiling matches the model elevation",
       "pass": true
     },
     {
@@ -41,7 +45,7 @@
       "pass": true
     },
     {
-      "name": "Living glazing reaches the floor and room-specific windows retain their specified sills",
+      "name": "Living glazing reaches the floor and window glass aligns with the specified sills",
       "pass": true
     },
     {
@@ -85,7 +89,7 @@
       "pass": true
     },
     {
-      "name": "Furnishing preserves v06 architecture outside the explicitly revised photo doorway, facing arrangement and open center",
+      "name": "Furnishing retains the confirmed facing arrangement, open center and four chairs",
       "pass": true
     },
     {
@@ -117,7 +121,7 @@
       "pass": true
     },
     {
-      "name": "Recorded living and study changes preserve every other v09 part",
+      "name": "The complete study retains its five logical entities",
       "pass": true
     },
     {
@@ -133,22 +137,6 @@
       "pass": true
     },
     {
-      "name": "Integrated source preserves published parts outside recorded revisions",
-      "pass": true
-    },
-    {
-      "name": "Integrated source preserves the complete latest living model outside the published study window change",
-      "pass": true
-    },
-    {
-      "name": "Only the bookcase changes against the preceding model",
-      "pass": true
-    },
-    {
-      "name": "Northwest room integration preserves the prior model outside recorded revisions",
-      "pass": true
-    },
-    {
       "name": "Actual childroom stairs have two equal rises, two drawers and a direct boarding edge",
       "pass": true
     },
@@ -157,7 +145,7 @@
       "pass": true
     },
     {
-      "name": "Northwest opening follows the local annotation without moving its center",
+      "name": "Northwest opening and center align with the window specification",
       "pass": true
     },
     {
@@ -169,6 +157,6 @@
       "pass": true
     }
   ],
-  "passed": 42,
-  "total": 42
+  "passed": 39,
+  "total": 39
 }

@@ -10,12 +10,13 @@ import { Reflector } from "three/addons/objects/Reflector.js";
 import { createExterior } from "./exterior.js";
 
 export class ApartmentScene {
-  constructor(container, data) {
+  constructor(container, data, onShaderError = null) {
     this.container = container;
     this.data = data;
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color("#edeee7");
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    this.renderer.debug.onShaderError = onShaderError;
     this.renderer.localClippingEnabled = true;
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;

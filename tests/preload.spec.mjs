@@ -47,7 +47,7 @@ for (const width of [1280, 390]) {
       expect(await page.locator("#hero-image").evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
       await expect(page.locator("canvas")).toHaveCount(0);
       await expect(page.locator("#cancel-model")).toBeHidden();
-      await expect(page.locator("#loading-text")).toContainText("从这里开始");
+      await expect(page.locator("#loading-text")).toHaveText("查看全屋与各房间");
       await testInfo.attach(`preload-home-${width}`, { body: await page.screenshot(), contentType: "image/png" });
       await page.locator("[data-explore]").click({ noWaitAfter: true });
       await expect(page.locator("#cancel-model")).toBeVisible();

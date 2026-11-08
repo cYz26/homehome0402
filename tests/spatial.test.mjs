@@ -73,7 +73,9 @@ test("northwest childroom aisle reaches the two-step cabinet and respects furnit
 test("southeast wardrobe blocks its footprint while preserving the entrance passage", () => {
   const cabinet = navData.colliders.find(c => c.entityId === "southeast-wardrobe");
   assert.ok(cabinet);
-  assert.equal(nav.clear([9.66, 9.01]), false);
+  const { position } = spec.furnishings.find(f => f.id === cabinet.entityId);
+  assert.ok(inside(position, cabinet.polygon));
+  assert.equal(nav.clear(position), false);
   assert.equal(nav.segmentClear([8.45, 8.26], [8.45, 9.65]), true);
 });
 test("a disconnected destination returns no route", () => {
